@@ -2,7 +2,9 @@
 
 Redesign of [immaculateconnectionsph.com](https://www.immaculateconnectionsph.com/) as a fast, static, five-page site.
 
-**Live preview:** https://technextmarketing.github.io/immaculateconnectionsph/ No build step and no framework: upload the folder to any static host or serve it with GitHub Pages.
+**Live preview:** https://technextmarketing.github.io/immaculateconnectionsph/
+
+No build step and no framework: upload the folder to any static host or serve it with GitHub Pages.
 
 All copy, packages, inclusions, places, photos and the logo come from the agency's existing website. Photos are served from the agency's own Wix media library (`static.wixstatic.com`).
 
