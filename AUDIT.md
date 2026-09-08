@@ -104,3 +104,34 @@ The current site has a clear service list and a genuinely useful set of local to
 - Decide one official email (the redesign uses `inquiries@immaculateconnectionsph.com`) and retire the Gmail address from public pages.
 - Publish office hours and payment/cancellation terms.
 - Activate the FormSubmit delivery link when the first inquiry arrives (one-time email to the inbox), then optionally switch to the hashed alias FormSubmit provides.
+
+## 6. Second-round audit of the redesign (8 September 2026): UI recommendations and edits
+
+Reviewed on the live GitHub Pages build at desktop and mobile widths. Each item lists the recommendation and what was changed.
+
+| # | Finding on the redesign | Recommendation | Status |
+|---|-------------------------|----------------|--------|
+| U1 | Service card icons (absolutely positioned) overlapped the card titles on the four small cards | Put the icon in the normal flow above the title; let rows grow with content | Fixed |
+| U2 | Stats band showed "0" for every counter (the count-up script had been removed) and the numbers added little value | Remove the stats band | Removed, as requested |
+| U3 | "How it works" repeated the hero copy and pushed the packages down the page | Remove the section; move users straight from services to packages | Removed, as requested |
+| U4 | Package details opened in a modal: not linkable, not shareable, not indexable | Give every package its own page (`package.html?id=…`) with tabs, gallery, itinerary, inclusions, places guide, dates and price, posters and structured data | Done |
+| U5 | The Vietnam itinerary posters were shown as images only | Transcribe each poster into a full product: Da Nang 6D4N, Da Nang 5D3N and Hanoi–Sapa–Ha Long Bay 4D3N, each with price, 2026 travel dates and surcharges, inclusions, exclusions, hotels, optional tours and day-by-day itinerary | Done |
+| U6 | Packages listed places without explaining them | Add a short location guide for every stop (60+ places) on the package pages | Done |
+| U7 | Tour card footer read "Inclusions · 5 included", which is not a buying signal | Show the price when published ("Starts at ₱23,888 / per pax"), otherwise "Quotation on request"; add departure city and duration pills | Done |
+| U8 | The primary product (Tour Packages) looked like every other menu item | Highlight it as a gold pill in the header and the mobile drawer | Done |
+| U9 | The inquiry form required a "Continue" click after choosing a service | Show the matching form immediately when a service is selected; keep Back available | Done |
+| U10 | Home page had no place to surface the published offers | Add a "Special offers 2026" section with price, departure city and number of dates, plus a floating badge on the hero | Done |
+| U11 | Poster strip on the home page used generic captions ("Tour package poster") | Replaced by the offers section; posters now live on their package pages with tap-to-enlarge | Done |
+| U12 | Hero copy block was heavy on mobile and had no scroll cue | Tint the copy box, add a scroll indicator and a wave divider | Done |
+| U13 | Gallery captions only appeared on hover, so touch users never saw them | Always show captions on touch devices | Done |
+| U14 | Little motion beyond fade-ins | Add scroll progress bar, 3D tilt with glare on cards, sliding tab indicator, accordion itinerary, thumbnail-swap gallery, sticky mobile quote bar; all respect reduced-motion | Done |
+| U15 | Favicon used the full wordmark, unreadable at 16px | Use the bird-and-palms logo mark from the agency's About page | Done |
+| U16 | Tours page filters had no way to isolate priced offers or sort by price | Add "Special offers" filter and "Price: low to high" sort | Done |
+| U17 | Contact/quote paths did not carry the chosen package | Package page buttons and offer cards pre-fill the inquiry form with the package | Done |
+
+### Still recommended (needs client input)
+- Prices for local tours (Bohol, Camotes, Cebu) so those cards can show "from" rates.
+- Text itineraries for Siargao, Hong Kong, Japan and China.
+- Customer testimonials with permission, and DOT accreditation / DTI numbers for the footer.
+- Confirmed office hours and payment / cancellation terms for the FAQ.
+- Real photos for Siargao, Japan and China (the current cards reuse generic travel photos from the existing site).
