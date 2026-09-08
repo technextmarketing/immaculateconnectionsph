@@ -354,6 +354,9 @@
   body.has-sticky-cta .to-top { bottom: 142px; }
 }
 
+.offer-media .badge, .tour-media .badge.gold { font-size: .76rem; padding: 7px 12px; letter-spacing: .02em; text-transform: none; }
+.offer-media .badge { top: 12px; left: 12px; }
+
 /* ---------- Offer card kickers ---------- */
 .offer-kickers { display: flex; flex-wrap: wrap; gap: 6px 12px; }
 .offer-kickers .offer-kicker { white-space: nowrap; }
@@ -386,6 +389,338 @@
   .page-hero-stats { gap: 12px; }
   .page-hero-stats div { flex: 1 1 90px; padding-left: 10px; }
   .page-hero-stats span { font-size: .68rem; }
+}
+
+/* ---------- Scrollbars: transparent track and buttons, slim thumb ---------- */
+html { scrollbar-width: thin; scrollbar-color: rgba(50,65,88,.35) transparent; }
+* { scrollbar-width: thin; scrollbar-color: rgba(50,65,88,.35) transparent; }
+::-webkit-scrollbar { width: 8px; height: 8px; background: transparent; }
+::-webkit-scrollbar-track, ::-webkit-scrollbar-track-piece, ::-webkit-scrollbar-corner { background: transparent; }
+::-webkit-scrollbar-button { display: none; width: 0; height: 0; background: transparent; }
+::-webkit-scrollbar-thumb { background: rgba(50,65,88,.32); border-radius: 999px; border: 2px solid transparent; background-clip: padding-box; }
+::-webkit-scrollbar-thumb:hover { background: rgba(50,65,88,.55); background-clip: padding-box; }
+.filter-tabs, .subnav .container, .pkg-tabs .container { scrollbar-width: none; }
+.filter-tabs::-webkit-scrollbar, .subnav .container::-webkit-scrollbar, .pkg-tabs .container::-webkit-scrollbar { display: none; }
+
+/* ---------- Buttons: fixed heights, no jumping, equal-width groups ---------- */
+.btn { min-height: 46px; padding: 0 22px; line-height: 1.15; text-align: center; box-shadow: none; }
+.btn-sm { min-height: 40px; padding: 0 16px; font-size: .86rem; }
+.btn-lg { min-height: 52px; padding: 0 28px; font-size: 1rem; }
+.btn-primary { box-shadow: 0 8px 18px -10px rgba(246,147,30,.6); }
+.btn:hover { transform: none; filter: brightness(1.06); }
+.btn:hover svg.arrow { transform: translateX(3px); }
+.btn:active { transform: scale(.98); filter: brightness(.98); }
+.btn-block { width: 100%; }
+.hero-actions, .cta-band .actions, .offer-actions, .success .actions, .svc-actions { display: flex; flex-wrap: wrap; gap: 10px; }
+.hero-actions .btn, .cta-band .actions .btn, .offer-actions .btn, .success .actions .btn { flex: 1 1 0; min-width: 170px; }
+.svc-actions .btn { flex: 1 1 0; min-width: 190px; max-width: 320px; }
+.tour-foot { flex-direction: column; align-items: stretch; gap: 10px; }
+.tour-foot .actions { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; }
+.tour-foot .actions .btn { width: 100%; min-height: 42px; padding: 0 10px; font-size: .86rem; white-space: normal; line-height: 1.15; }
+.form-nav .btn { flex: 1 1 0; min-width: 140px; }
+.form-nav > span:empty { display: none; }
+.pkg-side .side-card .btn { min-height: 48px; }
+.nav-actions .btn.btn-sm { min-height: 40px; }
+.filters-row .btn { min-height: 46px; }
+.mini-form .btn { align-self: flex-start; min-width: 200px; }
+.quote-card .btn { min-height: 48px; }
+
+/* ---------- Mobile: smaller type, buttons and UI ---------- */
+@media (max-width: 640px) {
+  html { font-size: 15px; }
+  :root { --nav-h: 60px; }
+  .nav { height: 60px; }
+  .logo img.mark { height: 34px; }
+  .logo-text { font-size: .92rem; }
+  .logo-text small { font-size: .5rem; letter-spacing: .16em; margin-top: 3px; }
+  .nav-toggle { width: 40px; height: 40px; }
+  .nav-toggle span { left: 10px; right: 10px; }
+  .nav-toggle span:nth-child(1) { top: 13px; } .nav-toggle span:nth-child(2) { top: 19px; } .nav-toggle span:nth-child(3) { top: 25px; }
+  .drawer-panel { padding: 18px; gap: 6px; }
+  .drawer-link { padding: 11px 13px; font-size: .92rem; border-radius: 11px; }
+  .drawer-foot { padding-top: 16px; gap: 8px; }
+  .drawer-foot p { font-size: .8rem; }
+
+  .display { font-size: 1.85rem; line-height: 1.12; }
+  .h1 { font-size: 1.6rem; }
+  .h2 { font-size: 1.35rem; }
+  .h3 { font-size: 1.05rem; }
+  .lead { font-size: .9rem; }
+  .eyebrow { font-size: .66rem; margin-bottom: 8px; letter-spacing: .12em; }
+  .section { padding: 40px 0; }
+  .section-tight { padding: 30px 0; }
+  .section-head { margin-bottom: 18px; }
+  .section-head .lead { margin-top: 8px; }
+
+  .btn { min-height: 42px; padding: 0 16px; font-size: .84rem; gap: 8px; }
+  .btn svg { width: 16px; height: 16px; }
+  .btn-lg { min-height: 46px; padding: 0 18px; font-size: .88rem; }
+  .btn-sm { min-height: 36px; padding: 0 12px; font-size: .78rem; }
+  .hero-actions .btn, .cta-band .actions .btn, .offer-actions .btn, .success .actions .btn, .svc-actions .btn { min-width: 0; max-width: none; flex: 1 1 calc(50% - 5px); }
+  .hero-actions .btn-lg, .cta-band .actions .btn-lg { flex-basis: 100%; }
+  .pill { font-size: .66rem; padding: 4px 9px; gap: 4px; }
+  .pill svg { width: 12px; height: 12px; }
+  .status-pill { font-size: .6rem; padding: 4px 8px; gap: 5px; }
+  .status-pill i { width: 6px; height: 6px; }
+  .badge { font-size: .6rem; padding: 4px 9px; top: 10px; left: 10px; }
+  .flag { width: 16px; height: 12px; margin-right: 5px; }
+
+  .hero { padding: 32px 0 80px; }
+  .hero-kicker { margin-bottom: 12px; }
+  .hero-kicker .pill { font-size: .64rem; }
+  .hero-title { margin-bottom: 8px; }
+  .hero-tagline { font-size: 1.2rem; margin-bottom: 12px; }
+  .hero-box { font-size: .86rem; padding: 10px 12px 10px 14px; margin-bottom: 18px; line-height: 1.55; }
+  .hero-actions { gap: 8px; margin-bottom: 18px; }
+  .hero-trust { gap: 8px 12px; }
+  .trust-item { font-size: .74rem; gap: 6px; }
+  .trust-item svg { width: 15px; height: 15px; }
+  .hero-wave svg { height: 40px; }
+  .quote-card { padding: 16px; border-radius: 18px; }
+  .quote-card h3 { font-size: 1.1rem; }
+  .quote-card p.small { font-size: .8rem; margin-bottom: 12px; }
+  .quote-card .form-grid { gap: 8px; }
+  .quote-card .fine { font-size: .72rem; margin-top: 10px; }
+  .live-badge { font-size: .64rem; padding: 6px 10px; top: -12px; }
+  .field { gap: 4px; }
+  .field label { font-size: .72rem; }
+  .input, .select, .textarea { padding: 10px 12px; font-size: .88rem; border-radius: 10px; }
+  .textarea { min-height: 90px; }
+  .marquee { padding: 9px 0; }
+  .marquee-item { font-size: .82rem; padding: 0 12px; gap: 10px; }
+  .marquee-item small { font-size: .58rem; }
+
+  .offers-grid { gap: 14px; }
+  .offer-body { padding: 14px; gap: 8px; }
+  .offer-body h3 { font-size: 1.05rem; }
+  .offer-body p { font-size: .84rem; }
+  .offer-kicker { font-size: .64rem; }
+  .offer-ribbon { font-size: .58rem; padding: 4px 34px; top: 12px; left: -36px; }
+  .offer-foot { padding-top: 10px; }
+  .price.big strong { font-size: 1.4rem; }
+  .price strong { font-size: 1rem; }
+  .price small { font-size: .62rem; }
+  .price span { font-size: .7rem; }
+  .offer-dates { font-size: .72rem; }
+  .offer-actions .btn { padding: 0 10px; font-size: .8rem; }
+
+  .bento { gap: 12px; }
+  .svc-card, .svc-card:not(.big) { padding: 16px; min-height: 0; gap: 8px; }
+  .svc-card .svc-icon { width: 44px; height: 44px; border-radius: 12px; margin-bottom: 6px; }
+  .svc-card .svc-icon img { width: 26px; height: 26px; }
+  .svc-card .svc-num { top: 18px; right: 16px; font-size: .8rem; }
+  .svc-card h3 { font-size: 1.05rem; }
+  .svc-card.big h3 { font-size: 1.25rem; }
+  .svc-card p { font-size: .84rem; }
+  .svc-card.big p { font-size: .88rem; }
+  .svc-card .chips .pill { font-size: .6rem; padding: 4px 8px; }
+  .svc-card .svc-link { font-size: .86rem; }
+  .svc-card.big { min-height: 0; }
+
+  .filter-tabs { gap: 6px; }
+  .tab { padding: 7px 12px; font-size: .76rem; }
+  .tab .count { font-size: .66rem; margin-left: 4px; }
+  .tour-grid { gap: 14px; }
+  .tour-media { aspect-ratio: 16 / 10; }
+  .tour-meta { left: 10px; bottom: 10px; gap: 6px; }
+  .tour-body { padding: 14px 14px 16px; gap: 8px; }
+  .tour-region { font-size: .66rem; }
+  .tour-body h3 { font-size: 1.05rem; }
+  .tour-intro { font-size: .84rem; }
+  .tour-highlights { gap: 4px; }
+  .tour-highlights li { font-size: .82rem; }
+  .tour-highlights svg { width: 14px; height: 14px; }
+  .tour-highlights .more { font-size: .76rem; padding-left: 22px; }
+  .tour-foot { padding-top: 10px; gap: 8px; }
+  .tour-foot .actions .btn { min-height: 38px; font-size: .78rem; padding: 0 8px; }
+  .empty-state { padding: 36px 16px; }
+
+  .pillars { gap: 10px; }
+  .pillar { padding: 12px; gap: 10px; }
+  .pillar .ic { width: 38px; height: 38px; border-radius: 11px; }
+  .pillar .ic svg { width: 20px; height: 20px; }
+  .pillar h3 { font-size: .94rem; }
+  .pillar p { font-size: .82rem; }
+  .collage img { height: 130px; }
+  .collage img:nth-child(1) { height: 170px; }
+  .gallery { column-gap: 8px; }
+  .gal-item { margin-bottom: 8px; border-radius: 12px; }
+  .gal-item figcaption { font-size: .72rem; padding: 18px 10px 8px; }
+  .faq { gap: 8px; }
+  .faq summary { padding: 12px 14px; font-size: .88rem; gap: 10px; }
+  .faq summary .plus { width: 26px; height: 26px; }
+  .faq summary .plus svg { width: 13px; height: 13px; }
+  .faq .faq-body { padding: 0 14px 14px; font-size: .86rem; }
+  .cta-band { padding: 30px 16px; border-radius: 18px; }
+  .cta-band .script { font-size: 1.25rem; margin-bottom: 4px; }
+  .cta-band .h2 { font-size: 1.3rem; margin-bottom: 10px; }
+  .cta-band .lead { font-size: .88rem; margin-bottom: 16px; }
+  .cta-band .contact-line { font-size: .78rem; margin-top: 14px; }
+
+  .footer { padding: 22px 0 10px; }
+  .footer .logo-plate img { height: 34px; }
+  .footer .brand-blurb { font-size: .78rem; margin-top: 8px; }
+  .footer p, .footer-links a, .footer-contact li { font-size: .78rem; }
+  .footer-contact svg { width: 14px; height: 14px; }
+  .socials a { width: 32px; height: 32px; }
+  .footer-bottom { font-size: .72rem; margin-top: 12px; padding-top: 10px; }
+  .fab-msg { padding: 11px; right: 12px; bottom: 12px; }
+  .fab-msg svg { width: 20px; height: 20px; }
+  .to-top { width: 38px; height: 38px; right: 16px; bottom: 74px; }
+  .to-top svg { width: 16px; height: 16px; }
+  body.has-sticky-cta .fab-msg { bottom: 76px; }
+  body.has-sticky-cta .to-top { bottom: 128px; }
+  .scroll-progress { height: 2px; }
+
+  .page-hero { padding: 28px 0 44px; }
+  .page-hero .h1 { font-size: 1.55rem; margin-bottom: 10px; }
+  .breadcrumb { font-size: .72rem; margin-bottom: 10px; }
+  .breadcrumb svg { width: 12px; height: 12px; }
+  .page-hero-stats { gap: 10px; }
+  .page-hero-stats strong { font-size: 1.05rem; }
+  .page-hero-stats span { font-size: .58rem; }
+  .filters { padding: 12px; gap: 10px; margin-top: -26px; }
+  .filters-row { gap: 8px; }
+  .filters-row .btn { min-height: 40px; }
+  .results-bar { font-size: .82rem; margin: 18px 0 12px; }
+
+  .pkg-hero { padding: 26px 0 30px; }
+  .pkg-chips { margin-bottom: 12px; gap: 5px; }
+  .pkg-chips .pill { font-size: .64rem; padding: 4px 9px; }
+  .pkg-chips .status-pill { font-size: .64rem; padding: 5px 10px; }
+  .pkg-chips .flag { width: 18px; height: 13px; }
+  .pkg-title { font-size: 1.5rem; margin-bottom: 6px; }
+  .pkg-subtitle { font-size: 1.05rem; margin-bottom: 10px; }
+  .pkg-lead { font-size: .88rem; }
+  .pkg-past { font-size: .78rem; padding: 9px 12px; margin-top: 12px; gap: 8px; }
+  .pkg-past svg { width: 16px; height: 16px; }
+  .pkg-tabs .container { padding-block: 4px; }
+  .pkg-tabs a { padding: 9px 10px; font-size: .76rem; }
+  .pkg-main { gap: 30px; }
+  .pkg-section .h2 { font-size: 1.25rem; margin-bottom: 10px; }
+  .pkg-text { font-size: .9rem; line-height: 1.65; }
+  .pkg-facts { gap: 8px; margin-top: 14px; }
+  .pkg-facts > div { padding: 10px 12px; gap: 10px; }
+  .pkg-facts svg { width: 18px; height: 18px; }
+  .pkg-facts strong { font-size: .84rem; }
+  .pkg-facts small { font-size: .6rem; }
+  .pkg-gallery { gap: 8px; }
+  .pkg-gallery-main figcaption { font-size: .66rem; padding: 4px 9px; right: 10px; bottom: 10px; }
+  .pkg-thumbs { gap: 6px; }
+  .pkg-thumbs button { width: 60px; height: 46px; border-radius: 9px; }
+  .timeline-it { gap: 8px; }
+  .it-block summary { padding: 11px 12px; gap: 8px; }
+  .it-num { min-width: 46px; font-size: .6rem; padding: 5px 8px; }
+  .it-title { font-size: .9rem; }
+  .it-block .plus { width: 24px; height: 24px; }
+  .it-block ul { padding: 0 12px 12px 12px; gap: 6px; }
+  .it-block li { font-size: .84rem; }
+  .it-block li svg { width: 15px; height: 15px; }
+  .inc-grid { gap: 10px; }
+  .inc-col { padding: 14px; }
+  .inc-col h4 { font-size: .7rem; margin-bottom: 10px; }
+  .inc-col li { font-size: .84rem; }
+  .pkg-note { padding: 12px 14px; }
+  .pkg-note ul { font-size: .84rem; }
+  .place-grid { gap: 8px; }
+  .place-card { padding: 12px; gap: 10px; }
+  .place-card .n { width: 24px; height: 24px; font-size: .66rem; }
+  .place-card strong { font-size: .9rem; }
+  .place-card p { font-size: .8rem; }
+  .date-grid { gap: 6px; }
+  .date-chip { font-size: .72rem; padding: 5px 8px; gap: 4px; }
+  .date-chip svg { width: 12px; height: 12px; }
+  .date-chip em { font-size: .66rem; }
+  .poster-row { gap: 8px; }
+  .side-card { padding: 14px; }
+  .side-card .meta { font-size: .82rem; gap: 6px; margin: 12px 0; }
+  .side-card .meta svg { width: 16px; height: 16px; }
+  .pkg-side .side-card .btn { min-height: 42px; }
+  .sticky-cta { padding: 8px 12px; }
+  .sticky-cta small { font-size: .6rem; }
+  .sticky-cta strong { font-size: 1rem; }
+  .sticky-cta .btn { min-height: 38px; padding: 0 14px; font-size: .8rem; }
+
+  .form-card { padding: 16px; }
+  .progress { margin-bottom: 20px; gap: 8px; }
+  .progress .p-step i { width: 26px; height: 26px; font-size: .72rem; }
+  .fstep h3 { font-size: 1.12rem; }
+  .fstep > p { font-size: .86rem; margin-bottom: 14px; }
+  .choice-grid { gap: 8px; }
+  .choice label { padding: 10px 12px; gap: 8px; border-radius: 12px; }
+  .choice label .ic { width: 34px; height: 34px; border-radius: 9px; }
+  .choice label .ic img { width: 20px; height: 20px; }
+  .choice label strong { font-size: .86rem; }
+  .fields { gap: 10px; }
+  .form-row { gap: 10px; }
+  .checks { gap: 6px; }
+  .checks label { padding: 9px 10px; font-size: .84rem; }
+  .form-nav { margin-top: 18px; padding-top: 14px; gap: 8px; }
+  .summary { font-size: .82rem; padding: 12px 14px; gap: 6px; margin-bottom: 14px; }
+  .consent, .field label.consent { font-size: .78rem; }
+  .success .check { width: 64px; height: 64px; }
+  .success .check svg { width: 30px; height: 30px; }
+  .success h3 { font-size: 1.3rem; }
+  .success p { font-size: .88rem; }
+  .form-error { font-size: .82rem; padding: 10px 12px; }
+  .contact-layout { gap: 18px; }
+  .contact-cards { gap: 8px; }
+  .contact-card { padding: 12px; gap: 10px; }
+  .contact-card .ic { width: 38px; height: 38px; border-radius: 10px; }
+  .contact-card .ic svg { width: 20px; height: 20px; }
+  .contact-card strong { font-size: .9rem; }
+  .contact-card a, .contact-card p { font-size: .82rem; }
+  .hours { padding: 14px; }
+  .hours h4 { font-size: .68rem; }
+  .hours li { font-size: .82rem; padding: 6px 0; }
+  .map-wrap { height: 240px; border-radius: 18px; }
+
+  .subnav a { padding: 8px 12px; font-size: .78rem; }
+  .svc-section { padding: 40px 0; scroll-margin-top: 110px; }
+  .svc-head { gap: 10px; margin-bottom: 10px; }
+  .svc-head .ic { width: 42px; height: 42px; border-radius: 12px; }
+  .svc-head .ic img { width: 26px; height: 26px; }
+  .svc-head small { font-size: .62rem; }
+  .svc-head .h2 { font-size: 1.2rem; }
+  .svc-copy { font-size: .9rem; margin-bottom: 16px; }
+  .check-list { gap: 6px; }
+  .check-list li { font-size: .86rem; gap: 8px; }
+  .check-list svg { width: 17px; height: 17px; }
+  .svc-tags { margin: 14px 0; }
+  .svc-actions { margin-top: 16px; gap: 8px; }
+  .mini-form { padding: 14px; gap: 10px; }
+  .mini-form h4 { font-size: 1.02rem; }
+  .mini-form .note { font-size: .74rem; }
+  .mini-form .btn { min-width: 0; width: 100%; }
+  .fleet { gap: 10px; margin-top: 20px; }
+  .fleet-card { padding: 12px; }
+  .fleet-card .veh { height: 60px; margin-bottom: 8px; }
+  .fleet-card .veh svg { width: 76px; height: 42px; }
+  .fleet-card h4 { font-size: .98rem; }
+  .fleet-card .cap { font-size: .74rem; margin: 4px 0 8px; }
+  .fleet-card p { font-size: .8rem; }
+  .tiers { gap: 10px; margin-top: 16px; }
+  .tier-body { padding: 14px; }
+  .tier-body h4 { font-size: 1rem; }
+  .tier-body ul { font-size: .82rem; }
+  .compare th, .compare td { padding: 10px 12px; font-size: .8rem; }
+  .float-card { padding: 10px 12px; gap: 8px; max-width: 220px; }
+  .float-card .ic { width: 34px; height: 34px; }
+  .float-card strong { font-size: .82rem; }
+  .float-card span { font-size: .7rem; }
+  .mini-gallery { gap: 8px; }
+
+  .mv-card { padding: 20px; border-radius: 18px; }
+  .mv-card .ic { width: 44px; height: 44px; margin-bottom: 12px; }
+  .mv-card h3 { font-size: 1.25rem; }
+  .mv-card p { font-size: .9rem; }
+  .feature-grid { gap: 10px; }
+  .feature { padding: 16px; }
+  .feature .ic { width: 44px; height: 44px; margin-bottom: 12px; }
+  .feature h3 { font-size: .98rem; }
+  .feature p { font-size: .84rem; }
+  .badges { gap: 8px; }
+  .badges div { padding: 8px 12px; font-size: .78rem; }
 }
 
 /* ---------- Responsive ---------- */

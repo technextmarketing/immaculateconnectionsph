@@ -61,6 +61,15 @@
   const statusPill = t => `<span class="status-pill ${effStatus(t)}"><i></i>${esc(statusLabel(t))}</span>`;
   // Destination label: the country for overseas packages, the region for local ones
   const destLabel = t => (t.region === 'intl' && t.country ? t.country : regionLabel(t));
+  // Image badge: "Departed", a price tag for priced offers, or a label that does not repeat the status pill
+  const cardBadge = t => {
+    const s = effStatus(t);
+    if (s === 'past') return '<span class="badge grey">Departed</span>';
+    if (t.price) return `<span class="badge gold">${esc(t.price.label)} ${money(t.price)}</span>`;
+    if (t.badge && t.badge.toLowerCase() !== statusLabel(t).toLowerCase()) return `<span class="badge ${badgeClass(t.badge)}">${esc(t.badge)}</span>`;
+    return '';
+  };
+  const shuffle = a => { const b = a.slice(); for (let i = b.length - 1; i > 0; i--) { const j = Math.floor(Math.random() * (i + 1)); [b[i], b[j]] = [b[j], b[i]]; } return b; };
 
   const svg = (p, extra = '') => `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" ${extra}>${p}</svg>`;
   const I = {
@@ -191,7 +200,7 @@
     return `
     <article class="tour-card ${effStatus(t) === 'soon' || effStatus(t) === 'past' ? 'soon' : ''}" style="animation-delay:${Math.min(i, 8) * 60}ms">
       <a class="tour-media" href="${pkgUrl(t)}" aria-label="${esc(t.name)}">
-        ${effStatus(t) === 'past' ? '<span class="badge grey">Departed</span>' : t.badge ? `<span class="badge ${badgeClass(t.badge)}">${esc(t.badge)}</span>` : ''}
+        ${cardBadge(t)}
         <img src="${wix(t.image, 640, 480, t.imageAlign)}" alt="${esc(t.alt)}" loading="lazy" width="640" height="480">
         <div class="tour-meta">
           ${t.duration ? `<span class="pill glass">${I.clock}${esc(t.duration)}</span>` : ''}
@@ -229,8 +238,9 @@
     const grid = $('#featuredGrid');
     if (!grid || !IC.tours) return;
     const tabs = $$('#featuredTabs .tab');
-    const live = IC.tours.filter(t => effStatus(t) !== 'past');
-    const show = region => renderTours(grid, region === 'all' ? live.filter(t => t.featured) : live.filter(t => t.region === region).slice(0, 6));
+    // Three packages, reshuffled on every page load (departed and coming-soon packages excluded)
+    const live = IC.tours.filter(t => effStatus(t) !== 'past' && effStatus(t) !== 'soon');
+    const show = region => renderTours(grid, shuffle(region === 'all' ? live : live.filter(t => t.region === region)).slice(0, 3));
     tabs.forEach(tab => tab.addEventListener('click', () => { tabs.forEach(t => t.classList.remove('active')); tab.classList.add('active'); show(tab.dataset.filter); }));
     show('all');
   }
@@ -242,7 +252,7 @@
     const offers = IC.tours.filter(t => t.price && effStatus(t) !== 'past');
     grid.innerHTML = offers.map((t, i) => `
       <article class="offer-card reveal" style="--d:${i * 0.1}s" data-tilt>
-        <a class="offer-media" href="${pkgUrl(t)}"><img src="${wix(t.image, 520, 390, t.imageAlign)}" alt="${esc(t.alt)}" loading="lazy" width="520" height="390"><span class="offer-ribbon">Special offer</span></a>
+        <a class="offer-media" href="${pkgUrl(t)}"><img src="${wix(t.image, 520, 390, t.imageAlign)}" alt="${esc(t.alt)}" loading="lazy" width="520" height="390">${cardBadge(t)}</a>
         <div class="offer-body">
           <div class="offer-kickers"><span class="offer-kicker">${flagImg(t)}${esc(t.country)}</span><span class="offer-kicker">${I.plane}${esc(t.departure.split(' (')[0])} departure</span><span class="offer-kicker">${I.clock}${esc(t.duration)}</span></div>
           ${statusPill(t)}
@@ -329,7 +339,8 @@
         <div class="container">
           <nav class="breadcrumb" aria-label="Breadcrumb"><a href="index.html">Home</a>${I.left.replace('m15 18-6-6 6-6', 'm9 18 6-6-6-6')}<a href="tours.html">Tour Packages</a>${I.left.replace('m15 18-6-6 6-6', 'm9 18 6-6-6-6')}<span>${esc(region)}</span></nav>
           <div class="chips pkg-chips">
-            ${t.badge ? `<span class="pill ${t.status === 'offer' ? 'orange' : 'gold'}">${esc(t.badge)}</span>` : ''}
+            ${t.badge && t.badge.toLowerCase() !== statusLabel(t).toLowerCase() ? `<span class="pill gold">${esc(t.badge)}</span>` : ''}
+            ${t.price ? `<span class="pill gold">${esc(t.price.label)} ${money(t.price)}</span>` : ''}
             <span class="pill glass">${flagImg(t)}${esc(region)}</span>
             ${t.duration ? `<span class="pill glass">${I.clock}${esc(t.duration)}</span>` : ''}
             ${t.departure ? `<span class="pill glass">${I.plane}Departs ${esc(t.departure)}</span>` : ''}
