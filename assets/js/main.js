@@ -40,6 +40,8 @@
   const statusLabel = t => IC.statusLabel[t.status] || '';
   const pkgUrl = t => `package.html?id=${encodeURIComponent(t.id)}`;
   const ctaLabel = t => (t.status === 'soon' ? 'Ask about this tour' : t.status === 'offer' ? 'Book this offer' : 'Request a quote');
+  const flagImg = t => (t.flag ? `<img class="flag" src="https://flagcdn.com/w40/${t.flag}.png" srcset="https://flagcdn.com/w80/${t.flag}.png 2x" width="20" height="15" alt="${esc(t.country || '')} flag" loading="lazy">` : '');
+  const statusPill = t => `<span class="status-pill ${t.status}"><i></i>${esc(statusLabel(t))}</span>`;
 
   const svg = (p, extra = '') => `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" ${extra}>${p}</svg>`;
   const I = {
@@ -174,7 +176,7 @@
         </div>
       </a>
       <div class="tour-body">
-        <div class="tour-region"><span>${esc(regionLabel(t))}${t.country && t.region === 'intl' ? ' · ' + esc(t.country) : ''}</span><span class="status ${t.status}">${esc(statusLabel(t))}</span></div>
+        <div class="tour-region"><span>${flagImg(t)}${esc(regionLabel(t))}${t.country && t.region === 'intl' ? ' · ' + esc(t.country) : ''}</span>${statusPill(t)}</div>
         <h3><a href="${pkgUrl(t)}">${esc(t.name)}</a></h3>
         <p class="tour-intro">${esc(t.summary)}</p>
         <ul class="tour-highlights">
@@ -218,7 +220,8 @@
       <article class="offer-card reveal" style="--d:${i * 0.1}s" data-tilt>
         <a class="offer-media" href="${pkgUrl(t)}"><img src="${wix(t.image, 700, 900, t.imageAlign)}" alt="${esc(t.alt)}" loading="lazy"><span class="offer-ribbon">Special offer</span></a>
         <div class="offer-body">
-          <span class="offer-kicker">${I.plane}${esc(t.departure.split(' (')[0])} departure · ${esc(t.duration)}</span>
+          <span class="offer-kicker">${flagImg(t)}${esc(t.country)} · ${I.plane}${esc(t.departure.split(' (')[0])} departure · ${esc(t.duration)}</span>
+          ${statusPill(t)}
           <h3><a href="${pkgUrl(t)}">${esc(t.name)}</a></h3>
           <p>${esc(t.summary)}</p>
           <div class="offer-foot">
@@ -303,10 +306,10 @@
           <nav class="breadcrumb" aria-label="Breadcrumb"><a href="index.html">Home</a>${I.left.replace('m15 18-6-6 6-6', 'm9 18 6-6-6-6')}<a href="tours.html">Tour Packages</a>${I.left.replace('m15 18-6-6 6-6', 'm9 18 6-6-6-6')}<span>${esc(region)}</span></nav>
           <div class="chips pkg-chips">
             ${t.badge ? `<span class="pill ${t.status === 'offer' ? 'orange' : 'gold'}">${esc(t.badge)}</span>` : ''}
-            <span class="pill glass">${I.pin}${esc(region)}${t.country && t.region === 'intl' ? ' · ' + esc(t.country) : ''}</span>
+            <span class="pill glass">${flagImg(t)}${esc(region)}${t.country && t.region === 'intl' ? ' · ' + esc(t.country) : ''}</span>
             ${t.duration ? `<span class="pill glass">${I.clock}${esc(t.duration)}</span>` : ''}
             ${t.departure ? `<span class="pill glass">${I.plane}Departs ${esc(t.departure)}</span>` : ''}
-            <span class="pill glass">${I.info}${esc(statusLabel(t))}</span>
+            ${statusPill(t)}
           </div>
           <h1 class="h1 pkg-title">${esc(t.name)}</h1>
           ${t.subtitle ? `<p class="pkg-subtitle script">${esc(t.subtitle)}</p>` : ''}
@@ -389,7 +392,7 @@
                 ${t.departure ? `<li>${I.plane}<span>Departs ${esc(t.departure)}</span></li>` : ''}
                 <li>${I.pin}<span>${esc(region)}</span></li>
                 ${hasDates ? `<li>${I.cal}<span>${t.travelDates.length} departure dates in 2026</span></li>` : ''}
-                <li>${I.info}<span>${esc(statusLabel(t))}</span></li>
+                <li>${statusPill(t)}</li>
               </ul>
               <a class="btn btn-primary btn-block btn-lg" href="contact.html?service=tour&package=${encodeURIComponent(t.id)}">${ctaLabel(t)} ${I.arrow}</a>
               <a class="btn btn-outline btn-block" href="${CONFIG.messenger}" target="_blank" rel="noopener">${I.msg} Message us on Facebook</a>

@@ -169,6 +169,46 @@
 /* ---------- Buttons: subtle press ---------- */
 .btn:active { transform: translateY(1px) scale(.99); }
 
+/* ---------- Country flags ---------- */
+.flag { display: inline-block; width: 20px; height: 15px; border-radius: 3px; object-fit: cover; box-shadow: 0 0 0 1px rgba(50,65,88,.18); vertical-align: -3px; margin-right: 7px; }
+.pkg-chips .flag { width: 22px; height: 16px; }
+.offer-kicker .flag { margin-right: 4px; }
+
+/* ---------- Package status highlight ---------- */
+.status-pill { display: inline-flex; align-items: center; gap: 7px; padding: 5px 11px; border-radius: 999px; font-size: .72rem; font-weight: 800; letter-spacing: .06em; text-transform: uppercase; white-space: nowrap; line-height: 1.2; }
+.status-pill i { width: 8px; height: 8px; border-radius: 50%; background: currentColor; box-shadow: 0 0 0 3px color-mix(in srgb, currentColor 22%, transparent); animation: statusPulse 2.2s var(--ease) infinite; }
+.status-pill.offer { background: var(--orange); color: #fff; box-shadow: 0 6px 16px -8px rgba(246,147,30,.9); }
+.status-pill.offer i { background: #fff; box-shadow: 0 0 0 3px rgba(255,255,255,.35); }
+.status-pill.available { background: #e3f6ea; color: #157a42; }
+.status-pill.request { background: var(--blue-soft); color: var(--blue-2); }
+.status-pill.soon { background: var(--gold-soft); color: #8a5a00; }
+.status-pill.soon i { animation: none; }
+.tour-region .status-pill { font-size: .66rem; padding: 4px 9px; }
+.pkg-chips .status-pill { font-size: .78rem; padding: 7px 13px; }
+.offer-body .status-pill { align-self: flex-start; }
+.pkg-side .meta .status-pill { font-size: .72rem; }
+@keyframes statusPulse { 0%, 100% { transform: scale(1); } 50% { transform: scale(1.25); } }
+
+/* ---------- Compact footer ---------- */
+.footer { padding: 34px 0 14px; }
+.footer::before { display: none; }
+.footer-grid { grid-template-columns: 1.3fr 1fr 1.15fr 1.45fr; gap: 26px; }
+.footer .logo-plate { padding: 6px 10px; border-radius: 10px; }
+.footer .logo-plate img { height: 34px; }
+.footer .brand-blurb { margin-top: 10px; font-size: .82rem; line-height: 1.55; max-width: 36ch; }
+.footer h4 { font-size: .7rem; letter-spacing: .12em; margin-bottom: 10px; }
+.footer p, .footer-links a, .footer-contact li { font-size: .84rem; line-height: 1.5; }
+.footer-links { gap: 5px; }
+.footer-contact { gap: 8px; }
+.footer-contact svg { width: 16px; height: 16px; margin-top: 1px; }
+.socials { margin-top: 12px; gap: 8px; }
+.socials a { width: 34px; height: 34px; border-radius: 9px; }
+.socials a svg { width: 15px; height: 15px; }
+.footer-bottom { margin-top: 22px; padding-top: 14px; font-size: .78rem; gap: 8px 18px; align-items: center; }
+.footer-bottom .powered { margin-left: auto; }
+.footer-bottom .powered a { color: var(--gold); font-weight: 800; letter-spacing: .02em; }
+.footer-bottom .powered a:hover { color: #fff; }
+
 /* ---------- Responsive ---------- */
 @media (max-width: 1100px) {
   .offers-grid { grid-template-columns: 1fr 1fr; }

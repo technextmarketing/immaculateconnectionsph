@@ -133,7 +133,7 @@ window.IC = window.IC || {};
       id: 'danang-6d4n',
       name: 'Da Nang Charter Flight 6D4N Tour',
       subtitle: 'Out Manila · Special offer',
-      region: 'intl', country: 'Vietnam', duration: '6 days 4 nights', days: 6, status: 'offer', badge: 'Special offer', featured: true,
+      region: 'intl', country: 'Vietnam', flag: 'vn', duration: '6 days 4 nights', days: 6, status: 'offer', badge: 'Special offer', featured: true,
       departure: 'Manila (NAIA)', price: { from: 23888, label: 'Starts at', unit: 'per pax' },
       image: '952787_0db097d807b14f5b882dbfd77aa54bce~mv2.png', imageAlign: 't',
       alt: 'Da Nang charter flight 6D4N tour poster: Ba Na Hills and the Golden Bridge',
@@ -165,7 +165,7 @@ window.IC = window.IC || {};
       id: 'danang-5d3n',
       name: 'Da Nang Charter Flight 5D3N Tour',
       subtitle: 'Out Manila · Special offer',
-      region: 'intl', country: 'Vietnam', duration: '5 days 3 nights', days: 5, status: 'offer', badge: 'Special offer', featured: true,
+      region: 'intl', country: 'Vietnam', flag: 'vn', duration: '5 days 3 nights', days: 5, status: 'offer', badge: 'Special offer', featured: true,
       departure: 'Manila (NAIA)', price: { from: 21888, label: 'Starts at', unit: 'per pax' },
       image: '952787_3194edd0c0244a54bafb5f0a2625919a~mv2.png', imageAlign: 't',
       alt: 'Da Nang charter flight 5D3N tour poster',
@@ -195,7 +195,7 @@ window.IC = window.IC || {};
       id: 'hanoi-sapa-halong-4d3n',
       name: 'Hanoi – Sapa – Ha Long Bay 4D3N Tour',
       subtitle: 'Out Cebu · Special offer',
-      region: 'intl', country: 'Vietnam', duration: '4 days 3 nights', days: 4, status: 'offer', badge: 'Special offer', featured: true,
+      region: 'intl', country: 'Vietnam', flag: 'vn', duration: '4 days 3 nights', days: 4, status: 'offer', badge: 'Special offer', featured: true,
       departure: 'Cebu (Mactan-Cebu International)', price: { from: 32888, label: 'From', unit: 'all-in per person' },
       image: '952787_0f90501df956446f93adb797c7e9f787~mv2.png', imageAlign: 't', hero: '11062b_12e8394318ad4042acc3831d320a0e53~mv2.jpg',
       alt: 'Hanoi, Sapa and Ha Long Bay 4D3N tour poster',
@@ -227,7 +227,7 @@ window.IC = window.IC || {};
     {
       id: 'bohol-breezes',
       name: 'Bohol Breezes: Embrace Island Serenity!',
-      region: 'bohol', country: 'Philippines', duration: 'Day tour', days: 1, status: 'available', badge: 'Featured', featured: true,
+      region: 'bohol', country: 'Philippines', flag: 'ph', duration: 'Day tour', days: 1, status: 'available', badge: 'Featured', featured: true,
       departure: 'Cebu City pier', price: null,
       image: '952787_c790bde9bfb74673a9c563990ab577d1~mv2.jpg', alt: 'Bohol countryside tour',
       gallery: ['952787_c790bde9bfb74673a9c563990ab577d1~mv2.jpg', '952787_6a8b5ab3b00d41bcb1a8915073aa4861~mv2.jpg', '952787_2d330c92a5d342099b7d4258256ffa11~mv2.jpg'],
@@ -245,7 +245,7 @@ window.IC = window.IC || {};
     {
       id: 'camotes-discover',
       name: 'Discover Enchanting Camotes',
-      region: 'bohol', country: 'Philippines', duration: '2 days 1 night', days: 2, status: 'available', badge: '', featured: true,
+      region: 'bohol', country: 'Philippines', flag: 'ph', duration: '2 days 1 night', days: 2, status: 'available', badge: '', featured: true,
       departure: 'Cebu (Danao port)', price: null,
       image: '952787_74c14938b43548f8a3241d08e1b5c4df~mv2.jpg', alt: 'Camotes Island beach',
       gallery: ['952787_74c14938b43548f8a3241d08e1b5c4df~mv2.jpg', '952787_250d67a9fabf4973bcde54f948a225b3~mv2.jpg', '952787_3029b36427494266a8e954d4d7b8542c~mv2.jpg'],
@@ -262,7 +262,7 @@ window.IC = window.IC || {};
     {
       id: 'camotes-tudela',
       name: 'Camotes Charms: Lakwatsa sa Tudela',
-      region: 'bohol', country: 'Philippines', duration: '2 days 1 night', days: 2, status: 'available', badge: '', featured: false,
+      region: 'bohol', country: 'Philippines', flag: 'ph', duration: '2 days 1 night', days: 2, status: 'available', badge: '', featured: false,
       departure: 'Cebu (Danao port)', price: null,
       image: '952787_22b054e923d24111a5d007fbe1fd048f~mv2.jpg', alt: 'Tudela, Camotes Islands',
       gallery: ['952787_22b054e923d24111a5d007fbe1fd048f~mv2.jpg', '952787_250d67a9fabf4973bcde54f948a225b3~mv2.jpg'],
@@ -281,7 +281,7 @@ window.IC = window.IC || {};
     {
       id: 'cebu-highlands',
       name: 'Cebu Highlands Vista Tour',
-      region: 'cebu', country: 'Philippines', duration: 'Day tour', days: 1, status: 'available', badge: '', featured: true,
+      region: 'cebu', country: 'Philippines', flag: 'ph', duration: 'Day tour', days: 1, status: 'available', badge: '', featured: true,
       departure: 'Cebu City hotels', price: null,
       image: '952787_ef8a0cd30f94496d9491f4d1caa3f202~mv2.jpg', alt: 'Cebu highlands viewpoint',
       gallery: ['952787_ef8a0cd30f94496d9491f4d1caa3f202~mv2.jpg'],
@@ -298,7 +298,7 @@ window.IC = window.IC || {};
     {
       id: 'queen-city',
       name: 'Queen City Tour: Cebu',
-      region: 'cebu', country: 'Philippines', duration: 'Day tour', days: 1, status: 'available', badge: 'Heritage', featured: true,
+      region: 'cebu', country: 'Philippines', flag: 'ph', duration: 'Day tour', days: 1, status: 'available', badge: 'Heritage', featured: true,
       departure: 'Cebu City hotels', price: null,
       image: '952787_23bb46c7551540d4b6631f9ceaf12911~mv2.jpg', alt: 'Fort San Pedro, Cebu City',
       gallery: ['952787_23bb46c7551540d4b6631f9ceaf12911~mv2.jpg'],
@@ -315,7 +315,7 @@ window.IC = window.IC || {};
     {
       id: 'twin-city',
       name: 'Twin City Tour: Cebu',
-      region: 'cebu', country: 'Philippines', duration: 'Day tour', days: 1, status: 'available', badge: '', featured: false,
+      region: 'cebu', country: 'Philippines', flag: 'ph', duration: 'Day tour', days: 1, status: 'available', badge: '', featured: false,
       departure: 'Cebu City or Mactan hotels', price: null,
       image: '952787_fe368fa20ed346b78f71f7a717b270fd~mv2.jpg', alt: 'Marcelo Fernan Bridge between Cebu and Mactan',
       gallery: ['952787_fe368fa20ed346b78f71f7a717b270fd~mv2.jpg'],
@@ -334,7 +334,7 @@ window.IC = window.IC || {};
     {
       id: 'siargao',
       name: 'Siargao Island Getaway',
-      region: 'visayas', country: 'Philippines', duration: '3 days 2 nights', days: 3, status: 'request', badge: '', featured: false,
+      region: 'visayas', country: 'Philippines', flag: 'ph', duration: '3 days 2 nights', days: 3, status: 'request', badge: '', featured: false,
       departure: 'Cebu', price: null,
       image: '952787_1d076b1fc8f14f5ab72956eff2c0433e~mv2.jpg', alt: 'Island getaway',
       gallery: ['952787_1d076b1fc8f14f5ab72956eff2c0433e~mv2.jpg'],
@@ -346,7 +346,7 @@ window.IC = window.IC || {};
     {
       id: 'boracay-bliss',
       name: 'Boracay Bliss',
-      region: 'visayas', country: 'Philippines', duration: '', days: 0, status: 'soon', badge: 'Coming soon', featured: false,
+      region: 'visayas', country: 'Philippines', flag: 'ph', duration: '', days: 0, status: 'soon', badge: 'Coming soon', featured: false,
       departure: 'Cebu', price: null,
       image: '952787_7c95bd58cf3440f480b04e9672c06802~mv2.jpg', alt: 'Puka Beach, Boracay',
       gallery: ['952787_7c95bd58cf3440f480b04e9672c06802~mv2.jpg', '952787_aa431e7ae48a45f59960aac33ffd6c8b~mv2.jpg'],
@@ -358,7 +358,7 @@ window.IC = window.IC || {};
     {
       id: 'el-nido',
       name: 'El Nido Escapade: Memory Keepers',
-      region: 'visayas', country: 'Philippines', duration: '', days: 0, status: 'soon', badge: 'Coming soon', featured: false,
+      region: 'visayas', country: 'Philippines', flag: 'ph', duration: '', days: 0, status: 'soon', badge: 'Coming soon', featured: false,
       departure: 'Cebu', price: null,
       image: '952787_1bb9e51e18084c429eedba7d528d9d33~mv2.jpg', alt: 'El Nido, Palawan',
       gallery: ['952787_1bb9e51e18084c429eedba7d528d9d33~mv2.jpg', '952787_a67b7dcf552942a294501fc5c8a044f8~mv2.jpg'],
@@ -370,7 +370,7 @@ window.IC = window.IC || {};
     {
       id: 'coron',
       name: 'Coron Captures',
-      region: 'visayas', country: 'Philippines', duration: '', days: 0, status: 'soon', badge: 'Coming soon', featured: false,
+      region: 'visayas', country: 'Philippines', flag: 'ph', duration: '', days: 0, status: 'soon', badge: 'Coming soon', featured: false,
       departure: 'Cebu', price: null,
       image: '952787_c707827028d143a594404076e61331be~mv2.jpg', alt: 'Coron, Palawan',
       gallery: ['952787_c707827028d143a594404076e61331be~mv2.jpg'],
@@ -384,7 +384,7 @@ window.IC = window.IC || {};
     {
       id: 'hongkong-4d3n',
       name: 'Hong Kong 4 Days 3 Nights',
-      region: 'intl', country: 'Hong Kong', duration: '4 days 3 nights', days: 4, status: 'request', badge: '', featured: false,
+      region: 'intl', country: 'Hong Kong', flag: 'hk', duration: '4 days 3 nights', days: 4, status: 'request', badge: '', featured: false,
       departure: 'Cebu or Manila', price: null,
       image: '952787_53bbdb7f81aa402798a6417db52d1fd3~mv2.jpg', alt: 'Hong Kong harbour ferry',
       gallery: ['952787_53bbdb7f81aa402798a6417db52d1fd3~mv2.jpg'],
@@ -396,7 +396,7 @@ window.IC = window.IC || {};
     {
       id: 'hongkong-3d2n',
       name: 'Hong Kong 3 Days 2 Nights',
-      region: 'intl', country: 'Hong Kong', duration: '3 days 2 nights', days: 3, status: 'request', badge: '', featured: false,
+      region: 'intl', country: 'Hong Kong', flag: 'hk', duration: '3 days 2 nights', days: 3, status: 'request', badge: '', featured: false,
       departure: 'Cebu or Manila', price: null,
       image: '952787_53bbdb7f81aa402798a6417db52d1fd3~mv2.jpg', alt: 'Hong Kong harbour ferry',
       gallery: ['952787_53bbdb7f81aa402798a6417db52d1fd3~mv2.jpg'],
@@ -408,7 +408,7 @@ window.IC = window.IC || {};
     {
       id: 'japan',
       name: 'Japan Tours',
-      region: 'intl', country: 'Japan', duration: 'Multiple itineraries', days: 5, status: 'request', badge: '', featured: false,
+      region: 'intl', country: 'Japan', flag: 'jp', duration: 'Multiple itineraries', days: 5, status: 'request', badge: '', featured: false,
       departure: 'Cebu or Manila', price: null,
       image: '11062b_c9580f5a049648adbbf253ef4e9b7acd~mv2.jpg', alt: 'Group travel',
       gallery: ['11062b_c9580f5a049648adbbf253ef4e9b7acd~mv2.jpg'],
@@ -420,7 +420,7 @@ window.IC = window.IC || {};
     {
       id: 'china',
       name: 'China Tours',
-      region: 'intl', country: 'China', duration: 'Multiple itineraries', days: 5, status: 'request', badge: '', featured: false,
+      region: 'intl', country: 'China', flag: 'cn', duration: 'Multiple itineraries', days: 5, status: 'request', badge: '', featured: false,
       departure: 'Cebu or Manila', price: null,
       image: '952787_59a43ffc36424aeb98a78f9b34cf3390~mv2.jpg', alt: 'Street scene in Asia',
       gallery: ['952787_59a43ffc36424aeb98a78f9b34cf3390~mv2.jpg'],
