@@ -1,6 +1,8 @@
 # Immaculate Connections Travel Agency — website redesign
 
-Redesign of [immaculateconnectionsph.com](https://www.immaculateconnectionsph.com/) as a fast, static, five-page site. No build step and no framework: upload the folder to any static host or serve it with GitHub Pages.
+Redesign of [immaculateconnectionsph.com](https://www.immaculateconnectionsph.com/) as a fast, static, five-page site.
+
+**Live preview:** https://technextmarketing.github.io/immaculateconnectionsph/ No build step and no framework: upload the folder to any static host or serve it with GitHub Pages.
 
 All copy, packages, inclusions, places, photos and the logo come from the agency's existing website. Photos are served from the agency's own Wix media library (`static.wixstatic.com`).
 
@@ -33,7 +35,7 @@ Optional hardening after activation: FormSubmit provides a hashed alias for the 
 
 ## Publishing
 
-The repository is set up for GitHub Pages (root of the `main` branch). Any static host works:
+Every push to `main` is deployed to GitHub Pages by `.github/workflows/deploy-pages.yml` (Pages source: GitHub Actions). The live preview is https://technextmarketing.github.io/immaculateconnectionsph/. To move to the agency's own domain, point the domain at GitHub Pages and set it under Settings → Pages, or upload the folder to any static host:
 
 ```bash
 python -m http.server 8080 --directory .
