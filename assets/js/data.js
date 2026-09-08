@@ -13,7 +13,7 @@ window.IC = window.IC || {};
 (function (IC) {
   const MEDIA = 'https://static.wixstatic.com/media/';
   /** Wix image, optionally resized/cropped: wix(id, width, height, align) */
-  const wix = (id, w, h, al) => (w ? `${MEDIA}${id}/v1/fill/w_${w},h_${h},al_${al || 'c'},q_85/${id}` : `${MEDIA}${id}`);
+  const wix = (id, w, h, al) => (w ? `${MEDIA}${id}/v1/fill/w_${w},h_${h},al_${al || 'c'},q_80,enc_auto/${id}` : `${MEDIA}${id}`);
   IC.wix = wix;
 
   IC.media = {
@@ -36,10 +36,10 @@ window.IC = window.IC || {};
     cebu:    { label: 'Cebu', blurb: 'Day tours around the Queen City of the South and its highlands.' },
     bohol:   { label: 'Bohol & Camotes', blurb: 'Island escapes a short boat ride from Cebu.' },
     visayas: { label: 'Boracay, Palawan & Siargao', blurb: 'The Philippines’ most famous beaches and islands.' },
-    intl:    { label: 'International', blurb: 'Vietnam, Hong Kong, Japan and China with our partner operators.' }
+    intl:    { label: 'International', blurb: 'Vietnam, China and Japan with our partner airlines and operators.' }
   };
 
-  IC.statusLabel = { available: 'Available now', offer: 'Special offer', soon: 'Coming soon', request: 'Details on request' };
+  IC.statusLabel = { available: 'Available now', offer: 'Special offer', soon: 'Coming soon', request: 'Details on request', past: 'Departed' };
 
   /* ---------- Location guides (general information) ---------- */
   IC.placeInfo = {
@@ -118,9 +118,19 @@ window.IC = window.IC || {};
     'Tip Top Island': 'A small island in Ha Long Bay with a beach and a lookout over the karsts.',
     'Fighting Cock Island': 'Ha Long Bay’s emblematic pair of rocks shaped like two roosters facing each other.',
     'Hanoi World': 'A themed entertainment complex in Hanoi with European-style canals and streets (gondola ride not included).',
-    // Japan & China
-    'Japan': 'Tokyo, Osaka, Kyoto and beyond: temples, shopping districts, seasonal blossoms and famously efficient travel.',
-    'China': 'From Beijing’s Great Wall to Shanghai’s skyline and the karsts of Guilin, arranged with partner operators.'
+    // China
+    'Shanghai': 'China’s largest city, where the 1920s banks of the Bund face the futuristic Lujiazui skyline across the Huangpu River.',
+    'The Bund & Lujiazui Skyline': 'Shanghai’s riverside promenade opposite the Oriental Pearl Tower and the 632-metre Shanghai Tower, best seen lit up at night.',
+    'Mini Kyoto Street': 'A Japanese-style, lantern-lit shopping street in Shanghai that has become a popular photo spot, nicknamed “Mini Kyoto”.',
+    'Kunming': 'Yunnan’s capital, the “Spring City”, known for its mild climate, Green Lake, Yuantong Temple and the Stone Forest nearby.',
+    'Chuxiong': 'A Yi-minority prefecture between Kunming and Dali with ancient towns, torch-festival culture and mountain scenery.',
+    'Dali': 'A walled old town on the shore of Erhai Lake beneath the Cangshan mountains, home of the Bai people and the Three Pagodas.',
+    'Lijiang': 'A UNESCO World Heritage old town of canals and cobbled lanes below the Jade Dragon Snow Mountain.',
+    'Shangri-La': 'A Tibetan plateau town at about 3,300 metres with the Songzanlin Monastery, alpine meadows and snow-capped peaks.',
+    // Japan
+    'Tokyo': 'Japan’s capital: Shibuya Crossing, Shinjuku, Asakusa’s Senso-ji temple, Tsukiji food stalls and world-class shopping.',
+    'Yokohama': 'Japan’s second city on Tokyo Bay, with the Minato Mirai waterfront, Cosmo World, Chinatown and the Red Brick Warehouse.',
+    'Mt. Fuji': 'Japan’s highest peak at 3,776 metres, viewed from the Fuji Five Lakes, Arakurayama Sengen Park and the 5th Station (weather permitting).'
   };
 
   const INC_CEBU = ['Air-conditioned van', 'Licensed tour guide', 'Entrance fees', 'Mineral water', 'Mini pasalubong pack'];
@@ -134,7 +144,7 @@ window.IC = window.IC || {};
       name: 'Da Nang Charter Flight 6D4N Tour',
       subtitle: 'Out Manila · Special offer',
       region: 'intl', country: 'Vietnam', flag: 'vn', duration: '6 days 4 nights', days: 6, status: 'offer', badge: 'Special offer', featured: true,
-      departure: 'Manila (NAIA)', price: { from: 23888, label: 'Starts at', unit: 'per pax' },
+      departure: 'Manila (NAIA)', price: { from: 23888, label: 'Starts at', unit: 'per pax' }, year: 2026, ends: '2026-12-31',
       image: '952787_0db097d807b14f5b882dbfd77aa54bce~mv2.png', imageAlign: 't',
       alt: 'Da Nang charter flight 6D4N tour poster: Ba Na Hills and the Golden Bridge',
       gallery: ['952787_0db097d807b14f5b882dbfd77aa54bce~mv2.png', '952787_8b207104bf0d43e5aa4c288936e9fec3~mv2.png'],
@@ -166,7 +176,7 @@ window.IC = window.IC || {};
       name: 'Da Nang Charter Flight 5D3N Tour',
       subtitle: 'Out Manila · Special offer',
       region: 'intl', country: 'Vietnam', flag: 'vn', duration: '5 days 3 nights', days: 5, status: 'offer', badge: 'Special offer', featured: true,
-      departure: 'Manila (NAIA)', price: { from: 21888, label: 'Starts at', unit: 'per pax' },
+      departure: 'Manila (NAIA)', price: { from: 21888, label: 'Starts at', unit: 'per pax' }, year: 2026, ends: '2026-12-26',
       image: '952787_3194edd0c0244a54bafb5f0a2625919a~mv2.png', imageAlign: 't',
       alt: 'Da Nang charter flight 5D3N tour poster',
       gallery: ['952787_3194edd0c0244a54bafb5f0a2625919a~mv2.png', '952787_8b207104bf0d43e5aa4c288936e9fec3~mv2.png'],
@@ -196,7 +206,7 @@ window.IC = window.IC || {};
       name: 'Hanoi – Sapa – Ha Long Bay 4D3N Tour',
       subtitle: 'Out Cebu · Special offer',
       region: 'intl', country: 'Vietnam', flag: 'vn', duration: '4 days 3 nights', days: 4, status: 'offer', badge: 'Special offer', featured: true,
-      departure: 'Cebu (Mactan-Cebu International)', price: { from: 32888, label: 'From', unit: 'all-in per person' },
+      departure: 'Cebu (Mactan-Cebu International)', price: { from: 32888, label: 'From', unit: 'all-in per person' }, year: 2026, ends: '2026-12-31',
       image: '952787_0f90501df956446f93adb797c7e9f787~mv2.png', imageAlign: 't', hero: '11062b_12e8394318ad4042acc3831d320a0e53~mv2.jpg',
       alt: 'Hanoi, Sapa and Ha Long Bay 4D3N tour poster',
       gallery: ['952787_0f90501df956446f93adb797c7e9f787~mv2.png', '952787_2886565a745a486fa6336ab8b57c9a15~mv2.png', '11062b_12e8394318ad4042acc3831d320a0e53~mv2.jpg'],
@@ -332,18 +342,6 @@ window.IC = window.IC || {};
 
     /* ---------------- Boracay, Palawan & Siargao ---------------- */
     {
-      id: 'siargao',
-      name: 'Siargao Island Getaway',
-      region: 'visayas', country: 'Philippines', flag: 'ph', duration: '3 days 2 nights', days: 3, status: 'request', badge: '', featured: false,
-      departure: 'Cebu', price: null,
-      image: '952787_1d076b1fc8f14f5ab72956eff2c0433e~mv2.jpg', alt: 'Island getaway',
-      gallery: ['952787_1d076b1fc8f14f5ab72956eff2c0433e~mv2.jpg'],
-      summary: 'Three days and two nights on the surfing capital of the Philippines. Full itinerary and inclusions are sent for your dates on request.',
-      overview: 'Siargao, off the coast of Surigao del Norte, is famous for the Cloud 9 surf break, palm-lined roads, island hopping to Naked, Daku and Guyam islands and the jade-green Sugba Lagoon. Tell us your travel dates and group size and we will prepare the itinerary, accommodation options and quotation.',
-      inclusions: ['Itinerary and inclusions provided on request'], exclusions: [],
-      places: ['Siargao Island']
-    },
-    {
       id: 'boracay-bliss',
       name: 'Boracay Bliss',
       region: 'visayas', country: 'Philippines', flag: 'ph', duration: '', days: 0, status: 'soon', badge: 'Coming soon', featured: false,
@@ -382,52 +380,62 @@ window.IC = window.IC || {};
 
     /* ---------------- Other international ---------------- */
     {
-      id: 'hongkong-4d3n',
-      name: 'Hong Kong 4 Days 3 Nights',
-      region: 'intl', country: 'Hong Kong', flag: 'hk', duration: '4 days 3 nights', days: 4, status: 'request', badge: '', featured: false,
-      departure: 'Cebu or Manila', price: null,
-      image: '952787_53bbdb7f81aa402798a6417db52d1fd3~mv2.jpg', alt: 'Hong Kong harbour ferry',
-      gallery: ['952787_53bbdb7f81aa402798a6417db52d1fd3~mv2.jpg'],
-      summary: 'Four days in Hong Kong with our partner operators. Send your dates and group size for the full itinerary, hotel options and quotation.',
-      overview: 'Hong Kong packs Victoria Harbour, the Peak Tram, Disneyland, Ocean Park, Ngong Ping and legendary dim sum into a compact, easy-to-navigate city. Our 4D3N programme is quoted for your travel dates with hotel options and optional Macau add-ons.',
-      inclusions: ['Itinerary, hotel and inclusions provided on request'], exclusions: [],
-      places: ['Hong Kong']
+      id: 'shanghai-mini-kyoto-5d4n',
+      name: 'Shanghai Mini Kyoto 5D4N Tour',
+      subtitle: 'Out Manila · Juneyao Air',
+      region: 'intl', country: 'China', flag: 'cn', duration: '5 days 4 nights', days: 5, status: 'offer', badge: 'Special offer', featured: false,
+      departure: 'Manila (NAIA)', price: { from: 369, currency: 'USD', label: 'From', unit: 'all-in per person' }, year: 2026, ends: '2026-07-29',
+      image: '952787_00f199ad62fa4e719b784a358f9f0b18~mv2.png', imageAlign: 't',
+      alt: 'Shanghai Mini Kyoto 5D4N tour poster',
+      gallery: ['952787_00f199ad62fa4e719b784a358f9f0b18~mv2.png'],
+      summary: 'Five days in Shanghai on Juneyao Air from Manila: the Bund and Lujiazui skyline, the lantern-lit “Mini Kyoto” street, four nights with breakfast and an English-speaking guide.',
+      overview: 'A single fixed departure (25–29 July 2026) to China’s largest city. Economy airfare with Juneyao Airlines from Manila, four nights in a choice hotel on twin sharing with daily breakfast, a private coach with an English-speaking guide, sightseeing with first-way entrance fees and meals as listed. Ask us about the next Shanghai schedule.',
+      travelDates: [{ d: 'Jul 25–29' }],
+      travelDatesNote: 'Single departure, 25–29 July 2026 (5D4N).',
+      inclusions: ['Economy airfare and tax via Juneyao Airlines (round trip)', 'Baggage allowance: 1 pc (23 kg) check-in + 1 pc (5 kg) carry-on', '4 nights room accommodation based on twin sharing at choice hotel with daily hotel breakfast (triple room not guaranteed)', 'Private coach with English-speaking tour guide', 'Sightseeing tours as specified, including the first-way entrance fee needed', 'Meals as listed'],
+      exclusions: ['Expenses of a personal nature such as telephone calls and mini bar', 'Travel insurance', 'Fuel surcharge USD 30 per pax, subject to change', 'Philippine travel tax PHP 1,620 per pax, paid directly at the airport', 'China group visa USD 40 per pax', 'Tips for driver and guide USD 20 per pax', 'Single supplement USD 90 per pax'],
+      notes: ['Minor with bed (11–17 yrs): USD 489 per pax. Child without bed (2–10 yrs): USD 419 per pax.'],
+      places: ['Shanghai', 'The Bund & Lujiazui Skyline', 'Mini Kyoto Street'],
+      posters: ['952787_00f199ad62fa4e719b784a358f9f0b18~mv2.png']
     },
     {
-      id: 'hongkong-3d2n',
-      name: 'Hong Kong 3 Days 2 Nights',
-      region: 'intl', country: 'Hong Kong', flag: 'hk', duration: '3 days 2 nights', days: 3, status: 'request', badge: '', featured: false,
-      departure: 'Cebu or Manila', price: null,
-      image: '952787_53bbdb7f81aa402798a6417db52d1fd3~mv2.jpg', alt: 'Hong Kong harbour ferry',
-      gallery: ['952787_53bbdb7f81aa402798a6417db52d1fd3~mv2.jpg'],
-      summary: 'A long-weekend Hong Kong escape. Itinerary and quotation are prepared for your dates on request.',
-      overview: 'The shorter Hong Kong programme fits a long weekend: a theme-park day or a city day with the Peak and Star Ferry, plus free time for shopping in Mong Kok and Tsim Sha Tsui. Quoted for your travel dates with hotel options.',
-      inclusions: ['Itinerary, hotel and inclusions provided on request'], exclusions: [],
-      places: ['Hong Kong']
+      id: 'charming-yunnan-8d7n',
+      name: 'Charming Yunnan 8D7N Tour',
+      subtitle: 'Out Manila · China Southern Airlines',
+      region: 'intl', country: 'China', flag: 'cn', duration: '8 days 7 nights', days: 8, status: 'offer', badge: 'Special offer', featured: true,
+      departure: 'Manila (NAIA)', price: { from: 1488, currency: 'USD', label: 'From', unit: 'all-in per person' }, year: 2026, ends: '2026-12-25',
+      image: '952787_1c684e10be094ca584af9b4cf5a04abe~mv2.png', imageAlign: 't',
+      alt: 'Charming Yunnan 8D7N tour poster: Kunming, Dali, Lijiang and Shangri-La',
+      gallery: ['952787_1c684e10be094ca584af9b4cf5a04abe~mv2.png'],
+      summary: 'Kunming, Dali, Lijiang and Shangri-La in eight days: China Southern flights from Manila, 5-star hotels, a high-speed train ride and two upgraded lunch buffets.',
+      overview: 'Yunnan is China’s most varied province, from the spring-like capital Kunming to the Bai old town of Dali on Erhai Lake, UNESCO-listed Lijiang beneath the Jade Dragon Snow Mountain and the Tibetan plateau town of Shangri-La. This eight-day programme flies China Southern from Manila, stays in 5-star hotels throughout, includes the Dali–Kunming high-speed train in 2nd class, first entrance tickets and in-park transport at every scenic spot, and upgrades two lunches to buffets, one of them seafood.',
+      travelDates: [{ d: 'Sep 15–22' }, { d: 'Oct 29–Nov 5', add: 200, cur: 'USD' }, { d: 'Nov 6–13' }, { d: 'Nov 20–27', add: 100, cur: 'USD' }, { d: 'Dec 9–16', add: 100, cur: 'USD' }, { d: 'Dec 18–25', add: 400, cur: 'USD' }],
+      travelDatesNote: 'Travel dates 2026. Surcharges shown are in US dollars per pax.',
+      inclusions: ['Economy airfare and tax with China Southern Airlines (round trip)', 'Baggage allowance: 1 pc 23 kg check-in and 7 kg hand carry', 'High-speed train Dali to Kunming, 2nd-class seats', '7 nights room accommodation based on twin sharing at choice 5★ hotels with daily hotel breakfast', 'Private bus with English-speaking tour guide', 'Sightseeing items as specified, including first entrance tickets for all scenic spots and listed in-park transportation fees', 'Meals: breakfast and one main meal per day, with one meal upgraded to a seafood buffet', 'Upgrade to 2 lunch buffets', 'All seats with meal on the plane (each flight has 6 business-class seats)'],
+      exclusions: ['Personal expenses such as telephone calls and mini bar', 'Travel insurance', 'Philippine travel tax USD 30 per pax (collected with tour fee)', 'China group visa USD 40 per pax (collected with tour fee)', 'Tips for driver and guide USD 48 per pax (collected with tour fee)', 'Single supplement USD 250 per pax', 'Fuel surcharge (subject to change), estimated USD 75 per pax'],
+      hotels: ['5★ hotel in Kunming (X/X/X)', '5★ hotel in Chuxiong (B/L/D)', '5★ hotel in Lijiang (B/L/X)', '5★ hotel in Dali (B/L/D)', '5★ hotel in Shangri-La (B/L/D)'],
+      notes: ['Child with bed (11–17 yrs): same rate as adults. Child without bed (2–10 yrs): USD 1,368 per pax.', 'Meal codes: B = breakfast, L = lunch, D = dinner, X = on your own. Hotels are as listed or similar.'],
+      places: ['Kunming', 'Chuxiong', 'Dali', 'Lijiang', 'Shangri-La'],
+      posters: ['952787_1c684e10be094ca584af9b4cf5a04abe~mv2.png']
     },
     {
-      id: 'japan',
-      name: 'Japan Tours',
-      region: 'intl', country: 'Japan', flag: 'jp', duration: 'Multiple itineraries', days: 5, status: 'request', badge: '', featured: false,
-      departure: 'Cebu or Manila', price: null,
-      image: '11062b_c9580f5a049648adbbf253ef4e9b7acd~mv2.jpg', alt: 'Group travel',
-      gallery: ['11062b_c9580f5a049648adbbf253ef4e9b7acd~mv2.jpg'],
-      summary: 'Japan itineraries arranged with our partner operators. Send your preferred dates, cities and group size for options and a quotation.',
-      overview: 'From Tokyo and Mt. Fuji to Osaka, Kyoto and Nara, Japan programmes are arranged with partner operators and quoted per departure, including visa assistance.',
-      inclusions: ['Itinerary, hotel and inclusions provided on request'], exclusions: [],
-      places: ['Japan']
-    },
-    {
-      id: 'china',
-      name: 'China Tours',
-      region: 'intl', country: 'China', flag: 'cn', duration: 'Multiple itineraries', days: 5, status: 'request', badge: '', featured: false,
-      departure: 'Cebu or Manila', price: null,
-      image: '952787_59a43ffc36424aeb98a78f9b34cf3390~mv2.jpg', alt: 'Street scene in Asia',
-      gallery: ['952787_59a43ffc36424aeb98a78f9b34cf3390~mv2.jpg'],
-      summary: 'China itineraries arranged with our partner operators. Send your preferred dates, cities and group size for options and a quotation.',
-      overview: 'Beijing, Shanghai, Guilin and beyond are arranged with partner operators and quoted per departure, including visa assistance.',
-      inclusions: ['Itinerary, hotel and inclusions provided on request'], exclusions: [],
-      places: ['China']
+      id: 'japan-tokyo-fuji-5d4n',
+      name: 'Japan: Tokyo · Yokohama · Mt. Fuji 5D4N Tour',
+      subtitle: 'Out Cebu · Cebu Pacific',
+      region: 'intl', country: 'Japan', flag: 'jp', duration: '5 days 4 nights', days: 5, status: 'offer', badge: 'Special offer', featured: true,
+      departure: 'Cebu (Mactan-Cebu International)', price: { from: 1049, currency: 'USD', label: 'From', unit: 'all-in per person' }, year: 2026, ends: '2027-02-23',
+      image: '952787_bdf86d20b5ef4120a1876cf17c6718f4~mv2.png', imageAlign: 't',
+      alt: 'Japan Tokyo, Yokohama and Mt. Fuji 5D4N tour poster',
+      gallery: ['952787_bdf86d20b5ef4120a1876cf17c6718f4~mv2.png'],
+      summary: 'Winter in Japan direct from Cebu on Cebu Pacific: Tokyo, Yokohama and Mt. Fuji with hotel breakfasts, an English-speaking guide and two upgraded lunch buffets.',
+      overview: 'Fly Cebu Pacific from Mactan for Japan’s winter season: Tokyo’s Asakusa, Shibuya and Shinjuku, the Minato Mirai waterfront and Chinatown of Yokohama, and a Mt. Fuji day with views from the Fuji Five Lakes area. Departures run from December 2026 to February 2027 with hotel breakfasts, a private coach with an English-speaking guide, main entrance tickets and two lunch buffets included.',
+      travelDates: [{ d: 'Dec 19–23', add: 1000 }, { d: 'Dec 25–29', add: 1000 }, { d: 'Jan 8–12', add: 100, y: 2027 }, { d: 'Jan 15–19', add: 200, y: 2027 }, { d: 'Jan 22–26', add: 200, y: 2027 }, { d: 'Feb 5–9', add: 100, y: 2027 }, { d: 'Feb 12–16', add: 100, y: 2027 }, { d: 'Feb 19–23', add: 100, y: 2027 }],
+      travelDatesNote: 'Departures December 2026 to February 2027. Surcharges shown are in pesos per pax.',
+      inclusions: ['Economy airfare and tax via Cebu Pacific (round trip + 1 pc 7 kg hand carry only)', 'Room accommodation based on twin sharing at choice hotel with daily hotel breakfast (poster states 3 nights; please confirm the 4th night with our team)', 'Private coach with English-speaking tour guide', 'Sightseeing tours as specified, including main entrance tickets', 'Meals as listed', 'Upgrade to 2 lunch buffets (as specified in the itinerary)', 'All seats with meal on the plane (each flight has 6 business-class seats)'],
+      exclusions: ['Expenses of a personal nature such as telephone calls and mini bar', 'Extra baggage allowance', 'Travel insurance with Covid-19 coverage', 'Philippine travel tax', 'Visa', 'Tips for driver and guide: USD 5 per pax per day × 4 days = USD 20 per pax', 'Single supplement USD 68 per pax', 'Taxes, surcharges and fees, subject to change'],
+      notes: ['Accommodation is at a choice hotel or similar, twin sharing.'],
+      places: ['Tokyo', 'Yokohama', 'Mt. Fuji'],
+      posters: ['952787_bdf86d20b5ef4120a1876cf17c6718f4~mv2.png']
     }
   ];
 
@@ -442,7 +450,15 @@ window.IC = window.IC || {};
     { id: '952787_d42f442bb8264e678cbc88bdc2824eff~mv2.jpg', shape: 'tall',   title: 'Seminar logistics', sub: 'Meetings & events' },
     { id: '952787_3029b36427494266a8e954d4d7b8542c~mv2.jpg', shape: 'wide',   title: 'Mangodlong Beach', sub: 'Partner resort, Camotes' },
     { id: '952787_f6e5b9acd62049db802bcfd86e7fd352~mv2.jpg', shape: 'wide',   title: 'Participants’ orientation', sub: 'MICE & seminars' },
-    { id: '952787_515cfff1c9a64aa9b330a027322b9e7a~mv2.jpg', shape: 'square', title: 'Air-conditioned transport', sub: 'Vans, coasters & buses' }
+    { id: '952787_515cfff1c9a64aa9b330a027322b9e7a~mv2.jpg', shape: 'square', title: 'Air-conditioned transport', sub: 'Vans, coasters & buses' },
+    { id: '952787_0050a801a0b94a199d0f8d18215c1275~mv2.jpg', shape: 'wide',   title: 'Merlion & Marina Bay Sands', sub: 'Singapore group tour' },
+    { id: '952787_a667b39095f54b15824f7157c48f4afa~mv2.jpg', shape: 'wide',   title: 'Universal Studios Singapore', sub: 'Singapore group tour' },
+    { id: '952787_4ee43fd7e9794e2585f94ff3b0ba89e8~mv2.jpg', shape: 'square', title: 'Underground River', sub: 'Puerto Princesa, Palawan' },
+    { id: '952787_47fb234e9fc643c685154b62a85432c9~mv2.jpg', shape: 'tall',   title: 'Jewel Changi', sub: 'Singapore group tour' },
+    { id: '952787_e0d14697042d448cb553e113bb99895a~mv2.jpg', shape: 'wide',   title: 'Island hopping', sub: 'Boat tour with our guests' },
+    { id: '952787_e3e293ea8aca4eae85457a5a8007e670~mv2.jpg', shape: 'square', title: 'Mangrove walk', sub: 'Camotes Islands' },
+    { id: '952787_3483752836144268b346adf78f3b398f~mv2.jpg', shape: 'wide',   title: 'Malay Heritage Centre', sub: 'Singapore group tour' },
+    { id: '952787_e8ab6be92bd54b05859482cb8c9b5bb2~mv2.jpg', shape: 'square', title: 'Snorkelling', sub: 'Island getaway' }
   ];
 
   IC.hotelPhotos = ['952787_3029b36427494266a8e954d4d7b8542c~mv2.jpg', '952787_26a50047e88545a18d5e6c89816805bc~mv2.jpg', '952787_2c289935d14a4992b20f77b49e988dba~mv2.jpg', '952787_bf04b5da3fbe466388fd7b0ce1011bd7~mv2.jpg'];
@@ -450,7 +466,7 @@ window.IC = window.IC || {};
 
   IC.destinationsTicker = [
     ['Da Nang', 'From ₱23,888 · out Manila'], ['Hanoi · Sapa · Ha Long Bay', 'From ₱32,888 · out Cebu'], ['Bohol', 'Loboc River lunch'], ['Camotes Islands', '2 days 1 night'],
-    ['Cebu City', 'Heritage tours'], ['Cebu Highlands', 'Temple of Leah & Sirao'], ['Mactan', 'Twin City Tour'], ['Siargao', '3 days 2 nights'],
-    ['Hong Kong', '3D2N & 4D3N'], ['Boracay', 'Coming soon'], ['El Nido', 'Coming soon'], ['Coron', 'Coming soon'], ['Japan', 'On request'], ['China', 'On request']
+    ['Cebu City', 'Heritage tours'], ['Cebu Highlands', 'Temple of Leah & Sirao'], ['Mactan', 'Twin City Tour'],
+    ['Charming Yunnan', 'From $1,488 · out Manila'], ['Japan · Tokyo & Mt. Fuji', 'From $1,049 · out Cebu'], ['Boracay', 'Coming soon'], ['El Nido', 'Coming soon'], ['Coron', 'Coming soon']
   ];
 })(window.IC);

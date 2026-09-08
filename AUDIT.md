@@ -135,3 +135,18 @@ Reviewed on the live GitHub Pages build at desktop and mobile widths. Each item 
 - Customer testimonials with permission, and DOT accreditation / DTI numbers for the footer.
 - Confirmed office hours and payment / cancellation terms for the FAQ.
 - Real photos for Siargao, Japan and China (the current cards reuse generic travel photos from the existing site).
+
+## 7. Third round (9 September 2026): missed posters, status, header, performance, mobile
+
+| # | Finding | Action |
+|---|---------|--------|
+| P1 | The home-page "Tour Packages" carousel on the current site holds more itinerary posters than first captured | Scraped the full carousel; transcribed Shanghai Mini Kyoto 5D4N (Juneyao Air, out Manila, from USD 369, 25–29 July 2026), Charming Yunnan 8D7N (China Southern, out Manila, from USD 1,488, six 2026 dates) and Japan Tokyo · Yokohama · Mt. Fuji 5D4N (Cebu Pacific, out Cebu, from USD 1,049, eight dates Dec 2026 – Feb 2027) with inclusions, exclusions, hotels, surcharges and child rates |
+| P2 | Generic "Japan Tours" and "China Tours" placeholders and the Siargao / Hong Kong entries (present only in the site's inquiry dropdown, with no product content) padded the catalogue | Removed; the catalogue now lists only the 15 packages the agency actually publishes (9 local, 6 international) |
+| P3 | No way to tell that a departure had already happened | Automatic "Departed" status when every travel date has passed (Shanghai, July 2026); departed packages sort last, are excluded from the home page, show a notice on their page, and appear under an "Archive: past departures" filter. Individual past dates are greyed out on every package page |
+| P4 | The header logo was a 3956 × 4167 px PNG with a mostly transparent canvas, rendering as a tiny mark and downloading ~200 KB three times per page | Header now uses the bird-and-palms mark (cropped, 140 px) with a text wordmark; footer uses a cropped 120 px logo. Applied to all six pages |
+| P5 | Page lag: multiple `backdrop-filter` blurs over a continuously animated hero image, CSS blur on a 1920 px poster, tilt handlers on every card, PNG posters served full-size | Removed backdrop blurs and the infinite hero zoom, moved tilt to requestAnimationFrame on service and offer cards only, all Wix images now served as WebP (`enc_auto`) at display size with width/height attributes; package hero uses a 960 px blurred image |
+| P6 | "International · Vietnam" labels were redundant | Cards, package pages and breadcrumbs show only the country for overseas packages |
+| P7 | Country flags and status were not visible at a glance | Flag (flagcdn) beside the destination on cards, offer cards and package pages; colour-coded status pills (Special offer, Available now, Details on request, Coming soon, Departed) |
+| P8 | Footer too tall; no agency credit | Compact footer (≈40 % shorter), link columns hidden on phones, "Powered by TechNext" credit |
+| P9 | Mobile audit at 375 px: 4-column footer grid leaked below 640 px; long `<select>` options and the unbreakable email address pushed the contact page 42 px wider than the viewport; icon overlapped the title on the large service card; card buttons overflowed; offer kickers wrapped with a dangling separator | Responsive footer grid; `min-width: 0` on form and card grids with `overflow-wrap: anywhere` on emails; icon placed in flow on small screens; wrapping card buttons; kickers split into separate chips; tighter hero, section and form spacing under 640 px |
+| P10 | Poster copy error on the agency's own Japan poster (it repeats the Vietnam hotels and the Han River optional tour) | Not reproduced on the site; flagged here for the agency to correct |

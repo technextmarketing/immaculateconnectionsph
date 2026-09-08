@@ -16,7 +16,7 @@ See [AUDIT.md](AUDIT.md) for the full audit of the current site, the pain points
 | --- | --- |
 | `index.html` | Home: hero with the agency headline and tagline, quick inquiry card, destinations ticker, five services, how booking works, featured packages with region tabs, tour-highlight posters, why choose us, previous tours gallery, FAQ, call to action. |
 | `services.html` | Ticketing, Hotel Bookings & Reservations, Transport Service Reservations (vans, coasters, bus, 4-seater), Local & International Tour Packages, and Meetings, Incentives, Conferences, Exhibitions, Trainings & Seminars. Flight and event quote forms pre-fill the inquiry page. |
-| `tours.html` | All 17 packages with search, region, duration and sort filters. Each card opens a details modal with places, inclusions, status and (for Vietnam) the itinerary posters. |
+| `tours.html` | All 15 packages with search, region, duration, archive (past departures) and sort filters. Each card opens a details modal with places, inclusions, status and (for Vietnam) the itinerary posters. |
 | `package.html` | Package detail page (`package.html?id=<package-id>`): hero, sticky section tabs, photo gallery, overview, day-by-day itinerary, inclusions and exclusions, places with a location guide, 2026 travel dates with surcharges, itinerary posters, related packages and a sticky quote button. |
 | `about.html` | Why choose us, the four values, mission and vision, previous tours gallery, contact details. |
 | `contact.html` | Three-step inquiry form delivered to `inquiries@immaculateconnectionsph.com`, contact cards, map, FAQ. |
@@ -32,7 +32,7 @@ Optional hardening after activation: FormSubmit provides a hashed alias for the 
 ## Where to edit
 
 - **Contact details** (mobile, landline, email, Facebook, address): `CONFIG` at the top of `assets/js/main.js`. All `data-tel`, `data-landline`, `data-mail`, `data-fb` and `data-msg` links read from it.
-- **Packages, inclusions, places, photos, posters, ticker**: `assets/js/data.js`. Add a package once and it appears on the home tabs, the tours page, the details modal and the inquiry dropdown.
+- **Packages, inclusions, places, photos, posters, ticker**: `assets/js/data.js`. Give a package `travelDates` (and `year` / per-date `y`) or an `ends` date and it is marked **Departed** automatically once every date has passed; departed packages move to the "Archive" filter and off the home page. Add a package once and it appears on the home tabs, the tours page, the details modal and the inquiry dropdown.
 - **Colours and fonts**: `:root` in `assets/css/style.css`.
 - **Copy**: the HTML files. Header and footer are repeated in each page.
 

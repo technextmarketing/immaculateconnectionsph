@@ -37,11 +37,30 @@
   const wix = (id, w, h, al) => IC.wix ? IC.wix(id, w, h, al) : id;
   const peso = n => '₱' + Number(n).toLocaleString('en-PH');
   const regionLabel = t => (IC.regions[t.region] ? IC.regions[t.region].label : t.region);
-  const statusLabel = t => IC.statusLabel[t.status] || '';
+  // ---- Status: a package whose travel dates have all passed becomes 'past' (Departed)
+  const today = new Date(); today.setHours(0, 0, 0, 0);
+  const MONTHS = { jan: 0, feb: 1, mar: 2, apr: 3, may: 4, jun: 5, jul: 6, aug: 7, sep: 8, oct: 9, nov: 10, dec: 11 };
+  const rangeEnd = (d, year) => {
+    const mm = String(d.d).match(/^([A-Za-z]{3})[a-z]*\.?\s*(\d{1,2})\s*[–-]\s*(?:([A-Za-z]{3})[a-z]*\.?\s*)?(\d{1,2})$/);
+    if (!mm) return null;
+    const mon = MONTHS[(mm[3] || mm[1]).slice(0, 3).toLowerCase()];
+    return mon === undefined ? null : new Date(d.y || year || 2026, mon, parseInt(mm[4], 10));
+  };
+  const isPastDate = (d, t) => { const e = rangeEnd(d, t.year); return !!e && e < today; };
+  const effStatus = t => {
+    if (t.ends && new Date(t.ends + 'T23:59:59') < today) return 'past';
+    if (t.travelDates && t.travelDates.length && t.travelDates.every(d => isPastDate(d, t))) return 'past';
+    return t.status;
+  };
+  const statusLabel = t => IC.statusLabel[effStatus(t)] || '';
+  const money = (p, n) => { const v = n == null ? p.from : n; return (p && p.currency === 'USD' ? '$' : '₱') + Number(v).toLocaleString('en-PH'); };
+  const priceValue = t => (t.price ? t.price.from * (t.price.currency === 'USD' ? 57 : 1) : 9e9);
   const pkgUrl = t => `package.html?id=${encodeURIComponent(t.id)}`;
-  const ctaLabel = t => (t.status === 'soon' ? 'Ask about this tour' : t.status === 'offer' ? 'Book this offer' : 'Request a quote');
+  const ctaLabel = t => { const s = effStatus(t); return s === 'past' ? 'Ask about the next departure' : s === 'soon' ? 'Ask about this tour' : s === 'offer' ? 'Book this offer' : 'Request a quote'; };
   const flagImg = t => (t.flag ? `<img class="flag" src="https://flagcdn.com/w40/${t.flag}.png" srcset="https://flagcdn.com/w80/${t.flag}.png 2x" width="20" height="15" alt="${esc(t.country || '')} flag" loading="lazy">` : '');
-  const statusPill = t => `<span class="status-pill ${t.status}"><i></i>${esc(statusLabel(t))}</span>`;
+  const statusPill = t => `<span class="status-pill ${effStatus(t)}"><i></i>${esc(statusLabel(t))}</span>`;
+  // Destination label: the country for overseas packages, the region for local ones
+  const destLabel = t => (t.region === 'intl' && t.country ? t.country : regionLabel(t));
 
   const svg = (p, extra = '') => `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" ${extra}>${p}</svg>`;
   const I = {
@@ -112,14 +131,18 @@
     $$('[data-tilt]', root).forEach(card => {
       if (card.dataset.tiltReady) return;
       card.dataset.tiltReady = '1';
+      let raf = 0, last = null;
       card.addEventListener('mousemove', e => {
-        const r = card.getBoundingClientRect();
-        const x = (e.clientX - r.left) / r.width - 0.5;
-        const y = (e.clientY - r.top) / r.height - 0.5;
-        card.style.setProperty('--rx', (-y * 6).toFixed(2) + 'deg');
-        card.style.setProperty('--ry', (x * 8).toFixed(2) + 'deg');
-        card.style.setProperty('--mx', ((x + 0.5) * 100).toFixed(1) + '%');
-        card.style.setProperty('--my', ((y + 0.5) * 100).toFixed(1) + '%');
+        last = e;
+        if (raf) return;
+        raf = requestAnimationFrame(() => {
+          raf = 0;
+          const r = card.getBoundingClientRect();
+          const x = (last.clientX - r.left) / r.width - 0.5;
+          const y = (last.clientY - r.top) / r.height - 0.5;
+          card.style.setProperty('--rx', (-y * 5).toFixed(2) + 'deg');
+          card.style.setProperty('--ry', (x * 6).toFixed(2) + 'deg');
+        });
       });
       card.addEventListener('mouseleave', () => { card.style.setProperty('--rx', '0deg'); card.style.setProperty('--ry', '0deg'); });
     });
@@ -160,23 +183,23 @@
     return 'navy';
   }
   function priceBlock(t, big) {
-    if (t.price) return `<div class="price ${big ? 'big' : ''}"><small>${esc(t.price.label)}</small><strong>${peso(t.price.from)}</strong><span>${esc(t.price.unit)}</span></div>`;
+    if (t.price) return `<div class="price ${big ? 'big' : ''}"><small>${esc(t.price.label)}</small><strong>${money(t.price)}</strong><span>${esc(t.price.unit)}</span></div>`;
     return `<div class="price"><small>Pricing</small><strong class="soft">Quotation on request</strong></div>`;
   }
   function tourCard(t, i) {
     const shown = t.places.slice(0, 3), more = t.places.length - shown.length;
     return `
-    <article class="tour-card ${t.status === 'soon' ? 'soon' : ''}" style="animation-delay:${Math.min(i, 8) * 60}ms" data-tilt>
+    <article class="tour-card ${effStatus(t) === 'soon' || effStatus(t) === 'past' ? 'soon' : ''}" style="animation-delay:${Math.min(i, 8) * 60}ms">
       <a class="tour-media" href="${pkgUrl(t)}" aria-label="${esc(t.name)}">
-        ${t.badge ? `<span class="badge ${badgeClass(t.badge)}">${esc(t.badge)}</span>` : ''}
-        <img src="${wix(t.image, 800, 600, t.imageAlign)}" alt="${esc(t.alt)}" loading="lazy">
+        ${effStatus(t) === 'past' ? '<span class="badge grey">Departed</span>' : t.badge ? `<span class="badge ${badgeClass(t.badge)}">${esc(t.badge)}</span>` : ''}
+        <img src="${wix(t.image, 640, 480, t.imageAlign)}" alt="${esc(t.alt)}" loading="lazy" width="640" height="480">
         <div class="tour-meta">
           ${t.duration ? `<span class="pill glass">${I.clock}${esc(t.duration)}</span>` : ''}
           ${t.departure ? `<span class="pill glass">${I.plane}${esc(t.departure.split(' (')[0])}</span>` : ''}
         </div>
       </a>
       <div class="tour-body">
-        <div class="tour-region"><span>${flagImg(t)}${esc(regionLabel(t))}${t.country && t.region === 'intl' ? ' · ' + esc(t.country) : ''}</span>${statusPill(t)}</div>
+        <div class="tour-region"><span>${flagImg(t)}${esc(destLabel(t))}</span>${statusPill(t)}</div>
         <h3><a href="${pkgUrl(t)}">${esc(t.name)}</a></h3>
         <p class="tour-intro">${esc(t.summary)}</p>
         <ul class="tour-highlights">
@@ -206,7 +229,8 @@
     const grid = $('#featuredGrid');
     if (!grid || !IC.tours) return;
     const tabs = $$('#featuredTabs .tab');
-    const show = region => renderTours(grid, region === 'all' ? IC.tours.filter(t => t.featured) : IC.tours.filter(t => t.region === region).slice(0, 6));
+    const live = IC.tours.filter(t => effStatus(t) !== 'past');
+    const show = region => renderTours(grid, region === 'all' ? live.filter(t => t.featured) : live.filter(t => t.region === region).slice(0, 6));
     tabs.forEach(tab => tab.addEventListener('click', () => { tabs.forEach(t => t.classList.remove('active')); tab.classList.add('active'); show(tab.dataset.filter); }));
     show('all');
   }
@@ -215,12 +239,12 @@
   function initOffers() {
     const grid = $('#offersGrid');
     if (!grid || !IC.tours) return;
-    const offers = IC.tours.filter(t => t.price);
+    const offers = IC.tours.filter(t => t.price && effStatus(t) !== 'past');
     grid.innerHTML = offers.map((t, i) => `
       <article class="offer-card reveal" style="--d:${i * 0.1}s" data-tilt>
-        <a class="offer-media" href="${pkgUrl(t)}"><img src="${wix(t.image, 700, 900, t.imageAlign)}" alt="${esc(t.alt)}" loading="lazy"><span class="offer-ribbon">Special offer</span></a>
+        <a class="offer-media" href="${pkgUrl(t)}"><img src="${wix(t.image, 520, 390, t.imageAlign)}" alt="${esc(t.alt)}" loading="lazy" width="520" height="390"><span class="offer-ribbon">Special offer</span></a>
         <div class="offer-body">
-          <span class="offer-kicker">${flagImg(t)}${esc(t.country)} · ${I.plane}${esc(t.departure.split(' (')[0])} departure · ${esc(t.duration)}</span>
+          <div class="offer-kickers"><span class="offer-kicker">${flagImg(t)}${esc(t.country)}</span><span class="offer-kicker">${I.plane}${esc(t.departure.split(' (')[0])} departure</span><span class="offer-kicker">${I.clock}${esc(t.duration)}</span></div>
           ${statusPill(t)}
           <h3><a href="${pkgUrl(t)}">${esc(t.name)}</a></h3>
           <p>${esc(t.summary)}</p>
@@ -252,8 +276,8 @@
       t.classList.toggle('active', r === region);
       t.addEventListener('click', () => { region = r; tabs.forEach(x => x.classList.toggle('active', x === t)); apply(); });
     });
-    const durOk = (t, v) => v === 'all' || (v === 'day' && t.days === 1) || (v === 'multi' && t.days >= 2) || (v === 'offer' && t.status === 'offer') || (v === 'soon' && t.status === 'soon');
-    const order = { offer: 0, available: 1, request: 2, soon: 3 };
+    const durOk = (t, v) => v === 'all' || (v === 'day' && t.days === 1) || (v === 'multi' && t.days >= 2) || (v === 'offer' && effStatus(t) === 'offer') || (v === 'soon' && effStatus(t) === 'soon') || (v === 'past' && effStatus(t) === 'past');
+    const order = { offer: 0, available: 1, request: 2, soon: 3, past: 9 };
     function apply() {
       const q = (search.value || '').trim().toLowerCase();
       const list = IC.tours.filter(t =>
@@ -263,8 +287,8 @@
       switch (sort.value) {
         case 'name': list.sort((a, b) => a.name.localeCompare(b.name)); break;
         case 'duration': list.sort((a, b) => (a.days || 99) - (b.days || 99)); break;
-        case 'price': list.sort((a, b) => (a.price ? a.price.from : 9e9) - (b.price ? b.price.from : 9e9)); break;
-        default: list.sort((a, b) => (order[a.status] - order[b.status]) || ((b.featured ? 1 : 0) - (a.featured ? 1 : 0)));
+        case 'price': list.sort((a, b) => priceValue(a) - priceValue(b)); break;
+        default: list.sort((a, b) => (order[effStatus(a)] - order[effStatus(b)]) || ((b.featured ? 1 : 0) - (a.featured ? 1 : 0)));
       }
       renderTours(grid, list);
       count.innerHTML = `Showing <strong>${list.length}</strong> of ${IC.tours.length} packages` + (region !== 'all' ? ` in <strong>${esc(IC.regions[region].label)}</strong>` : '');
@@ -284,7 +308,7 @@
       root.innerHTML = `<section class="section"><div class="container text-center"><span class="eyebrow center">Package not found</span><h1 class="h2" style="margin-bottom:12px">We couldn’t find that package</h1><p class="lead" style="margin:0 auto 24px">It may have been renamed. Browse all current packages instead.</p><a class="btn btn-primary btn-lg" href="tours.html">Browse tour packages ${I.arrow}</a></div></section>`;
       return;
     }
-    const region = regionLabel(t);
+    const region = destLabel(t);
     const related = IC.tours.filter(x => x.id !== t.id && x.region === t.region).slice(0, 3);
     const hasDates = t.travelDates && t.travelDates.length;
     const hasIt = t.itinerary && t.itinerary.length;
@@ -301,12 +325,12 @@
 
     root.innerHTML = `
       <section class="pkg-hero">
-        <div class="hero-bg"><img src="${wix(t.hero || t.image, 1920, 1000, t.hero ? 'c' : t.imageAlign)}" alt=""></div>
+        <div class="hero-bg"><img src="${wix(t.hero || t.image, 960, 500, t.hero ? 'c' : t.imageAlign)}" alt="" width="960" height="500"></div>
         <div class="container">
           <nav class="breadcrumb" aria-label="Breadcrumb"><a href="index.html">Home</a>${I.left.replace('m15 18-6-6 6-6', 'm9 18 6-6-6-6')}<a href="tours.html">Tour Packages</a>${I.left.replace('m15 18-6-6 6-6', 'm9 18 6-6-6-6')}<span>${esc(region)}</span></nav>
           <div class="chips pkg-chips">
             ${t.badge ? `<span class="pill ${t.status === 'offer' ? 'orange' : 'gold'}">${esc(t.badge)}</span>` : ''}
-            <span class="pill glass">${flagImg(t)}${esc(region)}${t.country && t.region === 'intl' ? ' · ' + esc(t.country) : ''}</span>
+            <span class="pill glass">${flagImg(t)}${esc(region)}</span>
             ${t.duration ? `<span class="pill glass">${I.clock}${esc(t.duration)}</span>` : ''}
             ${t.departure ? `<span class="pill glass">${I.plane}Departs ${esc(t.departure)}</span>` : ''}
             ${statusPill(t)}
@@ -314,6 +338,7 @@
           <h1 class="h1 pkg-title">${esc(t.name)}</h1>
           ${t.subtitle ? `<p class="pkg-subtitle script">${esc(t.subtitle)}</p>` : ''}
           <p class="lead pkg-lead">${esc(t.summary)}</p>
+          ${effStatus(t) === 'past' ? `<div class="pkg-past">${I.info}<span>This departure has passed${t.travelDates && t.travelDates.length ? ' (' + esc(t.travelDates[t.travelDates.length - 1].d) + ' ' + esc(String(t.travelDates[t.travelDates.length - 1].y || t.year || '')) + ')' : ''}. Ask us about the next schedule.</span></div>` : ''}
         </div>
       </section>
 
@@ -323,7 +348,7 @@
         <div class="container pkg-layout">
           <div class="pkg-main">
             <div class="pkg-gallery reveal" id="pkgGallery">
-              <figure class="pkg-gallery-main" data-lb="${esc(gallery[0])}" data-title="${esc(t.name)}"><img src="${wix(gallery[0], 1200, 800, t.imageAlign)}" alt="${esc(t.alt)}"><figcaption>Tap to enlarge</figcaption></figure>
+              <figure class="pkg-gallery-main" data-lb="${esc(gallery[0])}" data-title="${esc(t.name)}"><img src="${wix(gallery[0], 960, 640, t.imageAlign)}" alt="${esc(t.alt)}" width="960" height="640"><figcaption>Tap to enlarge</figcaption></figure>
               ${gallery.length > 1 ? `<div class="pkg-thumbs">${gallery.map((g, i) => `<button type="button" class="${i === 0 ? 'active' : ''}" data-thumb="${esc(g)}" aria-label="Photo ${i + 1}"><img src="${wix(g, 240, 180, t.imageAlign)}" alt=""></button>`).join('')}</div>` : ''}
             </div>
 
@@ -371,16 +396,16 @@
             ${hasDates ? `<article id="dates" class="pkg-section reveal">
               <span class="eyebrow">Dates &amp; price</span>
               <h2 class="h2">Travel dates 2026</h2>
-              <p class="muted" style="margin-bottom:18px">${esc(t.travelDatesNote || '')} Base rate ${esc(t.price.label.toLowerCase())} ${peso(t.price.from)} ${esc(t.price.unit)}.</p>
-              <div class="date-grid">${t.travelDates.map(d => `<span class="date-chip ${d.add ? 'sur' : ''}">${I.cal}<span>${esc(d.d)}</span>${d.add ? `<em>+${peso(d.add)}</em>` : ''}</span>`).join('')}</div>
-              <p class="small muted" style="margin-top:14px">Dates in orange carry a peak-season surcharge per pax. Availability is confirmed at booking.</p>
+              <p class="muted" style="margin-bottom:18px">${esc(t.travelDatesNote || '')} Base rate ${esc(t.price.label.toLowerCase())} ${money(t.price)} ${esc(t.price.unit)}.</p>
+              <div class="date-grid">${t.travelDates.map(d => `<span class="date-chip ${d.add ? 'sur' : ''} ${isPastDate(d, t) ? 'past' : ''}" title="${isPastDate(d, t) ? 'This date has passed' : 'Available date'}">${I.cal}<span>${esc(d.d)}${d.y ? ' ' + d.y : ''}</span>${d.add ? `<em>+${d.cur === 'USD' ? '$' + d.add : peso(d.add)}</em>` : ''}</span>`).join('')}</div>
+              <p class="small muted" style="margin-top:14px">Dates in orange carry a peak-season surcharge per pax; greyed dates have passed. Availability is confirmed at booking.</p>
             </article>` : ''}
 
             ${hasPosters ? `<article id="posters" class="pkg-section reveal">
               <span class="eyebrow">Posters</span>
               <h2 class="h2">Official itinerary posters</h2>
               <p class="muted" style="margin-bottom:18px">Tap a poster to read it in full size.</p>
-              <div class="poster-row">${t.posters.map((p, i) => `<figure data-lb="${esc(p)}" data-title="${esc(t.name)} poster ${i + 1}" tabindex="0" role="button" aria-label="View poster ${i + 1}"><img src="${wix(p, 600, 800, 't')}" alt="${esc(t.name)} poster ${i + 1}" loading="lazy"></figure>`).join('')}</div>
+              <div class="poster-row">${t.posters.map((p, i) => `<figure data-lb="${esc(p)}" data-title="${esc(t.name)} poster ${i + 1}" tabindex="0" role="button" aria-label="View poster ${i + 1}"><img src="${wix(p, 450, 600, 't')}" alt="${esc(t.name)} poster ${i + 1}" loading="lazy" width="450" height="600"></figure>`).join('')}</div>
             </article>` : ''}
           </div>
 
@@ -404,12 +429,12 @@
       </section>
 
       ${related.length ? `<section class="section bg-white"><div class="container">
-        <div class="section-head split reveal"><div><span class="eyebrow">You may also like</span><h2 class="h2">More in ${esc(region)}</h2></div><a class="link-arrow" href="tours.html?region=${esc(t.region)}">All ${esc(region)} packages ${I.arrow}</a></div>
+        <div class="section-head split reveal"><div><span class="eyebrow">You may also like</span><h2 class="h2">Other packages you may like</h2></div><a class="link-arrow" href="tours.html?region=${esc(t.region)}">Browse all packages ${I.arrow}</a></div>
         <div class="tour-grid" id="relatedGrid"></div>
       </div></section>` : ''}
 
       <div class="sticky-cta" id="stickyCta">
-        <div>${t.price ? `<small>${esc(t.price.label)}</small><strong>${peso(t.price.from)}</strong>` : `<small>Price</small><strong>On request</strong>`}</div>
+        <div>${t.price ? `<small>${esc(t.price.label)}</small><strong>${money(t.price)}</strong>` : `<small>Price</small><strong>On request</strong>`}</div>
         <a class="btn btn-primary" href="contact.html?service=tour&package=${encodeURIComponent(t.id)}">${ctaLabel(t)}</a>
       </div>`;
 
@@ -420,7 +445,7 @@
     $$('[data-thumb]', root).forEach(b => b.addEventListener('click', () => {
       $$('[data-thumb]', root).forEach(x => x.classList.remove('active')); b.classList.add('active');
       mainImg.style.opacity = '0';
-      setTimeout(() => { mainImg.src = wix(b.dataset.thumb, 1200, 800, t.imageAlign); mainFig.dataset.lb = b.dataset.thumb; mainImg.onload = () => (mainImg.style.opacity = '1'); }, 180);
+      setTimeout(() => { mainImg.src = wix(b.dataset.thumb, 960, 640, t.imageAlign); mainFig.dataset.lb = b.dataset.thumb; mainImg.onload = () => (mainImg.style.opacity = '1'); }, 180);
     }));
 
     // Tabs: active section + sliding ink
@@ -440,7 +465,7 @@
 
     // Structured data
     const ld = { '@context': 'https://schema.org', '@type': 'TouristTrip', name: t.name, description: t.summary, image: wix(t.image, 1200, 630, t.imageAlign), touristType: 'Leisure', itinerary: t.places.map(p => ({ '@type': 'TouristAttraction', name: p })), provider: { '@type': 'TravelAgency', name: CONFIG.brand, telephone: CONFIG.mobile, email: CONFIG.email, url: 'https://www.immaculateconnectionsph.com/' } };
-    if (t.price) ld.offers = { '@type': 'Offer', price: t.price.from, priceCurrency: 'PHP', availability: 'https://schema.org/InStock', url: location.href };
+    if (t.price) ld.offers = { '@type': 'Offer', price: t.price.from, priceCurrency: t.price.currency || 'PHP', availability: effStatus(t) === 'past' ? 'https://schema.org/SoldOut' : 'https://schema.org/InStock', url: location.href };
     const s = document.createElement('script'); s.type = 'application/ld+json'; s.textContent = JSON.stringify(ld); document.head.appendChild(s);
 
     initTilt(root);
@@ -533,7 +558,7 @@
     const pkg = $('#f_package', form);
     if (pkg && IC.tours) {
       pkg.innerHTML = '<option value="">Select a package</option>' +
-        Object.keys(IC.regions).map(r => `<optgroup label="${esc(IC.regions[r].label)}">${IC.tours.filter(t => t.region === r).map(t => `<option value="${esc(t.id)}">${esc(t.name)}${t.duration ? ' · ' + esc(t.duration) : ''}${t.price ? ' · ' + peso(t.price.from) : ''}</option>`).join('')}</optgroup>`).join('') +
+        Object.keys(IC.regions).map(r => `<optgroup label="${esc(IC.regions[r].label)}">${IC.tours.filter(t => t.region === r).map(t => `<option value="${esc(t.id)}">${esc(t.name)}${t.duration ? ' · ' + esc(t.duration) : ''}${t.price ? ' · ' + money(t.price) : ''}</option>`).join('')}</optgroup>`).join('') +
         '<option value="custom">Custom itinerary (describe below)</option>';
     }
 
