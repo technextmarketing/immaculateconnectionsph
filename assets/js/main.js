@@ -888,9 +888,28 @@
         success.classList.add('show');
         window.scrollTo({ top: form.getBoundingClientRect().top + window.scrollY - 110, behavior: reduced ? 'auto' : 'smooth' });
       } else {
-        btn.disabled = false; btn.innerHTML = `Try again ${I.arrow}`;
-        errBox.innerHTML = `We could not send your inquiry automatically${detail ? ' (' + esc(detail) + ')' : ''}. Please <a href="${$('#mailLink', success).href}" style="font-weight:700;text-decoration:underline">send it by email</a> or <a href="${CONFIG.messenger}" target="_blank" rel="noopener" style="font-weight:700;text-decoration:underline">message us on Facebook</a>.`;
-        errBox.classList.add('show');
+        // Delivery did not go through (most often the mail relay is not activated
+        // yet). Still give the traveller their quotation, and make sending it by
+        // email or Messenger the primary action. Provider wording is never shown.
+        $('#formBody', form).style.display = 'none';
+        $('#quotation', success).innerHTML = buildQuotation(o, tour, ref, issued, valid);
+        $('#successMsg', success).textContent = `Your quotation ${ref} is ready, ${first}. It has not reached our team yet, so please send it with one tap using the buttons below. We will reply to ${o.email} to confirm availability and payment details.`;
+        const h3 = success.querySelector('.qt-intro h3'); if (h3) h3.textContent = 'One more tap to send it';
+        const chk = success.querySelector('.qt-intro .check'); if (chk) { chk.classList.add('pending'); chk.innerHTML = I.mail; }
+        // The inline form error sits inside the hidden form body, so show the
+        // notice in the success panel instead.
+        let notice = success.querySelector('#qtNotice');
+        if (!notice) { notice = document.createElement('div'); notice.id = 'qtNotice'; notice.className = 'form-error no-print'; success.querySelector('.qt-intro').appendChild(notice); }
+        const mailBtn = $('#mailLink', success), msgBtn = $('#msgLink', success), dlBtn = $('#qtDownload'), payBtn = $('#qtPay', success);
+        if (mailBtn) { mailBtn.className = 'btn btn-primary'; mailBtn.textContent = 'Send by email'; }
+        if (msgBtn) { msgBtn.className = 'btn btn-blue'; msgBtn.textContent = 'Send on Messenger'; }
+        if (dlBtn) dlBtn.className = 'btn btn-outline';
+        if (payBtn) payBtn.hidden = true;
+        notice.textContent = 'Our online form could not deliver your inquiry automatically. Sending it by email or Messenger takes one tap and reaches the same team.';
+        notice.classList.add('show');
+        success.classList.add('show');
+        window.scrollTo({ top: form.getBoundingClientRect().top + window.scrollY - 110, behavior: reduced ? 'auto' : 'smooth' });
+        if (/activat/i.test(detail)) console.warn('[Immaculate Connections] The FormSubmit relay for ' + CONFIG.email + ' is not activated yet. Open the "Activate Form" email in that inbox and click the link once. Inquiries will then arrive automatically.');
       }
     });
 

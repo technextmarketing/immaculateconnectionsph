@@ -17,6 +17,9 @@
 .qt-intro { text-align: center; margin-bottom: 26px; }
 .qt-intro .check { width: 72px; height: 72px; border-radius: 50%; margin: 0 auto 16px; display: grid; place-items: center; background: #e3f6ea; color: #157a42; animation: pop .5s var(--ease-out); }
 .qt-intro .check svg { width: 34px; height: 34px; }
+.qt-intro .check.pending { background: var(--gold-soft); color: #a06a00; }
+.qt-intro .check.pending svg { width: 30px; height: 30px; }
+.qt-intro #qtNotice { max-width: 60ch; margin: 16px auto 0; text-align: left; }
 .qt-intro h3 { font-family: var(--font-display); font-size: 1.6rem; color: var(--navy); margin-bottom: 8px; }
 .qt-intro p { color: var(--muted); max-width: 56ch; margin: 0 auto; font-size: .95rem; }
 
