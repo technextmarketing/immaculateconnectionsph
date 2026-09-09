@@ -249,3 +249,30 @@ website no longer offers a payment step at all.
 Turning the step back on later is one line: set `payments: true` and fill in
 `CONFIG.payment` with the agency's bank and e-wallet details.
 
+## 10. The quotation, set as a document (9 September 2026)
+
+The quotation carried the right information in the wrong shape: the masthead
+collapsed as soon as the form column was narrower than about 700 px, the total
+appeared twice, dates read as `2026-09-23`, and the same package, date and pax
+were repeated across a subject line, a booking table and a cost table. It now
+reads as a business document.
+
+| Finding | Change |
+|---|---|
+| The masthead wrapped, dropping the reference block below the address | A two-column letterhead: brand on the left, a bordered reference panel on the right carrying the quotation number as the lead figure, the dates, and status as a pill |
+| `#success .qt-doc span { max-width: none }` overrode the address measure, so the address ran the full width and forced the wrap | The override no longer touches spans; only paragraphs and list items need it |
+| Viewport breakpoints could not see that the document sits in a column half the window's width | The document is now a CSS container (`container-type: inline-size`) and its bands stack on their own width. The letterhead holds its two columns down to 560 px, which includes the 188 mm text column of an A4 page |
+| Nothing said what was being quoted | A gold-edged subject strip: flag, package name, duration, departure and service |
+| Package, destination, date and pax appeared in three places | Once each: the subject strip names the package, a trip summary lists date, travellers, destination and service, and the request table now carries only what is left (route, cabin, rooms, vehicle, event requirements) |
+| The estimated total was printed twice, once in the row and once in a block below | One table: the line total in its row, the estimated total in the table foot under the column it totals, and the rate arithmetic as fine print underneath |
+| Dates read as ISO strings | Every date field is set as `06 Nov 2026`, in the document and in the emailed copy |
+| Free-text notes were buried in the booking table | Their own "Notes from you" block, set as a quotation |
+| The document ended on a thank-you line | A signature block: prepared by, a signature rule, the reservations desk and its contacts, the reference stamp, and a line stating that this is a quotation, not an invoice or a receipt |
+| Terms were set in muted grey at the same weight as the body | Numbered, tighter, with the operative phrase of each term in ink |
+
+Type is Inter throughout with tabular numerals, Playfair Display kept for the
+masthead only, and one padding measure (`--qt-pad`) shared by every band so the
+left edge never wanders. Checked at 900 px, in the 600 px form column and at
+375 px, and printed to A4 through headless Chrome: two pages, table headings
+repeating, no block split across the fold.
+

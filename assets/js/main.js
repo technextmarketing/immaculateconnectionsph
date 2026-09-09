@@ -857,6 +857,14 @@
 
   /* ---- Quotation document ---------------------------------------------- */
   const fmtDate = d => d.toLocaleDateString('en-GB', { day: '2-digit', month: 'short', year: 'numeric' });
+  // Form dates arrive as 2026-09-23. Nobody reads a quotation in ISO, so every
+  // date field is set the way the rest of the document reads dates.
+  const DATE_FIELDS = ['date', 'depart', 'return', 'checkin', 'checkout', 'estart', 'eend'];
+  const fmtISO = v => {
+    const m = /^(\d{4})-(\d{2})-(\d{2})$/.exec(String(v == null ? '' : v).trim());
+    return m ? fmtDate(new Date(+m[1], +m[2] - 1, +m[3])) : String(v == null ? '' : v);
+  };
+  const fmtField = (k, v) => (DATE_FIELDS.indexOf(k) === -1 ? String(v == null ? '' : v) : fmtISO(v));
   const paxCount = v => { const n = parseInt(String(v == null ? '' : v).replace(/[^\d]/g, ''), 10); return Number.isFinite(n) && n > 0 ? n : null; };
   const paxWord = n => n + (n === 1 ? ' traveller' : ' travellers');
   const quoteRef = () => {
@@ -864,54 +872,89 @@
     return `${CONFIG.quotePrefix}-${String(d.getFullYear()).slice(2)}${p(d.getMonth() + 1)}${p(d.getDate())}-${Math.floor(1000 + Math.random() * 9000)}`;
   };
 
+  /* ---------- The quotation document ----------
+     Set as a business document: a masthead with the reference panel, a subject
+     line saying what is being quoted, who it is for beside the trip summary,
+     one cost table that totals in its own foot, then inclusions, itinerary,
+     terms and a signature block. Each fact appears once. Styling and the A4
+     print rules live in assets/css/quotation.css.                          */
   function buildQuotation(o, tour, ref, issued, valid) {
     const serviceName = SERVICE_LABELS[o.service] || 'Travel service';
     const pax = o.pax || o.guests || o.epax || '';
     const heads = paxCount(pax);
-    const skip = ['name', 'email', 'phone', 'contact', 'service'];
-    const rows = Object.keys(o).filter(k => LABELS[k] && !skip.includes(k))
-      .map(k => `<tr><td class="k">${LABELS[k]}</td><td class="v">${esc(o[k])}</td></tr>`).join('');
+
+    // The subject line, the trip summary and the cost table each carry these
+    // once, so the request table below only shows what is left: route, cabin,
+    // rooms, vehicle, event requirements.
+    const covered = ['name', 'email', 'phone', 'contact', 'service', 'package', 'destination', 'date', 'pax', 'guests', 'epax', 'notes'];
+    const rows = Object.keys(o)
+      .filter(k => LABELS[k] && covered.indexOf(k) === -1 && String(o[k]).trim())
+      .map(k => `<tr><td class="k">${LABELS[k]}</td><td class="v">${esc(fmtField(k, o[k]))}</td></tr>`).join('');
+
+    const subject = tour ? tour.name : (o.package && o.package !== 'custom' ? o.package : (o.destination || serviceName));
+    const subLine = (tour
+      ? [tour.duration, tour.departure ? 'Departs ' + tour.departure : '', serviceName]
+      : [serviceName, o.destination && o.destination !== subject ? o.destination : '']
+    ).filter(Boolean).join(' \u00b7 ');
+
+    const facts = [
+      ['Travel date', fmtField('date', o.date || o.depart || o.checkin || o.estart || '') || 'To be advised'],
+      ['Travellers', heads ? paxWord(heads) : (pax || 'To be advised')],
+      ['Destination', o.destination || (tour ? (tour.country || destLabel(tour)) : '')],
+      ['Duration', tour ? '' : (o.days || '')],
+      ['Service', serviceName]
+    ].filter(r => r[1]).map(r => `<dt>${r[0]}</dt><dd>${esc(r[1])}</dd>`).join('');
 
     let cost;
     if (tour && tour.price) {
       const rate = money(tour.price);
-      const total = heads ? money(tour.price, tour.price.from * heads) : '—';
-      const note = heads ? `${rate} ${tour.price.unit} × ${paxWord(heads)}, at the published rate.` : 'Total is calculated once the number of travellers is confirmed.';
+      const unit = tour.price.unit || '';
+      const total = heads ? money(tour.price, tour.price.from * heads) : '\u2014';
       cost = `
         <table class="qt-table cost">
-          <thead><tr><th>Description</th><th class="num">Rate</th><th class="num">Travellers</th><th class="num">Estimated total</th></tr></thead>
+          <thead><tr><th>Description</th><th class="num">Rate</th><th class="num">Travellers</th><th class="num">Line total</th></tr></thead>
           <tbody><tr>
-            <td data-l="Package"><strong>${esc(tour.name)}</strong><br><span style="color:var(--qt-muted)">${esc([tour.duration, tour.departure ? 'departs ' + tour.departure : ''].filter(Boolean).join(' · '))}</span></td>
-            <td class="num" data-l="Rate">${rate}<br><span style="color:var(--qt-muted);font-size:11px">${esc(tour.price.unit)}</span></td>
-            <td class="num" data-l="Travellers">${heads ? esc(paxWord(heads)) : esc(pax || '—')}</td>
-            <td class="num" data-l="Estimated total"><strong>${total}</strong></td>
+            <td data-l="Package"><strong>${esc(tour.name)}</strong><span class="desc">${esc([tour.duration, tour.departure ? 'departs ' + tour.departure : ''].filter(Boolean).join(' \u00b7 '))}</span></td>
+            <td class="num" data-l="Rate">${rate}<span class="unit">${esc(unit)}</span></td>
+            <td class="num" data-l="Travellers">${heads ? heads : esc(pax || '\u2014')}</td>
+            <td class="num" data-l="Line total">${total}</td>
           </tr></tbody>
+          <tfoot><tr>
+            <td class="lblcell" colspan="3"><span class="lbl">Estimated total</span></td>
+            <td class="num" data-l="Estimated total"><span class="sum">${total}</span></td>
+          </tr></tfoot>
         </table>
-        <div class="qt-total"><span>Estimated total<small>${esc(note)}</small></span><strong>${total}</strong></div>`;
+        <p class="qt-fine">${heads ? `${rate} ${esc(unit)} \u00d7 ${paxWord(heads)}, at the published rate.` : 'The total is worked out once the number of travellers is confirmed.'} Peak-date surcharges, where any apply to your dates, are shown on your official quotation.</p>`;
     } else {
-      cost = `<div class="qt-tbc">${I.info}<span>Final pricing is confirmed by our team once availability for your dates is checked. Your official quotation follows by email.</span></div>`;
+      cost = `<div class="qt-tbc">${I.info}<span>Final pricing is confirmed by our team once the details and availability for your dates are checked. Your official quotation follows by email.</span></div>`;
     }
 
     const inc = tour && tour.inclusions && tour.inclusions.length && tour.status !== 'soon' ? `
       <div class="qt-cols">
         <div><h4>Inclusions</h4><ul>${tour.inclusions.map(x => `<li>${I.check}<span>${esc(x)}</span></li>`).join('')}</ul></div>
-        ${tour.exclusions && tour.exclusions.length ? `<div class="exc"><h4>Exclusions</h4><ul>${tour.exclusions.map(x => `<li>${I.x}<span>${esc(x)}</span></li>`).join('')}</ul></div>` : '<div><h4>Exclusions</h4><ul><li><span style="color:var(--qt-muted)">As advised on your official quotation.</span></li></ul></div>'}
+        <div class="exc"><h4>Exclusions</h4><ul>${(tour.exclusions && tour.exclusions.length ? tour.exclusions : ['As advised on your official quotation']).map(x => `<li>${I.x}<span>${esc(x)}</span></li>`).join('')}</ul></div>
       </div>` : '';
 
     const itin = tour && tour.itinerary && tour.itinerary.length ? `
       <div class="qt-section"><h4>Itinerary at a glance</h4><div class="qt-days">${tour.itinerary.map(d => `<div class="qt-day"><b>${esc(d.day)}</b><span>${esc(d.title)}</span></div>`).join('')}</div></div>` : '';
 
+    const req = rows ? `<div class="qt-section"><h4>Request details</h4><table class="qt-table"><tbody>${rows}</tbody></table></div>` : '';
+    const notes = String(o.notes || '').trim()
+      ? `<div class="qt-section"><h4>Notes from you</h4><p class="qt-quote">${esc(o.notes)}</p></div>` : '';
+
     return `
     <div class="qt-doc" id="qtDoc">
       <div class="qt-band"></div>
-      <div class="qt-head">
+
+      <header class="qt-head">
         <div class="qt-brand">
           <img src="${IC.media ? IC.media.mark : ''}" alt="">
           <div>
             <strong>Immaculate Connections</strong>
             <span class="tag">Travel Agency</span>
             <span>${esc(CONFIG.address)}</span>
-            <span>${esc(CONFIG.mobile)} · ${esc(CONFIG.landline)}<br>${esc(CONFIG.email)}</span>
+            <span>${esc(CONFIG.mobile)} &middot; ${esc(CONFIG.landline)}</span>
+            <span>${esc(CONFIG.email)}</span>
           </div>
         </div>
         <div class="qt-meta">
@@ -920,28 +963,34 @@
             <dt>Quotation no.</dt><dd class="ref">${esc(ref)}</dd>
             <dt>Date issued</dt><dd>${esc(fmtDate(issued))}</dd>
             <dt>Valid until</dt><dd>${esc(fmtDate(valid))}</dd>
-            <dt>Status</dt><dd>Estimate &middot; for confirmation</dd>
+            <dt>Status</dt><dd><span class="qt-status">For confirmation</span></dd>
           </dl>
         </div>
+      </header>
+
+      <div class="qt-subject">
+        <span class="qt-label">Quotation for</span>
+        <h3>${tour && tour.flag ? flagImg(tour) : ''}${esc(subject)}</h3>
+        ${subLine ? `<p>${esc(subLine)}</p>` : ''}
       </div>
 
       <div class="qt-parties">
         <div>
           <span class="qt-label">Prepared for</span>
-          <strong>${esc(o.name || '')}</strong>
+          <strong>${esc(o.name || 'Traveller')}</strong>
           <p>${esc(o.email || '')}${o.phone ? '<br>' + esc(o.phone) : ''}${o.contact ? '<br>Preferred contact: ' + esc(o.contact) : ''}</p>
         </div>
         <div>
-          <span class="qt-label">Service requested</span>
-          <strong>${esc(serviceName)}</strong>
-          <p>${tour ? (tour.flag ? flagImg(tour) : '') + esc(tour.name) + (tour.duration ? '<br>' + esc(tour.duration) : '') : esc(o.package || o.destination || 'As described below')}</p>
+          <span class="qt-label">Trip summary</span>
+          <dl class="qt-facts">${facts}</dl>
         </div>
       </div>
 
-      <div class="qt-section"><h4>Booking details</h4><table class="qt-table"><tbody>${rows || '<tr><td class="k">Details</td><td class="v">As discussed</td></tr>'}</tbody></table></div>
+      ${req}
       <div class="qt-section"><h4>Estimated cost</h4>${cost}</div>
       ${inc}
       ${itin}
+      ${notes}
 
       <div class="qt-section qt-notes">
         <h4>Important notes</h4>
@@ -956,10 +1005,20 @@
         </ol>
       </div>
 
-      <div class="qt-foot">
-        <p>Thank you for choosing Immaculate Connections Travel Agency.<br>Crafting seamless journeys, creating lasting memories.</p>
-        <div class="sig"><strong>Reservations Team</strong><span>${esc(CONFIG.email)}</span></div>
-      </div>
+      <footer class="qt-foot">
+        <div class="sig">
+          <span class="qt-label">Prepared by</span>
+          <strong>Reservations Team</strong>
+          <span>Immaculate Connections Travel Agency</span>
+          <span>${esc(CONFIG.email)} &middot; ${esc(CONFIG.mobile)}</span>
+        </div>
+        <div class="stamp">
+          <span>Quotation no.</span>
+          <strong>${esc(ref)}</strong>
+          <em>Issued ${esc(fmtDate(issued))} &middot; valid until ${esc(fmtDate(valid))}</em>
+        </div>
+      </footer>
+      <p class="qt-legal"><strong>This document is a quotation, not an invoice or a receipt.</strong> Prepared from the details above and from published rates; both are confirmed by our reservations team before any booking is made. Thank you for choosing Immaculate Connections Travel Agency &mdash; crafting seamless journeys, creating lasting memories.</p>
     </div>`;
   }
 
@@ -1067,7 +1126,7 @@
         amount = heads ? money(tour.price, tour.price.from * heads) : money(tour.price) + ' ' + tour.price.unit;
       }
 
-      const lines = Object.keys(o).filter(k => LABELS[k]).map(k => `${LABELS[k]}: ${k === 'service' ? serviceName : o[k]}`).join('\n');
+      const lines = Object.keys(o).filter(k => LABELS[k]).map(k => `${LABELS[k]}: ${k === 'service' ? serviceName : fmtField(k, o[k])}`).join('\n');
       const autoresponse =
         `Hi ${first},\n\nThank you for your inquiry with Immaculate Connections Travel Agency. Here is your quotation for reference.\n\n` +
         `QUOTATION ${ref}\nDate issued: ${fmtDate(issued)}\nValid until: ${fmtDate(valid)}\n\n${lines}\n` +
