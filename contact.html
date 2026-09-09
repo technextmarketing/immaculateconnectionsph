@@ -115,7 +115,7 @@
                 <div class="field"><label for="f_dest">Destination or idea <span class="opt">(optional)</span></label><input class="input" id="f_dest" name="destination" placeholder="e.g. Bohol day tour for a family of five"></div>
                 <div class="form-row">
                   <div class="field"><label for="f_date">Travel date</label><input class="input" id="f_date" type="date" name="date" required><span class="err">Please pick a date, even a tentative one.</span></div>
-                  <div class="field"><label for="f_pax">Number of people</label><select class="select" id="f_pax" name="pax" required><option value="">Select</option><option>1–2</option><option>3–5</option><option>6–14</option><option>15+</option></select><span class="err">How many are travelling?</span></div>
+                  <div class="field"><label for="f_pax">Number of pax</label><input class="input" id="f_pax" type="number" name="pax" min="1" max="200" step="1" inputmode="numeric" placeholder="e.g. 4" required><span class="err">Enter how many will be travelling.</span></div>
                 </div>
               </div>
 
@@ -130,7 +130,7 @@
                   <div class="field"><label for="f_return">Return date <span class="opt">(if any)</span></label><input class="input" id="f_return" type="date" name="return"></div>
                 </div>
                 <div class="form-row">
-                  <div class="field"><label for="f_fpax">Passengers</label><select class="select" id="f_fpax" name="pax"><option>1</option><option>2</option><option>3–5</option><option>6–9</option><option>10 or more (group)</option></select></div>
+                  <div class="field"><label for="f_fpax">Number of pax</label><input class="input" id="f_fpax" type="number" name="pax" min="1" max="100" step="1" inputmode="numeric" placeholder="e.g. 2" required><span class="err">Enter how many passengers.</span></div>
                   <div class="field"><label for="f_cabin">Class</label><select class="select" id="f_cabin" name="cabin"><option>Economy</option><option>Premium economy</option><option>Business</option></select></div>
                 </div>
               </div>
@@ -142,8 +142,8 @@
                   <div class="field"><label for="f_out">Check-out</label><input class="input" id="f_out" type="date" name="checkout" required><span class="err">Check-out date?</span></div>
                 </div>
                 <div class="form-row">
-                  <div class="field"><label for="f_rooms">Rooms</label><select class="select" id="f_rooms" name="rooms"><option>1</option><option>2</option><option>3</option><option>4 or more</option></select></div>
-                  <div class="field"><label for="f_guests">Guests</label><select class="select" id="f_guests" name="guests"><option>1</option><option>2</option><option>3</option><option>4</option><option>5 or more</option></select></div>
+                  <div class="field"><label for="f_rooms">Rooms</label><input class="input" id="f_rooms" type="number" name="rooms" min="1" max="50" step="1" inputmode="numeric" placeholder="e.g. 2"></div>
+                  <div class="field"><label for="f_guests">Guests</label><input class="input" id="f_guests" type="number" name="guests" min="1" max="100" step="1" inputmode="numeric" placeholder="e.g. 4" required><span class="err">Enter how many guests.</span></div>
                 </div>
               </div>
 
@@ -162,7 +162,7 @@
               <div class="fields" data-for="mice">
                 <div class="form-row">
                   <div class="field"><label for="f_event">Type of event</label><select class="select" id="f_event" name="event" required><option value="">Choose an option</option><option>Convention</option><option>Seminar</option><option>Training</option><option>Orientation course</option><option>Reunion</option><option>Corporate gathering</option><option>Other</option></select><span class="err">What kind of event?</span></div>
-                  <div class="field"><label for="f_epax">Participants (pax)</label><select class="select" id="f_epax" name="epax" required><option value="">Choose an option</option><option>Under 30</option><option>30–80</option><option>80–150</option><option>150–300</option><option>300+</option></select><span class="err">Roughly how many participants?</span></div>
+                  <div class="field"><label for="f_epax">Participants (pax)</label><input class="input" id="f_epax" type="number" name="epax" min="1" max="2000" step="1" inputmode="numeric" placeholder="e.g. 120" required><span class="err">Enter how many participants.</span></div>
                 </div>
                 <div class="form-row three">
                   <div class="field"><label for="f_venue">Venue city</label><input class="input" id="f_venue" name="venue" placeholder="Cebu City, Bohol, Manila…"></div>

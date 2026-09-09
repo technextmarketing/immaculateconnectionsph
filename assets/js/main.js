@@ -626,21 +626,18 @@
   /* ===================== Inquiry form ===================== */
   const SERVICE_LABELS = { tour: 'Tour package', flights: 'Ticketing (flights / ferry)', hotel: 'Hotel booking & reservation', transport: 'Transport service reservation', mice: 'Meetings, events, trainings & seminars', other: 'Other inquiry' };
   const LABELS = {
-    service: 'Service', package: 'Package', destination: 'Destination', date: 'Travel date', pax: 'Number of people',
+    service: 'Service', package: 'Package', destination: 'Destination', date: 'Travel date', pax: 'Number of pax',
     from: 'From', to: 'To', trip: 'Trip type', depart: 'Departure date', return: 'Return date', cabin: 'Class',
     checkin: 'Check-in', checkout: 'Check-out', rooms: 'Rooms', guests: 'Guests',
     vehicle: 'Vehicle', pickup: 'Pick-up location', days: 'Duration', route: 'Route',
-    event: 'Type of event', epax: 'Participants', venue: 'Venue city', estart: 'Date start', eend: 'Date end', needs: 'Requirements',
+    event: 'Type of event', epax: 'Participants (pax)', venue: 'Venue city', estart: 'Date start', eend: 'Date end', needs: 'Requirements',
     notes: 'Other details', name: 'Name', email: 'Email', phone: 'Phone', contact: 'Preferred contact'
   };
 
   /* ---- Quotation document ---------------------------------------------- */
   const fmtDate = d => d.toLocaleDateString('en-GB', { day: '2-digit', month: 'short', year: 'numeric' });
-  const paxRange = s => {
-    const n = String(s || '').match(/\d+/g);
-    if (!n) return null;
-    return { min: +n[0], max: /\+/.test(s) ? null : (n[1] ? +n[1] : +n[0]) };
-  };
+  const paxCount = v => { const n = parseInt(String(v == null ? '' : v).replace(/[^\d]/g, ''), 10); return Number.isFinite(n) && n > 0 ? n : null; };
+  const paxWord = n => n + (n === 1 ? ' traveller' : ' travellers');
   const quoteRef = () => {
     const d = new Date(), p = x => String(x).padStart(2, '0');
     return `${CONFIG.quotePrefix}-${String(d.getFullYear()).slice(2)}${p(d.getMonth() + 1)}${p(d.getDate())}-${Math.floor(1000 + Math.random() * 9000)}`;
@@ -649,7 +646,7 @@
   function buildQuotation(o, tour, ref, issued, valid) {
     const serviceName = SERVICE_LABELS[o.service] || 'Travel service';
     const pax = o.pax || o.guests || o.epax || '';
-    const range = paxRange(pax);
+    const heads = paxCount(pax);
     const skip = ['name', 'email', 'phone', 'contact', 'service'];
     const rows = Object.keys(o).filter(k => LABELS[k] && !skip.includes(k))
       .map(k => `<tr><td class="k">${LABELS[k]}</td><td class="v">${esc(o[k])}</td></tr>`).join('');
@@ -657,19 +654,15 @@
     let cost;
     if (tour && tour.price) {
       const rate = money(tour.price);
-      let total = '—', note = 'Estimated total for the number of travellers above.';
-      if (range) {
-        const lo = money(tour.price, tour.price.from * range.min);
-        total = range.max && range.max !== range.min ? `${lo} – ${money(tour.price, tour.price.from * range.max)}` : lo;
-        if (!range.max) { total = lo + '+'; note = `Estimated total from ${range.min} travellers.`; }
-      }
+      const total = heads ? money(tour.price, tour.price.from * heads) : '—';
+      const note = heads ? `${rate} ${tour.price.unit} × ${paxWord(heads)}, at the published rate.` : 'Total is calculated once the number of travellers is confirmed.';
       cost = `
         <table class="qt-table cost">
           <thead><tr><th>Description</th><th class="num">Rate</th><th class="num">Travellers</th><th class="num">Estimated total</th></tr></thead>
           <tbody><tr>
             <td data-l="Package"><strong>${esc(tour.name)}</strong><br><span style="color:var(--qt-muted)">${esc([tour.duration, tour.departure ? 'departs ' + tour.departure : ''].filter(Boolean).join(' · '))}</span></td>
             <td class="num" data-l="Rate">${rate}<br><span style="color:var(--qt-muted);font-size:11px">${esc(tour.price.unit)}</span></td>
-            <td class="num" data-l="Travellers">${esc(pax || '—')}</td>
+            <td class="num" data-l="Travellers">${heads ? esc(paxWord(heads)) : esc(pax || '—')}</td>
             <td class="num" data-l="Estimated total"><strong>${total}</strong></td>
           </tr></tbody>
         </table>
@@ -848,11 +841,8 @@
       // Estimated total, used on the quotation and carried to the payment page
       let amount = '';
       if (tour && tour.price) {
-        const r = paxRange(o.pax || o.guests || o.epax);
-        if (r) {
-          const lo = money(tour.price, tour.price.from * r.min);
-          amount = !r.max ? lo + '+' : (r.max !== r.min ? `${lo} – ${money(tour.price, tour.price.from * r.max)}` : lo);
-        } else amount = money(tour.price) + ' ' + tour.price.unit;
+        const heads = paxCount(o.pax || o.guests || o.epax);
+        amount = heads ? money(tour.price, tour.price.from * heads) : money(tour.price) + ' ' + tour.price.unit;
       }
 
       const lines = Object.keys(o).filter(k => LABELS[k]).map(k => `${LABELS[k]}: ${k === 'service' ? serviceName : o[k]}`).join('\n');
@@ -911,7 +901,7 @@
     // checked (layout, print, download) without submitting the form or sending mail.
     if (params.get('preview') === 'quote') {
       const sample = (IC.tours || []).find(t => t.price) || (IC.tours || [])[0];
-      const demo = { service: 'tour', package: sample ? sample.name : 'Sample package', date: '2026-11-06', pax: '3–5', budget: '', notes: 'Sample quotation for template preview.', name: 'Sample Traveller', email: 'traveller@example.com', phone: '+63 917 000 0000', contact: 'Email' };
+      const demo = { service: 'tour', package: sample ? sample.name : 'Sample package', date: '2026-11-06', pax: 4, budget: '', notes: 'Sample quotation for template preview.', name: 'Sample Traveller', email: 'traveller@example.com', phone: '+63 917 000 0000', contact: 'Email' };
       const ref = quoteRef(), issued = new Date(), valid = new Date(issued.getTime() + CONFIG.quoteValidDays * 864e5);
       const success = $('#success', form);
       $('#formBody', form).style.display = 'none';
@@ -919,7 +909,7 @@
       $('#successMsg', success).textContent = 'This is a preview of the quotation template. Nothing has been sent. Remove ?preview=quote from the address to use the normal inquiry form.';
       $('#success h3', success).textContent = 'Quotation template preview';
       const pay = $('#qtPay', success);
-      if (pay) pay.href = 'payment.html?' + new URLSearchParams({ ref, svc: 'Tour package', pkg: sample ? sample.name : '', amt: sample && sample.price ? money(sample.price, sample.price.from * 3) + ' – ' + money(sample.price, sample.price.from * 5) : '' }).toString();
+      if (pay) pay.href = 'payment.html?' + new URLSearchParams({ ref, svc: 'Tour package', pkg: sample ? sample.name : '', amt: sample && sample.price ? money(sample.price, sample.price.from * 4) : '' }).toString();
       success.classList.add('show');
     }
 

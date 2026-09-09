@@ -118,7 +118,7 @@
             <div class="field"><label for="t_dep">Departure date</label><input class="input" id="t_dep" type="date" name="depart"></div>
             <div class="field"><label for="t_ret">Return date</label><input class="input" id="t_ret" type="date" name="return"></div>
           </div>
-          <div class="field"><label for="t_pax">Passengers</label><select class="select" id="t_pax" name="pax"><option>1</option><option>2</option><option>3–5</option><option>6–9</option><option>10 or more (group)</option></select></div>
+          <div class="field"><label for="t_pax">Number of pax</label><input class="input" id="t_pax" type="number" name="pax" min="1" max="100" step="1" inputmode="numeric" placeholder="e.g. 2"></div>
           <button class="btn btn-primary" type="submit">Continue to inquiry <svg class="arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg></button>
           <p class="note">You will add your name and contact details on the next step. Quotations are free.</p>
         </form>
@@ -250,7 +250,7 @@
             <h4>Quote an event</h4>
             <div class="form-row">
               <div class="field"><label for="e_type">Type of event</label><select class="select" id="e_type" name="event"><option value="">Choose an option</option><option>Convention</option><option>Seminar</option><option>Training</option><option>Orientation course</option><option>Reunion</option><option>Corporate gathering</option><option>Other</option></select></div>
-              <div class="field"><label for="e_pax">Participants (pax)</label><select class="select" id="e_pax" name="epax"><option value="">Choose an option</option><option>Under 30</option><option>30–80</option><option>80–150</option><option>150–300</option><option>300+</option></select></div>
+              <div class="field"><label for="e_pax">Participants (pax)</label><input class="input" id="e_pax" type="number" name="epax" min="1" max="2000" step="1" inputmode="numeric" placeholder="e.g. 120"></div>
             </div>
             <div class="form-row">
               <div class="field"><label for="e_start">Date start</label><input class="input" id="e_start" type="date" name="estart"></div>
