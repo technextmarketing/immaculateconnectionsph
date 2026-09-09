@@ -167,3 +167,32 @@ Reviewed on the live GitHub Pages build at desktop and mobile widths. Each item 
 | Q9 | Passenger counts were vague ranges | Every count field across the site now takes an exact number instead of a range. The home quick quote, the flight quote and event quote on the services page, and the tour, flight, hotel and event blocks of the inquiry form all use number inputs with a minimum of 1, a sensible maximum and a numeric keypad on mobile. Rooms and guests were converted for the same reason. The quotation now multiplies the published rate by the exact head count, so the estimate is a single figure rather than a range |
 
 No test submission was made, as requested. The first live submission still triggers FormSubmit's one-time activation email to `inquiries@immaculateconnectionsph.com`; the auto-response to travellers starts working once that link is clicked.
+
+## 7. Interface audit, 9 September 2026: header, buttons, mobile and duplication
+
+Checked every page at 1200 px and at 375 px, measuring tap targets, overflow and repeated content.
+
+### Header
+| Finding | Change |
+|---|---|
+| "Tour Packages" was a filled gold pill, reading as a button rather than a menu item and competing with the orange Inquire Now call to action | It is now the same text as its neighbours, set in a heavier weight with a permanent gold underline. The underline turns blue when it is the current page |
+| The pill was hidden below 640 px, so the most important link disappeared on phones | Removed that rule; the link now appears in the mobile menu with a gold edge |
+| The logo differed between pages | All seven pages already shared identical markup; a single rule now fixes its height at 44 px so it cannot drift again |
+
+### Buttons
+Sizes were measured across every page and fall into four deliberate steps: 40 px small, 42 px inside cards, 46 px standard and 52 px large. Weight was unified at 700, and hover no longer shifts a button's position, which previously made rows twitch. Grouped buttons share equal widths so pairs line up.
+
+### Mobile
+| Finding | Change |
+|---|---|
+| The filter panel occupied roughly 450 px before a single package appeared | Search, length and sort fold behind one "Search & sort" control; the country tabs stay visible. The block is now 166 px |
+| Country tabs were 35 px tall, below a comfortable tap | Raised to 40 px, with card buttons at 42 px |
+| Package cards carried a summary, a places list, inclusion tags and two buttons | The places list is hidden on phones, the summary is clamped to two lines, tags cap at three and the card keeps one full-width action. The photo and title still open the package. Card height fell from 652 px to 478 px |
+| The package hero repeated the duration, departure and status shown in the facts grid below | Departure and status chips are hidden on phones |
+| The footer ran very long as a single column | Link lists sit in two columns |
+
+### Duplicated content removed
+- The call-to-action band repeated the address, both numbers and the email immediately above the footer, which lists all of them. The line is gone from the home, services and about pages.
+- The footer "Explore" column repeated Home and About Us from the main menu. Both removed, leaving package links.
+- The mobile menu had an "Inquire Now" button directly above its own "Inquiries" menu item. The duplicate button is gone.
+- The package sidebar repeated the facts grid line for line. It now shows only the number of departure dates alongside the price and the actions.

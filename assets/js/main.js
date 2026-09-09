@@ -380,6 +380,11 @@
       t.classList.toggle('active', t.dataset.filter === country);
       t.addEventListener('click', () => { country = t.dataset.filter; tabs.forEach(x => x.classList.toggle('active', x === t)); apply(); });
     });
+    const fTog = $('#filtersToggle'), fBox = $('.filters');
+    if (fTog && fBox) fTog.addEventListener('click', () => {
+      const open = fBox.classList.toggle('open');
+      fTog.setAttribute('aria-expanded', String(open));
+    });
     const durOk = (t, v) => v === 'all' || (v === 'day' && t.days === 1) || (v === 'multi' && t.days >= 2) || (v === 'offer' && effStatus(t) === 'offer') || (v === 'soon' && effStatus(t) === 'soon') || (v === 'past' && effStatus(t) === 'past');
     const order = { offer: 0, available: 1, request: 2, soon: 3, past: 9 };
     function apply() {
@@ -438,8 +443,8 @@
             ${t.price ? `<span class="pill gold">${esc(t.price.label)} ${money(t.price)}</span>` : ''}
             <span class="pill glass">${flagImg(t)}${esc(region)}</span>
             ${t.duration ? `<span class="pill glass">${I.clock}${esc(t.duration)}</span>` : ''}
-            ${t.departure ? `<span class="pill glass">${I.plane}Departs ${esc(t.departure)}</span>` : ''}
-            ${statusPill(t)}
+            ${t.departure ? `<span class="pill glass chip-departure">${I.plane}Departs ${esc(t.departure)}</span>` : ''}
+            <span class="chip-status">${statusPill(t)}</span>
           </div>
           <h1 class="h1 pkg-title">${esc(t.name)}</h1>
           ${t.subtitle ? `<p class="pkg-subtitle script">${esc(t.subtitle)}</p>` : ''}
@@ -521,13 +526,7 @@
           <aside class="pkg-side">
             <div class="side-card sticky reveal">
               ${priceBlock(t, true)}
-              <ul class="meta">
-                ${t.duration ? `<li>${I.clock}<span>${esc(t.duration)}</span></li>` : ''}
-                ${t.departure ? `<li>${I.plane}<span>Departs ${esc(t.departure)}</span></li>` : ''}
-                <li>${I.pin}<span>${esc(region)}</span></li>
-                ${hasDates ? `<li>${I.cal}<span>${t.travelDates.length} departure dates in 2026</span></li>` : ''}
-                <li>${statusPill(t)}</li>
-              </ul>
+              ${hasDates ? `<ul class="meta"><li>${I.cal}<span>${t.travelDates.length} departure dates in ${t.year || 2026}</span></li></ul>` : ''}
               <a class="btn btn-primary btn-block btn-lg" href="contact.html?service=tour&package=${encodeURIComponent(t.id)}">${ctaLabel(t)} ${I.arrow}</a>
               <a class="btn btn-outline btn-block" href="${CONFIG.messenger}" target="_blank" rel="noopener">${I.msg} Message us on Facebook</a>
               <a class="btn btn-light btn-block" href="${CONFIG.mobileHref}">${I.phone} ${esc(CONFIG.mobile)}</a>
