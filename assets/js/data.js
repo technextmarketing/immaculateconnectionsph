@@ -464,6 +464,40 @@ window.IC = window.IC || {};
   IC.hotelPhotos = ['952787_3029b36427494266a8e954d4d7b8542c~mv2.jpg', '952787_26a50047e88545a18d5e6c89816805bc~mv2.jpg', '952787_2c289935d14a4992b20f77b49e988dba~mv2.jpg', '952787_bf04b5da3fbe466388fd7b0ce1011bd7~mv2.jpg'];
   IC.micePhotos = ['952787_9bc781dfae87479dae7fd84ed8b09c42~mv2.jpg', '952787_d42f442bb8264e678cbc88bdc2824eff~mv2.jpg', '952787_f6e5b9acd62049db802bcfd86e7fd352~mv2.jpg'];
 
+  /* ---------- Team ----------
+     Each card is a desk in the agency. To turn one into a personal profile,
+     fill in `name` (and `photo`, a Wix media id from the agency's own library):
+       { name: 'Juan dela Cruz', photo: '952787_xxxxxxxx~mv2.jpg', role: 'Reservations & Ticketing', ... }
+     Leave `name` empty and the card shows the desk instead of a person, so the
+     section stays accurate until the agency supplies names and photographs.
+     `email` is optional and falls back to the main inquiries address.        */
+  IC.team = [
+    {
+      name: '', photo: '', email: '',
+      role: 'Reservations & Ticketing', icon: 'ticketing',
+      desc: 'Books your flights and ferry tickets, compares fares across carriers and handles changes when your plans move.',
+      handles: ['Flight & ferry tickets', 'Fare quotations', 'Rebooking & changes']
+    },
+    {
+      name: '', photo: '', email: '',
+      role: 'Tours & Operations', icon: 'tours',
+      desc: 'Plans your itinerary, assigns your licensed guide and vehicle, and keeps the day running to schedule on the ground.',
+      handles: ['Local & international packages', 'Licensed tour guides', 'Custom itineraries']
+    },
+    {
+      name: '', photo: '', email: '',
+      role: 'Accommodation & Transport', icon: 'hotel',
+      desc: 'Secures your rooms with our resort and hotel partners and reserves the van, coaster or bus that fits your group.',
+      handles: ['Hotel & resort bookings', 'Van, coaster & bus reservations', 'Airport transfers']
+    },
+    {
+      name: '', photo: '', email: '',
+      role: 'Meetings, Incentives & Events', icon: 'mice',
+      desc: 'Handles conventions, seminars, trainings and corporate gatherings from the venue and room block to the closing programme.',
+      handles: ['Seminars & conventions', 'Delegate transport & meals', 'Team building programmes']
+    }
+  ];
+
   IC.destinationsTicker = [
     ['Da Nang', 'From ₱23,888 · out Manila'], ['Hanoi · Sapa · Ha Long Bay', 'From ₱32,888 · out Cebu'], ['Bohol', 'Loboc River lunch'], ['Camotes Islands', '2 days 1 night'],
     ['Cebu City', 'Heritage tours'], ['Cebu Highlands', 'Temple of Leah & Sirao'], ['Mactan', 'Twin City Tour'],

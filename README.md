@@ -19,7 +19,7 @@ See [AUDIT.md](AUDIT.md) for the full audit of the current site, the pain points
 | `tours.html` | All 15 packages with search, region, duration, archive (past departures) and sort filters. Each card opens a details modal with places, inclusions, status and (for Vietnam) the itinerary posters. |
 | `package.html` | Package detail page (`package.html?id=<package-id>`): hero, sticky section tabs, photo gallery, overview, day-by-day itinerary, inclusions and exclusions, places with a location guide, 2026 travel dates with surcharges, itinerary posters, related packages and a sticky quote button. |
 | `payment.html` | Payment step (`payment.html?ref=…`): booking summary from the quotation, the three-step payment process, payment methods and direct contact buttons. |
-| `about.html` | Why choose us, the four values, mission and vision, previous tours gallery, contact details. |
+| `about.html` | Why choose us, the four values, mission and vision, team cards for the four desks, previous tours gallery, contact details. |
 | `contact.html` | Three-step inquiry form delivered to `inquiries@immaculateconnectionsph.com`. On submit it renders a printable quotation on screen and links to the payment step. |
 
 ## Inquiry form delivery
@@ -59,6 +59,7 @@ payment: {
 - **Colours and fonts**: `:root` in `assets/css/style.css`. Quotation and payment styling, including the print rules, live in `assets/css/quotation.css`.
 - **Inclusion tags on cards** (Airfare, Hotel, Meals, Transport, Tour guide, Entrance fees, Insurance and so on) are derived automatically from each package's `inclusions` list by `INC_TAGS` in `assets/js/main.js`.
 - **Travel dates** on a package page link straight to the inquiry form with the package and the chosen departure pre-filled.
+- **Team cards on the About page**: `IC.team` in `assets/js/data.js`. Each entry is a desk in the agency. Add a `name` (and optionally a `photo`, using a Wix media id from the agency's own library, plus a direct `email`) and the card becomes a personal profile with the person's name as the title and the desk as the subtitle. Leave `name` empty and the card shows the desk with the agency's own service icon, so the section stays accurate until real names and photographs are supplied.
 - **Copy**: the HTML files. Header and footer are repeated in each page.
 
 ## Publishing

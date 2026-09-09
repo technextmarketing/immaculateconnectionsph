@@ -916,6 +916,37 @@
     go(params.get('service') ? 2 : 1);
   }
 
+  /* ===================== Team cards ===================== */
+  function initTeam() {
+    const grid = $('#teamGrid');
+    if (!grid || !IC.team) return;
+    const icons = (IC.media && IC.media.icons) || {};
+    grid.innerHTML = IC.team.map((m, i) => {
+      const named = !!(m.name && m.name.trim());
+      const initials = named ? m.name.trim().split(/\s+/).map(w => w[0]).slice(0, 2).join('').toUpperCase() : '';
+      const avatar = m.photo
+        ? `<img src="${wix(m.photo, 520, 560)}" alt="${esc(m.name || m.role)}" loading="lazy">`
+        : named
+          ? `<span class="tm-initials" aria-hidden="true">${esc(initials)}</span>`
+          : `<img class="tm-icon" src="${icons[m.icon] || ''}" alt="" loading="lazy">`;
+      const mail = m.email || CONFIG.email;
+      return `
+      <article class="tm-card reveal" style="--d:${(i % 4) * 0.08}s">
+        <div class="tm-photo${m.photo ? '' : ' plain'}">${avatar}</div>
+        <div class="tm-body">
+          <h3>${esc(named ? m.name : m.role)}</h3>
+          <span class="tm-role">${esc(named ? m.role : 'Immaculate Connections desk')}</span>
+          <p>${esc(m.desc)}</p>
+          <ul class="tm-handles">${(m.handles || []).map(h => `<li>${I.check}<span>${esc(h)}</span></li>`).join('')}</ul>
+          <div class="tm-links">
+            <a class="tm-link" href="mailto:${esc(mail)}?subject=${encodeURIComponent(m.role + ' inquiry')}">${I.mail}<span>Email</span></a>
+            <a class="tm-link" href="${CONFIG.messenger}" target="_blank" rel="noopener">${I.msg}<span>Message</span></a>
+          </div>
+        </div>
+      </article>`;
+    }).join('');
+  }
+
   /* ===================== Payment page ===================== */
   function initPayment() {
     const root = $('#payPage');
@@ -957,6 +988,6 @@
 
   document.addEventListener('DOMContentLoaded', () => {
     initHeader(); initContactLinks(); initHeroTitle(); initTicker(); initOffers(); initFeatured(); initToursPage(); initPackagePage();
-    initGallery(); initFaq(); initSubnav(); initMisc(); initInquiry(); initPayment(); initTilt(); initReveal();
+    initGallery(); initTeam(); initFaq(); initSubnav(); initMisc(); initInquiry(); initPayment(); initTilt(); initReveal();
   });
 })();
