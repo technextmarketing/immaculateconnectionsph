@@ -79,6 +79,26 @@
     if (t.badge && t.badge.toLowerCase() !== statusLabel(t).toLowerCase()) return `<span class="badge ${badgeClass(t.badge)}">${esc(t.badge)}</span>`;
     return '';
   };
+  /* ---- Packages are grouped and filtered by country ---- */
+  const cSlug = v => String(v || '').toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-+|-+$/g, '');
+  const countryList = tours => {
+    const m = new Map();
+    (tours || IC.tours || []).forEach(t => {
+      const k = t.country || 'Other';
+      if (!m.has(k)) m.set(k, { name: k, flag: t.flag, slug: cSlug(k), count: 0 });
+      m.get(k).count++;
+    });
+    return [...m.values()].sort((a, b) => b.count - a.count || a.name.localeCompare(b.name));
+  };
+  const countryTabs = (host, allLabel, tours, showAllCount) => {
+    if (!host) return [];
+    const list = countryList(tours);
+    host.innerHTML =
+      `<button class="tab active" type="button" data-filter="all">${esc(allLabel)}${showAllCount ? `<span class="count">${(tours || IC.tours).length}</span>` : ''}</button>` +
+      list.map(c => `<button class="tab" type="button" data-filter="${esc(c.slug)}">${c.flag ? `<img class="flag" src="https://flagcdn.com/w40/${esc(c.flag)}.png" width="20" height="15" alt="" loading="lazy">` : ''}${esc(c.name)}<span class="count">${c.count}</span></button>`).join('');
+    return $$('.tab', host);
+  };
+
   const shuffle = a => { const b = a.slice(); for (let i = b.length - 1; i > 0; i--) { const j = Math.floor(Math.random() * (i + 1)); [b[i], b[j]] = [b[j], b[i]]; } return b; };
 
   /* ---- Inclusion summary tags, derived from each package's inclusion list ---- */
@@ -308,10 +328,10 @@
   function initFeatured() {
     const grid = $('#featuredGrid');
     if (!grid || !IC.tours) return;
-    const tabs = $$('#featuredTabs .tab');
     // Three packages, reshuffled on every page load (departed and coming-soon packages excluded)
     const live = IC.tours.filter(t => effStatus(t) !== 'past' && effStatus(t) !== 'soon');
-    const show = region => renderTours(grid, shuffle(region === 'all' ? live : live.filter(t => t.region === region)).slice(0, 3));
+    const tabs = countryTabs($('#featuredTabs'), 'Featured', live, false);
+    const show = country => renderTours(grid, shuffle(country === 'all' ? live : live.filter(t => cSlug(t.country) === country)).slice(0, 3));
     tabs.forEach(tab => tab.addEventListener('click', () => { tabs.forEach(t => t.classList.remove('active')); tab.classList.add('active'); show(tab.dataset.filter); }));
     show('all');
   }
@@ -348,22 +368,24 @@
     const grid = $('#toursGrid');
     if (!grid || !IC.tours) return;
     const search = $('#tourSearch'), dur = $('#durationSel'), sort = $('#sortSel'), count = $('#resultsCount'), clear = $('#clearFilters');
-    const tabs = $$('#regionTabs .tab');
+    const tabs = countryTabs($('#regionTabs'), 'All packages', IC.tours, true);
     const params = new URLSearchParams(location.search);
-    let region = params.get('region') && IC.regions[params.get('region')] ? params.get('region') : 'all';
+    const slugs = countryList().map(c => c.slug);
+    // Older links used ?region=cebu|bohol|visayas|intl
+    const legacy = { cebu: 'philippines', bohol: 'philippines', visayas: 'philippines', intl: 'all' };
+    let country = params.get('country') && slugs.includes(cSlug(params.get('country'))) ? cSlug(params.get('country'))
+      : (params.get('region') && legacy[params.get('region')]) || 'all';
+    if (!slugs.includes(country)) country = 'all';
     tabs.forEach(t => {
-      const r = t.dataset.filter;
-      const n = r === 'all' ? IC.tours.length : IC.tours.filter(x => x.region === r).length;
-      t.insertAdjacentHTML('beforeend', `<span class="count">${n}</span>`);
-      t.classList.toggle('active', r === region);
-      t.addEventListener('click', () => { region = r; tabs.forEach(x => x.classList.toggle('active', x === t)); apply(); });
+      t.classList.toggle('active', t.dataset.filter === country);
+      t.addEventListener('click', () => { country = t.dataset.filter; tabs.forEach(x => x.classList.toggle('active', x === t)); apply(); });
     });
     const durOk = (t, v) => v === 'all' || (v === 'day' && t.days === 1) || (v === 'multi' && t.days >= 2) || (v === 'offer' && effStatus(t) === 'offer') || (v === 'soon' && effStatus(t) === 'soon') || (v === 'past' && effStatus(t) === 'past');
     const order = { offer: 0, available: 1, request: 2, soon: 3, past: 9 };
     function apply() {
       const q = (search.value || '').trim().toLowerCase();
       const list = IC.tours.filter(t =>
-        (region === 'all' || t.region === region) && durOk(t, dur.value) &&
+        (country === 'all' || cSlug(t.country) === country) && durOk(t, dur.value) &&
         (!q || (t.name + ' ' + regionLabel(t) + ' ' + (t.country || '') + ' ' + t.places.join(' ') + ' ' + t.inclusions.join(' ')).toLowerCase().includes(q))
       );
       switch (sort.value) {
@@ -373,10 +395,11 @@
         default: list.sort((a, b) => (order[effStatus(a)] - order[effStatus(b)]) || ((b.featured ? 1 : 0) - (a.featured ? 1 : 0)));
       }
       renderTours(grid, list);
-      count.innerHTML = `Showing <strong>${list.length}</strong> of ${IC.tours.length} packages` + (region !== 'all' ? ` in <strong>${esc(IC.regions[region].label)}</strong>` : '');
+      const cName = (countryList().find(c => c.slug === country) || {}).name;
+      count.innerHTML = `Showing <strong>${list.length}</strong> of ${IC.tours.length} packages` + (cName ? ` in <strong>${esc(cName)}</strong>` : '');
     }
     [search, dur, sort].forEach(el => el.addEventListener('input', apply));
-    clear.addEventListener('click', () => { search.value = ''; dur.value = 'all'; sort.value = 'featured'; region = 'all'; tabs.forEach(x => x.classList.toggle('active', x.dataset.filter === 'all')); apply(); });
+    clear.addEventListener('click', () => { search.value = ''; dur.value = 'all'; sort.value = 'featured'; country = 'all'; tabs.forEach(x => x.classList.toggle('active', x.dataset.filter === 'all')); apply(); });
     apply();
   }
 
@@ -391,7 +414,7 @@
       return;
     }
     const region = destLabel(t);
-    const related = IC.tours.filter(x => x.id !== t.id && x.region === t.region).slice(0, 3);
+    const related = IC.tours.filter(x => x.id !== t.id && x.country === t.country).slice(0, 3);
     const hasDates = t.travelDates && t.travelDates.length;
     const hasIt = t.itinerary && t.itinerary.length;
     const hasPosters = t.posters && t.posters.length;
@@ -515,7 +538,7 @@
       </section>
 
       ${related.length ? `<section class="section bg-white"><div class="container">
-        <div class="section-head split reveal"><div><span class="eyebrow">You may also like</span><h2 class="h2">Other packages you may like</h2></div><a class="link-arrow" href="tours.html?region=${esc(t.region)}">Browse all packages ${I.arrow}</a></div>
+        <div class="section-head split reveal"><div><span class="eyebrow">You may also like</span><h2 class="h2">Other packages you may like</h2></div><a class="link-arrow" href="tours.html?country=${esc(cSlug(t.country))}">More from ${esc(t.country || regionLabel(t))} ${I.arrow}</a></div>
         <div class="tour-grid" id="relatedGrid"></div>
       </div></section>` : ''}
 
@@ -751,7 +774,7 @@
     const pkg = $('#f_package', form);
     if (pkg && IC.tours) {
       pkg.innerHTML = '<option value="">Select a package</option>' +
-        Object.keys(IC.regions).map(r => `<optgroup label="${esc(IC.regions[r].label)}">${IC.tours.filter(t => t.region === r).map(t => `<option value="${esc(t.id)}">${esc(t.name)}${t.duration ? ' · ' + esc(t.duration) : ''}${t.price ? ' · ' + money(t.price) : ''}</option>`).join('')}</optgroup>`).join('') +
+        countryList().map(c => `<optgroup label="${esc(c.name)}">${IC.tours.filter(t => cSlug(t.country) === c.slug).map(t => `<option value="${esc(t.id)}">${esc(t.name)}${t.duration ? ' · ' + esc(t.duration) : ''}${t.price ? ' · ' + money(t.price) : ''}</option>`).join('')}</optgroup>`).join('') +
         '<option value="custom">Custom itinerary (describe below)</option>';
     }
 
@@ -935,6 +958,28 @@
     go(params.get('service') ? 2 : 1);
   }
 
+  /* ===================== Hero background video ===================== */
+  function initHeroVideo() {
+    const v = $('#heroVideo');
+    if (!v || !v.dataset.src) return;
+    // The poster is frame one of the clip, so it stands in seamlessly when the
+    // video is skipped: reduced motion, data saver, slow link or a phone.
+    const conn = navigator.connection || {};
+    if (reduced || conn.saveData || /(^|-)2g$/.test(conn.effectiveType || '') || window.matchMedia('(max-width: 640px)').matches) return;
+    const start = () => {
+      v.src = v.dataset.src;
+      const kick = () => { const p = v.play(); if (p && p.catch) p.catch(() => {}); };
+      kick();
+      // Some browsers hold playback until the visitor interacts with the page
+      const retry = () => { if (v.paused) kick(); else off(); };
+      const off = () => ['pointerdown', 'touchstart', 'scroll', 'keydown'].forEach(e => window.removeEventListener(e, retry));
+      ['pointerdown', 'touchstart', 'scroll', 'keydown'].forEach(e => window.addEventListener(e, retry, { passive: true }));
+      v.addEventListener('playing', off, { once: true });
+    };
+    if ('requestIdleCallback' in window) requestIdleCallback(start, { timeout: 1500 });
+    else setTimeout(start, 700);
+  }
+
   /* ===================== Team cards ===================== */
   function initTeam() {
     const grid = $('#teamGrid');
@@ -1007,6 +1052,6 @@
 
   document.addEventListener('DOMContentLoaded', () => {
     initHeader(); initContactLinks(); initHeroTitle(); initTicker(); initOffers(); initFeatured(); initToursPage(); initPackagePage();
-    initGallery(); initTeam(); initFaq(); initSubnav(); initMisc(); initInquiry(); initPayment(); initTilt(); initReveal();
+    initHeroVideo(); initGallery(); initTeam(); initFaq(); initSubnav(); initMisc(); initInquiry(); initPayment(); initTilt(); initReveal();
   });
 })();

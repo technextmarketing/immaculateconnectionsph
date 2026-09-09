@@ -14,9 +14,10 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="preconnect" href="https://static.wixstatic.com">
+  <link rel="preload" as="image" href="assets/img/hero-poster.jpg">
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,500&family=Raleway:wght@400;500;600;700;800&family=Dancing+Script:wght@600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="assets/css/style.css?v=20260909a">
-  <link rel="stylesheet" href="assets/css/components.css?v=20260909a">
+  <link rel="stylesheet" href="assets/css/style.css?v=20260909b">
+  <link rel="stylesheet" href="assets/css/components.css?v=20260909b">
   <script type="application/ld+json">
   {"@context":"https://schema.org","@type":"TravelAgency","name":"Immaculate Connections Travel Agency","url":"https://www.immaculateconnectionsph.com/","logo":"https://static.wixstatic.com/media/952787_6dd07347e2b24fab89e9fdcee6240889~mv2.png","image":"https://static.wixstatic.com/media/952787_7d63895b8b894bb0b1dbd482101a18d0~mv2.jpg","email":"inquiries@immaculateconnectionsph.com","telephone":"+63 917 318 8997","address":{"@type":"PostalAddress","streetAddress":"Unit 4E, 4th Floor, JL Millennium Building, Don Jose Avila Street","addressLocality":"Cebu City","addressRegion":"Cebu","addressCountry":"PH"},"sameAs":["https://www.facebook.com/ImmaculateConnections.ph"]}
   </script>
@@ -65,7 +66,9 @@
   <main id="main">
     <!-- ===== Hero ===== -->
     <section class="hero" id="top">
-      <div class="hero-bg"><img src="https://static.wixstatic.com/media/952787_7d63895b8b894bb0b1dbd482101a18d0~mv2.jpg/v1/fill/w_1920,h_1080,al_c,q_80,enc_auto/952787_7d63895b8b894bb0b1dbd482101a18d0~mv2.jpg" alt="" fetchpriority="high"></div>
+      <div class="hero-bg">
+        <video id="heroVideo" class="hero-video" poster="assets/img/hero-poster.jpg" data-src="assets/video/hero.mp4" autoplay muted loop playsinline preload="none" aria-hidden="true"></video>
+      </div>
       <div class="container hero-grid">
         <div>
           <div class="hero-kicker"><span class="dot"></span><span class="pill glass">Cebu City, Philippines · Travel agency</span></div>
@@ -129,7 +132,7 @@
             <h2 class="h2">Vietnam, China &amp; Japan, <span class="script accent">ready to book</span></h2>
             <p class="lead">Fixed 2026 departures from Manila and Cebu with airfare, hotels, meals and guided tours included. Tap a package for the full itinerary, inclusions and travel dates.</p>
           </div>
-          <a class="link-arrow" href="tours.html?region=intl">All international packages <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+          <a class="link-arrow" href="tours.html?country=vietnam">All international packages <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
         </div>
         <div class="offers-grid" id="offersGrid"></div>
       </div>
@@ -196,13 +199,7 @@
             <h2 class="h2">Packages you might like</h2>
             <p class="lead">Every card opens a full package page with places, inclusions and a location guide.</p>
           </div>
-          <div class="filter-tabs" id="featuredTabs">
-            <button class="tab active" type="button" data-filter="all">Featured</button>
-            <button class="tab" type="button" data-filter="cebu">Cebu</button>
-            <button class="tab" type="button" data-filter="bohol">Bohol &amp; Camotes</button>
-            <button class="tab" type="button" data-filter="visayas">Boracay, Palawan &amp; Siargao</button>
-            <button class="tab" type="button" data-filter="intl">International</button>
-          </div>
+          <div class="filter-tabs" id="featuredTabs"></div>
         </div>
         <div class="tour-grid" id="featuredGrid" aria-live="polite"></div>
         <div class="text-center" style="margin-top:40px">
@@ -302,9 +299,9 @@
           <ul class="footer-links">
             <li><a href="index.html">Home</a></li>
             <li><a href="tours.html">All tour packages</a></li>
-            <li><a href="tours.html?region=cebu">Cebu tours</a></li>
-            <li><a href="tours.html?region=bohol">Bohol &amp; Camotes</a></li>
-            <li><a href="tours.html?region=intl">International packages</a></li>
+            <li><a href="tours.html?country=philippines">Philippines packages</a></li>
+            <li><a href="tours.html?country=vietnam">Vietnam packages</a></li>
+            <li><a href="tours.html?country=china">China packages</a></li>
             <li><a href="about.html">About us</a></li>
           </ul>
         </div>
@@ -338,7 +335,7 @@
   <a class="fab-msg" href="#" data-msg aria-label="Message us on Facebook Messenger"><span class="fab-pulse"></span><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2C6.36 2 2 6.13 2 11.7c0 2.91 1.19 5.44 3.14 7.17.16.15.26.35.27.57l.05 1.78a.8.8 0 0 0 1.12.71l1.99-.88a.8.8 0 0 1 .53-.04c.91.25 1.88.39 2.9.39 5.64 0 10-4.13 10-9.7S17.64 2 12 2Zm6 7.46-2.94 4.66a1.5 1.5 0 0 1-2.17.4l-2.34-1.75a.6.6 0 0 0-.72 0l-3.16 2.4c-.42.32-.97-.18-.69-.63l2.94-4.66a1.5 1.5 0 0 1 2.17-.4l2.34 1.75a.6.6 0 0 0 .72 0l3.16-2.4c.42-.32.97.18.69.63Z"/></svg><span>Message us</span></a>
   <button class="to-top" id="toTop" type="button" aria-label="Back to top"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 19V5M5 12l7-7 7 7"/></svg></button>
 
-  <script src="assets/js/data.js?v=20260909a"></script>
-  <script src="assets/js/main.js?v=20260909a"></script>
+  <script src="assets/js/data.js?v=20260909b"></script>
+  <script src="assets/js/main.js?v=20260909b"></script>
 </body>
 </html>
