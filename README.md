@@ -14,13 +14,13 @@ See [AUDIT.md](AUDIT.md) for the full audit of the current site, the pain points
 
 | File | Purpose |
 | --- | --- |
-| `index.html` | Home: hero with the agency headline and tagline, quick inquiry card, destinations ticker, five services, how booking works, featured packages with region tabs, tour-highlight posters, why choose us, previous tours gallery, FAQ, call to action. |
+| `index.html` | Home: animated hero (staged entrance, masked headline, pointer and scroll parallax, rotating "now booking" line, destination chips, background video with a pause control), quick inquiry card, destinations ticker, five services, how booking works, featured packages with region tabs, tour-highlight posters, why choose us, previous tours gallery, FAQ, call to action. |
 | `services.html` | Ticketing, Hotel Bookings & Reservations, Transport Service Reservations (vans, coasters, bus, 4-seater), Local & International Tour Packages, and Meetings, Incentives, Conferences, Exhibitions, Trainings & Seminars. Flight and event quote forms pre-fill the inquiry page. |
 | `tours.html` | All 15 packages with search, region, duration, archive (past departures) and sort filters. Each card opens a details modal with places, inclusions, status and (for Vietnam) the itinerary posters. |
 | `package.html` | Package detail page (`package.html?id=<package-id>`): hero, sticky section tabs, photo gallery, overview, day-by-day itinerary, inclusions and exclusions, places with a location guide, 2026 travel dates with surcharges, itinerary posters, related packages and a sticky quote button. |
-| `payment.html` | Payment step (`payment.html?ref=…`): booking summary from the quotation, the three-step payment process, payment methods and direct contact buttons. |
+| `payment.html` | Held back, not linked from anywhere: the payment step is off until the agency confirms a booking flow (`CONFIG.payments`). It states that nothing is collected on the website. |
 | `about.html` | Why choose us, the four values, mission and vision, team cards for the four desks, previous tours gallery, contact details. |
-| `contact.html` | Three-step inquiry form delivered to `inquiries@immaculateconnectionsph.com`. On submit it renders a printable quotation on screen and links to the payment step. |
+| `contact.html` | Three-step inquiry form delivered to `inquiries@immaculateconnectionsph.com`. On submit it renders a printable quotation the traveller can download, email or send on Messenger. No payment is requested. |
 
 ## Inquiry form delivery
 
@@ -30,19 +30,24 @@ The form posts to FormSubmit's AJAX endpoint for `inquiries@immaculateconnection
 
 Optional hardening after activation: FormSubmit provides a hashed alias for the address; paste it into `CONFIG.formEndpoint` to keep the raw email out of the page source.
 
-## Quotation and payment flow
+## Quotation flow
 
-`Inquiry form → quotation → payment`
+`Inquiry form → quotation → download, email or Messenger`
+
+There is no payment step. Destinations, travel dates and final pricing are
+confirmed by the reservations team first, and payment instructions are issued
+only with the official quotation that team sends.
 
 1. **The traveller submits the form.** The inquiry is emailed to `inquiries@immaculateconnectionsph.com` with a quotation reference in the subject line (`Website inquiry ICQ-260909-4821: Tour package – …`).
 2. **A quotation appears on screen straight away.** It carries the quotation number, issue and validity dates, the traveller's details, the booking details they entered, an estimated cost (rate × number of travellers when the package has a published rate), inclusions and exclusions, the itinerary at a glance and the terms. It states that the agency will contact the traveller directly by email.
 3. **The same quotation is emailed to the traveller.** FormSubmit's auto-response sends a plain-text copy with the reference, the details, the estimate and the next steps.
 4. **Download.** The *Download quotation* button opens the print dialog; choosing **Save as PDF** produces a clean one-document PDF (headers, navigation, forms and buttons are stripped by the print stylesheet in `assets/css/quotation.css`).
-5. **Proceed to payment.** The button opens `payment.html` carrying only the quotation reference, package name, service and estimated amount in the URL. No personal details are placed in the link.
+5. **Send it to us.** *Email a copy* and *Message us* carry the same details to the agency in one tap, which is also the fallback if automatic delivery ever fails.
+6. **No payment step.** `CONFIG.payments` is `false`, so the *Proceed to payment* button stays hidden and `payment.html` is unlinked. Set it to `true` and fill in `CONFIG.payment` once the agency has a confirmed booking flow, and the button reappears carrying only the quotation reference, package name, service and estimated amount in the URL.
 
 **Preview the template without sending anything:** open `contact.html?preview=quote`. It fills the document with sample data so layout, print and download can be checked. Nothing is submitted and no email is sent.
 
-**Payment details.** `CONFIG.payment` in `assets/js/main.js` is empty by default, so the payment page tells travellers that the account details arrive with their official invoice. Fill in the arrays and the cards appear automatically:
+**Payment details.** `CONFIG.payment` in `assets/js/main.js` is empty and `CONFIG.payments` is `false`, so the payment step is switched off everywhere. Set the switch and fill in the arrays together, and the cards appear automatically:
 
 ```js
 payment: {

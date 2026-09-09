@@ -26,6 +26,10 @@
 .svc-card.big .svc-icon { position: absolute; top: 24px; left: 24px; }
 
 /* ---------- 3D tilt + glare ---------- */
+/* The hidden attribute has to beat the component rules: .btn sets a display,
+   which would otherwise leave a "hidden" button on the page. */
+[hidden] { display: none !important; }
+
 [data-tilt] { transform-style: preserve-3d; transform: perspective(900px) rotateX(var(--rx, 0deg)) rotateY(var(--ry, 0deg)); transition: transform .35s var(--ease-out), box-shadow .45s var(--ease-out); }
 [data-tilt]:hover { transform: perspective(900px) rotateX(var(--rx, 0deg)) rotateY(var(--ry, 0deg)) translateY(-6px); }
 .tour-card[data-tilt]::after { content: ""; position: absolute; inset: 0; pointer-events: none; border-radius: inherit; opacity: 0; transition: opacity .35s; background: radial-gradient(circle at var(--mx, 50%) var(--my, 50%), rgba(255,255,255,.35), transparent 55%); z-index: 3; }

@@ -498,6 +498,18 @@ window.IC = window.IC || {};
     }
   ];
 
+  /* Quick destination picks under the hero quote card. `q` is what lands in
+     the destination field when a chip is tapped; `flag` is the country code
+     for the little flag. Keep the list to the markets we actually sell.   */
+  IC.heroPicks = [
+    { q: 'Bohol', flag: 'ph' },
+    { q: 'Camotes Islands', flag: 'ph' },
+    { q: 'Cebu & Mactan', flag: 'ph' },
+    { q: 'Da Nang', flag: 'vn' },
+    { q: 'Hanoi & Ha Long Bay', flag: 'vn' },
+    { q: 'Tokyo & Mt. Fuji', flag: 'jp' }
+  ];
+
   IC.destinationsTicker = [
     ['Da Nang', 'From ₱23,888 · out Manila'], ['Hanoi · Sapa · Ha Long Bay', 'From ₱32,888 · out Cebu'], ['Bohol', 'Loboc River lunch'], ['Camotes Islands', '2 days 1 night'],
     ['Cebu City', 'Heritage tours'], ['Cebu Highlands', 'Temple of Leah & Sirao'], ['Mactan', 'Twin City Tour'],

@@ -1,0 +1,306 @@
+/* =========================================================
+   Immaculate Connections Travel Agency — hero layer (home)
+   ---------------------------------------------------------
+   Entrance choreography, pointer and scroll parallax, the
+   rotating "now booking" line, destination quick picks and
+   the quote-card progress meter.
+
+   Rules of the road for this file:
+   · transform and opacity only, so every frame stays on the
+     compositor and the section does not repaint;
+   · no backdrop-filter and no infinite background zoom, the
+     two effects removed earlier for speed;
+   · pointer effects are driven by two CSS variables written
+     once per frame by main.js, never by per-element JS;
+   · everything degrades to a still, fully visible hero for
+     reduced motion, and the entrance runs on CSS alone so
+     the copy is never hidden behind a script.
+   ========================================================= */
+
+.hero {
+  --px: 0;            /* pointer, -1 … 1 across the hero  */
+  --py: 0;            /* pointer, -1 … 1 down the hero    */
+  --sp: 0;            /* scroll progress out of the hero  */
+  --gx: 50%;          /* pointer glow position            */
+  --gy: 40%;
+}
+
+/* ---------- Background: pointer drift + scroll scale ---------- */
+.hero > .hero-bg {
+  transform: scale(calc(1 + var(--sp) * .07))
+             translate3d(calc(var(--px) * -12px), calc(var(--py) * -12px), 0);
+  transition: transform .9s cubic-bezier(.2, .7, .2, 1);
+  will-change: transform;
+}
+.hero > .hero-bg::after { transition: opacity .6s; }
+
+/* ---------- Ambient layers ---------- */
+.hero-fx { position: absolute; inset: 0; z-index: -1; pointer-events: none; overflow: hidden; }
+
+/* Soft light pools. Radial gradients, not blur filters, so they cost nothing. */
+.hero-orb { position: absolute; border-radius: 50%; opacity: .55; }
+.hero-orb.a {
+  width: 46vw; height: 46vw; max-width: 560px; max-height: 560px; left: -6%; top: -10%;
+  background: radial-gradient(circle at 50% 50%, rgba(255, 183, 48, .5), rgba(255, 183, 48, 0) 68%);
+  animation: orbDrift 22s var(--ease) infinite alternate;
+  transform: translate3d(calc(var(--px) * 26px), calc(var(--py) * 20px), 0);
+}
+.hero-orb.b {
+  width: 52vw; height: 52vw; max-width: 640px; max-height: 640px; right: -12%; bottom: -18%;
+  background: radial-gradient(circle at 50% 50%, rgba(29, 103, 205, .55), rgba(29, 103, 205, 0) 70%);
+  animation: orbDrift 30s var(--ease) -8s infinite alternate;
+  transform: translate3d(calc(var(--px) * -22px), calc(var(--py) * -16px), 0);
+}
+@keyframes orbDrift {
+  from { opacity: .38; }
+  to   { opacity: .62; }
+}
+
+/* The pointer carries a faint spotlight across the footage. */
+.hero-glow {
+  position: absolute; inset: 0; opacity: 0; transition: opacity .6s var(--ease);
+  background: radial-gradient(460px circle at var(--gx) var(--gy), rgba(255, 255, 255, .16), transparent 72%);
+}
+.hero.has-pointer .hero-glow { opacity: 1; }
+
+/* One gold sweep across the hero as the page settles. */
+.hero-sheen {
+  position: absolute; top: -10%; bottom: -10%; left: 0; width: 38%;
+  background: linear-gradient(100deg, transparent, rgba(255, 255, 255, .12) 42%, rgba(255, 183, 48, .18) 56%, transparent);
+  transform: translate3d(-160%, 0, 0) skewX(-12deg);
+  animation: heroSheen 2.8s .45s cubic-bezier(.4, 0, .2, 1) both;
+}
+@keyframes heroSheen {
+  from { transform: translate3d(-160%, 0, 0) skewX(-12deg); }
+  to   { transform: translate3d(360%, 0, 0) skewX(-12deg); }
+}
+
+/* ---------- Entrance choreography ---------- */
+/* Pure CSS, so the copy appears even if main.js never arrives. Each child
+   carries --i and inherits the same curve, which keeps the cascade readable
+   at a glance instead of hiding the timing in script. */
+.hero-copy > *,
+.hero-side {
+  animation: heroIn .85s var(--ease-out) both;
+  animation-delay: calc(var(--i, 0) * 90ms + 120ms);
+}
+@keyframes heroIn {
+  from { opacity: 0; transform: translate3d(0, 26px, 0); }
+  to   { opacity: 1; transform: none; }
+}
+.hero-side { position: relative; }
+
+/* Copy and card lift slightly with the pointer, and drift away on scroll. */
+.hero-copy {
+  transform: translate3d(calc(var(--px) * 6px), calc(var(--py) * 5px + var(--sp) * 34px), 0);
+  transition: transform .9s cubic-bezier(.2, .7, .2, 1);
+  opacity: calc(1 - var(--sp) * .65);
+}
+.hero-side > .quote-card {
+  transform: translate3d(calc(var(--px) * -8px), calc(var(--py) * -6px), 0);
+  transition: transform .9s cubic-bezier(.2, .7, .2, 1), box-shadow .4s var(--ease);
+}
+/* While the entrance is still running, the animation owns the transform. */
+.hero:not(.is-in) .hero-copy,
+.hero:not(.is-in) .hero-side > .quote-card { transform: none; opacity: 1; }
+
+/* ---------- Title: word masks and a drawn gold underline ---------- */
+.hero-title.is-split { opacity: 1; animation: none; }
+.hero-title .w { display: inline-block; overflow: hidden; vertical-align: bottom; padding-bottom: .12em; margin-bottom: -.12em; }
+.hero-title.words-done .w { overflow: visible; }
+.hero-title .w > span {
+  display: inline-block;
+  transform: translate3d(0, 108%, 0) rotate(3deg);
+  transition: transform 1s var(--ease-out), opacity .6s var(--ease-out);
+  transition-delay: calc(var(--wi, 0) * 80ms + 150ms);
+  opacity: 0;
+}
+.hero.is-in .hero-title .w > span { transform: none; opacity: 1; }
+
+.hero-title .hl { font-style: normal; position: relative; white-space: nowrap; }
+.hero-title .hl::after {
+  content: ""; position: absolute; left: -.04em; right: -.04em; bottom: .04em; height: .13em;
+  border-radius: .1em; background: linear-gradient(90deg, var(--gold), #ffd98a 70%, rgba(255, 217, 138, .2));
+  transform: scaleX(0); transform-origin: left center;
+  transition: transform 1s var(--ease-out) .95s;
+}
+.hero.is-in .hero-title .hl::after { transform: scaleX(1); }
+
+/* ---------- "Now booking" rotating line ---------- */
+.hero-next {
+  position: relative; display: flex; width: fit-content; align-items: center; gap: 14px;
+  margin: 0 0 26px; padding: 10px 18px 10px 16px; max-width: 100%;
+  border-radius: 999px; border: 1px solid rgba(255, 255, 255, .28);
+  background: rgba(15, 59, 120, .38); color: #fff; overflow: hidden;
+  transition: border-color .3s, background .3s, transform .3s var(--ease);
+}
+.hero-next:hover, .hero-next:focus-visible { border-color: rgba(255, 183, 48, .7); background: rgba(15, 59, 120, .52); }
+.hero-next .hn-label {
+  display: inline-flex; align-items: center; gap: 8px; flex: none;
+  font-size: .66rem; font-weight: 800; letter-spacing: .16em; text-transform: uppercase;
+  color: rgba(255, 255, 255, .72);
+}
+.hero-next .hn-label .dot { width: 7px; height: 7px; border-radius: 50%; background: var(--gold); animation: pulse 2s infinite; }
+/* The items are stacked in one grid cell rather than absolutely positioned, so
+   the slot still takes the width of the widest line and the pill sizes itself. */
+.hero-next .hn-slot {
+  position: relative; display: grid; grid-template-columns: minmax(0, 1fr);
+  align-items: center; height: 24px; min-width: 0; flex: 0 1 auto; overflow: hidden;
+}
+.hn-item {
+  grid-area: 1 / 1; display: flex; align-items: center; gap: 8px; min-width: 0; line-height: 1.2;
+  white-space: nowrap; opacity: 0; transform: translate3d(0, 70%, 0);
+  transition: opacity .4s var(--ease), transform .55s var(--ease-out);
+}
+.hn-item.on { opacity: 1; transform: none; }
+.hn-item.out { opacity: 0; transform: translate3d(0, -70%, 0); }
+.hn-item .flag { border-radius: 3px; box-shadow: 0 0 0 1px rgba(255, 255, 255, .35); }
+.hn-item b { font-weight: 700; font-size: .92rem; min-width: 0; overflow: hidden; text-overflow: ellipsis; }
+.hn-item i { font-style: normal; font-size: .82rem; color: var(--gold); font-weight: 700; }
+.hero-next .hn-go { width: 16px; height: 16px; flex: none; color: var(--gold); transition: transform .3s var(--ease); }
+.hero-next:hover .hn-go { transform: translateX(4px); }
+.hero-next .hn-bar { position: absolute; left: 0; right: 0; bottom: 0; height: 2px; background: rgba(255, 255, 255, .14); }
+.hero-next .hn-bar i { display: block; height: 100%; background: linear-gradient(90deg, var(--gold), var(--orange)); transform-origin: left center; transform: scaleX(0); }
+.hero-next.ticking .hn-bar i { animation: hnBar var(--hn-dur, 4s) linear infinite; }
+.hero-next.paused .hn-bar i { animation-play-state: paused; }
+@keyframes hnBar { from { transform: scaleX(0); } to { transform: scaleX(1); } }
+
+/* ---------- Hero call-to-action buttons: pointer highlight ---------- */
+.hero-actions .btn { position: relative; overflow: hidden; isolation: isolate; }
+.hero-actions .btn::after {
+  content: ""; position: absolute; inset: 0; z-index: -1; opacity: 0; transition: opacity .3s;
+  background: radial-gradient(130px circle at var(--bx, 50%) var(--by, 50%), rgba(255, 255, 255, .32), transparent 68%);
+}
+.hero-actions .btn:hover::after { opacity: 1; }
+
+/* ---------- Trust row ---------- */
+.hero-trust .trust-item { transition: transform .3s var(--ease), color .3s; }
+.hero-trust .trust-item svg { transition: transform .35s var(--ease-out); }
+.hero-trust .trust-item:hover svg { transform: scale(1.18) rotate(-6deg); }
+
+/* ---------- Quote card: progress meter, quick picks, ready state ---------- */
+.qc-meter { display: flex; align-items: center; gap: 10px; margin: 0 0 16px; }
+.qc-meter .qc-bar { position: relative; flex: 1; height: 5px; border-radius: 999px; background: var(--bg-2); overflow: hidden; }
+.qc-meter .qc-bar i {
+  position: absolute; inset: 0; border-radius: 999px; transform-origin: left center;
+  transform: scaleX(var(--v, 0)); transition: transform .45s var(--ease-out);
+  background: linear-gradient(90deg, var(--blue), var(--gold));
+}
+.qc-meter .qc-count { font-size: .72rem; font-weight: 800; letter-spacing: .08em; text-transform: uppercase; color: var(--muted); flex: none; }
+.quote-card.ready .qc-meter .qc-count { color: var(--success); }
+
+.qq-picks { display: flex; flex-wrap: wrap; gap: 6px; margin-top: -4px; }
+.qq-picks .pick-label { flex: 100%; font-size: .72rem; font-weight: 700; color: var(--muted); margin-bottom: 2px; }
+.pick {
+  display: inline-flex; align-items: center; gap: 6px; padding: 6px 11px; border-radius: 999px;
+  border: 1px solid var(--line); background: #fff; color: var(--navy);
+  font-size: .78rem; font-weight: 700; line-height: 1; cursor: pointer;
+  transition: border-color .2s, background .2s, color .2s, transform .2s var(--ease);
+  animation: heroIn .5s var(--ease-out) both; animation-delay: calc(var(--i, 0) * 60ms + 700ms);
+}
+.pick:hover { border-color: var(--blue); background: var(--blue-soft); }
+.pick:active { transform: scale(.96); }
+.pick.on { border-color: var(--blue); background: var(--blue); color: #fff; }
+.pick .flag { border-radius: 2px; }
+.pick.on .flag { box-shadow: 0 0 0 1px rgba(255, 255, 255, .6); }
+
+.quote-card .input:focus, .quote-card .select:focus { outline: none; }
+.quote-card .field { transition: transform .25s var(--ease); }
+.quote-card .field:focus-within { transform: translateY(-1px); }
+
+/* The submit button picks up a slow sheen once the four basics are filled. */
+.quote-card .btn.ready { position: relative; overflow: hidden; isolation: isolate; }
+.quote-card .btn.ready::after {
+  content: ""; position: absolute; top: 0; bottom: 0; left: 0; width: 45%; z-index: -1;
+  background: linear-gradient(100deg, transparent, rgba(255, 255, 255, .45), transparent);
+  transform: translate3d(-140%, 0, 0) skewX(-14deg);
+  animation: btnSheen 2.6s 1.2s var(--ease) infinite;
+}
+@keyframes btnSheen {
+  0%        { transform: translate3d(-140%, 0, 0) skewX(-14deg); }
+  55%, 100% { transform: translate3d(300%, 0, 0) skewX(-14deg); }
+}
+
+/* ---------- Background video control ---------- */
+.hero-vid-btn {
+  position: absolute; right: 22px; bottom: 96px; z-index: 3;
+  width: 42px; height: 42px; border-radius: 50%; display: grid; place-items: center;
+  border: 1px solid rgba(255, 255, 255, .35); background: rgba(15, 59, 120, .4); color: #fff;
+  cursor: pointer; transition: background .25s, border-color .25s, transform .25s var(--ease);
+}
+.hero-vid-btn:hover { background: rgba(15, 59, 120, .68); border-color: rgba(255, 183, 48, .8); }
+.hero-vid-btn:active { transform: scale(.94); }
+.hero-vid-btn svg { width: 16px; height: 16px; }
+.hero-vid-btn .ic-play { display: none; }
+.hero-vid-btn[aria-pressed="true"] .ic-play { display: block; }
+.hero-vid-btn[aria-pressed="true"] .ic-pause { display: none; }
+
+/* ---------- Scroll cue (now a real control) ---------- */
+button.hero-scroll { border: 0; background: none; font: inherit; cursor: pointer; padding: 4px 8px; }
+button.hero-scroll:hover { color: #fff; }
+button.hero-scroll:hover span { height: 46px; }
+button.hero-scroll span { transition: height .3s var(--ease); }
+.hero-scroll { opacity: calc(1 - var(--sp) * 1.6); }
+
+/* ---------- Wave: two layers, gently out of step ---------- */
+.hero-wave { height: 74px; }
+.hero-wave svg { position: absolute; left: -4%; bottom: 0; width: 108%; height: 74px; }
+.hero-wave .w1 { color: var(--bg); animation: waveSway 14s var(--ease) infinite; }
+.hero-wave .w2 { color: rgba(255, 255, 255, .28); bottom: 12px; height: 62px; animation: waveSway 19s var(--ease) -6s infinite reverse; }
+@keyframes waveSway {
+  0%, 100% { transform: translate3d(-2.2%, 0, 0); }
+  50%      { transform: translate3d(2.2%, 0, 0); }
+}
+
+/* =========================================================
+   Screens and preferences
+   ========================================================= */
+
+/* No pointer parallax on touch screens or narrow layouts. */
+@media (hover: none), (max-width: 900px) {
+  .hero > .hero-bg,
+  .hero-copy,
+  .hero-side > .quote-card,
+  .hero-orb { transform: none !important; }
+  .hero-glow { display: none; }
+}
+
+@media (max-width: 900px) {
+  .hero-wave .w2 { display: none; }
+}
+
+/* Under 480px the package name needs every pixel, so the standing label goes
+   and the pulsing dot carries the meaning on its own. */
+@media (max-width: 480px) {
+  .hero-next .hn-label .t { display: none; }
+  .hero-next { gap: 8px; }
+}
+
+@media (max-width: 640px) {
+  .hero-next { margin-bottom: 18px; padding: 8px 14px 8px 12px; gap: 10px; width: 100%; }
+  .hero-next .hn-label { font-size: .58rem; letter-spacing: .12em; }
+  .hero-next .hn-slot { height: 19px; }
+  .hn-item b { font-size: .82rem; }
+  .hn-item i { font-size: .74rem; }
+  .qc-meter { margin-bottom: 12px; }
+  .qq-picks .pick:nth-child(n+6) { display: none; }   /* label + four chips */
+  .pick { font-size: .72rem; padding: 5px 9px; }
+  .hero-vid-btn { display: none; }
+  .hero-orb.a, .hero-orb.b { opacity: .4; }
+  .hero-sheen { display: none; }
+  .hero-wave { height: 44px; }
+  .hero-wave svg { height: 44px; }
+}
+
+/* Reduced motion: everything lands in place, nothing loops. */
+@media (prefers-reduced-motion: reduce) {
+  .hero-copy > *, .hero-side, .pick { animation: none; opacity: 1; transform: none; }
+  .hero-title .w > span { transform: none; opacity: 1; }
+  .hero-title .hl::after { transform: scaleX(1); }
+  .hero-sheen, .hero-orb, .hero-wave .w1, .hero-wave .w2,
+  .hero-next.ticking .hn-bar i, .quote-card .btn.ready::after { animation: none; }
+  .hero-next .hn-bar { display: none; }
+  .hero-glow { display: none; }
+  .hero > .hero-bg, .hero-copy, .hero-side > .quote-card { transform: none; opacity: 1; }
+  .hn-item { transition: none; }
+}

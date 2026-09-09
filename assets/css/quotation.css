@@ -8,6 +8,13 @@
 
 :root { --qt-font: "Inter", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif; --qt-ink: #17233a; --qt-line: #dbe3ee; --qt-muted: #66748c; }
 
+/* ---------- Icon sizing baseline ----------
+   The svg() helper in main.js emits no width/height attributes, so an icon with
+   no CSS size stretches to fill its flex parent. This is the floor; the specific
+   rules further down still win. ---------- */
+.qt-doc svg { width: 16px; height: 16px; flex: none; }
+.qt-tbc svg { width: 17px; height: 17px; color: var(--blue-2); flex: none; }
+
 /* ---------- Overrides so the document is not styled like the success note ---------- */
 #success { text-align: left; padding: 0; }
 #success .qt-doc p, #success .qt-doc li, #success .qt-doc span { max-width: none; margin-left: 0; margin-right: 0; }
@@ -70,7 +77,7 @@ table.qt-table td.num, table.qt-table th.num { text-align: right; white-space: n
 .qt-total span { font-size: 11px; text-transform: uppercase; letter-spacing: .08em; color: var(--qt-muted); font-weight: 700; }
 .qt-total strong { font-size: 1.5rem; font-weight: 700; color: var(--blue-2); letter-spacing: -.01em; }
 .qt-total small { display: block; font-size: 11px; color: var(--qt-muted); font-weight: 500; letter-spacing: 0; text-transform: none; text-align: right; }
-.qt-tbc { display: inline-flex; align-items: center; gap: 8px; padding: 10px 14px; border-radius: 8px; background: #f4f7fb; color: var(--qt-muted); font-size: 12.5px; }
+.qt-tbc { display: flex; align-items: flex-start; gap: 9px; padding: 10px 14px; border-radius: 8px; background: #f4f7fb; color: var(--qt-muted); font-size: 12.5px; }
 
 .qt-cols { display: grid; grid-template-columns: 1fr 1fr; gap: 0; }
 .qt-cols > div { padding: 20px 30px; border-bottom: 1px solid var(--qt-line); }

@@ -196,3 +196,56 @@ Sizes were measured across every page and fall into four deliberate steps: 40 px
 - The footer "Explore" column repeated Home and About Us from the main menu. Both removed, leaving package links.
 - The mobile menu had an "Inquire Now" button directly above its own "Inquiries" menu item. The duplicate button is gone.
 - The package sidebar repeated the facts grid line for line. It now shows only the number of departure dates alongside the price and the actions.
+
+---
+
+## 8. Hero section: motion and interaction (9 September 2026)
+
+The home page hero was a still frame with one word-by-word fade. It now has a
+choreographed entrance and four things a visitor can actually operate, while
+staying inside the performance budget set earlier: transform and opacity only,
+no backdrop filters and no looping background zoom.
+
+### Motion
+| Effect | How it is built |
+|---|---|
+| Staged entrance | Each element in the copy column carries `--i` and shares one keyframe, so the kicker, headline, tagline, paragraph, now-booking line, buttons and trust row arrive in sequence. Pure CSS, so the copy is never hidden behind a script |
+| Headline reveal | Every word sits in a clipping wrapper and slides up from under it, 80 ms apart. The wrappers open again afterwards so the gold underline that draws itself under "Dream" is not clipped |
+| Pointer parallax | One `pointermove` listener writes `--px`, `--py` and the glow position once per frame; the stylesheet decides how far the footage, the light pools, the copy and the quote card travel. Mouse only, and only above 900 px |
+| Scroll parallax | One `scroll` listener writes `--sp`; the footage scales gently, the copy drifts up and fades, and the work stops once the hero has left the screen |
+| Ambient light | Two radial gradients breathe slowly behind the footage, and one gold sweep crosses the hero as the page settles. Gradients rather than blur filters, so there is nothing to rasterise |
+| Water line | The wave at the foot of the hero is now two layers swaying gently out of step |
+
+### Interaction
+| Element | What it does |
+|---|---|
+| "Now booking" line | Cycles through the packages that are actually bookable — flag, short name and starting price — and links straight to the one on show. A gold progress bar tracks the cycle; hovering, focusing or leaving the tab pauses it |
+| Destination chips | The six markets we sell, under the destination field. One tap fills the field, tapping again clears it, and typing by hand keeps the matching chip in step |
+| Progress meter | Counts how many of the four basics are filled and reads "Ready to send" at four, when the send button picks up a slow sheen |
+| Video control | A pause and play button for the background footage, which WCAG asks for on any moving content. It appears only once the clip is really playing |
+| Buttons and cue | The two hero buttons carry a small light that follows the cursor; the scroll cue is now a real control that takes the visitor to the special offers |
+
+### Notes from the work
+- `.split` was already a two-column section layout in `style.css`, so the class the headline splitter adds is `.is-split`. The collision made the headline lay out as a grid.
+- The `hidden` attribute lost to `.btn { display: … }`, which left "hidden" buttons on the page. `[hidden] { display: none !important; }` now sits with the base overrides.
+- Everything above is switched off under `prefers-reduced-motion`, and the pointer effects never run on a touch screen.
+
+## 9. No payment step until details and pricing are confirmed (9 September 2026)
+
+A quotation produced from published rates is an estimate: the destinations, the
+travel dates and the final price are only real once the reservations team has
+checked them. Asking for money before that point is the wrong order, so the
+website no longer offers a payment step at all.
+
+| Change | Where |
+|---|---|
+| `CONFIG.payments` switch, off by default and guarded by `payReady()`, which also requires real account details | `assets/js/main.js` |
+| The *Proceed to payment* button is hidden; the quotation now offers *Download quotation*, *Email a copy* and *Message us* | `contact.html`, `assets/js/main.js` |
+| A line under the actions explains that pricing is confirmed by the team first and that no payment is requested on the website | `contact.html` |
+| The quotation document states plainly that no deposit or payment is requested through the website, and that payment instructions come only with the official quotation. Its status reads "Estimate · for confirmation" | `buildQuotation()` |
+| The traveller's emailed copy says the same in its "what happens next" steps | auto-response text |
+| `payment.html`, now unlinked, states that nothing is collected on the website | `initPayment()` |
+
+Turning the step back on later is one line: set `payments: true` and fill in
+`CONFIG.payment` with the agency's bank and e-wallet details.
+

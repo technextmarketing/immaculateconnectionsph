@@ -28,6 +28,13 @@
     formEndpoint: 'https://formsubmit.co/ajax/inquiries@immaculateconnectionsph.com',
     quotePrefix: 'ICQ',      // quotation reference prefix
     quoteValidDays: 7,       // how long a quotation stays valid
+    // ---- Online payment step ----
+    // Travel dates, locations and final pricing are confirmed by the team
+    // before any money changes hands, so the website never asks a visitor to
+    // pay. The inquiry is delivered by email, Messenger or a downloaded copy.
+    // Flip this to true only when the agency has a confirmed booking flow and
+    // the account details below are filled in.
+    payments: false,
     // ---- Payment details shown on payment.html ----
     // Leave the arrays empty and the page tells travellers that the account
     // details arrive with their official invoice. Fill them in and the cards
@@ -46,6 +53,13 @@
   const esc = s => String(s ?? '').replace(/[&<>"']/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
   const wix = (id, w, h, al) => IC.wix ? IC.wix(id, w, h, al) : id;
   const peso = n => '₱' + Number(n).toLocaleString('en-PH');
+  // A payment step is offered only when the agency has switched it on and has
+  // real account details to show. Until then a quotation is an estimate and
+  // the traveller simply sends it to us.
+  const payReady = () => {
+    const p = CONFIG.payment || {};
+    return CONFIG.payments === true && !!((p.bank && p.bank.length) || (p.ewallet && p.ewallet.length) || p.link);
+  };
   const regionLabel = t => (IC.regions[t.region] ? IC.regions[t.region].label : t.region);
   // ---- Status: a package whose travel dates have all passed becomes 'past' (Departed)
   const today = new Date(); today.setHours(0, 0, 0, 0);
@@ -247,9 +261,14 @@
     });
   }
 
+  /* ---------- Headline: masked word reveal ----------
+     Every word is put in a clipping wrapper and slides up from under it, one
+     after another. The wrappers open again once the run is over so the gold
+     underline under the highlighted word is never clipped. Runs on CSS
+     transitions; the class on .hero is what starts them.                  */
   function initHeroTitle() {
     const t = $('.hero-title[data-split]');
-    if (!t || reduced) return;
+    if (!t) return;
     let i = 0;
     const wrap = node => {
       if (node.nodeType === 3) {
@@ -257,12 +276,192 @@
         node.textContent.split(/(\s+)/).forEach(part => {
           if (!part) return;
           if (/^\s+$/.test(part)) { frag.appendChild(document.createTextNode(part)); return; }
-          const s = document.createElement('span'); s.className = 'word'; s.textContent = part; s.style.animationDelay = (i++ * 60 + 120) + 'ms'; frag.appendChild(s);
+          const w = document.createElement('span'); w.className = 'w';
+          const inner = document.createElement('span');
+          inner.textContent = part; inner.style.setProperty('--wi', i++);
+          w.appendChild(inner); frag.appendChild(w);
         });
         node.parentNode.replaceChild(frag, node);
-      } else { Array.from(node.childNodes).forEach(wrap); }
+      } else Array.from(node.childNodes).forEach(wrap);
     };
-    wrap(t);
+    Array.from(t.childNodes).forEach(wrap);
+    t.classList.add('is-split');   // 'split' is taken by a two-column section layout
+    const settle = () => t.classList.add('words-done');
+    if (reduced) settle(); else setTimeout(settle, 1200 + i * 80);
+  }
+
+  /* ---------- Hero entrance ----------
+     Two frames of breathing room so the starting state paints before the
+     transitions begin, otherwise the first word can appear already in place. */
+  function initHeroStage() {
+    const hero = $('.hero');
+    if (!hero) return;
+    const on = () => hero.classList.add('is-in');
+    if (reduced) { on(); return; }
+    // Two frames normally; the timer is the safety net for a tab that opens in
+    // the background, where animation frames do not run until it is looked at.
+    requestAnimationFrame(() => requestAnimationFrame(on));
+    setTimeout(on, 600);
+  }
+
+  /* ---------- Hero motion: pointer and scroll ----------
+     Both listeners write CSS variables at most once per frame and the
+     stylesheet decides how far each layer travels. Pointer work is limited to
+     a real mouse on a wide screen; scroll work stops once the hero is gone. */
+  function initHeroMotion() {
+    const hero = $('.hero');
+    if (!hero) return;
+
+    if (!reduced) {
+      let sraf = 0, wasOut = false;
+      const onScroll = () => {
+        if (sraf) return;
+        sraf = requestAnimationFrame(() => {
+          sraf = 0;
+          const p = Math.min(1, Math.max(0, window.scrollY / (hero.offsetHeight || 1)));
+          if (p >= 1 && wasOut) return;          // nothing left to move
+          wasOut = p >= 1;
+          hero.style.setProperty('--sp', p.toFixed(3));
+        });
+      };
+      window.addEventListener('scroll', onScroll, { passive: true });
+      onScroll();
+    }
+
+    if (!reduced && !touch && window.matchMedia('(min-width: 901px)').matches) {
+      let praf = 0, ev = null, rect = null;
+      hero.addEventListener('pointerenter', () => { rect = hero.getBoundingClientRect(); });
+      hero.addEventListener('pointermove', e => {
+        if (e.pointerType && e.pointerType !== 'mouse') return;
+        ev = e;
+        if (praf) return;
+        praf = requestAnimationFrame(() => {
+          praf = 0;
+          const r = rect || (rect = hero.getBoundingClientRect());
+          const x = Math.min(1, Math.max(0, (ev.clientX - r.left) / r.width));
+          const y = Math.min(1, Math.max(0, (ev.clientY - r.top) / r.height));
+          hero.classList.add('has-pointer');
+          hero.style.setProperty('--px', (x * 2 - 1).toFixed(3));
+          hero.style.setProperty('--py', (y * 2 - 1).toFixed(3));
+          hero.style.setProperty('--gx', (x * 100).toFixed(1) + '%');
+          hero.style.setProperty('--gy', (y * 100).toFixed(1) + '%');
+        });
+      }, { passive: true });
+      hero.addEventListener('pointerleave', () => {
+        hero.classList.remove('has-pointer');
+        hero.style.setProperty('--px', '0');
+        hero.style.setProperty('--py', '0');
+      });
+      window.addEventListener('resize', () => { rect = null; }, { passive: true });
+
+      // A small light inside each hero button follows the cursor.
+      $$('.hero-actions .btn', hero).forEach(b => {
+        let br = null;
+        b.addEventListener('pointerenter', () => { br = b.getBoundingClientRect(); });
+        b.addEventListener('pointermove', e => {
+          const r = br || (br = b.getBoundingClientRect());
+          b.style.setProperty('--bx', (((e.clientX - r.left) / r.width) * 100).toFixed(1) + '%');
+          b.style.setProperty('--by', (((e.clientY - r.top) / r.height) * 100).toFixed(1) + '%');
+        }, { passive: true });
+        b.addEventListener('pointerleave', () => { br = null; });
+      });
+    }
+
+    const cue = $('#heroScroll');
+    if (cue) cue.addEventListener('click', () => {
+      const next = $('#offers') || hero.nextElementSibling;
+      if (next) window.scrollTo({ top: next.getBoundingClientRect().top + window.scrollY - 90, behavior: reduced ? 'auto' : 'smooth' });
+    });
+  }
+
+  /* ---------- "Now booking" line ----------
+     Cycles through the packages that are actually bookable, links straight to
+     the one on show, pauses on hover, focus and when the tab is hidden.    */
+  function initHeroNext() {
+    const box = $('#heroNext'), slot = $('#heroNextSlot');
+    if (!box || !slot || !IC.tours) return;
+    const list = IC.tours.filter(t => t.price && t.status !== 'soon' && effStatus(t) !== 'past');
+    if (!list.length) return;
+
+    // The pill is narrow, so the filler words in a package name come out and the
+    // recognisable part stays: "Da Nang Charter Flight 6D4N Tour" -> "Da Nang 6D4N".
+    const shortName = t => String(t.name).replace(/charter flight/i, '').replace(/\s*tour\s*$/i, '').replace(/\s{2,}/g, ' ').trim();
+    slot.innerHTML = list.map(t =>
+      `<span class="hn-item">${flagImg(t)}<b>${esc(shortName(t))}</b><i>from ${money(t.price)}</i></span>`).join('');
+    const nodes = $$('.hn-item', slot);
+    box.hidden = false;
+
+    let cur = 0;
+    const go = n => {
+      nodes.forEach(el => el.classList.remove('out'));
+      if (n !== cur) { nodes[cur].classList.remove('on'); nodes[cur].classList.add('out'); }
+      nodes[n].classList.add('on');
+      cur = n;
+      const t = list[n];
+      box.href = 'package.html?id=' + encodeURIComponent(t.id);
+      box.setAttribute('aria-label', 'Now booking: ' + t.name + ', from ' + money(t.price) + '. Open the package.');
+    };
+    go(0);
+    if (reduced || nodes.length < 2) return;
+
+    const DUR = 4200;
+    box.style.setProperty('--hn-dur', DUR + 'ms');
+    box.classList.add('ticking');
+    let timer = setInterval(() => go((cur + 1) % nodes.length), DUR);
+    const pause = () => { if (timer) { clearInterval(timer); timer = 0; box.classList.add('paused'); } };
+    const play = () => {
+      if (timer) return;
+      box.classList.remove('paused', 'ticking');
+      void box.offsetWidth;                     // restart the progress bar in step
+      box.classList.add('ticking');
+      timer = setInterval(() => go((cur + 1) % nodes.length), DUR);
+    };
+    box.addEventListener('pointerenter', pause);
+    box.addEventListener('pointerleave', play);
+    box.addEventListener('focus', pause);
+    box.addEventListener('blur', play);
+    document.addEventListener('visibilitychange', () => (document.hidden ? pause() : play()));
+  }
+
+  /* ---------- Hero quote card ----------
+     Destination chips fill the field in one tap, and a meter shows how many of
+     the four basics are in. All four filled and the send button lights up.  */
+  function initQuoteCard() {
+    const card = $('#quickQuote');
+    if (!card) return;
+    const dest = $('#qq_dest', card), picks = $('#qqPicks', card);
+
+    if (picks && IC.heroPicks && IC.heroPicks.length) {
+      picks.innerHTML = '<span class="pick-label">Popular right now</span>' + IC.heroPicks.map((d, i) =>
+        `<button class="pick" type="button" data-q="${esc(d.q)}" style="--i:${i}">` +
+        (d.flag ? `<img class="flag" src="https://flagcdn.com/w40/${esc(d.flag)}.png" width="16" height="12" alt="" loading="lazy">` : '') +
+        `${esc(d.q)}</button>`).join('');
+      picks.hidden = false;
+      picks.addEventListener('click', e => {
+        const b = e.target.closest('.pick');
+        if (!b || !dest) return;
+        const already = b.classList.contains('on');
+        dest.value = already ? '' : b.dataset.q;
+        dest.dispatchEvent(new Event('input', { bubbles: true }));
+      });
+    }
+
+    const fill = $('#qcFill', card), count = $('#qcCount', card), submit = $('button[type=submit]', card);
+    const fields = ['qq_service', 'qq_dest', 'qq_date', 'qq_pax'].map(id => $('#' + id, card)).filter(Boolean);
+    const sync = () => {
+      const n = fields.filter(f => String(f.value || '').trim()).length;
+      if (fill) fill.style.setProperty('--v', (n / fields.length).toFixed(2));
+      if (count) count.textContent = n === fields.length ? 'Ready to send' : n + ' of ' + fields.length;
+      if (submit) submit.classList.toggle('ready', n === fields.length);
+      card.classList.toggle('ready', n === fields.length);
+      // a destination typed by hand keeps the matching chip in step
+      if (picks && dest) {
+        const v = dest.value.trim().toLowerCase();
+        $$('.pick', picks).forEach(x => x.classList.toggle('on', x.dataset.q.toLowerCase() === v));
+      }
+    };
+    fields.forEach(f => { f.addEventListener('input', sync); f.addEventListener('change', sync); });
+    sync();
   }
 
   function initTicker() {
@@ -721,7 +920,7 @@
             <dt>Quotation no.</dt><dd class="ref">${esc(ref)}</dd>
             <dt>Date issued</dt><dd>${esc(fmtDate(issued))}</dd>
             <dt>Valid until</dt><dd>${esc(fmtDate(valid))}</dd>
-            <dt>Status</dt><dd>For confirmation</dd>
+            <dt>Status</dt><dd>Estimate &middot; for confirmation</dd>
           </dl>
         </div>
       </div>
@@ -746,10 +945,11 @@
 
       <div class="qt-section qt-notes">
         <h4>Important notes</h4>
-        <div class="qt-callout">${I.mail}<p><strong>Our team will contact you directly by email at ${esc(o.email || 'your email address')}</strong> to confirm availability, send your official quotation and provide the payment details. You may download or print this quotation for your reference.</p></div>
+        <div class="qt-callout">${I.mail}<p><strong>Our team will contact you directly by email at ${esc(o.email || 'your email address')}</strong> to confirm the destinations and itinerary details, check availability for your dates and finalise the pricing. Your official quotation comes from that team. <strong>No payment is collected on this website</strong> &mdash; you may download, print or forward this quotation for your reference.</p></div>
         <ol>
           <li>This quotation is an <strong>estimate</strong> based on the details you submitted. Rates are per person on twin-sharing basis unless stated otherwise and are subject to availability at the time of booking.</li>
           <li>Published rates may carry <strong>peak-season surcharges</strong> on selected travel dates. Any surcharge that applies to your dates is shown on your official quotation.</li>
+          <li><strong>No deposit or payment is requested through this website.</strong> Payment instructions are issued only with your official quotation, once the locations, dates and final pricing are confirmed by our team.</li>
           <li>Airfare, hotel and tour rates are <strong>not held until payment is received</strong> and may change without prior notice.</li>
           <li>This quotation is valid until <strong>${esc(fmtDate(valid))}</strong>. Quote reference <strong>${esc(ref)}</strong> when you contact us.</li>
           <li>Exclusions such as visa fees, travel tax, tips and single supplements are charged separately where applicable.</li>
@@ -871,8 +1071,8 @@
       const autoresponse =
         `Hi ${first},\n\nThank you for your inquiry with Immaculate Connections Travel Agency. Here is your quotation for reference.\n\n` +
         `QUOTATION ${ref}\nDate issued: ${fmtDate(issued)}\nValid until: ${fmtDate(valid)}\n\n${lines}\n` +
-        (amount ? `\nEstimated total: ${amount}\n(Estimate only, based on published rates and subject to availability.)\n` : '\nFinal pricing is confirmed once we check availability for your dates.\n') +
-        `\nWHAT HAPPENS NEXT\n1. We confirm availability for your travel dates.\n2. Our team contacts you directly by email at this address with your official quotation and the payment details.\n3. Once you are ready, we guide you through payment to confirm your booking.\n\n` +
+        (amount ? `\nEstimated total: ${amount}\n(Estimate only, based on published rates and subject to availability. Not a confirmed price.)\n` : '\nFinal pricing is confirmed once we check the details and availability for your dates.\n') +
+        `\nWHAT HAPPENS NEXT\n1. We confirm the destinations, itinerary details and availability for your travel dates.\n2. Our team contacts you directly by email at this address with your official quotation and the final pricing.\n3. Payment instructions are issued with that official quotation. Nothing is collected through the website.\n\n` +
         `You can also download or print a copy of this quotation from the page where you submitted your inquiry.\n\n` +
         `Immaculate Connections Travel Agency\n${CONFIG.address}\nMobile ${CONFIG.mobile} · Tel ${CONFIG.landline}\n${CONFIG.email}`;
 
@@ -899,14 +1099,23 @@
       if (sent) {
         $('#formBody', form).style.display = 'none';
         $('#quotation', success).innerHTML = buildQuotation(o, tour, ref, issued, valid);
-        $('#successMsg', success).textContent = `Thank you, ${first}. Quotation ${ref} has been prepared and a copy is on its way to ${o.email}. Our team will contact you directly by email to confirm availability and send the payment details.`;
+        $('#successMsg', success).textContent = `Thank you, ${first}. Quotation ${ref} has been prepared and a copy is on its way to ${o.email}. Our team confirms the destinations, dates and final pricing first, then emails your official quotation. No payment is needed now.`;
+        // The payment step only appears once the agency confirms a booking flow
+        // (CONFIG.payments) and has account details to show. Until then the
+        // traveller keeps the quotation and sends it to us instead.
         const pay = $('#qtPay', success);
         if (pay) {
-          const q = new URLSearchParams({ ref, svc: serviceName });
-          if (tour) q.set('pkg', tour.name); else if (o.package) q.set('pkg', o.package);
-          if (amount) q.set('amt', amount);
-          pay.href = 'payment.html?' + q.toString();
+          if (payReady()) {
+            const q = new URLSearchParams({ ref, svc: serviceName });
+            if (tour) q.set('pkg', tour.name); else if (o.package) q.set('pkg', o.package);
+            if (amount) q.set('amt', amount);
+            pay.href = 'payment.html?' + q.toString();
+            pay.hidden = false;
+          } else pay.hidden = true;
         }
+        const sentMail = $('#mailLink', success), sentMsg = $('#msgLink', success);
+        if (sentMail) sentMail.textContent = 'Email a copy';
+        if (sentMsg) sentMsg.textContent = 'Message us';
         success.classList.add('show');
         window.scrollTo({ top: form.getBoundingClientRect().top + window.scrollY - 110, behavior: reduced ? 'auto' : 'smooth' });
       } else {
@@ -950,7 +1159,10 @@
       $('#successMsg', success).textContent = 'This is a preview of the quotation template. Nothing has been sent. Remove ?preview=quote from the address to use the normal inquiry form.';
       $('#success h3', success).textContent = 'Quotation template preview';
       const pay = $('#qtPay', success);
-      if (pay) pay.href = 'payment.html?' + new URLSearchParams({ ref, svc: 'Tour package', pkg: sample ? sample.name : '', amt: sample && sample.price ? money(sample.price, sample.price.from * 4) : '' }).toString();
+      if (pay) {
+        if (payReady()) { pay.href = 'payment.html?' + new URLSearchParams({ ref, svc: 'Tour package', pkg: sample ? sample.name : '', amt: sample && sample.price ? money(sample.price, sample.price.from * 4) : '' }).toString(); pay.hidden = false; }
+        else pay.hidden = true;
+      }
       success.classList.add('show');
     }
 
@@ -974,6 +1186,19 @@
       const off = () => ['pointerdown', 'touchstart', 'scroll', 'keydown'].forEach(e => window.removeEventListener(e, retry));
       ['pointerdown', 'touchstart', 'scroll', 'keydown'].forEach(e => window.addEventListener(e, retry, { passive: true }));
       v.addEventListener('playing', off, { once: true });
+      // WCAG asks for a way to stop moving content, and it doubles as a nice
+      // little control: the button only appears once the clip is really running.
+      const btn = $('#heroVidBtn');
+      if (btn) {
+        v.addEventListener('playing', () => { btn.hidden = false; }, { once: true });
+        btn.addEventListener('click', () => {
+          const paused = v.paused;
+          if (paused) { const q = v.play(); if (q && q.catch) q.catch(() => {}); }
+          else v.pause();
+          btn.setAttribute('aria-pressed', String(!paused));
+          btn.setAttribute('aria-label', (paused ? 'Pause' : 'Play') + ' the background video');
+        });
+      }
     };
     if ('requestIdleCallback' in window) requestIdleCallback(start, { timeout: 1500 });
     else setTimeout(start, 700);
@@ -1033,12 +1258,12 @@
       const cards = [];
       (pay.bank || []).forEach(b => cards.push(`<div class="pay-method"><span class="ic">${I.bank}</span><div><strong>${esc(b.bank)}</strong><p>${esc(b.name)}</p><p class="acct">${esc(b.number)}</p></div></div>`));
       (pay.ewallet || []).forEach(w => cards.push(`<div class="pay-method"><span class="ic">${I.wallet}</span><div><strong>${esc(w.name)}</strong><p>${esc(w.account)}</p><p class="acct">${esc(w.number)}</p></div></div>`));
-      methods.innerHTML = cards.length ? cards.join('') :
-        `<div class="pay-method"><span class="ic">${I.mail}</span><div><strong>Payment details arrive with your official invoice</strong><p>Once we confirm availability for your dates, our team emails your official quotation together with the bank transfer and e-wallet details, the exact deposit amount and the payment deadline. Message or call us if you would like to settle sooner.</p></div></div>`;
+      methods.innerHTML = cards.length && payReady() ? cards.join('') :
+        `<div class="pay-method"><span class="ic">${I.mail}</span><div><strong>Nothing is collected on this website</strong><p>Once the destinations, travel dates and final pricing are confirmed, our team emails your official quotation together with the bank transfer and e-wallet details, the exact deposit amount and the deadline to settle. Message or call us any time to go through it.</p></div></div>`;
     }
 
     const link = $('#payLink', root);
-    if (link) { if (pay.link) { link.href = pay.link; link.hidden = false; } else link.hidden = true; }
+    if (link) { if (pay.link && payReady()) { link.href = pay.link; link.hidden = false; } else link.hidden = true; }
 
     const subject = encodeURIComponent(ref ? `Payment for quotation ${ref}` : 'Payment for my booking');
     const body = encodeURIComponent(`Hello Immaculate Connections,\n\nI would like to proceed with payment.\n\n${ref ? 'Quotation no.: ' + ref + '\n' : ''}${pkg ? 'Package: ' + pkg + '\n' : ''}${amt ? 'Estimated total: ' + amt + '\n' : ''}\nPlease send me the payment details.\n\nThank you.`);
@@ -1052,5 +1277,6 @@
   document.addEventListener('DOMContentLoaded', () => {
     initHeader(); initContactLinks(); initHeroTitle(); initTicker(); initOffers(); initFeatured(); initToursPage(); initPackagePage();
     initHeroVideo(); initGallery(); initTeam(); initFaq(); initSubnav(); initMisc(); initInquiry(); initPayment(); initTilt(); initReveal();
+    initHeroNext(); initQuoteCard(); initHeroMotion(); initHeroStage();
   });
 })();
