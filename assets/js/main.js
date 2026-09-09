@@ -25,7 +25,17 @@
     address: 'Unit 4E, 4th Floor, JL Millennium Building, Don Jose Avila Street, Cebu City, Cebu, Philippines',
     // Inquiries are delivered straight to the agency inbox through FormSubmit.
     // The first submission triggers a one-time activation email to that inbox.
-    formEndpoint: 'https://formsubmit.co/ajax/inquiries@immaculateconnectionsph.com'
+    formEndpoint: 'https://formsubmit.co/ajax/inquiries@immaculateconnectionsph.com',
+    quotePrefix: 'ICQ',      // quotation reference prefix
+    quoteValidDays: 7,       // how long a quotation stays valid
+    // ---- Payment details shown on payment.html ----
+    // Leave the arrays empty and the page tells travellers that the account
+    // details arrive with their official invoice. Fill them in and the cards
+    // appear automatically. Example:
+    //   bank: [{ bank: 'BDO', name: 'Immaculate Connections Travel Agency', number: '0000 0000 0000' }]
+    //   ewallet: [{ name: 'GCash', account: 'Immaculate Connections', number: '0917 000 0000' }]
+    //   link: 'https://your-payment-link'   // optional online checkout
+    payment: { bank: [], ewallet: [], link: '' }
   };
   IC.config = CONFIG;
 
@@ -71,6 +81,52 @@
   };
   const shuffle = a => { const b = a.slice(); for (let i = b.length - 1; i > 0; i--) { const j = Math.floor(Math.random() * (i + 1)); [b[i], b[j]] = [b[j], b[i]]; } return b; };
 
+  /* ---- Inclusion summary tags, derived from each package's inclusion list ---- */
+  const INC_TAGS = [
+    { re: /charter flight|airfare|economy air|round ?trip.*flight/i, label: 'Airfare', icon: 'plane' },
+    { re: /airport transfer|airport pick/i, label: 'Airport transfers', icon: 'plane' },
+    { re: /hotel|accommodation|resort|night/i, label: 'Hotel', icon: 'bed' },
+    { re: /breakfast|meal|lunch|dinner|buffet/i, label: 'Meals', icon: 'meal' },
+    { re: /boat ticket|ferry|fast ?craft/i, label: 'Boat ticket', icon: 'boat' },
+    { re: /coach|transportation|air-?conditioned van|van|coaster|bus/i, label: 'Transport', icon: 'bus' },
+    { re: /guide/i, label: 'Tour guide', icon: 'guide' },
+    { re: /entrance|terminal fee/i, label: 'Entrance fees', icon: 'ticket' },
+    { re: /sightseeing/i, label: 'Sightseeing', icon: 'camera' },
+    { re: /insurance/i, label: 'Insurance', icon: 'shield' },
+    { re: /baggage|hand carry/i, label: 'Baggage', icon: 'bag' },
+    { re: /pasalubong|souvenir/i, label: 'Pasalubong', icon: 'gift' }
+  ];
+  const incTags = t => {
+    if (!t || !t.inclusions || !t.inclusions.length || t.status === 'soon') return [];
+    const hay = t.inclusions.join(' · ');
+    if (/provided on request|coming soon/i.test(hay)) return [];
+    return INC_TAGS.filter(x => x.re.test(hay));
+  };
+  const incTagsHtml = (t, max) => {
+    const tags = incTags(t);
+    if (!tags.length) return '';
+    const shown = max ? tags.slice(0, max) : tags;
+    const extra = tags.length - shown.length;
+    return `<ul class="inc-tags" aria-label="What is included">${shown.map(x => `<li>${I[x.icon]}<span>${esc(x.label)}</span></li>`).join('')}${extra > 0 ? `<li class="more">+${extra}</li>` : ''}</ul>`;
+  };
+
+  /* ---- Travel dates link to the inquiry form with the dates pre-filled ---- */
+  const dateChipIso = (d, t) => {
+    const m = String(d.d || '').match(/([A-Za-z]{3})[a-z]*\s*(\d{1,2})/);
+    if (!m) return '';
+    const mo = MONTHS[m[1].toLowerCase()];
+    if (mo == null) return '';
+    const y = d.y || t.year || new Date().getFullYear();
+    return `${y}-${String(mo + 1).padStart(2, '0')}-${String(+m[2]).padStart(2, '0')}`;
+  };
+  const dateChipHref = (d, t) => {
+    const q = new URLSearchParams({ service: 'tour', package: t.id });
+    const iso = dateChipIso(d, t);
+    if (iso) q.set('date', iso);
+    q.set('notes', `Preferred travel dates: ${d.d}${d.y || t.year ? ' ' + (d.y || t.year) : ''}${d.add ? ` (peak-date surcharge ${money(t.price, d.add)} per pax)` : ''}`);
+    return 'contact.html?' + q.toString();
+  };
+
   const svg = (p, extra = '') => `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" ${extra}>${p}</svg>`;
   const I = {
     check: svg('<path d="M20 6 9 17l-5-5"/>'),
@@ -86,7 +142,21 @@
     bed: svg('<path d="M2 20v-8a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v8"/><path d="M4 10V6a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v4"/><path d="M12 4v6"/><path d="M2 18h20"/>'),
     star: '<svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="m12 2 3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>',
     msg: '<svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2C6.36 2 2 6.13 2 11.7c0 2.91 1.19 5.44 3.14 7.17.16.15.26.35.27.57l.05 1.78a.8.8 0 0 0 1.12.71l1.99-.88a.8.8 0 0 1 .53-.04c.91.25 1.88.39 2.9.39 5.64 0 10-4.13 10-9.7S17.64 2 12 2Zm6 7.46-2.94 4.66a1.5 1.5 0 0 1-2.17.4l-2.34-1.75a.6.6 0 0 0-.72 0l-3.16 2.4c-.42.32-.97-.18-.69-.63l2.94-4.66a1.5 1.5 0 0 1 2.17-.4l2.34 1.75a.6.6 0 0 0 .72 0l3.16-2.4c.42-.32.97.18.69.63Z"/></svg>',
-    phone: svg('<path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/>')
+    phone: svg('<path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/>'),
+    mail: svg('<rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/>'),
+    download: svg('<path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><path d="M7 10l5 5 5-5"/><path d="M12 15V3"/>'),
+    card: svg('<rect width="20" height="14" x="2" y="5" rx="2"/><path d="M2 10h20"/>'),
+    bank: svg('<path d="M3 21h18"/><path d="M5 21V10M9 21V10M15 21V10M19 21V10"/><path d="m12 3 9 5H3z"/>'),
+    wallet: svg('<path d="M19 7V5a2 2 0 0 0-2-2H5a2 2 0 0 0 0 4h15a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5"/><path d="M18 12h.01"/>'),
+    meal: svg('<path d="M3 2v7a3 3 0 0 0 6 0V2"/><path d="M6 2v20"/><path d="M17 2v20"/><path d="M17 12c2.2 0 4-1.8 4-4V2h-4"/>'),
+    bus: svg('<path d="M8 6v6M15 6v6"/><path d="M2 12h19.6"/><path d="M18 18h3s.5-1.7.8-2.8c.1-.4.2-.8.2-1.2 0-.4-.1-.8-.2-1.2l-1.4-5C20.1 6.8 19.1 6 18 6H4a2 2 0 0 0-2 2v10h3"/><circle cx="7" cy="18" r="2"/><path d="M9 18h5"/><circle cx="16" cy="18" r="2"/>'),
+    guide: svg('<circle cx="12" cy="7" r="4"/><path d="M5.5 21a7 7 0 0 1 13 0"/>'),
+    shield: svg('<path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z"/><path d="m9 12 2 2 4-4"/>'),
+    ticket: svg('<path d="M2 9a3 3 0 0 1 0 6v2a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2v-2a3 3 0 0 1 0-6V7a2 2 0 0 0-2-2H4a2 2 0 0 0-2 2z"/><path d="M13 5v14"/>'),
+    boat: svg('<path d="M3 18a4 4 0 0 0 3.5-2 4 4 0 0 0 7 0 4 4 0 0 0 7 0"/><path d="M4 14 12 3l8 11"/><path d="M12 3v11"/>'),
+    camera: svg('<path d="M14.5 4h-5L7 7H4a2 2 0 0 0-2 2v9a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V9a2 2 0 0 0-2-2h-3z"/><circle cx="12" cy="13" r="3"/>'),
+    bag: svg('<path d="M6 20V6a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v14"/><rect width="16" height="14" x="4" y="6" rx="2"/><path d="M9 4V2h6v2"/>'),
+    gift: svg('<rect width="20" height="5" x="2" y="7" rx="1"/><path d="M12 22V7"/><path d="M4 12v8a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-8"/><path d="M12 7H7.5a2.5 2.5 0 0 1 0-5C11 2 12 7 12 7z"/><path d="M12 7h4.5a2.5 2.5 0 0 0 0-5C13 2 12 7 12 7z"/>')
   };
 
   /* ===================== Header, progress bar, drawer ===================== */
@@ -211,6 +281,7 @@
         <div class="tour-region"><span>${flagImg(t)}${esc(destLabel(t))}</span>${statusPill(t)}</div>
         <h3><a href="${pkgUrl(t)}">${esc(t.name)}</a></h3>
         <p class="tour-intro">${esc(t.summary)}</p>
+        ${incTagsHtml(t, 4)}
         <ul class="tour-highlights">
           ${shown.map(p => `<li>${I.check}<span>${esc(p)}</span></li>`).join('')}
           ${more > 0 ? `<li class="more">+ ${more} more places</li>` : ''}
@@ -258,6 +329,7 @@
           ${statusPill(t)}
           <h3><a href="${pkgUrl(t)}">${esc(t.name)}</a></h3>
           <p>${esc(t.summary)}</p>
+          ${incTagsHtml(t, 4)}
           <div class="offer-foot">
             ${priceBlock(t, true)}
             <div class="offer-dates">${I.cal}<span>${t.travelDates.length} departure dates in 2026</span></div>
@@ -367,6 +439,7 @@
               <span class="eyebrow">Overview</span>
               <h2 class="h2">About this ${t.days === 1 ? 'day tour' : 'package'}</h2>
               <p class="pkg-text">${esc(t.overview || t.summary)}</p>
+              ${incTagsHtml(t)}
               <div class="pkg-facts">
                 ${t.duration ? `<div>${I.clock}<div><small>Duration</small><strong>${esc(t.duration)}</strong></div></div>` : ''}
                 ${t.departure ? `<div>${I.plane}<div><small>Departure</small><strong>${esc(t.departure)}</strong></div></div>` : ''}
@@ -408,8 +481,10 @@
               <span class="eyebrow">Dates &amp; price</span>
               <h2 class="h2">Travel dates 2026</h2>
               <p class="muted" style="margin-bottom:18px">${esc(t.travelDatesNote || '')} Base rate ${esc(t.price.label.toLowerCase())} ${money(t.price)} ${esc(t.price.unit)}.</p>
-              <div class="date-grid">${t.travelDates.map(d => `<span class="date-chip ${d.add ? 'sur' : ''} ${isPastDate(d, t) ? 'past' : ''}" title="${isPastDate(d, t) ? 'This date has passed' : 'Available date'}">${I.cal}<span>${esc(d.d)}${d.y ? ' ' + d.y : ''}</span>${d.add ? `<em>+${d.cur === 'USD' ? '$' + d.add : peso(d.add)}</em>` : ''}</span>`).join('')}</div>
-              <p class="small muted" style="margin-top:14px">Dates in orange carry a peak-season surcharge per pax; greyed dates have passed. Availability is confirmed at booking.</p>
+              <div class="date-grid">${t.travelDates.map(d => isPastDate(d, t)
+                ? `<span class="date-chip past" title="This departure date has passed">${I.cal}<span>${esc(d.d)}${d.y ? ' ' + d.y : ''}</span></span>`
+                : `<a class="date-chip ${d.add ? 'sur' : ''}" href="${dateChipHref(d, t)}" title="Select these dates and send an inquiry">${I.cal}<span>${esc(d.d)}${d.y ? ' ' + d.y : ''}</span>${d.add ? `<em>+${d.cur === 'USD' ? '$' + d.add : peso(d.add)}</em>` : ''}</a>`).join('')}</div>
+              <p class="date-hint">${I.arrow.replace('class="arrow"', '')}<span><strong>Tap a date to book it.</strong> Your inquiry form opens with this package and your chosen departure already filled in. Dates in orange carry a peak-season surcharge per pax; greyed dates have passed. Availability is confirmed at booking.</span></p>
             </article>` : ''}
 
             ${hasPosters ? `<article id="posters" class="pkg-section reveal">
@@ -559,6 +634,120 @@
     notes: 'Other details', name: 'Name', email: 'Email', phone: 'Phone', contact: 'Preferred contact'
   };
 
+  /* ---- Quotation document ---------------------------------------------- */
+  const fmtDate = d => d.toLocaleDateString('en-GB', { day: '2-digit', month: 'short', year: 'numeric' });
+  const paxRange = s => {
+    const n = String(s || '').match(/\d+/g);
+    if (!n) return null;
+    return { min: +n[0], max: /\+/.test(s) ? null : (n[1] ? +n[1] : +n[0]) };
+  };
+  const quoteRef = () => {
+    const d = new Date(), p = x => String(x).padStart(2, '0');
+    return `${CONFIG.quotePrefix}-${String(d.getFullYear()).slice(2)}${p(d.getMonth() + 1)}${p(d.getDate())}-${Math.floor(1000 + Math.random() * 9000)}`;
+  };
+
+  function buildQuotation(o, tour, ref, issued, valid) {
+    const serviceName = SERVICE_LABELS[o.service] || 'Travel service';
+    const pax = o.pax || o.guests || o.epax || '';
+    const range = paxRange(pax);
+    const skip = ['name', 'email', 'phone', 'contact', 'service'];
+    const rows = Object.keys(o).filter(k => LABELS[k] && !skip.includes(k))
+      .map(k => `<tr><td class="k">${LABELS[k]}</td><td class="v">${esc(o[k])}</td></tr>`).join('');
+
+    let cost;
+    if (tour && tour.price) {
+      const rate = money(tour.price);
+      let total = '—', note = 'Estimated total for the number of travellers above.';
+      if (range) {
+        const lo = money(tour.price, tour.price.from * range.min);
+        total = range.max && range.max !== range.min ? `${lo} – ${money(tour.price, tour.price.from * range.max)}` : lo;
+        if (!range.max) { total = lo + '+'; note = `Estimated total from ${range.min} travellers.`; }
+      }
+      cost = `
+        <table class="qt-table cost">
+          <thead><tr><th>Description</th><th class="num">Rate</th><th class="num">Travellers</th><th class="num">Estimated total</th></tr></thead>
+          <tbody><tr>
+            <td data-l="Package"><strong>${esc(tour.name)}</strong><br><span style="color:var(--qt-muted)">${esc([tour.duration, tour.departure ? 'departs ' + tour.departure : ''].filter(Boolean).join(' · '))}</span></td>
+            <td class="num" data-l="Rate">${rate}<br><span style="color:var(--qt-muted);font-size:11px">${esc(tour.price.unit)}</span></td>
+            <td class="num" data-l="Travellers">${esc(pax || '—')}</td>
+            <td class="num" data-l="Estimated total"><strong>${total}</strong></td>
+          </tr></tbody>
+        </table>
+        <div class="qt-total"><span>Estimated total<small>${esc(note)}</small></span><strong>${total}</strong></div>`;
+    } else {
+      cost = `<div class="qt-tbc">${I.info}<span>Final pricing is confirmed by our team once availability for your dates is checked. Your official quotation follows by email.</span></div>`;
+    }
+
+    const inc = tour && tour.inclusions && tour.inclusions.length && tour.status !== 'soon' ? `
+      <div class="qt-cols">
+        <div><h4>Inclusions</h4><ul>${tour.inclusions.map(x => `<li>${I.check}<span>${esc(x)}</span></li>`).join('')}</ul></div>
+        ${tour.exclusions && tour.exclusions.length ? `<div class="exc"><h4>Exclusions</h4><ul>${tour.exclusions.map(x => `<li>${I.x}<span>${esc(x)}</span></li>`).join('')}</ul></div>` : '<div><h4>Exclusions</h4><ul><li><span style="color:var(--qt-muted)">As advised on your official quotation.</span></li></ul></div>'}
+      </div>` : '';
+
+    const itin = tour && tour.itinerary && tour.itinerary.length ? `
+      <div class="qt-section"><h4>Itinerary at a glance</h4><div class="qt-days">${tour.itinerary.map(d => `<div class="qt-day"><b>${esc(d.day)}</b><span>${esc(d.title)}</span></div>`).join('')}</div></div>` : '';
+
+    return `
+    <div class="qt-doc" id="qtDoc">
+      <div class="qt-band"></div>
+      <div class="qt-head">
+        <div class="qt-brand">
+          <img src="${IC.media ? IC.media.mark : ''}" alt="">
+          <div>
+            <strong>Immaculate Connections</strong>
+            <span class="tag">Travel Agency</span>
+            <span>${esc(CONFIG.address)}</span>
+            <span>${esc(CONFIG.mobile)} · ${esc(CONFIG.landline)}<br>${esc(CONFIG.email)}</span>
+          </div>
+        </div>
+        <div class="qt-meta">
+          <div class="qt-title">Quotation</div>
+          <dl>
+            <dt>Quotation no.</dt><dd class="ref">${esc(ref)}</dd>
+            <dt>Date issued</dt><dd>${esc(fmtDate(issued))}</dd>
+            <dt>Valid until</dt><dd>${esc(fmtDate(valid))}</dd>
+            <dt>Status</dt><dd>For confirmation</dd>
+          </dl>
+        </div>
+      </div>
+
+      <div class="qt-parties">
+        <div>
+          <span class="qt-label">Prepared for</span>
+          <strong>${esc(o.name || '')}</strong>
+          <p>${esc(o.email || '')}${o.phone ? '<br>' + esc(o.phone) : ''}${o.contact ? '<br>Preferred contact: ' + esc(o.contact) : ''}</p>
+        </div>
+        <div>
+          <span class="qt-label">Service requested</span>
+          <strong>${esc(serviceName)}</strong>
+          <p>${tour ? (tour.flag ? flagImg(tour) : '') + esc(tour.name) + (tour.duration ? '<br>' + esc(tour.duration) : '') : esc(o.package || o.destination || 'As described below')}</p>
+        </div>
+      </div>
+
+      <div class="qt-section"><h4>Booking details</h4><table class="qt-table"><tbody>${rows || '<tr><td class="k">Details</td><td class="v">As discussed</td></tr>'}</tbody></table></div>
+      <div class="qt-section"><h4>Estimated cost</h4>${cost}</div>
+      ${inc}
+      ${itin}
+
+      <div class="qt-section qt-notes">
+        <h4>Important notes</h4>
+        <div class="qt-callout">${I.mail}<p><strong>Our team will contact you directly by email at ${esc(o.email || 'your email address')}</strong> to confirm availability, send your official quotation and provide the payment details. You may download or print this quotation for your reference.</p></div>
+        <ol>
+          <li>This quotation is an <strong>estimate</strong> based on the details you submitted. Rates are per person on twin-sharing basis unless stated otherwise and are subject to availability at the time of booking.</li>
+          <li>Published rates may carry <strong>peak-season surcharges</strong> on selected travel dates. Any surcharge that applies to your dates is shown on your official quotation.</li>
+          <li>Airfare, hotel and tour rates are <strong>not held until payment is received</strong> and may change without prior notice.</li>
+          <li>This quotation is valid until <strong>${esc(fmtDate(valid))}</strong>. Quote reference <strong>${esc(ref)}</strong> when you contact us.</li>
+          <li>Exclusions such as visa fees, travel tax, tips and single supplements are charged separately where applicable.</li>
+        </ol>
+      </div>
+
+      <div class="qt-foot">
+        <p>Thank you for choosing Immaculate Connections Travel Agency.<br>Crafting seamless journeys, creating lasting memories.</p>
+        <div class="sig"><strong>Reservations Team</strong><span>${esc(CONFIG.email)}</span></div>
+      </div>
+    </div>`;
+  }
+
   function initInquiry() {
     const form = $('#inquiryForm');
     if (!form) return;
@@ -644,26 +833,69 @@
     form.addEventListener('submit', async e => {
       e.preventDefault();
       if (!validate(3)) return;
+      const rawPkg = (form.querySelector('#f_package') && !form.querySelector('#f_package').disabled) ? form.querySelector('#f_package').value : '';
       const o = collect();
       const btn = $('[type="submit"]', form), errBox = $('#formError', form);
-      errBox.classList.remove('show'); btn.disabled = true; btn.textContent = 'Sending…';
+      errBox.classList.remove('show'); btn.disabled = true; btn.textContent = 'Preparing your quotation…';
+
       const serviceName = SERVICE_LABELS[o.service] || 'Travel';
-      const payload = { _subject: `Website inquiry: ${serviceName}${o.package ? ' – ' + o.package : ''}`, _template: 'table', _captcha: 'false', _replyto: o.email, name: o.name, email: o.email };
+      const tour = rawPkg && IC.tours ? IC.tours.find(t => t.id === rawPkg) : null;
+      const ref = quoteRef();
+      const issued = new Date();
+      const valid = new Date(issued.getTime() + CONFIG.quoteValidDays * 864e5);
+      const first = (o.name || '').split(' ')[0] || 'there';
+
+      // Estimated total, used on the quotation and carried to the payment page
+      let amount = '';
+      if (tour && tour.price) {
+        const r = paxRange(o.pax || o.guests || o.epax);
+        if (r) {
+          const lo = money(tour.price, tour.price.from * r.min);
+          amount = !r.max ? lo + '+' : (r.max !== r.min ? `${lo} – ${money(tour.price, tour.price.from * r.max)}` : lo);
+        } else amount = money(tour.price) + ' ' + tour.price.unit;
+      }
+
+      const lines = Object.keys(o).filter(k => LABELS[k]).map(k => `${LABELS[k]}: ${k === 'service' ? serviceName : o[k]}`).join('\n');
+      const autoresponse =
+        `Hi ${first},\n\nThank you for your inquiry with Immaculate Connections Travel Agency. Here is your quotation for reference.\n\n` +
+        `QUOTATION ${ref}\nDate issued: ${fmtDate(issued)}\nValid until: ${fmtDate(valid)}\n\n${lines}\n` +
+        (amount ? `\nEstimated total: ${amount}\n(Estimate only, based on published rates and subject to availability.)\n` : '\nFinal pricing is confirmed once we check availability for your dates.\n') +
+        `\nWHAT HAPPENS NEXT\n1. We confirm availability for your travel dates.\n2. Our team contacts you directly by email at this address with your official quotation and the payment details.\n3. Once you are ready, we guide you through payment to confirm your booking.\n\n` +
+        `You can also download or print a copy of this quotation from the page where you submitted your inquiry.\n\n` +
+        `Immaculate Connections Travel Agency\n${CONFIG.address}\nMobile ${CONFIG.mobile} · Tel ${CONFIG.landline}\n${CONFIG.email}`;
+
+      const payload = {
+        _subject: `Website inquiry ${ref}: ${serviceName}${o.package ? ' – ' + o.package : ''}`,
+        _template: 'table', _captcha: 'false', _replyto: o.email, _autoresponse: autoresponse,
+        'Quotation ref': ref, name: o.name, email: o.email
+      };
       Object.keys(o).forEach(k => { if (LABELS[k]) payload[LABELS[k]] = k === 'service' ? serviceName : o[k]; });
+      if (amount) payload['Estimated total'] = amount;
       payload['Sent from'] = location.href;
+
       let sent = false, detail = '';
       try {
         const r = await fetch(CONFIG.formEndpoint, { method: 'POST', headers: { 'Content-Type': 'application/json', Accept: 'application/json' }, body: JSON.stringify(payload) });
         const j = await r.json().catch(() => ({})); sent = r.ok && String(j.success) !== 'false'; detail = j.message || '';
       } catch (_) { sent = false; }
-      const text = `Inquiry via website\n\n${Object.keys(o).filter(k => LABELS[k]).map(k => `${LABELS[k]}: ${k === 'service' ? serviceName : o[k]}`).join('\n')}`;
+
+      const text = `Quotation ${ref}\n\n${lines}${amount ? `\nEstimated total: ${amount}` : ''}`;
       const success = $('#success', form);
-      $('#mailLink', success).href = `mailto:${CONFIG.email}?subject=${encodeURIComponent('Inquiry: ' + serviceName)}&body=${encodeURIComponent(text)}`;
+      $('#mailLink', success).href = `mailto:${CONFIG.email}?subject=${encodeURIComponent(`Quotation ${ref}: ` + serviceName)}&body=${encodeURIComponent(text)}`;
       $('#msgLink', success).href = CONFIG.messenger;
-      const first = (o.name || '').split(' ')[0] || 'there';
+
       if (sent) {
-        $('#formBody', form).style.display = 'none'; success.classList.add('show');
-        $('#successMsg', success).textContent = `Thank you, ${first}! Your inquiry has been sent to ${CONFIG.email}. Our team will get back to you shortly with a quotation. Need it faster? Message us on Facebook or call ${CONFIG.mobile}.`;
+        $('#formBody', form).style.display = 'none';
+        $('#quotation', success).innerHTML = buildQuotation(o, tour, ref, issued, valid);
+        $('#successMsg', success).textContent = `Thank you, ${first}. Quotation ${ref} has been prepared and a copy is on its way to ${o.email}. Our team will contact you directly by email to confirm availability and send the payment details.`;
+        const pay = $('#qtPay', success);
+        if (pay) {
+          const q = new URLSearchParams({ ref, svc: serviceName });
+          if (tour) q.set('pkg', tour.name); else if (o.package) q.set('pkg', o.package);
+          if (amount) q.set('amt', amount);
+          pay.href = 'payment.html?' + q.toString();
+        }
+        success.classList.add('show');
         window.scrollTo({ top: form.getBoundingClientRect().top + window.scrollY - 110, behavior: reduced ? 'auto' : 'smooth' });
       } else {
         btn.disabled = false; btn.innerHTML = `Try again ${I.arrow}`;
@@ -672,11 +904,69 @@
       }
     });
 
+    const dl = $('#qtDownload');
+    if (dl) dl.addEventListener('click', () => window.print());
+
+    // contact.html?preview=quote renders a sample quotation so the template can be
+    // checked (layout, print, download) without submitting the form or sending mail.
+    if (params.get('preview') === 'quote') {
+      const sample = (IC.tours || []).find(t => t.price) || (IC.tours || [])[0];
+      const demo = { service: 'tour', package: sample ? sample.name : 'Sample package', date: '2026-11-06', pax: '3–5', budget: '', notes: 'Sample quotation for template preview.', name: 'Sample Traveller', email: 'traveller@example.com', phone: '+63 917 000 0000', contact: 'Email' };
+      const ref = quoteRef(), issued = new Date(), valid = new Date(issued.getTime() + CONFIG.quoteValidDays * 864e5);
+      const success = $('#success', form);
+      $('#formBody', form).style.display = 'none';
+      $('#quotation', success).innerHTML = buildQuotation(demo, sample, ref, issued, valid);
+      $('#successMsg', success).textContent = 'This is a preview of the quotation template. Nothing has been sent. Remove ?preview=quote from the address to use the normal inquiry form.';
+      $('#success h3', success).textContent = 'Quotation template preview';
+      const pay = $('#qtPay', success);
+      if (pay) pay.href = 'payment.html?' + new URLSearchParams({ ref, svc: 'Tour package', pkg: sample ? sample.name : '', amt: sample && sample.price ? money(sample.price, sample.price.from * 3) + ' – ' + money(sample.price, sample.price.from * 5) : '' }).toString();
+      success.classList.add('show');
+    }
+
     go(params.get('service') ? 2 : 1);
+  }
+
+  /* ===================== Payment page ===================== */
+  function initPayment() {
+    const root = $('#payPage');
+    if (!root) return;
+    const p = new URLSearchParams(location.search);
+    const ref = p.get('ref') || '', pkg = p.get('pkg') || '', amt = p.get('amt') || '', svc = p.get('svc') || '';
+
+    const refCard = $('#payRef', root);
+    if (refCard) {
+      refCard.innerHTML = [
+        ref ? `<div class="row"><span>Quotation no.</span><strong class="code">${esc(ref)}</strong></div>` : '',
+        svc ? `<div class="row"><span>Service</span><strong>${esc(svc)}</strong></div>` : '',
+        pkg ? `<div class="row"><span>Package</span><strong>${esc(pkg)}</strong></div>` : '',
+        `<div class="row"><span>${amt ? 'Estimated total' : 'Amount'}</span><strong class="${amt ? 'big' : ''}">${amt ? esc(amt) : 'Confirmed on your official invoice'}</strong></div>`
+      ].join('') || '<p class="muted">Open this page from your quotation to see your reference number.</p>';
+    }
+
+    const pay = CONFIG.payment || {};
+    const methods = $('#payMethods', root);
+    if (methods) {
+      const cards = [];
+      (pay.bank || []).forEach(b => cards.push(`<div class="pay-method"><span class="ic">${I.bank}</span><div><strong>${esc(b.bank)}</strong><p>${esc(b.name)}</p><p class="acct">${esc(b.number)}</p></div></div>`));
+      (pay.ewallet || []).forEach(w => cards.push(`<div class="pay-method"><span class="ic">${I.wallet}</span><div><strong>${esc(w.name)}</strong><p>${esc(w.account)}</p><p class="acct">${esc(w.number)}</p></div></div>`));
+      methods.innerHTML = cards.length ? cards.join('') :
+        `<div class="pay-method"><span class="ic">${I.mail}</span><div><strong>Payment details arrive with your official invoice</strong><p>Once we confirm availability for your dates, our team emails your official quotation together with the bank transfer and e-wallet details, the exact deposit amount and the payment deadline. Message or call us if you would like to settle sooner.</p></div></div>`;
+    }
+
+    const link = $('#payLink', root);
+    if (link) { if (pay.link) { link.href = pay.link; link.hidden = false; } else link.hidden = true; }
+
+    const subject = encodeURIComponent(ref ? `Payment for quotation ${ref}` : 'Payment for my booking');
+    const body = encodeURIComponent(`Hello Immaculate Connections,\n\nI would like to proceed with payment.\n\n${ref ? 'Quotation no.: ' + ref + '\n' : ''}${pkg ? 'Package: ' + pkg + '\n' : ''}${amt ? 'Estimated total: ' + amt + '\n' : ''}\nPlease send me the payment details.\n\nThank you.`);
+    const mail = $('#payMail', root);
+    if (mail) mail.href = `mailto:${CONFIG.email}?subject=${subject}&body=${body}`;
+    const msg = $('#payMsg', root);
+    if (msg) msg.href = CONFIG.messenger;
+    $$('[data-ref]').forEach(el => (el.textContent = ref || '—'));
   }
 
   document.addEventListener('DOMContentLoaded', () => {
     initHeader(); initContactLinks(); initHeroTitle(); initTicker(); initOffers(); initFeatured(); initToursPage(); initPackagePage();
-    initGallery(); initFaq(); initSubnav(); initMisc(); initInquiry(); initTilt(); initReveal();
+    initGallery(); initFaq(); initSubnav(); initMisc(); initInquiry(); initPayment(); initTilt(); initReveal();
   });
 })();
