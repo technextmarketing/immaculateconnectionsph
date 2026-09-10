@@ -30,10 +30,10 @@
    which would otherwise leave a "hidden" button on the page. */
 [hidden] { display: none !important; }
 
-[data-tilt] { transform-style: preserve-3d; transform: perspective(900px) rotateX(var(--rx, 0deg)) rotateY(var(--ry, 0deg)); transition: transform .35s var(--ease-out), box-shadow .45s var(--ease-out); }
-[data-tilt]:hover { transform: perspective(900px) rotateX(var(--rx, 0deg)) rotateY(var(--ry, 0deg)) translateY(-6px); }
-.tour-card[data-tilt]::after { content: ""; position: absolute; inset: 0; pointer-events: none; border-radius: inherit; opacity: 0; transition: opacity .35s; background: radial-gradient(circle at var(--mx, 50%) var(--my, 50%), rgba(255,255,255,.35), transparent 55%); z-index: 3; }
-.tour-card[data-tilt]:hover::after { opacity: 1; }
+/* The cards keep their own lightweight hover (translateY + shadow) from their
+   component. The 3D pointer-tilt that used to sit here was removed: it read
+   layout on every mouse move and forced a 3D compositing layer under each
+   card's shadow. */
 .tour-card { position: relative; }
 
 /* ---------- Tour card tweaks ---------- */
@@ -258,7 +258,6 @@ a.date-chip.sur:hover { border-color: var(--orange); background: var(--orange-so
 .pill.glass { background: rgba(15,59,120,.62); border-color: rgba(255,255,255,.35); }
 .hero-box { background: rgba(15,59,120,.42); }
 .hero-bg img { animation: none !important; }
-.tour-card[data-tilt]::after { display: none; }
 .contact-card, .contact-card > div, .footer-contact li, .footer-contact span { min-width: 0; }
 .contact-card a, .contact-card p, .footer-contact a, .footer-contact span, .pkg-side .side-card p { overflow-wrap: anywhere; word-break: break-word; }
 @media (max-width: 640px) {

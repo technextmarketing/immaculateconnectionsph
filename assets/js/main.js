@@ -198,13 +198,22 @@
     const header = $('#header');
     let bar = $('.scroll-progress');
     if (!bar) { bar = document.createElement('div'); bar.className = 'scroll-progress'; bar.setAttribute('aria-hidden', 'true'); document.body.prepend(bar); }
-    const onScroll = () => {
+    // The scrollable height only changes on resize or as content loads, so
+    // measure it there and cache it. Reading it inside the scroll handler
+    // forced a layout on every scroll event, the main scroll-jank source. The
+    // paint is coalesced to one write per frame.
+    let max = 0, ticking = false;
+    const measure = () => { max = document.documentElement.scrollHeight - window.innerHeight; };
+    const paint = () => {
+      ticking = false;
       if (header) header.classList.toggle('scrolled', window.scrollY > 10);
-      const max = document.documentElement.scrollHeight - window.innerHeight;
       bar.style.transform = `scaleX(${max > 0 ? Math.min(1, window.scrollY / max) : 0})`;
     };
-    onScroll();
+    const onScroll = () => { if (!ticking) { ticking = true; requestAnimationFrame(paint); } };
+    measure(); paint();
     window.addEventListener('scroll', onScroll, { passive: true });
+    window.addEventListener('resize', () => { measure(); paint(); }, { passive: true });
+    window.addEventListener('load', measure);
     const page = document.body.dataset.page;
     $$('[data-nav]').forEach(a => a.classList.toggle('active', a.dataset.nav === page));
 
@@ -237,28 +246,6 @@
       entries.forEach(en => { if (en.isIntersecting) { en.target.classList.add('in'); io.unobserve(en.target); } });
     }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
     els.forEach(e => io.observe(e));
-  }
-
-  function initTilt(root = document) {
-    if (reduced || touch) return;
-    $$('[data-tilt]', root).forEach(card => {
-      if (card.dataset.tiltReady) return;
-      card.dataset.tiltReady = '1';
-      let raf = 0, last = null;
-      card.addEventListener('mousemove', e => {
-        last = e;
-        if (raf) return;
-        raf = requestAnimationFrame(() => {
-          raf = 0;
-          const r = card.getBoundingClientRect();
-          const x = (last.clientX - r.left) / r.width - 0.5;
-          const y = (last.clientY - r.top) / r.height - 0.5;
-          card.style.setProperty('--rx', (-y * 5).toFixed(2) + 'deg');
-          card.style.setProperty('--ry', (x * 6).toFixed(2) + 'deg');
-        });
-      });
-      card.addEventListener('mouseleave', () => { card.style.setProperty('--rx', '0deg'); card.style.setProperty('--ry', '0deg'); });
-    });
   }
 
   /* ---------- Headline: masked word reveal ----------
@@ -479,7 +466,6 @@
       return;
     }
     grid.innerHTML = list.map(tourCard).join('');
-    initTilt(grid);
   }
 
   function initFeatured() {
@@ -499,7 +485,7 @@
     if (!grid || !IC.tours) return;
     const offers = IC.tours.filter(t => t.price && effStatus(t) !== 'past');
     grid.innerHTML = offers.map((t, i) => `
-      <article class="offer-card reveal" style="--d:${i * 0.1}s" data-tilt>
+      <article class="offer-card reveal" style="--d:${i * 0.1}s">
         <a class="offer-media" href="${pkgUrl(t)}"><img src="${wix(t.image, 520, 390, t.imageAlign)}" alt="${esc(t.alt)}" loading="lazy" width="520" height="390">${cardBadge(t)}</a>
         <div class="offer-body">
           <div class="offer-kickers"><span class="offer-kicker">${flagImg(t)}${esc(t.country)}</span><span class="offer-kicker">${I.plane}${esc(t.departure.split(' (')[0])} departure</span><span class="offer-kicker">${I.clock}${esc(t.duration)}</span></div>
@@ -517,7 +503,6 @@
           </div>
         </div>
       </article>`).join('');
-    initTilt(grid);
   }
 
   /* ---- Tours page ---- */
@@ -733,7 +718,6 @@
     if (t.price) ld.offers = { '@type': 'Offer', price: t.price.from, priceCurrency: t.price.currency || 'PHP', availability: effStatus(t) === 'past' ? 'https://schema.org/SoldOut' : 'https://schema.org/InStock', url: location.href };
     const s = document.createElement('script'); s.type = 'application/ld+json'; s.textContent = JSON.stringify(ld); document.head.appendChild(s);
 
-    initTilt(root);
   }
 
   /* ===================== Lightbox & galleries ===================== */
@@ -1293,7 +1277,7 @@
 
   document.addEventListener('DOMContentLoaded', () => {
     initHeader(); initContactLinks(); initHeroTitle(); initTicker(); initOffers(); initFeatured(); initToursPage(); initPackagePage();
-    initHeroVideo(); initGallery(); initTeam(); initFaq(); initSubnav(); initMisc(); initInquiry(); initPayment(); initTilt(); initReveal();
+    initHeroVideo(); initGallery(); initTeam(); initFaq(); initSubnav(); initMisc(); initInquiry(); initPayment(); initReveal();
     initHeroNext(); initQuoteCard(); initHeroMotion(); initHeroStage();
   });
 })();

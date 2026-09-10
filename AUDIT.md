@@ -294,3 +294,23 @@ copy arriving once on load; the rotating "now booking" line; the destination
 chips, the progress meter and the button highlights. All of those answer to the
 visitor rather than running on their own behind the words.
 
+## 12. Performance audit — the site felt laggy (10 September 2026)
+
+Measured the pages rather than guessing. Two things stood out: a 3D pointer-tilt
+that read layout on every mouse move, and the scroll-progress bar reading the
+page height on every scroll event. Both force synchronous layout mid-interaction,
+which is exactly what "lag" feels like. Two smaller wins on top.
+
+| Cause | Cost | Fix |
+|---|---|---|
+| `[data-tilt]` on the quote card, service cards, offer cards and every tour card | Each mouse move ran `getBoundingClientRect()` (a forced layout) and drove a `perspective()` 3D transform, so hovering a grid of cards recalculated layout and spun up a compositing layer under each card's shadow | Removed the effect entirely — attributes, the `initTilt` handler and the CSS. The cards keep their own cheap `translateY` + shadow hover |
+| The scroll-progress bar read `document.documentElement.scrollHeight` inside the scroll handler | A forced reflow on every scroll event, on every page | Measure the height once (and on resize / load), cache it, and coalesce the paint to one `requestAnimationFrame` write per frame |
+| Five service icons (and the four team icons) were 512×512 PNGs shown at 26–58 px | ~1.3 MP decoded and held in memory per icon, nine of them, for thumbnails | Served through the Wix pipeline at 120 px WebP |
+| The hero's "Special offers" button used `backdrop-filter: blur(8px)` sitting over the playing background video | The blur re-samples the moving video every frame it is on screen | Dropped the blur for a slightly more opaque translucent fill |
+
+Already handled in earlier passes and confirmed still in place: the sticky header,
+sub-nav and package tabs have their backdrop-blur removed and paint on a solid
+fill; the hero background no longer animates (section 11); images carry width and
+height and lazy-load below the fold. No console errors after the changes; icons
+verified at 120 px WebP on home, services and about.
+

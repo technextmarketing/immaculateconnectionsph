@@ -23,12 +23,13 @@ window.IC = window.IC || {};
     heroTours: '952787_1d076b1fc8f14f5ab72956eff2c0433e~mv2.jpg',
     heroAbout: '05e3dc_e099f1ceb25b41908ca3d6ba88d7bcb8.jpg',
     heroInquiries: '05e3dc_43e817747d44442dbf761e2ae66dd8e4.jpg',
+    // These are 512x512 PNGs shown at 26-58px, so serve a 120px WebP.
     icons: {
-      ticketing: `${MEDIA}952787_27ef97fc9ab247f9ac0396528bcb722b~mv2.png`,
-      hotel: `${MEDIA}952787_a0ed48c8d5dd4e2f819407b391d6499c~mv2.png`,
-      transport: `${MEDIA}952787_3fd41e325bc9449296516cd2e286d93f~mv2.png`,
-      tours: `${MEDIA}952787_3d324467583f4cb8a092438d1e6a6872~mv2.png`,
-      mice: `${MEDIA}952787_930a6679ab89472ea4b37d34205490f7~mv2.png`
+      ticketing: wix('952787_27ef97fc9ab247f9ac0396528bcb722b~mv2.png', 120, 120),
+      hotel: wix('952787_a0ed48c8d5dd4e2f819407b391d6499c~mv2.png', 120, 120),
+      transport: wix('952787_3fd41e325bc9449296516cd2e286d93f~mv2.png', 120, 120),
+      tours: wix('952787_3d324467583f4cb8a092438d1e6a6872~mv2.png', 120, 120),
+      mice: wix('952787_930a6679ab89472ea4b37d34205490f7~mv2.png', 120, 120)
     }
   };
 

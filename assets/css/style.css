@@ -107,7 +107,7 @@ h1, h2, h3, h4, p { margin: 0; }
 .btn-blue:hover { background: var(--blue-2); }
 .btn-navy { background: var(--navy); color: #fff; }
 .btn-navy:hover { background: var(--navy-2); }
-.btn-ghost { background: rgba(255,255,255,.12); color: #fff; border-color: rgba(255,255,255,.4); backdrop-filter: blur(8px); }
+.btn-ghost { background: rgba(255,255,255,.16); color: #fff; border-color: rgba(255,255,255,.45); }
 .btn-ghost:hover { background: rgba(255,255,255,.22); border-color: rgba(255,255,255,.7); }
 .btn-outline { background: transparent; color: var(--blue-2); border-color: var(--blue); }
 .btn-outline:hover { background: var(--blue); color: #fff; }
