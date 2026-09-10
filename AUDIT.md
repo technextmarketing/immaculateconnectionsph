@@ -211,10 +211,8 @@ no backdrop filters and no looping background zoom.
 |---|---|
 | Staged entrance | Each element in the copy column carries `--i` and shares one keyframe, so the kicker, headline, tagline, paragraph, now-booking line, buttons and trust row arrive in sequence. Pure CSS, so the copy is never hidden behind a script |
 | Headline reveal | Every word sits in a clipping wrapper and slides up from under it, 80 ms apart. The wrappers open again afterwards so the gold underline that draws itself under "Dream" is not clipped |
-| Pointer parallax | One `pointermove` listener writes `--px`, `--py` and the glow position once per frame; the stylesheet decides how far the footage, the light pools, the copy and the quote card travel. Mouse only, and only above 900 px |
-| Scroll parallax | One `scroll` listener writes `--sp`; the footage scales gently, the copy drifts up and fades, and the work stops once the hero has left the screen |
-| Ambient light | Two radial gradients breathe slowly behind the footage, and one gold sweep crosses the hero as the page settles. Gradients rather than blur filters, so there is nothing to rasterise |
-| Water line | The wave at the foot of the hero is now two layers swaying gently out of step |
+| Ambient light | Two radial gradients warm the corners behind the footage. Painted once and never animated; gradients rather than blur filters, so there is nothing to rasterise |
+| Water line | The wave at the foot of the hero is two still layers, one offset behind the other |
 
 ### Interaction
 | Element | What it does |
@@ -275,4 +273,24 @@ masthead only, and one padding measure (`--qt-pad`) shared by every band so the
 left edge never wanders. Checked at 900 px, in the 600 px form column and at
 375 px, and printed to A4 through headless Chrome: two pages, table headings
 repeating, no block split across the fold.
+
+## 11. The hero background sits still (10 September 2026)
+
+The background carried four moving effects at once: the footage drifted with the
+pointer and scaled on scroll, the two light pools breathed, a gold sweep crossed
+on load, and the waves swayed. Behind copy that a visitor is trying to read, that
+is noise. Everything behind the copy is now painted once and left alone.
+
+| Removed | What replaced it |
+|---|---|
+| Pointer parallax on the footage, the light pools, the copy and the quote card | Nothing moves with the cursor. The `pointermove` listener and the `--px` / `--py` / `--gx` / `--gy` variables are gone |
+| Scroll parallax: the footage scaling, the copy drifting and fading | Nothing moves on scroll. The `scroll` listener and `--sp` are gone |
+| The pointer spotlight and the gold sweep on load | Both layers deleted from the markup and the stylesheet |
+| The light pools breathing on a 22 s and a 30 s loop | The same two gradients, static |
+| Two wave layers swaying out of step | The same two layers, still |
+
+What stays: the background video the agency supplied, with its pause control; the
+copy arriving once on load; the rotating "now booking" line; the destination
+chips, the progress meter and the button highlights. All of those answer to the
+visitor rather than running on their own behind the words.
 

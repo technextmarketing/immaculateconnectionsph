@@ -304,57 +304,15 @@
     setTimeout(on, 600);
   }
 
-  /* ---------- Hero motion: pointer and scroll ----------
-     Both listeners write CSS variables at most once per frame and the
-     stylesheet decides how far each layer travels. Pointer work is limited to
-     a real mouse on a wide screen; scroll work stops once the hero is gone. */
+  /* ---------- Hero controls ----------
+     The background is deliberately still: no pointer parallax, no scroll
+     drift. What is left is the scroll cue, and a small light inside the two
+     hero buttons that follows the cursor while it is over them.          */
   function initHeroMotion() {
     const hero = $('.hero');
     if (!hero) return;
 
-    if (!reduced) {
-      let sraf = 0, wasOut = false;
-      const onScroll = () => {
-        if (sraf) return;
-        sraf = requestAnimationFrame(() => {
-          sraf = 0;
-          const p = Math.min(1, Math.max(0, window.scrollY / (hero.offsetHeight || 1)));
-          if (p >= 1 && wasOut) return;          // nothing left to move
-          wasOut = p >= 1;
-          hero.style.setProperty('--sp', p.toFixed(3));
-        });
-      };
-      window.addEventListener('scroll', onScroll, { passive: true });
-      onScroll();
-    }
-
-    if (!reduced && !touch && window.matchMedia('(min-width: 901px)').matches) {
-      let praf = 0, ev = null, rect = null;
-      hero.addEventListener('pointerenter', () => { rect = hero.getBoundingClientRect(); });
-      hero.addEventListener('pointermove', e => {
-        if (e.pointerType && e.pointerType !== 'mouse') return;
-        ev = e;
-        if (praf) return;
-        praf = requestAnimationFrame(() => {
-          praf = 0;
-          const r = rect || (rect = hero.getBoundingClientRect());
-          const x = Math.min(1, Math.max(0, (ev.clientX - r.left) / r.width));
-          const y = Math.min(1, Math.max(0, (ev.clientY - r.top) / r.height));
-          hero.classList.add('has-pointer');
-          hero.style.setProperty('--px', (x * 2 - 1).toFixed(3));
-          hero.style.setProperty('--py', (y * 2 - 1).toFixed(3));
-          hero.style.setProperty('--gx', (x * 100).toFixed(1) + '%');
-          hero.style.setProperty('--gy', (y * 100).toFixed(1) + '%');
-        });
-      }, { passive: true });
-      hero.addEventListener('pointerleave', () => {
-        hero.classList.remove('has-pointer');
-        hero.style.setProperty('--px', '0');
-        hero.style.setProperty('--py', '0');
-      });
-      window.addEventListener('resize', () => { rect = null; }, { passive: true });
-
-      // A small light inside each hero button follows the cursor.
+    if (!reduced && !touch) {
       $$('.hero-actions .btn', hero).forEach(b => {
         let br = null;
         b.addEventListener('pointerenter', () => { br = b.getBoundingClientRect(); });
