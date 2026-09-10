@@ -511,6 +511,59 @@ window.IC = window.IC || {};
     { q: 'Tokyo & Mt. Fuji', flag: 'jp' }
   ];
 
+  /* ---------- Know-before-you-go guides, keyed by country ----------
+     Practical pre-trip tips shown on each package page (initPackagePage).
+     Written for a Philippine-passport traveller, since the international
+     packages depart Manila/Cebu. Entry rules and budgets change, so the page
+     carries a "confirm the latest" note and points to the agency for help.
+     `ic` maps to an icon in main.js; keep the nine topics in this order.     */
+  IC.countryGuide = {
+    Vietnam: [
+      { ic: 'entry', t: 'Entry requirements', lead: 'Visa-free up to 21 days', body: 'Philippine passport holders enter Vietnam visa-free for stays up to 21 days. Your passport must be valid at least 6 months beyond your return date and have blank pages. No vaccinations are required; just keep routine shots up to date.' },
+      { ic: 'money', t: 'Money', lead: 'Vietnamese dong (₫)', body: 'Cash rules for markets, taxis and street food; cards work in hotels, malls and larger restaurants. Tipping is not expected, but rounding up or ₫20–50k for guides and drivers is appreciated. Budget roughly ₱1,500–2,500 a day beyond your package for meals and extras.' },
+      { ic: 'weather', t: 'Weather & what to pack', lead: 'Warm and humid', body: 'Central Vietnam (Da Nang, Hoi An) is hot most of the year; the north (Hanoi, Sapa) is cooler and can be chilly from December to February. Pack light breathable clothes, a light jacket for the north, a rain layer, sunblock and comfy walking shoes.' },
+      { ic: 'transport', t: 'Getting around', lead: 'Grab is your friend', body: 'Use the Grab app for cars and motorbike taxis at fair, up-front prices. Cities are walkable, and your package includes airport transfers and a private coach on tour days. Avoid unmetered street taxis.' },
+      { ic: 'language', t: 'Language', lead: 'Vietnamese; some English', body: 'English is understood in hotels and tourist spots but limited elsewhere. A few words go far: Xin chào (hello), Cảm ơn (thank you), Bao nhiêu? (how much?). Your English-speaking guide handles the rest.' },
+      { ic: 'culture', t: 'Culture & etiquette', lead: 'Dress modestly at temples', body: 'Cover shoulders and knees at pagodas and remove your shoes when asked. Ask before photographing people, keep your voice down inside temples, and use both hands when giving or receiving. Friendly bargaining at markets is normal.' },
+      { ic: 'safety', t: 'Safety & health', lead: 'Safe; mind the traffic', body: 'Vietnam is safe for tourists; the main hazard is crossing busy roads, so walk slowly and steadily. Watch for bag-snatching in crowds and stick to Grab or hotel taxis. Drink bottled water. Emergencies: police 113, ambulance 115.' },
+      { ic: 'connectivity', t: 'Connectivity', lead: 'Cheap local SIM or eSIM', body: 'Grab a Viettel or Mobifone tourist SIM/eSIM at the airport for fast, affordable data. Wi-Fi is widespread in hotels and cafés. Handy apps: Grab, Google Maps and Google Translate with Vietnamese saved offline.' },
+      { ic: 'food', t: 'Must-see sights & food', lead: 'Golden Bridge & mì Quảng', body: 'Do not miss Ba Na Hills’ Golden Bridge, Hoi An’s lantern-lit old town and the Marble Mountains. Eat your way through phở, bánh mì, mì Quảng, fresh spring rolls and Vietnamese egg coffee.' }
+    ],
+    China: [
+      { ic: 'entry', t: 'Entry requirements', lead: 'Tourist visa required', body: 'Philippine passport holders need a Chinese tourist (L) visa arranged before travel — our ticketing desk can walk you through the requirements. Passport valid 6+ months with blank pages. No vaccinations are required.' },
+      { ic: 'money', t: 'Money', lead: 'Renminbi (¥); go cashless', body: 'China runs on mobile pay — set up Alipay or WeChat Pay and link a Visa/Mastercard before you fly; they now work for tourists almost everywhere. Carry some cash as backup. Tipping is not customary. Budget roughly ₱2,000–3,500 a day for meals and extras.' },
+      { ic: 'weather', t: 'Weather & what to pack', lead: 'Four seasons; check your month', body: 'Shanghai has hot, humid summers and cold winters; Yunnan (Kunming, Lijiang) is mild by day but cool at night and sits at altitude. Layers, a warm jacket, comfortable shoes, sunblock and a rain layer cover most dates.' },
+      { ic: 'transport', t: 'Getting around', lead: 'Metro plus Didi', body: 'City metros are fast, cheap and signed in English; use the Didi app (with in-app English) for taxis. Your package covers airport transfers and a private coach on tour days, and high-speed trains link the cities.' },
+      { ic: 'language', t: 'Language', lead: 'Mandarin; little English', body: 'English is limited outside hotels, so keep translations handy. Useful words: Nǐ hǎo (hello), Xièxie (thank you), Duōshǎo qián? (how much?). Your guide translates throughout the tour.' },
+      { ic: 'culture', t: 'Culture & etiquette', lead: 'Mind the customs', body: 'Give and receive items with both hands, never stand chopsticks upright in rice, and queue patiently. Photography can be restricted at temples and official sites — follow the signs and your guide.' },
+      { ic: 'safety', t: 'Safety & health', lead: 'Very safe; carry your passport', body: 'China is very safe with low street crime; carry your passport as ID. Drink bottled or boiled water. Emergencies: police 110, ambulance 120. Keep your hotel’s name in Chinese to show taxi drivers.' },
+      { ic: 'connectivity', t: 'Connectivity', lead: 'VPN + roaming, not a local SIM', body: 'Google, Facebook, WhatsApp and Instagram are blocked in China — install a trusted VPN before you arrive. The easiest data is an international roaming SIM/eSIM that routes outside the firewall. WeChat keeps you in touch and pays.' },
+      { ic: 'food', t: 'Must-see sights & food', lead: 'The Bund & Lijiang old town', body: 'See Shanghai’s Bund skyline and Yu Garden, or Yunnan’s Stone Forest, Lijiang old town and Jade Dragon Snow Mountain. Try xiaolongbao soup dumplings, hotpot, roast duck and Yunnan rice noodles.' }
+    ],
+    Japan: [
+      { ic: 'entry', t: 'Entry requirements', lead: 'Tourist visa required', body: 'Philippine passport holders need a Japan short-stay tourist visa before travel — our ticketing desk can guide you through the documents. Passport valid for the whole stay. No vaccinations are required.' },
+      { ic: 'money', t: 'Money', lead: 'Yen (¥); carry cash', body: 'Cards are widely accepted, but Japan still loves cash — keep some for small shops, shrines and buses. Get a Suica or Pasmo IC card for trains and convenience stores. Do NOT tip; it can cause confusion. Budget roughly ₱3,000–5,000 a day for meals and extras.' },
+      { ic: 'weather', t: 'Weather & what to pack', lead: 'Cool at Mt. Fuji; check your month', body: 'Tokyo is mild in spring and autumn, hot and humid in summer, and cold in winter; Mt. Fuji’s fifth station is always chilly and windy. Bring layers, a warm jacket for Fuji, comfy walking shoes and a compact umbrella.' },
+      { ic: 'transport', t: 'Getting around', lead: 'Trains run on time', body: 'Japan’s trains and subways are punctual and reach everything; tap in with a Suica or Pasmo card. Google Maps gives exact platforms and times. Your package includes airport transfers and coach transport on tour days.' },
+      { ic: 'language', t: 'Language', lead: 'Japanese; some English', body: 'City signs are bilingual and staff are helpful, though spoken English is limited. Useful words: Konnichiwa (hello), Arigatō (thank you), Sumimasen (excuse me). Google Translate’s camera reads menus for you.' },
+      { ic: 'culture', t: 'Culture & etiquette', lead: 'Quiet and orderly', body: 'Keep phone calls off the trains, avoid eating while walking, queue neatly and take your rubbish with you. Remove shoes where indicated, bow slightly in greeting, and never tip — a little politeness is deeply appreciated.' },
+      { ic: 'safety', t: 'Safety & health', lead: 'Among the world’s safest', body: 'Crime is extremely low and lost items are often handed in. Tap water is safe to drink. Emergencies: police 110, ambulance and fire 119. Carry your passport, as it is your official ID while in Japan.' },
+      { ic: 'connectivity', t: 'Connectivity', lead: 'Pocket Wi-Fi or eSIM', body: 'Rent a pocket Wi-Fi or buy a Japan eSIM for reliable data; free Wi-Fi exists but is patchy. Handy apps: Google Maps, Google Translate, Japan Travel by Navitime, and your Suica in Apple or Google Wallet.' },
+      { ic: 'food', t: 'Must-see sights & food', lead: 'Mt. Fuji, Shibuya, sushi', body: 'See Mt. Fuji and Lake Kawaguchi, Tokyo’s Sensō-ji temple, the Shibuya crossing and Yokohama’s bay. Eat sushi, ramen, tempura and okonomiyaki — and grab snacks from any convenience store.' }
+    ],
+    Philippines: [
+      { ic: 'entry', t: 'Entry requirements', lead: 'Domestic: a valid ID', body: 'For local flights and ferries you need a valid government-issued ID and your booking. Foreign visitors from most countries enter visa-free for 30 days with a passport valid 6+ months and an onward ticket.' },
+      { ic: 'money', t: 'Money', lead: 'Philippine peso (₱)', body: 'Carry cash for island towns, tricycles, market stalls and entrance fees — ATMs can be scarce on smaller islands. Cards and GCash work in resorts and cities. Tipping around 10% or loose change for guides, drivers and boatmen is customary.' },
+      { ic: 'weather', t: 'Weather & what to pack', lead: 'Tropical; check the season', body: 'Expect hot, sunny days most of the year, with the drier months roughly November to May. Pack swimwear, reef-safe sunblock, a hat, light quick-dry clothes, sandals and a rain layer for afternoon showers.' },
+      { ic: 'transport', t: 'Getting around', lead: 'Boats, vans and Grab', body: 'Islands are reached by ferry or banca boat, and your package includes transfers plus a private van and boat where needed. In Cebu, use the Grab app for city rides. Keep small bills for tricycles and habal-habal.' },
+      { ic: 'language', t: 'Language', lead: 'English widely spoken', body: 'English is an official language and understood almost everywhere, so you will have no trouble. Locals speak Cebuano here — Maayong buntag (good morning) and Salamat (thank you) always earn a smile.' },
+      { ic: 'culture', t: 'Culture & etiquette', lead: 'Warm and easygoing', body: 'Filipinos are famously friendly and a smile goes far. Dress modestly in churches, cover up away from the beach, and ask before photographing people. A polite “thank you” is always welcome.' },
+      { ic: 'safety', t: 'Safety & health', lead: 'Friendly; usual care', body: 'The tourist areas here are welcoming and safe; take normal care with valuables and board only registered boats with life vests. Drink bottled water on the islands and bring any personal medicine. Emergency hotline: 911.' },
+      { ic: 'connectivity', t: 'Connectivity', lead: 'Globe/Smart SIM + GCash', body: 'Buy a Globe or Smart tourist SIM at the airport for data; signal can drop on remote islands, so download your maps offline. GCash is handy for payments, and resorts and cafés usually have Wi-Fi.' },
+      { ic: 'food', t: 'Must-see sights & food', lead: 'Beaches, lechon & more', body: 'Chase white-sand beaches, island-hopping and snorkeling, Bohol’s Chocolate Hills and tarsiers, and Palawan’s lagoons. Feast on Cebu lechon, fresh seafood, kinilaw, sweet mangoes and halo-halo to cool down.' }
+    ]
+  };
+
   IC.destinationsTicker = [
     ['Da Nang', 'From ₱23,888 · out Manila'], ['Hanoi · Sapa · Ha Long Bay', 'From ₱32,888 · out Cebu'], ['Bohol', 'Loboc River lunch'], ['Camotes Islands', '2 days 1 night'],
     ['Cebu City', 'Heritage tours'], ['Cebu Highlands', 'Temple of Leah & Sirao'], ['Mactan', 'Twin City Tour'],

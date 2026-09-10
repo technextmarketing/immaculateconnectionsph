@@ -190,7 +190,12 @@
     boat: svg('<path d="M3 18a4 4 0 0 0 3.5-2 4 4 0 0 0 7 0 4 4 0 0 0 7 0"/><path d="M4 14 12 3l8 11"/><path d="M12 3v11"/>'),
     camera: svg('<path d="M14.5 4h-5L7 7H4a2 2 0 0 0-2 2v9a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V9a2 2 0 0 0-2-2h-3z"/><circle cx="12" cy="13" r="3"/>'),
     bag: svg('<path d="M6 20V6a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v14"/><rect width="16" height="14" x="4" y="6" rx="2"/><path d="M9 4V2h6v2"/>'),
-    gift: svg('<rect width="20" height="5" x="2" y="7" rx="1"/><path d="M12 22V7"/><path d="M4 12v8a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-8"/><path d="M12 7H7.5a2.5 2.5 0 0 1 0-5C11 2 12 7 12 7z"/><path d="M12 7h4.5a2.5 2.5 0 0 0 0-5C13 2 12 7 12 7z"/>')
+    gift: svg('<rect width="20" height="5" x="2" y="7" rx="1"/><path d="M12 22V7"/><path d="M4 12v8a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-8"/><path d="M12 7H7.5a2.5 2.5 0 0 1 0-5C11 2 12 7 12 7z"/><path d="M12 7h4.5a2.5 2.5 0 0 0 0-5C13 2 12 7 12 7z"/>'),
+    passport: svg('<path d="M4 4a2 2 0 0 1 2-2h12a1 1 0 0 1 1 1v18a1 1 0 0 1-1 1H6a2 2 0 0 1-2-2z"/><circle cx="11.5" cy="10" r="3"/><path d="M8.5 16h6"/>'),
+    sun: svg('<circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/>'),
+    translate: svg('<path d="M4 5h9"/><path d="M8 3v2c0 5-2.5 8-6 9"/><path d="M6 9c0 3 3 5.5 7 6.5"/><path d="m21 22-4-9-4 9"/><path d="M14.5 18.5h5"/>'),
+    wifi: svg('<path d="M5 12.55a11 11 0 0 1 14.08 0"/><path d="M1.42 9a16 16 0 0 1 21.16 0"/><path d="M8.53 16.11a6 6 0 0 1 6.95 0"/><path d="M12 20h.01"/>'),
+    landmark: svg('<path d="M3 22h18"/><path d="M6 18v-7M10 18v-7M14 18v-7M18 18v-7"/><path d="M4 11h16"/><path d="m12 3 8 5H4z"/>')
   };
 
   /* ===================== Header, progress bar, drawer ===================== */
@@ -565,6 +570,8 @@
     const hasDates = t.travelDates && t.travelDates.length;
     const hasIt = t.itinerary && t.itinerary.length;
     const hasPosters = t.posters && t.posters.length;
+    const guide = IC.countryGuide && IC.countryGuide[t.country];
+    const hasGuide = !!(guide && guide.length);
     const gallery = t.gallery && t.gallery.length ? t.gallery : [t.image];
 
     document.title = `${t.name} | ${CONFIG.shortName}`;
@@ -573,7 +580,9 @@
     const ogd = $('meta[property="og:description"]'); if (ogd) ogd.content = t.summary;
     const ogi = $('meta[property="og:image"]'); if (ogi) ogi.content = wix(t.image, 1200, 630, t.imageAlign);
 
-    const tabs = [['overview', 'Overview'], hasIt ? ['itinerary', 'Itinerary'] : null, ['inclusions', 'Inclusions'], ['places', 'Places & guide'], hasDates ? ['dates', 'Dates & price'] : null, hasPosters ? ['posters', 'Posters'] : null].filter(Boolean);
+    const tabs = [['overview', 'Overview'], hasIt ? ['itinerary', 'Itinerary'] : null, ['inclusions', 'Inclusions'], ['places', 'Places'], hasGuide ? ['guide', 'Know before you go'] : null, hasDates ? ['dates', 'Dates & price'] : null, hasPosters ? ['posters', 'Posters'] : null].filter(Boolean);
+
+    const GUIDE_ICONS = { entry: I.passport, money: I.wallet, weather: I.sun, transport: I.bus, language: I.translate, culture: I.landmark, safety: I.shield, connectivity: I.wifi, food: I.meal };
 
     root.innerHTML = `
       <section class="pkg-hero">
@@ -646,6 +655,15 @@
                 ${t.places.map((p, i) => `<div class="place-card" style="--d:${(i % 4) * 0.06}s"><span class="n">${i + 1}</span><div><strong>${esc(p)}</strong><p>${esc(IC.placeInfo[p] || 'Included in this package’s itinerary.')}</p></div></div>`).join('')}
               </div>
             </article>
+
+            ${hasGuide ? `<article id="guide" class="pkg-section reveal">
+              <span class="eyebrow">Know before you go</span>
+              <h2 class="h2">Your ${esc(t.country)} travel guide</h2>
+              <p class="muted" style="margin-bottom:22px">Practical tips for ${esc(t.country)}, from entry rules to what to eat. General guidance for a Philippine traveller — rules and prices change, so confirm the latest before you fly. ${t.region === 'intl' ? 'Need a hand with the visa or tickets? Our team is glad to help.' : ''}</p>
+              <div class="guide-grid">
+                ${guide.map(g => `<div class="guide-card"><span class="guide-ic">${GUIDE_ICONS[g.ic] || I.info}</span><div class="guide-body"><h4>${esc(g.t)}</h4>${g.lead ? `<p class="guide-lead">${esc(g.lead)}</p>` : ''}<p>${esc(g.body)}</p></div></div>`).join('')}
+              </div>
+            </article>` : ''}
 
             ${hasDates ? `<article id="dates" class="pkg-section reveal">
               <span class="eyebrow">Dates &amp; price</span>

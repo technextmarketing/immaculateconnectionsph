@@ -157,6 +157,21 @@
 .place-card strong { display: block; color: var(--navy); margin-bottom: 4px; }
 .place-card p { font-size: .9rem; color: var(--muted); }
 
+/* ---------- Know-before-you-go travel guide (package page) ----------
+   Two columns so the nine topics fill the width instead of running down one
+   long list; collapses to one column on phones. */
+.guide-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+.guide-card { display: grid; grid-template-columns: 40px minmax(0, 1fr); gap: 14px; padding: 18px; background: #fff; border: 1px solid var(--line); border-radius: var(--r); transition: transform .3s var(--ease-out), box-shadow .3s, border-color .3s; }
+.guide-card:hover { transform: translateY(-3px); box-shadow: var(--shadow); border-color: var(--blue-soft); }
+.guide-ic { width: 40px; height: 40px; border-radius: 12px; display: grid; place-items: center; background: var(--blue-soft); color: var(--blue-2); }
+.guide-ic svg { width: 20px; height: 20px; }
+.guide-body h4 { font-size: 1rem; color: var(--navy); margin: 2px 0 0; }
+.guide-lead { font-size: .82rem; font-weight: 700; color: var(--blue-2); margin: 4px 0 6px; }
+.guide-body > p:last-child { font-size: .9rem; line-height: 1.6; color: var(--ink-2); margin: 0; }
+/* Nine topics leave a lone card in the last row; let it span both columns. */
+.guide-card:last-child:nth-child(odd) { grid-column: 1 / -1; }
+
+
 .date-grid { display: flex; flex-wrap: wrap; gap: 8px; }
 .date-chip { display: inline-flex; align-items: center; gap: 6px; padding: 8px 12px; border-radius: 999px; background: #fff; border: 1px solid var(--line); font-size: .85rem; font-weight: 700; color: var(--ink-2); transition: transform .2s var(--ease), border-color .2s; }
 .date-chip:hover { transform: translateY(-2px); border-color: var(--blue); }
@@ -691,6 +706,11 @@ html { scrollbar-width: thin; scrollbar-color: rgba(50,65,88,.35) transparent; }
   .place-grid { gap: 8px; }
   .place-card { padding: 12px; gap: 10px; }
   .place-card .n { width: 24px; height: 24px; font-size: .66rem; }
+  .guide-grid { grid-template-columns: 1fr; gap: 10px; }
+  .guide-card { padding: 14px; gap: 12px; grid-template-columns: 34px minmax(0, 1fr); }
+  .guide-ic { width: 34px; height: 34px; border-radius: 10px; }
+  .guide-ic svg { width: 18px; height: 18px; }
+  .guide-body h4 { font-size: .95rem; }
   .place-card strong { font-size: .9rem; }
   .place-card p { font-size: .8rem; }
   .date-grid { gap: 6px; }

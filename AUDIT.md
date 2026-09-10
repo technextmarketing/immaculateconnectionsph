@@ -314,3 +314,24 @@ fill; the hero background no longer animates (section 11); images carry width an
 height and lazy-load below the fold. No console errors after the changes; icons
 verified at 120 px WebP on home, services and about.
 
+## 13. Know-before-you-go travel guide on the package page (10 September 2026)
+
+Each package page now carries a country-aware travel guide covering nine
+topics: entry requirements, money, weather & packing, getting around, language,
+culture & etiquette, safety & health, connectivity, and must-see sights & food.
+
+- Content lives in `IC.countryGuide` (data.js), keyed by country, written for a
+  Philippine-passport traveller since the international packages depart Manila:
+  Vietnam (visa-free 21 days), China and Japan (tourist visa required, with a
+  nudge to the agency's ticketing desk), and the Philippines (domestic).
+- It renders as its own `#guide` section with a tab ("Know before you go"),
+  laid out as a **two-column** card grid to use the width rather than a single
+  tall list; the ninth card spans both columns so the last row isn't half empty.
+  One column on phones, no horizontal overflow.
+- Five topic icons were added to the icon set (passport, sun, translate, wifi,
+  landmark); the rest reuse existing ones.
+- A standing note says the tips are general and rules/prices change, so
+  travellers confirm the latest — which also points visa questions to the team.
+
+Verified across all four country variants and at 375 px, no console errors.
+
