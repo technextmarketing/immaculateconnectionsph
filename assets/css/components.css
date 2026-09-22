@@ -179,6 +179,7 @@
 .date-chip.sur { border-color: var(--orange); background: var(--orange-soft); }
 .date-chip em { font-style: normal; font-size: .75rem; color: var(--orange-2); }
 
+.pkg-side { align-self: stretch; }
 .pkg-side .side-card.sticky { position: sticky; top: calc(var(--nav-h) + 70px); }
 .pkg-side .side-card .btn { margin-top: 10px; }
 .pkg-side .side-card .btn svg { width: 18px; height: 18px; }
