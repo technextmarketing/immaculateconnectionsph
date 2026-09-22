@@ -473,29 +473,69 @@ window.IC = window.IC || {};
      section stays accurate until the agency supplies names and photographs.
      `email` is optional and falls back to the main inquiries address.        */
   IC.team = [
+    /* ---------- Team members ----------
+       PLACEHOLDER PROFILES. The names, taglines and bios below are samples so
+       the cards and profile pages (team.html?member=<slug>) can be seen and
+       styled; the About page and each profile carry a visible "sample" note.
+       Replace each entry with a real staff member: set `name`, drop in a
+       `photo` (a Wix media id from the agency's own library) and update
+       `role`, `dept`, `tagline`, `bio`, `handles` and `focus`. Leave `email`
+       empty and it falls back to the main inquiries address; set it to route a
+       person's mail directly. `placeholder: true` shows the sample note; set
+       it to false (or remove it) once the details are real.               */
     {
-      name: '', photo: '', email: '',
-      role: 'Reservations & Ticketing', icon: 'ticketing',
-      desc: 'Books your flights and ferry tickets, compares fares across carriers and handles changes when your plans move.',
-      handles: ['Flight & ferry tickets', 'Fare quotations', 'Rebooking & changes']
+      slug: 'reservations-ticketing', name: 'Maria Santos', role: 'Reservations & Ticketing Lead',
+      dept: 'Reservations & Ticketing', icon: 'ticketing', photo: '', email: '', placeholder: true,
+      tagline: 'Finds the right fare and keeps every booking on track.',
+      bio: 'Maria looks after flights and ferry tickets from first quote to final itinerary. She compares fares across carriers, watches for the best release dates and steps in quickly when plans change so your seats and schedule stay secure.',
+      handles: ['Flight & ferry ticketing', 'Fare quotations & re-issues', 'Rebooking & schedule changes'],
+      focus: ['Domestic & international air', 'Group bookings', 'Charter flights'],
+      experience: 'Reservations & fares', languages: 'English, Filipino, Cebuano'
     },
     {
-      name: '', photo: '', email: '',
-      role: 'Tours & Operations', icon: 'tours',
-      desc: 'Plans your itinerary, assigns your licensed guide and vehicle, and keeps the day running to schedule on the ground.',
-      handles: ['Local & international packages', 'Licensed tour guides', 'Custom itineraries']
+      slug: 'tours-operations', name: 'Jose Reyes', role: 'Tours & Operations Manager',
+      dept: 'Tours & Operations', icon: 'tours', photo: '', email: '', placeholder: true,
+      tagline: 'Plans the days and keeps the trip running on the ground.',
+      bio: 'Jose builds the itinerary, assigns your licensed guide and vehicle and coordinates every stop so the day flows without a hitch. From island-hopping in the Visayas to charter tours abroad, he keeps timings realistic and the pace comfortable.',
+      handles: ['Local & international packages', 'Licensed tour guides', 'Custom itineraries'],
+      focus: ['Bohol & Camotes', 'Da Nang & Vietnam', 'Tailor-made trips'],
+      experience: 'Tour operations', languages: 'English, Filipino, Cebuano'
     },
     {
-      name: '', photo: '', email: '',
-      role: 'Accommodation & Transport', icon: 'hotel',
-      desc: 'Secures your rooms with our resort and hotel partners and reserves the van, coaster or bus that fits your group.',
-      handles: ['Hotel & resort bookings', 'Van, coaster & bus reservations', 'Airport transfers']
+      slug: 'accommodation-transport', name: 'Ana Cruz', role: 'Accommodation & Transport Officer',
+      dept: 'Accommodation & Transport', icon: 'hotel', photo: '', email: '', placeholder: true,
+      tagline: 'Secures the right rooms and the right ride for your group.',
+      bio: 'Ana books your stay with our resort and hotel partners and reserves the van, coaster or bus that fits the group and the route. She matches accommodation to your budget and makes sure airport transfers line up with your flights.',
+      handles: ['Hotel & resort bookings', 'Van, coaster & bus reservations', 'Airport transfers'],
+      focus: ['Partner resorts', 'Group transport', 'Seat-in-coach & private'],
+      experience: 'Accommodation & fleet', languages: 'English, Filipino, Cebuano'
     },
     {
-      name: '', photo: '', email: '',
-      role: 'Meetings, Incentives & Events', icon: 'mice',
-      desc: 'Handles conventions, seminars, trainings and corporate gatherings from the venue and room block to the closing programme.',
-      handles: ['Seminars & conventions', 'Delegate transport & meals', 'Team building programmes']
+      slug: 'mice-events', name: 'Paolo Garcia', role: 'MICE & Events Coordinator',
+      dept: 'Meetings, Incentives & Events', icon: 'mice', photo: '', email: '', placeholder: true,
+      tagline: 'Runs conventions, seminars and team building end to end.',
+      bio: 'Paolo handles meetings, incentives, conventions and trainings from the venue and room block to delegate meals and the closing programme. He has organised orientation courses and seminars for local government units and corporate teams.',
+      handles: ['Seminars & conventions', 'Delegate transport & meals', 'Team-building programmes'],
+      focus: ['LGU seminars', 'Corporate events', 'Incentive travel'],
+      experience: 'Events & logistics', languages: 'English, Filipino, Cebuano'
+    },
+    {
+      slug: 'guest-care', name: 'Liza Mendoza', role: 'Guest Care Specialist',
+      dept: 'Guest Care', icon: 'ticketing', photo: '', email: '', placeholder: true,
+      tagline: 'Your first point of contact, before, during and after the trip.',
+      bio: 'Liza answers your first inquiry, walks you through your quotation and stays reachable while you travel. She keeps you updated on confirmations and requirements so nothing catches you by surprise.',
+      handles: ['Inquiries & quotations', 'Booking follow-through', '24/7 traveller support'],
+      focus: ['Quotation help', 'Travel requirements', 'After-trip care'],
+      experience: 'Customer care', languages: 'English, Filipino, Cebuano'
+    },
+    {
+      slug: 'sales-partnerships', name: 'Marco Villanueva', role: 'Sales & Partnerships',
+      dept: 'Sales & Partnerships', icon: 'tours', photo: '', email: '', placeholder: true,
+      tagline: 'Builds the packages and the partner network behind them.',
+      bio: 'Marco develops tour packages and the relationships with airlines, resorts and ground operators that make them possible. He also looks after corporate accounts and agency partners who book with Immaculate Connections.',
+      handles: ['Package development', 'Corporate & agency accounts', 'Supplier partnerships'],
+      focus: ['New destinations', 'B2B partners', 'Seasonal offers'],
+      experience: 'Sales & product', languages: 'English, Filipino, Cebuano'
     }
   ];
 

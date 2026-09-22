@@ -335,3 +335,28 @@ culture & etiquette, safety & health, connectivity, and must-see sights & food.
 
 Verified across all four country variants and at 375 px, no console errors.
 
+## 14. Team member cards + individual profile pages (22 September 2026)
+
+The About page's four role "desks" became six clickable **employee cards**, three
+to a row, each opening its own profile page.
+
+- `IC.team` (data.js) now holds individual members: `slug`, `name`, `role`,
+  `dept`, `tagline`, `bio`, `handles`, `focus`, `languages`, `experience`. The
+  six entries are **clearly-labelled placeholders** (`placeholder: true`) mapped
+  to the real departments; the About page and every profile carry a visible
+  "sample profiles — replace before going live" note. No fake emails: contact
+  routes to the real inquiries address.
+- The About grid card is now an `<a>` linking to `team.html?member=<slug>`, with
+  an initials avatar (until a photo is added), department, name, tagline and a
+  "View profile" affordance. Grid is 3 per row (→ 2 on tablet, 1 on phone).
+- New `team.html` + `initTeamProfile()` render a profile from the slug: hero with
+  avatar/name/role, email & message actions, bio, "what they handle", focus
+  chips, an at-a-glance side card (desk, specialises in, languages, based in
+  Cebu, CTAs) and the other members. Missing/unknown slug falls back to the
+  first member.
+- Verified at 1280 px and 375 px: 3-up grid, profile two-column → stacked, no
+  console errors, no horizontal overflow. "About Us" stays active in the nav.
+
+To make a member real: set `name`/`photo` and the text fields in `IC.team`, and
+set `placeholder: false`.
+

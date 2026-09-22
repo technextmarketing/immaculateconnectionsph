@@ -1224,36 +1224,130 @@
   }
 
   /* ===================== Team cards ===================== */
+  /* ===================== Team ===================== */
+  // Initials for the fallback avatar when a member has no photo yet.
+  const tmInitials = m => (m.name || m.role || '').trim().split(/\s+/).map(w => w[0]).slice(0, 2).join('').toUpperCase();
+  const tmAvatar = m => m.photo
+    ? `<img src="${wix(m.photo, 560, 560)}" alt="${esc(m.name || m.role)}" loading="lazy">`
+    : `<span class="tm-initials" aria-hidden="true">${esc(tmInitials(m))}</span>`;
+  const tmHref = m => `team.html?member=${encodeURIComponent(m.slug)}`;
+
+  // About-page grid: each card is a link to that member's profile page.
   function initTeam() {
     const grid = $('#teamGrid');
     if (!grid || !IC.team) return;
-    const icons = (IC.media && IC.media.icons) || {};
-    grid.innerHTML = IC.team.map((m, i) => {
-      const named = !!(m.name && m.name.trim());
-      const initials = named ? m.name.trim().split(/\s+/).map(w => w[0]).slice(0, 2).join('').toUpperCase() : '';
-      const avatar = m.photo
-        ? `<img src="${wix(m.photo, 520, 560)}" alt="${esc(m.name || m.role)}" loading="lazy">`
-        : named
-          ? `<span class="tm-initials" aria-hidden="true">${esc(initials)}</span>`
-          : `<img class="tm-icon" src="${icons[m.icon] || ''}" alt="" loading="lazy">`;
-      const mail = m.email || CONFIG.email;
-      return `
-      <article class="tm-card reveal" style="--d:${(i % 4) * 0.08}s">
-        <div class="tm-photo${m.photo ? '' : ' plain'}">${avatar}</div>
+    grid.innerHTML = IC.team.map((m, i) => `
+      <a class="tm-card reveal" href="${tmHref(m)}" style="--d:${(i % 3) * 0.08}s" aria-label="View ${esc(m.name)}\u2019s profile">
+        <div class="tm-photo${m.photo ? '' : ' plain'}">${tmAvatar(m)}</div>
         <div class="tm-body">
-          <h3>${esc(named ? m.name : m.role)}</h3>
-          <span class="tm-role">${esc(named ? m.role : 'Immaculate Connections desk')}</span>
-          <p>${esc(m.desc)}</p>
-          <ul class="tm-handles">${(m.handles || []).map(h => `<li>${I.check}<span>${esc(h)}</span></li>`).join('')}</ul>
-          <div class="tm-links">
-            <a class="tm-link" href="mailto:${esc(mail)}?subject=${encodeURIComponent(m.role + ' inquiry')}">${I.mail}<span>Email</span></a>
-            <a class="tm-link" href="${CONFIG.messenger}" target="_blank" rel="noopener">${I.msg}<span>Message</span></a>
-          </div>
+          <span class="tm-role">${esc(m.dept || m.role)}</span>
+          <h3>${esc(m.name)}</h3>
+          <p>${esc(m.tagline || m.role)}</p>
+          <span class="tm-cta">View profile ${I.arrow}</span>
         </div>
-      </article>`;
-    }).join('');
+      </a>`).join('');
   }
 
+  // Individual profile page: team.html?member=<slug>, rendered into #teamProfile.
+  function initTeamProfile() {
+    const root = $('#teamProfile');
+    if (!root || !IC.team) return;
+    const slug = new URLSearchParams(location.search).get('member');
+    const m = IC.team.find(x => x.slug === slug) || IC.team[0];
+    if (!m) {
+      root.innerHTML = `<section class="section"><div class="container text-center"><span class="eyebrow center">Profile not found</span><h1 class="h2" style="margin-bottom:12px">We couldn\u2019t find that team member</h1><a class="btn btn-primary btn-lg" href="about.html#team">Meet the team ${I.arrow}</a></div></section>`;
+      return;
+    }
+    const first = (m.name || '').split(' ')[0] || 'this desk';
+    const mail = m.email || CONFIG.email;
+    const others = IC.team.filter(x => x.slug !== m.slug);
+    const heroImg = wix(IC.media.heroAbout, 1920, 900);
+
+    document.title = `${m.name} \u2014 ${m.role} | ${CONFIG.shortName}`;
+    const md = $('meta[name="description"]'); if (md) md.content = `${m.name}, ${m.role} at ${CONFIG.brand}. ${m.tagline || ''}`;
+
+    root.innerHTML = `
+      <section class="page-hero tp-hero">
+        <div class="hero-bg"><img src="${heroImg}" alt="" width="1920" height="900"></div>
+        <div class="container">
+          <nav class="breadcrumb" aria-label="Breadcrumb"><a href="index.html">Home</a>${I.left.replace('m15 18-6-6 6-6', 'm9 18 6-6-6-6')}<a href="about.html#team">Our team</a>${I.left.replace('m15 18-6-6 6-6', 'm9 18 6-6-6-6')}<span>${esc(m.name)}</span></nav>
+          <div class="tp-head">
+            <div class="tp-avatar${m.photo ? '' : ' plain'}">${tmAvatar(m)}</div>
+            <div class="tp-headmain">
+              <span class="tp-dept">${esc(m.dept || 'Immaculate Connections')}</span>
+              <h1 class="h1">${esc(m.name)}</h1>
+              <p class="tp-role">${esc(m.role)}</p>
+              <p class="lead tp-tagline">${esc(m.tagline || '')}</p>
+              <div class="tp-actions">
+                <a class="btn btn-primary" href="mailto:${esc(mail)}?subject=${encodeURIComponent('For ' + m.name + ' \u2013 ' + m.dept)}">${I.mail} Email ${esc(first)}</a>
+                <a class="btn btn-ghost" href="${CONFIG.messenger}" target="_blank" rel="noopener">${I.msg} Message us</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="container tp-layout">
+          <div class="tp-main">
+            ${m.placeholder ? `<div class="tp-note">${I.info}<p><strong>Sample profile.</strong> ${esc(first)}\u2019s name, photo and details are placeholders shown so the layout can be reviewed. Replace them with the real team member before this page goes live.</p></div>` : ''}
+            <article class="tp-block">
+              <span class="eyebrow">About</span>
+              <h2 class="h2">Meet ${esc(first)}</h2>
+              <p class="tp-bio">${esc(m.bio || '')}</p>
+            </article>
+            <article class="tp-block">
+              <span class="eyebrow">Day to day</span>
+              <h2 class="h2">What ${esc(first)} handles</h2>
+              <ul class="tp-handles">${(m.handles || []).map(h => `<li>${I.check}<span>${esc(h)}</span></li>`).join('')}</ul>
+            </article>
+            ${m.focus && m.focus.length ? `<article class="tp-block">
+              <span class="eyebrow">Focus areas</span>
+              <h2 class="h2">Ask ${esc(first)} about</h2>
+              <div class="tp-chips">${m.focus.map(f => `<span class="chip">${esc(f)}</span>`).join('')}</div>
+            </article>` : ''}
+          </div>
+
+          <aside class="tp-side">
+            <div class="side-card reveal">
+              <h3 class="tp-side-title">${esc(first)} at a glance</h3>
+              <ul class="tp-facts">
+                <li>${I.tag}<div><small>Desk</small><strong>${esc(m.dept || m.role)}</strong></div></li>
+                ${m.experience ? `<li>${I.star}<div><small>Specialises in</small><strong>${esc(m.experience)}</strong></div></li>` : ''}
+                ${m.languages ? `<li>${I.msg}<div><small>Languages</small><strong>${esc(m.languages)}</strong></div></li>` : ''}
+                <li>${I.pin}<div><small>Based in</small><strong>Cebu City, Philippines</strong></div></li>
+              </ul>
+              <a class="btn btn-primary btn-block" href="contact.html?service=tour">Send an inquiry ${I.arrow}</a>
+              <a class="btn btn-outline btn-block" href="mailto:${esc(mail)}?subject=${encodeURIComponent('For ' + m.name + ' \u2013 ' + m.dept)}">${I.mail} Email ${esc(first)}</a>
+              <a class="btn btn-light btn-block" href="${CONFIG.mobileHref}">${I.phone} ${esc(CONFIG.mobile)}</a>
+              <p class="small muted" style="margin-top:12px">Inquiries reach the whole team at ${esc(CONFIG.email)} and are passed to the right desk.</p>
+            </div>
+          </aside>
+        </div>
+      </section>
+
+      <section class="section bg-soft">
+        <div class="container">
+          <div class="section-head center reveal">
+            <span class="eyebrow center">The rest of the team</span>
+            <h2 class="h2">Meet the other desks</h2>
+          </div>
+          <div class="team-grid" id="teamProfileGrid">${others.map((x, i) => `
+            <a class="tm-card reveal" href="${tmHref(x)}" style="--d:${(i % 3) * 0.08}s" aria-label="View ${esc(x.name)}\u2019s profile">
+              <div class="tm-photo${x.photo ? '' : ' plain'}">${tmAvatar(x)}</div>
+              <div class="tm-body">
+                <span class="tm-role">${esc(x.dept || x.role)}</span>
+                <h3>${esc(x.name)}</h3>
+                <p>${esc(x.tagline || x.role)}</p>
+                <span class="tm-cta">View profile ${I.arrow}</span>
+              </div>
+            </a>`).join('')}</div>
+          <div class="text-center" style="margin-top:32px"><a class="btn btn-outline" href="about.html#team">${I.left} Back to the team</a></div>
+        </div>
+      </section>`;
+  }
+
+  /* ===================== Payment page ===================== */
   /* ===================== Payment page ===================== */
   function initPayment() {
     const root = $('#payPage');
@@ -1295,7 +1389,7 @@
 
   document.addEventListener('DOMContentLoaded', () => {
     initHeader(); initContactLinks(); initHeroTitle(); initTicker(); initOffers(); initFeatured(); initToursPage(); initPackagePage();
-    initHeroVideo(); initGallery(); initTeam(); initFaq(); initSubnav(); initMisc(); initInquiry(); initPayment(); initReveal();
+    initHeroVideo(); initGallery(); initTeam(); initFaq(); initSubnav(); initMisc(); initInquiry(); initPayment(); initTeamProfile(); initReveal();
     initHeroNext(); initQuoteCard(); initHeroMotion(); initHeroStage();
   });
 })();
