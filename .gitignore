@@ -1,2 +1,9 @@
 # Raw client media: kept on the shared drive, not pushed to GitHub
 hero section home page/
+
+# Secrets / environment files must never be committed
+.env
+.env.*
+*.pem
+*.key
+secrets.json

@@ -360,3 +360,52 @@ to a row, each opening its own profile page.
 To make a member real: set `name`/`photo` and the text fields in `IC.team`, and
 set `placeholder: false`.
 
+## 15. Security review against the "vibe-coding" checklist (24 September 2026)
+
+A 19-item security checklist (from a social post) was reviewed against this site.
+Most items target full-stack apps with a database, authentication, a server and
+file uploads. This is a **static site on GitHub Pages** with no backend, no
+database, no auth, no file uploads and no server we control, so those items do
+not apply. What was checked and changed:
+
+**Verified already safe**
+- **XSS / cross-site scripting:** every value rendered via `innerHTML` goes
+  through `esc()` (HTML-entity encode), and form fields are set via `.value` /
+  `.textContent`. Reflected URL params (`id`, `member`, `service`, `package`,
+  `ref`, `pkg`, `amt`, `svc`, `country`) are either validated against a
+  whitelist, used only as lookup keys, or escaped before display. No raw param
+  reaches the DOM.
+- **No secrets in the repo:** no `.env`, API keys, tokens or passwords are
+  committed or present in the client code. The only "endpoint" is the public
+  FormSubmit inbox address (not a secret).
+- **No tokens in storage:** the site uses no `localStorage`, `sessionStorage`
+  or cookies, so there is nothing to steal there.
+- **No inline scripts / no third-party JS:** all JS is first-party
+  (`assets/js/*.js`); the only inline `<script>` is JSON-LD data.
+- **External links:** every `target="_blank"` already carries `rel="noopener"`.
+- **Form validation:** client-side validation is in place; delivery is handled
+  by FormSubmit (which does its own spam/rate control).
+
+**Added now**
+- **Content-Security-Policy** (meta) on all 8 pages, tuned to exactly what the
+  site loads: first-party scripts only (no CDN, no inline JS), Google Fonts CSS
+  + inline style attributes, Google font files, Wix + flagcdn images, local
+  video, the FormSubmit POST (`connect-src`) and the Google Maps embed
+  (`frame-src`). Everything else is blocked. Verified in-browser: allowed hosts
+  load, a non-allowlisted host is refused, no violations for legitimate assets.
+- **`Referrer-Policy`** meta set to `strict-origin-when-cross-origin`.
+- **`.gitignore`** hardened with `.env`, `.env.*`, `*.pem`, `*.key`,
+  `secrets.json` so no secret file could ever be committed (none exists today).
+
+**Not applicable to a static GitHub Pages site** (no backend to apply them to):
+Enable RLS, parameterized SQL, verify email addresses (account signup), protect
+admin routes, disable production debugging, server-side API secrets, rate-limit
+requests, validate file uploads, keep sensitive data out of server logs, hash
+passwords, verify webhook signatures, server-side permissions, tighten CORS.
+These become relevant only if a real backend (database/auth/API) is added later,
+e.g. the planned Travelpreneur B2B portal.
+
+Note: clickjacking protection (`X-Frame-Options` / CSP `frame-ancestors`) needs
+an HTTP response header, which GitHub Pages does not let us set; it would apply
+on a host that can send headers.
+
