@@ -1,0 +1,6 @@
+User-agent: *
+Allow: /
+Disallow: /payment.html
+Disallow: /team.html
+
+Sitemap: https://technextmarketing.github.io/immaculateconnectionsph/sitemap.xml

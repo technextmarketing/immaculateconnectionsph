@@ -4,26 +4,83 @@
    Packages, inclusions, places, prices, travel dates and
    itineraries are transcribed from the agency's website and
    its itinerary posters (immaculateconnectionsph.com). Photos
-   are served from the agency's own Wix media library.
+   live in assets/img/media (see the LOCAL map below).
    Location guides (placeInfo) are short general descriptions.
    ========================================================= */
 
 window.IC = window.IC || {};
 
 (function (IC) {
-  const MEDIA = 'https://static.wixstatic.com/media/';
-  /** Wix image, optionally resized/cropped: wix(id, width, height, align) */
-  const wix = (id, w, h, al) => (w ? `${MEDIA}${id}/v1/fill/w_${w},h_${h},al_${al || 'c'},q_80,enc_auto/${id}` : `${MEDIA}${id}`);
+  /* Photos are kept in the repo (assets/img/media). Every photo has a full-size
+     copy (up to 1600px) and, for JPEGs, an 800px copy used in cards and thumbnails.
+     Images are still referred to by their original media id, so package data
+     never changes when a photo file does; add new photos to this map. */
+  const MEDIA = 'assets/img/media/';
+  const LOCAL = {
+    '05e3dc_43e817747d44442dbf761e2ae66dd8e4.jpg': '43e817747d44.jpg',
+    '05e3dc_e099f1ceb25b41908ca3d6ba88d7bcb8.jpg': 'e099f1ceb25b.jpg',
+    '11062b_12e8394318ad4042acc3831d320a0e53~mv2.jpg': '12e8394318ad.jpg',
+    '952787_0050a801a0b94a199d0f8d18215c1275~mv2.jpg': '0050a801a0b9.jpg',
+    '952787_00f199ad62fa4e719b784a358f9f0b18~mv2.png': '00f199ad62fa.jpg',
+    '952787_0db097d807b14f5b882dbfd77aa54bce~mv2.png': '0db097d807b1.jpg',
+    '952787_0f90501df956446f93adb797c7e9f787~mv2.png': '0f90501df956.jpg',
+    '952787_1bb9e51e18084c429eedba7d528d9d33~mv2.jpg': '1bb9e51e1808.jpg',
+    '952787_1c684e10be094ca584af9b4cf5a04abe~mv2.png': '1c684e10be09.jpg',
+    '952787_1d076b1fc8f14f5ab72956eff2c0433e~mv2.jpg': '1d076b1fc8f1.jpg',
+    '952787_22b054e923d24111a5d007fbe1fd048f~mv2.jpg': '22b054e923d2.jpg',
+    '952787_23bb46c7551540d4b6631f9ceaf12911~mv2.jpg': '23bb46c75515.jpg',
+    '952787_250d67a9fabf4973bcde54f948a225b3~mv2.jpg': '250d67a9fabf.jpg',
+    '952787_26a50047e88545a18d5e6c89816805bc~mv2.jpg': '26a50047e885.jpg',
+    '952787_27ef97fc9ab247f9ac0396528bcb722b~mv2.png': '27ef97fc9ab2.png',
+    '952787_2886565a745a486fa6336ab8b57c9a15~mv2.png': '2886565a745a.jpg',
+    '952787_2c289935d14a4992b20f77b49e988dba~mv2.jpg': '2c289935d14a.jpg',
+    '952787_2d330c92a5d342099b7d4258256ffa11~mv2.jpg': '2d330c92a5d3.jpg',
+    '952787_3029b36427494266a8e954d4d7b8542c~mv2.jpg': '3029b3642749.jpg',
+    '952787_3194edd0c0244a54bafb5f0a2625919a~mv2.png': '3194edd0c024.jpg',
+    '952787_3483752836144268b346adf78f3b398f~mv2.jpg': '348375283614.jpg',
+    '952787_3d324467583f4cb8a092438d1e6a6872~mv2.png': '3d324467583f.png',
+    '952787_3fd41e325bc9449296516cd2e286d93f~mv2.png': '3fd41e325bc9.png',
+    '952787_47fb234e9fc643c685154b62a85432c9~mv2.jpg': '47fb234e9fc6.jpg',
+    '952787_4ee43fd7e9794e2585f94ff3b0ba89e8~mv2.jpg': '4ee43fd7e979.jpg',
+    '952787_515cfff1c9a64aa9b330a027322b9e7a~mv2.jpg': '515cfff1c9a6.jpg',
+    '952787_6a8b5ab3b00d41bcb1a8915073aa4861~mv2.jpg': '6a8b5ab3b00d.jpg',
+    '952787_6dd07347e2b24fab89e9fdcee6240889~mv2.png': '6dd07347e2b2.png',
+    '952787_74c14938b43548f8a3241d08e1b5c4df~mv2.jpg': '74c14938b435.jpg',
+    '952787_7c95bd58cf3440f480b04e9672c06802~mv2.jpg': '7c95bd58cf34.jpg',
+    '952787_7d63895b8b894bb0b1dbd482101a18d0~mv2.jpg': '7d63895b8b89.jpg',
+    '952787_8b207104bf0d43e5aa4c288936e9fec3~mv2.png': '8b207104bf0d.jpg',
+    '952787_930a6679ab89472ea4b37d34205490f7~mv2.png': '930a6679ab89.png',
+    '952787_9a7ffc3f7a2e47d18e2086d04b3b9341~mv2.jpg': '9a7ffc3f7a2e.jpg',
+    '952787_9bc781dfae87479dae7fd84ed8b09c42~mv2.jpg': '9bc781dfae87.jpg',
+    '952787_a0ed48c8d5dd4e2f819407b391d6499c~mv2.png': 'a0ed48c8d5dd.png',
+    '952787_a667b39095f54b15824f7157c48f4afa~mv2.jpg': 'a667b39095f5.jpg',
+    '952787_a67b7dcf552942a294501fc5c8a044f8~mv2.jpg': 'a67b7dcf5529.jpg',
+    '952787_aa431e7ae48a45f59960aac33ffd6c8b~mv2.jpg': 'aa431e7ae48a.jpg',
+    '952787_ab1a9837b67f48ff85499555bb28ceba~mv2.png': 'ab1a9837b67f.png',
+    '952787_bdf86d20b5ef4120a1876cf17c6718f4~mv2.png': 'bdf86d20b5ef.jpg',
+    '952787_bf04b5da3fbe466388fd7b0ce1011bd7~mv2.jpg': 'bf04b5da3fbe.jpg',
+    '952787_c707827028d143a594404076e61331be~mv2.jpg': 'c707827028d1.jpg',
+    '952787_c790bde9bfb74673a9c563990ab577d1~mv2.jpg': 'c790bde9bfb7.jpg',
+    '952787_d42f442bb8264e678cbc88bdc2824eff~mv2.jpg': 'd42f442bb826.jpg',
+    '952787_e0d14697042d448cb553e113bb99895a~mv2.jpg': 'e0d14697042d.jpg',
+    '952787_e3e293ea8aca4eae85457a5a8007e670~mv2.jpg': 'e3e293ea8aca.jpg',
+    '952787_e8ab6be92bd54b05859482cb8c9b5bb2~mv2.jpg': 'e8ab6be92bd5.jpg',
+    '952787_ef8a0cd30f94496d9491f4d1caa3f202~mv2.jpg': 'ef8a0cd30f94.jpg',
+    '952787_f6e5b9acd62049db802bcfd86e7fd352~mv2.jpg': 'f6e5b9acd620.jpg',
+    '952787_fe368fa20ed346b78f71f7a717b270fd~mv2.jpg': 'fe368fa20ed3.jpg'
+  };
+  /** Site image by media id: wix(id, width) picks the 800px copy for small slots */
+  const wix = (id, w) => { const f = LOCAL[id] || id; return MEDIA + (w && w <= 800 && /\.jpe?g$/i.test(f) ? f.replace(/\.jpe?g$/i, '-800.jpg') : f); };
   IC.wix = wix;
 
   IC.media = {
-    logo: `${MEDIA}952787_6dd07347e2b24fab89e9fdcee6240889~mv2.png`,
-    mark: `${MEDIA}952787_ab1a9837b67f48ff85499555bb28ceba~mv2.png`,
+    logo: wix('952787_6dd07347e2b24fab89e9fdcee6240889~mv2.png'),
+    mark: wix('952787_ab1a9837b67f48ff85499555bb28ceba~mv2.png'),
     heroHome: '952787_7d63895b8b894bb0b1dbd482101a18d0~mv2.jpg',
     heroTours: '952787_1d076b1fc8f14f5ab72956eff2c0433e~mv2.jpg',
     heroAbout: '05e3dc_e099f1ceb25b41908ca3d6ba88d7bcb8.jpg',
     heroInquiries: '05e3dc_43e817747d44442dbf761e2ae66dd8e4.jpg',
-    // These are 512x512 PNGs shown at 26-58px, so serve a 120px WebP.
+    // Service icons: 240px PNG copies shown at 26-58px.
     icons: {
       ticketing: wix('952787_27ef97fc9ab247f9ac0396528bcb722b~mv2.png', 120, 120),
       hotel: wix('952787_a0ed48c8d5dd4e2f819407b391d6499c~mv2.png', 120, 120),
@@ -467,7 +524,7 @@ window.IC = window.IC || {};
 
   /* ---------- Team ----------
      Each card is a desk in the agency. To turn one into a personal profile,
-     fill in `name` (and `photo`, a Wix media id from the agency's own library):
+     fill in `name` (and `photo`, a media id listed in the LOCAL map above):
        { name: 'Juan dela Cruz', photo: '952787_xxxxxxxx~mv2.jpg', role: 'Reservations & Ticketing', ... }
      Leave `name` empty and the card shows the desk instead of a person, so the
      section stays accurate until the agency supplies names and photographs.
@@ -478,7 +535,7 @@ window.IC = window.IC || {};
        the cards and profile pages (team.html?member=<slug>) can be seen and
        styled; the About page and each profile carry a visible "sample" note.
        Replace each entry with a real staff member: set `name`, drop in a
-       `photo` (a Wix media id from the agency's own library) and update
+       `photo` (a media id listed in the LOCAL map above) and update
        `role`, `dept`, `tagline`, `bio`, `handles` and `focus`. Leave `email`
        empty and it falls back to the main inquiries address; set it to route a
        person's mail directly. `placeholder: true` shows the sample note; set

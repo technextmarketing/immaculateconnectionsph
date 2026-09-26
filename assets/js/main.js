@@ -70,7 +70,14 @@
     const mon = MONTHS[(mm[3] || mm[1]).slice(0, 3).toLowerCase()];
     return mon === undefined ? null : new Date(d.y || year || 2026, mon, parseInt(mm[4], 10));
   };
-  const isPastDate = (d, t) => { const e = rangeEnd(d, t.year); return !!e && e < today; };
+  const rangeStart = (d, year) => {
+    const mm = String(d.d).match(/^([A-Za-z]{3})[a-z]*\.?\s*(\d{1,2})\s*[–-]/);
+    if (!mm) return rangeEnd(d, year);
+    const mon = MONTHS[mm[1].slice(0, 3).toLowerCase()];
+    return mon === undefined ? null : new Date(d.y || year || 2026, mon, parseInt(mm[2], 10));
+  };
+  // A departure closes on its travel day (same rule as the Immaculate Ops dashboard).
+  const isPastDate = (d, t) => { const s = rangeStart(d, t.year); return !!s && s <= today; };
   const effStatus = t => {
     if (t.ends && new Date(t.ends + 'T23:59:59') < today) return 'past';
     if (t.travelDates && t.travelDates.length && t.travelDates.every(d => isPastDate(d, t))) return 'past';
@@ -80,6 +87,8 @@
   const money = (p, n) => { const v = n == null ? p.from : n; return (p && p.currency === 'USD' ? '$' : '₱') + Number(v).toLocaleString('en-PH'); };
   const priceValue = t => (t.price ? t.price.from * (t.price.currency === 'USD' ? 57 : 1) : 9e9);
   const pkgUrl = t => `package.html?id=${encodeURIComponent(t.id)}`;
+  const abs = p => new URL(p, location.href).href;
+  const setMeta = (name, v) => { const el = $(`meta[name="${name}"]`); if (el) el.content = v || ''; };
   const ctaLabel = t => { const s = effStatus(t); return s === 'past' ? 'Ask about the next departure' : s === 'soon' ? 'Ask about this tour' : s === 'offer' ? 'Book this offer' : 'Request a quote'; };
   const flagImg = t => (t.flag ? `<img class="flag" src="https://flagcdn.com/w40/${t.flag}.png" srcset="https://flagcdn.com/w80/${t.flag}.png 2x" width="20" height="15" alt="${esc(t.country || '')} flag" loading="lazy">` : '');
   const statusPill = t => `<span class="status-pill ${effStatus(t)}"><i></i>${esc(statusLabel(t))}</span>`;
@@ -578,7 +587,12 @@
     const md = $('meta[name="description"]'); if (md) md.content = t.summary;
     const og = $('meta[property="og:title"]'); if (og) og.content = t.name;
     const ogd = $('meta[property="og:description"]'); if (ogd) ogd.content = t.summary;
-    const ogi = $('meta[property="og:image"]'); if (ogi) ogi.content = wix(t.image, 1200, 630, t.imageAlign);
+    const ogi = $('meta[property="og:image"]'); if (ogi) ogi.content = abs(wix(t.image, 1200, 630, t.imageAlign));
+    // Each package is its own page for search and social: canonical URL, cards and TouristTrip data
+    const self = abs(pkgUrl(t));
+    const canon = $('link[rel="canonical"]'); if (canon) canon.href = self;
+    const ogu = $('meta[property="og:url"]'); if (ogu) ogu.content = self;
+    setMeta('twitter:title', t.name); setMeta('twitter:description', t.summary); setMeta('twitter:image', ogi ? ogi.content : '');
 
     const tabs = [['overview', 'Overview'], hasIt ? ['itinerary', 'Itinerary'] : null, ['inclusions', 'Inclusions'], ['places', 'Places'], hasGuide ? ['guide', 'Know before you go'] : null, hasDates ? ['dates', 'Dates & price'] : null, hasPosters ? ['posters', 'Posters'] : null].filter(Boolean);
 
@@ -611,7 +625,7 @@
           <div class="pkg-main">
             <div class="pkg-gallery reveal" id="pkgGallery">
               <figure class="pkg-gallery-main" data-lb="${esc(gallery[0])}" data-title="${esc(t.name)}"><img src="${wix(gallery[0], 960, 640, t.imageAlign)}" alt="${esc(t.alt)}" width="960" height="640"><figcaption>Tap to enlarge</figcaption></figure>
-              ${gallery.length > 1 ? `<div class="pkg-thumbs">${gallery.map((g, i) => `<button type="button" class="${i === 0 ? 'active' : ''}" data-thumb="${esc(g)}" aria-label="Photo ${i + 1}"><img src="${wix(g, 240, 180, t.imageAlign)}" alt=""></button>`).join('')}</div>` : ''}
+              ${gallery.length > 1 ? `<div class="pkg-thumbs">${gallery.map((g, i) => `<button type="button" class="${i === 0 ? 'active' : ''}" data-thumb="${esc(g)}" aria-label="Photo ${i + 1}"><img src="${wix(g, 240, 180, t.imageAlign)}" alt="" width="96" height="72" loading="lazy"></button>`).join('')}</div>` : ''}
             </div>
 
             <article id="overview" class="pkg-section reveal">
@@ -732,7 +746,7 @@
     window.addEventListener('scroll', () => sticky.classList.toggle('show', window.scrollY > 500), { passive: true });
 
     // Structured data
-    const ld = { '@context': 'https://schema.org', '@type': 'TouristTrip', name: t.name, description: t.summary, image: wix(t.image, 1200, 630, t.imageAlign), touristType: 'Leisure', itinerary: t.places.map(p => ({ '@type': 'TouristAttraction', name: p })), provider: { '@type': 'TravelAgency', name: CONFIG.brand, telephone: CONFIG.mobile, email: CONFIG.email, url: 'https://www.immaculateconnectionsph.com/' } };
+    const ld = { '@context': 'https://schema.org', '@type': 'TouristTrip', name: t.name, description: t.summary, url: abs(pkgUrl(t)), image: abs(wix(t.image, 1200, 630, t.imageAlign)), touristType: 'Leisure', itinerary: t.places.map(p => ({ '@type': 'TouristAttraction', name: p })), provider: { '@type': 'TravelAgency', name: CONFIG.brand, telephone: CONFIG.mobile, email: CONFIG.email, url: 'https://www.immaculateconnectionsph.com/' } };
     if (t.price) ld.offers = { '@type': 'Offer', price: t.price.from, priceCurrency: t.price.currency || 'PHP', availability: effStatus(t) === 'past' ? 'https://schema.org/SoldOut' : 'https://schema.org/InStock', url: location.href };
     const s = document.createElement('script'); s.type = 'application/ld+json'; s.textContent = JSON.stringify(ld); document.head.appendChild(s);
 
@@ -762,14 +776,14 @@
       const items = root.dataset.limit ? IC.gallery.slice(0, parseInt(root.dataset.limit, 10)) : IC.gallery;
       root.innerHTML = items.map((g, i) => `
         <figure class="gal-item ${g.shape} reveal" style="--d:${(i % 4) * 0.08}s" data-lb="${esc(g.id)}" data-title="${esc(g.title)} · ${esc(g.sub)}" tabindex="0" role="button" aria-label="View ${esc(g.title)}">
-          <img src="${wix(g.id, 900, g.shape === 'tall' ? 1200 : g.shape === 'square' ? 900 : 675)}" alt="${esc(g.title)} – ${esc(g.sub)}" loading="lazy">
+          <img src="${wix(g.id, 900, g.shape === 'tall' ? 1200 : g.shape === 'square' ? 900 : 675)}" alt="${esc(g.title)} – ${esc(g.sub)}" loading="lazy" decoding="async" width="900" height="${g.shape === 'tall' ? 1200 : g.shape === 'square' ? 900 : 675}">
           <figcaption>${esc(g.title)}<small>${esc(g.sub)}</small></figcaption>
         </figure>`).join('');
     }
     $$('[data-photos]').forEach(row => {
       const list = IC[row.dataset.photos]; if (!list) return;
       const caps = (row.dataset.captions || '').split('|');
-      row.innerHTML = list.map((id, i) => `<figure class="reveal" style="--d:${i * 0.08}s" data-lb="${esc(id)}" data-title="${esc(caps[i] || '')}" tabindex="0" role="button" aria-label="View photo"><img src="${wix(id, 800, 600)}" alt="${esc(caps[i] || 'Photo')}" loading="lazy">${caps[i] ? `<figcaption>${esc(caps[i])}</figcaption>` : ''}</figure>`).join('');
+      row.innerHTML = list.map((id, i) => `<figure class="reveal" style="--d:${i * 0.08}s" data-lb="${esc(id)}" data-title="${esc(caps[i] || '')}" tabindex="0" role="button" aria-label="View photo"><img src="${wix(id, 800, 600)}" alt="${esc(caps[i] || 'Photo')}" loading="lazy" decoding="async" width="800" height="600">${caps[i] ? `<figcaption>${esc(caps[i])}</figcaption>` : ''}</figure>`).join('');
     });
     document.addEventListener('click', e => {
       const f = e.target.closest('[data-lb]'); if (!f || e.target.closest('a,button')) return;
@@ -1228,7 +1242,7 @@
   // Initials for the fallback avatar when a member has no photo yet.
   const tmInitials = m => (m.name || m.role || '').trim().split(/\s+/).map(w => w[0]).slice(0, 2).join('').toUpperCase();
   const tmAvatar = m => m.photo
-    ? `<img src="${wix(m.photo, 560, 560)}" alt="${esc(m.name || m.role)}" loading="lazy">`
+    ? `<img src="${wix(m.photo, 560, 560)}" alt="${esc(m.name || m.role)}" loading="lazy" width="560" height="560">`
     : `<span class="tm-initials" aria-hidden="true">${esc(tmInitials(m))}</span>`;
   const tmHref = m => `team.html?member=${encodeURIComponent(m.slug)}`;
 
@@ -1253,7 +1267,7 @@
     const root = $('#teamProfile');
     if (!root || !IC.team) return;
     const slug = new URLSearchParams(location.search).get('member');
-    const m = IC.team.find(x => x.slug === slug) || IC.team[0];
+    const m = slug ? IC.team.find(x => x.slug === slug) : IC.team[0];
     if (!m) {
       root.innerHTML = `<section class="section"><div class="container text-center"><span class="eyebrow center">Profile not found</span><h1 class="h2" style="margin-bottom:12px">We couldn\u2019t find that team member</h1><a class="btn btn-primary btn-lg" href="about.html#team">Meet the team ${I.arrow}</a></div></section>`;
       return;

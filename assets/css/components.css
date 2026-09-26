@@ -39,7 +39,7 @@
 /* ---------- Tour card tweaks ---------- */
 .tour-media { display: block; }
 .tour-body h3 a:hover { color: var(--blue-2); }
-.tour-region .status.offer { color: var(--orange-2); }
+.tour-region .status.offer { color: var(--orange-ink); }
 .tour-region .status.soon { color: var(--muted); }
 .price strong.soft { font-size: 1rem; color: var(--ink-2); font-family: var(--font-body); font-weight: 700; }
 .price.big strong { font-size: 2rem; color: var(--blue-2); }
@@ -141,7 +141,7 @@
 .inc-col ul { display: grid; gap: 8px; }
 .inc-col li { display: flex; gap: 10px; align-items: flex-start; font-size: .94rem; color: var(--ink-2); }
 .inc-col li svg { width: 16px; height: 16px; flex: none; margin-top: 3px; color: var(--blue); }
-.inc-col.exc h4 { color: var(--orange-2); }
+.inc-col.exc h4 { color: var(--orange-ink); }
 .inc-col.exc li svg { color: var(--orange-2); }
 .pkg-note { margin-top: 16px; padding: 18px 20px; border-radius: var(--r); background: var(--blue-soft); }
 .pkg-note.gold { background: var(--gold-soft); }
@@ -173,11 +173,11 @@
 
 
 .date-grid { display: flex; flex-wrap: wrap; gap: 8px; }
-.date-chip { display: inline-flex; align-items: center; gap: 6px; padding: 8px 12px; border-radius: 999px; background: #fff; border: 1px solid var(--line); font-size: .85rem; font-weight: 700; color: var(--ink-2); transition: transform .2s var(--ease), border-color .2s; }
+.date-chip { display: inline-flex; align-items: center; gap: 6px; min-height: 36px; padding: 8px 12px; border-radius: 999px; background: #fff; border: 1px solid var(--line); font-size: .85rem; font-weight: 700; color: var(--ink-2); transition: transform .2s var(--ease), border-color .2s; }
 .date-chip:hover { transform: translateY(-2px); border-color: var(--blue); }
 .date-chip svg { width: 14px; height: 14px; color: var(--blue); }
 .date-chip.sur { border-color: var(--orange); background: var(--orange-soft); }
-.date-chip em { font-style: normal; font-size: .75rem; color: var(--orange-2); }
+.date-chip em { font-style: normal; font-size: .75rem; color: var(--orange-ink); }
 
 .pkg-side { align-self: stretch; }
 .pkg-side .side-card.sticky { position: sticky; top: calc(var(--nav-h) + 70px); }
@@ -208,7 +208,7 @@
 a.date-chip { text-decoration: none; cursor: pointer; }
 a.date-chip:hover { border-color: var(--blue); background: var(--blue-soft); color: var(--blue-2); transform: translateY(-2px); box-shadow: 0 6px 14px -8px rgba(29,103,205,.6); }
 a.date-chip:focus-visible { outline: 3px solid var(--gold); outline-offset: 2px; }
-a.date-chip.sur:hover { border-color: var(--orange); background: var(--orange-soft); color: var(--orange-2); }
+a.date-chip.sur:hover { border-color: var(--orange); background: var(--orange-soft); color: var(--orange-ink); }
 .date-chip.past { opacity: .45; text-decoration: line-through; cursor: default; }
 .date-hint { display: flex; gap: 9px; align-items: flex-start; margin-top: 14px; padding: 11px 14px; border-radius: 10px; background: var(--blue-soft); font-size: .82rem; color: var(--ink-2); line-height: 1.5; }
 .date-hint svg { width: 16px; height: 16px; color: var(--blue-2); flex: none; margin-top: 2px; }
@@ -243,7 +243,7 @@ a.date-chip.sur:hover { border-color: var(--orange); background: var(--orange-so
 .footer .brand-blurb { margin-top: 10px; font-size: .82rem; line-height: 1.55; max-width: 36ch; }
 .footer h4 { font-size: .7rem; letter-spacing: .12em; margin-bottom: 10px; }
 .footer p, .footer-links a, .footer-contact li { font-size: .84rem; line-height: 1.5; }
-.footer-links { gap: 5px; }
+.footer-links { gap: 2px; }
 .footer-contact { gap: 8px; }
 .footer-contact svg { width: 16px; height: 16px; margin-top: 1px; }
 .socials { margin-top: 12px; gap: 8px; }
@@ -923,4 +923,13 @@ html { scrollbar-width: thin; scrollbar-color: rgba(50,65,88,.35) transparent; }
   .tp-actions .btn { flex: 1 1 100%; }
   .tp-bio { font-size: .95rem; }
   .tp-handles li { font-size: .92rem; }
+}
+
+/* Finger-sized targets on phones: quick-pick chips, arrow links, package-name links and footer contacts */
+@media (max-width: 640px) {
+  .pick { min-height: 34px; }
+  .link-arrow { min-height: 32px; display: inline-flex; align-items: center; }
+  .offer-body h3 a, .tour-body h3 a { display: inline-block; padding: 7px 0; }
+  .footer-contact a { display: inline-block; padding: 9px 0; }
+  .footer-bottom a { display: inline-block; padding: 10px 0; }
 }

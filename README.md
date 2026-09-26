@@ -6,7 +6,7 @@ Redesign of [immaculateconnectionsph.com](https://www.immaculateconnectionsph.co
 
 No build step and no framework: upload the folder to any static host or serve it with GitHub Pages.
 
-All copy, packages, inclusions, places, photos and the logo come from the agency's existing website. Photos are served from the agency's own Wix media library (`static.wixstatic.com`).
+All copy, packages, inclusions, places, photos and the logo come from the agency's existing website. Photos were downloaded from the agency's Wix media library into `assets/img/media/` (see Photos below).
 
 See [AUDIT.md](AUDIT.md) for the full audit of the current site, the pain points found, and how this redesign addresses them.
 
@@ -65,8 +65,20 @@ payment: {
 - **Colours and fonts**: `:root` in `assets/css/style.css`. Quotation and payment styling, including the print rules, live in `assets/css/quotation.css`.
 - **Inclusion tags on cards** (Airfare, Hotel, Meals, Transport, Tour guide, Entrance fees, Insurance and so on) are derived automatically from each package's `inclusions` list by `INC_TAGS` in `assets/js/main.js`.
 - **Travel dates** on a package page link straight to the inquiry form with the package and the chosen departure pre-filled.
-- **Team cards on the About page**: `IC.team` in `assets/js/data.js`. Each entry is a desk in the agency. Add a `name` (and optionally a `photo`, using a Wix media id from the agency's own library, plus a direct `email`) and the card becomes a personal profile with the person's name as the title and the desk as the subtitle. Leave `name` empty and the card shows the desk with the agency's own service icon, so the section stays accurate until real names and photographs are supplied.
+- **Team cards on the About page**: `IC.team` in `assets/js/data.js`. Each entry is a desk in the agency. Add a `name` (and optionally a `photo`, using a media id from the `LOCAL` map in `data.js`, plus a direct `email`) and the card becomes a personal profile with the person's name as the title and the desk as the subtitle. Leave `name` empty and the card shows the desk with the agency's own service icon, so the section stays accurate until real names and photographs are supplied.
 - **Copy**: the HTML files. Header and footer are repeated in each page.
+
+## Photos
+
+All photos live in `assets/img/media/` (nothing is loaded from Wix any more). Each photo keeps its original media id as the key of the `LOCAL` map at the top of `assets/js/data.js`; the map points to the file, and JPEGs also have an `-800` copy for cards. To add a photo: drop the file (up to 1600 px on the long side, plus an 800 px copy for JPEGs) into the folder and add one line to the map, then refer to it by that id in the package data. Social-share cards are the `og-*.jpg` files (1200×630).
+
+## Go-live checklist
+
+- **FormSubmit activation:** submit the inquiry form once from the live site and click the activation link that arrives at `inquiries@immaculateconnectionsph.com`.
+- **Domain move:** canonical tags, `og:url`, `twitter:image`, `sitemap.xml` and `robots.txt` all carry the GitHub Pages address. When the site moves to the agency's domain, replace `https://technextmarketing.github.io/immaculateconnectionsph/` with the new address in every file (`grep -rl technextmarketing.github.io`). `robots.txt` only takes effect at the root of a domain, so submit `sitemap.xml` in Search Console until then.
+- **Team profiles:** the About page and `team.html` show placeholder people. Replace them in `IC.team` (data.js), then remove the `noindex` tag from `team.html` and the `Disallow: /team.html` line in `robots.txt`.
+- **Payments:** `payment.html` is `noindex` and unlinked while `CONFIG.payments` is false. When payments are switched on, remove that tag and the `Disallow` line.
+- **Departure rule:** a travel date closes on its departure day (same as the Immaculate Ops dashboard).
 
 ## Publishing
 
