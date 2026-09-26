@@ -18,7 +18,7 @@
    ========================================================= */
 
 /* ---------- Photo slides: one photo showing, the next fades in over it ---------- */
-.hero-slides { min-height: min(84svh, 800px); padding: 110px 0 150px; }
+.hero-slides { min-height: min(84svh, 800px); padding: 110px 0 96px; }
 .hero-bg.slides .slide { position: absolute; inset: 0; margin: 0; opacity: 0; transition: opacity 1.2s var(--ease); }
 .hero-bg.slides .slide.is-active { opacity: 1; }
 .hero-bg.slides .slide img { width: 100%; height: 100%; object-fit: cover; object-position: center 40%; animation: none; }
@@ -51,7 +51,7 @@
 .hero-dots button[aria-current="true"] { width: 24px; background: var(--gold); }
 
 /* ---------- Plan section: the welcome copy and the quotation card, on the light ground under the wave ---------- */
-.plan { background: var(--bg); padding: 28px 0 84px; }
+.plan { background: var(--bg); padding: 72px 0 84px; }
 .plan-grid { display: grid; grid-template-columns: 1.15fr .85fr; gap: 56px; align-items: center; }
 .plan-title { color: var(--navy); margin: 0 0 14px; font-size: clamp(2.3rem, 4.6vw, 3.8rem); text-wrap: balance; }
 .plan-title .hl { font-style: normal; position: relative; white-space: nowrap; color: var(--blue); }
@@ -234,7 +234,7 @@ button.hero-scroll span { transition: height .3s var(--ease); }
 @media (max-width: 900px) {
   .hero-wave .w2 { display: none; }
   .plan-grid { grid-template-columns: 1fr; gap: 36px; }
-  .hero-slides { min-height: min(72svh, 640px); padding: 84px 0 130px; }
+  .hero-slides { min-height: min(72svh, 640px); padding: 84px 0 84px; }
 }
 
 /* Under 480px the package name needs every pixel, so the standing label goes
@@ -254,11 +254,11 @@ button.hero-scroll span { transition: height .3s var(--ease); }
   .qq-picks .pick:nth-child(n+6) { display: none; }   /* label + four chips */
   .pick { font-size: .72rem; padding: 5px 9px; }
   .hero-orb.a, .hero-orb.b { opacity: .4; }
-  .hero-slides { min-height: 0; padding: 56px 0 112px; }
+  .hero-slides { min-height: 0; padding: 56px 0 64px; }
   .hero-slides .hero-title { font-size: clamp(2rem, 9vw, 2.6rem); max-width: none; }
   .hero-ctl { margin-top: 22px; }
   .hero-arrow { width: 36px; height: 36px; }
-  .plan { padding: 12px 0 64px; }
+  .plan { padding: 48px 0 64px; }
   .plan-actions .btn { flex-basis: 100%; }
   .hero-wave { height: 44px; }
   .hero-wave svg { height: 44px; }
