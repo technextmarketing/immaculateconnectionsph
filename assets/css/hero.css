@@ -256,6 +256,7 @@ button.hero-scroll span { transition: height .3s var(--ease); }
   .hero-orb.a, .hero-orb.b { opacity: .4; }
   .hero-slides { min-height: 0; padding: 56px 0 64px; }
   .hero-slides .hero-title { font-size: clamp(2rem, 9vw, 2.6rem); max-width: none; }
+  .hero-stats div { flex: 1 1 42%; }
   .hero-ctl { margin-top: 22px; }
   .hero-arrow { width: 36px; height: 36px; }
   .plan { padding: 48px 0 64px; }
