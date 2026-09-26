@@ -594,7 +594,8 @@
     const ogu = $('meta[property="og:url"]'); if (ogu) ogu.content = self;
     setMeta('twitter:title', t.name); setMeta('twitter:description', t.summary); setMeta('twitter:image', ogi ? ogi.content : '');
 
-    const tabs = [['overview', 'Overview'], hasIt ? ['itinerary', 'Itinerary'] : null, ['inclusions', 'Inclusions'], ['places', 'Places'], hasGuide ? ['guide', 'Know before you go'] : null, hasDates ? ['dates', 'Dates & price'] : null, hasPosters ? ['posters', 'Posters'] : null].filter(Boolean);
+    // Travel dates lead: they are what a visitor books, so they come first in the tabs and on the page
+    const tabs = [hasDates ? ['dates', 'Dates & price'] : null, ['overview', 'Overview'], hasIt ? ['itinerary', 'Itinerary'] : null, ['inclusions', 'Inclusions'], ['places', 'Places'], hasGuide ? ['guide', 'Know before you go'] : null, hasPosters ? ['posters', 'Posters'] : null].filter(Boolean);
 
     const GUIDE_ICONS = { entry: I.passport, money: I.wallet, weather: I.sun, transport: I.bus, language: I.translate, culture: I.landmark, safety: I.shield, connectivity: I.wifi, food: I.meal };
 
@@ -623,6 +624,16 @@
       <section class="section-tight">
         <div class="container pkg-layout">
           <div class="pkg-main">
+            ${hasDates ? `<article id="dates" class="pkg-section reveal">
+              <span class="eyebrow">Dates &amp; price</span>
+              <h2 class="h2">Travel dates 2026</h2>
+              <p class="muted" style="margin-bottom:18px">${esc(t.travelDatesNote || '')} Base rate ${esc(t.price.label.toLowerCase())} ${money(t.price)} ${esc(t.price.unit)}.</p>
+              <div class="date-grid">${t.travelDates.map(d => isPastDate(d, t)
+                ? `<span class="date-chip past" title="This departure date has passed">${I.cal}<span>${esc(d.d)}${d.y ? ' ' + d.y : ''}</span></span>`
+                : `<a class="date-chip ${d.add ? 'sur' : ''}" href="${dateChipHref(d, t)}" title="Select these dates and send an inquiry">${I.cal}<span>${esc(d.d)}${d.y ? ' ' + d.y : ''}</span>${d.add ? `<em>+${d.cur === 'USD' ? '$' + d.add : peso(d.add)}</em>` : ''}</a>`).join('')}</div>
+              <p class="date-hint">${I.arrow.replace('class="arrow"', '')}<span><strong>Tap a date to book it.</strong> Your inquiry form opens with this package and your chosen departure already filled in. Dates in orange carry a peak-season surcharge per pax; greyed dates have passed. Availability is confirmed at booking.</span></p>
+            </article>` : ''}
+
             <div class="pkg-gallery reveal" id="pkgGallery">
               <figure class="pkg-gallery-main" data-lb="${esc(gallery[0])}" data-title="${esc(t.name)}"><img src="${wix(gallery[0], 960, 640, t.imageAlign)}" alt="${esc(t.alt)}" width="960" height="640"><figcaption>Tap to enlarge</figcaption></figure>
               ${gallery.length > 1 ? `<div class="pkg-thumbs">${gallery.map((g, i) => `<button type="button" class="${i === 0 ? 'active' : ''}" data-thumb="${esc(g)}" aria-label="Photo ${i + 1}"><img src="${wix(g, 240, 180, t.imageAlign)}" alt="" width="96" height="72" loading="lazy"></button>`).join('')}</div>` : ''}
@@ -677,16 +688,6 @@
               <div class="guide-grid">
                 ${guide.map(g => `<div class="guide-card"><span class="guide-ic">${GUIDE_ICONS[g.ic] || I.info}</span><div class="guide-body"><h4>${esc(g.t)}</h4>${g.lead ? `<p class="guide-lead">${esc(g.lead)}</p>` : ''}<p>${esc(g.body)}</p></div></div>`).join('')}
               </div>
-            </article>` : ''}
-
-            ${hasDates ? `<article id="dates" class="pkg-section reveal">
-              <span class="eyebrow">Dates &amp; price</span>
-              <h2 class="h2">Travel dates 2026</h2>
-              <p class="muted" style="margin-bottom:18px">${esc(t.travelDatesNote || '')} Base rate ${esc(t.price.label.toLowerCase())} ${money(t.price)} ${esc(t.price.unit)}.</p>
-              <div class="date-grid">${t.travelDates.map(d => isPastDate(d, t)
-                ? `<span class="date-chip past" title="This departure date has passed">${I.cal}<span>${esc(d.d)}${d.y ? ' ' + d.y : ''}</span></span>`
-                : `<a class="date-chip ${d.add ? 'sur' : ''}" href="${dateChipHref(d, t)}" title="Select these dates and send an inquiry">${I.cal}<span>${esc(d.d)}${d.y ? ' ' + d.y : ''}</span>${d.add ? `<em>+${d.cur === 'USD' ? '$' + d.add : peso(d.add)}</em>` : ''}</a>`).join('')}</div>
-              <p class="date-hint">${I.arrow.replace('class="arrow"', '')}<span><strong>Tap a date to book it.</strong> Your inquiry form opens with this package and your chosen departure already filled in. Dates in orange carry a peak-season surcharge per pax; greyed dates have passed. Availability is confirmed at booking.</span></p>
             </article>` : ''}
 
             ${hasPosters ? `<article id="posters" class="pkg-section reveal">
