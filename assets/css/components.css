@@ -341,9 +341,12 @@ a.date-chip.sur:hover { border-color: var(--orange); background: var(--orange-so
   .tour-foot .actions .btn { width: 100%; padding: 12px 10px; }
   .svc-card { padding: 22px; }
   .svc-card.big { min-height: 320px; }
+  /* The three-photo collage becomes a tidy grid on phones. The desktop rules
+     address each photo by position, so these do too, or they would lose. */
   .collage { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; aspect-ratio: auto; }
-  .collage img { position: static; width: 100%; height: 150px; transform: none !important; border-width: 3px; }
-  .collage img:nth-child(1) { grid-column: 1 / -1; height: 190px; }
+  .collage img, .collage img:nth-child(1), .collage img:nth-child(2), .collage img:nth-child(3) { position: static; inset: auto; width: 100%; height: 150px; aspect-ratio: auto; transform: none !important; border-width: 3px; box-shadow: var(--shadow); }
+  .collage img:nth-child(1) { grid-column: 1 / -1; height: 200px; }
+  .page-hero-stats div { flex: 1 1 42%; }
   .pillar { padding: 14px; gap: 12px; }
   .gallery { columns: 2 140px; column-gap: 10px; }
   .gal-item { margin-bottom: 10px; }
@@ -429,7 +432,7 @@ a.date-chip.sur:hover { border-color: var(--orange); background: var(--orange-so
   .tour-foot .actions .btn { white-space: normal; padding: 11px 8px; font-size: .82rem; line-height: 1.15; }
   .tour-foot .actions { gap: 6px; }
   .page-hero-stats { gap: 12px; }
-  .page-hero-stats div { flex: 1 1 90px; padding-left: 10px; }
+  .page-hero-stats div { flex: 1 1 42%; padding-left: 10px; }
   .page-hero-stats span { font-size: .68rem; }
 }
 
@@ -663,8 +666,8 @@ html { scrollbar-width: thin; scrollbar-color: rgba(50,65,88,.35) transparent; }
   .pillar .ic svg { width: 20px; height: 20px; }
   .pillar h3 { font-size: .94rem; }
   .pillar p { font-size: .82rem; }
-  .collage img { height: 130px; }
-  .collage img:nth-child(1) { height: 170px; }
+  .collage img, .collage img:nth-child(2), .collage img:nth-child(3) { height: 130px; }
+  .collage img:nth-child(1) { height: 180px; }
   .gallery { column-gap: 8px; }
   .gal-item { margin-bottom: 8px; border-radius: 12px; }
   .gal-item figcaption { font-size: .72rem; padding: 18px 10px 8px; }
