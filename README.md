@@ -14,7 +14,7 @@ See [AUDIT.md](AUDIT.md) for the full audit of the current site, the pain points
 
 | File | Purpose |
 | --- | --- |
-| `index.html` | Home: animated hero (staged entrance, masked headline, pointer and scroll parallax, rotating "now booking" line, destination chips, background video with a pause control), quick inquiry card, destinations ticker, five services, how booking works, featured packages with region tabs, tour-highlight posters, why choose us, previous tours gallery, FAQ, call to action. |
+| `index.html` | Home: photo slides of the agency's group tours behind the hero (cross-fade, arrows, dots, swipe), the credibility figures, then the welcome copy with the rotating "now booking" line and the quick quotation card, followed by special offers, services, featured packages, gallery and FAQ. |
 | `services.html` | Ticketing, Hotel Bookings & Reservations, Transport Service Reservations (vans, coasters, bus, 4-seater), Local & International Tour Packages, and Meetings, Incentives, Conferences, Exhibitions, Trainings & Seminars. Flight and event quote forms pre-fill the inquiry page. |
 | `tours.html` | All 15 packages with search, region, duration, archive (past departures) and sort filters. Each card opens a details modal with places, inclusions, status and (for Vietnam) the itinerary posters. |
 | `package.html` | Package detail page (`package.html?id=<package-id>`): hero, sticky section tabs, photo gallery, overview, day-by-day itinerary, inclusions and exclusions, places with a location guide, 2026 travel dates with surcharges, itinerary posters, related packages and a sticky quote button. |

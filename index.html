@@ -22,11 +22,12 @@
   <link rel="icon" href="assets/img/media/ab1a9837b67f.png" type="image/png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="preload" as="image" href="assets/img/hero-poster.jpg">
+  <link rel="preload" as="image" href="assets/img/hero/slide-1-1920.jpg" media="(min-width: 701px)">
+  <link rel="preload" as="image" href="assets/img/hero/slide-1-1080.jpg" media="(max-width: 700px)">
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,500&family=Raleway:wght@400;500;600;700;800&family=Dancing+Script:wght@600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="assets/css/style.css?v=20260926a">
-  <link rel="stylesheet" href="assets/css/components.css?v=20260926a">
-  <link rel="stylesheet" href="assets/css/hero.css?v=20260926a">
+  <link rel="stylesheet" href="assets/css/style.css?v=20260926b">
+  <link rel="stylesheet" href="assets/css/components.css?v=20260926b">
+  <link rel="stylesheet" href="assets/css/hero.css?v=20260926b">
   <script type="application/ld+json">
   {"@context":"https://schema.org","@type":"TravelAgency","name":"Immaculate Connections Travel Agency","url":"https://www.immaculateconnectionsph.com/","logo":"https://technextmarketing.github.io/immaculateconnectionsph/assets/img/media/6dd07347e2b2.png","image":"https://technextmarketing.github.io/immaculateconnectionsph/assets/img/media/og-7d63895b8b89.jpg","email":"inquiries@immaculateconnectionsph.com","telephone":"+63 917 318 8997","address":{"@type":"PostalAddress","streetAddress":"Unit 4E, 4th Floor, JL Millennium Building, Don Jose Avila Street","addressLocality":"Cebu City","addressRegion":"Cebu","addressCountry":"PH"},"sameAs":["https://www.facebook.com/ImmaculateConnections.ph"]}
   </script>
@@ -73,30 +74,64 @@
 
   <main id="main">
     <!-- ===== Hero ===== -->
-    <section class="hero" id="top">
-      <div class="hero-bg">
-        <video id="heroVideo" class="hero-video" poster="assets/img/hero-poster.jpg" data-src="assets/video/hero.mp4" autoplay muted loop playsinline preload="none" aria-hidden="true"></video>
+    <section class="hero hero-slides" id="top" aria-roledescription="carousel" aria-label="Photos from our group tours">
+      <div class="hero-bg slides" id="heroSlides">
+        <figure class="slide is-active"><picture><source media="(max-width: 700px)" srcset="assets/img/hero/slide-1-1080.jpg"><img src="assets/img/hero/slide-1-1920.jpg" width="1632" height="918" alt="" fetchpriority="high" decoding="async"></picture></figure>
+        <figure class="slide"><picture><source media="(max-width: 700px)" data-srcset="assets/img/hero/slide-2-1080.jpg"><img data-src="assets/img/hero/slide-2-1920.jpg" width="1920" height="1080" alt="" loading="lazy" decoding="async"></picture></figure>
+        <figure class="slide"><picture><source media="(max-width: 700px)" data-srcset="assets/img/hero/slide-3-1080.jpg"><img data-src="assets/img/hero/slide-3-1920.jpg" width="1920" height="1080" alt="" loading="lazy" decoding="async"></picture></figure>
+        <figure class="slide"><picture><source media="(max-width: 700px)" data-srcset="assets/img/hero/slide-4-1080.jpg"><img data-src="assets/img/hero/slide-4-1920.jpg" width="1920" height="1080" alt="" loading="lazy" decoding="async"></picture></figure>
+        <figure class="slide"><picture><source media="(max-width: 700px)" data-srcset="assets/img/hero/slide-5-1080.jpg"><img data-src="assets/img/hero/slide-5-1920.jpg" width="1920" height="1080" alt="" loading="lazy" decoding="async"></picture></figure>
+        <figure class="slide"><picture><source media="(max-width: 700px)" data-srcset="assets/img/hero/slide-6-1080.jpg"><img data-src="assets/img/hero/slide-6-1920.jpg" width="1920" height="1080" alt="" loading="lazy" decoding="async"></picture></figure>
+        <figure class="slide"><picture><source media="(max-width: 700px)" data-srcset="assets/img/hero/slide-7-1080.jpg"><img data-src="assets/img/hero/slide-7-1920.jpg" width="1920" height="1080" alt="" loading="lazy" decoding="async"></picture></figure>
+        <figure class="slide"><picture><source media="(max-width: 700px)" data-srcset="assets/img/hero/slide-8-1080.jpg"><img data-src="assets/img/hero/slide-8-1920.jpg" width="1920" height="1080" alt="" loading="lazy" decoding="async"></picture></figure>
+        <figure class="slide"><picture><source media="(max-width: 700px)" data-srcset="assets/img/hero/slide-9-1080.jpg"><img data-src="assets/img/hero/slide-9-1920.jpg" width="1920" height="1080" alt="" loading="lazy" decoding="async"></picture></figure>
       </div>
-      <!-- Ambient layers: two still pools of colour warming the corners -->
-      <div class="hero-fx" aria-hidden="true">
-        <span class="hero-orb a"></span>
-        <span class="hero-orb b"></span>
-      </div>
-      <div class="container hero-grid">
+      <div class="container hero-grid single">
         <div class="hero-copy">
           <div class="hero-kicker" style="--i:0"><span class="dot"></span><span class="pill glass">Cebu City, Philippines &middot; Travel agency</span></div>
-          <h1 class="display hero-title" data-split style="--i:1">Your <em class="hl">Dream</em> Vacation Awaits</h1>
-          <p class="hero-tagline" style="--i:2">Crafting Seamless Journeys, Creating Lasting Memories.</p>
-          <p class="hero-box" style="--i:3">Immaculate Connections Travel Agency is your gateway to impeccable travel experiences. With a focus on seamless journeys and unparalleled service, we are dedicated to transforming your travel dreams into remarkable memories.</p>
+          <h1 class="display hero-title" data-split style="--i:1">Journeys planned to the <em class="hl">last detail</em></h1>
+          <p class="hero-sub" style="--i:2">From Bohol day trips to Da Nang charters and Japan tours, one Cebu team books the tickets, hotels, transport and guides, so your group simply shows up and enjoys the trip.</p>
+          <div class="hero-actions" style="--i:3">
+            <a class="btn btn-primary btn-lg" href="tours.html">View tour packages <svg class="arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+            <a class="btn btn-ghost btn-lg" href="#plan">Request a free quotation</a>
+          </div>
+          <div class="page-hero-stats hero-stats" style="--i:4">
+            <div><strong>5</strong><span>Services</span></div>
+            <div><strong>15</strong><span>Tour packages</span></div>
+            <div><strong>4</strong><span>Vehicle types</span></div>
+            <div><strong>Free</strong><span>Quotations</span></div>
+          </div>
+          <div class="hero-ctl" style="--i:5">
+            <button class="hero-arrow prev" id="heroPrevBtn" type="button" aria-label="Previous photo"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m15 18-6-6 6-6"/></svg></button>
+            <div class="hero-dots" id="heroDots" role="group" aria-label="Choose a photo"></div>
+            <button class="hero-arrow next" id="heroNextBtn" type="button" aria-label="Next photo"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m15 18-6-6 6-6"/></svg></button>
+          </div>
+        </div>
+      </div>
+      <button class="hero-scroll" id="heroScroll" type="button" aria-label="Scroll to plan your trip">Scroll<span></span></button>
+      <div class="hero-wave" aria-hidden="true">
+        <svg class="w2" viewBox="0 0 1440 80" preserveAspectRatio="none"><path fill="currentColor" d="M0,52 C260,20 520,76 760,44 C1000,12 1220,64 1440,36 L1440,80 L0,80 Z"/></svg>
+        <svg class="w1" viewBox="0 0 1440 80" preserveAspectRatio="none"><path fill="currentColor" d="M0,48 C240,88 480,8 720,40 C960,72 1200,24 1440,48 L1440,80 L0,80 Z"/></svg>
+      </div>
+    </section>
+
+    <!-- ===== Plan your trip: the welcome copy and the quick quotation ===== -->
+    <section class="section plan" id="plan">
+      <div class="container plan-grid">
+        <div class="plan-copy">
+          <span class="eyebrow">Plan your trip</span>
+          <h2 class="display plan-title">Your <em class="hl">Dream</em> Vacation Awaits</h2>
+          <p class="plan-tagline">Crafting Seamless Journeys, Creating Lasting Memories.</p>
+          <p class="plan-box">Immaculate Connections Travel Agency is your gateway to impeccable travel experiences. With a focus on seamless journeys and unparalleled service, we are dedicated to transforming your travel dreams into remarkable memories.</p>
           <a class="hero-next" id="heroNext" href="tours.html" style="--i:4" hidden>
             <span class="hn-label"><span class="dot"></span><span class="t">Now booking</span></span>
             <span class="hn-slot" id="heroNextSlot"></span>
             <svg class="hn-go" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
             <span class="hn-bar" aria-hidden="true"><i></i></span>
           </a>
-          <div class="hero-actions" style="--i:5">
+          <div class="plan-actions">
             <a class="btn btn-primary btn-lg" href="tours.html">View tour packages <svg class="arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
-            <a class="btn btn-ghost btn-lg" href="#offers">Special offers 2026</a>
+            <a class="btn btn-outline btn-lg" href="#offers">Special offers 2026</a>
           </div>
           <div class="hero-trust" style="--i:6">
             <div class="trust-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 11h3a2 2 0 0 1 2 2v3a2 2 0 0 1-2 2H3z"/><path d="M21 11h-3a2 2 0 0 0-2 2v3a2 2 0 0 0 2 2h3z"/><path d="M3 11v-1a9 9 0 0 1 18 0v1"/><path d="M21 16v2a4 4 0 0 1-4 4h-5"/></svg>24/7 support for travellers</div>
@@ -104,7 +139,7 @@
             <div class="trust-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z"/><path d="m9 12 2 2 4-4"/></svg>Ticketing &middot; Hotels &middot; Transport &middot; Events</div>
           </div>
         </div>
-        <div class="hero-side" style="--i:3">
+        <div class="plan-side">
           <form class="quote-card" id="quickQuote" action="contact.html" method="get">
             <div class="live-badge"><span class="dot"></span>Free quotation</div>
             <h3>Plan your trip in 60 seconds</h3>
@@ -137,15 +172,6 @@
             <p class="fine"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="m9 12 2 2 4-4"/></svg>No payment required. Your details go straight to our team.</p>
           </form>
         </div>
-      </div>
-      <button class="hero-vid-btn" id="heroVidBtn" type="button" aria-pressed="false" aria-label="Pause the background video" hidden>
-        <svg class="ic-pause" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><rect x="6" y="5" width="4" height="14" rx="1"/><rect x="14" y="5" width="4" height="14" rx="1"/></svg>
-        <svg class="ic-play" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M8 5.14v13.72a1 1 0 0 0 1.5.86l11-6.86a1 1 0 0 0 0-1.72l-11-6.86A1 1 0 0 0 8 5.14Z"/></svg>
-      </button>
-      <button class="hero-scroll" id="heroScroll" type="button" aria-label="Scroll to the special offers">Scroll<span></span></button>
-      <div class="hero-wave" aria-hidden="true">
-        <svg class="w2" viewBox="0 0 1440 80" preserveAspectRatio="none"><path fill="currentColor" d="M0,52 C260,20 520,76 760,44 C1000,12 1220,64 1440,36 L1440,80 L0,80 Z"/></svg>
-        <svg class="w1" viewBox="0 0 1440 80" preserveAspectRatio="none"><path fill="currentColor" d="M0,48 C240,88 480,8 720,40 C960,72 1200,24 1440,48 L1440,80 L0,80 Z"/></svg>
       </div>
     </section>
 
@@ -360,7 +386,7 @@
   <a class="fab-msg" href="#" data-msg aria-label="Message us on Facebook Messenger"><span class="fab-pulse"></span><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2C6.36 2 2 6.13 2 11.7c0 2.91 1.19 5.44 3.14 7.17.16.15.26.35.27.57l.05 1.78a.8.8 0 0 0 1.12.71l1.99-.88a.8.8 0 0 1 .53-.04c.91.25 1.88.39 2.9.39 5.64 0 10-4.13 10-9.7S17.64 2 12 2Zm6 7.46-2.94 4.66a1.5 1.5 0 0 1-2.17.4l-2.34-1.75a.6.6 0 0 0-.72 0l-3.16 2.4c-.42.32-.97-.18-.69-.63l2.94-4.66a1.5 1.5 0 0 1 2.17-.4l2.34 1.75a.6.6 0 0 0 .72 0l3.16-2.4c.42-.32.97.18.69.63Z"/></svg><span>Message us</span></a>
   <button class="to-top" id="toTop" type="button" aria-label="Back to top"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 19V5M5 12l7-7 7 7"/></svg></button>
 
-  <script src="assets/js/data.js?v=20260926a"></script>
-  <script src="assets/js/main.js?v=20260926a"></script>
+  <script src="assets/js/data.js?v=20260926b"></script>
+  <script src="assets/js/main.js?v=20260926b"></script>
 </body>
 </html>

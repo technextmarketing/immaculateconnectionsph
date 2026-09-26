@@ -47,8 +47,6 @@
 .badge.gold { background: var(--gold); color: var(--navy); }
 
 /* ---------- Hero background video ---------- */
-.hero-bg video, .hero-video { width: 100%; height: 100%; object-fit: cover; display: block; border: 0; }
-@media (prefers-reduced-motion: reduce) { .hero-video { display: block; } }
 
 /* ---------- Hero refinements ---------- */
 .hero-box { background: rgba(15,59,120,.25); border-radius: 0 14px 14px 0; padding: 14px 18px 14px 22px; backdrop-filter: blur(4px); }

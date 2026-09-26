@@ -328,7 +328,7 @@
 
     const cue = $('#heroScroll');
     if (cue) cue.addEventListener('click', () => {
-      const next = $('#offers') || hero.nextElementSibling;
+      const next = $('#plan') || $('#offers') || hero.nextElementSibling;
       if (next) window.scrollTo({ top: next.getBoundingClientRect().top + window.scrollY - 90, behavior: reduced ? 'auto' : 'smooth' });
     });
   }
@@ -1202,39 +1202,44 @@
     go(params.get('service') ? 2 : 1);
   }
 
-  /* ===================== Hero background video ===================== */
-  function initHeroVideo() {
-    const v = $('#heroVideo');
-    if (!v || !v.dataset.src) return;
-    // The poster is frame one of the clip, so it stands in seamlessly when the
-    // video is skipped: reduced motion, data saver, slow link or a phone.
-    const conn = navigator.connection || {};
-    if (reduced || conn.saveData || /(^|-)2g$/.test(conn.effectiveType || '') || window.matchMedia('(max-width: 640px)').matches) return;
-    const start = () => {
-      v.src = v.dataset.src;
-      const kick = () => { const p = v.play(); if (p && p.catch) p.catch(() => {}); };
-      kick();
-      // Some browsers hold playback until the visitor interacts with the page
-      const retry = () => { if (v.paused) kick(); else off(); };
-      const off = () => ['pointerdown', 'touchstart', 'scroll', 'keydown'].forEach(e => window.removeEventListener(e, retry));
-      ['pointerdown', 'touchstart', 'scroll', 'keydown'].forEach(e => window.addEventListener(e, retry, { passive: true }));
-      v.addEventListener('playing', off, { once: true });
-      // WCAG asks for a way to stop moving content, and it doubles as a nice
-      // little control: the button only appears once the clip is really running.
-      const btn = $('#heroVidBtn');
-      if (btn) {
-        v.addEventListener('playing', () => { btn.hidden = false; }, { once: true });
-        btn.addEventListener('click', () => {
-          const paused = v.paused;
-          if (paused) { const q = v.play(); if (q && q.catch) q.catch(() => {}); }
-          else v.pause();
-          btn.setAttribute('aria-pressed', String(!paused));
-          btn.setAttribute('aria-label', (paused ? 'Pause' : 'Play') + ' the background video');
-        });
-      }
+  /* ===================== Hero photo slides =====================
+     Still photos of the agency's group tours cross-fade behind the hero copy.
+     Only the first photo is in the first paint; the next one is fetched when
+     the page is idle and each further one just before it shows. Arrows, dots,
+     swipe and the keyboard all move it; hovering, a hidden tab or reduced
+     motion stop the automatic change.                                      */
+  function initHeroSlides() {
+    const box = $('#heroSlides'); if (!box) return;
+    const slides = $$('.slide', box); if (slides.length < 2) return;
+    const dots = $('#heroDots'), prev = $('#heroPrevBtn'), next = $('#heroNextBtn'), hero = box.closest('.hero');
+    const load = s => {
+      const img = $('img', s), src = $('source', s);
+      if (src && src.dataset.srcset) { src.srcset = src.dataset.srcset; delete src.dataset.srcset; }
+      if (img && img.dataset.src) { img.src = img.dataset.src; delete img.dataset.src; }
     };
-    if ('requestIdleCallback' in window) requestIdleCallback(start, { timeout: 1500 });
-    else setTimeout(start, 700);
+    let i = 0, timer = null, hover = false;
+    if (dots) dots.innerHTML = slides.map((_, k) => `<button type="button" aria-label="Photo ${k + 1} of ${slides.length}" aria-current="${k === 0}"></button>`).join('');
+    const go = n => {
+      const to = (n + slides.length) % slides.length; if (to === i) return;
+      load(slides[to]); load(slides[(to + 1) % slides.length]);
+      slides[i].classList.remove('is-active'); slides[to].classList.add('is-active'); i = to;
+      if (dots) $$('button', dots).forEach((b, k) => b.setAttribute('aria-current', String(k === i)));
+    };
+    const stop = () => { clearInterval(timer); timer = null; };
+    const start = () => { if (reduced || timer || hover || document.hidden) return; timer = setInterval(() => go(i + 1), 6000); };
+    const bump = f => { f(); stop(); start(); };
+    if (prev) prev.addEventListener('click', () => bump(() => go(i - 1)));
+    if (next) next.addEventListener('click', () => bump(() => go(i + 1)));
+    if (dots) dots.addEventListener('click', e => { const b = e.target.closest('button'); if (b) bump(() => go($$('button', dots).indexOf(b))); });
+    hero.addEventListener('mouseenter', () => { hover = true; stop(); });
+    hero.addEventListener('mouseleave', () => { hover = false; start(); });
+    document.addEventListener('visibilitychange', () => (document.hidden ? stop() : start()));
+    let tx = null;
+    hero.addEventListener('touchstart', e => { tx = e.touches[0].clientX; }, { passive: true });
+    hero.addEventListener('touchend', e => { if (tx == null) return; const dx = e.changedTouches[0].clientX - tx; tx = null; if (Math.abs(dx) > 50) bump(() => go(dx < 0 ? i + 1 : i - 1)); }, { passive: true });
+    const warm = () => load(slides[1]);
+    if ('requestIdleCallback' in window) requestIdleCallback(warm, { timeout: 2500 }); else setTimeout(warm, 1500);
+    start();
   }
 
   /* ===================== Team cards ===================== */
@@ -1403,7 +1408,7 @@
 
   document.addEventListener('DOMContentLoaded', () => {
     initHeader(); initContactLinks(); initHeroTitle(); initTicker(); initOffers(); initFeatured(); initToursPage(); initPackagePage();
-    initHeroVideo(); initGallery(); initTeam(); initFaq(); initSubnav(); initMisc(); initInquiry(); initPayment(); initTeamProfile(); initReveal();
+    initHeroSlides(); initGallery(); initTeam(); initFaq(); initSubnav(); initMisc(); initInquiry(); initPayment(); initTeamProfile(); initReveal();
     initHeroNext(); initQuoteCard(); initHeroMotion(); initHeroStage();
   });
 })();
