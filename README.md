@@ -74,16 +74,23 @@ All photos live in `assets/img/media/` (nothing is loaded from Wix any more). Ea
 
 ## Hero photo credits
 
-The destination backgrounds in `assets/img/hero/` come from Unsplash (free for commercial use; credit is appreciated, not required). The group photos (`print-*`, `thumb-*`) are the agency's own.
+Every page opens on a photo from `assets/img/hero/`. Unsplash photos are free for commercial use (credit appreciated). Wikimedia Commons photos keep their licence: CC BY-SA 4.0 needs the credit below and the adapted file shared under the same licence; CC0 needs nothing. Which package uses which photo is set in `IC.destHero` in `assets/js/data.js`.
 
-- `dest-bohol-*.jpg`: photo by Zed Benson on Unsplash (https://unsplash.com/photos/chocolate-hills-bohol-philippines-tyMVaFXcksU), used under the Unsplash License
-- `dest-danang-*.jpg`: photo by Linda Gerbec on Unsplash (https://unsplash.com/photos/golden-bridge-held-by-giant-hands-in-vietnam-CsoQ-jm_0vQ), used under the Unsplash License
-- `dest-palawan-*.jpg`: photo by Roman Lezhnin on Unsplash (https://unsplash.com/photos/kayaking-through-turquoise-water-surrounded-by-mountains-Tx6hqbZuHPo), used under the Unsplash License
-- `dest-fuji-*.jpg`: photo by Max Bender on Unsplash (https://unsplash.com/photos/pagoda-and-mount-fuji-in-japan-FuxYvi-hcWQ), used under the Unsplash License
-- `dest-boracay-*.jpg`: photo by Edward Ang on Unsplash (https://unsplash.com/photos/a-group-of-sailboats-sailing-on-a-body-of-water-near-palm-trees-7pUL8o7e8bQ), used under the Unsplash License
-- `dest-halong-*.jpg`: photo by Marina Lobato on Unsplash (https://unsplash.com/photos/boats-on-turquoise-ha-long-bay-kG7pOXbBfNs), used under the Unsplash License
-- `dest-coron-*.jpg`: photo by Junel Mujar on Unsplash (https://unsplash.com/photos/a-group-of-boats-floating-on-top-of-a-lake-surrounded-by-trees-IzcFq844SKk), used under the Unsplash License
-- `dest-moalboal-*.jpg`: photo by Ken Suarez on Unsplash (https://unsplash.com/photos/aerial-photography-of-several-white-boats-near-island-oO7d1Q9mJZQ), used under the Unsplash License
+- `dest-bohol-*.jpg`: photo by Zed Benson on Unsplash (https://unsplash.com/photos/chocolate-hills-bohol-philippines-tyMVaFXcksU), Unsplash License
+- `dest-danang-*.jpg`: photo by Linda Gerbec on Unsplash (https://unsplash.com/photos/golden-bridge-held-by-giant-hands-in-vietnam-CsoQ-jm_0vQ), Unsplash License
+- `dest-palawan-*.jpg`: photo by Roman Lezhnin on Unsplash (https://unsplash.com/photos/kayaking-through-turquoise-water-surrounded-by-mountains-Tx6hqbZuHPo), Unsplash License
+- `dest-fuji-*.jpg`: photo by Max Bender on Unsplash (https://unsplash.com/photos/pagoda-and-mount-fuji-in-japan-FuxYvi-hcWQ), Unsplash License
+- `dest-boracay-*.jpg`: photo by Edward Ang on Unsplash (https://unsplash.com/photos/a-group-of-sailboats-sailing-on-a-body-of-water-near-palm-trees-7pUL8o7e8bQ), Unsplash License
+- `dest-halong-*.jpg`: photo by Marina Lobato on Unsplash (https://unsplash.com/photos/boats-on-turquoise-ha-long-bay-kG7pOXbBfNs), Unsplash License
+- `dest-coron-*.jpg`: photo by Junel Mujar on Unsplash (https://unsplash.com/photos/a-group-of-boats-floating-on-top-of-a-lake-surrounded-by-trees-IzcFq844SKk), Unsplash License
+- `dest-moalboal-*.jpg`: photo by Ken Suarez on Unsplash (https://unsplash.com/photos/aerial-photography-of-several-white-boats-near-island-oO7d1Q9mJZQ), Unsplash License
+- `dest-cebu-*.jpg`: photo by Jaye Hernandez on Unsplash (https://unsplash.com/photos/a-view-of-a-city-and-a-body-of-water-n4-7eI0aOtU), Unsplash License
+- `dest-shanghai-*.jpg`: photo by Freeman Zhou on Unsplash (https://unsplash.com/photos/lujiazui-skyline-at-the-bund-shanghai-oV9hp8wXkPE), Unsplash License
+- `dest-yunnan-*.jpg`: photo by Morgan Fung on Unsplash (https://unsplash.com/photos/the-mountains-are-reflected-in-the-still-water-of-the-lake-SU-GSBsHNJ8), Unsplash License
+- `dest-sky-*.jpg`: photo by Johny Goerend on Unsplash (https://unsplash.com/photos/white-and-black-airplane-wing-over-white-clouds-during-daytime-KB9r_hTzyeQ), Unsplash License
+- `dest-camotes-*.jpg`: photo by Rollymagpayo on Wikimedia Commons (https://commons.wikimedia.org/wiki/File:Pier_in_Camotes_Islands.jpg), CC BY-SA 4.0
+- `dest-camotes-sunset-*.jpg`: photo by Headshop5 on Wikimedia Commons (https://commons.wikimedia.org/wiki/File:Sunset_in_the_Camotes_Islands.jpg), CC0
+- `group-*.jpg`, `print-*`, `thumb-*`: the agency's own group photos
 
 ## Go-live checklist
 

@@ -87,6 +87,14 @@
   const money = (p, n) => { const v = n == null ? p.from : n; return (p && p.currency === 'USD' ? '$' : '₱') + Number(v).toLocaleString('en-PH'); };
   const priceValue = t => (t.price ? t.price.from * (t.price.currency === 'USD' ? 57 : 1) : 9e9);
   const pkgUrl = t => `package.html?id=${encodeURIComponent(t.id)}`;
+  // A package page opens on a sharp photo of its destination (IC.destHero); a package without one falls back to its own image
+  const pkgHeroBg = t => {
+    const k = IC.destHero && IC.destHero[t.id];
+    const pic = k
+      ? `<picture><source media="(max-width: 700px)" srcset="assets/img/hero/dest-${k}-1280.jpg"><img src="assets/img/hero/dest-${k}-2400.jpg" width="2400" height="1350" alt="" fetchpriority="high" decoding="async"></picture>`
+      : `<img src="${wix(t.hero || t.image, 1600)}" alt="" decoding="async">`;
+    return `<div class="ph-rig"><figure class="ph-scene is-on${k ? '' : ' soft'}" data-move="push">${pic}</figure></div>`;
+  };
   const abs = p => new URL(p, location.href).href;
   const setMeta = (name, v) => { const el = $(`meta[name="${name}"]`); if (el) el.content = v || ''; };
   const ctaLabel = t => { const s = effStatus(t); return s === 'past' ? 'Ask about the next departure' : s === 'soon' ? 'Ask about this tour' : s === 'offer' ? 'Book this offer' : 'Request a quote'; };
@@ -216,22 +224,25 @@
     // measure it there and cache it. Reading it inside the scroll handler
     // forced a layout on every scroll event, the main scroll-jank source. The
     // paint is coalesced to one write per frame.
-    let max = 0, ticking = false, heroEnd = 0;
-    // On the home page the header floats over the hero and stays transparent
-    // until the hero has scrolled out from under it.
-    const heroTl = $('.hero-tl');
+    let max = 0, ticking = false, heroEnd = 0, heroEl = null;
+    // On every page the header floats over the opening hero (body[data-hero-top])
+    // and stays transparent until the hero has scrolled out from under it.
     const measure = () => {
       max = document.documentElement.scrollHeight - window.innerHeight;
-      heroEnd = heroTl ? heroTl.offsetHeight - (header ? header.offsetHeight : 80) - 12 : 0;
+      heroEl = document.body.hasAttribute('data-hero-top') ? $('.hero-tl, .page-hero, .pkg-hero') : null;
+      heroEnd = heroEl ? heroEl.getBoundingClientRect().top + window.scrollY + heroEl.offsetHeight - (header ? header.offsetHeight : 80) - 12 : 0;
     };
     const paint = () => {
       ticking = false;
       if (header) header.classList.toggle('scrolled', window.scrollY > 10);
-      if (header && heroTl) header.classList.toggle('on-hero', window.scrollY < heroEnd);
+      if (header) header.classList.toggle('on-hero', !!heroEl && window.scrollY < heroEnd);
       bar.style.transform = `scaleX(${max > 0 ? Math.min(1, window.scrollY / max) : 0})`;
     };
     const onScroll = () => { if (!ticking) { ticking = true; requestAnimationFrame(paint); } };
     measure(); paint();
+    // Pages that build their hero in script (package, team) call this once it exists;
+    // a page left without a hero gets the ordinary sticky header back.
+    IC.refreshHeader = () => { measure(); if (!heroEl && document.body.hasAttribute('data-hero-top')) { document.body.removeAttribute('data-hero-top'); measure(); } paint(); };
     window.addEventListener('scroll', onScroll, { passive: true });
     window.addEventListener('resize', () => { measure(); paint(); }, { passive: true });
     window.addEventListener('load', measure);
@@ -302,7 +313,7 @@
      Two frames of breathing room so the starting state paints before the
      transitions begin, otherwise the first word can appear already in place. */
   function initHeroStage() {
-    const hero = $('.hero');
+    const hero = $('.hero, .page-hero');
     if (!hero) return;
     const on = () => hero.classList.add('is-in');
     if (reduced) { on(); return; }
@@ -608,7 +619,7 @@
 
     root.innerHTML = `
       <section class="pkg-hero">
-        <div class="hero-bg"><img src="${wix(t.hero || t.image, 960, 500, t.hero ? 'c' : t.imageAlign)}" alt="" width="960" height="500"></div>
+        <div class="hero-bg" aria-hidden="true">${pkgHeroBg(t)}</div>
         <div class="container">
           <nav class="breadcrumb" aria-label="Breadcrumb"><a href="index.html">Home</a>${I.left.replace('m15 18-6-6 6-6', 'm9 18 6-6-6-6')}<a href="tours.html">Tour Packages</a>${I.left.replace('m15 18-6-6 6-6', 'm9 18 6-6-6-6')}<span>${esc(region)}</span></nav>
           <div class="chips pkg-chips">
@@ -1210,6 +1221,117 @@
     go(params.get('service') ? 2 : 1);
   }
 
+  /* ===================== Inner-page heroes =====================
+     Every page opens on a full-bleed photo the camera keeps moving on: one
+     slow move, or a sequence of places with a dissolve and a caption. The
+     pointer and the scroll nudge the camera, the figures count up, and it
+     all rests off screen or in a hidden tab; reduced motion keeps a still. */
+  function initPageHeroes() {
+    const hero = $('.page-hero, .pkg-hero'); if (!hero) return;
+    const rig = $('.ph-rig', hero); if (!rig) return;
+    const scenes = $$('.ph-scene', rig), place = $('.ph-place-name', hero), DWELL = 6000;
+    const MOVES = {
+      push:  ['scale(1.06) translate3d(0, 0, 0)', 'scale(1.18) translate3d(-1.5%, 1%, 0)'],
+      dolly: ['scale(1.04) translate3d(0, 1%, 0)', 'scale(1.26) translate3d(0, -1%, 0)'],
+      panR:  ['scale(1.15) translate3d(-3.5%, 0, 0)', 'scale(1.15) translate3d(3.5%, -.5%, 0)'],
+      panL:  ['scale(1.15) translate3d(3.5%, 0, 0)', 'scale(1.15) translate3d(-3.5%, .5%, 0)'],
+      pull:  ['scale(1.22) translate3d(1%, 1%, 0)', 'scale(1.06) translate3d(0, 0, 0)'],
+      tilt:  ['scale(1.16) translate3d(0, 3.5%, 0)', 'scale(1.16) translate3d(0, -3%, 0)'],
+      orbit: ['scale(1.1) rotate(-1.2deg) translate3d(1%, 0, 0)', 'scale(1.18) rotate(.5deg) translate3d(-1%, -1%, 0)'],
+      drift: ['scale(1.18) rotate(.8deg) translate3d(-2%, 1.5%, 0)', 'scale(1.07) rotate(-.3deg) translate3d(2%, -1%, 0)']
+    };
+    let si = 0, timer = null, visible = true;
+    const load = s => {
+      const src = $('source', s), img = $('img', s);
+      if (src && src.dataset.srcset) { src.srcset = src.dataset.srcset; delete src.dataset.srcset; }
+      if (img && img.dataset.src) { img.src = img.dataset.src; delete img.dataset.src; }
+      return img;
+    };
+    const move = (s, loop) => {
+      if (reduced || !s) return null;
+      const [a, b] = MOVES[s.dataset.move] || MOVES.push;
+      const anim = $('img', s).animate([{ transform: a }, { transform: b }], loop
+        ? { duration: 18000, easing: 'ease-in-out', iterations: Infinity, direction: 'alternate' }
+        : { duration: DWELL + 2600, easing: 'cubic-bezier(.33, 0, .4, 1)', fill: 'both' });
+      if (!visible || document.hidden) anim.pause();
+      return anim;
+    };
+    const setPlace = name => {
+      if (!place || !name) return;
+      const old = place.lastElementChild;
+      const n = document.createElement('span'); n.innerHTML = name;
+      if (old && old.textContent === n.textContent) return;
+      if (reduced || !old) { place.textContent = ''; place.appendChild(n); return; }
+      n.className = 'in'; place.appendChild(n); old.className = 'out';
+      requestAnimationFrame(() => requestAnimationFrame(() => { n.className = ''; }));
+      setTimeout(() => { if (old.parentNode) old.remove(); }, 700);
+    };
+    const next = async () => {
+      const to = (si + 1) % scenes.length, s = scenes[to], img = load(s);
+      try { if (img && !img.complete) await img.decode(); } catch (e) { /* show it anyway */ }
+      const from = scenes[si]; si = to;
+      s._cam = move(s, false);
+      if (!reduced) {
+        const out = from.animate([{ transform: 'scale(1)' }, { transform: 'scale(1.24)' }], { duration: 1500, easing: 'cubic-bezier(.5, 0, .8, .4)', fill: 'forwards' });
+        s.animate([{ transform: 'scale(1.16)' }, { transform: 'scale(1)' }], { duration: 1600, easing: 'cubic-bezier(.16, 1, .3, 1)' });
+        setTimeout(() => { out.cancel(); if (from._cam && !from.classList.contains('is-on')) { from._cam.cancel(); from._cam = null; } }, 1800);
+      }
+      s.classList.add('is-on'); from.classList.remove('is-on');
+      setPlace(s.dataset.place || '');
+      load(scenes[(to + 1) % scenes.length]);
+    };
+    const start = () => { if (reduced || scenes.length < 2 || timer || !visible || document.hidden) return; timer = setInterval(next, DWELL); };
+    const stop = () => { clearInterval(timer); timer = null; };
+    scenes[0]._cam = move(scenes[0], scenes.length < 2);
+    if (scenes.length > 1) {
+      setPlace(scenes[0].dataset.place || '');
+      const warm = () => load(scenes[1]);
+      if ('requestIdleCallback' in window) requestIdleCallback(warm, { timeout: 2500 }); else setTimeout(warm, 1500);
+    }
+
+    /* pointer parallax and a scroll push-in on the camera rig */
+    let tx = 0, ty = 0, cx = 0, cy = 0, raf = 0, rect = null;
+    const apply = () => {
+      raf = 0;
+      cx += (tx - cx) * .07; cy += (ty - cy) * .07;
+      const sc = Math.min(1, Math.max(0, window.scrollY / (hero.offsetHeight || 1)));
+      rig.style.setProperty('--rx', (-cx * 20).toFixed(2) + 'px');
+      rig.style.setProperty('--ry', (-cy * 12 + sc * 70).toFixed(2) + 'px');
+      rig.style.setProperty('--rz', (1 + sc * .1).toFixed(4));
+      if (Math.abs(tx - cx) > .002 || Math.abs(ty - cy) > .002) raf = requestAnimationFrame(apply);
+    };
+    const kick = () => { if (!raf) raf = requestAnimationFrame(apply); };
+    if (!reduced) {
+      if (window.matchMedia('(pointer: fine)').matches) {
+        hero.addEventListener('pointerenter', () => { rect = hero.getBoundingClientRect(); });
+        hero.addEventListener('pointermove', e => {
+          if (e.pointerType !== 'mouse') return;
+          const r = rect || (rect = hero.getBoundingClientRect());
+          tx = ((e.clientX - r.left) / r.width) * 2 - 1; ty = ((e.clientY - r.top) / r.height) * 2 - 1; kick();
+        }, { passive: true });
+        hero.addEventListener('pointerleave', () => { tx = 0; ty = 0; rect = null; kick(); });
+      }
+      window.addEventListener('scroll', () => { rect = null; if (window.scrollY < hero.offsetHeight * 1.3) kick(); }, { passive: true });
+    }
+
+    /* rest when nobody can see it */
+    const pause = () => { stop(); scenes.forEach(s => s._cam && s._cam.pause()); };
+    const play = () => { scenes.forEach(s => s._cam && s.classList.contains('is-on') && s._cam.play()); start(); };
+    if ('IntersectionObserver' in window) new IntersectionObserver(en => { visible = en[0].isIntersecting; visible ? play() : pause(); }, { threshold: .05 }).observe(hero);
+    document.addEventListener('visibilitychange', () => (document.hidden ? pause() : play()));
+    start();
+
+    /* the hero's figures count up to their value once */
+    if (!reduced) $$('.page-hero-stats strong', hero).forEach(el => {
+      const txt = el.textContent.trim(); if (!/^\d+$/.test(txt) || +txt < 3) return;
+      const n = +txt, t0 = performance.now() + 450, dur = 1100;
+      el.textContent = '0';
+      const tick = now => { const k = Math.min(1, Math.max(0, (now - t0) / dur)); el.textContent = String(Math.round(n * (1 - Math.pow(1 - k, 3)))); if (k < 1) requestAnimationFrame(tick); };
+      requestAnimationFrame(tick);
+      setTimeout(() => { el.textContent = txt; }, 2000);
+    });
+  }
+
   /* ===================== Hero: travelogue =====================
      Behind the copy the camera keeps moving on a destination (a push-in,
      a pan, a tilt, a dolly, one move per place) and every few seconds it
@@ -1523,14 +1645,13 @@
     const first = (m.name || '').split(' ')[0] || 'this desk';
     const mail = m.email || CONFIG.email;
     const others = IC.team.filter(x => x.slug !== m.slug);
-    const heroImg = wix(IC.media.heroAbout, 1920, 900);
 
     document.title = `${m.name} \u2014 ${m.role} | ${CONFIG.shortName}`;
     const md = $('meta[name="description"]'); if (md) md.content = `${m.name}, ${m.role} at ${CONFIG.brand}. ${m.tagline || ''}`;
 
     root.innerHTML = `
       <section class="page-hero tp-hero">
-        <div class="hero-bg"><img src="${heroImg}" alt="" width="1920" height="900"></div>
+        <div class="hero-bg" aria-hidden="true"><div class="ph-rig"><figure class="ph-scene is-on" data-move="push"><picture><source media="(max-width: 700px)" srcset="assets/img/hero/group-1-1280.jpg"><img src="assets/img/hero/group-1-lg.jpg" width="1632" height="918" alt="" fetchpriority="high" decoding="async"></picture></figure></div></div>
         <div class="container">
           <nav class="breadcrumb" aria-label="Breadcrumb"><a href="index.html">Home</a>${I.left.replace('m15 18-6-6 6-6', 'm9 18 6-6-6-6')}<a href="about.html#team">Our team</a>${I.left.replace('m15 18-6-6 6-6', 'm9 18 6-6-6-6')}<span>${esc(m.name)}</span></nav>
           <div class="tp-head">
@@ -1652,6 +1773,7 @@
   document.addEventListener('DOMContentLoaded', () => {
     initHeader(); initContactLinks(); initHeroTitle(); initTicker(); initOffers(); initFeatured(); initToursPage(); initPackagePage();
     initTravelogue(); initGallery(); initTeam(); initFaq(); initSubnav(); initMisc(); initInquiry(); initPayment(); initTeamProfile(); initReveal();
-    initHeroNext(); initQuoteCard(); initHeroMotion(); initHeroStage();
+    initHeroNext(); initQuoteCard(); initHeroMotion(); initPageHeroes(); initHeroStage();
+    if (IC.refreshHeader) IC.refreshHeader();
   });
 })();

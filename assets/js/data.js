@@ -73,6 +73,26 @@ window.IC = window.IC || {};
   const wix = (id, w) => { const f = LOCAL[id] || id; return MEDIA + (w && w <= 800 && /\.jpe?g$/i.test(f) ? f.replace(/\.jpe?g$/i, '-800.jpg') : f); };
   IC.wix = wix;
 
+  /* Each package page opens on a high-resolution photo of its destination: assets/img/hero/dest-<key>-2400.jpg
+     (and -1280 for phones). Credits are in the README. */
+  IC.destHero = {
+    'danang-6d4n': 'danang',
+    'danang-5d3n': 'danang',
+    'hanoi-sapa-halong-4d3n': 'halong',
+    'bohol-breezes': 'bohol',
+    'camotes-discover': 'camotes-sunset',
+    'camotes-tudela': 'camotes',
+    'cebu-highlands': 'cebu',
+    'queen-city': 'cebu',
+    'twin-city': 'cebu',
+    'boracay-bliss': 'boracay',
+    'el-nido': 'palawan',
+    'coron': 'coron',
+    'shanghai-mini-kyoto-5d4n': 'shanghai',
+    'charming-yunnan-8d7n': 'yunnan',
+    'japan-tokyo-fuji-5d4n': 'fuji'
+  };
+
   IC.media = {
     logo: wix('952787_6dd07347e2b24fab89e9fdcee6240889~mv2.png'),
     mark: wix('952787_ab1a9837b67f48ff85499555bb28ceba~mv2.png'),
