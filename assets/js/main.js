@@ -216,11 +216,18 @@
     // measure it there and cache it. Reading it inside the scroll handler
     // forced a layout on every scroll event, the main scroll-jank source. The
     // paint is coalesced to one write per frame.
-    let max = 0, ticking = false;
-    const measure = () => { max = document.documentElement.scrollHeight - window.innerHeight; };
+    let max = 0, ticking = false, heroEnd = 0;
+    // On the home page the header floats over the hero and stays transparent
+    // until the hero has scrolled out from under it.
+    const heroTl = $('.hero-tl');
+    const measure = () => {
+      max = document.documentElement.scrollHeight - window.innerHeight;
+      heroEnd = heroTl ? heroTl.offsetHeight - (header ? header.offsetHeight : 80) - 12 : 0;
+    };
     const paint = () => {
       ticking = false;
       if (header) header.classList.toggle('scrolled', window.scrollY > 10);
+      if (header && heroTl) header.classList.toggle('on-hero', window.scrollY < heroEnd);
       bar.style.transform = `scaleX(${max > 0 ? Math.min(1, window.scrollY / max) : 0})`;
     };
     const onScroll = () => { if (!ticking) { ticking = true; requestAnimationFrame(paint); } };
@@ -1205,29 +1212,34 @@
 
   /* ===================== Hero: travelogue =====================
      Behind the copy the camera keeps moving on a destination (a push-in,
-     a pan, a tilt, a pull-out: one move per place) and rack-focuses to the
-     next place every few seconds. In front, the agency's own group photos
-     sit as a pile of prints: the top one is thrown to the back by the timer,
-     a tap, a drag, a swipe, the arrows or the keyboard, and the next one
-     pulls into focus. Pointer and scroll nudge the camera. It all stops when
-     the hero is off screen or the tab is hidden; reduced motion keeps plain
-     cross-fades and manual control.                                         */
+     a pan, a tilt, a dolly, one move per place) and every few seconds it
+     dollies through to the next place, with a warm light leak across the
+     cut; the reel at the bottom shows where it is and jumps anywhere. In
+     front, the agency's own group photos sit as a pile of prints: the top
+     one is thrown to the back by the timer, a tap, a drag, a swipe, the
+     arrows or the keyboard, and the next one pulls into focus. Hovering
+     fans the pile open and the top print catches the light; the corner
+     button opens it full size. Pointer and scroll nudge the camera.
+     Everything rests off screen, in a hidden tab or while a photo is open;
+     reduced motion keeps plain cross-fades and manual control.            */
   function initTravelogue() {
     const hero = $('.hero-tl'); if (!hero) return;
-    const rig = $('#tlRig', hero), deck = $('#tlDeck', hero), stack = $('#tlStack', hero), prints$ = $('.tl-prints', hero);
-    const scenes = $$('.scene', rig), prints = $$('.print', deck), thumbs = $$('#tlThumbs button', hero);
-    const place = $('#tlPlace', hero), meter = $('#tlMeter', hero), thumbRow = $('#tlThumbs', hero);
+    const rig = $('#tlRig', hero), deck = $('#tlDeck', hero), stack = $('#tlStack', hero), prints$ = $('.tl-prints', hero), leak = $('.tl-leak', hero);
+    const scenes = $$('.scene', rig), prints = $$('.print', deck), thumbs = $$('#tlThumbs button', hero), chips = $$('#tlChips button', hero);
+    const place = $('#tlPlace', hero), thumbRow = $('#tlThumbs', hero), chipRow = $('#tlChips', hero);
     if (!rig || !deck || !scenes.length || !prints.length) return;
-    const DWELL = 6500, FAR = 4;
+    const DWELL = 6500, FAR = 4, L = scenes.length;
     hero.style.setProperty('--tl-dwell', DWELL + 'ms');
     const fine = window.matchMedia('(pointer: fine)').matches;
     const MOVES = {
       push:  ['scale(1.06) translate3d(0, 0, 0)', 'scale(1.2) translate3d(-1.5%, 1%, 0)'],
+      dolly: ['scale(1.04) translate3d(0, 1%, 0)', 'scale(1.3) translate3d(0, -1%, 0)'],
       panR:  ['scale(1.16) translate3d(-4%, 0, 0)', 'scale(1.16) translate3d(4%, -.5%, 0)'],
       pull:  ['scale(1.24) translate3d(1%, 1%, 0)', 'scale(1.07) translate3d(0, 0, 0)'],
       tilt:  ['scale(1.18) translate3d(0, 4%, 0)', 'scale(1.18) translate3d(0, -3.5%, 0)'],
       panL:  ['scale(1.16) translate3d(4%, 0, 0)', 'scale(1.16) translate3d(-4%, .5%, 0)'],
-      orbit: ['scale(1.1) rotate(-1.4deg) translate3d(1%, 0, 0)', 'scale(1.2) rotate(.6deg) translate3d(-1%, -1%, 0)']
+      orbit: ['scale(1.1) rotate(-1.4deg) translate3d(1%, 0, 0)', 'scale(1.2) rotate(.6deg) translate3d(-1%, -1%, 0)'],
+      drift: ['scale(1.2) rotate(1deg) translate3d(-2%, 2%, 0)', 'scale(1.08) rotate(-.4deg) translate3d(2%, -1%, 0)']
     };
     let si = 0, lastScene = 0, order = prints.map((_, k) => k), timer = null, busy = false;
     let visible = true, hovering = false, focused = false, dragging = false;
@@ -1256,22 +1268,33 @@
       requestAnimationFrame(() => requestAnimationFrame(() => { n.className = ''; }));
       setTimeout(() => { if (old.parentNode) old.remove(); }, 700);
     };
-    const runMeter = () => {
-      if (!meter) return;
-      meter.classList.remove('run'); void meter.offsetWidth;
-      if (timer) meter.classList.add('run');
+    const center = (row, el) => { if (row && el && row.scrollWidth > row.clientWidth) row.scrollTo({ left: el.offsetLeft - row.clientWidth / 2 + el.offsetWidth / 2, behavior: reduced ? 'auto' : 'smooth' }); };
+    const markChip = () => {
+      chips.forEach((c, k) => { c.setAttribute('aria-pressed', String(k === si)); c.classList.remove('run'); });
+      const c = chips[si]; if (!c) return;
+      void c.offsetWidth; if (timer) c.classList.add('run');
+      center(chipRow, c);
     };
-    const showScene = async n => {
-      const to = (n + scenes.length) % scenes.length, now = performance.now();
-      if (to === si || now - lastScene < 1300) return;
+    const showScene = async (n, manual) => {
+      const to = ((n % L) + L) % L, now = performance.now();
+      if (to === si || (!manual && now - lastScene < 1300)) return;
       lastScene = now;
       const s = scenes[to], img = loadScene(s);
       try { if (img && !img.complete) await img.decode(); } catch (e) { /* show it anyway */ }
       const from = scenes[si]; si = to;
-      camera(s); s.classList.add('is-on'); from.classList.remove('is-on');
+      camera(s);
+      if (!reduced) {
+        // the camera flies through: the old place rushes past, the new one settles in
+        const out = from.animate([{ transform: 'scale(1)' }, { transform: 'scale(1.32)' }], { duration: 1600, easing: 'cubic-bezier(.5, 0, .8, .4)', fill: 'forwards' });
+        s.animate([{ transform: 'scale(1.22)' }, { transform: 'scale(1)' }], { duration: 1700, easing: 'cubic-bezier(.16, 1, .3, 1)' });
+        setTimeout(() => out.cancel(), 1900);
+        if (leak) { leak.classList.remove('flash'); void leak.offsetWidth; leak.classList.add('flash'); }
+      }
+      s.classList.add('is-on'); from.classList.remove('is-on');
       setTimeout(() => { if (from._cam && !from.classList.contains('is-on')) { from._cam.cancel(); from._cam = null; } }, 1900);
-      setPlace(s.dataset.place);
-      loadScene(scenes[(to + 1) % scenes.length]);
+      setPlace(s.dataset.place ? s.dataset.place.replace(/&amp;/g, '&') : '');
+      markChip();
+      loadScene(scenes[(to + 1) % L]);
     };
 
     /* the pile: order[0] is on top; depth past FAR is hidden at the back */
@@ -1282,12 +1305,12 @@
         p.style.setProperty('--o', d < FAR ? 1 : 0);
         p.classList.toggle('is-top', d === 0);
         p.setAttribute('aria-hidden', d === 0 ? 'false' : 'true');
-        if (d <= FAR) loadPrint(p);   // every print that shows, plus the next one in
+        const z = $('.print-zoom', p); if (z) z.tabIndex = d === 0 ? 0 : -1;
+        if (d <= FAR) loadPrint(p);
       });
       const top = order[0];
       thumbs.forEach((b, k) => b.setAttribute('aria-current', String(k === top)));
-      const t = thumbs[top];
-      if (t && thumbRow) thumbRow.scrollTo({ left: t.offsetLeft - thumbRow.clientWidth / 2 + t.offsetWidth / 2, behavior: reduced ? 'auto' : 'smooth' });
+      center(thumbRow, thumbs[top]);
     };
     const undeal = () => prints.forEach(p => p.classList.remove('deal'));
     const focusIn = () => {
@@ -1297,16 +1320,15 @@
     const throwTop = (dir, from) => new Promise(res => {
       undeal();
       const p = prints[order[0]];
-      let settled = false;
+      let settled = false, anim = null;
       const settle = () => {
         if (settled) return; settled = true;
-        p.style.transition = 'none'; p.style.transform = '';
+        p.style.transition = 'none'; p.style.transform = ''; p.style.setProperty('--glare', '0');
         order.push(order.shift()); layout();
         if (anim) anim.cancel();
         void p.offsetWidth; p.style.transition = '';
         focusIn(); res();
       };
-      let anim = null;
       if (reduced) { settle(); return; }
       const start = from || getComputedStyle(p).transform;
       anim = p.animate([
@@ -1339,18 +1361,21 @@
     };
 
     /* the timer */
-    const held = () => hovering || focused || dragging || !visible || document.hidden;
-    const stop = () => { clearInterval(timer); timer = null; if (meter) meter.classList.remove('run'); };
+    const lightboxOpen = () => !!$('.lightbox.open');
+    const held = () => hovering || focused || dragging || !visible || document.hidden || lightboxOpen();
+    const stop = () => { clearInterval(timer); timer = null; chips.forEach(c => c.classList.remove('run')); };
     const start = () => {
       if (reduced || timer || held()) return;
-      timer = setInterval(() => { next(1); runMeter(); }, DWELL);
-      runMeter();
+      timer = setInterval(() => { if (lightboxOpen()) return; next(1); markChip(); }, DWELL);
+      markChip();
     };
     const restart = () => { stop(); start(); };
 
-    $('#tlNext', hero) && $('#tlNext', hero).addEventListener('click', () => { next(1); restart(); });
-    $('#tlPrev', hero) && $('#tlPrev', hero).addEventListener('click', () => { prev(); restart(); });
+    const nb = $('#tlNext', hero), pb = $('#tlPrev', hero);
+    if (nb) nb.addEventListener('click', () => { next(1); restart(); });
+    if (pb) pb.addEventListener('click', () => { prev(); restart(); });
     thumbs.forEach((b, k) => b.addEventListener('click', () => { jump(k); restart(); }));
+    chips.forEach((b, k) => b.addEventListener('click', () => { showScene(k, true); restart(); }));
     stack.addEventListener('keydown', e => {
       if (e.key === 'ArrowRight') { e.preventDefault(); next(1); restart(); }
       else if (e.key === 'ArrowLeft') { e.preventDefault(); prev(); restart(); }
@@ -1360,11 +1385,32 @@
     prints$.addEventListener('focusin', () => { focused = true; stop(); });
     prints$.addEventListener('focusout', e => { if (!prints$.contains(e.relatedTarget)) { focused = false; start(); } });
 
+    /* full size: the corner button opens the site's photo viewer */
+    deck.addEventListener('click', e => {
+      const z = e.target.closest('.print-zoom'); if (!z) return;
+      e.stopPropagation(); stop();
+      if (typeof openLightbox === 'function') openLightbox(z.dataset.lg, (z.dataset.title || '').replace(/&rsquo;/g, '\u2019'));
+    });
+    document.addEventListener('keyup', e => { if (e.key === 'Escape') setTimeout(start, 50); });
+    document.addEventListener('click', e => { if (e.target.closest && e.target.closest('.lightbox')) setTimeout(start, 50); });
+
+    /* the top print catches the light under the pointer */
+    if (fine && !reduced) {
+      stack.addEventListener('pointermove', e => {
+        if (e.pointerType !== 'mouse') return;
+        const p = prints[order[0]], r = p.getBoundingClientRect();
+        p.style.setProperty('--gx', (((e.clientX - r.left) / r.width) * 100).toFixed(1) + '%');
+        p.style.setProperty('--gy', (((e.clientY - r.top) / r.height) * 100).toFixed(1) + '%');
+        p.style.setProperty('--glare', '1');
+      });
+      stack.addEventListener('pointerleave', () => prints.forEach(p => p.style.setProperty('--glare', '0')));
+    }
+
     /* drag or swipe the top print; a tap throws it too */
     let drag = null;
     deck.addEventListener('pointerdown', e => {
       const p = e.target.closest('.print');
-      if (!p || !p.classList.contains('is-top') || busy || (e.button !== undefined && e.button !== 0)) return;
+      if (!p || e.target.closest('.print-zoom') || !p.classList.contains('is-top') || busy || (e.button !== undefined && e.button !== 0)) return;
       const now = performance.now();
       drag = { p, x: e.clientX, y: e.clientY, dx: 0, dy: 0, moved: false, vx: 0, lx: e.clientX, lt: now, r: parseFloat(p.style.getPropertyValue('--r')) || 0 };
       try { p.setPointerCapture(e.pointerId); } catch (err) { /* older browsers */ }
@@ -1401,12 +1447,12 @@
       raf = 0;
       cx += (tx - cx) * .07; cy += (ty - cy) * .07;
       const s = Math.min(1, Math.max(0, window.scrollY / (hero.offsetHeight || 1)));
-      rig.style.setProperty('--rx', (-cx * 18).toFixed(2) + 'px');
-      rig.style.setProperty('--ry', (-cy * 12 + s * 80).toFixed(2) + 'px');
-      rig.style.setProperty('--rz', (1 + s * .1).toFixed(4));
-      deck.style.setProperty('--ty', (cx * 8).toFixed(2) + 'deg');
-      deck.style.setProperty('--tx', (-cy * 6).toFixed(2) + 'deg');
-      deck.style.setProperty('--sy', (-s * 56).toFixed(1) + 'px');
+      rig.style.setProperty('--rx', (-cx * 22).toFixed(2) + 'px');
+      rig.style.setProperty('--ry', (-cy * 14 + s * 90).toFixed(2) + 'px');
+      rig.style.setProperty('--rz', (1 + s * .12).toFixed(4));
+      deck.style.setProperty('--ty', (cx * 9).toFixed(2) + 'deg');
+      deck.style.setProperty('--tx', (-cy * 7).toFixed(2) + 'deg');
+      deck.style.setProperty('--sy', (-s * 64).toFixed(1) + 'px');
       if (Math.abs(tx - cx) > .002 || Math.abs(ty - cy) > .002) raf = requestAnimationFrame(apply);
     };
     const kick = () => { if (!raf) raf = requestAnimationFrame(apply); };
@@ -1433,7 +1479,7 @@
     document.addEventListener('visibilitychange', () => (document.hidden ? pauseAll() : playAll()));
 
     prints.forEach(p => p.addEventListener('animationend', ev => { if (ev.animationName === 'tlDeal') p.classList.remove('deal'); }));
-    layout(); camera(scenes[0]); setPlace(scenes[0].dataset.place);
+    layout(); camera(scenes[0]); setPlace((scenes[0].dataset.place || '').replace(/&amp;/g, '&'));
     const warm = () => loadScene(scenes[1]);
     if ('requestIdleCallback' in window) requestIdleCallback(warm, { timeout: 2500 }); else setTimeout(warm, 1500);
     start();

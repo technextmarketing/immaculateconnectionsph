@@ -72,6 +72,19 @@ payment: {
 
 All photos live in `assets/img/media/` (nothing is loaded from Wix any more). Each photo keeps its original media id as the key of the `LOCAL` map at the top of `assets/js/data.js`; the map points to the file, and JPEGs also have an `-800` copy for cards. To add a photo: drop the file (up to 1600 px on the long side, plus an 800 px copy for JPEGs) into the folder and add one line to the map, then refer to it by that id in the package data. Social-share cards are the `og-*.jpg` files (1200×630).
 
+## Hero photo credits
+
+The destination backgrounds in `assets/img/hero/` come from Unsplash (free for commercial use; credit is appreciated, not required). The group photos (`print-*`, `thumb-*`) are the agency's own.
+
+- `dest-bohol-*.jpg`: photo by Zed Benson on Unsplash (https://unsplash.com/photos/chocolate-hills-bohol-philippines-tyMVaFXcksU), used under the Unsplash License
+- `dest-danang-*.jpg`: photo by Linda Gerbec on Unsplash (https://unsplash.com/photos/golden-bridge-held-by-giant-hands-in-vietnam-CsoQ-jm_0vQ), used under the Unsplash License
+- `dest-palawan-*.jpg`: photo by Roman Lezhnin on Unsplash (https://unsplash.com/photos/kayaking-through-turquoise-water-surrounded-by-mountains-Tx6hqbZuHPo), used under the Unsplash License
+- `dest-fuji-*.jpg`: photo by Max Bender on Unsplash (https://unsplash.com/photos/pagoda-and-mount-fuji-in-japan-FuxYvi-hcWQ), used under the Unsplash License
+- `dest-boracay-*.jpg`: photo by Edward Ang on Unsplash (https://unsplash.com/photos/a-group-of-sailboats-sailing-on-a-body-of-water-near-palm-trees-7pUL8o7e8bQ), used under the Unsplash License
+- `dest-halong-*.jpg`: photo by Marina Lobato on Unsplash (https://unsplash.com/photos/boats-on-turquoise-ha-long-bay-kG7pOXbBfNs), used under the Unsplash License
+- `dest-coron-*.jpg`: photo by Junel Mujar on Unsplash (https://unsplash.com/photos/a-group-of-boats-floating-on-top-of-a-lake-surrounded-by-trees-IzcFq844SKk), used under the Unsplash License
+- `dest-moalboal-*.jpg`: photo by Ken Suarez on Unsplash (https://unsplash.com/photos/aerial-photography-of-several-white-boats-near-island-oO7d1Q9mJZQ), used under the Unsplash License
+
 ## Go-live checklist
 
 - **FormSubmit activation:** submit the inquiry form once from the live site and click the activation link that arrives at `inquiries@immaculateconnectionsph.com`.

@@ -934,3 +934,9 @@ html { scrollbar-width: thin; scrollbar-color: rgba(50,65,88,.35) transparent; }
   .footer-contact a { display: inline-block; padding: 9px 0; }
   .footer-bottom a { display: inline-block; padding: 10px 0; }
 }
+
+/* Mid-size screens: the five header links stay on one line */
+@media (max-width: 1180px) and (min-width: 961px) {
+  .nav-link, .nav-link.highlight { padding: 10px 9px; font-size: .88rem; white-space: nowrap; }
+  .nav { gap: 14px; }
+}
