@@ -231,10 +231,10 @@ def build_pages():
         s = re.sub(r'<link rel="canonical" href="[^"]*">', f'<link rel="canonical" href="{url}">', s, count=1)
         s = s.replace('  <meta name="robots" content="noindex, follow">\n', "")
         # the hero photo starts loading with the page
-        hero = re.search(r'srcset="(assets/img/hero/dest-[\w-]+-1280\.webp)"><img src="(assets/img/hero/dest-[\w-]+-2400\.webp)"', t["pkg"])
-        if hero:
-            pre = (f'  <link rel="preload" as="image" href="{hero.group(2)}" media="(min-width: 701px)" fetchpriority="high">\n'
-                   f'  <link rel="preload" as="image" href="{hero.group(1)}" media="(max-width: 700px)" fetchpriority="high">\n')
+        hero = re.search(r'srcset="((assets/img/hero/dest-[\w-]+)-960\.webp 960w, [^"]+)" sizes="100vw"><img src="(assets/img/hero/dest-[\w-]+-2400\.webp)"', t["pkg"])
+        if hero:   # phones pick the 960 or 1280 copy by screen density, like the <source> does
+            pre = (f'  <link rel="preload" as="image" href="{hero.group(3)}" media="(min-width: 701px)" fetchpriority="high">\n'
+                   f'  <link rel="preload" as="image" href="{hero.group(2)}-1280.webp" imagesrcset="{hero.group(1)}" imagesizes="100vw" media="(max-width: 700px)" fetchpriority="high">\n')
             s = s.replace('  <link rel="preload" href="assets/fonts/', pre + '  <link rel="preload" href="assets/fonts/', 1)
         ld = t["ld"].replace("</", "<\\/")
         s = s.replace("</head>", f'  <script type="application/ld+json" data-ld="pkg">{ld}</script>\n</head>', 1)
