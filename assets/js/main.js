@@ -1773,8 +1773,12 @@
       a.onfinish = a.oncancel = () => { p.style.transition = ''; };
       focusIn();
     };
-    const next = async (dir = 1, from) => {
-      if (busy) return; busy = true;
+    const next = async (dir = 1, from, auto) => {
+      if (busy) return;
+      // on the timer, photo and destination move together: if the next destination photo is
+      // still downloading, both wait for the next beat instead of drifting apart
+      if (auto) { const im = loadScene(scenes[(si + 1) % L]); if (im && !(im.complete && im.naturalWidth)) return; }
+      busy = true;
       showScene(si + 1);
       await throwTop(dir, from);
       busy = false;
@@ -1791,7 +1795,7 @@
     const stop = () => { clearInterval(timer); timer = null; chips.forEach(c => c.classList.remove('run')); };
     const start = () => {
       if (reduced || timer || held()) return;
-      timer = setInterval(() => { if (lightboxOpen()) return; next(1); markChip(); }, DWELL);
+      timer = setInterval(() => { if (lightboxOpen()) return; next(1, undefined, true); markChip(); }, DWELL);
       markChip();
     };
     const restart = () => { stop(); start(); };
