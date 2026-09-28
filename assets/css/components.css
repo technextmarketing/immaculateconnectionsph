@@ -1020,3 +1020,124 @@ body .logo-text small { font-size: max(.69rem, 11px); letter-spacing: .15em; }
   .page-hero .hero-title .w > span { opacity: 1; transform: none; transition: none; }
   .ph-scene { filter: none; transition: opacity .6s var(--ease); }
 }
+
+/* =========================================================
+   About page: one interaction per section
+   ========================================================= */
+/* Why choose us: a pile of prints you can shuffle */
+.ab-stack { position: relative; aspect-ratio: 1 / .94; perspective: 1400px; outline: none; border-radius: 12px; touch-action: pan-y; }
+.ab-stack:focus-visible { outline: 3px solid var(--gold); outline-offset: 8px; }
+.ab-deck { position: absolute; inset: 0; transform-style: preserve-3d; transform: rotateX(var(--tx, 0deg)) rotateY(var(--ty, 0deg)); transition: transform .6s var(--ease-out); }
+.ab-print {
+  position: absolute; left: 13%; top: 12%; width: 70%; margin: 0; padding: 12px 12px 0; border: 0; border-radius: 6px;
+  background: #fffdf8; color: inherit; font: inherit; text-align: center; cursor: pointer;
+  box-shadow: 0 30px 52px -26px rgba(15, 30, 60, .6), 0 4px 12px rgba(15, 30, 60, .2);
+  transform: translate3d(calc(var(--px, 0%) * var(--spread, 1)), calc(var(--py, 0%) * var(--spread, 1)), 0) rotate(calc(var(--pr, 0deg) * var(--spread, 1))) scale(var(--ps, 1));
+  z-index: var(--z, 1); transition: transform .85s var(--ease-out), box-shadow .3s var(--ease);
+}
+.ab-print img { display: block; width: 100%; aspect-ratio: 4 / 3; object-fit: cover; border-radius: 3px; pointer-events: none; }
+.ab-print span { display: flex; align-items: center; justify-content: center; height: 52px; font-family: var(--font-script); font-weight: 600; font-size: 1.35rem; line-height: 1; color: var(--navy); }
+.ab-print.is-front { cursor: default; box-shadow: 0 40px 64px -28px rgba(15, 30, 60, .7), 0 6px 16px rgba(15, 30, 60, .22); }
+.ab-print:focus-visible { outline: 3px solid var(--gold); outline-offset: 3px; }
+@media (hover: hover) and (pointer: fine) {
+  .ab-stack:hover .ab-print { --spread: 1.55; }
+  .ab-print:not(.is-front):hover { box-shadow: 0 34px 58px -24px rgba(15, 30, 60, .75), 0 0 0 3px var(--gold); }
+}
+
+/* Why choose us: each value lights up the sentence that proves it */
+.ab-hl {
+  color: inherit; padding: 0 .06em; border-radius: 3px;
+  background: linear-gradient(transparent 56%, rgba(255, 183, 48, .6) 56%) no-repeat 0 0 / 0% 100%;
+  transition: background-size .75s var(--ease-out), color .3s var(--ease);
+}
+.ab-hl.on { background-size: 100% 100%; color: var(--navy); }
+.ab-values button { border: 0; cursor: pointer; font: inherit; font-size: .8rem; font-weight: 700; min-height: 34px; padding: 0 14px; transition: transform .25s var(--ease-out), box-shadow .25s var(--ease); }
+.ab-values button:hover { transform: translateY(-2px); }
+.ab-values button[aria-pressed="true"] { transform: translateY(-2px); box-shadow: 0 0 0 2px currentColor, 0 10px 20px -12px rgba(15, 30, 60, .5); }
+.ab-values button:focus-visible { outline: 2px solid var(--gold); outline-offset: 3px; }
+
+/* Cards that tilt toward the pointer under a moving spotlight */
+/* scoped to cards that have finished their scroll reveal, so the reveal's own slide-in still plays */
+.fx-tilt.in, .tm-card.in, .tm-card.in:hover, .fx-tilt:not(.reveal), .tm-card:not(.reveal) {
+  transform: perspective(900px) rotateX(var(--rx, 0deg)) rotateY(var(--ry, 0deg)) translateY(var(--lift, 0px));
+  transition: transform .55s var(--ease-out), box-shadow .35s var(--ease), border-color .3s, opacity .8s var(--ease-out); transition-delay: 0s;
+}
+.fx-tilt.in.is-tilting, .tm-card.in.is-tilting { transition: transform .1s linear, box-shadow .35s var(--ease), border-color .3s; }
+.tm-card:hover { --lift: -6px; }
+.tm-card { position: relative; }
+.fx-spot::before, .tm-card::before {
+  content: ""; position: absolute; inset: 0; border-radius: inherit; pointer-events: none; z-index: 2;
+  opacity: var(--spot, 0); transition: opacity .35s var(--ease);
+  background: radial-gradient(460px circle at var(--mx, 50%) var(--my, 50%), var(--spot-c, rgba(255, 255, 255, .16)), transparent 46%);
+}
+.mv-card.vision, .tm-card { --spot-c: rgba(29, 103, 205, .12); }
+.mv-card > * { position: relative; z-index: 1; }
+/* Mission and vision: the icon moves, the key phrases get underlined as the card arrives */
+.mv-card .ic svg { transition: transform .4s var(--ease-out); }
+.mv-card.mission:hover .ic svg { animation: mvFlag 1.4s var(--ease) infinite; transform-origin: 18% 92%; }
+@keyframes mvFlag { 0%, 100% { transform: skewY(0) scaleX(1); } 50% { transform: skewY(-7deg) scaleX(1.05); } }
+.mv-card.vision:hover .ic svg circle { animation: mvRing 1.6s var(--ease-out) infinite; transform-origin: 50% 50%; transform-box: fill-box; }
+.mv-card.vision:hover .ic svg circle:nth-child(2) { animation-delay: .15s; }
+.mv-card.vision:hover .ic svg circle:nth-child(3) { animation-delay: .3s; }
+@keyframes mvRing { 0%, 100% { transform: scale(1); } 40% { transform: scale(1.14); } }
+.mv-mark { --mk: var(--gold); background: linear-gradient(var(--mk), var(--mk)) no-repeat 0 100% / 0% 2px; padding-bottom: 1px; transition: background-size 1.1s var(--ease-out); transition-delay: calc(.55s + var(--md, 0s)); }
+.mv-card.vision .mv-mark { --mk: var(--blue); }
+.mv-card.in .mv-mark { background-size: 100% 2px; }
+
+/* Previous tours: filters that re-sort the wall, and a tile that follows the pointer */
+.gal-filters { display: flex; flex-wrap: wrap; justify-content: center; gap: 8px; margin: -8px 0 28px; }
+.gal-filters button {
+  display: inline-flex; align-items: center; gap: 8px; min-height: 38px; padding: 0 16px; border-radius: 999px; cursor: pointer;
+  border: 1px solid var(--line); background: #fff; color: var(--navy); font: 700 .84rem/1 var(--font-body);
+  transition: background .25s, color .25s, border-color .25s, transform .2s var(--ease);
+}
+.gal-filters button .n { font-size: .72rem; font-weight: 800; color: var(--muted); transition: color .25s; }
+.gal-filters button:hover { border-color: var(--blue); transform: translateY(-1px); }
+.gal-filters button[aria-pressed="true"] { background: var(--navy); border-color: var(--navy); color: #fff; }
+.gal-filters button[aria-pressed="true"] .n { color: var(--gold); }
+.gal-filters button:focus-visible { outline: 2px solid var(--gold); outline-offset: 2px; }
+.gal-item img, .gal-item:hover img { transform: translate3d(var(--gx, 0px), var(--gy, 0px), 0) scale(var(--gs, 1)); }
+.gal-item:hover { --gs: 1.08; }
+.gal-item.is-tracking img { transition: transform .15s linear; }
+
+/* Trust badges: the icons draw themselves in, one after another */
+.ab-badges > div { transition: transform .3s var(--ease-out), box-shadow .3s var(--ease), border-color .3s; }
+.ab-badges > div:hover { transform: translateY(-3px); box-shadow: var(--shadow); border-color: var(--blue); }
+.ab-badges > div:hover svg { animation: abPop .55s var(--ease-out); }
+@keyframes abPop { 40% { transform: scale(1.2) rotate(-8deg); } }
+.ab-badges.ab-draw svg :is(path, circle, rect, line, polyline) { stroke-dasharray: 1; stroke-dashoffset: 1; transition: stroke-dashoffset 1.3s var(--ease-out); transition-delay: calc(var(--bi, 0) * .18s + .2s); }
+.ab-badges.ab-draw.in svg :is(path, circle, rect, line, polyline) { stroke-dashoffset: 0; }
+
+/* The contact band: a slow camera on the photo and a light that follows the pointer */
+.fx-band::after {
+  content: ""; position: absolute; inset: 0; z-index: -1; pointer-events: none; opacity: var(--spot, 0); transition: opacity .4s var(--ease);
+  background: radial-gradient(520px circle at var(--mx, 50%) var(--my, 50%), rgba(255, 190, 90, .28), transparent 50%);
+}
+.fx-btn { position: relative; overflow: hidden; isolation: isolate; }
+.fx-btn::after {
+  content: ""; position: absolute; inset: 0; z-index: -1; opacity: 0; transition: opacity .3s;
+  background: radial-gradient(130px circle at var(--bx, 50%) var(--by, 50%), rgba(255, 255, 255, .34), transparent 68%);
+}
+.fx-btn:hover::after { opacity: 1; }
+
+/* The photo viewer: step through a gallery */
+.lightbox-nav {
+  position: absolute; top: 50%; transform: translateY(-50%); width: 52px; height: 52px; border-radius: 50%; border: 0; cursor: pointer;
+  display: grid; place-items: center; background: rgba(255, 255, 255, .12); color: #fff; transition: background .2s, transform .2s var(--ease);
+}
+.lightbox-nav:hover { background: rgba(255, 255, 255, .24); }
+.lightbox-nav svg { width: 22px; height: 22px; }
+.lightbox-nav.prev { left: 20px; } .lightbox-nav.next { right: 20px; }
+.lightbox-nav.next svg { transform: scaleX(-1); }
+.lightbox-count { position: absolute; top: 32px; left: 0; right: 0; text-align: center; color: rgba(255, 255, 255, .82); font-size: .82rem; font-weight: 700; letter-spacing: .1em; pointer-events: none; }
+.lightbox.single .lightbox-nav, .lightbox.single .lightbox-count { display: none; }
+.lightbox-nav:focus-visible, .lightbox-close:focus-visible { outline: 2px solid var(--gold); outline-offset: 2px; }
+@media (max-width: 640px) {
+  .lightbox-nav { top: auto; bottom: 76px; transform: none; width: 44px; height: 44px; }
+  .ab-print span { height: 44px; font-size: 1.15rem; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .ab-print, .ab-deck, .fx-tilt, .tm-card, .ab-hl, .mv-mark { transition: none; }
+  .mv-card .ic svg, .mv-card .ic svg circle, .ab-badges > div:hover svg { animation: none !important; }
+  .ab-badges.ab-draw svg :is(path, circle, rect, line, polyline) { stroke-dasharray: none; stroke-dashoffset: 0; }
+}

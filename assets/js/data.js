@@ -519,24 +519,24 @@ window.IC = window.IC || {};
 
   /* ---------- Photos from the agency's galleries ---------- */
   IC.gallery = [
-    { id: '952787_6a8b5ab3b00d41bcb1a8915073aa4861~mv2.jpg', shape: 'wide',   title: 'Loboc River Lunch', sub: 'Bohol' },
-    { id: '952787_a67b7dcf552942a294501fc5c8a044f8~mv2.jpg', shape: 'tall',   title: 'Underground River', sub: 'Puerto Princesa, Palawan' },
-    { id: '952787_9bc781dfae87479dae7fd84ed8b09c42~mv2.jpg', shape: 'wide',   title: 'Orientation course for local legislators', sub: 'MICE & seminars' },
-    { id: '952787_9a7ffc3f7a2e47d18e2086d04b3b9341~mv2.jpg', shape: 'square', title: 'Snorkelling with our guests', sub: 'Cebu' },
-    { id: '952787_250d67a9fabf4973bcde54f948a225b3~mv2.jpg', shape: 'tall',   title: 'Camotes', sub: 'Island getaway' },
-    { id: '952787_2d330c92a5d342099b7d4258256ffa11~mv2.jpg', shape: 'square', title: 'Bohol', sub: 'Countryside tour' },
-    { id: '952787_d42f442bb8264e678cbc88bdc2824eff~mv2.jpg', shape: 'tall',   title: 'Seminar logistics', sub: 'Meetings & events' },
-    { id: '952787_3029b36427494266a8e954d4d7b8542c~mv2.jpg', shape: 'wide',   title: 'Mangodlong Beach', sub: 'Partner resort, Camotes' },
-    { id: '952787_f6e5b9acd62049db802bcfd86e7fd352~mv2.jpg', shape: 'wide',   title: 'Participants’ orientation', sub: 'MICE & seminars' },
-    { id: '952787_515cfff1c9a64aa9b330a027322b9e7a~mv2.jpg', shape: 'square', title: 'Air-conditioned transport', sub: 'Vans, coasters & buses' },
-    { id: '952787_0050a801a0b94a199d0f8d18215c1275~mv2.jpg', shape: 'wide',   title: 'Merlion & Marina Bay Sands', sub: 'Singapore group tour' },
-    { id: '952787_a667b39095f54b15824f7157c48f4afa~mv2.jpg', shape: 'wide',   title: 'Universal Studios Singapore', sub: 'Singapore group tour' },
-    { id: '952787_4ee43fd7e9794e2585f94ff3b0ba89e8~mv2.jpg', shape: 'square', title: 'Underground River', sub: 'Puerto Princesa, Palawan' },
-    { id: '952787_47fb234e9fc643c685154b62a85432c9~mv2.jpg', shape: 'tall',   title: 'Jewel Changi', sub: 'Singapore group tour' },
-    { id: '952787_e0d14697042d448cb553e113bb99895a~mv2.jpg', shape: 'wide',   title: 'Island hopping', sub: 'Boat tour with our guests' },
-    { id: '952787_e3e293ea8aca4eae85457a5a8007e670~mv2.jpg', shape: 'square', title: 'Mangrove walk', sub: 'Camotes Islands' },
-    { id: '952787_3483752836144268b346adf78f3b398f~mv2.jpg', shape: 'wide',   title: 'Malay Heritage Centre', sub: 'Singapore group tour' },
-    { id: '952787_e8ab6be92bd54b05859482cb8c9b5bb2~mv2.jpg', shape: 'square', title: 'Snorkelling', sub: 'Island getaway' }
+    { id: '952787_6a8b5ab3b00d41bcb1a8915073aa4861~mv2.jpg', shape: 'wide',   title: 'Loboc River Lunch', sub: 'Bohol', cat: 'local' },
+    { id: '952787_a67b7dcf552942a294501fc5c8a044f8~mv2.jpg', shape: 'tall',   title: 'Underground River', sub: 'Puerto Princesa, Palawan', cat: 'local' },
+    { id: '952787_9bc781dfae87479dae7fd84ed8b09c42~mv2.jpg', shape: 'wide',   title: 'Orientation course for local legislators', sub: 'MICE & seminars', cat: 'events' },
+    { id: '952787_9a7ffc3f7a2e47d18e2086d04b3b9341~mv2.jpg', shape: 'square', title: 'Snorkelling with our guests', sub: 'Cebu', cat: 'local' },
+    { id: '952787_250d67a9fabf4973bcde54f948a225b3~mv2.jpg', shape: 'tall',   title: 'Camotes', sub: 'Island getaway', cat: 'local' },
+    { id: '952787_2d330c92a5d342099b7d4258256ffa11~mv2.jpg', shape: 'square', title: 'Bohol', sub: 'Countryside tour', cat: 'local' },
+    { id: '952787_d42f442bb8264e678cbc88bdc2824eff~mv2.jpg', shape: 'tall',   title: 'Seminar logistics', sub: 'Meetings & events', cat: 'events' },
+    { id: '952787_3029b36427494266a8e954d4d7b8542c~mv2.jpg', shape: 'wide',   title: 'Mangodlong Beach', sub: 'Partner resort, Camotes', cat: 'local' },
+    { id: '952787_f6e5b9acd62049db802bcfd86e7fd352~mv2.jpg', shape: 'wide',   title: 'Participants’ orientation', sub: 'MICE & seminars', cat: 'events' },
+    { id: '952787_515cfff1c9a64aa9b330a027322b9e7a~mv2.jpg', shape: 'square', title: 'Air-conditioned transport', sub: 'Vans, coasters & buses', cat: 'transport' },
+    { id: '952787_0050a801a0b94a199d0f8d18215c1275~mv2.jpg', shape: 'wide',   title: 'Merlion & Marina Bay Sands', sub: 'Singapore group tour', cat: 'intl' },
+    { id: '952787_a667b39095f54b15824f7157c48f4afa~mv2.jpg', shape: 'wide',   title: 'Universal Studios Singapore', sub: 'Singapore group tour', cat: 'intl' },
+    { id: '952787_4ee43fd7e9794e2585f94ff3b0ba89e8~mv2.jpg', shape: 'square', title: 'Underground River', sub: 'Puerto Princesa, Palawan', cat: 'local' },
+    { id: '952787_47fb234e9fc643c685154b62a85432c9~mv2.jpg', shape: 'tall',   title: 'Jewel Changi', sub: 'Singapore group tour', cat: 'intl' },
+    { id: '952787_e0d14697042d448cb553e113bb99895a~mv2.jpg', shape: 'wide',   title: 'Island hopping', sub: 'Boat tour with our guests', cat: 'local' },
+    { id: '952787_e3e293ea8aca4eae85457a5a8007e670~mv2.jpg', shape: 'square', title: 'Mangrove walk', sub: 'Camotes Islands', cat: 'local' },
+    { id: '952787_3483752836144268b346adf78f3b398f~mv2.jpg', shape: 'wide',   title: 'Malay Heritage Centre', sub: 'Singapore group tour', cat: 'intl' },
+    { id: '952787_e8ab6be92bd54b05859482cb8c9b5bb2~mv2.jpg', shape: 'square', title: 'Snorkelling', sub: 'Island getaway', cat: 'local' }
   ];
 
   IC.hotelPhotos = ['952787_3029b36427494266a8e954d4d7b8542c~mv2.jpg', '952787_26a50047e88545a18d5e6c89816805bc~mv2.jpg', '952787_2c289935d14a4992b20f77b49e988dba~mv2.jpg', '952787_bf04b5da3fbe466388fd7b0ce1011bd7~mv2.jpg'];

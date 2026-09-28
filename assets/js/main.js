@@ -777,16 +777,42 @@
     if (lb) return lb;
     lb = document.createElement('div');
     lb.className = 'lightbox'; lb.setAttribute('role', 'dialog'); lb.setAttribute('aria-modal', 'true');
-    lb.innerHTML = `<button class="lightbox-close" type="button" aria-label="Close photo">${I.x}</button><figure style="margin:0;text-align:center"><img alt=""><figcaption></figcaption></figure>`;
+    lb.innerHTML = `<button class="lightbox-close" type="button" aria-label="Close photo">${I.x}</button><span class="lightbox-count" aria-live="polite"></span><button class="lightbox-nav prev" type="button" aria-label="Previous photo">${I.left}</button><figure style="margin:0;text-align:center"><img alt=""><figcaption></figcaption></figure><button class="lightbox-nav next" type="button" aria-label="Next photo">${I.left}</button>`;
     document.body.appendChild(lb);
     const close = () => { lb.classList.remove('open'); document.body.style.overflow = ''; };
-    lb.addEventListener('click', e => { if (e.target === lb || e.target.closest('.lightbox-close')) close(); });
-    window.addEventListener('keydown', e => { if (e.key === 'Escape') close(); });
+    lb.addEventListener('click', e => {
+      if (e.target.closest('.lightbox-nav')) { stepLightbox(e.target.closest('.next') ? 1 : -1); return; }
+      if (e.target === lb || e.target.closest('.lightbox-close')) close();
+    });
+    window.addEventListener('keydown', e => {
+      if (!lb.classList.contains('open')) return;
+      if (e.key === 'Escape') close();
+      else if (e.key === 'ArrowRight') stepLightbox(1);
+      else if (e.key === 'ArrowLeft') stepLightbox(-1);
+    });
+    let sx = null;
+    lb.addEventListener('pointerdown', e => { sx = e.clientX; });
+    lb.addEventListener('pointerup', e => { if (sx == null) return; const dx = e.clientX - sx; sx = null; if (Math.abs(dx) > 50 && lbList.length > 1) stepLightbox(dx < 0 ? 1 : -1); });
     return lb;
   }
-  function openLightbox(src, title) {
+  // The viewer shows one photo, or steps through a group: openLightbox(src, title, [{src, title}], index)
+  let lbList = [], lbAt = 0;
+  function showLightbox(dir) {
+    const box = ensureLightbox(), it = lbList[lbAt]; if (!it) return;
+    const img = $('img', box);
+    img.src = it.src; img.alt = it.title || ''; $('figcaption', box).textContent = it.title || '';
+    $('.lightbox-count', box).textContent = lbList.length > 1 ? `${lbAt + 1} / ${lbList.length}` : '';
+    if (dir && !reduced) img.animate([{ opacity: 0, transform: `translate3d(${dir * 40}px, 0, 0)` }, { opacity: 1, transform: 'none' }], { duration: 380, easing: 'cubic-bezier(.16, 1, .3, 1)' });
+  }
+  function stepLightbox(dir) {
+    if (lbList.length < 2) return;
+    lbAt = (lbAt + dir + lbList.length) % lbList.length; showLightbox(dir);
+  }
+  function openLightbox(src, title, list, index) {
     const box = ensureLightbox();
-    $('img', box).src = src; $('img', box).alt = title || ''; $('figcaption', box).textContent = title || '';
+    lbList = list && list.length ? list : [{ src, title }]; lbAt = list && list.length ? Math.max(0, index || 0) : 0;
+    box.classList.toggle('single', lbList.length < 2);
+    showLightbox(0);
     box.classList.add('open'); document.body.style.overflow = 'hidden';
   }
   function initGallery() {
@@ -794,7 +820,7 @@
     if (root && IC.gallery) {
       const items = root.dataset.limit ? IC.gallery.slice(0, parseInt(root.dataset.limit, 10)) : IC.gallery;
       root.innerHTML = items.map((g, i) => `
-        <figure class="gal-item ${g.shape} reveal" style="--d:${(i % 4) * 0.08}s" data-lb="${esc(g.id)}" data-title="${esc(g.title)} · ${esc(g.sub)}" tabindex="0" role="button" aria-label="View ${esc(g.title)}">
+        <figure class="gal-item ${g.shape} reveal" style="--d:${(i % 4) * 0.08}s" data-cat="${esc(g.cat || '')}" data-lb="${esc(g.id)}" data-title="${esc(g.title)} · ${esc(g.sub)}" tabindex="0" role="button" aria-label="View ${esc(g.title)}">
           <img src="${wix(g.id, 900, g.shape === 'tall' ? 1200 : g.shape === 'square' ? 900 : 675)}" alt="${esc(g.title)} – ${esc(g.sub)}" loading="lazy" decoding="async" width="900" height="${g.shape === 'tall' ? 1200 : g.shape === 'square' ? 900 : 675}">
           <figcaption>${esc(g.title)}<small>${esc(g.sub)}</small></figcaption>
         </figure>`).join('');
@@ -804,14 +830,185 @@
       const caps = (row.dataset.captions || '').split('|');
       row.innerHTML = list.map((id, i) => `<figure class="reveal" style="--d:${i * 0.08}s" data-lb="${esc(id)}" data-title="${esc(caps[i] || '')}" tabindex="0" role="button" aria-label="View photo"><img src="${wix(id, 800, 600)}" alt="${esc(caps[i] || 'Photo')}" loading="lazy" decoding="async" width="800" height="600">${caps[i] ? `<figcaption>${esc(caps[i])}</figcaption>` : ''}</figure>`).join('');
     });
+    if (root && root.hasAttribute('data-filters')) initGalleryFilters(root);
+    // A photo opens in the viewer with the rest of its group (the visible gallery tiles, or its photo row) to step through
+    const openFrom = f => {
+      const group = f.closest('#gallery, [data-photos]');
+      const els = group ? $$('[data-lb]', group).filter(x => !x.hidden) : [f];
+      openLightbox(wix(f.dataset.lb), f.dataset.title || '', els.map(x => ({ src: wix(x.dataset.lb), title: x.dataset.title || '' })), els.indexOf(f));
+    };
     document.addEventListener('click', e => {
       const f = e.target.closest('[data-lb]'); if (!f || e.target.closest('a,button')) return;
-      openLightbox(wix(f.dataset.lb), f.dataset.title || '');
+      openFrom(f);
     });
     document.addEventListener('keydown', e => {
       const f = e.target.closest && e.target.closest('[data-lb]');
-      if (f && (e.key === 'Enter' || e.key === ' ')) { e.preventDefault(); openLightbox(wix(f.dataset.lb), f.dataset.title || ''); }
+      if (f && (e.key === 'Enter' || e.key === ' ')) { e.preventDefault(); openFrom(f); }
     });
+    // Tiles follow the pointer a little, like looking into a window
+    if (!reduced && !touch) $$('.gal-item').forEach(t => {
+      t.addEventListener('pointermove', e => {
+        const r = t.getBoundingClientRect();
+        t.style.setProperty('--gx', ((0.5 - (e.clientX - r.left) / r.width) * 16).toFixed(1) + 'px');
+        t.style.setProperty('--gy', ((0.5 - (e.clientY - r.top) / r.height) * 16).toFixed(1) + 'px');
+        t.classList.add('is-tracking');
+      });
+      t.addEventListener('pointerleave', () => { t.classList.remove('is-tracking'); t.style.removeProperty('--gx'); t.style.removeProperty('--gy'); });
+    });
+  }
+
+  /* ===================== Gallery filters =====================
+     The chips re-sort the wall: tiles that stay slide to their new place,
+     tiles that arrive fade and grow in (FLIP, so layout is never animated). */
+  function initGalleryFilters(root) {
+    const bar = $('#galFilters'); if (!bar) return;
+    const tiles = $$('.gal-item', root);
+    const CATS = [['all', 'All photos'], ['local', 'Philippine tours'], ['intl', 'International'], ['events', 'Seminars & events'], ['transport', 'Transport']];
+    const count = k => (k === 'all' ? tiles.length : tiles.filter(t => t.dataset.cat === k).length);
+    bar.innerHTML = CATS.filter(([k]) => count(k)).map(([k, l]) => `<button type="button" data-f="${k}" aria-pressed="${k === 'all'}">${esc(l)}<span class="n">${count(k)}</span></button>`).join('');
+    bar.addEventListener('click', e => {
+      const b = e.target.closest('button[data-f]'); if (!b || b.getAttribute('aria-pressed') === 'true') return;
+      const k = b.dataset.f;
+      $$('button', bar).forEach(x => x.setAttribute('aria-pressed', String(x === b)));
+      const first = new Map(tiles.map(t => [t, t.hidden ? null : t.getBoundingClientRect()]));
+      tiles.forEach(t => { t.hidden = !(k === 'all' || t.dataset.cat === k); if (!t.hidden) t.classList.add('in'); });
+      if (reduced) return;
+      tiles.forEach(t => {
+        if (t.hidden) return;
+        const a = first.get(t), b2 = t.getBoundingClientRect();
+        if (!a) { t.animate([{ opacity: 0, transform: 'scale(.9)' }, { opacity: 1, transform: 'none' }], { duration: 480, easing: 'cubic-bezier(.16, 1, .3, 1)' }); return; }
+        const dx = a.left - b2.left, dy = a.top - b2.top;
+        if (Math.abs(dx) > 1 || Math.abs(dy) > 1) t.animate([{ transform: `translate3d(${dx}px, ${dy}px, 0)` }, { transform: 'none' }], { duration: 620, easing: 'cubic-bezier(.16, 1, .3, 1)' });
+      });
+    });
+  }
+
+  /* ===================== About page: one interaction per section =====================
+     The trip photos are a pile of prints to shuffle; each value lights up the
+     sentence that proves it; mission, vision and team cards tilt toward the
+     pointer under a moving spotlight; the badges draw themselves in; and the
+     contact band keeps a slow camera on its photo with a light that follows
+     the pointer. Everything rests off screen; reduced motion keeps it still. */
+  function initAboutFx() {
+    const fine = window.matchMedia('(pointer: fine)').matches && !touch;
+
+    /* the pile of prints */
+    const stack = $('#abStack');
+    if (stack) {
+      const deck = $('.ab-deck', stack), prints = $$('.ab-print', stack);
+      const SLOTS = [{ px: '0%', py: '0%', pr: '-2deg', ps: 1, z: 3 }, { px: '-15%', py: '-9%', pr: '-8deg', ps: .95, z: 2 }, { px: '14%', py: '-13%', pr: '6deg', ps: .92, z: 1 }];
+      let order = prints.map((_, k) => k), timer = null, inView = false, hover = false;
+      const lay = () => order.forEach((k, pos) => {
+        const p = prints[k], s = SLOTS[Math.min(pos, SLOTS.length - 1)];
+        p.style.setProperty('--px', s.px); p.style.setProperty('--py', s.py); p.style.setProperty('--pr', s.pr);
+        p.style.setProperty('--ps', s.ps); p.style.setProperty('--z', s.z);
+        p.classList.toggle('is-front', pos === 0); p.setAttribute('aria-current', pos === 0 ? 'true' : 'false');
+      });
+      const front = k => {
+        const pos = order.indexOf(k); if (pos <= 0) return;
+        order = [k].concat(order.filter(x => x !== k)); lay();
+        if (!reduced) prints[k].animate([{ translate: '0 0' }, { translate: '0 -28px' }, { translate: '0 0' }], { duration: 760, easing: 'cubic-bezier(.16, 1, .3, 1)' });
+      };
+      const stop = () => { clearInterval(timer); timer = null; };
+      const start = () => { if (reduced || timer || hover || !inView || document.hidden) return; timer = setInterval(() => front(order[1]), 4200); };
+      prints.forEach((p, k) => p.addEventListener('click', () => { front(k); stop(); start(); }));
+      stack.addEventListener('keydown', e => {
+        if (e.key === 'ArrowRight' || e.key === 'ArrowDown') { e.preventDefault(); front(order[1]); }
+        else if (e.key === 'ArrowLeft' || e.key === 'ArrowUp') { e.preventDefault(); front(order[order.length - 1]); }
+      });
+      if (fine && !reduced) {
+        stack.addEventListener('pointerenter', () => { hover = true; stop(); });
+        stack.addEventListener('pointermove', e => {
+          const r = stack.getBoundingClientRect();
+          deck.style.setProperty('--ty', (((e.clientX - r.left) / r.width - .5) * 14).toFixed(2) + 'deg');
+          deck.style.setProperty('--tx', ((.5 - (e.clientY - r.top) / r.height) * 12).toFixed(2) + 'deg');
+        });
+        stack.addEventListener('pointerleave', () => { hover = false; deck.style.setProperty('--ty', '0deg'); deck.style.setProperty('--tx', '0deg'); start(); });
+      }
+      let sx = null;
+      stack.addEventListener('pointerdown', e => { sx = e.clientX; });
+      stack.addEventListener('pointerup', e => { if (sx == null) return; const dx = e.clientX - sx; sx = null; if (Math.abs(dx) > 45) front(dx < 0 ? order[1] : order[order.length - 1]); });
+      if ('IntersectionObserver' in window) new IntersectionObserver(en => { inView = en[0].isIntersecting; inView ? start() : stop(); }, { threshold: .3 }).observe(stack);
+      document.addEventListener('visibilitychange', () => (document.hidden ? stop() : start()));
+      lay();
+    }
+
+    /* values that light up their proof */
+    const vals = $('.ab-values');
+    if (vals) {
+      const chips = $$('button[data-k]', vals), marks = $$('.ab-hl');
+      let demo = null, touched = false;
+      const show = k => {
+        chips.forEach(c => c.setAttribute('aria-pressed', String(c.dataset.k === k)));
+        marks.forEach(m => m.classList.toggle('on', m.dataset.k === k));
+      };
+      const take = k => { touched = true; clearInterval(demo); show(k); };
+      chips.forEach(c => {
+        c.addEventListener('click', () => take(c.getAttribute('aria-pressed') === 'true' ? '' : c.dataset.k));
+        c.addEventListener('pointerenter', e => { if (e.pointerType === 'mouse') take(c.dataset.k); });
+        c.addEventListener('focus', () => take(c.dataset.k));
+      });
+      // the first time the section is read, walk through the four values once
+      if ('IntersectionObserver' in window) {
+        const io = new IntersectionObserver(en => {
+          if (!en[0].isIntersecting || touched) return;
+          io.disconnect();
+          const keys = chips.map(c => c.dataset.k); let i = 0;
+          show(keys[0]);
+          demo = setInterval(() => { i++; if (i >= keys.length || touched) { clearInterval(demo); if (!touched) show(''); return; } show(keys[i]); }, 1500);
+        }, { threshold: .6 });
+        io.observe(vals);
+      }
+    }
+
+    /* tilting cards with a spotlight */
+    if (fine && !reduced) $$('.fx-tilt, .tm-card').forEach(card => {
+      let r = null;
+      card.addEventListener('pointerenter', () => { r = card.getBoundingClientRect(); card.style.setProperty('--spot', '1'); });
+      card.addEventListener('pointermove', e => {
+        const b = r || (r = card.getBoundingClientRect());
+        const x = (e.clientX - b.left) / b.width, y = (e.clientY - b.top) / b.height;
+        card.classList.add('is-tilting');
+        card.style.setProperty('--ry', ((x - .5) * 8).toFixed(2) + 'deg');
+        card.style.setProperty('--rx', ((.5 - y) * 7).toFixed(2) + 'deg');
+        card.style.setProperty('--mx', (x * 100).toFixed(1) + '%'); card.style.setProperty('--my', (y * 100).toFixed(1) + '%');
+      });
+      card.addEventListener('pointerleave', () => { r = null; card.classList.remove('is-tilting'); card.style.setProperty('--ry', '0deg'); card.style.setProperty('--rx', '0deg'); card.style.setProperty('--spot', '0'); });
+    });
+
+    /* badges that draw themselves in */
+    $$('.ab-badges').forEach(row => {
+      if (reduced) return;
+      $$(':scope > div', row).forEach((b, i) => {
+        b.style.setProperty('--bi', i);
+        $$('svg path, svg circle, svg rect, svg line, svg polyline', b).forEach(s => s.setAttribute('pathLength', '1'));
+      });
+      row.classList.add('ab-draw');
+    });
+
+    /* the contact band: a slow camera and a light that follows the pointer */
+    $$('.fx-band').forEach(band => {
+      const img = $('img', band); let cam = null;
+      if (img && !reduced) {
+        cam = img.animate([{ transform: 'scale(1.06) translate3d(-1.5%, 0, 0)' }, { transform: 'scale(1.16) translate3d(1.5%, -1%, 0)' }], { duration: 16000, easing: 'ease-in-out', iterations: Infinity, direction: 'alternate' });
+        cam.pause();
+        if ('IntersectionObserver' in window) new IntersectionObserver(en => { en[0].isIntersecting ? cam.play() : cam.pause(); }).observe(band);
+      }
+      if (fine && !reduced) {
+        band.addEventListener('pointermove', e => {
+          const b = band.getBoundingClientRect();
+          band.style.setProperty('--mx', ((e.clientX - b.left) / b.width * 100).toFixed(1) + '%');
+          band.style.setProperty('--my', ((e.clientY - b.top) / b.height * 100).toFixed(1) + '%');
+          band.style.setProperty('--spot', '1');
+        });
+        band.addEventListener('pointerleave', () => band.style.setProperty('--spot', '0'));
+      }
+    });
+    if (fine && !reduced) $$('.fx-btn').forEach(bt => bt.addEventListener('pointermove', e => {
+      const b = bt.getBoundingClientRect();
+      bt.style.setProperty('--bx', ((e.clientX - b.left) / b.width * 100).toFixed(1) + '%');
+      bt.style.setProperty('--by', ((e.clientY - b.top) / b.height * 100).toFixed(1) + '%');
+    }));
   }
 
   /* ===================== FAQ, sub-nav, misc ===================== */
@@ -1773,7 +1970,7 @@
   document.addEventListener('DOMContentLoaded', () => {
     initHeader(); initContactLinks(); initHeroTitle(); initTicker(); initOffers(); initFeatured(); initToursPage(); initPackagePage();
     initTravelogue(); initGallery(); initTeam(); initFaq(); initSubnav(); initMisc(); initInquiry(); initPayment(); initTeamProfile(); initReveal();
-    initHeroNext(); initQuoteCard(); initHeroMotion(); initPageHeroes(); initHeroStage();
+    initHeroNext(); initQuoteCard(); initHeroMotion(); initPageHeroes(); initAboutFx(); initHeroStage();
     if (IC.refreshHeader) IC.refreshHeader();
   });
 })();
