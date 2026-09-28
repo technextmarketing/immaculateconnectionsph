@@ -1,13 +1,15 @@
 /* =========================================================
    Immaculate Connections Travel Agency — hero layer (home)
    ---------------------------------------------------------
-   Photo slides of group tours behind the hero, entrance choreography,
-   the rotating "now booking" line, destination quick picks and the
-   quote-card progress meter (now in the Plan section under the hero).
+   The travelogue hero (a moving destination behind, the agency's group
+   photos as a stack of prints in front), entrance choreography, the
+   rotating "now booking" line, destination quick picks and the
+   quote-card progress meter (in the Plan section under the hero).
 
    Rules of the road for this file:
-   · the background is a slow cross-fade between still photos.
-     No parallax, no drifting light, no swaying waves;
+   · the camera keeps moving on the destination behind the hero
+     (one move per place), and pointer and scroll nudge it further;
+     it stops off screen, in a hidden tab and for reduced motion;
    · what does move is the copy arriving once on load and the
      controls responding to a visitor, transform and opacity
      only, so every frame stays on the compositor;
@@ -17,38 +19,104 @@
      on CSS alone so the copy is never hidden behind a script.
    ========================================================= */
 
-/* ---------- Photo slides: one photo showing, the next fades in over it ---------- */
-.hero-slides { min-height: min(84svh, 800px); padding: 110px 0 96px; }
-.hero-bg.slides .slide { position: absolute; inset: 0; margin: 0; opacity: 0; transition: opacity 1.2s var(--ease); }
-.hero-bg.slides .slide.is-active { opacity: 1; }
-.hero-bg.slides .slide img { width: 100%; height: 100%; object-fit: cover; object-position: center 40%; animation: none; }
-.hero-bg.slides::after {
+/* ---------- Travelogue hero ----------
+   Behind: a destination photo the camera never stops moving on, rack-focusing
+   to the next place every few seconds. In front: the agency's own group
+   photos as a pile of prints; the top one is thrown to the back and the next
+   one focuses in. Pointer and scroll move the camera a little further.     */
+.hero-tl { min-height: min(calc(100svh - var(--nav-h)), 940px); padding: 64px 0 112px; }
+.hero-tl .hero-bg { overflow: hidden; background: #0b1830; }
+.tl-rig { position: absolute; inset: -5%; transform: translate3d(var(--rx, 0px), var(--ry, 0px), 0) scale(var(--rz, 1)); }
+.scene { position: absolute; inset: 0; margin: 0; opacity: 0; filter: blur(14px); transition: opacity 1.6s var(--ease), filter 1.6s var(--ease); }
+.scene.is-on { opacity: 1; filter: blur(0); }
+.scene img { width: 100%; height: 100%; object-fit: cover; transform-origin: 50% 55%; }
+.hero-tl .hero-bg::after {
   background:
-    linear-gradient(90deg, rgba(14, 30, 62, .86) 0%, rgba(14, 40, 84, .6) 48%, rgba(14, 30, 62, .3) 100%),
-    linear-gradient(180deg, rgba(14, 30, 62, .38) 0%, rgba(14, 30, 62, 0) 32%, rgba(14, 30, 62, .62) 100%);
+    linear-gradient(90deg, rgba(9, 22, 48, .9) 0%, rgba(9, 26, 58, .66) 40%, rgba(9, 22, 48, .24) 70%, rgba(9, 22, 48, .42) 100%),
+    linear-gradient(180deg, rgba(9, 22, 48, .5) 0%, rgba(9, 22, 48, 0) 24%, rgba(9, 22, 48, 0) 60%, rgba(9, 22, 48, .78) 100%);
 }
-.hero-grid.single { grid-template-columns: minmax(0, 800px); }
-.hero-slides .hero-title { font-size: clamp(2.5rem, 5.2vw, 4.4rem); max-width: 14ch; }
-.hero-sub { font-size: clamp(1.02rem, 1.4vw, 1.2rem); line-height: 1.6; color: rgba(255, 255, 255, .9); max-width: 58ch; margin-bottom: 30px; }
-.hero-stats { margin-top: 6px; }
+
+.tl-grid {
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1.04fr);
+  grid-template-areas: "head prints" "rest prints";
+  column-gap: clamp(32px, 5vw, 84px); row-gap: 0; align-items: center;
+}
+.tl-head { grid-area: head; align-self: end; }
+.tl-rest { grid-area: rest; align-self: start; }
+.tl-prints { grid-area: prints; }
+.hero-tl .hero-title { font-size: clamp(2.4rem, 4.3vw, 3.9rem); max-width: 13ch; }
+.hero-sub { font-size: clamp(1.02rem, 1.3vw, 1.16rem); line-height: 1.6; color: rgba(255, 255, 255, .9); max-width: 52ch; margin-bottom: 30px; }
+.hero-stats { margin-top: 4px; }
+.hero-tl .hero-stats { display: grid; grid-template-columns: repeat(2, max-content); gap: 18px 44px; }
+.hero-tl .hero-stats span { font-size: .72rem; }
 .hero-stats div { border-left-color: var(--gold); }
 .hero-stats strong { color: #fff; }
 
-/* Slide controls: arrows and dots, bottom right, above the wave */
-.hero-ctl { display: flex; align-items: center; gap: 12px; margin-top: 30px; }
-.hero-arrow {
-  width: 40px; height: 40px; border-radius: 50%; display: grid; place-items: center; cursor: pointer;
-  border: 1px solid rgba(255, 255, 255, .4); background: rgba(15, 59, 120, .45); color: #fff;
-  transition: background .25s, border-color .25s, transform .25s var(--ease);
+/* The pile of prints */
+.tl-prints { position: relative; display: grid; grid-template-columns: minmax(0, 1fr); justify-items: center; gap: 16px; min-width: 0; }
+.tl-stack { position: relative; width: min(100%, 540px); aspect-ratio: 540 / 492; perspective: 1400px; touch-action: pan-y; border-radius: 8px; }
+.tl-stack:focus-visible { outline: 3px solid var(--gold); outline-offset: 6px; }
+.tl-deck { position: absolute; inset: 0; transform-style: preserve-3d; transform: translate3d(0, var(--sy, 0px), 0) rotateX(var(--tx, 0deg)) rotateY(var(--ty, 0deg)); }
+.print {
+  position: absolute; left: 6%; right: 6%; bottom: 3%; margin: 0; padding: 12px 12px 0;
+  background: #fffdf8; border-radius: 4px;
+  box-shadow: 0 30px 54px -26px rgba(4, 12, 30, .75), 0 4px 12px rgba(4, 12, 30, .3);
+  transform: translate3d(calc(var(--d) * -15px), calc(var(--d) * -17px), 0) rotate(calc(var(--r) * (1 + var(--d) * .45))) scale(calc(1 - var(--d) * .045));
+  z-index: calc(20 - var(--d)); opacity: var(--o, 1);
+  transition: transform .8s var(--ease-out), opacity .5s var(--ease);
+  user-select: none; -webkit-user-select: none; -webkit-touch-callout: none;
 }
-.hero-arrow:hover { background: rgba(15, 59, 120, .78); border-color: rgba(255, 183, 48, .85); }
-.hero-arrow:active { transform: scale(.94); }
-.hero-arrow svg { width: 18px; height: 18px; }
-.hero-arrow.next svg { transform: scaleX(-1); }
-.hero-dots { display: flex; gap: 6px; }
-.hero-dots button { width: 8px; height: 8px; border-radius: 4px; border: 0; padding: 0; background: rgba(255, 255, 255, .55); cursor: pointer; transition: width .25s var(--ease), background .25s; }
-.hero-dots button:hover { background: #fff; }
-.hero-dots button[aria-current="true"] { width: 24px; background: var(--gold); }
+.print.is-top { cursor: grab; }
+.print:not(.is-top) { pointer-events: none; }
+.print.is-dragging { transition: none; cursor: grabbing; }
+.print .ph { aspect-ratio: 4 / 3; overflow: hidden; border-radius: 2px; background: #d9e1ec; }
+.print img { width: 100%; height: 100%; object-fit: cover; display: block; pointer-events: none; color: transparent; }
+.print figcaption {
+  height: 54px; display: flex; align-items: center; justify-content: center; padding: 0 8px;
+  font-family: var(--font-script); font-weight: 600; font-size: 1.5rem; line-height: 1; color: var(--navy);
+  white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
+}
+/* One authored entrance: the first prints are dealt onto the pile, the back one first */
+.print.deal { animation: tlDeal .95s var(--ease-out) both; animation-delay: calc(420ms + var(--k, 0) * 130ms); }
+@keyframes tlDeal { from { translate: 80px 170px; opacity: 0; } to { translate: 0 0; opacity: 1; } }
+/* The print that reaches the top pulls into focus, like a lens settling */
+.print.focus-in img { animation: tlFocus .85s var(--ease-out) both; }
+@keyframes tlFocus { from { filter: blur(6px) saturate(.55); transform: scale(1.08); } to { filter: blur(0) saturate(1); transform: none; } }
+
+/* Picker rail: every group at a glance */
+.tl-rail { display: flex; align-items: center; gap: 10px; width: min(100%, 540px); }
+.tl-thumbs { display: flex; gap: 6px; flex: 1; min-width: 0; overflow-x: auto; scrollbar-width: none; padding: 5px 2px; scroll-snap-type: x proximity; }
+.tl-thumbs::-webkit-scrollbar { display: none; }
+.tl-thumbs button {
+  flex: none; width: 46px; height: 35px; padding: 0; border-radius: 6px; overflow: hidden; cursor: pointer; scroll-snap-align: center;
+  border: 2px solid rgba(255, 255, 255, .3); background: #16233f; opacity: .6;
+  transition: opacity .25s, border-color .25s, transform .3s var(--ease-out);
+}
+.tl-thumbs button img { width: 100%; height: 100%; object-fit: cover; display: block; }
+.tl-thumbs button:hover { opacity: .95; }
+.tl-thumbs button[aria-current="true"] { opacity: 1; border-color: var(--gold); transform: translateY(-3px); }
+.tl-thumbs button:focus-visible { outline: 2px solid var(--gold); outline-offset: 2px; }
+.tl-arrow {
+  flex: none; width: 40px; height: 40px; border-radius: 50%; display: grid; place-items: center; cursor: pointer;
+  border: 1px solid rgba(255, 255, 255, .4); background: rgba(12, 32, 70, .5); color: #fff;
+  transition: background .25s, border-color .25s, transform .2s var(--ease);
+}
+.tl-arrow:hover { background: rgba(12, 32, 70, .82); border-color: rgba(255, 183, 48, .85); }
+.tl-arrow:active { transform: scale(.94); }
+.tl-arrow svg { width: 18px; height: 18px; }
+.tl-arrow.next svg { transform: scaleX(-1); }
+
+/* Where the camera is: the place on screen, and how long until it moves on */
+.tl-place { position: absolute; left: 0; right: 0; bottom: 30px; z-index: 2; display: flex; align-items: center; gap: 10px; color: #fff; font-size: .9rem; font-weight: 600; letter-spacing: .01em; pointer-events: none; }
+.tl-place svg { width: 18px; height: 18px; color: var(--gold); flex: none; }
+.tl-place-name { display: inline-grid; overflow: hidden; }
+.tl-place-name > span { grid-area: 1 / 1; white-space: nowrap; transition: transform .6s var(--ease-out), opacity .45s var(--ease); }
+.tl-place-name > span.in { transform: translateY(80%); opacity: 0; }
+.tl-place-name > span.out { transform: translateY(-80%); opacity: 0; }
+.tl-meter { width: 72px; height: 2px; margin-left: 4px; border-radius: 2px; background: rgba(255, 255, 255, .24); overflow: hidden; }
+.tl-meter i { display: block; height: 100%; background: var(--gold); transform-origin: left center; transform: scaleX(0); }
+.tl-meter.run i { animation: tlMeter var(--tl-dwell, 6.5s) linear forwards; }
+@keyframes tlMeter { to { transform: scaleX(1); } }
 
 /* ---------- Plan section: the welcome copy and the quotation card, on the light ground under the wave ---------- */
 .plan { background: var(--bg); padding: 72px 0 84px; }
@@ -215,12 +283,6 @@
   55%, 100% { transform: translate3d(300%, 0, 0) skewX(-14deg); }
 }
 
-/* ---------- Scroll cue (now a real control) ---------- */
-button.hero-scroll { border: 0; background: none; font: inherit; cursor: pointer; padding: 4px 8px; }
-button.hero-scroll:hover { color: #fff; }
-button.hero-scroll:hover span { height: 46px; }
-button.hero-scroll span { transition: height .3s var(--ease); }
-
 /* ---------- Wave: two still layers, one offset behind the other ---------- */
 .hero-wave { height: 74px; }
 .hero-wave svg { position: absolute; left: 0; bottom: 0; width: 100%; height: 74px; }
@@ -234,7 +296,14 @@ button.hero-scroll span { transition: height .3s var(--ease); }
 @media (max-width: 900px) {
   .hero-wave .w2 { display: none; }
   .plan-grid { grid-template-columns: 1fr; gap: 36px; }
-  .hero-slides { min-height: min(72svh, 640px); padding: 84px 0 84px; }
+  .hero-tl { min-height: 0; padding: 44px 0 92px; }
+  .tl-grid { grid-template-columns: minmax(0, 1fr); grid-template-areas: "head" "prints" "rest"; row-gap: 30px; }
+  .tl-head, .tl-rest { align-self: auto; }
+  .tl-prints { justify-items: start; }
+  .tl-stack, .tl-rail { width: min(100%, 480px); }
+  .hero-sub { margin-bottom: 0; }
+  .scene { filter: none; transition: opacity 1.3s var(--ease); }
+  .hero-tl .hero-bg::after { background: linear-gradient(180deg, rgba(9, 22, 48, .72) 0%, rgba(9, 22, 48, .5) 45%, rgba(9, 22, 48, .82) 100%); }
 }
 
 /* Under 480px the package name needs every pixel, so the standing label goes
@@ -254,11 +323,14 @@ button.hero-scroll span { transition: height .3s var(--ease); }
   .qq-picks .pick:nth-child(n+6) { display: none; }   /* label + four chips */
   .pick { font-size: .72rem; padding: 5px 9px; }
   .hero-orb.a, .hero-orb.b { opacity: .4; }
-  .hero-slides { min-height: 0; padding: 56px 0 64px; }
-  .hero-slides .hero-title { font-size: clamp(2rem, 9vw, 2.6rem); max-width: none; }
+  .hero-tl { padding: 32px 0 80px; }
+  .hero-tl .hero-title { font-size: clamp(2rem, 9vw, 2.6rem); max-width: none; }
   .hero-stats div { flex: 1 1 42%; }
-  .hero-ctl { margin-top: 22px; }
-  .hero-arrow { width: 36px; height: 36px; }
+  .tl-grid { row-gap: 24px; }
+  .print { padding: 9px 9px 0; }
+  .print figcaption { height: 44px; font-size: 1.22rem; }
+  .tl-arrow { width: 36px; height: 36px; }
+  .tl-place { bottom: 22px; font-size: .82rem; }
   .plan { padding: 48px 0 64px; }
   .plan-actions .btn { flex-basis: 100%; }
   .hero-wave { height: 44px; }
@@ -270,7 +342,10 @@ button.hero-scroll span { transition: height .3s var(--ease); }
   .hero-copy > *, .hero-side, .pick { animation: none; opacity: 1; transform: none; }
   .hero-title .w > span { transform: none; opacity: 1; }
   .hero-title .hl::after { transform: scaleX(1); }
-  .hero-bg.slides .slide { transition: none; }
+  .scene { filter: none; transition: opacity .6s var(--ease); }
+  .print { transition: opacity .3s var(--ease); }
+  .print.deal, .print.focus-in img { animation: none; }
+  .tl-meter { display: none; }
   .hero-next.ticking .hn-bar i, .quote-card .btn.ready::after { animation: none; }
   .hero-next .hn-bar { display: none; }
   .hn-item { transition: none; }

@@ -1203,42 +1203,238 @@
     go(params.get('service') ? 2 : 1);
   }
 
-  /* ===================== Hero photo slides =====================
-     Still photos of the agency's group tours cross-fade behind the hero copy.
-     Only the first photo is in the first paint; the next one is fetched when
-     the page is idle and each further one just before it shows. Arrows, dots,
-     swipe and the keyboard all move it; hovering, a hidden tab or reduced
-     motion stop the automatic change.                                      */
-  function initHeroSlides() {
-    const box = $('#heroSlides'); if (!box) return;
-    const slides = $$('.slide', box); if (slides.length < 2) return;
-    const dots = $('#heroDots'), prev = $('#heroPrevBtn'), next = $('#heroNextBtn'), hero = box.closest('.hero');
-    const load = s => {
-      const img = $('img', s), src = $('source', s);
+  /* ===================== Hero: travelogue =====================
+     Behind the copy the camera keeps moving on a destination (a push-in,
+     a pan, a tilt, a pull-out: one move per place) and rack-focuses to the
+     next place every few seconds. In front, the agency's own group photos
+     sit as a pile of prints: the top one is thrown to the back by the timer,
+     a tap, a drag, a swipe, the arrows or the keyboard, and the next one
+     pulls into focus. Pointer and scroll nudge the camera. It all stops when
+     the hero is off screen or the tab is hidden; reduced motion keeps plain
+     cross-fades and manual control.                                         */
+  function initTravelogue() {
+    const hero = $('.hero-tl'); if (!hero) return;
+    const rig = $('#tlRig', hero), deck = $('#tlDeck', hero), stack = $('#tlStack', hero), prints$ = $('.tl-prints', hero);
+    const scenes = $$('.scene', rig), prints = $$('.print', deck), thumbs = $$('#tlThumbs button', hero);
+    const place = $('#tlPlace', hero), meter = $('#tlMeter', hero), thumbRow = $('#tlThumbs', hero);
+    if (!rig || !deck || !scenes.length || !prints.length) return;
+    const DWELL = 6500, FAR = 4;
+    hero.style.setProperty('--tl-dwell', DWELL + 'ms');
+    const fine = window.matchMedia('(pointer: fine)').matches;
+    const MOVES = {
+      push:  ['scale(1.06) translate3d(0, 0, 0)', 'scale(1.2) translate3d(-1.5%, 1%, 0)'],
+      panR:  ['scale(1.16) translate3d(-4%, 0, 0)', 'scale(1.16) translate3d(4%, -.5%, 0)'],
+      pull:  ['scale(1.24) translate3d(1%, 1%, 0)', 'scale(1.07) translate3d(0, 0, 0)'],
+      tilt:  ['scale(1.18) translate3d(0, 4%, 0)', 'scale(1.18) translate3d(0, -3.5%, 0)'],
+      panL:  ['scale(1.16) translate3d(4%, 0, 0)', 'scale(1.16) translate3d(-4%, .5%, 0)'],
+      orbit: ['scale(1.1) rotate(-1.4deg) translate3d(1%, 0, 0)', 'scale(1.2) rotate(.6deg) translate3d(-1%, -1%, 0)']
+    };
+    let si = 0, lastScene = 0, order = prints.map((_, k) => k), timer = null, busy = false;
+    let visible = true, hovering = false, focused = false, dragging = false;
+
+    const loadScene = s => {
+      const src = $('source', s), img = $('img', s);
       if (src && src.dataset.srcset) { src.srcset = src.dataset.srcset; delete src.dataset.srcset; }
       if (img && img.dataset.src) { img.src = img.dataset.src; delete img.dataset.src; }
+      return img;
     };
-    let i = 0, timer = null, hover = false;
-    if (dots) dots.innerHTML = slides.map((_, k) => `<button type="button" aria-label="Photo ${k + 1} of ${slides.length}" aria-current="${k === 0}"></button>`).join('');
-    const go = n => {
-      const to = (n + slides.length) % slides.length; if (to === i) return;
-      load(slides[to]); load(slides[(to + 1) % slides.length]);
-      slides[i].classList.remove('is-active'); slides[to].classList.add('is-active'); i = to;
-      if (dots) $$('button', dots).forEach((b, k) => b.setAttribute('aria-current', String(k === i)));
+    const loadPrint = p => { const img = $('img', p); if (img && img.dataset.src) { img.src = img.dataset.src; delete img.dataset.src; } };
+    const camera = s => {
+      if (reduced || !s) return;
+      if (s._cam) s._cam.cancel();
+      const [a, b] = MOVES[s.dataset.move] || MOVES.push;
+      s._cam = $('img', s).animate([{ transform: a }, { transform: b }], { duration: DWELL + 2600, easing: 'cubic-bezier(.33, 0, .4, 1)', fill: 'both' });
+      if (!visible || document.hidden) s._cam.pause();
     };
-    const stop = () => { clearInterval(timer); timer = null; };
-    const start = () => { if (reduced || timer || hover || document.hidden) return; timer = setInterval(() => go(i + 1), 6000); };
-    const bump = f => { f(); stop(); start(); };
-    if (prev) prev.addEventListener('click', () => bump(() => go(i - 1)));
-    if (next) next.addEventListener('click', () => bump(() => go(i + 1)));
-    if (dots) dots.addEventListener('click', e => { const b = e.target.closest('button'); if (b) bump(() => go($$('button', dots).indexOf(b))); });
-    hero.addEventListener('mouseenter', () => { hover = true; stop(); });
-    hero.addEventListener('mouseleave', () => { hover = false; start(); });
-    document.addEventListener('visibilitychange', () => (document.hidden ? stop() : start()));
-    let tx = null;
-    hero.addEventListener('touchstart', e => { tx = e.touches[0].clientX; }, { passive: true });
-    hero.addEventListener('touchend', e => { if (tx == null) return; const dx = e.changedTouches[0].clientX - tx; tx = null; if (Math.abs(dx) > 50) bump(() => go(dx < 0 ? i + 1 : i - 1)); }, { passive: true });
-    const warm = () => load(slides[1]);
+    const setPlace = name => {
+      if (!place || !name) return;
+      const old = place.lastElementChild;
+      if (old && old.textContent === name) return;
+      const n = document.createElement('span'); n.textContent = name;
+      if (reduced || !old) { place.textContent = ''; place.appendChild(n); return; }
+      n.className = 'in'; place.appendChild(n); old.className = 'out';
+      requestAnimationFrame(() => requestAnimationFrame(() => { n.className = ''; }));
+      setTimeout(() => { if (old.parentNode) old.remove(); }, 700);
+    };
+    const runMeter = () => {
+      if (!meter) return;
+      meter.classList.remove('run'); void meter.offsetWidth;
+      if (timer) meter.classList.add('run');
+    };
+    const showScene = async n => {
+      const to = (n + scenes.length) % scenes.length, now = performance.now();
+      if (to === si || now - lastScene < 1300) return;
+      lastScene = now;
+      const s = scenes[to], img = loadScene(s);
+      try { if (img && !img.complete) await img.decode(); } catch (e) { /* show it anyway */ }
+      const from = scenes[si]; si = to;
+      camera(s); s.classList.add('is-on'); from.classList.remove('is-on');
+      setTimeout(() => { if (from._cam && !from.classList.contains('is-on')) { from._cam.cancel(); from._cam = null; } }, 1900);
+      setPlace(s.dataset.place);
+      loadScene(scenes[(to + 1) % scenes.length]);
+    };
+
+    /* the pile: order[0] is on top; depth past FAR is hidden at the back */
+    const layout = () => {
+      order.forEach((k, d) => {
+        const p = prints[k];
+        p.style.setProperty('--d', Math.min(d, FAR));
+        p.style.setProperty('--o', d < FAR ? 1 : 0);
+        p.classList.toggle('is-top', d === 0);
+        p.setAttribute('aria-hidden', d === 0 ? 'false' : 'true');
+        if (d <= FAR) loadPrint(p);   // every print that shows, plus the next one in
+      });
+      const top = order[0];
+      thumbs.forEach((b, k) => b.setAttribute('aria-current', String(k === top)));
+      const t = thumbs[top];
+      if (t && thumbRow) thumbRow.scrollTo({ left: t.offsetLeft - thumbRow.clientWidth / 2 + t.offsetWidth / 2, behavior: reduced ? 'auto' : 'smooth' });
+    };
+    const undeal = () => prints.forEach(p => p.classList.remove('deal'));
+    const focusIn = () => {
+      if (reduced) return;
+      const p = prints[order[0]]; p.classList.remove('focus-in'); void p.offsetWidth; p.classList.add('focus-in');
+    };
+    const throwTop = (dir, from) => new Promise(res => {
+      undeal();
+      const p = prints[order[0]];
+      let settled = false;
+      const settle = () => {
+        if (settled) return; settled = true;
+        p.style.transition = 'none'; p.style.transform = '';
+        order.push(order.shift()); layout();
+        if (anim) anim.cancel();
+        void p.offsetWidth; p.style.transition = '';
+        focusIn(); res();
+      };
+      let anim = null;
+      if (reduced) { settle(); return; }
+      const start = from || getComputedStyle(p).transform;
+      anim = p.animate([
+        { transform: start === 'none' ? 'none' : start, opacity: 1 },
+        { transform: `translate3d(${dir * 128}%, -16%, 0) rotate(${dir * 19}deg)`, opacity: 0 }
+      ], { duration: 520, easing: 'cubic-bezier(.45, 0, .8, .35)', fill: 'forwards' });
+      anim.onfinish = settle;
+      setTimeout(settle, 700);   // the pile moves on even if the page is not being painted
+    });
+    const bringBack = () => {
+      undeal();
+      const k = order.pop(); order.unshift(k);
+      const p = prints[k]; loadPrint(p);
+      if (reduced) { layout(); return; }
+      p.style.transition = 'none'; layout();
+      const a = p.animate([{ transform: 'translate3d(-128%, -16%, 0) rotate(-19deg)', opacity: 0 }, { opacity: 1, offset: .5 }], { duration: 620, easing: 'cubic-bezier(.16, 1, .3, 1)' });
+      a.onfinish = a.oncancel = () => { p.style.transition = ''; };
+      focusIn();
+    };
+    const next = async (dir = 1, from) => {
+      if (busy) return; busy = true;
+      showScene(si + 1);
+      await throwTop(dir, from);
+      busy = false;
+    };
+    const prev = () => { if (busy) return; showScene(si - 1); bringBack(); };
+    const jump = k => {
+      const pos = order.indexOf(k); if (pos <= 0 || busy) return;
+      undeal(); order = order.slice(pos).concat(order.slice(0, pos)); layout(); focusIn(); showScene(si + 1);
+    };
+
+    /* the timer */
+    const held = () => hovering || focused || dragging || !visible || document.hidden;
+    const stop = () => { clearInterval(timer); timer = null; if (meter) meter.classList.remove('run'); };
+    const start = () => {
+      if (reduced || timer || held()) return;
+      timer = setInterval(() => { next(1); runMeter(); }, DWELL);
+      runMeter();
+    };
+    const restart = () => { stop(); start(); };
+
+    $('#tlNext', hero) && $('#tlNext', hero).addEventListener('click', () => { next(1); restart(); });
+    $('#tlPrev', hero) && $('#tlPrev', hero).addEventListener('click', () => { prev(); restart(); });
+    thumbs.forEach((b, k) => b.addEventListener('click', () => { jump(k); restart(); }));
+    stack.addEventListener('keydown', e => {
+      if (e.key === 'ArrowRight') { e.preventDefault(); next(1); restart(); }
+      else if (e.key === 'ArrowLeft') { e.preventDefault(); prev(); restart(); }
+    });
+    prints$.addEventListener('pointerenter', e => { if (e.pointerType === 'mouse') { hovering = true; stop(); } });
+    prints$.addEventListener('pointerleave', e => { if (e.pointerType === 'mouse') { hovering = false; start(); } });
+    prints$.addEventListener('focusin', () => { focused = true; stop(); });
+    prints$.addEventListener('focusout', e => { if (!prints$.contains(e.relatedTarget)) { focused = false; start(); } });
+
+    /* drag or swipe the top print; a tap throws it too */
+    let drag = null;
+    deck.addEventListener('pointerdown', e => {
+      const p = e.target.closest('.print');
+      if (!p || !p.classList.contains('is-top') || busy || (e.button !== undefined && e.button !== 0)) return;
+      const now = performance.now();
+      drag = { p, x: e.clientX, y: e.clientY, dx: 0, dy: 0, moved: false, vx: 0, lx: e.clientX, lt: now, r: parseFloat(p.style.getPropertyValue('--r')) || 0 };
+      try { p.setPointerCapture(e.pointerId); } catch (err) { /* older browsers */ }
+    });
+    deck.addEventListener('pointermove', e => {
+      if (!drag) return;
+      const dx = e.clientX - drag.x, dy = e.clientY - drag.y;
+      if (!drag.moved && Math.hypot(dx, dy) < 6) return;
+      if (!drag.moved) { drag.moved = true; dragging = true; stop(); undeal(); drag.p.classList.add('is-dragging'); }
+      const now = performance.now();
+      drag.vx = (e.clientX - drag.lx) / Math.max(1, now - drag.lt); drag.lx = e.clientX; drag.lt = now;
+      drag.dx = dx; drag.dy = dy;
+      drag.p.style.transform = `translate3d(${dx}px, ${dy * .5}px, 0) rotate(${drag.r + dx / 14}deg)`;
+    });
+    const endDrag = e => {
+      if (!drag) return;
+      const d = drag; drag = null;
+      d.p.classList.remove('is-dragging');
+      if (!d.moved) { if (e.type === 'pointerup') { next(1); restart(); } return; }
+      dragging = false;
+      if (Math.abs(d.dx) > 110 || Math.abs(d.vx) > .6) {
+        const from = d.p.style.transform; d.p.style.transform = '';
+        next(Math.sign(d.dx || d.vx) || 1, from);
+      } else d.p.style.transform = '';
+      start();
+    };
+    deck.addEventListener('pointerup', endDrag);
+    deck.addEventListener('pointercancel', endDrag);
+    deck.addEventListener('dragstart', e => e.preventDefault());
+
+    /* camera rig: pointer parallax and a scroll push-in, eased every frame */
+    let tx = 0, ty = 0, cx = 0, cy = 0, raf = 0, rect = null;
+    const apply = () => {
+      raf = 0;
+      cx += (tx - cx) * .07; cy += (ty - cy) * .07;
+      const s = Math.min(1, Math.max(0, window.scrollY / (hero.offsetHeight || 1)));
+      rig.style.setProperty('--rx', (-cx * 18).toFixed(2) + 'px');
+      rig.style.setProperty('--ry', (-cy * 12 + s * 80).toFixed(2) + 'px');
+      rig.style.setProperty('--rz', (1 + s * .1).toFixed(4));
+      deck.style.setProperty('--ty', (cx * 8).toFixed(2) + 'deg');
+      deck.style.setProperty('--tx', (-cy * 6).toFixed(2) + 'deg');
+      deck.style.setProperty('--sy', (-s * 56).toFixed(1) + 'px');
+      if (Math.abs(tx - cx) > .002 || Math.abs(ty - cy) > .002) raf = requestAnimationFrame(apply);
+    };
+    const kick = () => { if (!raf) raf = requestAnimationFrame(apply); };
+    if (!reduced) {
+      if (fine) {
+        hero.addEventListener('pointerenter', () => { rect = hero.getBoundingClientRect(); });
+        hero.addEventListener('pointermove', e => {
+          if (e.pointerType !== 'mouse') return;
+          const r = rect || (rect = hero.getBoundingClientRect());
+          tx = ((e.clientX - r.left) / r.width) * 2 - 1; ty = ((e.clientY - r.top) / r.height) * 2 - 1; kick();
+        }, { passive: true });
+        hero.addEventListener('pointerleave', () => { tx = 0; ty = 0; rect = null; kick(); });
+        window.addEventListener('resize', () => { rect = null; }, { passive: true });
+      }
+      window.addEventListener('scroll', () => { rect = null; if (window.scrollY < hero.offsetHeight * 1.3) kick(); }, { passive: true });
+    }
+
+    /* off screen or hidden: everything rests */
+    const pauseAll = () => { stop(); scenes.forEach(s => s._cam && s._cam.pause()); };
+    const playAll = () => { scenes.forEach(s => s._cam && s.classList.contains('is-on') && s._cam.play()); start(); };
+    if ('IntersectionObserver' in window) {
+      new IntersectionObserver(en => { visible = en[0].isIntersecting; visible ? playAll() : pauseAll(); }, { threshold: .05 }).observe(hero);
+    }
+    document.addEventListener('visibilitychange', () => (document.hidden ? pauseAll() : playAll()));
+
+    prints.forEach(p => p.addEventListener('animationend', ev => { if (ev.animationName === 'tlDeal') p.classList.remove('deal'); }));
+    layout(); camera(scenes[0]); setPlace(scenes[0].dataset.place);
+    const warm = () => loadScene(scenes[1]);
     if ('requestIdleCallback' in window) requestIdleCallback(warm, { timeout: 2500 }); else setTimeout(warm, 1500);
     start();
   }
@@ -1409,7 +1605,7 @@
 
   document.addEventListener('DOMContentLoaded', () => {
     initHeader(); initContactLinks(); initHeroTitle(); initTicker(); initOffers(); initFeatured(); initToursPage(); initPackagePage();
-    initHeroSlides(); initGallery(); initTeam(); initFaq(); initSubnav(); initMisc(); initInquiry(); initPayment(); initTeamProfile(); initReveal();
+    initTravelogue(); initGallery(); initTeam(); initFaq(); initSubnav(); initMisc(); initInquiry(); initPayment(); initTeamProfile(); initReveal();
     initHeroNext(); initQuoteCard(); initHeroMotion(); initHeroStage();
   });
 })();
