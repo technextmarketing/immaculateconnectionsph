@@ -30,7 +30,7 @@
 .hero-tl { min-height: 100svh; padding: calc(var(--nav-h) + 28px) 0 118px; }
 .hero-tl .hero-bg { overflow: hidden; background: #0b1830; }
 .tl-rig { position: absolute; inset: -5%; transform: translate3d(var(--rx, 0px), var(--ry, 0px), 0) scale(var(--rz, 1)); }
-.scene { position: absolute; inset: 0; margin: 0; opacity: 0; filter: blur(14px); transition: opacity 1.6s var(--ease), filter 1.6s var(--ease); }
+.scene { position: absolute; inset: 0; margin: 0; opacity: 0; filter: blur(14px); transition: opacity 1.1s var(--ease), filter 1.1s var(--ease); }
 .scene.is-on { opacity: 1; filter: blur(0); }
 .scene img { width: 100%; height: 100%; object-fit: cover; transform-origin: 50% 55%; }
 .tl-leak {
@@ -172,7 +172,7 @@
 .tl-chips button[aria-pressed="true"] { background: #fff; color: var(--navy-3); border-color: #fff; }
 .tl-chips button:focus-visible { outline: 2px solid var(--gold); outline-offset: 2px; }
 .tl-chips button i { position: absolute; left: 12px; right: 12px; bottom: 4px; height: 2px; border-radius: 2px; background: var(--gold); transform: scaleX(0); transform-origin: left center; }
-.tl-chips button.run i { animation: tlMeter var(--tl-dwell, 6.5s) linear forwards; }
+.tl-chips button.run i { animation: tlMeter var(--tl-dwell, 3s) linear forwards; }
 @keyframes tlMeter { to { transform: scaleX(1); } }
 
 /* ---------- Plan section: the welcome copy and the quotation card, on the light ground under the wave ---------- */
@@ -343,7 +343,7 @@
   .tl-head, .tl-rest { align-self: auto; }
   .tl-prints { --tlw: min(100%, 560px); justify-items: start; }
   .hero-sub { margin-bottom: 0; }
-  .scene { filter: none; transition: opacity 1.3s var(--ease); }
+  .scene { filter: none; transition: opacity 1s var(--ease); }
   .hero-tl .hero-bg::after { background: linear-gradient(180deg, rgba(9, 22, 48, .78) 0%, rgba(9, 22, 48, .5) 45%, rgba(9, 22, 48, .86) 100%); }
   .tl-reel { flex-direction: column; align-items: stretch; gap: 10px; bottom: 22px; }
   .tl-chips { max-width: none; }

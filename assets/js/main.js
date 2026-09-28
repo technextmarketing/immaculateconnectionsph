@@ -56,11 +56,10 @@
 
   /* Motion: the hero camera, the photo piles, the ticker and the "now booking" pill advance
      by themselves. A small button on each stops or restarts all of them at once (WCAG 2.2.2)
-     and the choice holds for the rest of the visit. Reduced-motion visitors get stills, so
+     for as long as the visitor stays on the page. Reduced-motion visitors get stills, so
      they get no buttons. */
   const Motion = (() => {
-    let paused = false;
-    try { paused = sessionStorage.getItem('ic-motion') === 'paused'; } catch (e) { /* storage blocked */ }
+    let paused = false;   // for this page view only: every page opens playing
     const subs = [];
     const ICONS = {
       pause: '<svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><rect x="6.5" y="5" width="3.6" height="14" rx="1"/><rect x="13.9" y="5" width="3.6" height="14" rx="1"/></svg>',
@@ -75,7 +74,6 @@
     };
     const set = v => {
       paused = !!v;
-      try { sessionStorage.setItem('ic-motion', paused ? 'paused' : 'play'); } catch (e) { /* storage blocked */ }
       sync(); subs.forEach(fn => fn(paused));
     };
     sync();
@@ -1646,7 +1644,7 @@
     const scenes = $$('.scene', rig), prints = $$('.print', deck), thumbs = $$('#tlThumbs button', hero), chips = $$('#tlChips button', hero);
     const place = $('#tlPlace', hero), thumbRow = $('#tlThumbs', hero), chipRow = $('#tlChips', hero);
     if (!rig || !deck || !scenes.length || !prints.length) return;
-    const DWELL = 6500, FAR = 4, L = scenes.length;
+    const DWELL = 3000, FAR = 4, L = scenes.length;   // a new photo and destination every 3 s
     hero.style.setProperty('--tl-dwell', DWELL + 'ms');
     const fine = window.matchMedia('(pointer: fine)').matches;
     const MOVES = {
@@ -1700,26 +1698,28 @@
       requestAnimationFrame(() => requestAnimationFrame(() => { if (timer && chips[si] === c) c.classList.add('run'); }));
       center(chipRow, c);
     };
+    let switching = false;
     const showScene = async (n, manual) => {
       const to = ((n % L) + L) % L, now = performance.now();
-      if (to === si || (!manual && now - lastScene < 1300)) return;
-      lastScene = now;
+      if (to === si || switching || (!manual && now - lastScene < 1300)) return;
+      lastScene = now; switching = true;
       const s = scenes[to], img = loadScene(s);
       try { if (img && !img.complete) await img.decode(); } catch (e) { /* show it anyway */ }
+      switching = false;
       const from = scenes[si]; si = to;
       camera(s);
       if (!reduced) {
         // the camera flies through: the old place rushes past, the new one settles in
-        const out = from.animate([{ transform: 'scale(1)' }, { transform: 'scale(1.32)' }], { duration: 1600, easing: 'cubic-bezier(.5, 0, .8, .4)', fill: 'forwards' });
-        s.animate([{ transform: 'scale(1.22)' }, { transform: 'scale(1)' }], { duration: 1700, easing: 'cubic-bezier(.16, 1, .3, 1)' });
-        setTimeout(() => out.cancel(), 1900);
+        const out = from.animate([{ transform: 'scale(1)' }, { transform: 'scale(1.28)' }], { duration: 1200, easing: 'cubic-bezier(.5, 0, .8, .4)', fill: 'forwards' });
+        s.animate([{ transform: 'scale(1.18)' }, { transform: 'scale(1)' }], { duration: 1300, easing: 'cubic-bezier(.16, 1, .3, 1)' });
+        setTimeout(() => out.cancel(), 1400);
         if (leak) { leak.classList.remove('flash'); void leak.offsetWidth; leak.classList.add('flash'); }
       }
       s.classList.add('is-on'); from.classList.remove('is-on');
-      setTimeout(() => { if (from._cam && !from.classList.contains('is-on')) { from._cam.cancel(); from._cam = null; } }, 1900);
+      setTimeout(() => { if (from._cam && !from.classList.contains('is-on')) { from._cam.cancel(); from._cam = null; } }, 1400);
       setPlace(s.dataset.place ? s.dataset.place.replace(/&amp;/g, '&') : '');
       markChip();
-      loadScene(scenes[(to + 1) % L]);
+      loadScene(scenes[(to + 1) % L]); loadScene(scenes[(to + 2) % L]);
     };
 
     /* the pile: order[0] is on top; depth past FAR is hidden at the back */
@@ -1805,9 +1805,7 @@
       if (e.key === 'ArrowRight') { e.preventDefault(); next(1); restart(); }
       else if (e.key === 'ArrowLeft') { e.preventDefault(); prev(); restart(); }
     });
-    prints$.addEventListener('pointerenter', e => { if (e.pointerType === 'mouse') { hovering = true; stop(); } });
-    prints$.addEventListener('pointerleave', e => { if (e.pointerType === 'mouse') { hovering = false; start(); } });
-    prints$.addEventListener('focusin', () => { focused = true; stop(); });
+    prints$.addEventListener('focusin', e => { if (e.target.matches(':focus-visible')) { focused = true; stop(); } });
     prints$.addEventListener('focusout', e => { if (!prints$.contains(e.relatedTarget)) { focused = false; start(); } });
 
     /* full size: the corner button opens the site's photo viewer */
@@ -1907,7 +1905,7 @@
 
     prints.forEach(p => p.addEventListener('animationend', ev => { if (ev.animationName === 'tlDeal') p.classList.remove('deal'); }));
     layout(); camera(scenes[0]); setPlace((scenes[0].dataset.place || '').replace(/&amp;/g, '&'));
-    const warm = () => { warmPile(); loadScene(scenes[1]); };
+    const warm = () => { warmPile(); loadScene(scenes[1]); loadScene(scenes[2 % L]); };
     const idle = () => ('requestIdleCallback' in window ? requestIdleCallback(warm, { timeout: 2500 }) : setTimeout(warm, 800));
     if (document.readyState === 'complete') idle(); else window.addEventListener('load', idle, { once: true });
     start();
