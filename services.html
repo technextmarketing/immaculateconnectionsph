@@ -4,10 +4,10 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <!-- Security: restrict what the page may load/connect to, and how much referrer to leak. -->
-  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; base-uri 'self'; object-src 'none'; script-src 'self'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: https://flagcdn.com; media-src 'self'; connect-src 'self' https://formsubmit.co; frame-src https://www.google.com; form-action 'self' https://formsubmit.co; upgrade-insecure-requests">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; base-uri 'self'; object-src 'none'; script-src 'self'; style-src 'self' 'unsafe-inline'; font-src 'self'; img-src 'self' data: https://flagcdn.com; media-src 'self'; connect-src 'self' https://formsubmit.co; frame-src https://www.google.com; form-action 'self' https://formsubmit.co; upgrade-insecure-requests">
   <meta name="referrer" content="strict-origin-when-cross-origin">
-  <title>Services | Immaculate Connections Travel Agency — Ticketing, Hotels, Transport, Tours &amp; Events</title>
-  <meta name="description" content="Your Immaculate Service: ticketing, hotel bookings and reservations, transport service reservations (vans, coasters, bus, 4-seater), local and international tour packages, and trainings, seminars and MICE events in Cebu.">
+  <title>Tickets, Hotels, Transport &amp; Events | Immaculate Connections</title>
+  <meta name="description" content="Flight ticketing, hotel bookings, van, coaster and bus reservations, local and international tour packages, and seminar and event logistics in Cebu.">
   <meta name="theme-color" content="#1d67cd">
   <meta property="og:title" content="Services | Immaculate Connections Travel Agency">
   <meta property="og:description" content="From seamless ticket booking to expertly crafted itineraries, we handle the details while you make lasting memories.">
@@ -20,13 +20,11 @@
   <meta name="twitter:description" content="From seamless ticket booking to expertly crafted itineraries, we handle the details while you make lasting memories.">
   <meta name="twitter:image" content="https://technextmarketing.github.io/immaculateconnectionsph/assets/img/media/og-7d63895b8b89.jpg">
   <link rel="icon" href="assets/img/media/ab1a9837b67f.png" type="image/png">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,500&family=Raleway:wght@400;500;600;700;800&family=Dancing+Script:wght@600;700&display=swap" rel="stylesheet">
-  <link rel="preload" as="image" href="assets/img/hero/dest-sky-2400.jpg" media="(min-width: 701px)">
-  <link rel="preload" as="image" href="assets/img/hero/dest-sky-1280.jpg" media="(max-width: 700px)">
-  <link rel="stylesheet" href="assets/css/style.css?v=20260928h">
-  <link rel="stylesheet" href="assets/css/components.css?v=20260928h">
+  <link rel="preload" as="image" href="assets/img/hero/dest-sky-2400.webp" media="(min-width: 701px)">
+  <link rel="preload" as="image" href="assets/img/hero/dest-sky-1280.webp" media="(max-width: 700px)">
+  <link rel="preload" href="assets/fonts/raleway-latin.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="assets/fonts/playfair-display-latin.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="assets/css/site.min.css?v=487e4f6782">
 </head>
 <body data-page="services" data-hero-top>
   <a class="skip-link" href="#main">Skip to content</a>
@@ -70,7 +68,7 @@
 
   <main id="main">
     <section class="page-hero">
-      <div class="hero-bg" aria-hidden="true"><div class="ph-rig"><figure class="ph-scene is-on" data-move="drift"><picture><source media="(max-width: 700px)" srcset="assets/img/hero/dest-sky-1280.jpg"><img src="assets/img/hero/dest-sky-2400.jpg" width="2400" height="1350" alt="" fetchpriority="high" decoding="async"></picture></figure></div></div>
+      <div class="hero-bg" aria-hidden="true"><div class="ph-rig"><figure class="ph-scene is-on" data-move="drift"><picture><source media="(max-width: 700px)" srcset="assets/img/hero/dest-sky-1280.webp"><img src="assets/img/hero/dest-sky-2400.webp" width="2400" height="1350" alt="" fetchpriority="high" decoding="async"></picture></figure></div></div>
       <div class="container page-hero-grid">
         <div>
           <nav class="breadcrumb ph-in" style="--i:0" aria-label="Breadcrumb"><a href="index.html">Home</a><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="m9 18 6-6-6-6"/></svg><span>Services</span></nav>
@@ -118,7 +116,7 @@
         </div>
         <form class="mini-form reveal reveal-right" action="contact.html" method="get">
           <input type="hidden" name="service" value="flights">
-          <h4>Quote a flight</h4>
+          <h3>Quote a flight</h3>
           <div class="form-row">
             <div class="field"><label for="t_from">From</label><input class="input" id="t_from" name="from" placeholder="Cebu (CEB)"></div>
             <div class="field"><label for="t_to">To</label><input class="input" id="t_to" name="to" placeholder="Manila, Tokyo…"></div>
@@ -158,7 +156,7 @@
       <div class="container">
         <div class="split">
           <div class="split-media landscape reveal reveal-left">
-            <img src="assets/img/media/515cfff1c9a6.jpg" alt="Immaculate Connections transport service" loading="lazy" width="1600" height="1199">
+            <img src="assets/img/media/515cfff1c9a6.webp" alt="Immaculate Connections transport service" loading="lazy" width="1600" height="1199">
             <div class="float-card bl"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M8 6v6"/><path d="M15 6v6"/><path d="M2 12h19.6"/><path d="M18 18h3s.5-1.7.8-2.8c.1-.4.2-.8.2-1.2 0-.4-.1-.8-.2-1.2l-1.4-5C20.1 6.8 19.1 6 18 6H4a2 2 0 0 0-2 2v10h3"/><circle cx="7" cy="18" r="2"/><path d="M9 18h5"/><circle cx="16" cy="18" r="2"/></svg></div><div><strong>Vans, coasters, buses &amp; 4-seaters</strong><span>Air-conditioned, with driver.</span></div></div>
           </div>
           <div class="reveal reveal-right">
@@ -180,25 +178,25 @@
         <div class="fleet">
           <article class="fleet-card reveal">
             <div class="veh"><svg viewBox="0 0 120 64" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 44h96V24a6 6 0 0 0-6-6H40L26 30h-10a4 4 0 0 0-4 4z" fill="currentColor" fill-opacity=".08"/><path d="M48 18h20v12H48zM72 18h22v12H72z" fill="currentColor" fill-opacity=".2"/><path d="M30 30h14V18h-4z" fill="currentColor" fill-opacity=".2"/><circle cx="32" cy="46" r="7" fill="#fff"/><circle cx="90" cy="46" r="7" fill="#fff"/></svg></div>
-            <h4>Vans</h4>
+            <h3>Vans</h3>
             <div class="cap"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>Small groups &amp; families</div>
             <p>The standard for our Cebu, Bohol and Camotes tours. Air-conditioned, with room for luggage.</p>
           </article>
           <article class="fleet-card reveal" style="--d:.1s">
             <div class="veh"><svg viewBox="0 0 120 64" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M8 46h104V20a6 6 0 0 0-6-6H14a6 6 0 0 0-6 6z" fill="currentColor" fill-opacity=".08"/><path d="M14 20h18v14H14zM38 20h18v14H38zM62 20h18v14H62zM86 20h20v14H86z" fill="currentColor" fill-opacity=".2"/><circle cx="30" cy="48" r="7" fill="#fff"/><circle cx="92" cy="48" r="7" fill="#fff"/></svg></div>
-            <h4>Coasters</h4>
+            <h3>Coasters</h3>
             <div class="cap"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>Mid-size groups</div>
             <p>Seminar participants, school groups and company outings that outgrow a van.</p>
           </article>
           <article class="fleet-card reveal" style="--d:.2s">
             <div class="veh"><svg viewBox="0 0 120 64" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 48h108V16a6 6 0 0 0-6-6H12a6 6 0 0 0-6 6z" fill="currentColor" fill-opacity=".08"/><path d="M12 16h14v16H12zM30 16h16v16H30zM50 16h16v16H50zM70 16h16v16H70zM90 16h18v16H90z" fill="currentColor" fill-opacity=".2"/><path d="M6 40h108"/><circle cx="26" cy="50" r="7" fill="#fff"/><circle cx="80" cy="50" r="7" fill="#fff"/><circle cx="98" cy="50" r="7" fill="#fff"/></svg></div>
-            <h4>Bus</h4>
+            <h3>Bus</h3>
             <div class="cap"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>Large groups &amp; delegations</div>
             <p>Conventions, orientation courses and big reunions moving together.</p>
           </article>
           <article class="fleet-card reveal" style="--d:.3s">
             <div class="veh"><svg viewBox="0 0 120 64" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 42h92v-9a6 6 0 0 0-6-6h-10l-14-14H44L28 27h-8a6 6 0 0 0-6 6z" fill="currentColor" fill-opacity=".08"/><path d="M46 27h30l-8-9H50z" fill="currentColor" fill-opacity=".2"/><circle cx="32" cy="44" r="7" fill="#fff"/><circle cx="88" cy="44" r="7" fill="#fff"/></svg></div>
-            <h4>4-Seater</h4>
+            <h3>4-Seater</h3>
             <div class="cap"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>Up to 4 passengers</div>
             <p>Airport transfers, couples and executive pick-ups around Cebu and Mactan.</p>
           </article>
@@ -228,9 +226,9 @@
         </div>
         <div class="reveal reveal-left">
           <div class="mini-gallery">
-            <img src="assets/img/media/c790bde9bfb7.jpg" alt="Bohol tour" loading="lazy" width="1200" height="630">
-            <img src="assets/img/media/74c14938b435-800.jpg" alt="Camotes Island" loading="lazy" width="800" height="480">
-            <img src="assets/img/media/bdf86d20b5ef-800.jpg" alt="Japan Tokyo, Yokohama and Mt. Fuji tour poster" loading="lazy" width="533" height="800">
+            <img src="assets/img/media/c790bde9bfb7.webp" alt="Bohol tour" loading="lazy" width="1200" height="630">
+            <img src="assets/img/media/74c14938b435-800.webp" alt="Camotes Island" loading="lazy" width="800" height="480">
+            <img src="assets/img/media/bdf86d20b5ef-800.webp" alt="Japan Tokyo, Yokohama and Mt. Fuji tour poster" loading="lazy" width="533" height="800">
           </div>
         </div>
       </div>
@@ -257,7 +255,7 @@
           </div>
           <form class="mini-form reveal reveal-right" action="contact.html" method="get">
             <input type="hidden" name="service" value="mice">
-            <h4>Quote an event</h4>
+            <h3>Quote an event</h3>
             <div class="form-row">
               <div class="field"><label for="e_type">Type of event</label><select class="select" id="e_type" name="event"><option value="">Choose an option</option><option>Convention</option><option>Seminar</option><option>Training</option><option>Orientation course</option><option>Reunion</option><option>Corporate gathering</option><option>Other</option></select></div>
               <div class="field"><label for="e_pax">Participants (pax)</label><input class="input" id="e_pax" type="number" name="epax" min="1" max="2000" step="1" inputmode="numeric" placeholder="e.g. 120"></div>
@@ -301,7 +299,7 @@
     <section class="section-tight">
       <div class="container">
         <div class="cta-band reveal reveal-scale">
-          <img src="assets/img/media/74c14938b435.jpg" alt="" loading="lazy" width="1500" height="900">
+          <img src="assets/img/media/74c14938b435.webp" alt="" loading="lazy" width="1500" height="900">
           <span class="script">Your vision, our expertise.</span>
           <h2 class="h2">One inquiry. Every connection handled.</h2>
           <p class="lead">Tell us what your trip or event needs and our team will prepare a quotation.</p>
@@ -327,7 +325,7 @@
           </div>
         </div>
         <div>
-          <h4>Explore</h4>
+          <h2>Explore</h2>
           <ul class="footer-links">
             <li><a href="tours.html">Local tour packages</a></li>
             <li><a href="tours.html?country=china">China packages</a></li>
@@ -336,7 +334,7 @@
           </ul>
         </div>
         <div>
-          <h4>Services</h4>
+          <h2>Services</h2>
           <ul class="footer-links">
             <li><a href="services.html#ticketing">Ticketing</a></li>
             <li><a href="services.html#hotels">Hotel bookings &amp; reservations</a></li>
@@ -346,7 +344,7 @@
           </ul>
         </div>
         <div>
-          <h4>Inquire &amp; get a quote</h4>
+          <h2>Inquire &amp; get a quote</h2>
           <ul class="footer-contact">
             <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg><span>Unit 4E, 4th Floor, JL Millennium Building, Don Jose Avila Street, Cebu City, Cebu, Philippines</span></li>
             <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect width="14" height="20" x="5" y="2" rx="2"/><path d="M12 18h.01"/></svg><a data-tel href="#">+63 917 318 8997</a></li>
@@ -366,7 +364,6 @@
   <a class="fab-msg" href="#" data-msg aria-label="Message us on Facebook Messenger"><span class="fab-pulse"></span><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2C6.36 2 2 6.13 2 11.7c0 2.91 1.19 5.44 3.14 7.17.16.15.26.35.27.57l.05 1.78a.8.8 0 0 0 1.12.71l1.99-.88a.8.8 0 0 1 .53-.04c.91.25 1.88.39 2.9.39 5.64 0 10-4.13 10-9.7S17.64 2 12 2Zm6 7.46-2.94 4.66a1.5 1.5 0 0 1-2.17.4l-2.34-1.75a.6.6 0 0 0-.72 0l-3.16 2.4c-.42.32-.97-.18-.69-.63l2.94-4.66a1.5 1.5 0 0 1 2.17-.4l2.34 1.75a.6.6 0 0 0 .72 0l3.16-2.4c.42-.32.97.18.69.63Z"/></svg><span>Message us</span></a>
   <button class="to-top" id="toTop" type="button" aria-label="Back to top"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 19V5M5 12l7-7 7 7"/></svg></button>
 
-  <script src="assets/js/data.js?v=20260928h"></script>
-  <script src="assets/js/main.js?v=20260928h"></script>
+  <script src="assets/js/site.min.js?v=1a20d25f62"></script>
 </body>
 </html>

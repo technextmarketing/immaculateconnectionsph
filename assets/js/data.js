@@ -17,8 +17,6 @@ window.IC = window.IC || {};
      never changes when a photo file does; add new photos to this map. */
   const MEDIA = 'assets/img/media/';
   const LOCAL = {
-    '05e3dc_43e817747d44442dbf761e2ae66dd8e4.jpg': '43e817747d44.jpg',
-    '05e3dc_e099f1ceb25b41908ca3d6ba88d7bcb8.jpg': 'e099f1ceb25b.jpg',
     '11062b_12e8394318ad4042acc3831d320a0e53~mv2.jpg': '12e8394318ad.jpg',
     '952787_0050a801a0b94a199d0f8d18215c1275~mv2.jpg': '0050a801a0b9.jpg',
     '952787_00f199ad62fa4e719b784a358f9f0b18~mv2.png': '00f199ad62fa.jpg',
@@ -70,10 +68,15 @@ window.IC = window.IC || {};
     '952787_fe368fa20ed346b78f71f7a717b270fd~mv2.jpg': 'fe368fa20ed3.jpg'
   };
   /** Site image by media id: wix(id, width) picks the 800px copy for small slots */
-  const wix = (id, w) => { const f = LOCAL[id] || id; return MEDIA + (w && w <= 800 && /\.jpe?g$/i.test(f) ? f.replace(/\.jpe?g$/i, '-800.jpg') : f); };
+  const wix = (id, w) => {
+    const f = LOCAL[id] || id, g = w && w <= 800 && /\.jpe?g$/i.test(f) ? f.replace(/\.jpe?g$/i, '-800.jpg') : f;
+    return MEDIA + g.replace(/\.jpe?g$/i, '.webp');   // every photo has a WebP twin; the JPEGs stay as masters and share cards
+  };
+  /** The JPEG master, for share cards and structured data */
+  IC.wixJpg = id => MEDIA + (LOCAL[id] || id);
   IC.wix = wix;
 
-  /* Each package page opens on a high-resolution photo of its destination: assets/img/hero/dest-<key>-2400.jpg
+  /* Each package page opens on a high-resolution photo of its destination: assets/img/hero/dest-<key>-2400.webp
      (and -1280 for phones). Credits are in the README. */
   IC.destHero = {
     'danang-6d4n': 'danang',
@@ -98,8 +101,6 @@ window.IC = window.IC || {};
     mark: wix('952787_ab1a9837b67f48ff85499555bb28ceba~mv2.png'),
     heroHome: '952787_7d63895b8b894bb0b1dbd482101a18d0~mv2.jpg',
     heroTours: '952787_1d076b1fc8f14f5ab72956eff2c0433e~mv2.jpg',
-    heroAbout: '05e3dc_e099f1ceb25b41908ca3d6ba88d7bcb8.jpg',
-    heroInquiries: '05e3dc_43e817747d44442dbf761e2ae66dd8e4.jpg',
     // Service icons: 240px PNG copies shown at 26-58px.
     icons: {
       ticketing: wix('952787_27ef97fc9ab247f9ac0396528bcb722b~mv2.png', 120, 120),

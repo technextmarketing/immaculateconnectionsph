@@ -15,7 +15,7 @@
    ========================================================= */
 
 :root {
-  --qt-font: "Inter", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  --qt-font: "Inter", "Inter Fallback", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
   --qt-ink: #16233a;        /* body text                      */
   --qt-ink-2: #3d4b62;      /* secondary text                 */
   --qt-muted: #6b7994;      /* labels, fine print             */
@@ -222,7 +222,7 @@ table.qt-table tfoot .sum { font-size: 1.45rem; font-weight: 700; color: var(--q
 @media print {
   @page { size: A4; margin: 12mm 11mm; }
   html, body { background: #fff !important; }
-  .header, .footer, .drawer, .fab-msg, .to-top, .scroll-progress, .announce,
+  .header, .footer, .drawer, .fab-msg, .to-top, .scroll-progress,
   .page-hero, .marquee, .sticky-cta, .no-print, .qt-intro, .qt-actions, .qt-hint,
   .contact-layout > aside, .map-wrap, .faq, .section-head, .breadcrumb { display: none !important; }
   main > section:not(:has(.qt-doc)) { display: none !important; }

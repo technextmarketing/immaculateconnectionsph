@@ -1,0 +1,10 @@
+# Text files are stored and checked out with LF, so Windows machines stop warning on every commit
+* text=auto eol=lf
+*.jpg binary
+*.jpeg binary
+*.png binary
+*.webp binary
+*.gif binary
+*.woff2 binary
+*.pdf binary
+*.mp4 binary

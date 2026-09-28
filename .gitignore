@@ -7,3 +7,5 @@ hero section home page/
 *.pem
 *.key
 secrets.json
+__pycache__/
+*.pyc

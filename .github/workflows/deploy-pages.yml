@@ -27,6 +27,16 @@ jobs:
         uses: actions/configure-pages@v5
         with:
           enablement: true
+      # The pages load minified bundles. Rebuilding them here means a push that edited a
+      # stylesheet or script but forgot `python tools/build.py` still ships the change.
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Build bundles
+        run: |
+          pip install --quiet rcssmin==1.2.2
+          python tools/build.py assets
       - name: Upload site
         uses: actions/upload-pages-artifact@v3
         with:

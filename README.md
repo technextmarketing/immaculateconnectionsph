@@ -4,7 +4,7 @@ Redesign of [immaculateconnectionsph.com](https://www.immaculateconnectionsph.co
 
 **Live preview:** https://technextmarketing.github.io/immaculateconnectionsph/
 
-No build step and no framework: upload the folder to any static host or serve it with GitHub Pages.
+No framework. Pages are plain HTML; one small Python build (`tools/build.py`, see **Build** below) minifies the styles and scripts and writes the 15 package pages. Upload the folder to any static host or serve it with GitHub Pages.
 
 All copy, packages, inclusions, places, photos and the logo come from the agency's existing website. Photos were downloaded from the agency's Wix media library into `assets/img/media/` (see Photos below).
 
@@ -16,8 +16,9 @@ See [AUDIT.md](AUDIT.md) for the full audit of the current site, the pain points
 | --- | --- |
 | `index.html` | Home: a travelogue hero (a destination photo the camera keeps moving on, with the place name and a timer; in front, the agency's own group photos as a pile of framed prints that can be thrown to the back by tap, drag, swipe, arrows or keyboard, with a thumbnail picker), the credibility figures, then the welcome copy with the rotating "now booking" line and the quick quotation card, followed by special offers, services, featured packages, gallery and FAQ. Hero photos live in `assets/img/hero` (`dest-*` backgrounds at 2000/1200 px, `print-*` 820x615, `thumb-*`); captions and places are set in the hero markup. |
 | `services.html` | Ticketing, Hotel Bookings & Reservations, Transport Service Reservations (vans, coasters, bus, 4-seater), Local & International Tour Packages, and Meetings, Incentives, Conferences, Exhibitions, Trainings & Seminars. Flight and event quote forms pre-fill the inquiry page. |
-| `tours.html` | All 15 packages with search, region, duration, archive (past departures) and sort filters. Each card opens a details modal with places, inclusions, status and (for Vietnam) the itinerary posters. |
-| `package.html` | Package detail page (`package.html?id=<package-id>`): hero, sticky section tabs, photo gallery, overview, day-by-day itinerary, inclusions and exclusions, places with a location guide, 2026 travel dates with surcharges, itinerary posters, related packages and a sticky quote button. |
+| `tours.html` | All 15 packages with search, region, duration, archive (past departures) and sort filters. Each card links to its package page. The first view of the grid is pre-rendered by the build. |
+| `package-<id>.html` | One real page per package, written by `tools/build.py` from `package.html` and the package's entry in `data.js`: its own title, description, share image (`assets/img/media/og-pkg-<id>.jpg`), canonical address and structured data, with the page body already rendered (hero, sticky section tabs, photo gallery, travel dates first, overview, itinerary, inclusions, places, posters, related packages). The script still runs there and refreshes dates and availability. |
+| `package.html` | The template for those pages, and the old `package.html?id=<package-id>` address, which now forwards to `package-<id>.html`. Kept out of search (`noindex`). |
 | `payment.html` | Held back, not linked from anywhere: the payment step is off until the agency confirms a booking flow (`CONFIG.payments`). It states that nothing is collected on the website. |
 | `about.html` | Why choose us, the four values, mission and vision, clickable team cards (three per row) that open profiles, previous tours gallery, contact details. |
 | `team.html` | Individual team-member profile (`team.html?member=<slug>`): hero with photo/initials, bio, what they handle, focus areas, an at-a-glance side card and the other members. Content comes from `IC.team` in `data.js`. |
@@ -66,37 +67,52 @@ payment: {
 - **Inclusion tags on cards** (Airfare, Hotel, Meals, Transport, Tour guide, Entrance fees, Insurance and so on) are derived automatically from each package's `inclusions` list by `INC_TAGS` in `assets/js/main.js`.
 - **Travel dates** on a package page link straight to the inquiry form with the package and the chosen departure pre-filled.
 - **Team cards on the About page**: `IC.team` in `assets/js/data.js`. Each entry is a desk in the agency. Add a `name` (and optionally a `photo`, using a media id from the `LOCAL` map in `data.js`, plus a direct `email`) and the card becomes a personal profile with the person's name as the title and the desk as the subtitle. Leave `name` empty and the card shows the desk with the agency's own service icon, so the section stays accurate until real names and photographs are supplied.
-- **Copy**: the HTML files. Header and footer are repeated in each page.
+- **Copy**: the HTML files. Header and footer are repeated in each page. Don't edit `package-*.html` (rebuilt from `package.html`) or the `.min` files.
+- **After any edit** to a stylesheet, a script, `package.html` or a package in `data.js`, run `python tools/build.py` (see **Build**).
+
+## Build
+
+```bash
+pip install rcssmin websocket-client pillow
+python tools/build.py          # bundles, package pages, Tours grid, sitemap (needs Google Chrome)
+python tools/build.py assets   # bundles only
+```
+
+- **Bundles.** Every page loads `assets/css/site.min.css` (`fonts.css` + `style.css` + `components.css`), `assets/js/site.min.js` (`data.js` + `main.js`), plus `hero.min.css` on the home page and `quotation.min.css` on contact and payment. The build stamps each page's `?v=` with a hash of the bundle, so there is no version to bump by hand. The deploy workflow runs `tools/build.py assets` on every push, so a forgotten local build still ships the latest styles and scripts.
+- **Package pages.** The build opens each package in headless Chrome, takes the markup the site's own script renders and writes `package-<id>.html`. Rebuild when a package is added, removed or renamed, or its summary or photo changes. Dates and availability refresh by themselves in the browser.
+- **Tours grid.** The first view of the Tours page (tabs, count, cards) is written into `tours.html` between `<!-- build:... -->` markers, so the page doesn't jump when the script draws it.
+- **Fonts** are hosted with the site in `assets/fonts/` (Playfair Display, Raleway, Dancing Script, Inter; SIL Open Font License), declared in `assets/css/fonts.css` with size-matched fallbacks so text doesn't move when they load.
+- **Moving content** (home hero, photo piles, ticker, page hero cameras) has a pause / play button; `Motion` in `main.js`.
 
 ## Photos
 
-All photos live in `assets/img/media/` (nothing is loaded from Wix any more). Each photo keeps its original media id as the key of the `LOCAL` map at the top of `assets/js/data.js`; the map points to the file, and JPEGs also have an `-800` copy for cards. To add a photo: drop the file (up to 1600 px on the long side, plus an 800 px copy for JPEGs) into the folder and add one line to the map, then refer to it by that id in the package data. Social-share cards are the `og-*.jpg` files (1200×630).
+All photos live in `assets/img/media/` (nothing is loaded from Wix any more). Every photo has a WebP copy next to the JPEG, and the pages load the WebP; the JPEGs are the masters and the share images (`og-*.jpg`) stay JPEG because every network reads it. The home pile's prints also have a 640px copy for phones (`print-N-640.webp`). Add a WebP copy when adding a photo. Each photo keeps its original media id as the key of the `LOCAL` map at the top of `assets/js/data.js`; the map points to the file, and JPEGs also have an `-800` copy for cards. To add a photo: drop the file (up to 1600 px on the long side, plus an 800 px copy for JPEGs) into the folder and add one line to the map, then refer to it by that id in the package data. Social-share cards are the `og-*.jpg` files (1200×630).
 
 ## Hero photo credits
 
 Every page opens on a photo from `assets/img/hero/`. Unsplash photos are free for commercial use (credit appreciated). Wikimedia Commons photos keep their licence: CC BY-SA 4.0 needs the credit below and the adapted file shared under the same licence; CC0 needs nothing. Which package uses which photo is set in `IC.destHero` in `assets/js/data.js`.
 
-- `dest-bohol-*.jpg`: photo by Zed Benson on Unsplash (https://unsplash.com/photos/chocolate-hills-bohol-philippines-tyMVaFXcksU), Unsplash License
-- `dest-danang-*.jpg`: photo by Linda Gerbec on Unsplash (https://unsplash.com/photos/golden-bridge-held-by-giant-hands-in-vietnam-CsoQ-jm_0vQ), Unsplash License
-- `dest-palawan-*.jpg`: photo by Roman Lezhnin on Unsplash (https://unsplash.com/photos/kayaking-through-turquoise-water-surrounded-by-mountains-Tx6hqbZuHPo), Unsplash License
-- `dest-fuji-*.jpg`: photo by Max Bender on Unsplash (https://unsplash.com/photos/pagoda-and-mount-fuji-in-japan-FuxYvi-hcWQ), Unsplash License
-- `dest-boracay-*.jpg`: photo by Edward Ang on Unsplash (https://unsplash.com/photos/a-group-of-sailboats-sailing-on-a-body-of-water-near-palm-trees-7pUL8o7e8bQ), Unsplash License
-- `dest-halong-*.jpg`: photo by Marina Lobato on Unsplash (https://unsplash.com/photos/boats-on-turquoise-ha-long-bay-kG7pOXbBfNs), Unsplash License
-- `dest-coron-*.jpg`: photo by Junel Mujar on Unsplash (https://unsplash.com/photos/a-group-of-boats-floating-on-top-of-a-lake-surrounded-by-trees-IzcFq844SKk), Unsplash License
-- `dest-moalboal-*.jpg`: photo by Ken Suarez on Unsplash (https://unsplash.com/photos/aerial-photography-of-several-white-boats-near-island-oO7d1Q9mJZQ), Unsplash License
-- `dest-cebu-*.jpg`: photo by Jaye Hernandez on Unsplash (https://unsplash.com/photos/a-view-of-a-city-and-a-body-of-water-n4-7eI0aOtU), Unsplash License
-- `dest-shanghai-*.jpg`: photo by Freeman Zhou on Unsplash (https://unsplash.com/photos/lujiazui-skyline-at-the-bund-shanghai-oV9hp8wXkPE), Unsplash License
-- `dest-yunnan-*.jpg`: photo by Morgan Fung on Unsplash (https://unsplash.com/photos/the-mountains-are-reflected-in-the-still-water-of-the-lake-SU-GSBsHNJ8), Unsplash License
-- `dest-sky-*.jpg`: photo by Johny Goerend on Unsplash (https://unsplash.com/photos/white-and-black-airplane-wing-over-white-clouds-during-daytime-KB9r_hTzyeQ), Unsplash License
-- `dest-camotes-*.jpg`: photo by Rollymagpayo on Wikimedia Commons (https://commons.wikimedia.org/wiki/File:Pier_in_Camotes_Islands.jpg), CC BY-SA 4.0
-- `dest-camotes-sunset-*.jpg`: photo by Headshop5 on Wikimedia Commons (https://commons.wikimedia.org/wiki/File:Sunset_in_the_Camotes_Islands.jpg), CC0
+- `dest-bohol-*`: photo by Zed Benson on Unsplash (https://unsplash.com/photos/chocolate-hills-bohol-philippines-tyMVaFXcksU), Unsplash License
+- `dest-danang-*`: photo by Linda Gerbec on Unsplash (https://unsplash.com/photos/golden-bridge-held-by-giant-hands-in-vietnam-CsoQ-jm_0vQ), Unsplash License
+- `dest-palawan-*`: photo by Roman Lezhnin on Unsplash (https://unsplash.com/photos/kayaking-through-turquoise-water-surrounded-by-mountains-Tx6hqbZuHPo), Unsplash License
+- `dest-fuji-*`: photo by Max Bender on Unsplash (https://unsplash.com/photos/pagoda-and-mount-fuji-in-japan-FuxYvi-hcWQ), Unsplash License
+- `dest-boracay-*`: photo by Edward Ang on Unsplash (https://unsplash.com/photos/a-group-of-sailboats-sailing-on-a-body-of-water-near-palm-trees-7pUL8o7e8bQ), Unsplash License
+- `dest-halong-*`: photo by Marina Lobato on Unsplash (https://unsplash.com/photos/boats-on-turquoise-ha-long-bay-kG7pOXbBfNs), Unsplash License
+- `dest-coron-*`: photo by Junel Mujar on Unsplash (https://unsplash.com/photos/a-group-of-boats-floating-on-top-of-a-lake-surrounded-by-trees-IzcFq844SKk), Unsplash License
+- `dest-moalboal-*`: photo by Ken Suarez on Unsplash (https://unsplash.com/photos/aerial-photography-of-several-white-boats-near-island-oO7d1Q9mJZQ), Unsplash License
+- `dest-cebu-*`: photo by Jaye Hernandez on Unsplash (https://unsplash.com/photos/a-view-of-a-city-and-a-body-of-water-n4-7eI0aOtU), Unsplash License
+- `dest-shanghai-*`: photo by Freeman Zhou on Unsplash (https://unsplash.com/photos/lujiazui-skyline-at-the-bund-shanghai-oV9hp8wXkPE), Unsplash License
+- `dest-yunnan-*`: photo by Morgan Fung on Unsplash (https://unsplash.com/photos/the-mountains-are-reflected-in-the-still-water-of-the-lake-SU-GSBsHNJ8), Unsplash License
+- `dest-sky-*`: photo by Johny Goerend on Unsplash (https://unsplash.com/photos/white-and-black-airplane-wing-over-white-clouds-during-daytime-KB9r_hTzyeQ), Unsplash License
+- `dest-camotes-*`: photo by Rollymagpayo on Wikimedia Commons (https://commons.wikimedia.org/wiki/File:Pier_in_Camotes_Islands.jpg), CC BY-SA 4.0
+- `dest-camotes-sunset-*`: photo by Headshop5 on Wikimedia Commons (https://commons.wikimedia.org/wiki/File:Sunset_in_the_Camotes_Islands.jpg), CC0
 - `group-*.jpg`, `print-*`, `thumb-*`: the agency's own group photos
 
 ## Go-live checklist
 
 - **FormSubmit activation:** submit the inquiry form once from the live site and click the activation link that arrives at `inquiries@immaculateconnectionsph.com`.
-- **Domain move:** canonical tags, `og:url`, `twitter:image`, `sitemap.xml` and `robots.txt` all carry the GitHub Pages address. When the site moves to the agency's domain, replace `https://technextmarketing.github.io/immaculateconnectionsph/` with the new address in every file (`grep -rl technextmarketing.github.io`). `robots.txt` only takes effect at the root of a domain, so submit `sitemap.xml` in Search Console until then.
-- **Team profiles:** the About page and `team.html` show placeholder people. Replace them in `IC.team` (data.js), then remove the `noindex` tag from `team.html` and the `Disallow: /team.html` line in `robots.txt`.
+- **Domain move:** `CONFIG.siteUrl` in `main.js`, `SITE` in `tools/build.py`, canonical tags, `og:url`, `twitter:image`, `sitemap.xml` and `robots.txt` all carry the GitHub Pages address. When the site moves to the agency's domain, replace `https://technextmarketing.github.io/immaculateconnectionsph/` with the new address in every file (`grep -rl technextmarketing.github.io`). `robots.txt` only takes effect at the root of a domain, so submit `sitemap.xml` in Search Console until then.
+- **Team profiles:** the team section on the About page stays hidden while every entry in `IC.team` (data.js) is marked `placeholder: true`. Put in the real names and photos and drop `placeholder` from each one, and the section and `team.html` profiles appear; then remove the `noindex` tag from `team.html` and the `Disallow: /team.html` line in `robots.txt`.
 - **Payments:** `payment.html` is `noindex` and unlinked while `CONFIG.payments` is false. When payments are switched on, remove that tag and the `Disallow` line.
 - **Departure rule:** a travel date closes on its departure day (same as the Immaculate Ops dashboard).
 

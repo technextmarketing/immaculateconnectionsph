@@ -14,6 +14,9 @@
 
   const CONFIG = {
     brand: 'Immaculate Connections Travel Agency',
+    // Public address of the site: canonical links and structured data are built on it.
+    // Change it (with the other GitHub addresses, see the README) when the domain moves.
+    siteUrl: 'https://technextmarketing.github.io/immaculateconnectionsph/',
     shortName: 'Immaculate Connections',
     mobile: '+63 917 318 8997',
     mobileHref: 'tel:+639173188997',
@@ -50,9 +53,49 @@
   const $$ = (s, r = document) => Array.from(r.querySelectorAll(s));
   const reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
   const touch = window.matchMedia('(hover: none)').matches;
+
+  /* Motion: the hero camera, the photo piles, the ticker and the "now booking" pill advance
+     by themselves. A small button on each stops or restarts all of them at once (WCAG 2.2.2)
+     and the choice holds for the rest of the visit. Reduced-motion visitors get stills, so
+     they get no buttons. */
+  const Motion = (() => {
+    let paused = false;
+    try { paused = sessionStorage.getItem('ic-motion') === 'paused'; } catch (e) { /* storage blocked */ }
+    const subs = [];
+    const ICONS = {
+      pause: '<svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><rect x="6.5" y="5" width="3.6" height="14" rx="1"/><rect x="13.9" y="5" width="3.6" height="14" rx="1"/></svg>',
+      play: '<svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M8.5 5.8v12.4a1 1 0 0 0 1.53.85l9.9-6.2a1 1 0 0 0 0-1.7l-9.9-6.2A1 1 0 0 0 8.5 5.8Z"/></svg>'
+    };
+    const sync = () => {
+      document.documentElement.classList.toggle('motion-paused', paused);
+      document.querySelectorAll('.motion-toggle').forEach(b => {
+        const label = paused ? 'Play moving content' : 'Pause moving content';
+        b.innerHTML = ICONS[paused ? 'play' : 'pause']; b.setAttribute('aria-label', label); b.title = label;
+      });
+    };
+    const set = v => {
+      paused = !!v;
+      try { sessionStorage.setItem('ic-motion', paused ? 'paused' : 'play'); } catch (e) { /* storage blocked */ }
+      sync(); subs.forEach(fn => fn(paused));
+    };
+    sync();
+    return {
+      get paused() { return paused; },
+      on(fn) { subs.push(fn); },
+      button(host, cls, first) {
+        if (reduced || !host) return null;
+        const b = document.createElement('button');
+        b.type = 'button'; b.className = 'motion-toggle' + (cls ? ' ' + cls : '');
+        b.addEventListener('click', e => { e.stopPropagation(); set(!paused); });
+        if (first) host.prepend(b); else host.appendChild(b);
+        sync(); return b;
+      }
+    };
+  })();
   const esc = s => String(s ?? '').replace(/[&<>"']/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
   const wix = (id, w, h, al) => IC.wix ? IC.wix(id, w, h, al) : id;
-  const peso = n => '₱' + Number(n).toLocaleString('en-PH');
+  const NUM = new Intl.NumberFormat('en-PH');   // one formatter: toLocaleString builds a new one on every call
+  const peso = n => '₱' + NUM.format(Number(n));
   // A payment step is offered only when the agency has switched it on and has
   // real account details to show. Until then a quotation is an estimate and
   // the traveller simply sends it to us.
@@ -84,18 +127,19 @@
     return t.status;
   };
   const statusLabel = t => IC.statusLabel[effStatus(t)] || '';
-  const money = (p, n) => { const v = n == null ? p.from : n; return (p && p.currency === 'USD' ? '$' : '₱') + Number(v).toLocaleString('en-PH'); };
+  const money = (p, n) => { const v = n == null ? p.from : n; return (p && p.currency === 'USD' ? '$' : '₱') + NUM.format(Number(v)); };
   const priceValue = t => (t.price ? t.price.from * (t.price.currency === 'USD' ? 57 : 1) : 9e9);
-  const pkgUrl = t => `package.html?id=${encodeURIComponent(t.id)}`;
+  // Each package is a real page (built by tools/build.py); package.html?id= still works and forwards there.
+  const pkgUrl = t => `package-${encodeURIComponent(t.id)}.html`;
   // A package page opens on a sharp photo of its destination (IC.destHero); a package without one falls back to its own image
   const pkgHeroBg = t => {
     const k = IC.destHero && IC.destHero[t.id];
     const pic = k
-      ? `<picture><source media="(max-width: 700px)" srcset="assets/img/hero/dest-${k}-1280.jpg"><img src="assets/img/hero/dest-${k}-2400.jpg" width="2400" height="1350" alt="" fetchpriority="high" decoding="async"></picture>`
+      ? `<picture><source media="(max-width: 700px)" srcset="assets/img/hero/dest-${k}-1280.webp"><img src="assets/img/hero/dest-${k}-2400.webp" width="2400" height="1350" alt="" fetchpriority="high" decoding="async"></picture>`
       : `<img src="${wix(t.hero || t.image, 1600)}" alt="" decoding="async">`;
     return `<div class="ph-rig"><figure class="ph-scene is-on${k ? '' : ' soft'}" data-move="push">${pic}</figure></div>`;
   };
-  const abs = p => new URL(p, location.href).href;
+  const abs = p => new URL(p, CONFIG.siteUrl).href;
   const setMeta = (name, v) => { const el = $(`meta[name="${name}"]`); if (el) el.content = v || ''; };
   const ctaLabel = t => { const s = effStatus(t); return s === 'past' ? 'Ask about the next departure' : s === 'soon' ? 'Ask about this tour' : s === 'offer' ? 'Book this offer' : 'Request a quote'; };
   const flagImg = t => (t.flag ? `<img class="flag" src="https://flagcdn.com/w40/${t.flag}.png" srcset="https://flagcdn.com/w80/${t.flag}.png 2x" width="20" height="15" alt="${esc(t.country || '')} flag" loading="lazy">` : '');
@@ -239,13 +283,27 @@
       bar.style.transform = `scaleX(${max > 0 ? Math.min(1, window.scrollY / max) : 0})`;
     };
     const onScroll = () => { if (!ticking) { ticking = true; requestAnimationFrame(paint); } };
-    measure(); paint();
-    // Pages that build their hero in script (package, team) call this once it exists;
-    // a page left without a hero gets the ordinary sticky header back.
-    IC.refreshHeader = () => { measure(); if (!heroEl && document.body.hasAttribute('data-hero-top')) { document.body.removeAttribute('data-hero-top'); measure(); } paint(); };
+    // Layout is read in the next frame, once, so the reads don't force extra layouts of a
+    // page that the other scripts are still building. Until then the header simply starts
+    // over the hero, which is where every page opens.
+    let pending = 0;
+    const remeasure = () => {
+      if (pending) return;
+      pending = requestAnimationFrame(() => {
+        pending = 0; measure();
+        // Pages that build their hero in script (package, team) call this once it exists;
+        // a page left without a hero gets the ordinary sticky header back.
+        if (!heroEl && document.body.hasAttribute('data-hero-top')) { document.body.removeAttribute('data-hero-top'); measure(); }
+        paint();
+      });
+    };
+    heroEl = document.body.hasAttribute('data-hero-top') ? $('.hero-tl, .page-hero, .pkg-hero') : null;
+    if (header && heroEl && window.scrollY === 0) header.classList.add('on-hero');
+    remeasure();
+    IC.refreshHeader = remeasure;
     window.addEventListener('scroll', onScroll, { passive: true });
-    window.addEventListener('resize', () => { measure(); paint(); }, { passive: true });
-    window.addEventListener('load', measure);
+    window.addEventListener('resize', remeasure, { passive: true });
+    window.addEventListener('load', remeasure);
     const page = document.body.dataset.page;
     $$('[data-nav]').forEach(a => a.classList.toggle('active', a.dataset.nav === page));
 
@@ -375,7 +433,7 @@
       nodes[n].classList.add('on');
       cur = n;
       const t = list[n];
-      box.href = 'package.html?id=' + encodeURIComponent(t.id);
+      box.href = pkgUrl(t);
       box.setAttribute('aria-label', 'Now booking: ' + t.name + ', from ' + money(t.price) + '. Open the package.');
     };
     go(0);
@@ -384,10 +442,11 @@
     const DUR = 4200;
     box.style.setProperty('--hn-dur', DUR + 'ms');
     box.classList.add('ticking');
-    let timer = setInterval(() => go((cur + 1) % nodes.length), DUR);
+    let timer = Motion.paused ? 0 : setInterval(() => go((cur + 1) % nodes.length), DUR);
+    if (!timer) box.classList.add('paused');
     const pause = () => { if (timer) { clearInterval(timer); timer = 0; box.classList.add('paused'); } };
     const play = () => {
-      if (timer) return;
+      if (timer || Motion.paused) return;
       box.classList.remove('paused', 'ticking');
       void box.offsetWidth;                     // restart the progress bar in step
       box.classList.add('ticking');
@@ -398,6 +457,7 @@
     box.addEventListener('focus', pause);
     box.addEventListener('blur', play);
     document.addEventListener('visibilitychange', () => (document.hidden ? pause() : play()));
+    Motion.on(p => (p ? pause() : play()));
   }
 
   /* ---------- Hero quote card ----------
@@ -446,6 +506,10 @@
     if (!track || !IC.destinationsTicker) return;
     const items = IC.destinationsTicker.map(([n, s]) => `<span class="marquee-item">${esc(n)}<small>${esc(s)}</small></span>`).join('');
     track.innerHTML = items + items;
+    const bar = track.closest('.marquee');
+    if (!bar || reduced) return;
+    Motion.button(bar, 'on-navy');
+    if ('IntersectionObserver' in window) new IntersectionObserver(en => bar.classList.toggle('is-idle', !en[0].isIntersecting)).observe(bar);
   }
 
   /* ===================== Tour cards ===================== */
@@ -586,8 +650,12 @@
   function initPackagePage() {
     const root = $('#pkgPage');
     if (!root || !IC.tours) return;
-    const id = new URLSearchParams(location.search).get('id');
+    const params = new URLSearchParams(location.search);
+    // Pre-built pages carry their package id; the old package.html?id= address forwards to them.
+    const baked = document.body.dataset.pkg;
+    const id = baked || params.get('id');
     const t = IC.tours.find(x => x.id === id);
+    if (t && !baked && !params.has('bake')) { location.replace(pkgUrl(t) + location.hash); return; }
     if (!t) {
       root.innerHTML = `<section class="section"><div class="container text-center"><span class="eyebrow center">Package not found</span><h1 class="h2" style="margin-bottom:12px">We couldn’t find that package</h1><p class="lead" style="margin:0 auto 24px">It may have been renamed. Browse all current packages instead.</p><a class="btn btn-primary btn-lg" href="tours.html">Browse tour packages ${I.arrow}</a></div></section>`;
       return;
@@ -601,6 +669,11 @@
     const hasGuide = !!(guide && guide.length);
     const gallery = t.gallery && t.gallery.length ? t.gallery : [t.image];
 
+    // Dates can run into the next year, so the heading takes its year(s) from the dates themselves.
+    const years = hasDates ? [...new Set(t.travelDates.map(d => Number(d.y || t.year)).filter(Boolean))].sort() : [];
+    const yearsLabel = years.length > 1 ? `${years[0]}\u2013${years[years.length - 1]}` : years.length ? String(years[0]) : '';
+
+    if (!baked) {   // a pre-built page already has its own title, description and share tags
     document.title = `${t.name} | ${CONFIG.shortName}`;
     const md = $('meta[name="description"]'); if (md) md.content = t.summary;
     const og = $('meta[property="og:title"]'); if (og) og.content = t.name;
@@ -611,6 +684,7 @@
     const canon = $('link[rel="canonical"]'); if (canon) canon.href = self;
     const ogu = $('meta[property="og:url"]'); if (ogu) ogu.content = self;
     setMeta('twitter:title', t.name); setMeta('twitter:description', t.summary); setMeta('twitter:image', ogi ? ogi.content : '');
+    }
 
     // Travel dates lead: they are what a visitor books, so they come first in the tabs and on the page
     const tabs = [hasDates ? ['dates', 'Dates & price'] : null, ['overview', 'Overview'], hasIt ? ['itinerary', 'Itinerary'] : null, ['inclusions', 'Inclusions'], ['places', 'Places'], hasGuide ? ['guide', 'Know before you go'] : null, hasPosters ? ['posters', 'Posters'] : null].filter(Boolean);
@@ -649,7 +723,7 @@
 
             ${hasDates ? `<article id="dates" class="pkg-section reveal">
               <span class="eyebrow">Dates &amp; price</span>
-              <h2 class="h2">Travel dates 2026</h2>
+              <h2 class="h2">Travel dates${yearsLabel ? ' ' + yearsLabel : ''}</h2>
               <p class="muted" style="margin-bottom:18px">${esc(t.travelDatesNote || '')} Base rate ${esc(t.price.label.toLowerCase())} ${money(t.price)} ${esc(t.price.unit)}.</p>
               <div class="date-grid">${t.travelDates.map(d => isPastDate(d, t)
                 ? `<span class="date-chip past" title="This departure date has passed">${I.cal}<span>${esc(d.d)}${d.y ? ' ' + d.y : ''}</span></span>`
@@ -682,8 +756,8 @@
               <span class="eyebrow">What’s covered</span>
               <h2 class="h2">Inclusions${t.exclusions && t.exclusions.length ? ' & exclusions' : ''}</h2>
               <div class="inc-grid">
-                <div class="inc-col"><h4>${I.check} Inclusions</h4><ul>${t.inclusions.map(x => `<li>${I.check}<span>${esc(x)}</span></li>`).join('')}</ul></div>
-                ${t.exclusions && t.exclusions.length ? `<div class="inc-col exc"><h4>${I.x} Exclusions</h4><ul>${t.exclusions.map(x => `<li>${I.x}<span>${esc(x)}</span></li>`).join('')}</ul></div>` : ''}
+                <div class="inc-col"><h3>${I.check} Inclusions</h3><ul>${t.inclusions.map(x => `<li>${I.check}<span>${esc(x)}</span></li>`).join('')}</ul></div>
+                ${t.exclusions && t.exclusions.length ? `<div class="inc-col exc"><h3>${I.x} Exclusions</h3><ul>${t.exclusions.map(x => `<li>${I.x}<span>${esc(x)}</span></li>`).join('')}</ul></div>` : ''}
               </div>
               ${t.hotels ? `<div class="pkg-note"><strong>${I.bed} Accommodation</strong><ul>${t.hotels.map(h => `<li>${esc(h)}</li>`).join('')}</ul></div>` : ''}
               ${t.optional ? `<div class="pkg-note gold"><strong>${I.star} Optional</strong><ul>${t.optional.map(h => `<li>${esc(h)}</li>`).join('')}</ul></div>` : ''}
@@ -704,7 +778,7 @@
               <h2 class="h2">Your ${esc(t.country)} travel guide</h2>
               <p class="muted" style="margin-bottom:22px">Practical tips for ${esc(t.country)}, from entry rules to what to eat. General guidance for a Philippine traveller — rules and prices change, so confirm the latest before you fly. ${t.region === 'intl' ? 'Need a hand with the visa or tickets? Our team is glad to help.' : ''}</p>
               <div class="guide-grid">
-                ${guide.map(g => `<div class="guide-card"><span class="guide-ic">${GUIDE_ICONS[g.ic] || I.info}</span><div class="guide-body"><h4>${esc(g.t)}</h4>${g.lead ? `<p class="guide-lead">${esc(g.lead)}</p>` : ''}<p>${esc(g.body)}</p></div></div>`).join('')}
+                ${guide.map(g => `<div class="guide-card"><span class="guide-ic">${GUIDE_ICONS[g.ic] || I.info}</span><div class="guide-body"><h3>${esc(g.t)}</h3>${g.lead ? `<p class="guide-lead">${esc(g.lead)}</p>` : ''}<p>${esc(g.body)}</p></div></div>`).join('')}
               </div>
             </article>` : ''}
 
@@ -719,7 +793,7 @@
           <aside class="pkg-side">
             <div class="side-card sticky reveal">
               ${priceBlock(t, true)}
-              ${hasDates ? `<ul class="meta"><li>${I.cal}<span>${t.travelDates.length} departure dates in ${t.year || 2026}</span></li></ul>` : ''}
+              ${hasDates ? `<ul class="meta"><li>${I.cal}<span>${t.travelDates.length} departure dates${yearsLabel ? ' in ' + yearsLabel : ''}</span></li></ul>` : ''}
               <a class="btn btn-primary btn-block btn-lg" href="contact.html?service=tour&package=${encodeURIComponent(t.id)}">${ctaLabel(t)} ${I.arrow}</a>
               <a class="btn btn-outline btn-block" href="${CONFIG.messenger}" target="_blank" rel="noopener">${I.msg} Message us on Facebook</a>
               <a class="btn btn-light btn-block" href="${CONFIG.mobileHref}">${I.phone} ${esc(CONFIG.mobile)}</a>
@@ -765,9 +839,10 @@
     window.addEventListener('scroll', () => sticky.classList.toggle('show', window.scrollY > 500), { passive: true });
 
     // Structured data
-    const ld = { '@context': 'https://schema.org', '@type': 'TouristTrip', name: t.name, description: t.summary, url: abs(pkgUrl(t)), image: abs(wix(t.image, 1200, 630, t.imageAlign)), touristType: 'Leisure', itinerary: t.places.map(p => ({ '@type': 'TouristAttraction', name: p })), provider: { '@type': 'TravelAgency', name: CONFIG.brand, telephone: CONFIG.mobile, email: CONFIG.email, url: 'https://www.immaculateconnectionsph.com/' } };
-    if (t.price) ld.offers = { '@type': 'Offer', price: t.price.from, priceCurrency: t.price.currency || 'PHP', availability: effStatus(t) === 'past' ? 'https://schema.org/SoldOut' : 'https://schema.org/InStock', url: location.href };
-    const s = document.createElement('script'); s.type = 'application/ld+json'; s.textContent = JSON.stringify(ld); document.head.appendChild(s);
+    const ld = { '@context': 'https://schema.org', '@type': 'TouristTrip', name: t.name, description: t.summary, url: abs(pkgUrl(t)), image: abs(IC.wixJpg ? IC.wixJpg(t.image) : wix(t.image)), touristType: 'Leisure', itinerary: t.places.map(p => ({ '@type': 'TouristAttraction', name: p })), provider: { '@type': 'TravelAgency', name: CONFIG.brand, telephone: CONFIG.mobile, email: CONFIG.email, url: 'https://www.immaculateconnectionsph.com/' } };
+    if (t.price) ld.offers = { '@type': 'Offer', price: t.price.from, priceCurrency: t.price.currency || 'PHP', availability: effStatus(t) === 'past' ? 'https://schema.org/SoldOut' : 'https://schema.org/InStock', url: abs(pkgUrl(t)) };
+    $$('script[data-ld="pkg"]').forEach(x => x.remove());   // the pre-built copy; this one has today's availability
+    const s = document.createElement('script'); s.type = 'application/ld+json'; s.dataset.ld = 'pkg'; s.textContent = JSON.stringify(ld); document.head.appendChild(s);
 
   }
 
@@ -776,10 +851,15 @@
   function ensureLightbox() {
     if (lb) return lb;
     lb = document.createElement('div');
-    lb.className = 'lightbox'; lb.setAttribute('role', 'dialog'); lb.setAttribute('aria-modal', 'true');
+    lb.className = 'lightbox'; lb.setAttribute('role', 'dialog'); lb.setAttribute('aria-modal', 'true'); lb.setAttribute('aria-label', 'Photo viewer');
     lb.innerHTML = `<button class="lightbox-close" type="button" aria-label="Close photo">${I.x}</button><span class="lightbox-count" aria-live="polite"></span><button class="lightbox-nav prev" type="button" aria-label="Previous photo">${I.left}</button><figure style="margin:0;text-align:center"><img alt=""><figcaption></figcaption></figure><button class="lightbox-nav next" type="button" aria-label="Next photo">${I.left}</button>`;
     document.body.appendChild(lb);
-    const close = () => { lb.classList.remove('open'); document.body.style.overflow = ''; };
+    const close = () => {
+      lb.classList.remove('open'); document.body.style.overflow = '';
+      lbInert.forEach(el => { el.inert = false; }); lbInert = [];
+      if (lbReturn && document.contains(lbReturn)) lbReturn.focus({ preventScroll: true });
+      lbReturn = null;
+    };
     lb.addEventListener('click', e => {
       if (e.target.closest('.lightbox-nav')) { stepLightbox(e.target.closest('.next') ? 1 : -1); return; }
       if (e.target === lb || e.target.closest('.lightbox-close')) close();
@@ -787,6 +867,12 @@
     window.addEventListener('keydown', e => {
       if (!lb.classList.contains('open')) return;
       if (e.key === 'Escape') close();
+      else if (e.key === 'Tab') {   // keep Tab inside the viewer
+        const f = $$('button', lb).filter(b => b.offsetParent !== null);
+        if (!f.length) return;
+        const i = f.indexOf(document.activeElement);
+        e.preventDefault(); f[(i + (e.shiftKey ? -1 : 1) + f.length) % f.length].focus();
+      }
       else if (e.key === 'ArrowRight') stepLightbox(1);
       else if (e.key === 'ArrowLeft') stepLightbox(-1);
     });
@@ -796,7 +882,7 @@
     return lb;
   }
   // The viewer shows one photo, or steps through a group: openLightbox(src, title, [{src, title}], index)
-  let lbList = [], lbAt = 0;
+  let lbList = [], lbAt = 0, lbReturn = null, lbInert = [];
   function showLightbox(dir) {
     const box = ensureLightbox(), it = lbList[lbAt]; if (!it) return;
     const img = $('img', box);
@@ -813,7 +899,14 @@
     lbList = list && list.length ? list : [{ src, title }]; lbAt = list && list.length ? Math.max(0, index || 0) : 0;
     box.classList.toggle('single', lbList.length < 2);
     showLightbox(0);
+    if (!box.classList.contains('open')) {
+      lbReturn = document.activeElement;
+      // the page behind is out of reach of Tab and screen readers while the photo is open
+      lbInert = [...document.body.children].filter(el => el !== box && !el.inert && el.tagName !== 'SCRIPT');
+      lbInert.forEach(el => { el.inert = true; });
+    }
     box.classList.add('open'); document.body.style.overflow = 'hidden';
+    $('.lightbox-close', box).focus({ preventScroll: true });
   }
   function initGallery() {
     const root = $('#gallery');
@@ -910,7 +1003,7 @@
         if (!reduced) prints[k].animate([{ translate: '0 0' }, { translate: '0 -28px' }, { translate: '0 0' }], { duration: 760, easing: 'cubic-bezier(.16, 1, .3, 1)' });
       };
       const stop = () => { clearInterval(timer); timer = null; };
-      const start = () => { if (reduced || timer || hover || !inView || document.hidden) return; timer = setInterval(() => front(order[1]), 4200); };
+      const start = () => { if (reduced || timer || hover || !inView || document.hidden || Motion.paused) return; timer = setInterval(() => front(order[1]), 4200); };
       prints.forEach((p, k) => p.addEventListener('click', () => { front(k); stop(); start(); }));
       stack.addEventListener('keydown', e => {
         if (e.key === 'ArrowRight' || e.key === 'ArrowDown') { e.preventDefault(); front(order[1]); }
@@ -930,6 +1023,8 @@
       stack.addEventListener('pointerup', e => { if (sx == null) return; const dx = e.clientX - sx; sx = null; if (Math.abs(dx) > 45) front(dx < 0 ? order[1] : order[order.length - 1]); });
       if ('IntersectionObserver' in window) new IntersectionObserver(en => { inView = en[0].isIntersecting; inView ? start() : stop(); }, { threshold: .3 }).observe(stack);
       document.addEventListener('visibilitychange', () => (document.hidden ? stop() : start()));
+      Motion.on(p => (p ? stop() : start()));
+      Motion.button(stack, 'ab-motion');
       lay();
     }
 
@@ -992,7 +1087,9 @@
       if (img && !reduced) {
         cam = img.animate([{ transform: 'scale(1.06) translate3d(-1.5%, 0, 0)' }, { transform: 'scale(1.16) translate3d(1.5%, -1%, 0)' }], { duration: 16000, easing: 'ease-in-out', iterations: Infinity, direction: 'alternate' });
         cam.pause();
-        if ('IntersectionObserver' in window) new IntersectionObserver(en => { en[0].isIntersecting ? cam.play() : cam.pause(); }).observe(band);
+        let seen = false;
+        if ('IntersectionObserver' in window) new IntersectionObserver(en => { seen = en[0].isIntersecting; seen && !Motion.paused ? cam.play() : cam.pause(); }).observe(band);
+        Motion.on(p => (p || !seen ? cam.pause() : cam.play()));
       }
       if (fine && !reduced) {
         band.addEventListener('pointermove', e => {
@@ -1450,7 +1547,7 @@
       const anim = $('img', s).animate([{ transform: a }, { transform: b }], loop
         ? { duration: 18000, easing: 'ease-in-out', iterations: Infinity, direction: 'alternate' }
         : { duration: DWELL + 2600, easing: 'cubic-bezier(.33, 0, .4, 1)', fill: 'both' });
-      if (!visible || document.hidden) anim.pause();
+      if (!visible || document.hidden || Motion.paused) anim.pause();
       return anim;
     };
     const setPlace = name => {
@@ -1477,7 +1574,7 @@
       setPlace(s.dataset.place || '');
       load(scenes[(to + 1) % scenes.length]);
     };
-    const start = () => { if (reduced || scenes.length < 2 || timer || !visible || document.hidden) return; timer = setInterval(next, DWELL); };
+    const start = () => { if (reduced || scenes.length < 2 || timer || !visible || document.hidden || Motion.paused) return; timer = setInterval(next, DWELL); };
     const stop = () => { clearInterval(timer); timer = null; };
     scenes[0]._cam = move(scenes[0], scenes.length < 2);
     if (scenes.length > 1) {
@@ -1513,9 +1610,11 @@
 
     /* rest when nobody can see it */
     const pause = () => { stop(); scenes.forEach(s => s._cam && s._cam.pause()); };
-    const play = () => { scenes.forEach(s => s._cam && s.classList.contains('is-on') && s._cam.play()); start(); };
+    const play = () => { if (Motion.paused) return; scenes.forEach(s => s._cam && s.classList.contains('is-on') && s._cam.play()); start(); };
     if ('IntersectionObserver' in window) new IntersectionObserver(en => { visible = en[0].isIntersecting; visible ? play() : pause(); }, { threshold: .05 }).observe(hero);
     document.addEventListener('visibilitychange', () => (document.hidden ? pause() : play()));
+    Motion.on(p => (p ? pause() : visible && !document.hidden && play()));
+    Motion.button(hero, 'on-photo ph-motion');
     start();
 
     /* the hero's figures count up to their value once */
@@ -1569,13 +1668,19 @@
       if (img && img.dataset.src) { img.src = img.dataset.src; delete img.dataset.src; }
       return img;
     };
-    const loadPrint = p => { const img = $('img', p); if (img && img.dataset.src) { img.src = img.dataset.src; delete img.dataset.src; } };
+    const loadPrint = p => {
+      const img = $('img', p); if (!img || !img.dataset.src) return;
+      if (img.dataset.srcset) { img.sizes = img.dataset.sizes || ''; img.srcset = img.dataset.srcset; delete img.dataset.srcset; }
+      img.src = img.dataset.src; delete img.dataset.src;
+    };
+    let near = 1;   // how deep into the pile photos load: the top two first, the rest after the page load
+    const warmPile = () => { near = FAR; order.forEach((k, d) => { if (d <= FAR) loadPrint(prints[k]); }); };
     const camera = s => {
       if (reduced || !s) return;
       if (s._cam) s._cam.cancel();
       const [a, b] = MOVES[s.dataset.move] || MOVES.push;
       s._cam = $('img', s).animate([{ transform: a }, { transform: b }], { duration: DWELL + 2600, easing: 'cubic-bezier(.33, 0, .4, 1)', fill: 'both' });
-      if (!visible || document.hidden) s._cam.pause();
+      if (!visible || document.hidden || Motion.paused) s._cam.pause();
     };
     const setPlace = name => {
       if (!place || !name) return;
@@ -1587,11 +1692,12 @@
       requestAnimationFrame(() => requestAnimationFrame(() => { n.className = ''; }));
       setTimeout(() => { if (old.parentNode) old.remove(); }, 700);
     };
-    const center = (row, el) => { if (row && el && row.scrollWidth > row.clientWidth) row.scrollTo({ left: el.offsetLeft - row.clientWidth / 2 + el.offsetWidth / 2, behavior: reduced ? 'auto' : 'smooth' }); };
+    const center = (row, el) => requestAnimationFrame(() => { if (row && el && row.scrollWidth > row.clientWidth) row.scrollTo({ left: el.offsetLeft - row.clientWidth / 2 + el.offsetWidth / 2, behavior: reduced ? 'auto' : 'smooth' }); });
     const markChip = () => {
       chips.forEach((c, k) => { c.setAttribute('aria-pressed', String(k === si)); c.classList.remove('run'); });
       const c = chips[si]; if (!c) return;
-      void c.offsetWidth; if (timer) c.classList.add('run');
+      // restart the chip's meter a frame later instead of forcing a layout to do it
+      requestAnimationFrame(() => requestAnimationFrame(() => { if (timer && chips[si] === c) c.classList.add('run'); }));
       center(chipRow, c);
     };
     const showScene = async (n, manual) => {
@@ -1625,7 +1731,7 @@
         p.classList.toggle('is-top', d === 0);
         p.setAttribute('aria-hidden', d === 0 ? 'false' : 'true');
         const z = $('.print-zoom', p); if (z) z.tabIndex = d === 0 ? 0 : -1;
-        if (d <= FAR) loadPrint(p);
+        if (d <= Math.max(near, 1)) loadPrint(p);
       });
       const top = order[0];
       thumbs.forEach((b, k) => b.setAttribute('aria-current', String(k === top)));
@@ -1681,7 +1787,7 @@
 
     /* the timer */
     const lightboxOpen = () => !!$('.lightbox.open');
-    const held = () => hovering || focused || dragging || !visible || document.hidden || lightboxOpen();
+    const held = () => hovering || focused || dragging || !visible || document.hidden || lightboxOpen() || Motion.paused;
     const stop = () => { clearInterval(timer); timer = null; chips.forEach(c => c.classList.remove('run')); };
     const start = () => {
       if (reduced || timer || held()) return;
@@ -1791,16 +1897,19 @@
 
     /* off screen or hidden: everything rests */
     const pauseAll = () => { stop(); scenes.forEach(s => s._cam && s._cam.pause()); };
-    const playAll = () => { scenes.forEach(s => s._cam && s.classList.contains('is-on') && s._cam.play()); start(); };
+    const playAll = () => { if (Motion.paused) return; scenes.forEach(s => s._cam && s.classList.contains('is-on') && s._cam.play()); start(); };
     if ('IntersectionObserver' in window) {
       new IntersectionObserver(en => { visible = en[0].isIntersecting; visible ? playAll() : pauseAll(); }, { threshold: .05 }).observe(hero);
     }
     document.addEventListener('visibilitychange', () => (document.hidden ? pauseAll() : playAll()));
+    Motion.on(p => (p ? pauseAll() : visible && !document.hidden && playAll()));
+    Motion.button($('.tl-reel', hero), 'on-photo tl-motion', true);
 
     prints.forEach(p => p.addEventListener('animationend', ev => { if (ev.animationName === 'tlDeal') p.classList.remove('deal'); }));
     layout(); camera(scenes[0]); setPlace((scenes[0].dataset.place || '').replace(/&amp;/g, '&'));
-    const warm = () => loadScene(scenes[1]);
-    if ('requestIdleCallback' in window) requestIdleCallback(warm, { timeout: 2500 }); else setTimeout(warm, 1500);
+    const warm = () => { warmPile(); loadScene(scenes[1]); };
+    const idle = () => ('requestIdleCallback' in window ? requestIdleCallback(warm, { timeout: 2500 }) : setTimeout(warm, 800));
+    if (document.readyState === 'complete') idle(); else window.addEventListener('load', idle, { once: true });
     start();
   }
 
@@ -1814,10 +1923,15 @@
   const tmHref = m => `team.html?member=${encodeURIComponent(m.slug)}`;
 
   // About-page grid: each card is a link to that member's profile page.
+  // Profiles marked placeholder: true are drafts; the section stays hidden until real ones exist.
+  const realTeam = () => (IC.team || []).filter(m => !m.placeholder);
   function initTeam() {
     const grid = $('#teamGrid');
     if (!grid || !IC.team) return;
-    grid.innerHTML = IC.team.map((m, i) => `
+    const team = realTeam(), section = grid.closest('section');
+    if (section) section.hidden = !team.length;
+    if (!team.length) return;
+    grid.innerHTML = team.map((m, i) => `
       <a class="tm-card reveal" href="${tmHref(m)}" style="--d:${(i % 3) * 0.08}s" aria-label="View ${esc(m.name)}\u2019s profile">
         <div class="tm-photo${m.photo ? '' : ' plain'}">${tmAvatar(m)}</div>
         <div class="tm-body">
@@ -1834,7 +1948,8 @@
     const root = $('#teamProfile');
     if (!root || !IC.team) return;
     const slug = new URLSearchParams(location.search).get('member');
-    const m = slug ? IC.team.find(x => x.slug === slug) : IC.team[0];
+    const team = realTeam();
+    const m = slug ? team.find(x => x.slug === slug) : team[0];
     if (!m) {
       root.innerHTML = `<section class="section"><div class="container text-center"><span class="eyebrow center">Profile not found</span><h1 class="h2" style="margin-bottom:12px">We couldn\u2019t find that team member</h1><a class="btn btn-primary btn-lg" href="about.html#team">Meet the team ${I.arrow}</a></div></section>`;
       return;
@@ -1848,7 +1963,7 @@
 
     root.innerHTML = `
       <section class="page-hero tp-hero">
-        <div class="hero-bg" aria-hidden="true"><div class="ph-rig"><figure class="ph-scene is-on" data-move="push"><picture><source media="(max-width: 700px)" srcset="assets/img/hero/group-1-1280.jpg"><img src="assets/img/hero/group-1-lg.jpg" width="1632" height="918" alt="" fetchpriority="high" decoding="async"></picture></figure></div></div>
+        <div class="hero-bg" aria-hidden="true"><div class="ph-rig"><figure class="ph-scene is-on" data-move="push"><picture><source media="(max-width: 700px)" srcset="assets/img/hero/group-1-1280.webp"><img src="assets/img/hero/group-1-lg.webp" width="1632" height="918" alt="" fetchpriority="high" decoding="async"></picture></figure></div></div>
         <div class="container">
           <nav class="breadcrumb" aria-label="Breadcrumb"><a href="index.html">Home</a>${I.left.replace('m15 18-6-6 6-6', 'm9 18 6-6-6-6')}<a href="about.html#team">Our team</a>${I.left.replace('m15 18-6-6 6-6', 'm9 18 6-6-6-6')}<span>${esc(m.name)}</span></nav>
           <div class="tp-head">
@@ -1967,8 +2082,13 @@
     $$('[data-ref]').forEach(el => (el.textContent = ref || '—'));
   }
 
+  // Figures that come from the package data, so they stay true when packages change
+  function initStats() {
+    $$('[data-stat="countries"]').forEach(el => { el.textContent = String(countryList().filter(c => c.name !== 'Other').length); });
+  }
+
   document.addEventListener('DOMContentLoaded', () => {
-    initHeader(); initContactLinks(); initHeroTitle(); initTicker(); initOffers(); initFeatured(); initToursPage(); initPackagePage();
+    initStats(); initHeader(); initContactLinks(); initHeroTitle(); initTicker(); initOffers(); initFeatured(); initToursPage(); initPackagePage();
     initTravelogue(); initGallery(); initTeam(); initFaq(); initSubnav(); initMisc(); initInquiry(); initPayment(); initTeamProfile(); initReveal();
     initHeroNext(); initQuoteCard(); initHeroMotion(); initPageHeroes(); initAboutFx(); initHeroStage();
     if (IC.refreshHeader) IC.refreshHeader();

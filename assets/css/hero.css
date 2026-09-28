@@ -60,7 +60,7 @@
 .hero-sub { font-size: clamp(1.02rem, 1.25vw, 1.14rem); line-height: 1.6; color: rgba(255, 255, 255, .9); max-width: 48ch; margin-bottom: 28px; }
 .hero-stats { margin-top: 4px; }
 .hero-tl .hero-stats { display: grid; grid-template-columns: repeat(2, max-content); gap: 18px 44px; }
-.hero-tl .hero-stats span { font-size: .72rem; }
+.hero-tl .hero-stats span { font-size: max(.72rem, 11px); }
 .hero-tl .hero-actions .btn { flex: 1 1 auto; }
 .hero-tl .hero-actions .btn-lg { padding: 0 22px; font-size: .95rem; min-width: 0; }
 /* Big screens: a wider stage so the pile of prints can grow */
@@ -90,7 +90,7 @@
   position: absolute; left: 6%; right: 6%; bottom: 3%; margin: 0; padding: 12px 12px 0;
   background: #fffdf8; border-radius: 4px;
   box-shadow: 0 32px 58px -26px rgba(4, 12, 30, .78), 0 4px 12px rgba(4, 12, 30, .3);
-  transform: translate3d(calc(var(--d) * var(--fx) * var(--side, -1)), calc(var(--d) * var(--fy)), 0) rotate(calc(var(--r) * (1 + var(--d) * var(--fr)))) scale(calc(1 - var(--d) * .045));
+  transform: translate3d(calc(var(--d) * var(--fx) * var(--side, -1)), calc(var(--d) * var(--fy)), 0) rotate(calc(var(--r) * (1 + var(--d) * var(--fr)))) scale(calc(1 - var(--d) * .06));
   z-index: calc(20 - var(--d)); opacity: var(--o, 1);
   transition: transform .8s var(--ease-out), opacity .5s var(--ease);
   user-select: none; -webkit-user-select: none; -webkit-touch-callout: none;
@@ -193,19 +193,9 @@
 .plan .quote-card { animation: none; }
 
 /* ---------- Ambient layers: painted once, never animated ---------- */
-.hero-fx { position: absolute; inset: 0; z-index: -1; pointer-events: none; overflow: hidden; }
 
 /* Two soft pools of colour warming the corners. Radial gradients rather than
    blur filters, so they cost nothing to paint and nothing to keep on screen. */
-.hero-orb { position: absolute; border-radius: 50%; opacity: .5; }
-.hero-orb.a {
-  width: 46vw; height: 46vw; max-width: 560px; max-height: 560px; left: -6%; top: -10%;
-  background: radial-gradient(circle at 50% 50%, rgba(255, 183, 48, .5), rgba(255, 183, 48, 0) 68%);
-}
-.hero-orb.b {
-  width: 52vw; height: 52vw; max-width: 640px; max-height: 640px; right: -12%; bottom: -18%;
-  background: radial-gradient(circle at 50% 50%, rgba(29, 103, 205, .55), rgba(29, 103, 205, 0) 70%);
-}
 
 /* ---------- Entrance choreography ---------- */
 /* Pure CSS, so the copy appears even if main.js never arrives. Each child
@@ -256,7 +246,7 @@
 .hero-next:hover, .hero-next:focus-visible { border-color: rgba(255, 183, 48, .7); background: rgba(15, 59, 120, .52); }
 .hero-next .hn-label {
   display: inline-flex; align-items: center; gap: 8px; flex: none;
-  font-size: .66rem; font-weight: 800; letter-spacing: .16em; text-transform: uppercase;
+  font-size: max(.66rem, 11px); font-weight: 800; letter-spacing: .16em; text-transform: uppercase;
   color: rgba(255, 255, 255, .72);
 }
 .hero-next .hn-label .dot { width: 7px; height: 7px; border-radius: 50%; background: var(--gold); animation: pulse 2s infinite; }
@@ -305,11 +295,11 @@
   transform: scaleX(var(--v, 0)); transition: transform .45s var(--ease-out);
   background: linear-gradient(90deg, var(--blue), var(--gold));
 }
-.qc-meter .qc-count { font-size: .72rem; font-weight: 800; letter-spacing: .08em; text-transform: uppercase; color: var(--muted); flex: none; }
+.qc-meter .qc-count { font-size: max(.72rem, 11px); font-weight: 800; letter-spacing: .08em; text-transform: uppercase; color: var(--muted); flex: none; }
 .quote-card.ready .qc-meter .qc-count { color: var(--success); }
 
 .qq-picks { display: flex; flex-wrap: wrap; gap: 6px; margin-top: -4px; }
-.qq-picks .pick-label { flex: 100%; font-size: .72rem; font-weight: 700; color: var(--muted); margin-bottom: 2px; }
+.qq-picks .pick-label { flex: 100%; font-size: max(.72rem, 11px); font-weight: 700; color: var(--muted); margin-bottom: 2px; }
 .pick {
   display: inline-flex; align-items: center; gap: 6px; padding: 6px 11px; border-radius: 999px;
   border: 1px solid var(--line); background: #fff; color: var(--navy);
@@ -333,25 +323,20 @@
   content: ""; position: absolute; top: 0; bottom: 0; left: 0; width: 45%; z-index: -1;
   background: linear-gradient(100deg, transparent, rgba(255, 255, 255, .45), transparent);
   transform: translate3d(-140%, 0, 0) skewX(-14deg);
-  animation: btnSheen 2.6s 1.2s var(--ease) infinite;
 }
+.quote-card .btn.ready:hover::after, .quote-card .btn.ready:focus-visible::after { animation: btnSheen 1.4s var(--ease) 1; }
 @keyframes btnSheen {
   0%        { transform: translate3d(-140%, 0, 0) skewX(-14deg); }
   55%, 100% { transform: translate3d(300%, 0, 0) skewX(-14deg); }
 }
 
 /* ---------- Wave: two still layers, one offset behind the other ---------- */
-.hero-wave { height: 74px; }
-.hero-wave svg { position: absolute; left: 0; bottom: 0; width: 100%; height: 74px; }
-.hero-wave .w1 { color: var(--bg); }
-.hero-wave .w2 { color: rgba(255, 255, 255, .28); bottom: 12px; height: 62px; }
 
 /* =========================================================
    Screens and preferences
    ========================================================= */
 
 @media (max-width: 900px) {
-  .hero-wave .w2 { display: none; }
   .plan-grid { grid-template-columns: 1fr; gap: 36px; }
   .hero-tl { min-height: 0; padding: calc(var(--nav-h) + 22px) 0 126px; }
   .tl-grid { grid-template-columns: minmax(0, 1fr); grid-template-areas: "head" "prints" "rest"; row-gap: 30px; }
@@ -374,14 +359,13 @@
 
 @media (max-width: 640px) {
   .hero-next { margin-bottom: 18px; padding: 8px 14px 8px 12px; gap: 10px; width: 100%; }
-  .hero-next .hn-label { font-size: .58rem; letter-spacing: .12em; }
+  .hero-next .hn-label { font-size: max(.58rem, 11px); letter-spacing: .12em; }
   .hero-next .hn-slot { height: 19px; }
   .hn-item b { font-size: .82rem; }
   .hn-item i { font-size: .74rem; }
   .qc-meter { margin-bottom: 12px; }
   .qq-picks .pick:nth-child(n+6) { display: none; }   /* label + four chips */
-  .pick { font-size: .72rem; padding: 5px 9px; }
-  .hero-orb.a, .hero-orb.b { opacity: .4; }
+  .pick { font-size: max(.72rem, 11px); padding: 5px 9px; }
   .hero-tl { padding: calc(var(--nav-h) + 16px) 0 118px; }
   .hero-tl .hero-title { font-size: clamp(2rem, 9vw, 2.6rem); max-width: none; }
   .hero-stats div { flex: 1 1 42%; }
@@ -393,8 +377,6 @@
   .tl-place { font-size: .84rem; }
   .plan { padding: 48px 0 64px; }
   .plan-actions .btn { flex-basis: 100%; }
-  .hero-wave { height: 44px; }
-  .hero-wave svg { height: 44px; }
 }
 
 /* Reduced motion: everything lands in place, nothing loops. */
@@ -410,4 +392,16 @@
   .hero-next.ticking .hn-bar i, .quote-card .btn.ready::after { animation: none; }
   .hero-next .hn-bar { display: none; }
   .hn-item { transition: none; }
+}
+
+/* pause / play sits first in the destination reel; on phones it joins the place row */
+.tl-reel .motion-toggle { margin-right: -8px; }
+@media (max-width: 900px) {
+  .tl-reel .motion-toggle { position: absolute; right: 0; top: -6px; margin: 0; }
+}
+
+/* phones: the four figures share the width evenly and a long label wraps instead of running off */
+@media (max-width: 640px) {
+  .hero-tl .hero-stats { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 14px 18px; }
+  .hero-tl .hero-stats span { display: block; letter-spacing: .08em; line-height: 1.35; }
 }

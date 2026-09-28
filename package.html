@@ -4,8 +4,9 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <!-- Security: restrict what the page may load/connect to, and how much referrer to leak. -->
-  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; base-uri 'self'; object-src 'none'; script-src 'self'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: https://flagcdn.com; media-src 'self'; connect-src 'self' https://formsubmit.co; frame-src https://www.google.com; form-action 'self' https://formsubmit.co; upgrade-insecure-requests">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; base-uri 'self'; object-src 'none'; script-src 'self'; style-src 'self' 'unsafe-inline'; font-src 'self'; img-src 'self' data: https://flagcdn.com; media-src 'self'; connect-src 'self' https://formsubmit.co; frame-src https://www.google.com; form-action 'self' https://formsubmit.co; upgrade-insecure-requests">
   <meta name="referrer" content="strict-origin-when-cross-origin">
+  <meta name="robots" content="noindex, follow">
   <title>Tour Package | Immaculate Connections Travel Agency</title>
   <meta name="description" content="Full package details from Immaculate Connections Travel Agency: itinerary, inclusions, places, travel dates and price.">
   <meta name="theme-color" content="#1d67cd">
@@ -20,11 +21,9 @@
   <meta name="twitter:description" content="Itinerary, inclusions, places, travel dates and price.">
   <meta name="twitter:image" content="https://technextmarketing.github.io/immaculateconnectionsph/assets/img/media/og-7d63895b8b89.jpg">
   <link rel="icon" href="assets/img/media/ab1a9837b67f.png" type="image/png">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,500&family=Raleway:wght@400;500;600;700;800&family=Dancing+Script:wght@600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="assets/css/style.css?v=20260928h">
-  <link rel="stylesheet" href="assets/css/components.css?v=20260928h">
+  <link rel="preload" href="assets/fonts/raleway-latin.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="assets/fonts/playfair-display-latin.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="assets/css/site.min.css?v=487e4f6782">
 </head>
 <body data-page="tours" data-hero-top class="has-sticky-cta">
   <a class="skip-link" href="#main">Skip to content</a>
@@ -85,7 +84,7 @@
           </div>
         </div>
         <div>
-          <h4>Explore</h4>
+          <h2>Explore</h2>
           <ul class="footer-links">
             <li><a href="tours.html">All tour packages</a></li>
             <li><a href="tours.html?country=philippines">Philippines packages</a></li>
@@ -94,7 +93,7 @@
           </ul>
         </div>
         <div>
-          <h4>Services</h4>
+          <h2>Services</h2>
           <ul class="footer-links">
             <li><a href="services.html#ticketing">Ticketing</a></li>
             <li><a href="services.html#hotels">Hotel bookings &amp; reservations</a></li>
@@ -104,7 +103,7 @@
           </ul>
         </div>
         <div>
-          <h4>Inquire &amp; get a quote</h4>
+          <h2>Inquire &amp; get a quote</h2>
           <ul class="footer-contact">
             <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg><span>Unit 4E, 4th Floor, JL Millennium Building, Don Jose Avila Street, Cebu City, Cebu, Philippines</span></li>
             <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg><span>Mobile: <a data-tel href="#">+63 917 318 8997</a><br>Tel: <a data-landline href="#">(032) 238 3343</a></span></li>
@@ -123,7 +122,6 @@
   <a class="fab-msg" href="#" data-msg aria-label="Message us on Facebook Messenger"><span class="fab-pulse"></span><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2C6.36 2 2 6.13 2 11.7c0 2.91 1.19 5.44 3.14 7.17.16.15.26.35.27.57l.05 1.78a.8.8 0 0 0 1.12.71l1.99-.88a.8.8 0 0 1 .53-.04c.91.25 1.88.39 2.9.39 5.64 0 10-4.13 10-9.7S17.64 2 12 2Zm6 7.46-2.94 4.66a1.5 1.5 0 0 1-2.17.4l-2.34-1.75a.6.6 0 0 0-.72 0l-3.16 2.4c-.42.32-.97-.18-.69-.63l2.94-4.66a1.5 1.5 0 0 1 2.17-.4l2.34 1.75a.6.6 0 0 0 .72 0l3.16-2.4c.42-.32.97.18.69.63Z"/></svg><span>Message us</span></a>
   <button class="to-top" id="toTop" type="button" aria-label="Back to top"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 19V5M5 12l7-7 7 7"/></svg></button>
 
-  <script src="assets/js/data.js?v=20260928h"></script>
-  <script src="assets/js/main.js?v=20260928h"></script>
+  <script src="assets/js/site.min.js?v=1a20d25f62"></script>
 </body>
 </html>
