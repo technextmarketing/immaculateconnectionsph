@@ -10,7 +10,7 @@
   const IC = window.IC || (window.IC = {});
   const U = IC.util;
   if (!U) return;
-  const { $, $$, esc, reduced, touch } = U;
+  const { $, $$, esc, reduced, touch, Motion } = U;
   const fine = window.matchMedia('(pointer: fine)').matches && !touch;
   const EASE = 'cubic-bezier(.16, 1, .3, 1)';
 
@@ -312,7 +312,7 @@
   function badgeDoc(doc) {
     const card = $('.badge-card', doc), seats = $('.seat-map', doc), legend = $('[data-out="seatNote"]', doc);
     const SEATS = 96;
-    if (seats && !seats.children.length) seats.innerHTML = Array.from({ length: SEATS }, (_, k) => `<i style="--k:${k}"></i>`).join('');
+    if (seats && !$('i', seats)) seats.insertAdjacentHTML('beforeend', Array.from({ length: SEATS }, (_, k) => `<i style="--k:${k}"></i>`).join(''));
     const dots = seats ? $$('i', seats) : [];
     // a little spring: pointer movement and every change nudge the badge
     let ang = 0, vel = 0, raf = 0;
@@ -450,9 +450,41 @@
 
     render(null);
     const wrap = doc.closest('.svc-doc-wrap');
+    fitHero(wrap, kind);
     tilt(wrap, doc, 6);
     if (api.intro) api.intro();
     else if (!reduced) doc.animate([{ opacity: 0, transform: 'translate3d(0, 34px, 0) rotate(3deg)', clipPath: 'inset(0 0 100% 0 round 18px)' }, { opacity: 1, transform: 'none', clipPath: 'inset(0 0 0% 0 round 18px)' }], { duration: 1100, delay: 250, easing: EASE, fill: 'backwards' });
+  }
+
+  /* The hero is one screen tall. Side by side the document has its own column; stacked
+     (tablets, phones) the document gets whatever height is left above the form and shows
+     its top edge tucked behind it, with a tap to see the whole of it. */
+  const MORE = { transport: 'trip ticket', hotel: 'stay voucher', flights: 'boarding pass', mice: 'event pass' };
+  function fitHero(wrap, kind) {
+    const hero = wrap && wrap.closest('.svc-hero'); if (!hero) return;
+    const stacked = window.matchMedia('(max-width: 900px)');
+    const more = document.createElement('span');
+    more.className = 'doc-more'; more.setAttribute('aria-hidden', 'true');
+    more.innerHTML = `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg>See the whole ${esc(MORE[kind] || 'document')}`;
+    wrap.appendChild(more);
+    const fit = () => {
+      if (wrap.classList.contains('open')) return;
+      wrap.classList.remove('peek'); wrap.style.removeProperty('--peek');
+      if (!stacked.matches) return;
+      const room = window.innerHeight - (hero.offsetHeight - wrap.offsetHeight);
+      if (room >= wrap.offsetHeight) return;
+      wrap.style.setProperty('--peek', Math.max(window.innerHeight < 760 ? 100 : 124, Math.floor(room)) + 'px');
+      wrap.classList.add('peek');
+    };
+    wrap.addEventListener('click', () => { if (wrap.classList.contains('peek')) wrap.classList.toggle('open'); });
+    let t = 0, w = window.innerWidth;
+    // phones fire resize when the address bar slides; only a real width change re-measures
+    window.addEventListener('resize', () => { if (window.innerWidth === w) return; w = window.innerWidth; clearTimeout(t); t = setTimeout(fit, 150); });
+    fit();
+    if (document.fonts && document.fonts.ready) document.fonts.ready.then(fit);
+    // on a phone the floating Messenger button would sit on the form's fields
+    const phone = window.matchMedia('(max-width: 640px)'), form = $('.svc-form', hero);
+    if (form) onView(form, v => document.body.classList.toggle('fab-quiet', v && phone.matches), { threshold: .2 });
   }
 
   // Buttons elsewhere on the page that fill the hero form: data-fill='{"vehicle":"Van"}'
@@ -487,10 +519,16 @@
   /* =========================================================
      Journey storyboard: the stage follows the step you are reading
      ========================================================= */
+  /* The journey storyboard: the scene on one side, five steps on the other. A step button
+     (or the timer, while the section is on screen) changes the scene. The timer is the gold
+     line under the current step; when its animation ends the next step comes up. Hovering or
+     focusing the steps holds it, a click hands control to the visitor, the pause button stops
+     it with everything else, and reduced-motion visitors get no timer at all. */
   function initStoryboards() {
     $$('[data-storyboard]').forEach(sb => {
-      const steps = $$('.sb-step', sb), scenes = $$('.sb-scene', sb), fill = $('.sb-progress i', sb);
+      const steps = $$('.sb-step', sb), scenes = $$('.sb-scene', sb);
       if (!steps.length || !scenes.length) return;
+      const btns = steps.map(s => $('.sb-btn', s));
       let cur = -1;
       const show = n => {
         if (n === cur || n < 0) return;
@@ -501,13 +539,23 @@
           if (on) { s.classList.remove('play'); void s.offsetWidth; s.classList.add('play'); }
         });
         steps.forEach((s, k) => { s.classList.toggle('is-on', k === n); s.classList.toggle('is-done', k < n); });
+        btns.forEach((b, k) => { if (b) { if (k === n) b.setAttribute('aria-current', 'step'); else b.removeAttribute('aria-current'); } });
       };
-      if ('IntersectionObserver' in window) {
-        // on phones the stage sits on top of the screen, so a step counts as read lower down
-        const narrow = window.matchMedia('(max-width: 900px)').matches;
-        const io = new IntersectionObserver(en => en.forEach(e => { if (e.isIntersecting) show(steps.indexOf(e.target)); }), { rootMargin: narrow ? '-66% 0px -22% 0px' : '-42% 0px -48% 0px' });
-        steps.forEach(s => io.observe(s));
-      }
+      btns.forEach((b, k) => b && b.addEventListener('click', () => { sb.classList.remove('auto'); show(k); }));
+      // arrow keys walk the steps like a list of tabs
+      btns.forEach((b, k) => b && b.addEventListener('keydown', e => {
+        const d = e.key === 'ArrowDown' || e.key === 'ArrowRight' ? 1 : e.key === 'ArrowUp' || e.key === 'ArrowLeft' ? -1 : 0;
+        if (!d) return;
+        e.preventDefault(); const n = (k + d + btns.length) % btns.length; sb.classList.remove('auto'); show(n); btns[n].focus();
+      }));
+      steps.forEach(st => { const t = $('.sb-time i', st); if (t) t.addEventListener('animationend', () => { if (sb.classList.contains('auto')) show((cur + 1) % steps.length); }); });
+      const grid = $('.sb-grid', sb) || sb;
+      grid.addEventListener('pointerenter', e => { if (e.pointerType === 'mouse') sb.classList.add('hold'); });
+      grid.addEventListener('pointerleave', () => sb.classList.remove('hold'));
+      grid.addEventListener('focusin', () => sb.classList.add('hold'));
+      grid.addEventListener('focusout', e => { if (!grid.contains(e.relatedTarget)) sb.classList.remove('hold'); });
+      onView(sb, v => sb.classList.toggle('seen', v), { threshold: .35 });
+      if (!reduced) { sb.style.setProperty('--sb-dwell', '5200ms'); sb.classList.add('auto'); if (Motion) Motion.button($('.sb-stage', sb), 'on-photo'); }
       // scenes pick up the visitor's own choices from the hero form
       const pick = v => $$('[data-pick]', sb).forEach(el => {
         const list = [].concat((v && v[el.dataset.pickField || 'vehicle']) || []);
@@ -515,19 +563,7 @@
       });
       document.addEventListener('svc:change', e => pick(e.detail.v));
       pick(IC.svcValues);
-      steps.forEach((s, k) => s.addEventListener('click', () => show(k)));
       show(0);
-      if (fill) {
-        let raf = 0, live = false;
-        const upd = () => {
-          raf = 0;
-          const r = sb.getBoundingClientRect();
-          const p = clamp((window.innerHeight * .55 - r.top) / Math.max(1, r.height - window.innerHeight * .4), 0, 1);
-          fill.style.transform = `scaleY(${p.toFixed(3)})`;
-        };
-        onView(sb, v => { live = v; if (v) upd(); }, { threshold: 0 });
-        window.addEventListener('scroll', () => { if (live && !raf) raf = requestAnimationFrame(upd); }, { passive: true });
-      }
     });
   }
 
