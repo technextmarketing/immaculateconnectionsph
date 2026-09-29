@@ -5,13 +5,15 @@
     python tools/build.py assets   # bundles only: this is what the deploy workflow runs
     python tools/build.py pages    # package pages, Tours grid and sitemap only
 
-assets  Minifies the stylesheets and scripts into four bundles and stamps every page's
-        ?v= with a hash of the bundle, so browsers pick up a change without anyone
-        bumping a version by hand:
+assets  Copies the shared header and footer (_partials/) into every page, minifies the
+        stylesheets and scripts into bundles and stamps every page's ?v= with a hash of
+        the bundle, so browsers pick up a change without anyone bumping a version by hand:
           assets/css/site.min.css       fonts.css + style.css + components.css (every page)
           assets/css/hero.min.css       hero.css (home)
           assets/css/quotation.min.css  quotation.css (contact, payment)
+          assets/css/pages.min.css      pages.css (service pages, gallery, blog)
           assets/js/site.min.js         data.js + main.js (every page)
+          assets/js/pages.min.js        pages.js (service pages, gallery, blog)
 
 pages   Opens each package in headless Chrome, takes the markup the site's own script
         renders, and writes it into a real page, package-<id>.html, with that package's
@@ -43,16 +45,43 @@ def write(p, s):
     io.open(p, "w", encoding="utf-8", newline="\n").write(s); return True
 
 
+# ---------------------------------------------------------------- partials
+# The header (with the Services menu and the phone drawer) and the footer are written once,
+# in _partials/, and copied into every page between <!-- build:header --> / <!-- /build:header -->
+# and <!-- build:footer --> / <!-- /build:footer --> markers. Edit the partials, not the pages.
+PARTIALS = [("header", "_partials/header.html", r'  <header class="header" id="header">.*?\n(?=\n  <main)'),
+            ("footer", "_partials/footer.html", r'  <footer class="footer">.*?\n(?=\n  <script src=)')]
+
+
+def inject_partials():
+    n = 0
+    for p in sorted(glob.glob("*.html")):
+        s = o = read(p)
+        for key, src, first in PARTIALS:
+            html = read(src).rstrip("\n")
+            start, end = f"<!-- build:{key} -->", f"<!-- /build:{key} -->"
+            if start in s:
+                s = re.sub(re.escape(start) + r".*?" + re.escape(end), lambda m: f"{start}\n{html}\n  {end}", s, count=1, flags=re.S)
+            else:   # first run on a page: wrap its own copy in markers
+                m = re.search(first, s, re.S)
+                if m: s = s[:m.start()] + f"  {start}\n{html}\n  {end}\n" + s[m.end():]
+        if s != o: n += write(p, s)
+    print(f"  partials: {n} page(s) updated")
+
+
 # ---------------------------------------------------------------- assets
 BUNDLES = [
     ("assets/css/site.min.css", ["assets/css/fonts.css", "assets/css/style.css", "assets/css/components.css"]),
     ("assets/css/hero.min.css", ["assets/css/hero.css"]),
     ("assets/css/quotation.min.css", ["assets/css/quotation.css"]),
+    ("assets/css/pages.min.css", ["assets/css/pages.css"]),
     ("assets/js/site.min.js", ["assets/js/data.js", "assets/js/main.js"]),
+    ("assets/js/pages.min.js", ["assets/js/pages.js"]),
 ]
 
 
 def build_assets():
+    inject_partials()
     import rcssmin
     sys.path.insert(0, os.path.join(ROOT, 'tools'))
     from jsmin_safe import minify as jsmin
@@ -247,7 +276,10 @@ def build_pages():
 
     # sitemap: the pages people land on, then every package
     today = date.today().isoformat()
-    main = [("", "weekly", "1.0"), ("tours.html", "weekly", "0.9"), ("services.html", "monthly", "0.8"), ("about.html", "monthly", "0.6"), ("contact.html", "monthly", "0.8")]
+    main = [("", "weekly", "1.0"), ("tours.html", "weekly", "0.9"), ("services.html", "monthly", "0.8"), ("car-rental.html", "monthly", "0.8"), ("hotel-booking.html", "monthly", "0.8"),
+            ("ticketing.html", "monthly", "0.8"), ("mice.html", "monthly", "0.8"), ("gallery.html", "monthly", "0.7"), ("blog.html", "weekly", "0.7"), ("about.html", "monthly", "0.6"), ("contact.html", "monthly", "0.8")]
+    main += [(os.path.basename(p), "monthly", "0.6") for p in sorted(glob.glob("blog-*.html"))]
+    main = [m for m in main if not m[0] or os.path.exists(m[0])]   # only pages that exist
     old = read("sitemap.xml") if os.path.exists("sitemap.xml") else ""
     def lastmod(loc, fresh):
         m = re.search(rf"<loc>{re.escape(loc)}</loc><lastmod>([\d-]+)</lastmod>", old)

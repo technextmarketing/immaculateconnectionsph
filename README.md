@@ -20,6 +20,7 @@ See [AUDIT.md](AUDIT.md) for the full audit of the current site, the pain points
 | `package-<id>.html` | One real page per package, written by `tools/build.py` from `package.html` and the package's entry in `data.js`: its own title, description, share image (`assets/img/media/og-pkg-<id>.jpg`), canonical address and structured data, with the page body already rendered (hero, sticky section tabs, photo gallery, travel dates first, overview, itinerary, inclusions, places, posters, related packages). The script still runs there and refreshes dates and availability. |
 | `package.html` | The template for those pages, and the old `package.html?id=<package-id>` address, which now forwards to `package-<id>.html`. Kept out of search (`noindex`). |
 | `payment.html` | Held back, not linked from anywhere: the payment step is off until the agency confirms a booking flow (`CONFIG.payments`). It states that nothing is collected on the website. |
+| `car-rental.html`, `hotel-booking.html`, `ticketing.html`, `mice.html` | The four service pages under the Services menu. The hero is the service's own document (trip ticket, stay voucher, boarding pass, event badge) that fills in live as the visitor types in the inquiry form beside it; the form continues to `contact.html` with the details filled in (`page=` tells the inquiry page to open on the contact step). Below it a journey storyboard (five scenes that follow the step being read), then the service's own sections. Behaviour in `assets/js/pages.js`, styles in `assets/css/pages.css`. |
 | `about.html` | Why choose us, the four values, mission and vision, clickable team cards (three per row) that open profiles, previous tours gallery, contact details. |
 | `team.html` | Individual team-member profile (`team.html?member=<slug>`): hero with photo/initials, bio, what they handle, focus areas, an at-a-glance side card and the other members. Content comes from `IC.team` in `data.js`. |
 | `contact.html` | Three-step inquiry form delivered to `inquiries@immaculateconnectionsph.com`. On submit it renders a printable quotation the traveller can download, email or send on Messenger. No payment is requested. |
@@ -67,7 +68,8 @@ payment: {
 - **Inclusion tags on cards** (Airfare, Hotel, Meals, Transport, Tour guide, Entrance fees, Insurance and so on) are derived automatically from each package's `inclusions` list by `INC_TAGS` in `assets/js/main.js`.
 - **Travel dates** on a package page link straight to the inquiry form with the package and the chosen departure pre-filled.
 - **Team cards on the About page**: `IC.team` in `assets/js/data.js`. Each entry is a desk in the agency. Add a `name` (and optionally a `photo`, using a media id from the `LOCAL` map in `data.js`, plus a direct `email`) and the card becomes a personal profile with the person's name as the title and the desk as the subtitle. Leave `name` empty and the card shows the desk with the agency's own service icon, so the section stays accurate until real names and photographs are supplied.
-- **Copy**: the HTML files. Header and footer are repeated in each page. Don't edit `package-*.html` (rebuilt from `package.html`) or the `.min` files.
+- **Header and footer**: `_partials/header.html` (with the Services menu and the phone drawer) and `_partials/footer.html`. The build copies them into every page between `<!-- build:header -->` and `<!-- build:footer -->` markers, so edit the partials, never the copies.
+- **Copy**: the HTML files. Don't edit `package-*.html` (rebuilt from `package.html`) or the `.min` files.
 - **After any edit** to a stylesheet, a script, `package.html` or a package in `data.js`, run `python tools/build.py` (see **Build**).
 
 ## Build
@@ -100,10 +102,19 @@ Every page opens on a photo from `assets/img/hero/`. Unsplash photos are free fo
 - `dest-halong-*`: photo by Marina Lobato on Unsplash (https://unsplash.com/photos/boats-on-turquoise-ha-long-bay-kG7pOXbBfNs), Unsplash License
 - `dest-coron-*`: photo by Junel Mujar on Unsplash (https://unsplash.com/photos/a-group-of-boats-floating-on-top-of-a-lake-surrounded-by-trees-IzcFq844SKk), Unsplash License
 - `dest-moalboal-*`: photo by Ken Suarez on Unsplash (https://unsplash.com/photos/aerial-photography-of-several-white-boats-near-island-oO7d1Q9mJZQ), Unsplash License
-- `dest-cebu-*`: photo by Jaye Hernandez on Unsplash (https://unsplash.com/photos/a-view-of-a-city-and-a-body-of-water-n4-7eI0aOtU), Unsplash License
+- `dest-cebu-{2400,1280,960}`: photo by Jaye Hernandez on Unsplash (https://unsplash.com/photos/a-view-of-a-city-and-a-body-of-water-n4-7eI0aOtU), Unsplash License
 - `dest-shanghai-*`: photo by Freeman Zhou on Unsplash (https://unsplash.com/photos/lujiazui-skyline-at-the-bund-shanghai-oV9hp8wXkPE), Unsplash License
 - `dest-yunnan-*`: photo by Morgan Fung on Unsplash (https://unsplash.com/photos/the-mountains-are-reflected-in-the-still-water-of-the-lake-SU-GSBsHNJ8), Unsplash License
 - `dest-sky-*`: photo by Johny Goerend on Unsplash (https://unsplash.com/photos/white-and-black-airplane-wing-over-white-clouds-during-daytime-KB9r_hTzyeQ), Unsplash License
+- `dest-cebu-night-*`: photo by Zany Jadraque on Unsplash (https://unsplash.com/photos/long-exposure-photo-of-urban-city-with-lights-wptXOM6JytM), Unsplash License
+- `dest-cebu-aerial-*`: photo by Fritz Gabriel Carilo on Unsplash (https://unsplash.com/photos/birds-eye-view-photography-of-buildings-fulyk6dVFSQ), Unsplash License
+- `dest-hoian-lanterns-*`: photo by Hieu Do Quang on Unsplash (https://unsplash.com/photos/a-bunch-of-lanterns-that-are-hanging-from-a-tree-nj70WidlPjc), Unsplash License
+- `svc-road-palms-*`: photo by Mae De los Santos on Unsplash (https://unsplash.com/photos/an-empty-road-surrounded-by-palm-trees-under-a-cloudy-blue-sky-JCShU4j-jr8), Unsplash License
+- `svc-stay-anda-*`: photo by Bryan Agua on Unsplash (https://unsplash.com/photos/photo-of-four-loungers-under-gazebo-facing-swimming-pool--HTTS0vxkVU), Unsplash License
+- `svc-stay-panglao-*`: photo by Brian Kairuz on Unsplash (https://unsplash.com/photos/blue-calm-sea-under-blue-and-white-skies-hiqElPJaLbM), Unsplash License
+- `svc-fly-wing-*`: photo by Madison Olling on Unsplash (https://unsplash.com/photos/view-of-airliner-wing-6wmxDOa_AO4), Unsplash License
+- `svc-fly-panglao-*`: photo by Kylle Pangan on Unsplash (https://unsplash.com/photos/a-large-building-with-a-green-roof-and-a-curved-walkway-MZPiA5MNa6M), Unsplash License
+- `svc-mice-audience-*`: photo by Headway on Unsplash (https://unsplash.com/photos/crowd-of-people-sitting-on-chairs-inside-room-F2KRf_QfCqw), Unsplash License
 - `dest-camotes-*`: photo by Rollymagpayo on Wikimedia Commons (https://commons.wikimedia.org/wiki/File:Pier_in_Camotes_Islands.jpg), CC BY-SA 4.0
 - `dest-camotes-sunset-*`: photo by Headshop5 on Wikimedia Commons (https://commons.wikimedia.org/wiki/File:Sunset_in_the_Camotes_Islands.jpg), CC0
 - `group-*.jpg`, `print-*`, `thumb-*`: the agency's own group photos

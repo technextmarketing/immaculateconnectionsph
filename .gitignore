@@ -9,3 +9,6 @@ hero section home page/
 secrets.json
 __pycache__/
 *.pyc
+
+# Design-tool working files (briefs, captures): kept on the drive, never deployed
+.impeccable/

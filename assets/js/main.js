@@ -302,8 +302,44 @@
     window.addEventListener('scroll', onScroll, { passive: true });
     window.addEventListener('resize', remeasure, { passive: true });
     window.addEventListener('load', remeasure);
-    const page = document.body.dataset.page;
+    const page = document.body.dataset.page, sub = document.body.dataset.sub;
     $$('[data-nav]').forEach(a => a.classList.toggle('active', a.dataset.nav === page));
+    $$('[data-sub]').forEach(a => { const on = !!sub && a.dataset.sub === sub; a.classList.toggle('active', on); if (on) a.setAttribute('aria-current', 'page'); });
+
+    /* Services menu: opens on hover (mouse), on the caret button (touch, keyboard),
+       and shows a photo of whichever service the pointer or focus is on. */
+    const item = $('#navServicesItem');
+    if (item) {
+      const caret = $('.nav-caret', item), shot = $('.nm-shot img', item), cap = $('.nm-shot figcaption', item);
+      const items = $$('.nm-item', item);
+      let timer = 0, want = '';
+      const setShot = a => {
+        if (!a || !shot) return;
+        items.forEach(x => x.classList.toggle('is-hot', x === a));
+        const src = a.dataset.shot; if (!src || want === src) return;
+        want = src; shot.classList.add('swap');
+        const im = new Image();
+        im.onload = () => { if (want !== src) return; shot.src = src; cap.textContent = ($('b', a) || a).textContent; requestAnimationFrame(() => shot.classList.remove('swap')); };
+        im.src = src;
+      };
+      const open = () => {
+        clearTimeout(timer); if (item.classList.contains('open')) return;
+        item.classList.add('open'); caret.setAttribute('aria-expanded', 'true');
+        setShot($('.nm-item.active', item) || items[0]);
+      };
+      const close = now => {
+        clearTimeout(timer);
+        const done = () => { item.classList.remove('open'); caret.setAttribute('aria-expanded', 'false'); };
+        if (now) done(); else timer = setTimeout(done, 240);
+      };
+      item.addEventListener('pointerenter', e => { if (e.pointerType === 'mouse') { clearTimeout(timer); timer = setTimeout(open, 60); } });
+      item.addEventListener('pointerleave', e => { if (e.pointerType === 'mouse') close(); });
+      caret.addEventListener('click', () => (item.classList.contains('open') ? close(true) : open()));
+      items.forEach(a => { a.addEventListener('pointerenter', () => setShot(a)); a.addEventListener('focus', () => setShot(a)); });
+      item.addEventListener('keydown', e => { if (e.key === 'Escape' && item.classList.contains('open')) { close(true); caret.focus(); } });
+      item.addEventListener('focusout', e => { if (!item.contains(e.relatedTarget)) close(true); });
+      document.addEventListener('pointerdown', e => { if (!item.contains(e.target)) close(true); });
+    }
 
     const toggle = $('#navToggle'), drawer = $('#drawer');
     if (toggle && drawer) {
@@ -313,6 +349,13 @@
       $$('[data-close-drawer]', drawer).forEach(el => el.addEventListener('click', close));
       $$('a', drawer).forEach(a => a.addEventListener('click', close));
       window.addEventListener('keydown', e => { if (e.key === 'Escape') close(); });
+      // the drawer's Services list folds open; it starts open on a service page
+      $$('.drawer-toggle', drawer).forEach(b => {
+        const list = document.getElementById(b.getAttribute('aria-controls')); if (!list) return;
+        const set = on => { b.setAttribute('aria-expanded', String(on)); list.hidden = !on; };
+        b.addEventListener('click', () => set(list.hidden));
+        if (page === b.dataset.nav) set(true);
+      });
     }
   }
 
@@ -328,11 +371,12 @@
   /* ===================== Motion: reveal, tilt, hero words ===================== */
   function initReveal() {
     const els = $$('.reveal');
-    if (!els.length) return;
-    if (reduced || !('IntersectionObserver' in window)) { els.forEach(e => e.classList.add('in')); return; }
+    // scripts that add content later (pages.js) hand their .reveal elements to IC.reveal
+    if (reduced || !('IntersectionObserver' in window)) { IC.reveal = list => list.forEach(e => e.classList.add('in')); IC.reveal(els); return; }
     const io = new IntersectionObserver(entries => {
       entries.forEach(en => { if (en.isIntersecting) { en.target.classList.add('in'); io.unobserve(en.target); } });
     }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
+    IC.reveal = list => list.forEach(e => io.observe(e));
     els.forEach(e => io.observe(e));
   }
 
@@ -1363,6 +1407,15 @@
     if (params.get('package') && !params.get('service')) params.set('service', 'tour');
     params.forEach((v, k) => setVal(k, v));
     showFor();
+    // Arriving from a service page with the trip filled in: skip the service choice, and
+    // when those details are complete open straight on the contact step. (Runs after the
+    // rest of this setup, which defines the summary the contact step shows.)
+    if (params.get('page') && form.elements.service.value) setTimeout(() => {
+      go(2);
+      const s2 = steps.find(s => parseInt(s.dataset.step, 10) === 2);
+      const shown = s2 ? $$('[data-for].show input, [data-for].show select, [data-for].show textarea', s2).filter(el => !el.disabled) : [];
+      if (shown.length && shown.every(el => el.checkValidity())) go(3);
+    }, 0);
 
     const validate = n => {
       const step = steps.find(s => parseInt(s.dataset.step, 10) === n);
@@ -1558,11 +1611,19 @@
       requestAnimationFrame(() => requestAnimationFrame(() => { n.className = ''; }));
       setTimeout(() => { if (old.parentNode) old.remove(); }, 700);
     };
-    const next = async () => {
-      const to = (si + 1) % scenes.length, s = scenes[to], img = load(s);
+    // A hero marked data-manual changes scene only when asked (IC.pageHero.show), e.g. the
+    // Hotel Booking page, where the photo follows the island the visitor picks.
+    const manual = hero.hasAttribute('data-manual');
+    let pending = -1;
+    const next = async target => {
+      const to = target == null ? (si + 1) % scenes.length : target;
+      if (to === si || to < 0 || to >= scenes.length) return;
+      pending = to;
+      const s = scenes[to], img = load(s);
       try { if (img && !img.complete) await img.decode(); } catch (e) { /* show it anyway */ }
+      if (pending !== to) return;   // a newer choice arrived while this photo loaded
       const from = scenes[si]; si = to;
-      s._cam = move(s, false);
+      s._cam = move(s, manual);
       if (!reduced) {
         const out = from.animate([{ transform: 'scale(1)' }, { transform: 'scale(1.24)' }], { duration: 1500, easing: 'cubic-bezier(.5, 0, .8, .4)', fill: 'forwards' });
         s.animate([{ transform: 'scale(1.16)' }, { transform: 'scale(1)' }], { duration: 1600, easing: 'cubic-bezier(.16, 1, .3, 1)' });
@@ -1570,15 +1631,18 @@
       }
       s.classList.add('is-on'); from.classList.remove('is-on');
       setPlace(s.dataset.place || '');
-      load(scenes[(to + 1) % scenes.length]);
+      if (!manual) load(scenes[(to + 1) % scenes.length]);
     };
-    const start = () => { if (reduced || scenes.length < 2 || timer || !visible || document.hidden || Motion.paused) return; timer = setInterval(next, DWELL); };
+    IC.pageHero = { show: i => next(i), scenes };
+    const start = () => { if (manual || reduced || scenes.length < 2 || timer || !visible || document.hidden || Motion.paused) return; timer = setInterval(next, DWELL); };
     const stop = () => { clearInterval(timer); timer = null; };
-    scenes[0]._cam = move(scenes[0], scenes.length < 2);
+    scenes[0]._cam = move(scenes[0], scenes.length < 2 || manual);
     if (scenes.length > 1) {
       setPlace(scenes[0].dataset.place || '');
+      if (!manual) {
       const warm = () => load(scenes[1]);
       if ('requestIdleCallback' in window) requestIdleCallback(warm, { timeout: 2500 }); else setTimeout(warm, 1500);
+      }
     }
 
     /* pointer parallax and a scroll push-in on the camera rig */
@@ -2088,6 +2152,9 @@
   function initStats() {
     $$('[data-stat="countries"]').forEach(el => { el.textContent = String(countryList().filter(c => c.name !== 'Other').length); });
   }
+
+  // The service pages, gallery and blog (pages.js) build on the same helpers
+  IC.util = { $, $$, esc, reduced, touch, Motion, I, wix, money, peso, pkgUrl, effStatus, statusLabel, statusPill, flagImg, tourCard, openLightbox, countryList, rangeStart, isPastDate, CONFIG };
 
   document.addEventListener('DOMContentLoaded', () => {
     initStats(); initHeader(); initContactLinks(); initHeroTitle(); initTicker(); initOffers(); initFeatured(); initToursPage(); initPackagePage();

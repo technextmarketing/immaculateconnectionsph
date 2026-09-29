@@ -1121,3 +1121,82 @@ body .logo-text small { font-size: max(.69rem, 11px); letter-spacing: .15em; }
 
 /* text for screen readers and search only */
 .sr-only { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; border: 0; }
+
+/* =========================================================
+   Header: Services menu and the phone drawer's service list (29 Sep 2026)
+   ========================================================= */
+.nav-item { position: relative; display: flex; align-items: center; }
+.nav-item > .nav-link { padding-right: 4px; }
+.nav-item > .nav-link::after { right: 4px; }
+.nav-caret {
+  display: inline-grid; place-items: center; width: 28px; height: 34px; margin-right: 4px; border-radius: 10px; color: var(--ink-2);
+  transition: color .2s var(--ease), background-color .2s var(--ease);
+}
+.nav-caret svg { width: 15px; height: 15px; transition: transform .35s var(--ease-out); }
+.nav-caret:hover { color: var(--blue-2); background: rgba(29, 103, 205, .08); }
+.has-menu.open .nav-caret svg { transform: rotate(180deg); }
+.header.on-hero .nav-caret { color: rgba(255, 255, 255, .88); }
+.header.on-hero .nav-caret:hover { color: #fff; background: rgba(255, 255, 255, .12); }
+
+.nav-menu {
+  position: absolute; top: calc(100% + 16px); left: -28px; z-index: 5; width: min(700px, calc(100vw - 40px));
+  display: grid; grid-template-columns: minmax(0, 1fr) 236px; column-gap: 12px; padding: 12px;
+  background: #fff; border-radius: 22px; color: var(--ink);
+  box-shadow: 0 34px 70px -28px rgba(12, 28, 58, .5), 0 0 0 1px rgba(50, 65, 88, .07);
+  opacity: 0; visibility: hidden; transform: translate3d(0, 10px, 0) scale(.985); transform-origin: 40px 0;
+  transition: opacity .18s var(--ease), transform .3s var(--ease-out), visibility 0s linear .3s;
+}
+.nav-menu::before { content: ""; position: absolute; left: 0; right: 0; top: -18px; height: 18px; }   /* keeps the hover path open */
+.has-menu.open .nav-menu { opacity: 1; visibility: visible; transform: none; transition: opacity .2s var(--ease), transform .4s var(--ease-out), visibility 0s; }
+.nm-list { display: grid; gap: 2px; }
+.nm-item { display: flex; align-items: center; gap: 14px; padding: 12px 14px; border-radius: 16px; transition: background-color .2s var(--ease); }
+.nm-item:hover, .nm-item:focus-visible, .nm-item.is-hot { background: var(--bg); }
+.nm-ic {
+  flex: none; width: 48px; height: 48px; border-radius: 15px; display: grid; place-items: center; background: var(--blue-soft); color: var(--blue-2);
+  transition: background-color .25s var(--ease), color .25s var(--ease), transform .45s var(--ease-out);
+}
+.nm-ic svg { width: 25px; height: 25px; }
+.nm-item.is-hot .nm-ic { background: var(--blue); color: #fff; transform: rotate(-7deg) scale(1.05); }
+.nm-item.active .nm-ic { background: var(--gold); color: var(--navy-3); }
+.nm-txt b { display: block; font-family: var(--font-display); font-weight: 600; font-size: 1.08rem; line-height: 1.2; color: var(--navy); }
+.nm-txt small { display: block; margin-top: 3px; font-size: .86rem; line-height: 1.35; color: var(--muted); }
+.nm-shot { grid-column: 2; grid-row: 1 / span 2; position: relative; margin: 0; overflow: hidden; border-radius: 16px; background: var(--navy-3); min-height: 260px; }
+.nm-shot img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; transition: opacity .35s var(--ease), transform 7s linear; transform: scale(1.02); }
+.has-menu.open .nm-shot img { transform: scale(1.12); }
+.nm-shot img.swap { opacity: 0; }
+.nm-shot::after { content: ""; position: absolute; inset: 0; background: linear-gradient(180deg, rgba(9, 22, 48, 0) 45%, rgba(9, 22, 48, .78) 100%); }
+.nm-shot figcaption { position: absolute; z-index: 1; left: 16px; right: 16px; bottom: 14px; color: #fff; font-family: var(--font-script); font-weight: 600; font-size: 1.45rem; line-height: 1.1; }
+.nm-foot { display: flex; flex-wrap: wrap; gap: 4px; margin: 8px 2px 0; padding-top: 8px; border-top: 1px solid var(--line); }
+.nm-foot a { padding: 9px 12px; border-radius: 10px; font-size: .88rem; font-weight: 700; color: var(--blue-2); transition: background-color .2s var(--ease); }
+.nm-foot a:hover { background: var(--bg); }
+@media (prefers-reduced-motion: no-preference) {
+  .has-menu.open .nm-item { animation: nmIn .5s var(--ease-out) both; }
+  .has-menu.open .nm-item:nth-child(2) { animation-delay: 40ms; }
+  .has-menu.open .nm-item:nth-child(3) { animation-delay: 80ms; }
+  .has-menu.open .nm-item:nth-child(4) { animation-delay: 120ms; }
+}
+@keyframes nmIn { from { opacity: 0; transform: translate3d(-10px, 0, 0); } to { opacity: 1; transform: none; } }
+
+/* phone drawer: Services folds open into its four pages */
+.drawer-panel { overflow-y: auto; overscroll-behavior: contain; }
+.drawer-group { display: grid; }
+.drawer-toggle { width: 100%; text-align: left; }
+.drawer-toggle svg { transition: transform .3s var(--ease-out); }
+.drawer-toggle[aria-expanded="true"] { border-color: var(--blue); }
+.drawer-toggle[aria-expanded="true"] svg { transform: rotate(180deg); }
+.drawer-sub { display: grid; gap: 2px; margin: 6px 0 4px 18px; padding-left: 12px; border-left: 1px solid var(--line); }
+.drawer-sub[hidden] { display: none; }
+.drawer-sub a { padding: 11px 12px; border-radius: 12px; font-weight: 600; color: var(--ink-2); }
+.drawer-sub a:hover, .drawer-sub a.active { background: var(--bg); color: var(--blue-2); }
+
+/* six links need the room: the drawer takes over below 1120px */
+@media (max-width: 1120px) {
+  .nav-links { display: none; }
+  .nav-toggle { display: block; }
+  .nav-actions .nav-icon { display: none; }
+  .nav-actions { gap: 6px; }
+}
+
+/* Over a hero the header starts fully clear; once the page moves, content would slide
+   under see-through text, so it takes a deep navy ground (still dark over the photos). */
+.header.on-hero.scrolled { background: rgba(8, 20, 44, .92); box-shadow: 0 14px 30px -20px rgba(0, 0, 0, .7); }
