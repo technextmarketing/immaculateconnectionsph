@@ -16,7 +16,7 @@ See [AUDIT.md](AUDIT.md) for the full audit of the current site, the pain points
 | --- | --- |
 | `index.html` | Home: a travelogue hero (a destination photo the camera keeps moving on, with the place name and a timer; in front, the agency's own group photos as a pile of framed prints that can be thrown to the back by tap, drag, swipe, arrows or keyboard, with a thumbnail picker), the credibility figures, then the welcome copy with the rotating "now booking" line and the quick quotation card, followed by special offers, services, featured packages, gallery and FAQ. Hero photos live in `assets/img/hero` (`dest-*` backgrounds at 2000/1200 px, `print-*` 820x615, `thumb-*`); captions and places are set in the hero markup. |
 | `services.html` | Ticketing, Hotel Bookings & Reservations, Transport Service Reservations (vans, coasters, bus, 4-seater), Local & International Tour Packages, and Meetings, Incentives, Conferences, Exhibitions, Trainings & Seminars. Flight and event quote forms pre-fill the inquiry page. |
-| `tours.html` | All 15 packages with search, region, duration, archive (past departures) and sort filters. Each card links to its package page. The first view of the grid is pre-rendered by the build. |
+| `tours.html` | All 15 packages with search, region, duration, archive (past departures) and sort filters. Each package is a horizontal row (`tourRow` in `main.js`, `.trow` styles in `components.css`), two per line on wide screens: the whole itinerary poster uncropped on the left (tap for every poster in the viewer; local packages show their photo), then the facts, a two-line summary, one line per itinerary day and the price. The first view of the grid is pre-rendered by the build. |
 | `package-<id>.html` | One real page per package, written by `tools/build.py` from `package.html` and the package's entry in `data.js`: its own title, description, share image (`assets/img/media/og-pkg-<id>.jpg`), canonical address and structured data, with the page body already rendered (hero, sticky section tabs, photo gallery, travel dates first, overview, itinerary, inclusions, places, posters, related packages). The script still runs there and refreshes dates and availability. |
 | `package.html` | The template for those pages, and the old `package.html?id=<package-id>` address, which now forwards to `package-<id>.html`. Kept out of search (`noindex`). |
 | `payment.html` | Held back, not linked from anywhere: the payment step is off until the agency confirms a booking flow (`CONFIG.payments`). It states that nothing is collected on the website. |
@@ -59,6 +59,14 @@ payment: {
   link: ''   // optional online checkout; shows a "Pay online now" button
 }
 ```
+
+## B2B partner quotations
+
+`contact.html` opens on two tabs: **Traveller inquiry** (the three-step form above) and **Partner quotation** (B2B). The partner tab stays locked until a partner code is entered in the optional *Booking for clients?* bar, or arrives in a link: `contact.html?partner=CODE` (the code is removed from the address bar straight away and kept for that browser tab only).
+
+- A valid code opens a separate one-page form: company and contact, quotation type (tour package, custom itinerary, hotel block, transport, ticketing, MICE), package, route, dates, adults / children / tour leaders, rooms, hotel class, meals, what to include, rate basis (net or commissionable), currency, deadline, budget and notes.
+- It posts to the same inbox with its own reference (`ICB-261013-4821`), the partner type and the code in the email, and gives the partner a printable copy of the request. Nothing is priced on the page.
+- **Codes:** only a SHA-256 of each code is in `CONFIG.partnerCodes` (`assets/js/main.js`), never the code itself, so do not write the plain codes in this public repository. Add one with `python tools/partner_code.py NEW-CODE "Label"` and paste the printed line; delete a line to retire a code. Codes ignore case, spaces and dashes. This is a convenience gate, not security: every request is still checked by the team.
 
 ## Where to edit
 

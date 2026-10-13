@@ -24,8 +24,8 @@
   <link rel="preload" as="image" href="assets/img/hero/dest-moalboal-1280.webp" imagesrcset="assets/img/hero/dest-moalboal-960.webp 960w, assets/img/hero/dest-moalboal-1280.webp 1280w" imagesizes="100vw" media="(max-width: 700px)">
   <link rel="preload" href="assets/fonts/raleway-latin.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="assets/fonts/playfair-display-latin.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="stylesheet" href="assets/css/site.min.css?v=6a120717a5">
-  <link rel="stylesheet" href="assets/css/quotation.min.css?v=90e8a8fd37">
+  <link rel="stylesheet" href="assets/css/site.min.css?v=b5e7bd1b1b">
+  <link rel="stylesheet" href="assets/css/quotation.min.css?v=38206f6344">
 </head>
 <body data-page="contact" data-hero-top>
   <a class="skip-link" href="#main">Skip to content</a>
@@ -109,7 +109,39 @@
 
     <section class="section">
       <div class="container contact-layout">
-        <form class="form-card reveal" id="inquiryForm" novalidate>
+        <div class="inq-col reveal">
+        <!-- Who the quotation is for: travellers use the three-step form; B2B partners unlock their own form with a partner code -->
+        <div class="inq-mode no-print" role="tablist" aria-label="Who is the quotation for?">
+          <button class="inq-tab is-on" type="button" role="tab" id="tabTraveller" aria-selected="true" aria-controls="inquiryForm" data-mode="traveller">
+            <span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75"/></svg></span>
+            <span class="txt"><strong>Traveller inquiry</strong><small>Families, barkadas, schools, companies</small></span>
+          </button>
+          <button class="inq-tab" type="button" role="tab" id="tabPartner" aria-selected="false" aria-controls="partnerForm" data-mode="partner">
+            <span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect width="20" height="14" x="2" y="7" rx="2"/><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/></svg></span>
+            <span class="txt"><strong>Partner quotation</strong><small data-ptab-sub>B2B &middot; partner code required</small></span>
+            <span class="lock" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><rect width="18" height="11" x="3" y="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg></span>
+          </button>
+        </div>
+
+        <form class="pcode no-print" id="partnerCodeForm" novalidate>
+          <div class="pcode-lead">
+            <span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="7.5" cy="15.5" r="5.5"/><path d="m21 2-9.6 9.6M15.5 7.5l3 3L22 7l-3-3"/></svg></span>
+            <label for="f_pcode"><strong>Booking for clients?</strong> Enter your partner code <span class="opt">(optional)</span></label>
+          </div>
+          <div class="pcode-row">
+            <input class="input" id="f_pcode" name="pcode" autocomplete="off" autocapitalize="characters" spellcheck="false" placeholder="IC-XXXX-XXXX" aria-describedby="pcodeMsg">
+            <button class="btn btn-blue" type="submit">Unlock</button>
+          </div>
+          <p class="pcode-msg" id="pcodeMsg" role="status" aria-live="polite">Travel agencies, corporate accounts, event organisers, LGUs and schools get their code from our team.</p>
+        </form>
+
+        <div class="pcode-ok no-print" id="partnerBadge" hidden>
+          <span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg></span>
+          <p><strong data-partner-type>Partner</strong><span>Code <b data-partner-code></b> verified &middot; partner quotation form unlocked</span></p>
+          <button class="pcode-out" type="button" id="partnerSignOut">Remove code</button>
+        </div>
+
+        <form class="form-card" id="inquiryForm" role="tabpanel" aria-labelledby="tabTraveller" novalidate>
           <input type="text" name="_honey" style="display:none" tabindex="-1" autocomplete="off">
           <div id="formBody">
             <div class="progress" aria-hidden="true">
@@ -272,6 +304,122 @@
           </div>
         </form>
 
+        <!-- B2B partner quotation request: shown only after a valid partner code -->
+        <form class="form-card partner-card" id="partnerForm" role="tabpanel" aria-labelledby="tabPartner" novalidate hidden>
+          <input type="text" name="_honey" style="display:none" tabindex="-1" autocomplete="off">
+          <div id="pBody">
+            <header class="pf-head">
+              <span class="pf-kicker">B2B &middot; Partner quotation request</span>
+              <h2>Request a group quotation for your clients</h2>
+              <p>One form for the whole requirement. Our team checks availability with our partners and replies with the quotation by email.</p>
+            </header>
+
+            <fieldset class="pf-sec">
+              <legend><i>1</i>Your company</legend>
+              <div class="form-row">
+                <div class="field"><label for="p_company">Company or agency name</label><input class="input" id="p_company" name="company" autocomplete="organization" placeholder="Registered business name" required><span class="err">Please enter your company name.</span></div>
+                <div class="field"><label for="p_name">Contact person</label><input class="input" id="p_name" name="name" autocomplete="name" placeholder="e.g. Maria Santos" required><span class="err">Who should we reply to?</span></div>
+              </div>
+              <div class="form-row three">
+                <div class="field"><label for="p_email">Work email</label><input class="input" id="p_email" type="email" name="email" autocomplete="email" placeholder="name@company.com" required><span class="err">Please enter a valid email.</span></div>
+                <div class="field"><label for="p_phone">Mobile / Viber</label><input class="input" id="p_phone" type="tel" name="phone" autocomplete="tel" placeholder="+63 9XX XXX XXXX" required><span class="err">A number helps us reach you.</span></div>
+                <div class="field"><label for="p_ref">Your reference <span class="opt">(optional)</span></label><input class="input" id="p_ref" name="clientref" placeholder="File or PO number"></div>
+              </div>
+            </fieldset>
+
+            <fieldset class="pf-sec">
+              <legend><i>2</i>What to quote</legend>
+              <div class="pf-chips" role="radiogroup" aria-label="Quotation type">
+                <label><input type="radio" name="qtype" value="Tour package" checked><span>Tour package</span></label>
+                <label><input type="radio" name="qtype" value="Custom itinerary"><span>Custom itinerary</span></label>
+                <label><input type="radio" name="qtype" value="Hotel block"><span>Hotel block</span></label>
+                <label><input type="radio" name="qtype" value="Transport"><span>Transport</span></label>
+                <label><input type="radio" name="qtype" value="Ticketing"><span>Ticketing</span></label>
+                <label><input type="radio" name="qtype" value="MICE / event"><span>MICE / event</span></label>
+              </div>
+              <div class="form-row">
+                <div class="field" data-pfor="Tour package"><label for="p_package">Package</label><select class="select" id="p_package" name="package"></select></div>
+                <div class="field"><label for="p_dest">Destination(s) or route</label><input class="input" id="p_dest" name="destination" placeholder="e.g. Cebu &rarr; Bohol &rarr; Camotes" required><span class="err">Where is the group going?</span></div>
+              </div>
+              <div class="form-row three">
+                <div class="field"><label for="p_start">Travel date</label><input class="input" id="p_start" type="date" name="start" required><span class="err">A tentative date is fine.</span></div>
+                <div class="field"><label for="p_end">Until <span class="opt">(optional)</span></label><input class="input" id="p_end" type="date" name="end"><span class="err">Must be on or after the travel date.</span></div>
+                <div class="field pf-check"><label class="consent"><input type="checkbox" name="flexible" value="Yes"><span>Dates are flexible</span></label></div>
+              </div>
+            </fieldset>
+
+            <fieldset class="pf-sec">
+              <legend><i>3</i>Group and rooms</legend>
+              <div class="pf-nums">
+                <div class="field"><label for="p_adults">Adults</label><input class="input" id="p_adults" type="number" name="adults" min="1" max="2000" step="1" inputmode="numeric" placeholder="0" required><span class="err">How many adults?</span></div>
+                <div class="field"><label for="p_children">Children</label><input class="input" id="p_children" type="number" name="children" min="0" max="500" step="1" inputmode="numeric" placeholder="0"></div>
+                <div class="field"><label for="p_foc">Tour leaders / FOC</label><input class="input" id="p_foc" type="number" name="foc" min="0" max="50" step="1" inputmode="numeric" placeholder="0"></div>
+                <div class="field"><label for="p_twin">Twin rooms</label><input class="input" id="p_twin" type="number" name="twin" min="0" max="500" step="1" inputmode="numeric" placeholder="0"></div>
+                <div class="field"><label for="p_single">Single rooms</label><input class="input" id="p_single" type="number" name="single" min="0" max="500" step="1" inputmode="numeric" placeholder="0"></div>
+                <div class="field"><label for="p_triple">Triple rooms</label><input class="input" id="p_triple" type="number" name="triple" min="0" max="500" step="1" inputmode="numeric" placeholder="0"></div>
+              </div>
+              <div class="form-row">
+                <div class="field"><label for="p_hotel">Hotel class</label><select class="select" id="p_hotel" name="hotel"><option>As per package</option><option>3-star</option><option>4-star</option><option>5-star</option><option>Resort</option><option>No hotel needed</option></select></div>
+                <div class="field"><label for="p_meals">Meals</label><select class="select" id="p_meals" name="meals"><option>As per package</option><option>Breakfast only</option><option>Breakfast and lunch</option><option>All meals</option><option>No meals</option></select></div>
+              </div>
+              <div class="field">
+                <label>Include in the quotation <span class="opt">(tick all that apply)</span></label>
+                <div class="checks">
+                  <label><input type="checkbox" name="include" value="Airfare"><span>Airfare</span></label>
+                  <label><input type="checkbox" name="include" value="Boat / ferry tickets"><span>Boat / ferry</span></label>
+                  <label><input type="checkbox" name="include" value="Hotel"><span>Hotel</span></label>
+                  <label><input type="checkbox" name="include" value="Land transport"><span>Land transport</span></label>
+                  <label><input type="checkbox" name="include" value="Tour guide"><span>Tour guide</span></label>
+                  <label><input type="checkbox" name="include" value="Entrance fees"><span>Entrance fees</span></label>
+                  <label><input type="checkbox" name="include" value="Venue and meals for an event"><span>Event venue</span></label>
+                  <label><input type="checkbox" name="include" value="Travel insurance"><span>Travel insurance</span></label>
+                </div>
+              </div>
+            </fieldset>
+
+            <fieldset class="pf-sec">
+              <legend><i>4</i>Pricing</legend>
+              <div class="form-row three">
+                <div class="field"><label for="p_basis">Rate basis</label><select class="select" id="p_basis" name="basis"><option>Net rate</option><option>Commissionable rate</option><option>Either, please advise</option></select></div>
+                <div class="field"><label for="p_cur">Currency</label><select class="select" id="p_cur" name="currency"><option>PHP</option><option>USD</option></select></div>
+                <div class="field"><label for="p_need">Quote needed by <span class="opt">(optional)</span></label><input class="input" id="p_need" type="date" name="needby"></div>
+              </div>
+              <div class="form-row">
+                <div class="field"><label for="p_budget">Target budget per pax <span class="opt">(optional)</span></label><input class="input" id="p_budget" name="budget" inputmode="decimal" placeholder="e.g. 18,000"></div>
+                <div class="field"><label for="p_market">Client market <span class="opt">(optional)</span></label><input class="input" id="p_market" name="market" placeholder="e.g. Filipino, Korean, mixed"></div>
+              </div>
+              <div class="field"><label for="p_notes">Other requirements <span class="opt">(optional)</span></label><textarea class="textarea" id="p_notes" name="notes" placeholder="Special requests, preferred hotels, dietary needs, programme for the event&hellip;"></textarea></div>
+              <div class="field">
+                <label class="consent"><input type="checkbox" name="consent" required><span>I confirm I am requesting this quotation on behalf of my company and agree to be contacted about it.</span></label>
+                <span class="err">Please tick the box to continue.</span>
+              </div>
+            </fieldset>
+
+            <div class="form-error" id="pError" role="alert"></div>
+            <div class="form-nav pf-nav">
+              <p class="small muted">Code <b data-partner-code></b> is sent with your request.</p>
+              <button class="btn btn-primary btn-lg" type="submit">Send quotation request <svg class="arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg></button>
+            </div>
+          </div>
+
+          <div class="success" id="pSuccess" role="status">
+            <div class="qt-intro">
+              <div class="check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg></div>
+              <h3>Quotation request sent</h3>
+              <p id="pSuccessMsg">Thank you. Our team will reply by email.</p>
+            </div>
+            <div id="pDoc"></div>
+            <div class="qt-actions no-print">
+              <button class="btn btn-primary" type="button" id="pDownload"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><path d="M7 10l5 5 5-5"/><path d="M12 15V3"/></svg> Download request</button>
+              <a class="btn btn-blue" id="pMail" href="#">Email a copy</a>
+              <a class="btn btn-light" id="pMsg" href="#" target="_blank" rel="noopener">Message us</a>
+              <button class="btn btn-outline" type="button" id="pAgain">New request</button>
+            </div>
+            <p class="qt-hint no-print">To keep a copy, choose <strong>Save as PDF</strong> as the destination in the print dialog.</p>
+          </div>
+        </form>
+        </div>
+
         <aside class="reveal reveal-right">
           <div class="contact-cards">
             <a class="contact-card" data-tel data-keep href="#">
@@ -397,6 +545,6 @@
   <button class="to-top" id="toTop" type="button" aria-label="Back to top"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 19V5M5 12l7-7 7 7"/></svg></button>
   <!-- /build:footer -->
 
-  <script src="assets/js/site.min.js?v=9b4ba60f23"></script>
+  <script src="assets/js/site.min.js?v=35da9a77ef"></script>
 </body>
 </html>
