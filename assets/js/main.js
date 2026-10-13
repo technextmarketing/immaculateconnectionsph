@@ -619,7 +619,9 @@
      Packages with posters show the first one uncropped (tap for all of them in
      the viewer); local packages without a poster show their photo in the same
      frame. The itinerary is reduced to one line per day. */
-  const ROW_DAYS = 5;
+  const ROW_DAYS = 4;
+  // 800px poster copies: 566x800 unless a package says otherwise (posterSize)
+  const posterDims = t => t.posterSize || [566, 800];
   function tourRow(t, i) {
     const s = effStatus(t);
     const posters = t.posters && t.posters.length ? t.posters : null;
@@ -638,9 +640,9 @@
       : `<p class="trow-route">${I.pin}<span>${route.map(esc).join('<i aria-hidden="true">&rarr;</i>')}${moreP > 0 ? ` <em>+${moreP} more</em>` : ''}</span></p>`;
     return `
     <article class="trow${s === 'soon' || s === 'past' ? ' soon' : ''}" style="animation-delay:${Math.min(i, 8) * 50}ms">
-      <div class="trow-art${posters ? ' is-poster' : ''}" style="--art:url('${wix(art, 640)}')">
-        <img src="${wix(art, posters ? 800 : 640)}" alt="${esc(t.alt)}" loading="${i < 2 ? 'eager' : 'lazy'}" decoding="async" width="${posters ? 566 : 640}" height="${posters ? 800 : 480}">
-        ${cardBadge(t)}
+      <div class="trow-art${posters ? ' is-poster' : ''}">
+        <img src="${wix(art, posters ? 800 : 640)}" alt="${esc(t.alt)}" loading="${i < 2 ? 'eager' : 'lazy'}" decoding="async" width="${posters ? posterDims(t)[0] : 640}" height="${posters ? posterDims(t)[1] : 480}">
+        ${posters && s !== 'past' ? '' : cardBadge(t)}
         ${posters ? `<button class="trow-zoom" type="button" data-posters="${esc(t.id)}" aria-label="Open the full itinerary poster${posters.length > 1 ? 's' : ''} for ${esc(t.name)}">${I.expand}<span>${posters.length > 1 ? posters.length + ' posters' : 'Full poster'}</span></button>` : ''}
       </div>
       <div class="trow-head">

@@ -503,7 +503,7 @@ window.IC = window.IC || {};
       subtitle: 'Out Cebu · Cebu Pacific',
       region: 'intl', country: 'Japan', flag: 'jp', duration: '5 days 4 nights', days: 5, status: 'offer', badge: 'Special offer', featured: true,
       departure: 'Cebu (Mactan-Cebu International)', price: { from: 1049, currency: 'USD', label: 'From', unit: 'all-in per person' }, year: 2026, ends: '2027-02-23',
-      image: '952787_bdf86d20b5ef4120a1876cf17c6718f4~mv2.png', imageAlign: 't',
+      image: '952787_bdf86d20b5ef4120a1876cf17c6718f4~mv2.png', imageAlign: 't', posterSize: [533, 800],
       alt: 'Japan Tokyo, Yokohama and Mt. Fuji 5D4N tour poster',
       gallery: ['952787_bdf86d20b5ef4120a1876cf17c6718f4~mv2.png'],
       summary: 'Winter in Japan direct from Cebu on Cebu Pacific: Tokyo, Yokohama and Mt. Fuji with hotel breakfasts, an English-speaking guide and two upgraded lunch buffets.',
