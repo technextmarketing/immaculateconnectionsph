@@ -657,7 +657,7 @@
           ${priceBlock(t)}
           <div class="actions">
             <a class="btn btn-outline" href="${pkgUrl(t)}">Details</a>
-            <a class="btn btn-primary" href="contact.html?service=tour&package=${encodeURIComponent(t.id)}">${s === 'past' || s === 'soon' ? 'Ask us' : 'Get a quote'}</a>
+            <a class="btn btn-primary" href="contact.html?service=tour&package=${encodeURIComponent(t.id)}">${s === 'past' || s === 'soon' ? 'Ask us' : 'Get a quote'}${I.arrow}</a>
           </div>
         </div>
       </div>

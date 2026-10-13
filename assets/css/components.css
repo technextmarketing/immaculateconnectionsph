@@ -1255,8 +1255,13 @@ body .logo-text small { font-size: max(.69rem, 11px); letter-spacing: .15em; }
 .trow-foot .price strong { font-size: .95rem; }
 .trow-foot .price strong.soft { font-size: .86rem; }
 .trow-foot .price span { font-size: .68rem; color: var(--muted); margin-left: 3px; }
-.trow-foot .actions { display: flex; gap: 5px; }
-.trow-foot .btn { padding: 6px 12px; font-size: .76rem; }
+.trow-foot .actions { display: flex; gap: 6px; }
+.trow-foot .btn { min-height: 36px; padding: 0 14px; gap: 6px; font-size: .8rem; font-weight: 700; letter-spacing: .01em; border-width: 1.5px; box-shadow: none; }
+.trow-foot .btn svg { width: 14px; height: 14px; }
+.trow-foot .btn-outline { color: var(--navy); border-color: var(--line); background: #fff; }
+.trow-foot .btn-outline:hover { color: var(--blue-2); border-color: var(--blue); background: var(--blue-soft); }
+.trow-foot .btn-primary { box-shadow: 0 6px 14px -8px rgba(246, 147, 30, .8); }
+.trow-foot .btn-primary:hover svg { transform: translateX(3px); }
 
 @media (min-width: 1060px) {
   .trow-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 18px; }
@@ -1278,7 +1283,7 @@ body .logo-text small { font-size: max(.69rem, 11px); letter-spacing: .15em; }
   .trow-sum { font-size: .8rem; }
   .trow-itin li { font-size: .78rem; }
   .trow-foot .actions { flex: 1 1 100%; }
-  .trow-foot .btn { flex: 1; justify-content: center; padding: 8px 12px; font-size: .8rem; }
+  .trow-foot .btn { flex: 1; min-height: 40px; font-size: .84rem; }
 }
 @media (prefers-reduced-motion: reduce) {
   .trow { animation: none; transition: none; }
