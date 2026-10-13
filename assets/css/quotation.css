@@ -242,18 +242,19 @@ table.qt-table tfoot .sum { font-size: 1.45rem; font-weight: 700; color: var(--q
 .inq-tab:focus-visible { outline: 3px solid var(--gold); outline-offset: 2px; }
 
 /* the optional code */
-.pcode { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 290px); align-items: center; gap: 8px 16px; padding: 12px 14px 12px 16px; border: 1.5px dashed #c8d6e8; border-radius: 18px; background: linear-gradient(100deg, #f4f8fe, #fffaf0); }
+.pcode { display: grid; grid-template-columns: auto minmax(0, 1fr); align-items: center; gap: 10px 18px; padding: 16px 18px; border: 1px solid var(--line); border-top: 3px solid var(--gold); border-radius: 18px; background: #fff; box-shadow: var(--shadow-sm); animation: fadeUp .35s var(--ease-out); }
 .pcode-lead { display: flex; align-items: center; gap: 10px; min-width: 0; }
-.pcode-lead .ic { width: 34px; height: 34px; flex: none; border-radius: 10px; display: grid; place-items: center; background: #fff; border: 1px solid var(--line); color: var(--gold-2); }
-.pcode-lead .ic svg { width: 17px; height: 17px; }
-.pcode-lead label { font-size: .88rem; color: var(--ink-2); line-height: 1.35; }
-.pcode-lead label strong { color: var(--navy); }
+.pcode-lead .ic { flex: none; display: grid; place-items: center; width: 40px; height: 40px; border-radius: 12px; background: var(--gold-soft); border: 0; color: #a06a00; }
+.pcode-lead .ic svg { width: 19px; height: 19px; }
+.pcode-lead label { display: grid; line-height: 1.25; white-space: nowrap; }
+.pcode-lead label strong { color: var(--navy); font-size: .98rem; }
+.pcode-lead label span { font-size: max(.72rem, 11px); color: var(--muted); }
 .pcode-row { display: flex; gap: 6px; }
-.pcode-row .input { min-width: 0; flex: 1; height: 42px; padding: 8px 12px; font-family: var(--qt-font); font-weight: 700; letter-spacing: .08em; text-transform: uppercase; }
+.pcode-row .input { min-width: 0; flex: 1; height: 44px; min-height: 44px; padding: 0 14px; border-radius: 12px; font-family: var(--qt-font); font-weight: 700; letter-spacing: .08em; text-transform: uppercase; }
 .pcode-row .input::placeholder { letter-spacing: .06em; font-weight: 600; }
 .pcode-row .input[aria-invalid="true"] { border-color: #d9480f; box-shadow: 0 0 0 3px rgba(217, 72, 15, .12); }
-.pcode-row .btn { height: 42px; padding: 0 16px; font-size: .86rem; flex: none; }
-.pcode-msg { grid-column: 1 / -1; margin: 0; font-size: max(.76rem, 11px); color: var(--muted); }
+.pcode-row .btn { height: 44px; min-height: 44px; padding: 0 20px; border-radius: 12px; font-size: .88rem; flex: none; box-shadow: none; }
+.pcode-msg { grid-column: 1 / -1; margin: 0; padding-top: 10px; border-top: 1px dashed var(--line); font-size: max(.76rem, 11px); color: var(--muted); }
 .pcode-msg.bad { color: #b4410b; font-weight: 600; }
 .pcode-msg.hint { color: var(--blue-2); font-weight: 600; }
 .pcode.shake { animation: pcShake .4s var(--ease-out); }
@@ -313,7 +314,7 @@ table.qt-table tfoot .sum { font-size: 1.45rem; font-weight: 700; color: var(--q
   .pf-nav .btn { width: 100%; justify-content: center; }
 }
 @media (prefers-reduced-motion: reduce) {
-  .pcode.shake, .pcode.pulse, .pcode-ok { animation: none; }
+  .pcode, .pcode.shake, .pcode.pulse, .pcode-ok { animation: none; }
 }
 
 /* =========================================================

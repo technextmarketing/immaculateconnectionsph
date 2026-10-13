@@ -1781,16 +1781,19 @@
       if (t && d && !d.value.trim()) d.value = t.places.slice(0, 4).join(', ');
     });
 
-    const setMode = mode => {
-      const p = mode === 'partner' && !!partner;
-      tabs.forEach(t => { const on = t.dataset.mode === (p ? 'partner' : 'traveller'); t.classList.toggle('is-on', on); t.setAttribute('aria-selected', String(on)); t.tabIndex = on ? 0 : -1; });
-      tf.hidden = p; pf.hidden = !p;
+    // Partner tab: the code bar until a code is accepted, then the partner form.
+    // Traveller tab: the traveller form only (the code bar stays out of the way).
+    let mode = 'traveller';
+    const setMode = m => {
+      mode = m === 'partner' ? 'partner' : 'traveller';
+      const p = mode === 'partner';
+      tabs.forEach(t => { const on = t.dataset.mode === mode; t.classList.toggle('is-on', on); t.setAttribute('aria-selected', String(on)); t.tabIndex = on ? 0 : -1; });
+      tf.hidden = p; pf.hidden = !(p && partner); cf.hidden = !(p && !partner); badge.hidden = !(p && partner);
       document.body.classList.toggle('partner-mode', p);
     };
     const paint = () => {
       tabP.classList.toggle('is-unlocked', !!partner);
       $('[data-ptab-sub]', tabP).innerHTML = partner ? esc(partner.type) : 'B2B &middot; partner code required';
-      cf.hidden = !!partner; badge.hidden = !partner;
       if (partner) {
         $$('[data-partner-type]').forEach(el => { el.textContent = partner.type; });
         $$('[data-partner-code]').forEach(el => { el.textContent = partner.code; });
@@ -1814,7 +1817,7 @@
       if (!hit) {
         tries++;
         input.setAttribute('aria-invalid', 'true');
-        say('That code did not match. Check it with our team, or carry on with the traveller inquiry below.', 'bad');
+        say('That code did not match. Check it with our team, or switch to Traveller inquiry.', 'bad');
         cf.classList.remove('shake'); void cf.offsetWidth; cf.classList.add('shake');
         return;
       }
@@ -1824,13 +1827,8 @@
     input.addEventListener('input', () => { if (input.getAttribute('aria-invalid')) { input.removeAttribute('aria-invalid'); say(MSG); } });
 
     tabs.forEach(t => t.addEventListener('click', () => {
-      if (t.dataset.mode === 'partner' && !partner) {
-        say('Enter your partner code to open the partner quotation form.', 'hint');
-        input.focus();
-        cf.classList.remove('pulse'); void cf.offsetWidth; cf.classList.add('pulse');
-        return;
-      }
       setMode(t.dataset.mode);
+      if (mode === 'partner' && !partner && !touch) input.focus({ preventScroll: true });
     }));
     // arrow keys move between the two tabs
     $('.inq-mode').addEventListener('keydown', e => {
@@ -1839,7 +1837,7 @@
       e.preventDefault(); const nx = tabs[(i + 1) % tabs.length]; nx.focus(); nx.click();
     });
     $('#partnerSignOut').addEventListener('click', () => {
-      partner = null; keep(null); paint(); setMode('traveller'); say(MSG); input.focus();
+      partner = null; keep(null); paint(); setMode('partner'); say(MSG); input.focus();
     });
 
     // A code arriving in the link (contact.html?partner=CODE) or kept for this tab
@@ -1848,8 +1846,9 @@
     if (fromLink) { params.delete('partner'); history.replaceState(null, '', location.pathname + (params.toString() ? '?' + params : '') + location.hash); }
     const start = fromLink || kept();
     if (start) partnerFor(start).then(hit => {
-      if (hit) unlock(hit, !!fromLink);
-      else { keep(null); if (fromLink) say('The partner code in that link did not match. Type it below, or message us.', 'bad'); }
+      if (hit && fromLink) unlock(hit, true);
+      else if (hit) { partner = hit; paint(); }   // remembered for this tab: ready when the Partner tab is clicked
+      else { keep(null); if (fromLink) { setMode('partner'); say('The partner code in that link did not match. Type it below, or message us.', 'bad'); } }
     });
 
     // ---- the request ----
