@@ -24,7 +24,7 @@
   <link rel="preload" as="image" href="assets/img/hero/dest-bohol-1280.webp" imagesrcset="assets/img/hero/dest-bohol-960.webp 960w, assets/img/hero/dest-bohol-1280.webp 1280w" imagesizes="100vw" media="(max-width: 700px)">
   <link rel="preload" href="assets/fonts/raleway-latin.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="assets/fonts/playfair-display-latin.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="stylesheet" href="assets/css/site.min.css?v=fed6b4125e">
+  <link rel="stylesheet" href="assets/css/site.min.css?v=2e2b69c845">
 </head>
 <body data-page="tours" data-hero-top>
   <a class="skip-link" href="#main">Skip to content</a>
@@ -110,48 +110,51 @@
 
     <section class="section-tight" style="padding-top:0">
       <div class="container">
-        <div class="filters" role="search" aria-label="Filter tour packages">
-          <button class="filters-toggle" type="button" id="filtersToggle" aria-expanded="false" aria-controls="filtersRow">
-            <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg> Search &amp; sort</span>
-            <svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg>
-          </button>
-          <div class="filters-row" id="filtersRow">
-            <div class="field">
+        <div class="filters tf" role="search" aria-label="Filter tour packages">
+          <div class="tf-top">
+            <div class="field tf-search">
               <label for="tourSearch">Search</label>
               <div class="input-icon">
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg>
-                <input class="input" id="tourSearch" type="search" placeholder="Try “Chocolate Hills”, “Camotes”, “Da Nang”…">
+                <input class="input" id="tourSearch" type="search" placeholder="A place, e.g. Chocolate Hills, Ha Long Bay, Mt. Fuji" autocomplete="off">
               </div>
             </div>
-            <div class="field">
-              <label for="durationSel">Length</label>
-              <select class="select" id="durationSel">
-                <option value="all">Any length</option>
-                <option value="offer">Special offers</option>
-                <option value="day">Day tour</option>
-                <option value="multi">2 days or more</option>
-                <option value="soon">Coming soon</option>
-                <option value="past">Archive: past departures</option>
-              </select>
-            </div>
-            <div class="field">
+            <button class="filters-toggle" type="button" id="filtersToggle" aria-expanded="false" aria-controls="filtersRow">
+              <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 21v-7M4 10V3M12 21v-9M12 8V3M20 21v-5M20 12V3M1 14h6M9 8h6M17 16h6"/></svg> Filters <b class="tf-badge" id="filterCount" hidden>0</b></span>
+              <svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg>
+            </button>
+            <div class="field tf-sort">
               <label for="sortSel">Sort by</label>
               <select class="select" id="sortSel">
-                <option value="featured">Featured first</option>
+                <option value="featured">Recommended</option>
+                <option value="soonest">Next departure</option>
                 <option value="price">Price: low to high</option>
-                <option value="name">Name A–Z</option>
                 <option value="duration">Shortest first</option>
+                <option value="longest">Longest first</option>
+                <option value="name">Name A&ndash;Z</option>
               </select>
             </div>
-            <button class="btn btn-outline" id="clearFilters" type="button">Reset</button>
           </div>
           <h2 class="sr-only">All tour packages</h2>
-          <div class="filter-tabs" id="regionTabs"><!-- build:regionTabs --><button class="tab active" type="button" data-filter="all">All packages<span class="count">15</span></button><button class="tab" type="button" data-filter="philippines"><img class="flag" src="https://flagcdn.com/w40/ph.png" width="20" height="15" alt="" loading="lazy">Philippines<span class="count">9</span></button><button class="tab" type="button" data-filter="vietnam"><img class="flag" src="https://flagcdn.com/w40/vn.png" width="20" height="15" alt="" loading="lazy">Vietnam<span class="count">3</span></button><button class="tab" type="button" data-filter="china"><img class="flag" src="https://flagcdn.com/w40/cn.png" width="20" height="15" alt="" loading="lazy">China<span class="count">2</span></button><button class="tab" type="button" data-filter="japan"><img class="flag" src="https://flagcdn.com/w40/jp.png" width="20" height="15" alt="" loading="lazy">Japan<span class="count">1</span></button><!-- /build --></div>
+          <div class="tf-dest">
+            <span class="tf-label" id="destLabel">Destination</span>
+            <div class="filter-tabs" id="regionTabs" role="group" aria-labelledby="destLabel"><!-- build:regionTabs --><button class="tab active" type="button" data-filter="all">All destinations<span class="count">15</span></button><button class="tab" type="button" data-filter="philippines"><img class="flag" src="https://flagcdn.com/w40/ph.png" width="20" height="15" alt="" loading="lazy">Philippines<span class="count">9</span></button><button class="tab" type="button" data-filter="vietnam"><img class="flag" src="https://flagcdn.com/w40/vn.png" width="20" height="15" alt="" loading="lazy">Vietnam<span class="count">3</span></button><button class="tab" type="button" data-filter="china"><img class="flag" src="https://flagcdn.com/w40/cn.png" width="20" height="15" alt="" loading="lazy">China<span class="count">2</span></button><button class="tab" type="button" data-filter="japan"><img class="flag" src="https://flagcdn.com/w40/jp.png" width="20" height="15" alt="" loading="lazy">Japan<span class="count">1</span></button><!-- /build --></div>
+          </div>
+          <div class="tf-grid" id="filtersRow">
+            <div class="field"><label for="fLen">Trip length</label><select class="select" id="fLen"><option value="all">Any length</option></select></div>
+            <div class="field"><label for="fFrom">Departing from</label><select class="select" id="fFrom"><option value="all">Cebu or Manila</option></select></div>
+            <div class="field"><label for="fMonth">Travel month</label><select class="select" id="fMonth"><option value="all">Any month</option></select></div>
+            <div class="field"><label for="fStatus">Show</label><select class="select" id="fStatus"><option value="current">All current</option></select></div>
+            <div class="tf-inc">
+              <span class="tf-label" id="incLabel">Must include</span>
+              <div class="tf-chips" id="fInc" role="group" aria-labelledby="incLabel"></div>
+            </div>
+          </div>
         </div>
 
         <div class="results-bar">
-          <p id="resultsCount" aria-live="polite"><!-- build:resultsCount -->Showing <strong>15</strong> of 15 packages<!-- /build --></p>
-          <p class="small">Quotations are prepared for your dates and group size. Packages marked “coming soon” can be arranged as custom itineraries.</p>
+          <p id="resultsCount" aria-live="polite"><!-- build:resultsCount --><strong>14</strong> of 14 packages<!-- /build --></p>
+          <div class="tf-active" id="activeFilters"></div>
         </div>
 
         <div class="trow-grid" id="toursGrid"><!-- build:toursGrid -->
@@ -476,29 +479,6 @@
           </div>
         </div>
       </div>
-    </article>
-    <article class="trow soon" style="animation-delay:400ms">
-      <div class="trow-art is-poster">
-        <img src="assets/img/media/00f199ad62fa-800.webp" alt="Shanghai Mini Kyoto 5D4N tour poster" loading="lazy" decoding="async" width="566" height="800">
-        <span class="badge grey">Departed</span>
-        <button class="trow-zoom" type="button" data-posters="shanghai-mini-kyoto-5d4n" aria-label="Open the full itinerary poster for Shanghai Mini Kyoto 5D4N Tour"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" ><path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/></svg><span>Full poster</span></button>
-      </div>
-      <div class="trow-head">
-        <div class="tour-region"><span><img class="flag" src="https://flagcdn.com/w40/cn.png" srcset="https://flagcdn.com/w80/cn.png 2x" width="20" height="15" alt="China flag" loading="lazy">China</span><span class="status-pill past"><i></i>Departed</span></div>
-        <h3><a href="package-shanghai-mini-kyoto-5d4n.html">Shanghai Mini Kyoto 5D4N Tour</a></h3>
-        <ul class="trow-facts"><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" ><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>5 days 4 nights</li><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" ><path d="M17.8 19.2 16 11l3.5-3.5C21 6 21.5 4 21 3c-1-.5-3 0-4.5 1.5L13 8 4.8 6.2c-.5-.1-.9.1-1.1.5l-.3.5c-.2.5-.1 1 .3 1.3L9 12l-2 3H4l-1 1 3 2 2 3 1-1v-3l3-2 3.5 5.3c.3.4.8.5 1.3.3l.5-.2c.4-.3.6-.7.5-1.2z"/></svg>Manila</li></ul>
-      </div>
-      <div class="trow-main">
-        <p class="trow-sum">Five days in Shanghai on Juneyao Air from Manila: the Bund and Lujiazui skyline, the lantern-lit “Mini Kyoto” street, four nights with breakfast and an English-speaking guide.</p>
-        <p class="trow-route"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" ><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg><span>Shanghai<i aria-hidden="true">&rarr;</i>The Bund &amp; Lujiazui Skyline<i aria-hidden="true">&rarr;</i>Mini Kyoto Street</span></p>
-        <div class="trow-foot">
-          <div class="price "><small>From</small><strong>$369</strong><span>all-in per person</span></div>
-          <div class="actions">
-            <a class="btn btn-outline" href="package-shanghai-mini-kyoto-5d4n.html">Details</a>
-            <a class="btn btn-primary" href="contact.html?service=tour&package=shanghai-mini-kyoto-5d4n">Ask us<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" class="arrow"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
-          </div>
-        </div>
-      </div>
     </article><!-- /build --></div>
       </div>
     </section>
@@ -595,6 +575,6 @@
   <button class="to-top" id="toTop" type="button" aria-label="Back to top"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 19V5M5 12l7-7 7 7"/></svg></button>
   <!-- /build:footer -->
 
-  <script src="assets/js/site.min.js?v=592f4fc379"></script>
+  <script src="assets/js/site.min.js?v=a0f6fe4ae9"></script>
 </body>
 </html>

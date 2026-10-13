@@ -1289,3 +1289,63 @@ body .logo-text small { font-size: max(.69rem, 11px); letter-spacing: .15em; }
   .trow { animation: none; transition: none; }
   .trow:hover { transform: none; }
 }
+
+/* =========================================================
+   Tours page: filter panel
+   Search and sort on top, destination tabs, then the facets
+   (length, departure city, month, status) and "must include"
+   chips. Each option carries its live count.
+   ========================================================= */
+.tf { gap: 16px; padding: 20px 22px; }
+.tf-top { display: grid; grid-template-columns: minmax(0, 1fr) 230px; gap: 12px; align-items: end; }
+.tf .field label, .tf-label { font-size: max(.72rem, 11px); font-weight: 800; letter-spacing: .08em; text-transform: uppercase; color: var(--muted); }
+.tf .input, .tf .select { height: 44px; min-height: 44px; border-radius: 12px; font-size: .9rem; }
+.tf .select { padding-top: 0; padding-bottom: 0; line-height: 42px; }
+.tf .select.is-set { border-color: var(--blue); background-color: var(--blue-soft); color: var(--blue-3); font-weight: 700; }
+.tf-dest { display: flex; align-items: center; gap: 14px; min-width: 0; }
+.tf-dest .tf-label { flex: none; }
+.tf-dest .filter-tabs { flex-wrap: nowrap; overflow-x: auto; min-width: 0; }
+.tf .tab { min-height: 38px; padding: 0 14px; font-size: .86rem; display: inline-flex; align-items: center; gap: 7px; flex: none; }
+.tf .tab .count { font-size: .72rem; opacity: .75; }
+.tf .tab.is-empty { opacity: .45; }
+.tf-grid { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 12px; padding-top: 16px; border-top: 1px dashed var(--line); }
+.tf-inc { grid-column: 1 / -1; display: flex; align-items: center; gap: 14px; min-width: 0; }
+.tf-inc .tf-label { flex: none; }
+.tf-chips { display: flex; flex-wrap: wrap; gap: 6px; }
+.tf-chip { display: inline-flex; align-items: center; gap: 6px; min-height: 34px; padding: 0 11px; border-radius: 999px; border: 1.5px solid var(--line); background: #fff; color: var(--ink-2); font-size: .8rem; font-weight: 700; transition: border-color .2s, background-color .2s, color .2s; }
+.tf-chip svg { width: 14px; height: 14px; color: var(--blue); flex: none; }
+.tf-chip small { font-size: .7rem; color: var(--muted); font-weight: 700; }
+.tf-chip:hover:not(:disabled) { border-color: var(--blue); }
+.tf-chip[aria-pressed="true"] { background: var(--blue); border-color: var(--blue); color: #fff; }
+.tf-chip[aria-pressed="true"] svg, .tf-chip[aria-pressed="true"] small { color: #fff; }
+.tf-chip:disabled { opacity: .4; cursor: not-allowed; }
+.tf-chip:focus-visible, .tf-pill:focus-visible, .tf-clear:focus-visible { outline: 3px solid var(--gold); outline-offset: 2px; }
+.tf-badge { display: inline-grid; place-items: center; min-width: 20px; height: 20px; padding: 0 5px; border-radius: 999px; background: var(--gold); color: var(--navy-3); font-size: .72rem; font-weight: 800; }
+
+/* results line + active filters */
+.results-bar { margin: 26px 0 16px; align-items: center; }
+.results-bar #resultsCount { margin: 0; font-size: .92rem; }
+.tf-active { display: flex; flex-wrap: wrap; align-items: center; gap: 6px; }
+.tf-pill { display: inline-flex; align-items: center; gap: 6px; min-height: 30px; padding: 0 8px 0 12px; border-radius: 999px; background: var(--blue-soft); color: var(--blue-3); font-size: .8rem; font-weight: 700; }
+.tf-pill svg { width: 13px; height: 13px; }
+.tf-pill:hover { background: #d6e4f8; }
+.tf-clear { min-height: 30px; padding: 0 6px; font-size: .8rem; font-weight: 700; color: var(--muted); text-decoration: underline; text-underline-offset: 3px; }
+.tf-clear:hover { color: var(--navy); }
+.tf-empty-actions { display: flex; flex-wrap: wrap; gap: 10px; justify-content: center; margin-top: 18px; }
+
+@media (max-width: 1059px) {
+  .tf-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .tf-inc { flex-direction: column; align-items: flex-start; gap: 8px; }
+}
+@media (max-width: 640px) {
+  .tf { padding: 14px; gap: 12px; }
+  .tf-top { grid-template-columns: 1fr 1fr; gap: 8px; }
+  .tf-search { grid-column: 1 / -1; }
+  .tf-sort label { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); }
+  .tf .filters-toggle { min-height: 44px; border-radius: 12px; }
+  .tf-dest { flex-direction: column; align-items: stretch; gap: 6px; }
+  .filters.tf .tf-grid { display: none; grid-template-columns: 1fr 1fr; }
+  .filters.tf.open .tf-grid { display: grid; }
+  .tf-grid .field { min-width: 0; }
+  .results-bar { margin: 18px 0 12px; gap: 8px; }
+}

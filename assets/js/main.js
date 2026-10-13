@@ -708,55 +708,180 @@
       </article>`).join('');
   }
 
-  /* ---- Tours page ---- */
+  /* ---- Tours page ----
+     Facets that combine: destination (country tabs), search, trip length,
+     departure city, travel month, status and "must include" inclusions.
+     Every option shows how many packages it would leave given the other
+     choices (zero-result options are disabled), active choices show as
+     removable chips, and the state lives in the address so a filtered
+     list can be shared. Past departures are left out unless asked for. */
   function initToursPage() {
     const grid = $('#toursGrid');
     if (!grid || !IC.tours) return;
-    const search = $('#tourSearch'), dur = $('#durationSel'), sort = $('#sortSel'), count = $('#resultsCount'), clear = $('#clearFilters');
-    const tabs = countryTabs($('#regionTabs'), 'All packages', IC.tours, true);
+    const T = IC.tours;
+    const search = $('#tourSearch'), sort = $('#sortSel'), count = $('#resultsCount'), active = $('#activeFilters'), badge = $('#filterCount');
+    const sel = { len: $('#fLen'), from: $('#fFrom'), month: $('#fMonth'), status: $('#fStatus') };
+    const incBox = $('#fInc');
+    const tabs = countryTabs($('#regionTabs'), 'All destinations', T, true);
+
+    // ---- facet values per package
+    const lenOf = t => !t.days ? '' : t.days === 1 ? 'day' : t.days <= 3 ? '2-3' : t.days <= 5 ? '4-5' : '6+';
+    const fromOf = t => (/^manila/i.test(t.departure || '') ? 'manila' : t.departure ? 'cebu' : '');
+    const nextDates = t => (t.travelDates || []).map(d => rangeStart(d, t.year)).filter(d => d && d > today).sort((a, b) => a - b);
+    const mKey = d => `${d.getFullYear()}-${String(d.getMonth() + 1).padStart(2, '0')}`;
+    // fixed departures give their months; local tours without fixed dates run on request, any month
+    const monthsOf = t => {
+      if (effStatus(t) === 'past') return [];
+      if (t.travelDates && t.travelDates.length) return nextDates(t).map(mKey);
+      return effStatus(t) === 'available' ? ['any'] : [];
+    };
+    const incOf = t => incTags(t).map(x => x.label);
+    const nextOf = t => { const d = nextDates(t)[0]; return d ? +d : (effStatus(t) === 'available' ? 9e12 : 9.9e12); };
+
+    const LEN = [['day', 'Day tour'], ['2-3', '2 to 3 days'], ['4-5', '4 to 5 days'], ['6+', '6 days or more']];
+    const FROM = [['cebu', 'Cebu'], ['manila', 'Manila']];
+    const MONTHS = [...new Set(T.flatMap(t => nextDates(t).map(mKey)))].sort();
+    const mLabel = k => new Date(+k.slice(0, 4), +k.slice(5) - 1, 1).toLocaleDateString('en-GB', { month: 'long', year: 'numeric' });
+    const STATUS = [['current', 'All current'], ['offer', 'Special offers'], ['available', 'Available now'], ['soon', 'Coming soon'], ['past', 'Past departures'], ['every', 'Everything']];
+    // the inclusions people choose a trip by (baggage, souvenirs and the like stay on the cards)
+    const INC_KEYS = ['Airfare', 'Hotel', 'Meals', 'Boat ticket', 'Transport', 'Tour guide', 'Entrance fees', 'Insurance'];
+    const INC = INC_TAGS.filter(x => INC_KEYS.includes(x.label) && T.some(t => incOf(t).includes(x.label)));
+
+    // ---- state (from the address; older links used ?region=)
     const params = new URLSearchParams(location.search);
     const slugs = countryList().map(c => c.slug);
-    // Older links used ?region=cebu|bohol|visayas|intl
     const legacy = { cebu: 'philippines', bohol: 'philippines', visayas: 'philippines', intl: 'all' };
-    let country = params.get('country') && slugs.includes(cSlug(params.get('country'))) ? cSlug(params.get('country'))
-      : (params.get('region') && legacy[params.get('region')]) || 'all';
-    if (!slugs.includes(country)) country = 'all';
-    tabs.forEach(t => {
-      t.classList.toggle('active', t.dataset.filter === country);
-      t.addEventListener('click', () => { country = t.dataset.filter; tabs.forEach(x => x.classList.toggle('active', x === t)); apply(); });
+    const pick = (v, list, d) => (list.includes(v) ? v : d);
+    const st = {
+      country: pick(params.get('country') ? cSlug(params.get('country')) : legacy[params.get('region')] || 'all', ['all', ...slugs], 'all'),
+      q: params.get('q') || '',
+      len: pick(params.get('len'), LEN.map(x => x[0]), 'all'),
+      from: pick(params.get('from'), FROM.map(x => x[0]), 'all'),
+      month: pick(params.get('month'), MONTHS, 'all'),
+      status: pick(params.get('status'), STATUS.map(x => x[0]), 'current'),
+      inc: new Set((params.get('inc') || '').split(',').filter(v => INC.some(x => x.label === v))),
+      sort: pick(params.get('sort'), $$('option', sort).map(o => o.value), 'featured')
+    };
+    search.value = st.q; sort.value = st.sort;
+
+    // ---- matching; `skip` leaves one facet out so its options can be counted
+    const hay = t => (t.name + ' ' + regionLabel(t) + ' ' + (t.country || '') + ' ' + t.places.join(' ') + ' ' + t.inclusions.join(' ') + ' ' + (t.itinerary || []).map(d => d.title).join(' ')).toLowerCase();
+    const statusOk = (t, v) => { const s = effStatus(t); return v === 'every' || (v === 'current' ? s !== 'past' : s === v); };
+    const match = (t, skip, o = st) =>
+      (skip === 'country' || o.country === 'all' || cSlug(t.country) === o.country) &&
+      (skip === 'q' || !o.q.trim() || o.q.trim().toLowerCase().split(/\s+/).every(w => hay(t).includes(w))) &&
+      (skip === 'len' || o.len === 'all' || lenOf(t) === o.len) &&
+      (skip === 'from' || o.from === 'all' || fromOf(t) === o.from) &&
+      (skip === 'month' || o.month === 'all' || monthsOf(t).some(m => m === o.month || m === 'any')) &&
+      (skip === 'status' || statusOk(t, o.status)) &&
+      (skip === 'inc' || [...o.inc].every(l => incOf(t).includes(l)));
+    const countWith = (facet, v) => T.filter(t => match(t, facet) && match(t, null, Object.assign({}, st, { [facet]: v }))).length;
+
+    const fillSelect = (el, facet, anyLabel, opts) => {
+      el.innerHTML = (anyLabel ? `<option value="all">${esc(anyLabel)}</option>` : '') + opts.map(([v, l]) => {
+        const n = countWith(facet, v);
+        return `<option value="${esc(v)}"${n || st[facet] === v ? '' : ' disabled'}>${esc(l)} (${n})</option>`;
+      }).join('');
+      el.value = st[facet];
+    };
+    const paintFacets = () => {
+      fillSelect(sel.len, 'len', 'Any length', LEN);
+      fillSelect(sel.from, 'from', 'Cebu or Manila', FROM);
+      fillSelect(sel.month, 'month', 'Any month', MONTHS.map(k => [k, mLabel(k)]));
+      fillSelect(sel.status, 'status', '', STATUS);
+      Object.values(sel).forEach(el => el.classList.toggle('is-set', el.value !== (el === sel.status ? 'current' : 'all')));
+      tabs.forEach(tab => {
+        const n = tab.dataset.filter === 'all' ? T.filter(t => match(t, 'country')).length : countWith('country', tab.dataset.filter);
+        const c = $('.count', tab); if (c) c.textContent = n;
+        tab.classList.toggle('active', tab.dataset.filter === st.country);
+        tab.classList.toggle('is-empty', !n && tab.dataset.filter !== st.country);
+        tab.setAttribute('aria-pressed', String(tab.dataset.filter === st.country));
+      });
+      incBox.innerHTML = INC.map(x => {
+        const on = st.inc.has(x.label);
+        const n = T.filter(t => match(t, 'inc') && [...st.inc, x.label].every(l => incOf(t).includes(l))).length;
+        return `<button type="button" class="tf-chip" data-inc="${esc(x.label)}" aria-pressed="${on}"${n || on ? '' : ' disabled'}>${I[x.icon]}<span>${esc(x.label)}</span><small>${n}</small></button>`;
+      }).join('');
+    };
+
+    // ---- active filters, as chips that remove themselves
+    const chips = () => {
+      const c = [];
+      if (st.country !== 'all') c.push(['country', (countryList().find(x => x.slug === st.country) || {}).name]);
+      if (st.q.trim()) c.push(['q', `“${st.q.trim()}”`]);
+      if (st.len !== 'all') c.push(['len', LEN.find(x => x[0] === st.len)[1]]);
+      if (st.from !== 'all') c.push(['from', 'From ' + FROM.find(x => x[0] === st.from)[1]]);
+      if (st.month !== 'all') c.push(['month', mLabel(st.month)]);
+      if (st.status !== 'current') c.push(['status', STATUS.find(x => x[0] === st.status)[1]]);
+      st.inc.forEach(l => c.push(['inc:' + l, 'With ' + l.toLowerCase()]));
+      return c;
+    };
+    const reset = key => {
+      if (key === 'q') search.value = '';
+      if (key.startsWith('inc:')) st.inc.delete(key.slice(4));
+      else st[key] = { country: 'all', q: '', len: 'all', from: 'all', month: 'all', status: 'current' }[key];
+    };
+    const clearAll = () => { ['country', 'q', 'len', 'from', 'month', 'status'].forEach(reset); st.inc.clear(); };
+
+    const order = { offer: 0, available: 1, request: 2, soon: 3, past: 9 };
+    function apply() {
+      const list = T.filter(t => match(t));
+      switch (st.sort) {
+        case 'name': list.sort((a, b) => a.name.localeCompare(b.name)); break;
+        case 'duration': list.sort((a, b) => (a.days || 99) - (b.days || 99)); break;
+        case 'longest': list.sort((a, b) => (b.days || 0) - (a.days || 0)); break;
+        case 'price': list.sort((a, b) => priceValue(a) - priceValue(b)); break;
+        case 'soonest': list.sort((a, b) => nextOf(a) - nextOf(b)); break;
+        default: list.sort((a, b) => (order[effStatus(a)] - order[effStatus(b)]) || ((b.featured ? 1 : 0) - (a.featured ? 1 : 0)));
+      }
+      if (list.length) renderTours(grid, list, tourRow);
+      else grid.innerHTML = `<div class="empty-state"><h3 class="h3">No packages match those filters</h3><p class="muted">Remove a filter, or ask us to build the trip for you.</p><div class="tf-empty-actions"><button class="btn btn-outline" type="button" data-clear-all>Clear all filters</button><a class="btn btn-primary" href="contact.html?service=tour&package=custom">Request a custom tour ${I.arrow}</a></div></div>`;
+      paintFacets();
+      const c = chips();
+      const pool = T.filter(t => statusOk(t, st.status)).length;
+      count.innerHTML = `<strong>${list.length}</strong> of ${pool} ${pool === 1 ? 'package' : 'packages'}${c.length ? (list.length === 1 ? ' matches' : ' match') : ''}`;
+      active.innerHTML = c.length ? c.map(([k, l]) => `<button type="button" class="tf-pill" data-clear="${esc(k)}" aria-label="Remove filter: ${esc(l)}"><span>${esc(l)}</span>${I.x}</button>`).join('') + `<button type="button" class="tf-clear" data-clear-all>Clear all</button>` : '';
+      badge.hidden = !c.length; badge.textContent = c.length;
+      // the address carries the choices, so the filtered list can be shared
+      const q = new URLSearchParams();
+      if (st.country !== 'all') q.set('country', st.country);
+      if (st.q.trim()) q.set('q', st.q.trim());
+      ['len', 'from', 'month'].forEach(k => { if (st[k] !== 'all') q.set(k, st[k]); });
+      if (st.status !== 'current') q.set('status', st.status);
+      if (st.inc.size) q.set('inc', [...st.inc].join(','));
+      if (st.sort !== 'featured') q.set('sort', st.sort);
+      history.replaceState(null, '', location.pathname + (q.toString() ? '?' + q : '') + location.hash);
+    }
+
+    // ---- events
+    tabs.forEach(t => t.addEventListener('click', () => { st.country = t.dataset.filter; apply(); }));
+    let typing;
+    search.addEventListener('input', () => { clearTimeout(typing); typing = setTimeout(() => { st.q = search.value; apply(); }, 160); });
+    sort.addEventListener('change', () => { st.sort = sort.value; apply(); });
+    Object.entries(sel).forEach(([k, el]) => el.addEventListener('change', () => { st[k] = el.value; apply(); }));
+    incBox.addEventListener('click', e => {
+      const b = e.target.closest('[data-inc]'); if (!b) return;
+      const l = b.dataset.inc; if (st.inc.has(l)) st.inc.delete(l); else st.inc.add(l);
+      apply();
+      const again = $(`[data-inc="${CSS.escape(l)}"]`, incBox); if (again) again.focus();
+    });
+    document.addEventListener('click', e => {
+      const one = e.target.closest('[data-clear]'), all = e.target.closest('[data-clear-all]');
+      if (one && active.contains(one)) { reset(one.dataset.clear); apply(); search.focus({ preventScroll: true }); }
+      else if (all) { clearAll(); apply(); }
     });
     const fTog = $('#filtersToggle'), fBox = $('.filters');
     if (fTog && fBox) fTog.addEventListener('click', () => {
       const open = fBox.classList.toggle('open');
       fTog.setAttribute('aria-expanded', String(open));
     });
-    const durOk = (t, v) => v === 'all' || (v === 'day' && t.days === 1) || (v === 'multi' && t.days >= 2) || (v === 'offer' && effStatus(t) === 'offer') || (v === 'soon' && effStatus(t) === 'soon') || (v === 'past' && effStatus(t) === 'past');
-    const order = { offer: 0, available: 1, request: 2, soon: 3, past: 9 };
-    function apply() {
-      const q = (search.value || '').trim().toLowerCase();
-      const list = IC.tours.filter(t =>
-        (country === 'all' || cSlug(t.country) === country) && durOk(t, dur.value) &&
-        (!q || (t.name + ' ' + regionLabel(t) + ' ' + (t.country || '') + ' ' + t.places.join(' ') + ' ' + t.inclusions.join(' ')).toLowerCase().includes(q))
-      );
-      switch (sort.value) {
-        case 'name': list.sort((a, b) => a.name.localeCompare(b.name)); break;
-        case 'duration': list.sort((a, b) => (a.days || 99) - (b.days || 99)); break;
-        case 'price': list.sort((a, b) => priceValue(a) - priceValue(b)); break;
-        default: list.sort((a, b) => (order[effStatus(a)] - order[effStatus(b)]) || ((b.featured ? 1 : 0) - (a.featured ? 1 : 0)));
-      }
-      renderTours(grid, list, tourRow);
-      const cName = (countryList().find(c => c.slug === country) || {}).name;
-      count.innerHTML = `Showing <strong>${list.length}</strong> of ${IC.tours.length} packages` + (cName ? ` in <strong>${esc(cName)}</strong>` : '');
-    }
     // The poster button opens every poster of the package in the viewer
     grid.addEventListener('click', e => {
       const b = e.target.closest('[data-posters]'); if (!b) return;
-      const t = IC.tours.find(x => x.id === b.dataset.posters); if (!t || !t.posters) return;
+      const t = T.find(x => x.id === b.dataset.posters); if (!t || !t.posters) return;
       const list = t.posters.map((p, k) => ({ src: wix(p), title: t.posters.length > 1 ? `${t.name} · poster ${k + 1} of ${t.posters.length}` : `${t.name} · itinerary poster` }));
       openLightbox(list[0].src, list[0].title, list, 0);
     });
-    [search, dur, sort].forEach(el => el.addEventListener('input', apply));
-    clear.addEventListener('click', () => { search.value = ''; dur.value = 'all'; sort.value = 'featured'; country = 'all'; tabs.forEach(x => x.classList.toggle('active', x.dataset.filter === 'all')); apply(); });
     apply();
   }
 
