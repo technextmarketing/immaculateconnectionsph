@@ -1349,3 +1349,9 @@ body .logo-text small { font-size: max(.69rem, 11px); letter-spacing: .15em; }
   .tf-grid .field { min-width: 0; }
   .results-bar { margin: 18px 0 12px; gap: 8px; }
 }
+
+/* Viewer: both posters of a package side by side (desktop) */
+.lightbox-pair { display: flex; gap: 18px; align-items: center; justify-content: center; max-width: calc(100vw - 180px); }
+.lightbox-pair[hidden] { display: none; }
+.lightbox .lightbox-pair img { flex: 0 1 auto; min-width: 0; max-width: calc((100vw - 198px) / 2); max-height: calc(100vh - 150px); width: auto; height: auto; object-fit: contain; border-radius: 12px; }
+.lightbox figure > img[hidden] { display: none; }

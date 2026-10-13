@@ -879,7 +879,13 @@
     grid.addEventListener('click', e => {
       const b = e.target.closest('[data-posters]'); if (!b) return;
       const t = T.find(x => x.id === b.dataset.posters); if (!t || !t.posters) return;
-      const list = t.posters.map((p, k) => ({ src: wix(p), title: t.posters.length > 1 ? `${t.name} · poster ${k + 1} of ${t.posters.length}` : `${t.name} · itinerary poster` }));
+      const srcs = t.posters.map(p => wix(p));
+      // desktop: every poster at once, side by side; phones step through them
+      if (srcs.length > 1 && window.matchMedia('(min-width: 900px)').matches) {
+        openLightbox(srcs[0], `${t.name} · ${srcs.length} itinerary posters`, [{ src: srcs[0], pair: srcs, title: `${t.name} · ${srcs.length} itinerary posters` }], 0);
+        return;
+      }
+      const list = srcs.map((src, k) => ({ src, title: srcs.length > 1 ? `${t.name} · poster ${k + 1} of ${srcs.length}` : `${t.name} · itinerary poster` }));
       openLightbox(list[0].src, list[0].title, list, 0);
     });
     apply();
@@ -1091,7 +1097,7 @@
     if (lb) return lb;
     lb = document.createElement('div');
     lb.className = 'lightbox'; lb.setAttribute('role', 'dialog'); lb.setAttribute('aria-modal', 'true'); lb.setAttribute('aria-label', 'Photo viewer');
-    lb.innerHTML = `<button class="lightbox-close" type="button" aria-label="Close photo">${I.x}</button><span class="lightbox-count" aria-live="polite"></span><button class="lightbox-nav prev" type="button" aria-label="Previous photo">${I.left}</button><figure style="margin:0;text-align:center"><img alt=""><figcaption></figcaption></figure><button class="lightbox-nav next" type="button" aria-label="Next photo">${I.left}</button>`;
+    lb.innerHTML = `<button class="lightbox-close" type="button" aria-label="Close photo">${I.x}</button><span class="lightbox-count" aria-live="polite"></span><button class="lightbox-nav prev" type="button" aria-label="Previous photo">${I.left}</button><figure style="margin:0;text-align:center"><img alt=""><div class="lightbox-pair" hidden></div><figcaption></figcaption></figure><button class="lightbox-nav next" type="button" aria-label="Next photo">${I.left}</button>`;
     document.body.appendChild(lb);
     const close = () => {
       lb.classList.remove('open'); document.body.style.overflow = '';
@@ -1124,10 +1130,18 @@
   let lbList = [], lbAt = 0, lbReturn = null, lbInert = [];
   function showLightbox(dir) {
     const box = ensureLightbox(), it = lbList[lbAt]; if (!it) return;
-    const img = $('img', box);
-    img.src = it.src; img.alt = it.title || ''; $('figcaption', box).textContent = it.title || '';
+    const img = $('figure > img', box), pair = $('.lightbox-pair', box);
+    // an item with `pair` shows several images side by side (both posters of a package)
+    if (it.pair) {
+      img.hidden = true; img.removeAttribute('src'); pair.hidden = false;
+      pair.innerHTML = it.pair.map((s, k) => `<img src="${esc(s)}" alt="${esc(`${it.title || ''} ${k + 1} of ${it.pair.length}`)}">`).join('');
+    } else {
+      pair.hidden = true; pair.innerHTML = ''; img.hidden = false;
+      img.src = it.src; img.alt = it.title || '';
+    }
+    $('figcaption', box).textContent = it.title || '';
     $('.lightbox-count', box).textContent = lbList.length > 1 ? `${lbAt + 1} / ${lbList.length}` : '';
-    if (dir && !reduced) img.animate([{ opacity: 0, transform: `translate3d(${dir * 40}px, 0, 0)` }, { opacity: 1, transform: 'none' }], { duration: 380, easing: 'cubic-bezier(.16, 1, .3, 1)' });
+    if (dir && !reduced) (it.pair ? pair : img).animate([{ opacity: 0, transform: `translate3d(${dir * 40}px, 0, 0)` }, { opacity: 1, transform: 'none' }], { duration: 380, easing: 'cubic-bezier(.16, 1, .3, 1)' });
   }
   function stepLightbox(dir) {
     if (lbList.length < 2) return;
