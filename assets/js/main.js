@@ -169,7 +169,7 @@
   const statusPill = t => effStatus(t) === 'offer' ? '' : `<span class="status-pill ${effStatus(t)}"><i></i>${esc(statusLabel(t))}</span>`;
   // Destination label: the country for overseas packages, the region for local ones
   const destLabel = t => (t.region === 'intl' && t.country ? t.country : regionLabel(t));
-  // Image badge: "Departed", a price tag for priced offers, or a label that does not repeat the status pill
+  // Image badge (no longer drawn on the package cards, owner 15 Oct 2026; kept for other callers)
   const cardBadge = t => {
     const s = effStatus(t);
     if (s === 'past') return '<span class="badge past">Departed</span>';
@@ -609,7 +609,6 @@
     return `
     <article class="tour-card ${effStatus(t) === 'soon' || effStatus(t) === 'past' ? 'soon' : ''}" style="animation-delay:${Math.min(i, 8) * 60}ms">
       <a class="tour-media" href="${pkgUrl(t)}" aria-label="${esc(t.name)}">
-        ${cardBadge(t)}
         <img src="${wix(t.image, 640, 480, t.imageAlign)}" alt="${esc(t.alt)}" loading="lazy" width="640" height="480">
         <div class="tour-meta">
           ${t.duration ? `<span class="pill glass">${I.clock}${esc(t.duration)}</span>` : ''}
@@ -617,7 +616,7 @@
         </div>
       </a>
       <div class="tour-body">
-        <div class="tour-region"><span>${flagImg(t)}${esc(destLabel(t))}</span>${statusPill(t)}</div>
+        <div class="tour-region"><span>${flagImg(t)}${esc(destLabel(t))}</span></div>
         <h3><a href="${pkgUrl(t)}">${esc(t.name)}</a></h3>
         <p class="tour-intro">${esc(t.summary)}</p>
         ${incTagsHtml(t, 4)}
@@ -662,11 +661,10 @@
     <article class="trow${s === 'soon' || s === 'past' ? ' soon' : ''}" style="animation-delay:${Math.min(i, 8) * 50}ms">
       <div class="trow-art${posters ? ' is-poster' : ''}">
         <img src="${wix(art, posters ? 800 : 640)}" alt="${esc(t.alt)}" loading="${i < 2 ? 'eager' : 'lazy'}" decoding="async" width="${posters ? posterDims(t)[0] : 640}" height="${posters ? posterDims(t)[1] : 480}">
-        ${posters && s !== 'past' ? '' : cardBadge(t)}
         ${posters ? `<button class="trow-zoom" type="button" data-posters="${esc(t.id)}" aria-label="Open the full itinerary poster${posters.length > 1 ? 's' : ''} for ${esc(t.name)}">${I.expand}<span>${posters.length > 1 ? posters.length + ' posters' : 'Full poster'}</span></button>` : ''}
       </div>
       <div class="trow-head">
-        <div class="tour-region"><span>${flagImg(t)}${esc(destLabel(t))}</span>${statusPill(t)}</div>
+        <div class="tour-region"><span>${flagImg(t)}${esc(destLabel(t))}</span></div>
         <h3><a href="${pkgUrl(t)}">${esc(t.name)}</a></h3>
         ${facts ? `<ul class="trow-facts">${facts}</ul>` : ''}
       </div>
@@ -711,10 +709,9 @@
     const offers = IC.tours.filter(t => t.price && effStatus(t) !== 'past' && !seen.has(t.country) && seen.add(t.country)).slice(0, 3);
     grid.innerHTML = offers.map((t, i) => `
       <article class="offer-card reveal" style="--d:${i * 0.1}s">
-        <a class="offer-media" href="${pkgUrl(t)}"><img src="${wix(t.image, 520, 390, t.imageAlign)}" alt="${esc(t.alt)}" loading="lazy" width="520" height="390">${cardBadge(t)}</a>
+        <a class="offer-media" href="${pkgUrl(t)}"><img src="${wix(t.image, 520, 390, t.imageAlign)}" alt="${esc(t.alt)}" loading="lazy" width="520" height="390"></a>
         <div class="offer-body">
           <div class="offer-kickers"><span class="offer-kicker">${flagImg(t)}${esc(t.country)}</span><span class="offer-kicker">${I.plane}${esc(t.departure.split(' (')[0])} departure</span><span class="offer-kicker">${I.clock}${esc(t.duration)}</span></div>
-          ${statusPill(t)}
           <h3><a href="${pkgUrl(t)}">${esc(t.name)}</a></h3>
           <p>${esc(t.summary)}</p>
           ${incTagsHtml(t, 4)}
