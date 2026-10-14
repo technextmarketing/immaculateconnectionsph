@@ -47,6 +47,7 @@ body[data-hero-top] .svc-hero { padding-top: calc(var(--nav-h) + 18px); }
   font-size: max(.74rem, 11px); font-weight: 800; letter-spacing: .08em; text-transform: uppercase; color: rgba(255, 255, 255, .8);
 }
 .svc-form .input, .svc-form .select { background: #fff; border-color: #fff; color: var(--ink); padding: 9px 12px; min-height: 40px; border-radius: 10px; font-size: .94rem; color-scheme: light; }
+@media (max-width: 640px) { .svc-form .input, .svc-form .select, .svc-form .textarea { font-size: 16px; } }   /* under 16px iOS zooms the page on focus */
 .svc-form .input:focus, .svc-form .select:focus { border-color: var(--gold); box-shadow: 0 0 0 4px rgba(255, 183, 48, .35); }
 .svc-form .input::placeholder { color: #6b7789; }
 .svc-choice { border: 0; margin: 0 0 10px; padding: 0; min-width: 0; }
@@ -106,6 +107,10 @@ body[data-hero-top] .svc-hero { padding-top: calc(var(--nav-h) + 18px); }
 .svc-doc-wrap.peek { max-height: var(--peek, 160px); overflow: hidden; cursor: pointer; transition: max-height .6s var(--ease-out); }
 .svc-doc-wrap.peek.open { max-height: 1000px; cursor: default; }
 .svc-doc-wrap.peek + .svc-form { margin-top: -22px; position: relative; z-index: 2; }
+/* the pages ship with .peek so phones paint the collapsed document first (no layout shift when pages.js measures) */
+@media (max-width: 900px) { .svc-doc-wrap.peek { --peek: 124px; } }
+@media (max-width: 900px) and (max-height: 759px) { .svc-doc-wrap.peek { --peek: 100px; } }
+@media (min-width: 901px) { .svc-doc-wrap.peek { max-height: none; overflow: visible; cursor: default; } .svc-doc-wrap.peek + .svc-form { margin-top: 0; } .svc-doc-wrap.peek .doc-more { display: none; } }
 .doc-more {
   position: absolute; z-index: 3; left: 50%; bottom: 6px; transform: translateX(-50%); display: inline-flex; align-items: center; gap: 6px;
   padding: 5px 12px; border-radius: 999px; background: var(--st-featured); color: #fff; font-size: max(.72rem, 11px); font-weight: 800; white-space: nowrap;

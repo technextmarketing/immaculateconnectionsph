@@ -9,7 +9,7 @@
 
 /* ---------- Header: highlighted Tour Packages link ---------- */
 .nav-link.highlight { background: none; color: var(--navy); font-weight: 800; padding: 10px 14px; margin: 0; box-shadow: none; }
-.nav-link.highlight::after { display: block; height: 3px; background: var(--gold); transform: scaleX(1); }
+.nav-link.highlight::after { display: block; height: 3px; background: var(--gold); }   /* underline only when current or hovered, like the other links */
 .nav-link.highlight:hover { background: none; color: var(--blue-2); transform: none; }
 .nav-link.highlight.active { background: none; color: var(--blue-2); }
 .nav-link.highlight.active::after { background: var(--blue); }
@@ -580,7 +580,7 @@ html { scrollbar-width: thin; scrollbar-color: rgba(50,65,88,.35) transparent; }
   .live-badge { font-size: max(.64rem, 11px); padding: 6px 10px; top: -12px; }
   .field { gap: 4px; }
   .field label { font-size: max(.72rem, 11px); }
-  .input, .select, .textarea { padding: 10px 12px; font-size: .88rem; border-radius: 10px; }
+  .input, .select, .textarea { padding: 10px 12px; font-size: 16px; border-radius: 10px; }   /* under 16px iOS zooms the page on focus */
   .textarea { min-height: 90px; }
   .marquee { padding: 9px 0; }
   .marquee-item { font-size: .82rem; padding: 0 12px; gap: 10px; }
@@ -1533,10 +1533,10 @@ a.date-chip.sur:hover { border-color: var(--orange-2); background: var(--orange-
 /* Package sticky bar (phones/tablets): a chat button next to the main action, because the floating
    launcher steps aside while the bar is up */
 .sticky-cta .sc-actions { display: flex; align-items: center; gap: 8px; flex: none; }
-.sc-chat { width: 44px; height: 44px; flex: none; display: grid; place-items: center; border-radius: 50%; background: var(--navy); color: var(--gold); box-shadow: 0 0 0 2px #fff, 0 6px 14px -8px rgba(26, 36, 51, .7); transition: background-color .2s var(--ease); }
-.sc-chat:hover { background: var(--navy-2); }
-.sc-chat svg { width: 22px; height: 22px; }
-.sc-chat:focus-visible { outline: 3px solid var(--focus, #0f3b78); outline-offset: 2px; }
+.bar-chat { width: 44px; height: 44px; flex: none; display: grid; place-items: center; border-radius: 50%; background: var(--navy); color: var(--gold); box-shadow: 0 0 0 2px #fff, 0 6px 14px -8px rgba(26, 36, 51, .7); transition: background-color .2s var(--ease); }
+.bar-chat:hover { background: var(--navy-2); }
+.bar-chat svg { width: 22px; height: 22px; }
+.bar-chat:focus-visible { outline: 3px solid var(--focus, #0f3b78); outline-offset: 2px; }
 
 /* Ticketing: package names wrap to two lines instead of being cut */
 .db-pkg b { white-space: normal !important; text-overflow: clip !important; display: -webkit-box !important; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; }
