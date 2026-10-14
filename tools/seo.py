@@ -53,6 +53,43 @@ def robots():
     print("  robots.txt:", "updated" if write("robots.txt", s) else "unchanged")
 
 
+def icons():
+    """One square icon set on every page: favicon.ico (16/32/48, also what Google fetches for the
+    search result), a 192 px PNG and the iOS home-screen icon. Made from the logo mark."""
+    tags = ('<link rel="icon" href="favicon.ico" sizes="48x48">\n  <link rel="icon" href="assets/img/favicon-192.png" type="image/png" sizes="192x192">\n'
+            '  <link rel="apple-touch-icon" href="assets/img/apple-touch-icon.png">')
+    n = 0
+    for p in sorted(glob.glob("*.html")):
+        s = read(p)
+        s2 = re.sub(r'<link rel="icon"[^>]*>(?:\n  <link rel="(?:icon|apple-touch-icon)"[^>]*>)*', lambda m: tags, s, count=1)
+        n += write(p, s2)
+    print(f"  icons: {n} page(s) updated")
+
+
+# Addresses of the old Wix site. GitHub Pages cannot send a server redirect, so each one is a
+# tiny page with an instant meta refresh and a canonical to the new page; Google treats that as
+# a permanent redirect and passes the old page's standing on. Never delete one: they are indexed
+# and linked from Facebook posts. Kept out of the sitemap.
+LEGACY = {
+    "home": "", "tours-1": "tours", "local-tours": "tours", "local-tour": "tours", "international-tour": "tours",
+    "international-tours": "tours", "vietnam": "tours?country=vietnam", "services-1": "services", "services-5": "tours",
+    "inquiries": "contact", "inquiry": "contact", "contact-us": "contact", "about-us": "about", "about-1": "about",
+}
+
+
+def legacy_redirects():
+    n = 0
+    for old, new in LEGACY.items():
+        url = SITE + new
+        canon = SITE + new.split("?")[0]
+        s = (f'<!DOCTYPE html>\n<!-- Old Wix address, forwarded. Written by tools/seo.py (LEGACY). -->\n<html lang="en">\n<head>\n'
+             f'  <meta charset="utf-8">\n  <title>Moved | {NAME}</title>\n  <link rel="canonical" href="{canon}">\n'
+             f'  <meta http-equiv="refresh" content="0; url={html.escape(url)}">\n</head>\n<body>\n'
+             f'  <p>This page has moved to <a href="{html.escape(url)}">{html.escape(url)}</a>.</p>\n</body>\n</html>\n')
+        n += write(f"{old}.html", s)
+    print(f"  old Wix addresses: {len(LEGACY)} forwarders, {n} written")
+
+
 # ------------------------------------------------------------------ pages step
 def money(p):
     if not p: return ""

@@ -91,7 +91,7 @@ BUNDLES = [
 
 def build_assets():
     inject_partials()
-    import seo; seo.faq_ld(); seo.robots()
+    import seo; seo.legacy_redirects(); seo.faq_ld(); seo.robots(); seo.icons()
     import rcssmin
     sys.path.insert(0, os.path.join(ROOT, 'tools'))
     from jsmin_safe import minify as jsmin
@@ -299,12 +299,14 @@ def build_pages():
             ("ticketing.html", "monthly", "0.8"), ("mice.html", "monthly", "0.8"), ("gallery.html", "monthly", "0.7"), ("blog.html", "weekly", "0.7"), ("about.html", "monthly", "0.6"), ("contact.html", "monthly", "0.8")]
     main += [(os.path.basename(p), "monthly", "0.6") for p in sorted(glob.glob("blog-*.html"))]
     main = [m for m in main if not m[0] or os.path.exists(m[0])]   # only pages that exist
-    old = read("sitemap.xml") if os.path.exists("sitemap.xml") else ""
-    def lastmod(loc, fresh):
-        m = re.search(rf"<loc>{re.escape(loc)}</loc><lastmod>([\d-]+)</lastmod>", old)
-        return today if fresh or not m else m.group(1)
-    rows = [f"  <url><loc>{SITE}{p[:-5]}</loc><lastmod>{lastmod(SITE + p[:-5], False)}</lastmod><changefreq>{f}</changefreq><priority>{pr}</priority></url>" for p, f, pr in main]
-    rows += [f"  <url><loc>{SITE}package-{t['id']}</loc><lastmod>{lastmod(SITE + 'package-' + t['id'], False)}</lastmod><changefreq>weekly</changefreq><priority>0.8</priority></url>" for t in pages]
+    def lastmod(page):
+        # the day the page last changed: today while it has uncommitted edits, else its last commit
+        # (Google only trusts lastmod that tracks real changes; it ignores changefreq and priority)
+        def git(*a): return subprocess.run(["git", *a], capture_output=True, text=True).stdout.strip()
+        if not page or git("status", "--porcelain", "--", page): return today
+        return git("log", "-1", "--format=%cs", "--", page) or today
+    rows = [f"  <url><loc>{SITE}{p[:-5]}</loc><lastmod>{lastmod(p or 'index.html')}</lastmod></url>" for p, f, pr in main]
+    rows += [f"  <url><loc>{SITE}package-{t['id']}</loc><lastmod>{lastmod('package-' + t['id'] + '.html')}</lastmod></url>" for t in pages]
     print("  sitemap.xml:", "updated" if write("sitemap.xml", '<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n' + "\n".join(rows) + "\n</urlset>\n") else "unchanged")
 
     # search and AI-search files from the same package data

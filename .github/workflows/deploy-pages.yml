@@ -43,7 +43,7 @@ jobs:
         run: |
           rm -rf _site && mkdir _site
           cp *.html _site/
-          cp robots.txt sitemap.xml llms.txt packages.md .nojekyll _site/
+          cp robots.txt sitemap.xml llms.txt packages.md favicon.ico .nojekyll _site/
           cp -R assets _site/assets
           # stop the deploy if a page links to a local file that is not in _site
           missing=0
