@@ -1,10 +1,14 @@
 /* =========================================================
    Immaculate Connections — "Ask us" travel assistant (chat.js)
-   The launcher sits directly above the Messenger button
-   (.fab-msg). chat.js measures that button and sets:
-     --icc-r  right edge shared with .fab-msg
-     --icc-b  launcher bottom = fab bottom + fab height + 12px
-   The back-to-top button moves above the launcher.
+   Desktop (> 1024px): the launcher sits directly above the
+   Messenger button (.fab-msg); both are 48px circles until the
+   screen is wide enough (1680px) for labelled pills in the gutter.
+   Phones and tablets: the launcher is the ONLY floating button
+   (navy, 48px); Messenger is the first row inside the panel and
+   back-to-top is hidden. chat.js sets:
+     --icc-r  right edge
+     --icc-b  launcher bottom (desktop: fab bottom + fab height + 12px)
+   and body.fab-quiet while a CTA, form or control is under them.
    ========================================================= */
 
 :root {
@@ -29,7 +33,7 @@
 }
 .icc-launch > svg {
   width: 36px; height: 36px; padding: 8px; flex: none; border-radius: 50%;
-  background: var(--orange, #f6931e); color: var(--navy-3, #1a2433);
+  background: var(--orange-btn, #bc5700); color: #fff;
 }
 .icc-launch:hover { background: var(--navy-2, #263346); transform: translateY(-3px) scale(1.03); }
 .icc-launch:focus-visible { outline: 3px solid var(--focus, #0f3b78); outline-offset: 3px; }
@@ -48,8 +52,36 @@
 }
 /* the chat is open: the launcher steps back behind the panel */
 html.icc-open .icc-launch { opacity: 0; transform: scale(.85); pointer-events: none; }
-/* service pages hide the Messenger button while their hero form is on screen (pages.js) */
+/* chat.js: CTAs, forms or controls under the floating buttons -> they step aside */
 body.fab-quiet .icc-launch { opacity: 0; transform: translate3d(0, 16px, 0) scale(.9); pointer-events: none; }
+body.fab-quiet .fab-msg, body.fab-quiet .to-top.show { opacity: 0; transform: translate3d(0, 16px, 0) scale(.9); pointer-events: none; }
+.fab-msg { transition: opacity .25s var(--icc-ease), transform .3s var(--icc-ease), background-color .2s, box-shadow .3s; }
+
+/* Compact launcher: a 48px navy circle with a gold icon (never orange on the orange CTAs).
+   Every width below 1680px; wider screens have room in the gutter for the labelled pill. */
+@media (max-width: 1679px) {
+  .icc-launch { width: var(--icc-lh); padding: 0; justify-content: center; gap: 0; }
+  .icc-launch > svg { width: 26px; height: 26px; padding: 0; background: none; color: var(--gold, #ffb730); }
+  .icc-label { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
+  .icc-badge { top: 1px; left: auto; right: 1px; }
+  .fab-msg { width: 48px; height: 48px; padding: 0 !important; justify-content: center; gap: 0; }
+  .fab-msg > span:not(.fab-pulse) { display: none; }
+  .fab-msg svg { width: 24px !important; height: 24px !important; }
+}
+/* Laptops (1025-1439px): the page gutter is only ~35px, so the stack shrinks to 42px circles
+   hugging the edge; they clear the cards' buttons (which sit 14px or more inside the container) */
+@media (min-width: 1025px) and (max-width: 1439px) {
+  :root { --icc-lh: 42px; }
+  .fab-msg { right: 6px; bottom: 10px; width: 42px; height: 42px; }
+  .fab-msg svg { width: 22px !important; height: 22px !important; }
+  .to-top { right: 6px; width: 42px; height: 42px; }
+  .icc-launch > svg { width: 24px; height: 24px; }
+}
+/* Phones and tablets: one floating button. Messenger moves into the chat panel, back-to-top goes. */
+@media (max-width: 1024px) {
+  html.icc-ready .fab-msg { display: none; }
+  html.icc-ready body .to-top { display: none; }
+}
 
 /* back-to-top goes above the launcher */
 html.icc-ready body .to-top { bottom: calc(var(--icc-b) + var(--icc-lh) + 12px); }
@@ -87,6 +119,22 @@ html.icc-ready body .to-top { bottom: calc(var(--icc-b) + var(--icc-lh) + 12px);
 .icc-x svg { width: 22px; height: 22px; }
 .icc-x:hover { background: rgba(255, 255, 255, .14); }
 .icc-x:focus-visible { outline: 3px solid var(--focus, #0f3b78); outline-offset: -3px; }
+
+/* Messenger: the first row of the panel (on phones and tablets the only way in) */
+.icc-msgr {
+  flex: none; display: flex; align-items: center; gap: 12px; padding: 11px 16px; text-decoration: none;
+  background: #eef4ff; border-bottom: 1px solid #d5e3fb; color: var(--navy-3, #1a2433);
+  transition: background-color .2s;
+}
+.icc-msgr[hidden] { display: none; }
+.icc-msgr > svg:first-child { width: 34px; height: 34px; padding: 7px; flex: none; border-radius: 50%; background: var(--messenger, #0866ff); color: #fff; }
+.icc-msgr span { flex: 1; min-width: 0; display: grid; gap: 1px; }
+.icc-msgr b { font-size: .92rem; line-height: 1.25; color: var(--messenger-ink, #0650c7); }
+.icc-msgr small { font-size: .78rem; line-height: 1.3; color: var(--muted, #5d6b7e); }
+.icc-msgr .icc-go { width: 18px; height: 18px; flex: none; color: var(--messenger, #0866ff); transition: transform .2s var(--icc-ease); }
+.icc-msgr:hover { background: #e2ecff; }
+.icc-msgr:hover .icc-go { transform: translateX(3px); }
+.icc-msgr:focus-visible { outline: 3px solid var(--focus, #0f3b78); outline-offset: -3px; }
 
 /* ---------- Message log ---------- */
 .icc-log {
@@ -155,10 +203,12 @@ html.icc-ready body .to-top { bottom: calc(var(--icc-b) + var(--icc-lh) + 12px);
 .icc-msg .icc-card-title { font-size: .95rem; line-height: 1.3; font-weight: 800; color: var(--navy-3, #1a2433); text-decoration: none; }
 .icc-msg .icc-card-title:hover { color: var(--blue, #1d67cd); text-decoration: underline; }
 .icc-status { flex: none; font-size: .68rem; font-weight: 800; padding: 4px 9px; border-radius: 999px; white-space: nowrap; background: var(--blue-soft, #e7effb); color: var(--blue-2, #154f9f); }
-.icc-status.s-offer { background: var(--orange, #f6931e); color: var(--navy-3, #1a2433); }
-.icc-status.s-available { background: #e3f6ea; color: #157a42; }
-.icc-status.s-soon { background: var(--gold-soft, #fff4dc); color: #8a5a00; }
-.icc-status.s-past { background: #e9edf2; color: #4a5568; }
+.icc-status { background: var(--st-request, #324158); color: #fff; }
+.icc-status.s-offer { background: var(--st-offer, #c81e1e); color: #fff; }
+.icc-status.s-available { background: var(--st-available, #15803d); color: #fff; }
+.icc-status.s-soon { background: var(--st-soon, #1d67cd); color: #fff; }
+.icc-status.s-request { background: var(--st-request, #324158); color: #fff; }
+.icc-status.s-past { background: var(--st-past, #6b7280); color: #fff; }
 .icc-meta { margin: 4px 0 6px !important; font-size: .78rem; color: var(--muted, #5d6b7e); }
 .icc-price { margin: 0 0 4px !important; font-size: .8rem; color: var(--muted, #5d6b7e); }
 .icc-msg .icc-price b { font-size: 1.12rem; color: var(--blue-3, #0f3b78); }
@@ -183,8 +233,8 @@ html.icc-ready body .to-top { bottom: calc(var(--icc-b) + var(--icc-lh) + 12px);
 }
 .icc-msg .icc-btn:hover { background: var(--btn-outline-bg-hover, #e7effb); color: var(--btn-outline-fg-hover, #0f3b78); border-color: var(--blue-2, #154f9f); }
 .icc-msg .icc-btn:active { transform: scale(.98); }
-.icc-msg .icc-btn.is-primary { background: var(--orange, #f6931e); border-color: var(--orange, #f6931e); color: var(--navy-3, #1a2433); }
-.icc-msg .icc-btn.is-primary:hover { background: var(--orange-2, #d97c0e); border-color: var(--orange-2, #d97c0e); }
+.icc-msg .icc-btn.is-primary { background: var(--orange-btn, #bc5700); border-color: var(--orange-btn, #bc5700); color: #fff; }
+.icc-msg .icc-btn.is-primary:hover { background: var(--orange-btn-hover, #9a4400); border-color: var(--orange-btn-hover, #9a4400); color: #fff; }
 .icc-msg .icc-btn.is-msgr { background: var(--messenger, #0084ff); border-color: var(--messenger, #0084ff); color: #fff; }
 .icc-msg .icc-btn.is-msgr:hover { background: #0657d9; border-color: #0657d9; color: #fff; }
 .icc-btn .icc-i { vertical-align: 0; }
@@ -228,11 +278,6 @@ html.icc-ready body .to-top { bottom: calc(var(--icc-b) + var(--icc-lh) + 12px);
 
 /* ---------- Phones: icon-only launcher, full-screen sheet ---------- */
 @media (max-width: 640px) {
-  :root { --icc-lh: 44px; }
-  .icc-launch { width: 44px; padding: 0; justify-content: center; }
-  .icc-launch > svg { width: 36px; height: 36px; padding: 8px; }
-  .icc-label { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
-  .icc-badge { top: 0; left: auto; right: 0; }
   .icc-panel {
     inset: 0; right: 0; bottom: 0; width: 100%; max-width: none; height: 100%; max-height: none;
     border: 0; border-radius: 0; box-shadow: none; transform: translate3d(0, 24px, 0);
@@ -254,10 +299,3 @@ html.icc-ready body .to-top { bottom: calc(var(--icc-b) + var(--icc-lh) + 12px);
 .motion-paused .icc-launch.is-nudge { animation: none; }
 
 @media print { .icc-launch, .icc-panel { display: none !important; } }
-
-/* phones: chat sits beside Messenger (chat.js sets html.icc-side); back-to-top steps aside, the
-   pair would otherwise cover a third of the screen with buttons */
-@media (max-width: 640px) {
-  html.icc-ready body .to-top { display: none; }
-  html.icc-side .icc-launch { box-shadow: 0 0 0 2px #fff, 0 10px 22px -10px rgba(26, 36, 51, .7); }
-}

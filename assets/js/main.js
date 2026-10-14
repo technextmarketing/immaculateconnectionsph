@@ -157,7 +157,7 @@
   const pkgHeroBg = t => {
     const k = IC.destHero && IC.destHero[t.id];
     const pic = k
-      ? `<picture><source media="(max-width: 700px)" srcset="assets/img/hero/dest-${k}-960.webp 960w, assets/img/hero/dest-${k}-1280.webp 1280w" sizes="100vw"><img src="assets/img/hero/dest-${k}-2400.webp" width="2400" height="1350" alt="" fetchpriority="high" decoding="async"></picture>`
+      ? `<picture><source media="(max-width: 700px)" srcset="assets/img/hero/dest-${k}-m.webp 810w" sizes="100vw"><img src="assets/img/hero/dest-${k}-2400.webp" width="2400" height="1350" alt="" fetchpriority="high" decoding="async"></picture>`
       : `<img src="${wix(t.hero || t.image, 1600)}" alt="" decoding="async">`;
     return `<div class="ph-rig"><figure class="ph-scene is-on${k ? '' : ' soft'}" data-move="push">${pic}</figure></div>`;
   };
@@ -171,7 +171,7 @@
   // Image badge: "Departed", a price tag for priced offers, or a label that does not repeat the status pill
   const cardBadge = t => {
     const s = effStatus(t);
-    if (s === 'past') return '<span class="badge grey">Departed</span>';
+    if (s === 'past') return '<span class="badge past">Departed</span>';
     if (t.price) return `<span class="badge gold">${esc(t.price.label)} ${money(t.price)}</span>`;
     if (t.badge && t.badge.toLowerCase() !== statusLabel(t).toLowerCase()) return `<span class="badge ${badgeClass(t.badge)}">${esc(t.badge)}</span>`;
     return '';
@@ -240,6 +240,12 @@
     const q = new URLSearchParams({ service: 'tour', package: t.id });
     const iso = dateChipIso(d, t);
     if (iso) q.set('date', iso);
+    // the last day as written on the date ("Oct 30–Nov 3", "Aug 2–6"), for forms that ask for an end date
+    const e = iso && String(d.d || '').match(/[–-]\s*(?:([A-Za-z]{3})[a-z]*\s*)?(\d{1,2})\s*$/);
+    if (e) {
+      const s = new Date(iso + 'T00:00:00'), mo = e[1] ? MONTHS[e[1].toLowerCase()] : s.getMonth();
+      if (mo != null) { const end = new Date(s.getFullYear() + (mo < s.getMonth() ? 1 : 0), mo, +e[2]); q.set('end', `${end.getFullYear()}-${String(end.getMonth() + 1).padStart(2, '0')}-${String(end.getDate()).padStart(2, '0')}`); }
+    }
     q.set('notes', `Preferred travel dates: ${d.d}${d.y || t.year ? ' ' + (d.y || t.year) : ''}${d.add ? ` (peak-date surcharge ${money(t.price, d.add)} per pax)` : ''}`);
     return 'contact?' + q.toString();
   };
@@ -585,10 +591,10 @@
   /* ===================== Tour cards ===================== */
   function badgeClass(b) {
     b = (b || '').toLowerCase();
-    if (b.includes('soon')) return 'grey';
+    if (b.includes('soon')) return 'soon';
     if (b.includes('offer')) return '';
-    if (b.includes('heritage')) return 'blue';
-    if (b.includes('featured')) return 'gold';
+    if (b.includes('heritage')) return 'heritage';
+    if (b.includes('featured')) return 'featured';
     return 'navy';
   }
   function priceBlock(t, big) {
@@ -699,7 +705,9 @@
   function initOffers() {
     const grid = $('#offersGrid');
     if (!grid || !IC.tours) return;
-    const offers = IC.tours.filter(t => t.price && effStatus(t) !== 'past');
+    // three cards, one per country (the first live priced package of each), so the row shows the range
+    const seen = new Set();
+    const offers = IC.tours.filter(t => t.price && effStatus(t) !== 'past' && !seen.has(t.country) && seen.add(t.country)).slice(0, 3);
     grid.innerHTML = offers.map((t, i) => `
       <article class="offer-card reveal" style="--d:${i * 0.1}s">
         <a class="offer-media" href="${pkgUrl(t)}"><img src="${wix(t.image, 520, 390, t.imageAlign)}" alt="${esc(t.alt)}" loading="lazy" width="520" height="390">${cardBadge(t)}</a>
@@ -985,10 +993,14 @@
               <span class="eyebrow">Dates &amp; price</span>
               <h2 class="h2">Travel dates${yearsLabel ? ' ' + yearsLabel : ''}</h2>
               <p class="muted" style="margin-bottom:18px">${esc(t.travelDatesNote || '')}${past ? ' This departure has passed; ask us about the next schedule.' : ` Base rate ${esc(t.price.label.toLowerCase())} ${money(t.price)} ${esc(t.price.unit)}.`}</p>
-              <div class="date-grid">${t.travelDates.map(d => isPastDate(d, t)
-                ? `<span class="date-chip past" title="This departure date has passed">${I.cal}<span>${esc(d.d)}${d.y ? ' ' + d.y : ''}</span></span>`
-                : `<a class="date-chip ${d.add ? 'sur' : ''}" href="${dateChipHref(d, t)}" title="Select these dates and send an inquiry">${I.cal}<span>${esc(d.d)}${d.y ? ' ' + d.y : ''}</span>${d.add ? `<em>+${d.cur === 'USD' ? '$' + d.add : peso(d.add)}</em>` : ''}</a>`).join('')}</div>
-              ${anyOpen ? `<p class="date-hint">${I.arrow.replace('class="arrow"', '')}<span><strong>Tap a date to book it.</strong> Your inquiry form opens with this package and your chosen departure already filled in. Dates in orange carry a peak-season surcharge per pax; greyed dates have passed. Availability is confirmed at booking.</span></p>` : ''}
+              ${(() => {   // bookable dates first; departures that have passed fold away under a toggle
+                const openD = t.travelDates.filter(d => !isPastDate(d, t)), pastD = t.travelDates.filter(d => isPastDate(d, t));
+                const chip = d => `<a class="date-chip ${d.add ? 'sur' : ''}" href="${dateChipHref(d, t)}" title="Select these dates and send an inquiry">${I.cal}<span>${esc(d.d)}${d.y ? ' ' + d.y : ''}</span>${d.add ? `<em>+${d.cur === 'USD' ? '$' + d.add : peso(d.add)}</em>` : ''}</a>`;
+                const gone = d => `<span class="date-chip past" title="This departure date has passed">${I.cal}<span>${esc(d.d)}${d.y ? ' ' + d.y : ''}</span></span>`;
+                return (openD.length ? `<div class="date-grid">${openD.map(chip).join('')}</div>` : '')
+                  + (pastD.length ? `<details class="past-dates"${openD.length ? '' : ' open'}><summary>${openD.length ? 'Show past dates' : 'Past dates'} (${pastD.length})<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg></summary><div class="date-grid">${pastD.map(gone).join('')}</div></details>` : '');
+              })()}
+              ${anyOpen ? `<p class="date-hint">${I.arrow.replace('class="arrow"', '')}<span><strong>Tap a date to book it.</strong> Your inquiry form opens with this package and your chosen departure already filled in. Dates in orange carry a peak-season surcharge per pax. Availability is confirmed at booking.</span></p>` : ''}
             </article>` : ''}
 
             <article id="overview" class="pkg-section reveal">
@@ -1070,7 +1082,7 @@
 
       <div class="sticky-cta" id="stickyCta">
         <div>${t.price && !past ? `<small>${esc(t.price.label)}</small><strong>${money(t.price)}</strong>` : past ? `<small>Departed</small><strong>Next date on request</strong>` : `<small>Price</small><strong>On request</strong>`}</div>
-        <a class="btn btn-primary" href="contact?service=tour&package=${encodeURIComponent(t.id)}">${ctaLabel(t)}</a>
+        <div class="sc-actions"><button type="button" class="sc-chat" data-chat-open aria-label="Ask us in the chat"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 11.5a8.4 8.4 0 0 1-9 8.4 9 9 0 0 1-3.6-.8L3 21l1.9-5.1A8.2 8.2 0 0 1 3 11.5 8.6 8.6 0 0 1 12 3a8.6 8.6 0 0 1 9 8.5Z"/><path d="M8.5 11.5h.01M12 11.5h.01M15.5 11.5h.01" stroke-width="2.6"/></svg></button><a class="btn btn-primary" href="contact?service=tour&package=${encodeURIComponent(t.id)}">${ctaLabel(t)}</a></div>
       </div>`;
 
     if (related.length) renderTours($('#relatedGrid', root), related);
@@ -1112,7 +1124,7 @@
     if (lb) return lb;
     lb = document.createElement('div');
     lb.className = 'lightbox'; lb.setAttribute('role', 'dialog'); lb.setAttribute('aria-modal', 'true'); lb.setAttribute('aria-label', 'Photo viewer');
-    lb.innerHTML = `<button class="lightbox-close" type="button" aria-label="Close photo">${I.x}</button><span class="lightbox-count" aria-live="polite"></span><button class="lightbox-nav prev" type="button" aria-label="Previous photo">${I.left}</button><figure style="margin:0;text-align:center"><img alt=""><div class="lightbox-pair" hidden></div><figcaption></figcaption></figure><button class="lightbox-nav next" type="button" aria-label="Next photo">${I.left}</button>`;
+    lb.innerHTML = `<button class="lightbox-close" type="button" aria-label="Close photo">${I.x}</button><span class="lightbox-count" aria-live="polite"></span><button class="lightbox-nav prev" type="button" aria-label="Previous photo">${I.left}</button><figure style="margin:0;text-align:center"><img alt=""><div class="lightbox-pair" hidden></div><figcaption></figcaption></figure><a class="lightbox-full" href="#" target="_blank" rel="noopener">Open full size<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 3h6v6M10 14 21 3M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/></svg></a><button class="lightbox-nav next" type="button" aria-label="Next photo">${I.left}</button>`;
     document.body.appendChild(lb);
     const close = () => {
       lb.classList.remove('open'); document.body.style.overflow = '';
@@ -1136,9 +1148,16 @@
       else if (e.key === 'ArrowRight') stepLightbox(1);
       else if (e.key === 'ArrowLeft') stepLightbox(-1);
     });
-    let sx = null;
-    lb.addEventListener('pointerdown', e => { sx = e.clientX; });
-    lb.addEventListener('pointerup', e => { if (sx == null) return; const dx = e.clientX - sx; sx = null; if (Math.abs(dx) > 50 && lbList.length > 1) stepLightbox(dx < 0 ? 1 : -1); });
+    // one-finger swipe steps; a second finger means pinch-zoom, which stays the browser's
+    let sx = null; const fingers = new Set();
+    lb.addEventListener('pointerdown', e => { fingers.add(e.pointerId); sx = fingers.size > 1 || !e.isPrimary ? null : e.clientX; });
+    const lift = e => { fingers.delete(e.pointerId); };
+    lb.addEventListener('pointercancel', e => { lift(e); sx = null; });
+    lb.addEventListener('pointerup', e => {
+      const multi = fingers.size > 1; lift(e);
+      if (sx == null || multi || (window.visualViewport && window.visualViewport.scale > 1.05)) { sx = null; return; }
+      const dx = e.clientX - sx; sx = null; if (Math.abs(dx) > 50 && lbList.length > 1) stepLightbox(dx < 0 ? 1 : -1);
+    });
     return lb;
   }
   // The viewer shows one photo, or steps through a group: openLightbox(src, title, [{src, title}], index)
@@ -1155,6 +1174,8 @@
       img.src = it.src; img.alt = it.title || '';
     }
     $('figcaption', box).textContent = it.title || '';
+    const full = $('.lightbox-full', box), fsrc = it.pair ? it.pair[0] : it.src;
+    full.href = IC.fullSize ? IC.fullSize(fsrc) : fsrc;
     $('.lightbox-count', box).textContent = lbList.length > 1 ? `${lbAt + 1} / ${lbList.length}` : '';
     if (dir && !reduced) (it.pair ? pair : img).animate([{ opacity: 0, transform: `translate3d(${dir * 40}px, 0, 0)` }, { opacity: 1, transform: 'none' }], { duration: 380, easing: 'cubic-bezier(.16, 1, .3, 1)' });
   }
@@ -1179,10 +1200,18 @@
   function initGallery() {
     const root = $('#gallery');
     if (root && IC.gallery) {
-      const items = root.dataset.limit ? IC.gallery.slice(0, parseInt(root.dataset.limit, 10)) : IC.gallery;
+      let items = IC.gallery;
+      if (root.dataset.limit) {
+        const n = parseInt(root.dataset.limit, 10);
+        if (root.hasAttribute('data-mix')) {   // a few of each kind of trip, round-robin over the categories
+          const cats = [...new Set(IC.gallery.map(g => g.cat))], pools = cats.map(c => IC.gallery.filter(g => g.cat === c));
+          items = [];
+          for (let i = 0; items.length < n && pools.some(p => p.length); i++) { const p = pools[i % pools.length]; if (p.length) items.push(p.shift()); }
+        } else items = IC.gallery.slice(0, n);
+      }
       root.innerHTML = items.map((g, i) => `
         <figure class="gal-item ${g.shape} reveal" style="--d:${(i % 4) * 0.08}s" data-cat="${esc(g.cat || '')}" data-lb="${esc(g.id)}" data-title="${esc(g.title)} · ${esc(g.sub)}" tabindex="0" role="button" aria-label="View ${esc(g.title)}">
-          <img src="${wix(g.id, 900, g.shape === 'tall' ? 1200 : g.shape === 'square' ? 900 : 675)}" alt="${esc(g.title)} – ${esc(g.sub)}" loading="lazy" decoding="async" width="900" height="${g.shape === 'tall' ? 1200 : g.shape === 'square' ? 900 : 675}">
+          <img src="${wix(g.id, 800)}" alt="${esc(g.title)} – ${esc(g.sub)}" loading="lazy" decoding="async" width="800" height="${g.shape === 'tall' ? 1067 : g.shape === 'square' ? 800 : 600}">
           <figcaption>${esc(g.title)}<small>${esc(g.sub)}</small></figcaption>
         </figure>`).join('');
     }
@@ -1191,6 +1220,7 @@
       const caps = (row.dataset.captions || '').split('|');
       row.innerHTML = list.map((id, i) => `<figure class="reveal" style="--d:${i * 0.08}s" data-lb="${esc(id)}" data-title="${esc(caps[i] || '')}" tabindex="0" role="button" aria-label="View photo"><img src="${wix(id, 800, 600)}" alt="${esc(caps[i] || 'Photo')}" loading="lazy" decoding="async" width="800" height="600">${caps[i] ? `<figcaption>${esc(caps[i])}</figcaption>` : ''}</figure>`).join('');
     });
+    if (root) layoutGallery(root);
     if (root && root.hasAttribute('data-filters')) initGalleryFilters(root);
     // A photo opens in the viewer with the rest of its group (the visible gallery tiles, or its photo row) to step through
     const openFrom = f => {
@@ -1218,6 +1248,33 @@
     });
   }
 
+  /* ===================== Gallery wall: balanced columns =====================
+     The wall is a CSS grid with a fixed row unit (style.css .gallery). Each tile goes into the
+     shortest column (a tall photo takes two units, the rest one), then the last tile of any
+     column that is still short grows to fill it, so every column ends on the same line. */
+  function layoutGallery(root) {
+    const run = () => {
+      const tiles = $$('.gal-item', root).filter(t => !t.hidden);
+      const cols = getComputedStyle(root).gridTemplateColumns.split(' ').filter(Boolean).length || 1;
+      const gap = parseFloat(getComputedStyle(root).rowGap) || 0;
+      const colW = (root.clientWidth - gap * (cols - 1)) / cols;
+      root.style.setProperty('--gal-row', Math.round(colW * (cols > 2 ? .72 : .78)) + 'px');
+      const h = new Array(cols).fill(0), last = new Array(cols).fill(null);
+      tiles.forEach(t => {
+        const span = t.classList.contains('tall') ? 2 : 1;
+        let c = 0; for (let i = 1; i < cols; i++) if (h[i] < h[c]) c = i;
+        t.style.gridColumn = String(c + 1); t.style.gridRow = `${h[c] + 1} / span ${span}`; t.__row = h[c] + 1;
+        h[c] += span; last[c] = t;
+      });
+      const top = Math.max(...h);
+      h.forEach((v, c) => { if (v < top && last[c]) { const t = last[c]; t.style.gridRow = `${t.__row} / span ${(t.classList.contains('tall') ? 2 : 1) + top - v}`; } });
+    };
+    run();
+    root.__layout = run;
+    let w = root.clientWidth, tm = 0;
+    window.addEventListener('resize', () => { if (root.clientWidth === w) return; w = root.clientWidth; clearTimeout(tm); tm = setTimeout(run, 120); });
+  }
+
   /* ===================== Gallery filters =====================
      The chips re-sort the wall: tiles that stay slide to their new place,
      tiles that arrive fade and grow in (FLIP, so layout is never animated). */
@@ -1233,6 +1290,7 @@
       $$('button', bar).forEach(x => x.setAttribute('aria-pressed', String(x === b)));
       const first = new Map(tiles.map(t => [t, t.hidden ? null : t.getBoundingClientRect()]));
       tiles.forEach(t => { t.hidden = !(k === 'all' || t.dataset.cat === k); if (!t.hidden) t.classList.add('in'); });
+      if (root.__layout) root.__layout();
       if (reduced) return;
       tiles.forEach(t => {
         if (t.hidden) return;
@@ -1936,10 +1994,19 @@
     if (!pf || !cf || !tf) return;
     const tabs = $$('.inq-tab'), tabP = tabs.find(t => t.dataset.mode === 'partner');
     const badge = $('#partnerBadge'), msg = $('#pcodeMsg'), input = $('#f_pcode');
-    const MSG = msg.textContent, KEY = 'icPartnerCode';
+    const MSG = msg.textContent, KEY = 'icPartnerCode', DAYS30 = 30 * 864e5;
     let partner = null, tries = 0;
-    const keep = v => { try { if (v) sessionStorage.setItem(KEY, v); else sessionStorage.removeItem(KEY); } catch (_) { /* private mode: the code is simply asked again */ } };
-    const kept = () => { try { return sessionStorage.getItem(KEY); } catch (_) { return null; } };
+    // A verified partner stays signed in on this device for 30 days (or until "Sign out"), so a
+    // package's "Get a quote" or date link opens the partner form already filled in.
+    const keep = v => { try { if (v) localStorage.setItem(KEY, JSON.stringify({ c: v, t: Date.now() })); else localStorage.removeItem(KEY); sessionStorage.removeItem(KEY); } catch (_) { /* private mode: the code is simply asked again */ } };
+    const kept = () => {
+      try {
+        const o = JSON.parse(localStorage.getItem(KEY) || 'null');
+        if (o && o.c && Date.now() - o.t < DAYS30) return o.c;
+        localStorage.removeItem(KEY);
+        return sessionStorage.getItem(KEY);   // a code kept by the earlier, tab-only version
+      } catch (_) { return null; }
+    };
     const say = (text, cls) => { msg.textContent = text; msg.className = 'pcode-msg' + (cls ? ' ' + cls : ''); };
 
     // packages for the partner form (departed packages left out)
@@ -2004,7 +2071,7 @@
         return;
       }
       input.value = ''; input.removeAttribute('aria-invalid'); say(MSG);
-      unlock(hit, true);
+      unlock(hit, true); prefill();
     });
     input.addEventListener('input', () => { if (input.getAttribute('aria-invalid')) { input.removeAttribute('aria-invalid'); say(MSG); } });
 
@@ -2027,9 +2094,27 @@
     const fromLink = params.get('partner');
     if (fromLink) { params.delete('partner'); history.replaceState(null, '', location.pathname + (params.toString() ? '?' + params : '') + location.hash); }
     const start = fromLink || kept();
+    // Arriving from a package (its "Get a quote" or a travel date): fill the partner request with it
+    const fromPkg = IC.tours && IC.tours.find(t => t.id === params.get('package') && effStatus(t) !== 'past');
+    const prefill = () => {
+      if (!fromPkg) return;
+      const set = (sel, v) => { const el = $(sel, pf); if (el && v != null && v !== '' && !el.value) { el.value = v; el.dispatchEvent(new Event('change', { bubbles: true })); } };
+      const tp = $('input[name="qtype"][value="Tour package"]', pf); if (tp && !tp.checked) { tp.checked = true; showType(); }
+      if (pkg) { pkg.value = fromPkg.id; }
+      set('#p_dest', (fromPkg.places || []).slice(0, 4).join(', ') || fromPkg.country);
+      const d = params.get('date');
+      if (/^\d{4}-\d{2}-\d{2}$/.test(d || '')) {
+        set('#p_start', d);
+        const endP = params.get('end');
+        if (/^\d{4}-\d{2}-\d{2}$/.test(endP || '') && endP >= d) set('#p_end', endP);
+        else if (fromPkg.days > 1) { const e = new Date(d + 'T00:00:00'); e.setDate(e.getDate() + fromPkg.days - 1); set('#p_end', `${e.getFullYear()}-${String(e.getMonth() + 1).padStart(2, '0')}-${String(e.getDate()).padStart(2, '0')}`); }
+      }
+      const cur = fromPkg.price && fromPkg.price.currency; if (cur) { const c = $('#p_cur', pf); if (c) c.value = cur.toUpperCase(); }
+      set('#p_notes', params.get('notes') || `Partner rate request for the ${fromPkg.name}.`);
+    };
     if (start) partnerFor(start).then(hit => {
-      if (hit && fromLink) unlock(hit, true);
-      else if (hit) { partner = hit; paint(); }   // remembered for this tab: ready when the Partner tab is clicked
+      if (hit && (fromLink || fromPkg)) { unlock(hit, true); prefill(); }   // a partner booking a package goes straight to the partner form
+      else if (hit) { partner = hit; paint(); }   // remembered on this device: ready when the Partner tab is clicked
       else { keep(null); if (fromLink) { setMode('partner'); say('The partner code in that link did not match. Type it below, or message us.', 'bad'); } }
     });
 
@@ -2418,6 +2503,9 @@
     });
     prints$.addEventListener('focusin', e => { if (e.target.matches(':focus-visible')) { focused = true; stop(); } });
     prints$.addEventListener('focusout', e => { if (!prints$.contains(e.relatedTarget)) { focused = false; start(); } });
+    // the pile holds still while a mouse is over it, so the photo (and its zoom button) don't change under the pointer
+    prints$.addEventListener('pointerenter', e => { if (e.pointerType === 'mouse') { hovering = true; stop(); } });
+    prints$.addEventListener('pointerleave', e => { if (e.pointerType === 'mouse') { hovering = false; start(); } });
 
     /* full size: the corner button opens the site's photo viewer */
     deck.addEventListener('click', e => {
@@ -2560,7 +2648,7 @@
     const team = realTeam();
     const m = slug ? team.find(x => x.slug === slug) : team[0];
     if (!m) {
-      root.innerHTML = `<section class="section"><div class="container text-center"><span class="eyebrow center">Profile not found</span><h1 class="h2" style="margin-bottom:12px">We couldn\u2019t find that team member</h1><a class="btn btn-primary btn-lg" href="about">About us ${I.arrow}</a></div></section>`;
+      root.innerHTML = `<section class="section tp-missing"><div class="container text-center"><span class="eyebrow center">Our team</span><h1 class="h2" style="margin-bottom:12px">We couldn\u2019t find that team member</h1><p class="lead" style="margin:0 auto 24px">The link may be out of date. Our Cebu team answers every inquiry: send yours, message us, or read more about the agency.</p><div class="tp-actions" style="justify-content:center"><a class="btn btn-primary btn-lg" href="contact">Send an inquiry ${I.arrow}</a><a class="btn btn-outline btn-lg" href="${CONFIG.messenger}" target="_blank" rel="noopener">${I.msg} Message us</a><a class="btn btn-light btn-lg" href="about">About us</a></div></div></section>`;
       return;
     }
     const first = (m.name || '').split(' ')[0] || 'this desk';
@@ -2572,7 +2660,7 @@
 
     root.innerHTML = `
       <section class="page-hero tp-hero">
-        <div class="hero-bg" aria-hidden="true"><div class="ph-rig"><figure class="ph-scene is-on" data-move="push"><picture><source media="(max-width: 700px)" srcset="assets/img/hero/group-1-960.webp 960w, assets/img/hero/group-1-1280.webp 1280w" sizes="100vw"><img src="assets/img/hero/group-1-lg.webp" width="1632" height="918" alt="" fetchpriority="high" decoding="async"></picture></figure></div></div>
+        <div class="hero-bg" aria-hidden="true"><div class="ph-rig"><figure class="ph-scene is-on" data-move="push"><picture><source media="(max-width: 700px)" srcset="assets/img/hero/group-1-m.webp 551w" sizes="100vw"><img src="assets/img/hero/group-1-lg.webp" width="1632" height="918" alt="" fetchpriority="high" decoding="async"></picture></figure></div></div>
         <div class="container">
           <nav class="breadcrumb" aria-label="Breadcrumb"><a href="./">Home</a>${I.left.replace('m15 18-6-6 6-6', 'm9 18 6-6-6-6')}<a href="about#team">Our team</a>${I.left.replace('m15 18-6-6 6-6', 'm9 18 6-6-6-6')}<span>${esc(m.name)}</span></nav>
           <div class="tp-head">

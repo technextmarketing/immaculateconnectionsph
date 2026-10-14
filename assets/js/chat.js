@@ -1,8 +1,9 @@
 /* =========================================================
    Immaculate Connections Travel Agency — chat.js
    ---------------------------------------------------------
-   "Ask us" travel assistant: a launcher stacked above the
-   Messenger button and a chat panel that answers ONLY from
+   "Ask us" travel assistant: a launcher (above the Messenger
+   button on desktop; alone on phones and tablets, where
+   Messenger is the first row of the panel) and a chat panel that answers ONLY from
    the site's own data (IC.tours, IC.config, IC.countryGuide).
    No external calls, no invented prices, dates or rules.
    Runs after data.js and main.js in site.min.js.
@@ -26,6 +27,8 @@
   const CONFIG = IC.config || U.CONFIG || {};
   const reducedMQ = window.matchMedia('(prefers-reduced-motion: reduce)');
   const phoneMQ = window.matchMedia('(max-width: 640px)');
+  // phones and tablets: one round launcher, Messenger lives inside the chat (chat.css hides .fab-msg)
+  const compactMQ = window.matchMedia('(max-width: 1024px)');
   const esc = s => String(s == null ? '' : s).replace(/[&<>"']/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
   const NUM = new Intl.NumberFormat('en-PH');
   const peso = n => '₱' + NUM.format(Number(n));
@@ -493,6 +496,7 @@
       <div class="icc-who"><h2>Travel assistant</h2><p><i aria-hidden="true"></i>Automated assistant · instant answers</p></div>
       <button type="button" class="icc-x" aria-label="Close chat">${Ico.close}</button>
     </header>
+    <a class="icc-msgr" href="#" target="_blank" rel="noopener" hidden>${Ico.msgr}<span><b>Message us on Messenger</b><small>Talk to our team on Facebook</small></span>${svg('<path d="M5 12h14M13 6l6 6-6 6"/>', ' class="icc-go"')}</a>
     <div class="icc-log" role="log" aria-live="polite" aria-relevant="additions" tabindex="-1"></div>
     <div class="icc-chips" role="group" aria-label="Suggested questions"></div>
     <form class="icc-form" autocomplete="off">
@@ -502,6 +506,8 @@
     </form>
     <p class="icc-foot">Answers come from our published packages. For bookings our team confirms everything.</p>`;
 
+  const msgrRow = $('.icc-msgr', panel);
+  const syncMsgr = () => { const h = contact.messenger; msgrRow.hidden = !h; if (h) msgrRow.href = h; };
   const log = $('.icc-log', panel), chipsEl = $('.icc-chips', panel), form = $('.icc-form', panel), input = $('.icc-in', panel), closeBtn = $('.icc-x', panel);
 
   const state = { last: null, busy: false, hist: [] };   // hist: entries replayed on reload (no HTML stored)
@@ -613,6 +619,7 @@
     if (isOpen) return;
     isOpen = true;
     if (!built) { restore(); built = true; }
+    syncMsgr();
     clearTimeout(hideTimer);
     panel.hidden = false;
     void panel.offsetWidth;   // start the transition from the closed state
@@ -651,12 +658,16 @@
   });
   phoneMQ.addEventListener ? phoneMQ.addEventListener('change', () => lockScroll(isOpen)) : phoneMQ.addListener(() => lockScroll(isOpen));
 
-  /* ---------- placement: stacked above the Messenger button ---------- */
+  /* ---------- placement ----------
+     Desktop (> 1024px): the launcher sits directly above the Messenger button.
+     Phones and tablets: the launcher is the only floating button (Messenger is the
+     first row inside the chat), in the bottom-right corner. */
   const root = document.documentElement;
   const place = () => {
     const fab = $('.fab-msg');
     let r = 22, b = 22, h = 48;
-    if (fab) {
+    if (compactMQ.matches) { r = phoneMQ.matches ? 14 : 18; b = phoneMQ.matches ? 14 : 18; h = 0; }
+    else if (fab) {
       const cs = getComputedStyle(fab);
       if (cs.display !== 'none') {
         r = parseFloat(cs.right) || r;
@@ -664,14 +675,73 @@
         h = fab.offsetHeight || h;
       } else { h = 0; b = parseFloat(cs.bottom) || b; }
     }
-    // phones: side by side with Messenger, so the pair takes one row of the screen, not three
-    const side = phoneMQ.matches && fab && h;
-    root.classList.toggle('icc-side', !!side);
-    root.style.setProperty('--icc-r', (side ? r + fab.offsetWidth + 10 : r) + 'px');
-    root.style.setProperty('--icc-b', (side ? b + (h - 44) / 2 : b + h + (h ? 12 : 0)) + 'px');
+    root.style.setProperty('--icc-r', r + 'px');
+    root.style.setProperty('--icc-b', (b + h + (h ? 12 : 0)) + 'px');
+    quiet.watch();
   };
   let raf = 0;
   const schedule = () => { if (!raf) raf = requestAnimationFrame(() => { raf = 0; place(); }); };
+
+  /* ---------- stay out of the way ----------
+     body.fab-quiet fades the floating buttons out (chat.css / components.css):
+       1. phones and tablets: while a primary call to action or form is on screen
+          (hero buttons, the home quote card, inquiry and service forms, the
+          package sticky bar, the footer);
+       2. every width: while any button, link button or form field sits under the
+          floating buttons' corner, so they never cover a control at rest.
+     Both are IntersectionObservers; (2) uses a root margin cut down to that corner. */
+  const quiet = (() => {
+    if (!('IntersectionObserver' in window)) return { watch() {} };
+    const ZONES = '.hero-actions, .quote-card, #inquiryForm, .form-card, [data-svc-form], .svc-form, .sticky-cta.show, .footer';
+    const CTRLS = 'main a.btn, main button, main input, main select, main textarea, main a.date-chip, main .link-arrow, .sticky-cta, .footer a, .footer-bottom';
+    const zonesIn = new Set(), ctrlsIn = new Set();
+    let zio = null, cio = null, key = '', mo = null, rescanT = 0;
+    const apply = () => {
+      const on = (compactMQ.matches && zonesIn.size > 0) || ctrlsIn.size > 0;
+      if (document.body.classList.contains('fab-quiet') !== on) document.body.classList.toggle('fab-quiet', on);
+    };
+    const track = set => es => { es.forEach(e => (e.isIntersecting ? set.add(e.target) : set.delete(e.target))); apply(); };
+    const observeAll = () => {
+      if (zio) { zio.disconnect(); zonesIn.clear(); document.querySelectorAll(ZONES.replace('.sticky-cta.show', '.sticky-cta')).forEach(z => zio.observe(z)); }
+      if (cio) { cio.disconnect(); ctrlsIn.clear(); document.querySelectorAll(CTRLS).forEach(c => { if (!c.closest('.icc-panel, .header, .drawer, .lightbox')) cio.observe(c); }); }
+      apply();
+    };
+    const num = (el, prop) => parseFloat(getComputedStyle(el).getPropertyValue(prop)) || 0;
+    // the corner the floating buttons take at rest
+    const corner = () => {
+      const vw = root.clientWidth, vh = window.innerHeight, fab = $('.fab-msg'), toTop = $('.to-top');
+      const right = num(root, '--icc-r') || 22;
+      let bottom, top, w = Math.max(launch.offsetWidth, 40);
+      if (compactMQ.matches) {
+        bottom = num(root, '--icc-b') || 14;
+        top = vh - bottom - launch.offsetHeight;
+      } else {   // Messenger, the launcher above it and back-to-top above that
+        bottom = fab && getComputedStyle(fab).display !== 'none' ? num(fab, 'bottom') : (num(root, '--icc-b') || 22);
+        if (fab) w = Math.max(w, fab.offsetWidth);
+        top = vh - (num(root, '--icc-b') || 82) - launch.offsetHeight - (toTop ? toTop.offsetHeight + 12 : 0);
+      }
+      const pad = 2;
+      return { top: top - pad, right: right, bottom: bottom - pad, left: vw - right - w + 1 };   // a control that only touches the buttons' edge does not count
+    };
+    return {
+      watch() {
+        const c = corner();
+        const k = [c.top, c.right, c.bottom, c.left].map(Math.round).join(',') + compactMQ.matches;
+        if (k === key) return;
+        key = k;
+        if (zio) zio.disconnect();
+        if (cio) cio.disconnect();
+        // a sticky bar that is parked off screen still intersects; it counts once it slides in (.show)
+        zio = new IntersectionObserver(es => { es.forEach(e => ((e.isIntersecting && !(e.target.classList.contains('sticky-cta') && !e.target.classList.contains('show'))) ? zonesIn.add(e.target) : zonesIn.delete(e.target))); apply(); }, { threshold: 0 });
+        cio = new IntersectionObserver(track(ctrlsIn), { threshold: 0, rootMargin: `${-Math.max(0, c.top)}px ${-Math.max(0, c.right)}px ${-Math.max(0, c.bottom)}px ${-Math.max(0, c.left)}px` });
+        observeAll();
+        if (!mo && window.MutationObserver) {   // grids that render or re-filter later (tours, gallery, packages)
+          const main = $('main');
+          if (main) { mo = new MutationObserver(() => { clearTimeout(rescanT); rescanT = setTimeout(observeAll, 250); }); mo.observe(main, { childList: true, subtree: true }); }
+        }
+      }
+    };
+  })();
 
   /* ---------- mount ---------- */
   function mount() {
@@ -681,6 +751,9 @@
     root.classList.add('icc-ready');
     window.addEventListener('resize', schedule, { passive: true });
     window.addEventListener('load', schedule);
+    compactMQ.addEventListener ? compactMQ.addEventListener('change', schedule) : compactMQ.addListener(schedule);
+    // other controls can open the chat: <button data-chat-open> (the package page's sticky bar)
+    document.addEventListener('click', e => { const t = e.target.closest && e.target.closest('[data-chat-open]'); if (t) { e.preventDefault(); open(); } });
     if (window.MutationObserver) new MutationObserver(schedule).observe(document.body, { attributes: true, attributeFilter: ['class'] });
     // One gentle nudge per visit
     if (!store.get(NUDGED)) {
@@ -690,9 +763,8 @@
         store.set(NUDGED, 1);
       }, 3500);
     }
-    // Reopen if the visitor had the chat open on the previous page of this visit
-    const s = store.get(KEY);
-    if (s && s.open && !phoneMQ.matches) open();
+    // The conversation carries over between pages, but the panel stays closed until the
+    // visitor opens it again: it never pops over the next page's content by itself.
     window.addEventListener('pagehide', () => { const v = store.get(KEY) || {}; if (built) v.hist = state.hist.slice(-40); v.open = isOpen; store.set(KEY, v); });
   }
   if (document.body) mount(); else document.addEventListener('DOMContentLoaded', mount);

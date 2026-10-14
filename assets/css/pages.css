@@ -48,7 +48,7 @@ body[data-hero-top] .svc-hero { padding-top: calc(var(--nav-h) + 18px); }
 }
 .svc-form .input, .svc-form .select { background: #fff; border-color: #fff; color: var(--ink); padding: 9px 12px; min-height: 40px; border-radius: 10px; font-size: .94rem; color-scheme: light; }
 .svc-form .input:focus, .svc-form .select:focus { border-color: var(--gold); box-shadow: 0 0 0 4px rgba(255, 183, 48, .35); }
-.svc-form .input::placeholder { color: #8795a8; }
+.svc-form .input::placeholder { color: #6b7789; }
 .svc-choice { border: 0; margin: 0 0 10px; padding: 0; min-width: 0; }
 .svc-fields + .svc-choice { margin: 12px 0 0; }
 .svc-choice legend { margin-bottom: 6px; padding: 0; }
@@ -108,7 +108,7 @@ body[data-hero-top] .svc-hero { padding-top: calc(var(--nav-h) + 18px); }
 .svc-doc-wrap.peek + .svc-form { margin-top: -22px; position: relative; z-index: 2; }
 .doc-more {
   position: absolute; z-index: 3; left: 50%; bottom: 6px; transform: translateX(-50%); display: inline-flex; align-items: center; gap: 6px;
-  padding: 5px 12px; border-radius: 999px; background: var(--gold); color: var(--navy-3); font-size: max(.72rem, 11px); font-weight: 800; white-space: nowrap;
+  padding: 5px 12px; border-radius: 999px; background: var(--st-featured); color: #fff; font-size: max(.72rem, 11px); font-weight: 800; white-space: nowrap;
   box-shadow: 0 8px 18px -8px rgba(0, 0, 0, .6); pointer-events: none;
 }
 .doc-more svg { width: 14px; height: 14px; }
@@ -117,8 +117,7 @@ body[data-hero-top] .svc-hero { padding-top: calc(var(--nav-h) + 18px); }
 .svc-doc-wrap.peek:not(.open) .lanyard { display: none; }
 .svc-doc-wrap.peek:not(.open) .doc-badge .doc-example { top: 4px; }
 /* phones: the Messenger button steps aside while the hero form is on screen */
-.fab-msg { transition: opacity .3s var(--ease), transform .3s var(--ease); }
-body.fab-quiet .fab-msg { opacity: 0; transform: translate3d(0, 16px, 0) scale(.9); pointer-events: none; }
+/* floating buttons step aside over forms and CTAs: chat.js + chat.css (body.fab-quiet) */
 
 /* ---------- The live document ---------- */
 .svc-doc {
@@ -133,7 +132,7 @@ body.fab-quiet .fab-msg { opacity: 0; transform: translate3d(0, 16px, 0) scale(.
 .doc-brand img { width: 34px; height: auto; }
 .doc-kind { font-size: max(.72rem, 11px); font-weight: 800; letter-spacing: .12em; text-transform: uppercase; color: var(--blue-2); }
 .doc-example {
-  position: absolute; z-index: 3; top: -13px; right: 20px; padding: 6px 11px; border-radius: 999px; background: var(--gold); color: var(--navy-3);
+  position: absolute; z-index: 3; top: -13px; right: 20px; padding: 6px 11px; border-radius: 999px; background: var(--st-featured); color: #fff;
   font-size: max(.72rem, 11px); font-weight: 800; letter-spacing: .1em; text-transform: uppercase; box-shadow: 0 8px 18px -8px rgba(0, 0, 0, .45);
   transition: opacity .3s var(--ease), transform .45s var(--ease-out);
 }
@@ -771,3 +770,5 @@ body.fab-quiet .fab-msg { opacity: 0; transform: translate3d(0, 16px, 0) scale(.
   .vid-card:hover { transform: none; }
   .vid-card:hover .vid-media img { transform: none; }
 }
+.db-st { display: block; margin: 4px 0 2px; }
+.db-st .status-pill { font-size: max(.66rem, 11px); padding: 3px 9px; }

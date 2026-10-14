@@ -482,9 +482,7 @@
     window.addEventListener('resize', () => { if (window.innerWidth === w) return; w = window.innerWidth; clearTimeout(t); t = setTimeout(fit, 150); });
     fit();
     if (document.fonts && document.fonts.ready) document.fonts.ready.then(fit);
-    // on a phone the floating Messenger button would sit on the form's fields
-    const phone = window.matchMedia('(max-width: 640px)'), form = $('.svc-form', hero);
-    if (form) onView(form, v => document.body.classList.toggle('fab-quiet', v && phone.matches), { threshold: .2 });
+    // the floating chat button steps aside while this form is on screen: chat.js (quiet zones)
   }
 
   // Buttons elsewhere on the page that fill the hero form: data-fill='{"vehicle":"Van"}'
@@ -622,7 +620,7 @@
     board.innerHTML = rows.map((r, i) => `
       <a class="db-row" href="${U.pkgUrl(r.t)}" style="--i:${i}">
         <span class="db-leg"><span class="db-code">${r.from.split('').map(c => `<i>${c}</i>`).join('')}</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg><span class="db-code" data-to="${r.to}">${r.to.split('').map(c => `<i>${c}</i>`).join('')}</span></span>
-        <span class="db-pkg"><b>${esc(r.t.name)}</b><small>${esc(r.carrier)} · ${esc(r.bag)}</small></span>
+        <span class="db-pkg"><b>${esc(r.t.name)}</b>${U.statusPill ? `<span class="db-st">${U.statusPill(r.t)}</span>` : ''}<small>${esc(r.carrier)} · ${esc(r.bag)}</small></span>
         <span class="db-next"><small>Next departure</small><b>${esc(r.when)}</b></span>
         <span class="db-go" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="m9 18 6-6-6-6"/></svg></span>
       </a>`).join('');
@@ -654,7 +652,11 @@
   function initVideos() {
     const cards = $$('[data-video]');
     const hero = $('.gal-hero video');
-    if (hero && reduced) { hero.removeAttribute('autoplay'); hero.pause(); }
+    // the hero clip plays on tablets and desktops; phones, data savers and reduced motion keep the still
+    if (hero) {
+      const saver = navigator.connection && navigator.connection.saveData;
+      if (!reduced && !saver && window.matchMedia('(min-width: 641px)').matches) { hero.preload = 'auto'; const p = hero.play(); if (p && p.catch) p.catch(() => {}); }
+    }
     if (!cards.length) return;
     let box, vid, cap, at = 0, back = null;
     const ICON = d => `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="${d}"/></svg>`;

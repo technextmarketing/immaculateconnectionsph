@@ -118,7 +118,11 @@
 }
 .print-zoom svg { width: 16px; height: 16px; }
 .print-zoom:hover { background: rgba(9, 22, 48, .85); }
-.print.is-top:hover .print-zoom, .print-zoom:focus-visible { opacity: 1; transform: none; }
+/* shown while the pointer is over the pile, not the print: the print slides and tilts under the
+   pointer, so a hover tied to it switched on and off at its edges and the button flickered */
+/* It also waits half a second before hiding, so brushing an edge never blinks it. */
+.print-zoom { backface-visibility: hidden; will-change: opacity, transform; transition-delay: .5s, .5s, 0s; }
+.tl-prints:hover .print.is-top .print-zoom, .print-zoom:focus-visible { opacity: 1; transform: none; transition-delay: 0s; }
 .print-zoom:focus-visible { outline: 3px solid var(--focus, #0f3b78); outline-offset: 2px; }
 @media (hover: none) { .print.is-top .print-zoom { opacity: 1; transform: none; } }
 /* One authored entrance: the first prints are dealt onto the pile, the back one first */
@@ -181,7 +185,7 @@
 .plan-title { color: var(--navy); margin: 0 0 14px; font-size: clamp(2.3rem, 4.6vw, 3.8rem); text-wrap: balance; }
 .plan-title .hl { font-style: normal; position: relative; white-space: nowrap; color: var(--blue); }
 .plan-title .hl::after { content: ""; position: absolute; left: -.04em; right: -.04em; bottom: .04em; height: .13em; border-radius: .1em; background: linear-gradient(90deg, var(--gold), #ffd98a 70%, rgba(255, 217, 138, .2)); }
-.plan-tagline { font-family: var(--font-script); font-size: clamp(1.5rem, 2.4vw, 2.2rem); color: var(--orange-2); line-height: 1.2; margin-bottom: 18px; }
+.plan-tagline { font-family: var(--font-script); font-size: clamp(1.5rem, 2.4vw, 2.2rem); color: var(--orange-btn); line-height: 1.2; margin-bottom: 18px; }
 .plan-box { border-left: 3px solid var(--gold); padding: 6px 0 6px 20px; font-size: clamp(1rem, 1.3vw, 1.12rem); line-height: 1.65; color: var(--ink); max-width: 58ch; margin-bottom: 26px; }
 .plan .hero-next { background: var(--navy); border-color: var(--navy); }
 .plan .hero-next:hover, .plan .hero-next:focus-visible { background: var(--navy-2); border-color: rgba(255, 183, 48, .7); }
