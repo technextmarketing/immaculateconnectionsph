@@ -553,7 +553,7 @@ window.IC = window.IC || {};
   IC.team = [
     /* ---------- Team members ----------
        PLACEHOLDER PROFILES. The names, taglines and bios below are samples so
-       the cards and profile pages (team.html?member=<slug>) can be seen and
+       the cards and profile pages (team?member=<slug>) can be seen and
        styled; the About page and each profile carry a visible "sample" note.
        Replace each entry with a real staff member: set `name`, drop in a
        `photo` (a media id listed in the LOCAL map above) and update

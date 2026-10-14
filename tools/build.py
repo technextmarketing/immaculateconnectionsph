@@ -245,7 +245,7 @@ def build_pages():
     for f in glob.glob("package-*.html"):
         if f[8:-5] not in ids: os.remove(f); print("  removed", f)
     for t in pages:
-        url = f"{SITE}package-{t['id']}.html"
+        url = f"{SITE}package-{t['id']}"   # clean URL; Pages serves package-<id>.html
         title = f"{t['name']} | {BRAND}" if len(t["name"]) + len(BRAND) + 3 <= 62 else t["name"]
         desc = trim(t["summary"])
         og = og_card(t, t["key"])
@@ -284,8 +284,8 @@ def build_pages():
     def lastmod(loc, fresh):
         m = re.search(rf"<loc>{re.escape(loc)}</loc><lastmod>([\d-]+)</lastmod>", old)
         return today if fresh or not m else m.group(1)
-    rows = [f"  <url><loc>{SITE}{p}</loc><lastmod>{lastmod(SITE + p, False)}</lastmod><changefreq>{f}</changefreq><priority>{pr}</priority></url>" for p, f, pr in main]
-    rows += [f"  <url><loc>{SITE}package-{t['id']}.html</loc><lastmod>{lastmod(SITE + 'package-' + t['id'] + '.html', False)}</lastmod><changefreq>weekly</changefreq><priority>0.8</priority></url>" for t in pages]
+    rows = [f"  <url><loc>{SITE}{p[:-5]}</loc><lastmod>{lastmod(SITE + p[:-5], False)}</lastmod><changefreq>{f}</changefreq><priority>{pr}</priority></url>" for p, f, pr in main]
+    rows += [f"  <url><loc>{SITE}package-{t['id']}</loc><lastmod>{lastmod(SITE + 'package-' + t['id'], False)}</lastmod><changefreq>weekly</changefreq><priority>0.8</priority></url>" for t in pages]
     print("  sitemap.xml:", "updated" if write("sitemap.xml", '<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n' + "\n".join(rows) + "\n</urlset>\n") else "unchanged")
 
 

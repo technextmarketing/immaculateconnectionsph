@@ -31,7 +31,7 @@
     formEndpoint: 'https://formsubmit.co/ajax/immaculateconnectionsph@gmail.com',
     quotePrefix: 'ICQ',      // quotation reference prefix
     quoteValidDays: 7,       // how long a quotation stays valid
-    // ---- B2B partner codes (contact.html) ----
+    // ---- B2B partner codes (contact) ----
     // A valid code opens the partner quotation form. Only a SHA-256 of each code
     // is kept here, never the code itself: `python tools/partner_code.py CODE "Label"`
     // prints the line to paste. The codes are a convenience gate, not security:
@@ -51,7 +51,7 @@
     // Flip this to true only when the agency has a confirmed booking flow and
     // the account details below are filled in.
     payments: false,
-    // ---- Payment details shown on payment.html ----
+    // ---- Payment details shown on payment ----
     // Leave the arrays empty and the page tells travellers that the account
     // details arrive with their official invoice. Fill them in and the cards
     // appear automatically. Example:
@@ -140,7 +140,7 @@
   const statusLabel = t => IC.statusLabel[effStatus(t)] || '';
   const money = (p, n) => { const v = n == null ? p.from : n; return (p && p.currency === 'USD' ? '$' : '₱') + NUM.format(Number(v)); };
   const priceValue = t => (t.price ? t.price.from * (t.price.currency === 'USD' ? 57 : 1) : 9e9);
-  // Each package is a real page (built by tools/build.py); package.html?id= still works and forwards there.
+  // Each package is a real page (built by tools/build.py); package?id= still works and forwards there.
   const pkgUrl = t => `package-${encodeURIComponent(t.id)}.html`;
   // A package page opens on a sharp photo of its destination (IC.destHero); a package without one falls back to its own image
   const pkgHeroBg = t => {
@@ -230,7 +230,7 @@
     const iso = dateChipIso(d, t);
     if (iso) q.set('date', iso);
     q.set('notes', `Preferred travel dates: ${d.d}${d.y || t.year ? ' ' + (d.y || t.year) : ''}${d.add ? ` (peak-date surcharge ${money(t.price, d.add)} per pax)` : ''}`);
-    return 'contact.html?' + q.toString();
+    return 'contact?' + q.toString();
   };
 
   const svg = (p, extra = '') => `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" ${extra}>${p}</svg>`;
@@ -609,7 +609,7 @@
           ${priceBlock(t)}
           <div class="actions">
             <a class="btn btn-outline" href="${pkgUrl(t)}">View package</a>
-            <a class="btn btn-primary" href="contact.html?service=tour&package=${encodeURIComponent(t.id)}">${ctaLabel(t)}</a>
+            <a class="btn btn-primary" href="contact?service=tour&package=${encodeURIComponent(t.id)}">${ctaLabel(t)}</a>
           </div>
         </div>
       </div>
@@ -657,7 +657,7 @@
           ${priceBlock(t)}
           <div class="actions">
             <a class="btn btn-outline" href="${pkgUrl(t)}">Details</a>
-            <a class="btn btn-primary" href="contact.html?service=tour&package=${encodeURIComponent(t.id)}">${s === 'past' || s === 'soon' ? 'Ask us' : 'Get a quote'}${I.arrow}</a>
+            <a class="btn btn-primary" href="contact?service=tour&package=${encodeURIComponent(t.id)}">${s === 'past' || s === 'soon' ? 'Ask us' : 'Get a quote'}${I.arrow}</a>
           </div>
         </div>
       </div>
@@ -665,7 +665,7 @@
   }
   function renderTours(grid, list, card) {
     if (!list.length) {
-      grid.innerHTML = `<div class="empty-state"><h3 class="h3">No packages match those filters</h3><p class="muted">Try another region, or ask us for a custom itinerary.</p><a class="btn btn-primary" style="margin-top:18px" href="contact.html?service=tour&package=custom">Request a custom tour ${I.arrow}</a></div>`;
+      grid.innerHTML = `<div class="empty-state"><h3 class="h3">No packages match those filters</h3><p class="muted">Try another region, or ask us for a custom itinerary.</p><a class="btn btn-primary" style="margin-top:18px" href="contact?service=tour&package=custom">Request a custom tour ${I.arrow}</a></div>`;
       return;
     }
     grid.innerHTML = list.map(card || tourCard).join('');
@@ -702,7 +702,7 @@
           </div>
           <div class="offer-actions">
             <a class="btn btn-primary" href="${pkgUrl(t)}">See itinerary ${I.arrow}</a>
-            <a class="btn btn-outline" href="contact.html?service=tour&package=${encodeURIComponent(t.id)}">Book this offer</a>
+            <a class="btn btn-outline" href="contact?service=tour&package=${encodeURIComponent(t.id)}">Book this offer</a>
           </div>
         </div>
       </article>`).join('');
@@ -835,7 +835,7 @@
         default: list.sort((a, b) => (order[effStatus(a)] - order[effStatus(b)]) || ((b.featured ? 1 : 0) - (a.featured ? 1 : 0)));
       }
       if (list.length) renderTours(grid, list, tourRow);
-      else grid.innerHTML = `<div class="empty-state"><h3 class="h3">No packages match those filters</h3><p class="muted">Remove a filter, or ask us to build the trip for you.</p><div class="tf-empty-actions"><button class="btn btn-outline" type="button" data-clear-all>Clear all filters</button><a class="btn btn-primary" href="contact.html?service=tour&package=custom">Request a custom tour ${I.arrow}</a></div></div>`;
+      else grid.innerHTML = `<div class="empty-state"><h3 class="h3">No packages match those filters</h3><p class="muted">Remove a filter, or ask us to build the trip for you.</p><div class="tf-empty-actions"><button class="btn btn-outline" type="button" data-clear-all>Clear all filters</button><a class="btn btn-primary" href="contact?service=tour&package=custom">Request a custom tour ${I.arrow}</a></div></div>`;
       paintFacets();
       const c = chips();
       const pool = T.filter(t => statusOk(t, st.status)).length;
@@ -896,13 +896,13 @@
     const root = $('#pkgPage');
     if (!root || !IC.tours) return;
     const params = new URLSearchParams(location.search);
-    // Pre-built pages carry their package id; the old package.html?id= address forwards to them.
+    // Pre-built pages carry their package id; the old package?id= address forwards to them.
     const baked = document.body.dataset.pkg;
     const id = baked || params.get('id');
     const t = IC.tours.find(x => x.id === id);
     if (t && !baked && !params.has('bake')) { location.replace(pkgUrl(t) + location.hash); return; }
     if (!t) {
-      root.innerHTML = `<section class="section"><div class="container text-center"><span class="eyebrow center">Package not found</span><h1 class="h2" style="margin-bottom:12px">We couldn’t find that package</h1><p class="lead" style="margin:0 auto 24px">It may have been renamed. Browse all current packages instead.</p><a class="btn btn-primary btn-lg" href="tours.html">Browse tour packages ${I.arrow}</a></div></section>`;
+      root.innerHTML = `<section class="section"><div class="container text-center"><span class="eyebrow center">Package not found</span><h1 class="h2" style="margin-bottom:12px">We couldn’t find that package</h1><p class="lead" style="margin:0 auto 24px">It may have been renamed. Browse all current packages instead.</p><a class="btn btn-primary btn-lg" href="tours">Browse tour packages ${I.arrow}</a></div></section>`;
       return;
     }
     const region = destLabel(t);
@@ -940,7 +940,7 @@
       <section class="pkg-hero">
         <div class="hero-bg" aria-hidden="true">${pkgHeroBg(t)}</div>
         <div class="container">
-          <nav class="breadcrumb" aria-label="Breadcrumb"><a href="index.html">Home</a>${I.left.replace('m15 18-6-6 6-6', 'm9 18 6-6-6-6')}<a href="tours.html">Tour Packages</a>${I.left.replace('m15 18-6-6 6-6', 'm9 18 6-6-6-6')}<span>${esc(region)}</span></nav>
+          <nav class="breadcrumb" aria-label="Breadcrumb"><a href="./">Home</a>${I.left.replace('m15 18-6-6 6-6', 'm9 18 6-6-6-6')}<a href="tours">Tour Packages</a>${I.left.replace('m15 18-6-6 6-6', 'm9 18 6-6-6-6')}<span>${esc(region)}</span></nav>
           <div class="chips pkg-chips">
             ${t.badge && t.badge.toLowerCase() !== statusLabel(t).toLowerCase() ? `<span class="pill gold">${esc(t.badge)}</span>` : ''}
             ${t.price ? `<span class="pill gold">${esc(t.price.label)} ${money(t.price)}</span>` : ''}
@@ -1039,7 +1039,7 @@
             <div class="side-card sticky reveal">
               ${priceBlock(t, true)}
               ${hasDates ? `<ul class="meta"><li>${I.cal}<span>${t.travelDates.length} departure dates${yearsLabel ? ' in ' + yearsLabel : ''}</span></li></ul>` : ''}
-              <a class="btn btn-primary btn-block btn-lg" href="contact.html?service=tour&package=${encodeURIComponent(t.id)}">${ctaLabel(t)} ${I.arrow}</a>
+              <a class="btn btn-primary btn-block btn-lg" href="contact?service=tour&package=${encodeURIComponent(t.id)}">${ctaLabel(t)} ${I.arrow}</a>
               <a class="btn btn-outline btn-block" href="${CONFIG.messenger}" target="_blank" rel="noopener">${I.msg} Message us on Facebook</a>
               <a class="btn btn-light btn-block" href="${CONFIG.mobileHref}">${I.phone} ${esc(CONFIG.mobile)}</a>
               <p class="small muted" style="margin-top:14px">Quotations are free. Inquiries go straight to ${esc(CONFIG.email)}.</p>
@@ -1049,13 +1049,13 @@
       </section>
 
       ${related.length ? `<section class="section bg-white"><div class="container">
-        <div class="section-head split reveal"><div><span class="eyebrow">You may also like</span><h2 class="h2">Other packages you may like</h2></div><a class="link-arrow" href="tours.html?country=${esc(cSlug(t.country))}">More from ${esc(t.country || regionLabel(t))} ${I.arrow}</a></div>
+        <div class="section-head split reveal"><div><span class="eyebrow">You may also like</span><h2 class="h2">Other packages you may like</h2></div><a class="link-arrow" href="tours?country=${esc(cSlug(t.country))}">More from ${esc(t.country || regionLabel(t))} ${I.arrow}</a></div>
         <div class="tour-grid" id="relatedGrid"></div>
       </div></section>` : ''}
 
       <div class="sticky-cta" id="stickyCta">
         <div>${t.price ? `<small>${esc(t.price.label)}</small><strong>${money(t.price)}</strong>` : `<small>Price</small><strong>On request</strong>`}</div>
-        <a class="btn btn-primary" href="contact.html?service=tour&package=${encodeURIComponent(t.id)}">${ctaLabel(t)}</a>
+        <a class="btn btn-primary" href="contact?service=tour&package=${encodeURIComponent(t.id)}">${ctaLabel(t)}</a>
       </div>`;
 
     if (related.length) renderTours($('#relatedGrid', root), related);
@@ -1717,7 +1717,7 @@
             const q = new URLSearchParams({ ref, svc: serviceName });
             if (tour) q.set('pkg', tour.name); else if (o.package) q.set('pkg', o.package);
             if (amount) q.set('amt', amount);
-            pay.href = 'payment.html?' + q.toString();
+            pay.href = 'payment?' + q.toString();
             pay.hidden = false;
           } else pay.hidden = true;
         }
@@ -1755,7 +1755,7 @@
     const dl = $('#qtDownload');
     if (dl) dl.addEventListener('click', () => window.print());
 
-    // contact.html?preview=quote renders a sample quotation so the template can be
+    // contact?preview=quote renders a sample quotation so the template can be
     // checked (layout, print, download) without submitting the form or sending mail.
     if (params.get('preview') === 'quote') {
       const sample = (IC.tours || []).find(t => t.price) || (IC.tours || [])[0];
@@ -1768,7 +1768,7 @@
       $('#success h3', success).textContent = 'Quotation template preview';
       const pay = $('#qtPay', success);
       if (pay) {
-        if (payReady()) { pay.href = 'payment.html?' + new URLSearchParams({ ref, svc: 'Tour package', pkg: sample ? sample.name : '', amt: sample && sample.price ? money(sample.price, sample.price.from * 4) : '' }).toString(); pay.hidden = false; }
+        if (payReady()) { pay.href = 'payment?' + new URLSearchParams({ ref, svc: 'Tour package', pkg: sample ? sample.name : '', amt: sample && sample.price ? money(sample.price, sample.price.from * 4) : '' }).toString(); pay.hidden = false; }
         else pay.hidden = true;
       }
       success.classList.add('show');
@@ -1778,11 +1778,11 @@
   }
 
   /* ===================== B2B partner quotation =====================
-     contact.html offers an optional partner code. A code that matches one of
+     contact offers an optional partner code. A code that matches one of
      CONFIG.partnerCodes (compared as a SHA-256, so the codes are not in the
      page source) opens a separate partner form: company, group, rooms, rate
      basis. It posts to the same inbox with its own ICB- reference and gives
-     the partner a printable copy of the request. contact.html?partner=CODE
+     the partner a printable copy of the request. contact?partner=CODE
      unlocks it from a link; the code stays for the browser tab only. */
   const PLABELS = {
     company: 'Company', name: 'Contact person', email: 'Email', phone: 'Mobile / Viber', clientref: 'Partner reference',
@@ -1979,7 +1979,7 @@
       partner = null; keep(null); paint(); setMode('partner'); say(MSG); input.focus();
     });
 
-    // A code arriving in the link (contact.html?partner=CODE) or kept for this tab
+    // A code arriving in the link (contact?partner=CODE) or kept for this tab
     const params = new URLSearchParams(location.search);
     const fromLink = params.get('partner');
     if (fromLink) { params.delete('partner'); history.replaceState(null, '', location.pathname + (params.toString() ? '?' + params : '') + location.hash); }
@@ -2486,7 +2486,7 @@
   const tmAvatar = m => m.photo
     ? `<img src="${wix(m.photo, 560, 560)}" alt="${esc(m.name || m.role)}" loading="lazy" width="560" height="560">`
     : `<span class="tm-initials" aria-hidden="true">${esc(tmInitials(m))}</span>`;
-  const tmHref = m => `team.html?member=${encodeURIComponent(m.slug)}`;
+  const tmHref = m => `team?member=${encodeURIComponent(m.slug)}`;
 
   // About-page grid: each card is a link to that member's profile page.
   // Profiles marked placeholder: true are drafts; the section stays hidden until real ones exist.
@@ -2509,7 +2509,7 @@
       </a>`).join('');
   }
 
-  // Individual profile page: team.html?member=<slug>, rendered into #teamProfile.
+  // Individual profile page: team?member=<slug>, rendered into #teamProfile.
   function initTeamProfile() {
     const root = $('#teamProfile');
     if (!root || !IC.team) return;
@@ -2517,7 +2517,7 @@
     const team = realTeam();
     const m = slug ? team.find(x => x.slug === slug) : team[0];
     if (!m) {
-      root.innerHTML = `<section class="section"><div class="container text-center"><span class="eyebrow center">Profile not found</span><h1 class="h2" style="margin-bottom:12px">We couldn\u2019t find that team member</h1><a class="btn btn-primary btn-lg" href="about.html#team">Meet the team ${I.arrow}</a></div></section>`;
+      root.innerHTML = `<section class="section"><div class="container text-center"><span class="eyebrow center">Profile not found</span><h1 class="h2" style="margin-bottom:12px">We couldn\u2019t find that team member</h1><a class="btn btn-primary btn-lg" href="about#team">Meet the team ${I.arrow}</a></div></section>`;
       return;
     }
     const first = (m.name || '').split(' ')[0] || 'this desk';
@@ -2531,7 +2531,7 @@
       <section class="page-hero tp-hero">
         <div class="hero-bg" aria-hidden="true"><div class="ph-rig"><figure class="ph-scene is-on" data-move="push"><picture><source media="(max-width: 700px)" srcset="assets/img/hero/group-1-960.webp 960w, assets/img/hero/group-1-1280.webp 1280w" sizes="100vw"><img src="assets/img/hero/group-1-lg.webp" width="1632" height="918" alt="" fetchpriority="high" decoding="async"></picture></figure></div></div>
         <div class="container">
-          <nav class="breadcrumb" aria-label="Breadcrumb"><a href="index.html">Home</a>${I.left.replace('m15 18-6-6 6-6', 'm9 18 6-6-6-6')}<a href="about.html#team">Our team</a>${I.left.replace('m15 18-6-6 6-6', 'm9 18 6-6-6-6')}<span>${esc(m.name)}</span></nav>
+          <nav class="breadcrumb" aria-label="Breadcrumb"><a href="./">Home</a>${I.left.replace('m15 18-6-6 6-6', 'm9 18 6-6-6-6')}<a href="about#team">Our team</a>${I.left.replace('m15 18-6-6 6-6', 'm9 18 6-6-6-6')}<span>${esc(m.name)}</span></nav>
           <div class="tp-head">
             <div class="tp-avatar${m.photo ? '' : ' plain'}">${tmAvatar(m)}</div>
             <div class="tp-headmain">
@@ -2578,7 +2578,7 @@
                 ${m.languages ? `<li>${I.msg}<div><small>Languages</small><strong>${esc(m.languages)}</strong></div></li>` : ''}
                 <li>${I.pin}<div><small>Based in</small><strong>Cebu City, Philippines</strong></div></li>
               </ul>
-              <a class="btn btn-primary btn-block" href="contact.html?service=tour">Send an inquiry ${I.arrow}</a>
+              <a class="btn btn-primary btn-block" href="contact?service=tour">Send an inquiry ${I.arrow}</a>
               <a class="btn btn-outline btn-block" href="mailto:${esc(mail)}?subject=${encodeURIComponent('For ' + m.name + ' \u2013 ' + m.dept)}">${I.mail} Email ${esc(first)}</a>
               <a class="btn btn-light btn-block" href="${CONFIG.mobileHref}">${I.phone} ${esc(CONFIG.mobile)}</a>
               <p class="small muted" style="margin-top:12px">Inquiries reach the whole team at ${esc(CONFIG.email)} and are passed to the right desk.</p>
@@ -2603,7 +2603,7 @@
                 <span class="tm-cta">View profile ${I.arrow}</span>
               </div>
             </a>`).join('')}</div>
-          <div class="text-center" style="margin-top:32px"><a class="btn btn-outline" href="about.html#team">${I.left} Back to the team</a></div>
+          <div class="text-center" style="margin-top:32px"><a class="btn btn-outline" href="about#team">${I.left} Back to the team</a></div>
         </div>
       </section>`;
   }
