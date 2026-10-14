@@ -141,7 +141,7 @@
   const money = (p, n) => { const v = n == null ? p.from : n; return (p && p.currency === 'USD' ? '$' : '₱') + NUM.format(Number(v)); };
   const priceValue = t => (t.price ? t.price.from * (t.price.currency === 'USD' ? 57 : 1) : 9e9);
   // Each package is a real page (built by tools/build.py); package?id= still works and forwards there.
-  const pkgUrl = t => `package-${encodeURIComponent(t.id)}.html`;
+  const pkgUrl = t => `package-${encodeURIComponent(t.id)}`;
   // A package page opens on a sharp photo of its destination (IC.destHero); a package without one falls back to its own image
   const pkgHeroBg = t => {
     const k = IC.destHero && IC.destHero[t.id];
