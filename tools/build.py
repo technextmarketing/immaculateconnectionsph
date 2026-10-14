@@ -35,14 +35,43 @@ ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 os.chdir(ROOT)
 SITE = "https://www.immaculateconnectionsph.com/"   # keep in step with CONFIG.siteUrl in main.js
 BRAND = "Immaculate Connections"
-# search titles where the package's own name hides what it is (the page itself keeps the name)
+# Search titles and descriptions per package, from the keyword map (each title targets one search,
+# says "from Cebu" only where the tour departs Cebu, and is <= 35 chars so the brand suffix fits in 60).
+# The page itself keeps the package's own name as its H1.
 SEO_TITLES = {
-    "bohol-breezes": "Bohol Tour Package: Bohol Breezes",
-    "boracay-bliss": "Boracay Tour Package: Boracay Bliss",
-    "coron": "Coron, Palawan Tour Package",
-    "camotes-discover": "Camotes Island Tour Package",
+    "danang-6d4n": "Da Nang Tour 6D4N from Manila",
+    "danang-5d3n": "Da Nang Tour 5D3N from Manila",
+    "hanoi-sapa-halong-4d3n": "Hanoi Sapa Ha Long Tour from Cebu",
+    "charming-yunnan-8d7n": "Yunnan China Tour 8D7N from Manila",
+    "japan-tokyo-fuji-5d4n": "Japan Tour from Cebu: Tokyo & Fuji",
+    "shanghai-mini-kyoto-5d4n": "Shanghai Tour 5D4N from Manila",
+    "bohol-breezes": "Bohol Day Tour from Cebu",
+    "camotes-discover": "Camotes Island Tour 2D1N from Cebu",
+    "camotes-tudela": "Tudela, Camotes Overnight Tour",
+    "cebu-highlands": "Cebu Highlands Tour: Temple of Leah",
+    "queen-city": "Cebu City Heritage Tour",
+    "twin-city": "Cebu & Mactan Twin City Tour",
+    "boracay-bliss": "Boracay Tour Package",
     "el-nido": "El Nido, Palawan Tour Package",
-    "japan-tokyo-fuji-5d4n": "Tokyo & Mt. Fuji 5D4N Japan Tour",
+    "coron": "Coron, Palawan Tour Package",
+}
+# Hand-written meta descriptions (<= 155 chars): price, length and departure first, never cut off.
+SEO_DESCS = {
+    "danang-6d4n": "Da Nang 6D4N tour from Manila from ₱23,888 per pax: round-trip charter flight, four nights in Da Nang, Ba Na Hills, Hoi An and the Hai Van Pass.",
+    "danang-5d3n": "Da Nang 5D3N tour from Manila from ₱21,888 per pax: round-trip charter flight, three nights at Sea Garden Hotel or similar, Ba Na Hills and city tour.",
+    "hanoi-sapa-halong-4d3n": "Hanoi, Sapa and Ha Long Bay 4D3N tour from Cebu on Vietnam Airlines, from ₱32,888: Old Quarter, Fansipan cable car and a Ha Long Bay cruise.",
+    "charming-yunnan-8d7n": "Yunnan, China 8D7N tour from Manila on China Southern, from US$1,488: Kunming, Dali, Lijiang and Shangri-La, 5-star hotels and a high-speed train.",
+    "japan-tokyo-fuji-5d4n": "Japan 5D4N winter tour from Cebu on Cebu Pacific, from US$1,049: Tokyo, Yokohama and Mt. Fuji with hotel breakfasts and an English-speaking guide.",
+    "shanghai-mini-kyoto-5d4n": "Shanghai 5D4N tour from Manila on Juneyao Air: the Bund, Lujiazui and the \"Mini Kyoto\" street. Published dates have passed; ask us for the next departure.",
+    "bohol-breezes": "Bohol day tour from Cebu: boat both ways, Blood Compact Shrine, Baclayon Church, Chocolate Hills and lunch on a Loboc River cruise. Free quotation.",
+    "camotes-discover": "Camotes Islands 2D1N tour from Cebu: beaches, caves and Lake Danao, with hotel, meals, boat tickets and guide arranged. Free quotation.",
+    "camotes-tudela": "Tudela, Camotes 2D1N tour from Cebu: Bukilat sea cave, Villahermosa mangroves, the Kaompang tree and Busay Falls, with an overnight stay.",
+    "cebu-highlands": "Cebu highlands day tour: Temple of Leah, Little Kyoto, Seoul Sierra and Sirao Garden, with air-conditioned van, guide and entrance fees. Free quotation.",
+    "queen-city": "Cebu City heritage day tour: Magellan's Cross, Basilica del Sto. Niño, Fort San Pedro, Parian ancestral houses and the Taoist Temple. Free quotation.",
+    "twin-city": "Cebu and Mactan day tour for first-timers: Cebu City landmarks plus the Alegre Guitar Factory on Mactan, with van, guide and entrance fees. Free quote.",
+    "boracay-bliss": "Planning Boracay? Our Boracay package is being finalised; ask us for a custom Boracay trip with flights, hotel and transfers. Free quotation.",
+    "el-nido": "El Nido, Palawan: our package is being finalised; ask us for a custom El Nido trip with flights, hotel and island tours. Free quotation.",
+    "coron": "Coron, Palawan: lakes, lagoons and shipwrecks. Our package is being finalised; ask us for a custom Coron trip with flights and hotel. Free quotation.",
 }
 
 
@@ -262,7 +291,7 @@ def build_pages():
         url = f"{SITE}package-{t['id']}"   # clean URL; Pages serves package-<id>.html
         name = SEO_TITLES.get(t["id"], t["name"])
         title = f"{name} | {BRAND}" if len(name) + len(BRAND) + 3 <= 62 else name
-        desc = trim(t["summary"])
+        desc = SEO_DESCS.get(t["id"]) or trim(t["summary"])
         og = og_card(t, t["key"])
         og_url = SITE + og if og else None
         s = tpl

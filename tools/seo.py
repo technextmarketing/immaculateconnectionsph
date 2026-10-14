@@ -134,7 +134,10 @@ def agency_ld(tours):
     m = re.search(r'<script type="application/ld\+json">\s*(\{"@context":"https://schema.org","@type":"TravelAgency".*?\})\s*</script>', s, re.S)
     if not m: print("  index.html: TravelAgency data not found"); return
     d = json.loads(m.group(1))
-    d.update({"@id": SITE + "#agency", "description": "Cebu City travel agency: local and international tour packages, flight and ferry ticketing, hotel bookings, vehicle hire with driver, and seminars, events and MICE.",
+    d.update({"@id": SITE + "#agency", "alternateName": "Immaculate Connections",
+              "description": "Cebu City travel agency for groups and families: tour packages, flight and ferry tickets, hotels, vans, coasters and buses with driver, and seminars and events, booked by one team, with international tours that fly out of Cebu.",
+              "contactPoint": [{"@type": "ContactPoint", "telephone": "+63 917 319 8540", "contactType": "customer service", "areaServed": "PH"},
+                               {"@type": "ContactPoint", "telephone": "+63 32 238 3343", "contactType": "reservations", "areaServed": "PH"}],
               "areaServed": [{"@type": "City", "name": "Cebu City"}, {"@type": "AdministrativeArea", "name": "Cebu"}, {"@type": "Country", "name": "Philippines"}],
               "knowsAbout": ["Tour packages", "Bohol tours", "Cebu city tours", "Camotes Islands", "Vietnam tours", "Japan tours", "Flight ticketing", "Ferry tickets", "Hotel booking", "Van and bus rental with driver", "MICE", "Seminars and events"],
               "hasOfferCatalog": {"@type": "OfferCatalog", "name": "Tour packages", "itemListElement": [
@@ -203,9 +206,10 @@ def ai_files(tours):
     pages = [("", "Services, special offers and featured packages"), ("tours", "All tour packages with filters"), ("services", "Ticketing, hotels, transport and events"),
              ("car-rental", "Vans, coasters, buses and cars with driver in Cebu"), ("hotel-booking", "Hotel and resort bookings"), ("ticketing", "Flight and ferry tickets, group bookings"),
              ("mice", "Seminars, conventions and corporate events"), ("gallery", "Photos and videos from our group tours"), ("about", "About the agency and team"), ("contact", "Free quotation and inquiry form")]
-    llms = [f"# {NAME}", "", "> Travel agency in Cebu City, Philippines. Local and international tour packages, flight and ferry ticketing, hotel bookings, vehicle hire with driver, and seminars, events and MICE. Quotations are free.", "",
+    llms = [f"# {NAME}", "", "> Travel agency in Cebu City, Philippines, for groups and families. Local and international tour packages, flight and ferry ticketing, hotel bookings, vans, coasters and buses with driver, and seminars, events and MICE, booked by one team. Quotations are free.", "",
+            "Departures: Bohol, Camotes and Cebu City tours leave from Cebu. The Hanoi–Sapa–Ha Long Bay and Japan tours fly from Cebu; the Da Nang and Yunnan tours fly from Manila.", "",
             "Contact: +63 917 319 8540 (mobile), (032) 238 3343 (landline), immaculateconnectionsph@gmail.com, Facebook: https://www.facebook.com/ImmaculateConnections.ph, Messenger: https://m.me/ImmaculateConnections.ph",
-            "Office: Unit 4E, 4th Floor, JL Millennium Building, Don Jose Avila Street, Cebu City 6000, Philippines", "", "## Pages", ""]
+            "Office: Unit 4E, 4th Floor, JL Millennium Building, Don Jose Avila Street, Cebu City, Cebu, Philippines 6000", "", "## Pages", ""]
     LABEL = {"": "Home", "mice": "MICE and events"}
     llms += [f"- [{LABEL.get(p, p.replace('-', ' ').title())}]({SITE}{p}): {d}" for p, d in pages]
     llms += ["", "## Tour packages", ""]
