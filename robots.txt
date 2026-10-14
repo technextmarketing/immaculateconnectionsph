@@ -1,6 +1,6 @@
 User-agent: *
 Allow: /
-Disallow: /payment.html
-Disallow: /team.html
+Disallow: /payment
+Disallow: /team
 
 Sitemap: https://www.immaculateconnectionsph.com/sitemap.xml
