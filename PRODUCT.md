@@ -23,13 +23,13 @@ One Cebu team handles the whole trip for a group: tickets, hotel, air-conditione
 ## Operating Context
 
 - Services: local and international tour packages; ticketing (domestic and international flights, boat and ferry tickets, group bookings); hotel bookings and reservations with resort and hotel partners; transport service reservations (vans, coasters, buses and 4-seaters, air-conditioned, with driver); MICE (meetings, incentives, conferences, exhibitions, trainings, seminars, orientation courses, reunions, corporate gatherings).
-- Office: Unit 4E, 4th Floor, JL Millennium Building, Don Jose Avila Street, Cebu City. Mobile +63 917 318 8997, landline (032) 238 3343, inquiries@immaculateconnectionsph.com, Facebook page ImmaculateConnections.ph.
+- Office: Unit 4E, 4th Floor, JL Millennium Building, Don Jose Avila Street, Cebu City. Mobile +63 917 319 8540, landline (032) 238 3343, immaculateconnectionsph@gmail.com, Facebook page ImmaculateConnections.ph.
 - Prices: only the packages that publish a rate show one (in PHP or USD); everything else is "quotation on request". Quotations are free. No payment is taken on the website.
 
 ## Capabilities and Constraints
 
 - Static site (HTML, CSS, JavaScript) on GitHub Pages; `python tools/build.py` bundles assets, pre-renders the 15 package pages and the Tours grid, and writes the sitemap. Package data lives in `assets/js/data.js`.
-- Inquiry form posts through FormSubmit to inquiries@immaculateconnectionsph.com (needs its one-time activation from the agency's inbox). Never send test submissions.
+- Inquiry form posts through FormSubmit to immaculateconnectionsph@gmail.com (needs its one-time activation from the agency's inbox). Never send test submissions.
 - Package statuses and departure dates are computed from the data: a departure counts as passed on its travel day.
 - Must stay fast and usable on phones and tablets, respect reduced motion, and keep a pause control on anything that moves by itself.
 - Undecided: real team names and photos (the team section stays hidden until they arrive); the move to the agency's own domain.

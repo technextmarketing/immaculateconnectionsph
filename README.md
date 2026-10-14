@@ -23,13 +23,13 @@ See [AUDIT.md](AUDIT.md) for the full audit of the current site, the pain points
 | `car-rental.html`, `hotel-booking.html`, `ticketing.html`, `mice.html` | The four service pages under the Services menu. The hero is the service's own document (trip ticket, stay voucher, boarding pass, event badge) that fills in live as the visitor types in the inquiry form beside it; the form continues to `contact.html` with the details filled in (`page=` tells the inquiry page to open on the contact step). Below it a journey storyboard (five scenes that follow the step being read), then the service's own sections. Behaviour in `assets/js/pages.js`, styles in `assets/css/pages.css`. |
 | `about.html` | Why choose us, the four values, mission and vision, clickable team cards (three per row) that open profiles, previous tours gallery, contact details. |
 | `team.html` | Individual team-member profile (`team.html?member=<slug>`): hero with photo/initials, bio, what they handle, focus areas, an at-a-glance side card and the other members. Content comes from `IC.team` in `data.js`. |
-| `contact.html` | Three-step inquiry form delivered to `inquiries@immaculateconnectionsph.com`. On submit it renders a printable quotation the traveller can download, email or send on Messenger. No payment is requested. |
+| `contact.html` | Three-step inquiry form delivered to `immaculateconnectionsph@gmail.com`. On submit it renders a printable quotation the traveller can download, email or send on Messenger. No payment is requested. |
 
 ## Inquiry form delivery
 
-The form posts to FormSubmit's AJAX endpoint for `inquiries@immaculateconnectionsph.com` (see `CONFIG.formEndpoint` in `assets/js/main.js`). No account is needed.
+The form posts to FormSubmit's AJAX endpoint for `immaculateconnectionsph@gmail.com` (see `CONFIG.formEndpoint` in `assets/js/main.js`). No account is needed.
 
-**One-time activation:** the first time the form is submitted from the live domain, FormSubmit emails `inquiries@immaculateconnectionsph.com` with an "Activate form" link. Click it once and every later submission is delivered directly to the inbox (subject line `Website inquiry: <service> – <package>`, fields as a table, reply-to set to the traveller's email). If sending fails for any reason, the page offers the traveller an email and a Facebook Messenger fallback carrying the same details.
+**One-time activation:** the first time the form is submitted from the live domain, FormSubmit emails `immaculateconnectionsph@gmail.com` with an "Activate form" link. Click it once and every later submission is delivered directly to the inbox (subject line `Website inquiry: <service> – <package>`, fields as a table, reply-to set to the traveller's email). If sending fails for any reason, the page offers the traveller an email and a Facebook Messenger fallback carrying the same details.
 
 Optional hardening after activation: FormSubmit provides a hashed alias for the address; paste it into `CONFIG.formEndpoint` to keep the raw email out of the page source.
 
@@ -41,7 +41,7 @@ There is no payment step. Destinations, travel dates and final pricing are
 confirmed by the reservations team first, and payment instructions are issued
 only with the official quotation that team sends.
 
-1. **The traveller submits the form.** The inquiry is emailed to `inquiries@immaculateconnectionsph.com` with a quotation reference in the subject line (`Website inquiry ICQ-260909-4821: Tour package – …`).
+1. **The traveller submits the form.** The inquiry is emailed to `immaculateconnectionsph@gmail.com` with a quotation reference in the subject line (`Website inquiry ICQ-260909-4821: Tour package – …`).
 2. **A quotation appears on screen straight away.** It carries the quotation number, issue and validity dates, the traveller's details, the booking details they entered, an estimated cost (rate × number of travellers when the package has a published rate), inclusions and exclusions, the itinerary at a glance and the terms. It states that the agency will contact the traveller directly by email.
 3. **The same quotation is emailed to the traveller.** FormSubmit's auto-response sends a plain-text copy with the reference, the details, the estimate and the next steps.
 4. **Download.** The *Download quotation* button opens the print dialog; choosing **Save as PDF** produces a clean one-document PDF (headers, navigation, forms and buttons are stripped by the print stylesheet in `assets/css/quotation.css`).
@@ -129,7 +129,7 @@ Every page opens on a photo from `assets/img/hero/`. Unsplash photos are free fo
 
 ## Go-live checklist
 
-- **FormSubmit activation:** submit the inquiry form once from the live site and click the activation link that arrives at `inquiries@immaculateconnectionsph.com`.
+- **FormSubmit activation:** submit the inquiry form once from the live site and click the activation link that arrives at `immaculateconnectionsph@gmail.com`.
 - **Domain:** live at https://www.immaculateconnectionsph.com/ since 14 Oct 2026. DNS stays at Wix (ns0/ns1.wixdns.net): A `@` -> 185.199.108-111.153, CNAME `www` -> technextmarketing.github.io, custom domain set under Settings -> Pages. Keep the Microsoft 365 MX/TXT/CNAME records (email for `inquiries@`) untouched. `CONFIG.siteUrl` in `main.js`, `SITE` in `tools/build.py`, canonical tags, `og:url`, `sitemap.xml` and `robots.txt` carry this address.
 - **Team profiles:** the team section on the About page stays hidden while every entry in `IC.team` (data.js) is marked `placeholder: true`. Put in the real names and photos and drop `placeholder` from each one, and the section and `team.html` profiles appear; then remove the `noindex` tag from `team.html` and the `Disallow: /team.html` line in `robots.txt`.
 - **Payments:** `payment.html` is `noindex` and unlinked while `CONFIG.payments` is false. When payments are switched on, remove that tag and the `Disallow` line.

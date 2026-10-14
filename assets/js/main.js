@@ -4,7 +4,7 @@
    Nav, scroll progress, reveal + tilt animations, ticker,
    tour cards, special-offer cards, package detail page,
    galleries + lightbox, FAQ, services sub-nav, inquiry form
-   (FormSubmit → inquiries@immaculateconnectionsph.com).
+   (FormSubmit → immaculateconnectionsph@gmail.com).
    ========================================================= */
 
 (function () {
@@ -18,17 +18,17 @@
     // Change it (with the other GitHub addresses, see the README) when the domain moves.
     siteUrl: 'https://www.immaculateconnectionsph.com/',
     shortName: 'Immaculate Connections',
-    mobile: '+63 917 318 8997',
-    mobileHref: 'tel:+639173188997',
+    mobile: '+63 917 319 8540',
+    mobileHref: 'tel:+639173198540',
     landline: '(032) 238 3343',
     landlineHref: 'tel:+63322383343',
-    email: 'inquiries@immaculateconnectionsph.com',
+    email: 'immaculateconnectionsph@gmail.com',
     facebook: 'https://www.facebook.com/ImmaculateConnections.ph',
     messenger: 'https://m.me/ImmaculateConnections.ph',
-    address: 'Unit 4E, 4th Floor, JL Millennium Building, Don Jose Avila Street, Cebu City, Cebu, Philippines',
+    address: 'Unit 4E, 4th Floor, JL Millennium Building, Don Jose Avila Street, Cebu City, Cebu, Philippines 6000',
     // Inquiries are delivered straight to the agency inbox through FormSubmit.
     // The first submission triggers a one-time activation email to that inbox.
-    formEndpoint: 'https://formsubmit.co/ajax/inquiries@immaculateconnectionsph.com',
+    formEndpoint: 'https://formsubmit.co/ajax/immaculateconnectionsph@gmail.com',
     quotePrefix: 'ICQ',      // quotation reference prefix
     quoteValidDays: 7,       // how long a quotation stays valid
     // ---- B2B partner codes (contact.html) ----
