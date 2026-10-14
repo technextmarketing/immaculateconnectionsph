@@ -37,10 +37,25 @@ jobs:
         run: |
           pip install --quiet rcssmin==1.2.2
           python tools/build.py assets
+      # Publish only the public site. README, AUDIT, PRODUCT, tools/, _partials/ and .github/
+      # stay in the repository and are never served.
+      - name: Collect public files
+        run: |
+          rm -rf _site && mkdir _site
+          cp *.html _site/
+          cp robots.txt sitemap.xml llms.txt packages.md .nojekyll _site/
+          cp -R assets _site/assets
+          # stop the deploy if a page links to a local file that is not in _site
+          missing=0
+          for ref in $(grep -ohE '(href|src)="[^"#?]+' _site/*.html | sed -E 's/^(href|src)="//' | grep -vE '^(https?:|mailto:|tel:|data:|//)' | sort -u); do
+            [ "$ref" = "./" ] && continue
+            if [ ! -e "_site/$ref" ] && [ ! -e "_site/$ref.html" ]; then echo "missing: $ref"; missing=1; fi
+          done
+          [ "$missing" = 0 ]
       - name: Upload site
         uses: actions/upload-pages-artifact@v3
         with:
-          path: .
+          path: _site
       - name: Deploy
         id: deployment
         uses: actions/deploy-pages@v4

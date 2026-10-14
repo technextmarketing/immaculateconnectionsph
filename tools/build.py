@@ -244,7 +244,8 @@ def build_pages():
             pages.append(got)
         full = json.loads(b.eval("""JSON.stringify(IC.tours.map(t => ({ id: t.id, name: t.name, country: t.country, region: t.region, regionLabel: (IC.regions[t.region] || {}).label || t.region,
           duration: t.duration, days: t.days, departure: t.departure, price: t.price, status: t.status, summary: t.summary, ends: t.ends,
-          inclusions: t.inclusions || [], dates: (t.travelDates || []).map(d => d.d) })))"""))
+          inclusions: t.inclusions || [], exclusions: t.exclusions || [], year: t.year || null,
+          dates: (t.travelDates || []).map(d => ({ d: d.d, y: d.y || null, add: d.add || 0, cur: d.cur || '' })) })))"""))
     finally:
         b.close(); srv.shutdown()
 

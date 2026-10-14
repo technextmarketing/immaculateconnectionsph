@@ -61,9 +61,35 @@ def money(p):
     return f"{p.get('label') or 'From'} {sym}{int(p['from']):,} {p.get('unit') or ''}".strip()
 
 
+MONTHS = {m: i + 1 for i, m in enumerate("jan feb mar apr may jun jul aug sep oct nov dec".split())}
+
+
+def date_start(d, year):
+    """First day of a travel date like "Aug 2–6" or "Aug 28–Sep 1", in the date's own year (else the tour's)."""
+    m = re.match(r"([A-Za-z]{3})[a-z]*\.?\s*(\d{1,2})", str(d.get("d", "")))
+    y = d.get("y") or year
+    if not m or not y or m.group(1).lower() not in MONTHS: return None
+    try: return date(int(y), MONTHS[m.group(1).lower()], int(m.group(2)))
+    except ValueError: return None
+
+
+def open_dates(t):
+    """Travel dates still to come. A departure closes on its travel day, the same rule as main.js."""
+    today = date.today()
+    return [d for d in t.get("dates") or [] if (lambda s: s is None or s > today)(date_start(d, t.get("year")))]
+
+
+def date_text(d, t):
+    """ "Dec 19–23 2026 (+₱1,000 per pax)": the year, and the peak-date surcharge in the currency the package page shows."""
+    y = d.get("y") or t.get("year")
+    add = f" (+{'US$' if d.get('cur') == 'USD' else '₱'}{int(d['add']):,} per pax)" if d.get("add") else ""
+    return f"{d['d']}{' ' + str(y) if y else ''}{add}"
+
+
 def live(tours):
     today = date.today().isoformat()
-    return [t for t in tours if t.get("status") != "past" and not (t.get("ends") and t["ends"] < today)]
+    return [t for t in tours if t.get("status") != "past" and not (t.get("ends") and t["ends"] < today)
+            and not (t.get("dates") and not open_dates(t))]
 
 
 def agency_ld(tours):
@@ -125,6 +151,8 @@ def tours_faq(tours):
     </section>
     <!-- /build:faq -->'''
     s = read("tours.html")
+    for key, n in (("packages", len(L)), ("packages-local", len(local)), ("packages-abroad", len(intl))):
+        s = re.sub(rf'(<strong data-stat="{key}">)\d+(</strong>)', lambda m: f"{m.group(1)}{n}{m.group(2)}", s)
     if "<!-- build:faq" in s:
         s = re.sub(r"<!-- build:faq.*?<!-- /build:faq -->", lambda m: sec, s, count=1, flags=re.S)
     else:   # first run: before the closing call-to-action band
@@ -139,7 +167,7 @@ def ai_files(tours):
              ("car-rental", "Vans, coasters, buses and cars with driver in Cebu"), ("hotel-booking", "Hotel and resort bookings"), ("ticketing", "Flight and ferry tickets, group bookings"),
              ("mice", "Seminars, conventions and corporate events"), ("gallery", "Photos and videos from our group tours"), ("about", "About the agency and team"), ("contact", "Free quotation and inquiry form")]
     llms = [f"# {NAME}", "", "> Travel agency in Cebu City, Philippines. Local and international tour packages, flight and ferry ticketing, hotel bookings, vehicle hire with driver, and seminars, events and MICE. Quotations are free.", "",
-            "Contact: +63 917 319 8540 (mobile), (032) 238 3343 (landline), immaculateconnectionsph@gmail.com, Facebook Messenger: https://www.facebook.com/ImmaculateConnections.ph",
+            "Contact: +63 917 319 8540 (mobile), (032) 238 3343 (landline), immaculateconnectionsph@gmail.com, Facebook: https://www.facebook.com/ImmaculateConnections.ph, Messenger: https://m.me/ImmaculateConnections.ph",
             "Office: Unit 4E, 4th Floor, JL Millennium Building, Don Jose Avila Street, Cebu City 6000, Philippines", "", "## Pages", ""]
     LABEL = {"": "Home", "mice": "MICE and events"}
     llms += [f"- [{LABEL.get(p, p.replace('-', ' ').title())}]({SITE}{p}): {d}" for p, d in pages]
@@ -148,14 +176,16 @@ def ai_files(tours):
         bits = [t.get("duration"), f"departs {t['departure']}" if t.get("departure") else None, money(t.get("price")) or "price on request"]
         llms.append(f"- [{t['name']}]({SITE}package-{t['id']}): {'; '.join(b for b in bits if b)}. {t.get('summary', '')}")
     llms += ["", "## More", "", f"- [Packages, prices and dates in one file]({SITE}packages.md)", f"- [Sitemap]({SITE}sitemap.xml)", ""]
-    pk = [f"# Tour packages and prices: {NAME}", "", f"Updated {today}. Prices are per person unless stated; peak dates carry the surcharge shown. Confirm availability and the final quotation with the agency (free).", ""]
+    pk = [f"# Tour packages and prices: {NAME}", "", f"Updated {today}. Prices are per person unless stated. Only travel dates still to come are listed; a peak date shows its surcharge per pax in brackets. Confirm availability and the final quotation with the agency (free).", ""]
     for t in L:
         pk += [f"## {t['name']}", "", f"- Page: {SITE}package-{t['id']}", f"- Destination: {t.get('country', '')} ({t.get('regionLabel', '')})"]
         if t.get("duration"): pk.append(f"- Duration: {t['duration']}")
         if t.get("departure"): pk.append(f"- Departs: {t['departure']}")
         pk.append(f"- Price: {money(t.get('price')) or 'on request (free quotation)'}")
-        if t.get("dates"): pk.append(f"- Travel dates: {', '.join(t['dates'][:40])}{' …' if len(t['dates']) > 40 else ''}")
+        up = open_dates(t)
+        if up: pk.append(f"- Travel dates: {', '.join(date_text(d, t) for d in up[:40])}{' …' if len(up) > 40 else ''}")
         if t.get("inclusions"): pk.append("- Includes: " + "; ".join(t["inclusions"]))
+        if t.get("exclusions"): pk.append("- Excludes: " + "; ".join(t["exclusions"]))
         if t.get("summary"): pk.append(f"- Summary: {t['summary']}")
         pk.append("")
     print("  llms.txt:", "updated" if write("llms.txt", "\n".join(llms)) else "unchanged", "| packages.md:", "updated" if write("packages.md", "\n".join(pk)) else "unchanged")

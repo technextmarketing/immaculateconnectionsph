@@ -116,7 +116,7 @@ window.IC = window.IC || {};
   IC.regions = {
     cebu:    { label: 'Cebu', blurb: 'Day tours around the Queen City of the South and its highlands.' },
     bohol:   { label: 'Bohol & Camotes', blurb: 'Island escapes a short boat ride from Cebu.' },
-    visayas: { label: 'Boracay, Palawan & Siargao', blurb: 'The Philippines’ most famous beaches and islands.' },
+    visayas: { label: 'Boracay & Palawan', blurb: 'The Philippines’ most famous beaches and islands.' },
     intl:    { label: 'International', blurb: 'Vietnam, China and Japan with our partner airlines and operators.' }
   };
 
@@ -154,13 +154,12 @@ window.IC = window.IC || {};
     'Magellan’s Cross': 'A chapel housing the cross planted by Ferdinand Magellan’s expedition in 1521 when the first Filipinos were baptised.',
     'Basilica Minore del Sto. Niño': 'The oldest Roman Catholic church in the Philippines, founded in 1565, home to the revered image of the Santo Niño de Cebu.',
     'Fort San Pedro': 'A triangular Spanish bastion fort begun in 1565, the smallest and oldest in the country, now a museum and park by the pier.',
-    'Cebu Heritage Monument': 'A sculptural tableau in Parian by Eduardo Castrillo depicting key events in Cebu’s history.',
+    'Heritage of Cebu Monument': 'A sculptural tableau in Parian by Eduardo Castrillo depicting key events in Cebu’s history.',
     'Casa Gorordo & Yap-Sandiego Museum': 'Two of Cebu’s finest ancestral homes: the 19th-century Casa Gorordo and the 17th-century Yap-Sandiego house, among the oldest in the Philippines.',
     'Casa Gorordo Museum': 'A 19th-century bahay na bato that was home to Cebu’s first Filipino bishop, restored as a lifestyle museum.',
     'Taoist Temple': 'A Chinese temple in Beverly Hills, Cebu City, built in 1972 with dragon gates and views over the city.',
     'Alegre Guitar Factory': 'A family-run workshop in Lapu-Lapu City, Mactan, famous for handcrafted guitars and ukuleles.',
     // Visayas & Palawan
-    'Siargao Island': 'The surfing capital of the Philippines in Surigao del Norte, known for Cloud 9, island hopping and lagoons.',
     'Boracay Island': 'A small island in Aklan famous for White Beach, sunsets and water sports.',
     'El Nido, Palawan': 'A municipality of limestone cliffs, hidden lagoons and island-hopping tours at the northern tip of Palawan.',
     'Coron, Palawan': 'A town on Busuanga Island known for Kayangan Lake, Twin Lagoon and Japanese shipwreck dives.',
@@ -223,13 +222,13 @@ window.IC = window.IC || {};
     {
       id: 'danang-6d4n',
       name: 'Da Nang Charter Flight 6D4N Tour',
-      subtitle: 'Out Manila · Special offer',
+      subtitle: 'Out Manila · Charter flight',
       region: 'intl', country: 'Vietnam', flag: 'vn', duration: '6 days 4 nights', days: 6, status: 'offer', badge: 'Special offer', featured: true,
       departure: 'Manila (NAIA)', price: { from: 23888, label: 'Starts at', unit: 'per pax' }, year: 2026, ends: '2026-12-31',
       image: '952787_0db097d807b14f5b882dbfd77aa54bce~mv2.png', imageAlign: 't',
       alt: 'Da Nang charter flight 6D4N tour poster: Ba Na Hills and the Golden Bridge',
       gallery: ['952787_0db097d807b14f5b882dbfd77aa54bce~mv2.png', '952787_8b207104bf0d43e5aa4c288936e9fec3~mv2.png'],
-      summary: 'Roundtrip charter flight from Manila, four nights in Da Nang, Ba Na Hills, Hoi An, the Dragon Bridge and the Hai Van Pass, all guided in English.',
+      summary: 'Round-trip charter flight from Manila, four nights in Da Nang, Ba Na Hills, Hoi An, the Dragon Bridge and the Hai Van Pass, all guided in English.',
       overview: 'Da Nang is central Vietnam’s beach city and the gateway to three UNESCO-listed neighbours. This six-day charter programme covers the Son Tra Peninsula and Lady Buddha, the lantern-lit streets of Hoi An, a full day at Ba Na Hills with its record-setting cable car and Golden Bridge, the Pink Church, APEC Park, the Cham Museum and the fire-breathing Dragon Bridge, then a scenic drive over the Hai Van Pass to Lang Co Beach before the flight home.',
       travelDates: [
         { d: 'Aug 2–6' }, { d: 'Aug 7–11' }, { d: 'Aug 9–13' }, { d: 'Aug 14–18' }, { d: 'Aug 16–20' }, { d: 'Aug 21–25', add: 3000 }, { d: 'Aug 23–27' }, { d: 'Aug 28–Sep 1', add: 3000 },
@@ -247,7 +246,7 @@ window.IC = window.IC || {};
         { day: 'Day 5', title: 'Hai Van Pass', items: ['Breakfast at hotel', 'Scenic drive through Hai Van Pass', 'Visit Lang Co Beach', 'Enjoy coastal scenic stops', 'Free time for relaxation or exploration', 'Return to hotel and rest'] },
         { day: 'Day 6', title: 'Return flight to Manila', items: ['Breakfast at hotel', 'Check-out and transfer to airport', 'Flight back to Manila', 'End of tour. Thank you and see you again!'] }
       ],
-      inclusions: ['Roundtrip charter flight Manila – Da Nang – Manila', '20 kg checked baggage per pax', '7 kg hand carry per pax', '4 nights hotel accommodation', 'Daily breakfast', 'Meals as specified in itinerary', 'Sightseeing tours as specified', 'Entrance fees as per itinerary', 'English-speaking tour guide', 'Airport transfers', 'Travel insurance'],
+      inclusions: ['Round-trip charter flight Manila – Da Nang – Manila', '20 kg checked baggage per pax', '7 kg hand carry per pax', '4 nights hotel accommodation', 'Daily breakfast', 'Meals as specified in itinerary', 'Sightseeing tours as specified', 'Entrance fees as per itinerary', 'English-speaking tour guide', 'Airport transfers', 'Travel insurance'],
       exclusions: EXC_DANANG,
       places: ['Da Nang', 'Son Tra Peninsula', 'Lady Buddha (Linh Ung Pagoda)', 'Coconut Boat Ride', 'Hoi An Ancient Town', 'Ba Na Hills', 'Golden Bridge', 'French Village & Fantasy Park', 'Da Nang Cathedral (Pink Church)', 'APEC Park', 'Cham Museum', 'Dragon Bridge', 'Lovers Bridge', 'Hai Van Pass', 'Lang Co Beach'],
       posters: ['952787_0db097d807b14f5b882dbfd77aa54bce~mv2.png', '952787_8b207104bf0d43e5aa4c288936e9fec3~mv2.png']
@@ -255,13 +254,13 @@ window.IC = window.IC || {};
     {
       id: 'danang-5d3n',
       name: 'Da Nang Charter Flight 5D3N Tour',
-      subtitle: 'Out Manila · Special offer',
+      subtitle: 'Out Manila · Charter flight',
       region: 'intl', country: 'Vietnam', flag: 'vn', duration: '5 days 3 nights', days: 5, status: 'offer', badge: 'Special offer', featured: true,
       departure: 'Manila (NAIA)', price: { from: 21888, label: 'Starts at', unit: 'per pax' }, year: 2026, ends: '2026-12-26',
       image: '952787_3194edd0c0244a54bafb5f0a2625919a~mv2.png', imageAlign: 't',
       alt: 'Da Nang charter flight 5D3N tour poster',
       gallery: ['952787_3194edd0c0244a54bafb5f0a2625919a~mv2.png', '952787_8b207104bf0d43e5aa4c288936e9fec3~mv2.png'],
-      summary: 'The shorter Da Nang charter: roundtrip flight from Manila, three nights at Sea Garden Hotel or a similar local 4-star, Ba Na Hills and the city highlights.',
+      summary: 'The shorter Da Nang charter: round-trip flight from Manila, three nights at Sea Garden Hotel or a similar local 4-star, Ba Na Hills and the city highlights.',
       overview: 'A long-weekend version of our Da Nang programme. Fly direct from Manila on the charter flight, stay three nights at Sea Garden Hotel or a similar local 4-star property, and cover the essentials: Ba Na Hills and the Golden Bridge, the Pink Church and APEC Park, the Dragon Bridge and Hoi An Ancient Town. All flights include an in-flight meal, and each flight offers six business-class seats.',
       travelDates: [
         { d: 'Aug 5–8' }, { d: 'Aug 12–15' }, { d: 'Aug 19–22', add: 3000 }, { d: 'Aug 26–29', add: 3000 },
@@ -276,7 +275,7 @@ window.IC = window.IC || {};
         { day: 'Days 2–4', title: 'Da Nang tour days', items: ['Daily hotel breakfast', 'Ba Na Hills, the world-record cable car and the Golden Bridge', 'Da Nang city highlights: Pink Church, APEC Park, Dragon Bridge and Lovers Bridge', 'Hoi An Ancient Town', 'Meals as specified (B/L/D · B/X/X · B/L/D · B/L/X)', 'Exact day-by-day sequence is confirmed on your booking voucher'] },
         { day: 'Day 5', title: 'Return flight to Manila', items: ['Breakfast at hotel', 'Check-out and transfer to airport', 'Charter flight back to Manila'] }
       ],
-      inclusions: ['Roundtrip charter flight Manila – Da Nang – Manila', 'All seats with meal on the plane (each flight has 6 business-class seats)', '20 kg checked baggage per pax', '7 kg hand carry per pax', '3 nights room accommodation at Sea Garden Hotel or similar local 4★', 'Daily hotel breakfast', 'Meals as specified in itinerary', 'Sightseeing tours as specified', 'Entrance fees as per itinerary', 'English-speaking tour guide', 'Airport transfers', 'Travel insurance'],
+      inclusions: ['Round-trip charter flight Manila – Da Nang – Manila', 'All seats with meal on the plane (each flight has 6 business-class seats)', '20 kg checked baggage per pax', '7 kg hand carry per pax', '3 nights room accommodation at Sea Garden Hotel or similar local 4★', 'Daily hotel breakfast', 'Meals as specified in itinerary', 'Sightseeing tours as specified', 'Entrance fees as per itinerary', 'English-speaking tour guide', 'Airport transfers', 'Travel insurance'],
       exclusions: EXC_DANANG,
       hotels: ['Sea Garden Hotel or similar local 4★'],
       places: ['Da Nang', 'Ba Na Hills', 'Golden Bridge', 'Da Nang Cathedral (Pink Church)', 'APEC Park', 'Dragon Bridge', 'Lovers Bridge', 'Hoi An Ancient Town'],
@@ -285,7 +284,7 @@ window.IC = window.IC || {};
     {
       id: 'hanoi-sapa-halong-4d3n',
       name: 'Hanoi – Sapa – Ha Long Bay 4D3N Tour',
-      subtitle: 'Out Cebu · Special offer',
+      subtitle: 'Out Cebu · Vietnam Airlines',
       region: 'intl', country: 'Vietnam', flag: 'vn', duration: '4 days 3 nights', days: 4, status: 'offer', badge: 'Special offer', featured: true,
       departure: 'Cebu (Mactan-Cebu International)', price: { from: 32888, label: 'From', unit: 'all-in per person' }, year: 2026, ends: '2026-12-31',
       image: '952787_0f90501df956446f93adb797c7e9f787~mv2.png', imageAlign: 't', hero: '11062b_12e8394318ad4042acc3831d320a0e53~mv2.jpg',
@@ -303,12 +302,13 @@ window.IC = window.IC || {};
         { day: 'Day 1', title: 'Hanoi arrival', items: ['Upon arrival, meet the tour guide at the airport', 'Explore Hoan Kiem Lake and the 36 Streets', 'Visit Ba Dinh Square and Hanoi Train Street', 'Transfer to Sapa', 'Visit Sa Pa Tourist Street, Sa Pa Church and Love Square', 'After dinner, transfer to hotel and check in'] },
         { day: 'Day 2', title: 'Sapa exploration', items: ['Hotel breakfast', 'Take the longest mountain train in Sapa (Muong Hoa Mountain Train + Fansipan Legend Cable Car)', 'The Fansipan Peak (lunch: mountain buffet at Van Sam restaurant)', 'Visit Sapa’s most beautiful MOANA internet-celebrity coffee shop', 'Transfer to Hanoi', 'After dinner, transfer to hotel and check in'] },
         { day: 'Day 3', title: 'Ha Long Bay cruise', items: ['Hotel breakfast', 'Visit latex shop', 'Ha Long Bay exclusive cruise tour by Ambrose cruise (lunch: cruise buffet)', 'Activities throughout the cruise: karaoke, lunch buffet, Vietnamese afternoon tea, Stalactite Cave, Tip Top Island and overlook, Fighting Cock Island', 'After dinner, transfer to hotel and check in'] },
-        { day: 'Day 4', title: 'Hanoi city tour', items: ['Hotel breakfast', 'Visit ruby shop', 'Visit silk shop and bamboo shop', 'Transfer to Hanoi World (not including gondola ride)', 'Transfer to airport and fly back to Cebu'] }
+        { day: 'Day 4', title: 'Shopping stops and departure', items: ['Hotel breakfast', 'Visit ruby shop', 'Visit silk shop and bamboo shop', 'Transfer to Hanoi World (not including gondola ride)', 'Transfer to airport and fly back to Cebu'] }
       ],
-      inclusions: ['Economy airfare and tax via Vietnam Airlines (round trip + 1 pc 23 kg baggage allowance)', 'All seats with meal on the plane (each flight has 6 business-class seats)', '3 nights room accommodation based on twin sharing at choice hotel, with daily hotel breakfast', 'Private coach with English-speaking tour guide', 'Sightseeing tours as specified, including main entrance tickets', 'Meals as listed', 'Upgrade to 2 lunch buffets (as specified in the itinerary)'],
+      inclusions: ['Economy airfare and tax via Vietnam Airlines (round trip + 1 pc 23 kg baggage allowance)', '3 nights room accommodation based on twin sharing at choice hotel, with daily hotel breakfast', 'Private coach with English-speaking tour guide', 'Sightseeing tours as specified, including main entrance tickets', 'Meals as listed', 'Upgrade to 2 lunch buffets (as specified in the itinerary)'],
       exclusions: ['Expenses of a personal nature such as telephone calls and mini bar', 'Extra baggage allowance', 'Travel insurance with Covid-19 coverage', 'Philippine travel tax', 'Visa', 'Tips for driver and guide: USD 5 per pax per day × 4 days = USD 20 per pax', 'Single supplement: USD 68 per pax', 'Taxes, surcharges and fees, subject to change'],
       optional: ['Optional tour USD 99 per pax: Han River cruise (night view + 1 drink), Vietnamese massage and 1 buffet dinner'],
-      hotels: ['4★ Sapa hotel (X/L/D)', '4★ Hanoi hotel (B/L/D)', '4★ Ha Long Bay hotel (B/L/D)', 'Sweet Home (B/L/X)'],
+      hotelsLabel: 'Hotels and meals by day',
+      hotels: ['Day 1: 4★ Sapa hotel (X/L/D)', 'Day 2: 4★ Hanoi hotel (B/L/D)', 'Day 3: 4★ Ha Long Bay hotel (B/L/D)', 'Day 4: Sweet Home (B/L/X)'],
       notes: ['Meal codes: B = breakfast, L = lunch, D = dinner, X = on your own.', 'Hotels are as listed or similar.'],
       places: ['Hanoi', 'Hoan Kiem Lake & 36 Streets', 'Ba Dinh Square', 'Hanoi Train Street', 'Sapa', 'Sa Pa Tourist Street, Church & Love Square', 'Muong Hoa Mountain Train', 'Fansipan Legend Cable Car', 'Fansipan Peak', 'MOANA Coffee Shop', 'Ha Long Bay', 'Ambrose Cruise', 'Stalactite Cave', 'Tip Top Island', 'Fighting Cock Island', 'Hanoi World'],
       posters: ['952787_0f90501df956446f93adb797c7e9f787~mv2.png', '952787_2886565a745a486fa6336ab8b57c9a15~mv2.png']
@@ -396,12 +396,12 @@ window.IC = window.IC || {};
       summary: 'Cebu City’s heritage trail: Magellan’s Cross, the Basilica del Sto. Niño, Fort San Pedro, the ancestral houses of Parian and the Taoist Temple.',
       overview: 'Cebu is the oldest city in the Philippines, and the Queen City Tour follows its story from the 1521 planting of Magellan’s Cross and the founding of the Basilica Minore del Sto. Niño in 1565 to the triangular Fort San Pedro, the Heritage of Cebu Monument, the Casa Gorordo and Yap-Sandiego ancestral houses and the hillside Taoist Temple.',
       itinerary: [
-        { day: 'Morning', title: 'Downtown heritage', items: ['Hotel pick-up in an air-conditioned van', 'Magellan’s Cross and Basilica Minore del Sto. Niño', 'Fort San Pedro', 'Cebu Heritage Monument'] },
+        { day: 'Morning', title: 'Downtown heritage', items: ['Hotel pick-up in an air-conditioned van', 'Magellan’s Cross and Basilica Minore del Sto. Niño', 'Fort San Pedro', 'Heritage of Cebu Monument'] },
         { day: 'Afternoon', title: 'Ancestral houses and temple', items: ['Casa Gorordo and Yap-Sandiego Museum', 'Taoist Temple', 'Return to hotel'] }
       ],
       inclusions: INC_CEBU,
       exclusions: ['Meals', 'Personal expenses'],
-      places: ['Magellan’s Cross', 'Basilica Minore del Sto. Niño', 'Fort San Pedro', 'Cebu Heritage Monument', 'Casa Gorordo & Yap-Sandiego Museum', 'Taoist Temple']
+      places: ['Magellan’s Cross', 'Basilica Minore del Sto. Niño', 'Fort San Pedro', 'Heritage of Cebu Monument', 'Casa Gorordo & Yap-Sandiego Museum', 'Taoist Temple']
     },
     {
       id: 'twin-city',
@@ -413,15 +413,15 @@ window.IC = window.IC || {};
       summary: 'Cebu City’s landmarks plus a crossing to Mactan for the Alegre Guitar Factory. Ideal for first-time visitors with one day to spare.',
       overview: 'The Twin City Tour pairs Cebu City’s historic core with neighbouring Lapu-Lapu City on Mactan Island. After Magellan’s Cross, the Basilica, Fort San Pedro, the Heritage Monument and Casa Gorordo, the van crosses the bridge to Mactan for the family-run Alegre Guitar Factory, famous for handmade guitars.',
       itinerary: [
-        { day: 'Morning', title: 'Cebu City', items: ['Hotel pick-up in an air-conditioned van', 'Magellan’s Cross and Basilica Minore del Sto. Niño', 'Fort San Pedro', 'Cebu Heritage Monument', 'Casa Gorordo Museum'] },
+        { day: 'Morning', title: 'Cebu City', items: ['Hotel pick-up in an air-conditioned van', 'Magellan’s Cross and Basilica Minore del Sto. Niño', 'Fort San Pedro', 'Heritage of Cebu Monument', 'Casa Gorordo Museum'] },
         { day: 'Afternoon', title: 'Mactan', items: ['Cross to Mactan Island', 'Alegre Guitar Factory', 'Return to hotel'] }
       ],
       inclusions: INC_CEBU,
       exclusions: ['Meals', 'Personal expenses'],
-      places: ['Magellan’s Cross', 'Basilica Minore del Sto. Niño', 'Fort San Pedro', 'Cebu Heritage Monument', 'Casa Gorordo Museum', 'Alegre Guitar Factory']
+      places: ['Magellan’s Cross', 'Basilica Minore del Sto. Niño', 'Fort San Pedro', 'Heritage of Cebu Monument', 'Casa Gorordo Museum', 'Alegre Guitar Factory']
     },
 
-    /* ---------------- Boracay, Palawan & Siargao ---------------- */
+    /* ---------------- Boracay & Palawan ---------------- */
     {
       id: 'boracay-bliss',
       name: 'Boracay Bliss',
@@ -492,7 +492,7 @@ window.IC = window.IC || {};
       overview: 'Yunnan is China’s most varied province, from the spring-like capital Kunming to the Bai old town of Dali on Erhai Lake, UNESCO-listed Lijiang beneath the Jade Dragon Snow Mountain and the Tibetan plateau town of Shangri-La. This eight-day programme flies China Southern from Manila, stays in 5-star hotels throughout, includes the Dali–Kunming high-speed train in 2nd class, first entrance tickets and in-park transport at every scenic spot, and upgrades two lunches to buffets, one of them seafood.',
       travelDates: [{ d: 'Sep 15–22' }, { d: 'Oct 29–Nov 5', add: 200, cur: 'USD' }, { d: 'Nov 6–13' }, { d: 'Nov 20–27', add: 100, cur: 'USD' }, { d: 'Dec 9–16', add: 100, cur: 'USD' }, { d: 'Dec 18–25', add: 400, cur: 'USD' }],
       travelDatesNote: 'Travel dates 2026. Surcharges shown are in US dollars per pax.',
-      inclusions: ['Economy airfare and tax with China Southern Airlines (round trip)', 'Baggage allowance: 1 pc 23 kg check-in and 7 kg hand carry', 'High-speed train Dali to Kunming, 2nd-class seats', '7 nights room accommodation based on twin sharing at choice 5★ hotels with daily hotel breakfast', 'Private bus with English-speaking tour guide', 'Sightseeing items as specified, including first entrance tickets for all scenic spots and listed in-park transportation fees', 'Meals: breakfast and one main meal per day, with one meal upgraded to a seafood buffet', 'Upgrade to 2 lunch buffets', 'All seats with meal on the plane (each flight has 6 business-class seats)'],
+      inclusions: ['Economy airfare and tax with China Southern Airlines (round trip)', 'Baggage allowance: 1 pc 23 kg check-in and 7 kg hand carry', 'High-speed train Dali to Kunming, 2nd-class seats', '7 nights room accommodation based on twin sharing at choice 5★ hotels with daily hotel breakfast', 'Private bus with English-speaking tour guide', 'Sightseeing items as specified, including first entrance tickets for all scenic spots and listed in-park transportation fees', 'Meals: breakfast and one main meal per day, with one meal upgraded to a seafood buffet', 'Upgrade to 2 lunch buffets'],
       exclusions: ['Personal expenses such as telephone calls and mini bar', 'Travel insurance', 'Philippine travel tax USD 30 per pax (collected with tour fee)', 'China group visa USD 40 per pax (collected with tour fee)', 'Tips for driver and guide USD 48 per pax (collected with tour fee)', 'Single supplement USD 250 per pax', 'Fuel surcharge (subject to change), estimated USD 75 per pax'],
       hotels: ['5★ hotel in Kunming (X/X/X)', '5★ hotel in Chuxiong (B/L/D)', '5★ hotel in Lijiang (B/L/X)', '5★ hotel in Dali (B/L/D)', '5★ hotel in Shangri-La (B/L/D)'],
       notes: ['Child with bed (11–17 yrs): same rate as adults. Child without bed (2–10 yrs): USD 1,368 per pax.', 'Meal codes: B = breakfast, L = lunch, D = dinner, X = on your own. Hotels are as listed or similar.'],
@@ -512,7 +512,7 @@ window.IC = window.IC || {};
       overview: 'Fly Cebu Pacific from Mactan for Japan’s winter season: Tokyo’s Asakusa, Shibuya and Shinjuku, the Minato Mirai waterfront and Chinatown of Yokohama, and a Mt. Fuji day with views from the Fuji Five Lakes area. Departures run from December 2026 to February 2027 with hotel breakfasts, a private coach with an English-speaking guide, main entrance tickets and two lunch buffets included.',
       travelDates: [{ d: 'Dec 19–23', add: 1000 }, { d: 'Dec 25–29', add: 1000 }, { d: 'Jan 8–12', add: 100, y: 2027 }, { d: 'Jan 15–19', add: 200, y: 2027 }, { d: 'Jan 22–26', add: 200, y: 2027 }, { d: 'Feb 5–9', add: 100, y: 2027 }, { d: 'Feb 12–16', add: 100, y: 2027 }, { d: 'Feb 19–23', add: 100, y: 2027 }],
       travelDatesNote: 'Departures December 2026 to February 2027. Surcharges shown are in pesos per pax.',
-      inclusions: ['Economy airfare and tax via Cebu Pacific (round trip + 1 pc 7 kg hand carry only)', 'Room accommodation based on twin sharing at choice hotel with daily hotel breakfast (poster states 3 nights; please confirm the 4th night with our team)', 'Private coach with English-speaking tour guide', 'Sightseeing tours as specified, including main entrance tickets', 'Meals as listed', 'Upgrade to 2 lunch buffets (as specified in the itinerary)', 'All seats with meal on the plane (each flight has 6 business-class seats)'],
+      inclusions: ['Economy airfare and tax via Cebu Pacific (round trip + 1 pc 7 kg hand carry only)', 'Room accommodation based on twin sharing at choice hotel with daily hotel breakfast (hotel nights are confirmed with your quotation)', 'Private coach with English-speaking tour guide', 'Sightseeing tours as specified, including main entrance tickets', 'Meals as listed', 'Upgrade to 2 lunch buffets (as specified in the itinerary)'],
       exclusions: ['Expenses of a personal nature such as telephone calls and mini bar', 'Extra baggage allowance', 'Travel insurance with Covid-19 coverage', 'Philippine travel tax', 'Visa', 'Tips for driver and guide: USD 5 per pax per day × 4 days = USD 20 per pax', 'Single supplement USD 68 per pax', 'Taxes, surcharges and fees, subject to change'],
       notes: ['Accommodation is at a choice hotel or similar, twin sharing.'],
       places: ['Tokyo', 'Yokohama', 'Mt. Fuji'],
@@ -703,13 +703,20 @@ window.IC = window.IC || {};
       { ic: 'culture', t: 'Culture & etiquette', lead: 'Warm and easygoing', body: 'Filipinos are famously friendly and a smile goes far. Dress modestly in churches, cover up away from the beach, and ask before photographing people. A polite “thank you” is always welcome.' },
       { ic: 'safety', t: 'Safety & health', lead: 'Friendly; usual care', body: 'The tourist areas here are welcoming and safe; take normal care with valuables and board only registered boats with life vests. Drink bottled water on the islands and bring any personal medicine. Emergency hotline: 911.' },
       { ic: 'connectivity', t: 'Connectivity', lead: 'Globe/Smart SIM + GCash', body: 'Buy a Globe or Smart tourist SIM at the airport for data; signal can drop on remote islands, so download your maps offline. GCash is handy for payments, and resorts and cafés usually have Wi-Fi.' },
-      { ic: 'food', t: 'Must-see sights & food', lead: 'Beaches, lechon & more', body: 'Chase white-sand beaches, island-hopping and snorkeling, Bohol’s Chocolate Hills and tarsiers, and Palawan’s lagoons. Feast on Cebu lechon, fresh seafood, kinilaw, sweet mangoes and halo-halo to cool down.' }
+      { ic: 'food', t: 'Must-see sights & food', lead: 'Beaches, lechon & more', body: 'Chase white-sand beaches, island-hopping and snorkelling, Bohol’s Chocolate Hills and tarsiers, and Palawan’s lagoons. Feast on Cebu lechon, fresh seafood, kinilaw, sweet mangoes and halo-halo to cool down.' }
     ]
   };
 
+  /* Ticker prices are read from the packages above (lowest published rate), so they never drift from the package pages. */
+  const fromRate = ids => {
+    const ps = IC.tours.filter(t => ids.indexOf(t.id) >= 0 && t.price).map(t => t.price);
+    if (!ps.length) return 'Ask for a quote';
+    const p = ps.reduce((a, b) => (b.from < a.from ? b : a));
+    return 'From ' + (p.currency === 'USD' ? '$' : '₱') + Number(p.from).toLocaleString('en-US');
+  };
   IC.destinationsTicker = [
-    ['Da Nang', 'From ₱23,888 · out Manila'], ['Hanoi · Sapa · Ha Long Bay', 'From ₱32,888 · out Cebu'], ['Bohol', 'Loboc River lunch'], ['Camotes Islands', '2 days 1 night'],
+    ['Da Nang', fromRate(['danang-6d4n', 'danang-5d3n']) + ' · out Manila'], ['Hanoi · Sapa · Ha Long Bay', fromRate(['hanoi-sapa-halong-4d3n']) + ' · out Cebu'], ['Bohol', 'Loboc River lunch'], ['Camotes Islands', '2 days 1 night'],
     ['Cebu City', 'Heritage tours'], ['Cebu Highlands', 'Temple of Leah & Sirao'], ['Mactan', 'Twin City Tour'],
-    ['Charming Yunnan', 'From $1,488 · out Manila'], ['Japan · Tokyo & Mt. Fuji', 'From $1,049 · out Cebu'], ['Boracay', 'Coming soon'], ['El Nido', 'Coming soon'], ['Coron', 'Coming soon']
+    ['Charming Yunnan', fromRate(['charming-yunnan-8d7n']) + ' · out Manila'], ['Japan · Tokyo & Mt. Fuji', fromRate(['japan-tokyo-fuji-5d4n']) + ' · out Cebu'], ['Boracay', 'Coming soon'], ['El Nido', 'Coming soon'], ['Coron', 'Coming soon']
   ];
 })(window.IC);

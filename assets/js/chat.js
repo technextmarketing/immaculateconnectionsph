@@ -207,7 +207,9 @@
   });
 
   /* ---------- reply builders (all text escaped) ---------- */
-  const priceLine = t => (t.price
+  const priceLine = t => (effStatus(t) === 'past'
+    ? '<p class="icc-price is-ask">Departed — ask us for the next departure</p>'
+    : t.price
     ? `<p class="icc-price"><span>${esc(t.price.label || 'From')}</span> <b>${esc(money(t.price))}</b> <span>${esc(t.price.unit || '')}</span></p>`
     : '<p class="icc-price is-ask">Price on request — free quotation</p>');
   const datesBlock = (t, n) => {
@@ -242,7 +244,7 @@
   };
   const row = t => {
     const nx = upcoming(t)[0];
-    const bits = [t.duration, t.price ? `${t.price.label || 'From'} ${money(t.price)}` : 'Price on request', nx ? 'Next: ' + nx.d + (nx.y && nx.y !== t.year ? ' ' + nx.y : '') : ''].filter(Boolean);
+    const bits = [t.duration, effStatus(t) === 'past' ? 'Departed' : t.price ? `${t.price.label || 'From'} ${money(t.price)}` : 'Price on request', nx ? 'Next: ' + nx.d + (nx.y && nx.y !== t.year ? ' ' + nx.y : '') : ''].filter(Boolean);
     return `<li><a href="${esc(pkgUrl(t))}"><b>${esc(t.name)}</b><span>${esc(bits.join(' · '))}</span></a></li>`;
   };
   const rows = list => `<ul class="icc-rows">${list.map(row).join('')}</ul>`;
@@ -330,6 +332,11 @@
     if (greetOnly) return out(greetReply(), MAIN_CHIPS);
     if (has('thanks') && !found.length && !wantKey) return out(p('You’re welcome! Anything else I can help with?'), MAIN_CHIPS);
     if (has('office') && !(force && force.pkg)) return out(contactReply(q), ['Tour packages', 'Prices & dates']);
+    // Places we get asked about but have no package for: say so plainly instead of guessing
+    if (/\bsiargao\b/.test(q) && !found.length) {
+      return out(p('We don’t have a Siargao package at the moment. Our Boracay, El Nido and Coron packages are coming soon, and we can plan a custom island trip or book your flights and hotel on request.')
+        + `<div class="icc-actions"><a class="icc-btn is-primary" href="${esc('contact?' + new URLSearchParams({ service: 'tour', package: 'custom', notes: 'Siargao trip' }))}">Ask for a custom trip</a><a class="icc-btn" href="tours">See all packages</a></div>`, ['Tour packages', 'Contact us']);
+    }
 
     // Visa / entry: only what the site publishes per country
     if (has('visa')) {
@@ -483,7 +490,7 @@
   panel.innerHTML = `
     <header class="icc-head">
       <span class="icc-avatar"><img src="${logo}" alt="" width="40" height="40" decoding="async"></span>
-      <div class="icc-who"><h2>Travel assistant</h2><p><i aria-hidden="true"></i>Usually answers instantly</p></div>
+      <div class="icc-who"><h2>Travel assistant</h2><p><i aria-hidden="true"></i>Automated assistant · instant answers</p></div>
       <button type="button" class="icc-x" aria-label="Close chat">${Ico.close}</button>
     </header>
     <div class="icc-log" role="log" aria-live="polite" aria-relevant="additions" tabindex="-1"></div>

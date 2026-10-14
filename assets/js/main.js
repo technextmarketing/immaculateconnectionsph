@@ -137,6 +137,17 @@
     if (t.travelDates && t.travelDates.length && t.travelDates.every(d => isPastDate(d, t))) return 'past';
     return t.status;
   };
+  // Departure dates still open, and how they read: "22 departure dates in 2026", "1 departure date in 2027"
+  const openDates = t => (t.travelDates || []).filter(d => !isPastDate(d, t));
+  const yearsOf = (dates, t) => {
+    const ys = [...new Set((dates || []).map(d => Number(d.y || t.year)).filter(Boolean))].sort();
+    return ys.length > 1 ? `${ys[0]}–${ys[ys.length - 1]}` : ys.length ? String(ys[0]) : '';
+  };
+  const datesCount = t => {
+    const o = openDates(t); if (!o.length) return '';
+    const y = yearsOf(o, t);
+    return `${o.length} departure date${o.length === 1 ? '' : 's'}${y ? ' in ' + y : ''}`;
+  };
   const statusLabel = t => IC.statusLabel[effStatus(t)] || '';
   const money = (p, n) => { const v = n == null ? p.from : n; return (p && p.currency === 'USD' ? '$' : '₱') + NUM.format(Number(v)); };
   const priceValue = t => (t.price ? t.price.from * (t.price.currency === 'USD' ? 57 : 1) : 9e9);
@@ -581,6 +592,8 @@
     return 'navy';
   }
   function priceBlock(t, big) {
+    // a departed package keeps no bookable price on show
+    if (t.price && effStatus(t) === 'past') return `<div class="price"><small>Departed</small><strong class="soft">Next date on request</strong></div>`;
     if (t.price) return `<div class="price ${big ? 'big' : ''}"><small>${esc(t.price.label)}</small><strong>${money(t.price)}</strong><span>${esc(t.price.unit)}</span></div>`;
     return `<div class="price"><small>Pricing</small><strong class="soft">Quotation on request</strong></div>`;
   }
@@ -628,11 +641,11 @@
     const art = posters ? posters[0] : t.image;
     const days = t.itinerary || [];
     const shownDays = days.slice(0, days.length > ROW_DAYS ? ROW_DAYS - 1 : ROW_DAYS);
-    const openDates = (t.travelDates || []).filter(d => !isPastDate(d, t)).length;
+    const nOpen = openDates(t).length;
     const facts = [
       t.duration ? `<li>${I.clock}${esc(t.duration)}</li>` : '',
       t.departure ? `<li>${I.plane}${esc(t.departure.split(' (')[0])}</li>` : '',
-      openDates ? `<li>${I.cal}${openDates} departure${openDates === 1 ? '' : 's'}</li>` : ''
+      nOpen ? `<li>${I.cal}${nOpen} departure${nOpen === 1 ? '' : 's'}</li>` : ''
     ].join('');
     const route = t.places.slice(0, 4), moreP = t.places.length - route.length;
     const plan = shownDays.length
@@ -698,7 +711,7 @@
           ${incTagsHtml(t, 4)}
           <div class="offer-foot">
             ${priceBlock(t, true)}
-            <div class="offer-dates">${I.cal}<span>${t.travelDates.length} departure dates in 2026</span></div>
+            ${datesCount(t) ? `<div class="offer-dates">${I.cal}<span>${datesCount(t)}</span></div>` : ''}
           </div>
           <div class="offer-actions">
             <a class="btn btn-primary" href="${pkgUrl(t)}">See itinerary ${I.arrow}</a>
@@ -917,6 +930,8 @@
     // Dates can run into the next year, so the heading takes its year(s) from the dates themselves.
     const years = hasDates ? [...new Set(t.travelDates.map(d => Number(d.y || t.year)).filter(Boolean))].sort() : [];
     const yearsLabel = years.length > 1 ? `${years[0]}\u2013${years[years.length - 1]}` : years.length ? String(years[0]) : '';
+    const past = effStatus(t) === 'past';
+    const anyOpen = openDates(t).length > 0;
 
     if (!baked) {   // a pre-built page already has its own title, description and share tags
     document.title = `${t.name} | ${CONFIG.shortName}`;
@@ -942,8 +957,8 @@
         <div class="container">
           <nav class="breadcrumb" aria-label="Breadcrumb"><a href="./">Home</a>${I.left.replace('m15 18-6-6 6-6', 'm9 18 6-6-6-6')}<a href="tours">Tour Packages</a>${I.left.replace('m15 18-6-6 6-6', 'm9 18 6-6-6-6')}<span>${esc(region)}</span></nav>
           <div class="chips pkg-chips">
-            ${t.badge && t.badge.toLowerCase() !== statusLabel(t).toLowerCase() ? `<span class="pill gold">${esc(t.badge)}</span>` : ''}
-            ${t.price ? `<span class="pill gold">${esc(t.price.label)} ${money(t.price)}</span>` : ''}
+            ${!past && t.badge && t.badge.toLowerCase() !== statusLabel(t).toLowerCase() ? `<span class="pill gold">${esc(t.badge)}</span>` : ''}
+            ${!past && t.price ? `<span class="pill gold">${esc(t.price.label)} ${money(t.price)}</span>` : ''}
             <span class="pill glass">${flagImg(t)}${esc(region)}</span>
             ${t.duration ? `<span class="pill glass">${I.clock}${esc(t.duration)}</span>` : ''}
             ${t.departure ? `<span class="pill glass chip-departure">${I.plane}Departs ${esc(t.departure)}</span>` : ''}
@@ -969,11 +984,11 @@
             ${hasDates ? `<article id="dates" class="pkg-section reveal">
               <span class="eyebrow">Dates &amp; price</span>
               <h2 class="h2">Travel dates${yearsLabel ? ' ' + yearsLabel : ''}</h2>
-              <p class="muted" style="margin-bottom:18px">${esc(t.travelDatesNote || '')} Base rate ${esc(t.price.label.toLowerCase())} ${money(t.price)} ${esc(t.price.unit)}.</p>
+              <p class="muted" style="margin-bottom:18px">${esc(t.travelDatesNote || '')}${past ? ' This departure has passed; ask us about the next schedule.' : ` Base rate ${esc(t.price.label.toLowerCase())} ${money(t.price)} ${esc(t.price.unit)}.`}</p>
               <div class="date-grid">${t.travelDates.map(d => isPastDate(d, t)
                 ? `<span class="date-chip past" title="This departure date has passed">${I.cal}<span>${esc(d.d)}${d.y ? ' ' + d.y : ''}</span></span>`
                 : `<a class="date-chip ${d.add ? 'sur' : ''}" href="${dateChipHref(d, t)}" title="Select these dates and send an inquiry">${I.cal}<span>${esc(d.d)}${d.y ? ' ' + d.y : ''}</span>${d.add ? `<em>+${d.cur === 'USD' ? '$' + d.add : peso(d.add)}</em>` : ''}</a>`).join('')}</div>
-              <p class="date-hint">${I.arrow.replace('class="arrow"', '')}<span><strong>Tap a date to book it.</strong> Your inquiry form opens with this package and your chosen departure already filled in. Dates in orange carry a peak-season surcharge per pax; greyed dates have passed. Availability is confirmed at booking.</span></p>
+              ${anyOpen ? `<p class="date-hint">${I.arrow.replace('class="arrow"', '')}<span><strong>Tap a date to book it.</strong> Your inquiry form opens with this package and your chosen departure already filled in. Dates in orange carry a peak-season surcharge per pax; greyed dates have passed. Availability is confirmed at booking.</span></p>` : ''}
             </article>` : ''}
 
             <article id="overview" class="pkg-section reveal">
@@ -1004,7 +1019,7 @@
                 <div class="inc-col"><h3>${I.check} Inclusions</h3><ul>${t.inclusions.map(x => `<li>${I.check}<span>${esc(x)}</span></li>`).join('')}</ul></div>
                 ${t.exclusions && t.exclusions.length ? `<div class="inc-col exc"><h3>${I.x} Exclusions</h3><ul>${t.exclusions.map(x => `<li>${I.x}<span>${esc(x)}</span></li>`).join('')}</ul></div>` : ''}
               </div>
-              ${t.hotels ? `<div class="pkg-note"><strong>${I.bed} Accommodation</strong><ul>${t.hotels.map(h => `<li>${esc(h)}</li>`).join('')}</ul></div>` : ''}
+              ${t.hotels ? `<div class="pkg-note"><strong>${I.bed} ${esc(t.hotelsLabel || 'Accommodation')}</strong><ul>${t.hotels.map(h => `<li>${esc(h)}</li>`).join('')}</ul></div>` : ''}
               ${t.optional ? `<div class="pkg-note gold"><strong>${I.star} Optional</strong><ul>${t.optional.map(h => `<li>${esc(h)}</li>`).join('')}</ul></div>` : ''}
               ${t.notes ? `<p class="muted small" style="margin-top:14px">${t.notes.map(esc).join(' ')}</p>` : ''}
             </article>
@@ -1038,7 +1053,7 @@
           <aside class="pkg-side">
             <div class="side-card sticky reveal">
               ${priceBlock(t, true)}
-              ${hasDates ? `<ul class="meta"><li>${I.cal}<span>${t.travelDates.length} departure dates${yearsLabel ? ' in ' + yearsLabel : ''}</span></li></ul>` : ''}
+              ${datesCount(t) ? `<ul class="meta"><li>${I.cal}<span>${datesCount(t)}</span></li></ul>` : ''}
               <a class="btn btn-primary btn-block btn-lg" href="contact?service=tour&package=${encodeURIComponent(t.id)}">${ctaLabel(t)} ${I.arrow}</a>
               <a class="btn btn-outline btn-block" href="${CONFIG.messenger}" target="_blank" rel="noopener">${I.msg} Message us on Facebook</a>
               <a class="btn btn-light btn-block" href="${CONFIG.mobileHref}">${I.phone} ${esc(CONFIG.mobile)}</a>
@@ -1054,7 +1069,7 @@
       </div></section>` : ''}
 
       <div class="sticky-cta" id="stickyCta">
-        <div>${t.price ? `<small>${esc(t.price.label)}</small><strong>${money(t.price)}</strong>` : `<small>Price</small><strong>On request</strong>`}</div>
+        <div>${t.price && !past ? `<small>${esc(t.price.label)}</small><strong>${money(t.price)}</strong>` : past ? `<small>Departed</small><strong>Next date on request</strong>` : `<small>Price</small><strong>On request</strong>`}</div>
         <a class="btn btn-primary" href="contact?service=tour&package=${encodeURIComponent(t.id)}">${ctaLabel(t)}</a>
       </div>`;
 
@@ -1085,7 +1100,7 @@
 
     // Structured data
     const ld = { '@context': 'https://schema.org', '@type': 'TouristTrip', name: t.name, description: t.summary, url: abs(pkgUrl(t)), image: abs(IC.wixJpg ? IC.wixJpg(t.image) : wix(t.image)), touristType: 'Leisure', itinerary: t.places.map(p => ({ '@type': 'TouristAttraction', name: p })), provider: { '@type': 'TravelAgency', name: CONFIG.brand, telephone: CONFIG.mobile, email: CONFIG.email, url: 'https://www.immaculateconnectionsph.com/' } };
-    if (t.price) ld.offers = { '@type': 'Offer', price: t.price.from, priceCurrency: t.price.currency || 'PHP', availability: effStatus(t) === 'past' ? 'https://schema.org/SoldOut' : 'https://schema.org/InStock', url: abs(pkgUrl(t)) };
+    if (t.price) ld.offers = { '@type': 'Offer', price: t.price.from, priceCurrency: t.price.currency || 'PHP', availability: effStatus(t) === 'past' ? 'https://schema.org/Discontinued' : 'https://schema.org/InStock', url: abs(pkgUrl(t)) };
     $$('script[data-ld="pkg"]').forEach(x => x.remove());   // the pre-built copy; this one has today's availability
     const s = document.createElement('script'); s.type = 'application/ld+json'; s.dataset.ld = 'pkg'; s.textContent = JSON.stringify(ld); document.head.appendChild(s);
 
@@ -1407,6 +1422,22 @@
   const fmtField = (k, v) => (DATE_FIELDS.indexOf(k) === -1 ? String(v == null ? '' : v) : fmtISO(v));
   const paxCount = v => { const n = parseInt(String(v == null ? '' : v).replace(/[^\d]/g, ''), 10); return Number.isFinite(n) && n > 0 ? n : null; };
   const paxWord = n => n + (n === 1 ? ' traveller' : ' travellers');
+  // Estimate for a package: the published base rate plus the peak-date surcharge of the
+  // travel date the traveller picked (matched to the package's own dates), per traveller.
+  // A surcharge in another currency than the base rate is shown beside it, never converted.
+  const fmtCur = (cur, n) => (cur === 'USD' ? '$' + NUM.format(Number(n)) : peso(n));
+  const estimate = (tour, o) => {
+    if (!tour || !tour.price) return null;
+    const heads = paxCount(o.pax || o.guests || o.epax);
+    const iso = String(o.date || '').trim();
+    const d = iso && tour.travelDates ? tour.travelDates.find(x => dateChipIso(x, tour) === iso) : null;
+    const cur = tour.price.currency === 'USD' ? 'USD' : 'PHP';
+    const add = d && d.add ? { n: Number(d.add), cur: d.cur === 'USD' ? 'USD' : 'PHP' } : null;   // same currency rule as the date chips
+    const same = !add || add.cur === cur;
+    const base = Number(tour.price.from);
+    const total = !heads ? '' : same ? fmtCur(cur, (base + (add ? add.n : 0)) * heads) : `${fmtCur(cur, base * heads)} + ${fmtCur(add.cur, add.n * heads)}`;
+    return { heads, d, add, cur, base, total };
+  };
   const quoteRef = prefix => {
     const d = new Date(), p = x => String(x).padStart(2, '0');
     return `${prefix || CONFIG.quotePrefix}-${String(d.getFullYear()).slice(2)}${p(d.getMonth() + 1)}${p(d.getDate())}-${Math.floor(1000 + Math.random() * 9000)}`;
@@ -1449,22 +1480,31 @@
     if (tour && tour.price) {
       const rate = money(tour.price);
       const unit = tour.price.unit || '';
-      const total = heads ? money(tour.price, tour.price.from * heads) : '\u2014';
+      const est = estimate(tour, o);
+      const add = est.add;
+      const total = est.total || '\u2014';
+      const dash = '\u2014';
+      const addRow = add ? `<tr>
+            <td data-l="Surcharge"><strong>Peak-date surcharge</strong><span class="desc">${esc(est.d.d + ' ' + (est.d.y || tour.year || ''))}</span></td>
+            <td class="num" data-l="Rate">+${fmtCur(add.cur, add.n)}<span class="unit">per pax</span></td>
+            <td class="num" data-l="Travellers">${heads ? heads : esc(pax || dash)}</td>
+            <td class="num" data-l="Line total">${heads ? fmtCur(add.cur, add.n * heads) : dash}</td>
+          </tr>` : '';
       cost = `
         <table class="qt-table cost">
           <thead><tr><th>Description</th><th class="num">Rate</th><th class="num">Travellers</th><th class="num">Line total</th></tr></thead>
           <tbody><tr>
             <td data-l="Package"><strong>${esc(tour.name)}</strong><span class="desc">${esc([tour.duration, tour.departure ? 'departs ' + tour.departure : ''].filter(Boolean).join(' \u00b7 '))}</span></td>
             <td class="num" data-l="Rate">${rate}<span class="unit">${esc(unit)}</span></td>
-            <td class="num" data-l="Travellers">${heads ? heads : esc(pax || '\u2014')}</td>
-            <td class="num" data-l="Line total">${total}</td>
-          </tr></tbody>
+            <td class="num" data-l="Travellers">${heads ? heads : esc(pax || dash)}</td>
+            <td class="num" data-l="Line total">${heads ? money(tour.price, tour.price.from * heads) : dash}</td>
+          </tr>${addRow}</tbody>
           <tfoot><tr>
             <td class="lblcell" colspan="3"><span class="lbl">Estimated total</span></td>
             <td class="num" data-l="Estimated total"><span class="sum">${total}</span></td>
           </tr></tfoot>
         </table>
-        <p class="qt-fine">${heads ? `${rate} ${esc(unit)} \u00d7 ${paxWord(heads)}, at the published rate.` : 'The total is worked out once the number of travellers is confirmed.'} Peak-date surcharges, where any apply to your dates, are shown on your official quotation.</p>`;
+        <p class="qt-fine">${heads ? `${rate} ${esc(unit)} \u00d7 ${paxWord(heads)}, at the published rate${add ? `, plus the peak-date surcharge for ${esc(est.d.d)}` : ''}.` : 'The total is worked out once the number of travellers is confirmed.'} ${add ? '' : 'Peak-date surcharges, where any apply to your dates, are shown on your official quotation. '}Final price and availability are confirmed by our team.</p>`;
     } else {
       cost = `<div class="qt-tbc">${I.info}<span>Final pricing is confirmed by our team once the details and availability for your dates are checked. Your official quotation follows by email.</span></div>`;
     }
@@ -1498,7 +1538,7 @@
           </div>
         </div>
         <div class="qt-meta">
-          <div class="qt-title">Quotation</div>
+          <div class="qt-title">Quotation estimate</div>
           <dl>
             <dt>Quotation no.</dt><dd class="ref">${esc(ref)}</dd>
             <dt>Date issued</dt><dd>${esc(fmtDate(issued))}</dd>
@@ -1540,7 +1580,7 @@
           <li>Published rates may carry <strong>peak-season surcharges</strong> on selected travel dates. Any surcharge that applies to your dates is shown on your official quotation.</li>
           <li><strong>No deposit or payment is requested through this website.</strong> Payment instructions are issued only with your official quotation, once the locations, dates and final pricing are confirmed by our team.</li>
           <li>Airfare, hotel and tour rates are <strong>not held until payment is received</strong> and may change without prior notice.</li>
-          <li>This quotation is valid until <strong>${esc(fmtDate(valid))}</strong>. Quote reference <strong>${esc(ref)}</strong> when you contact us.</li>
+          <li>This estimate is valid until <strong>${esc(fmtDate(valid))}</strong>; it is not a booking or a price guarantee. Quote reference <strong>${esc(ref)}</strong> when you contact us.</li>
           <li>Exclusions such as visa fees, travel tax, tips and single supplements are charged separately where applicable.</li>
         </ol>
       </div>
@@ -1558,7 +1598,7 @@
           <em>Issued ${esc(fmtDate(issued))} &middot; valid until ${esc(fmtDate(valid))}</em>
         </div>
       </footer>
-      <p class="qt-legal"><strong>This document is a quotation, not an invoice or a receipt.</strong> Prepared from the details above and from published rates; both are confirmed by our reservations team before any booking is made. Thank you for choosing Immaculate Connections Travel Agency &mdash; crafting seamless journeys, creating lasting memories.</p>
+      <p class="qt-legal"><strong>This document is a quotation estimate, not an invoice or a receipt.</strong> Prepared from the details above and from published rates; both are confirmed by our reservations team before any booking is made. Thank you for choosing Immaculate Connections Travel Agency &mdash; crafting seamless journeys, creating lasting memories.</p>
     </div>`;
   }
 
@@ -1572,7 +1612,7 @@
     const pkg = $('#f_package', form);
     if (pkg && IC.tours) {
       pkg.innerHTML = '<option value="">Select a package</option>' +
-        countryList().map(c => `<optgroup label="${esc(c.name)}">${IC.tours.filter(t => cSlug(t.country) === c.slug).map(t => `<option value="${esc(t.id)}">${esc(t.name)}${t.duration ? ' · ' + esc(t.duration) : ''}${t.price ? ' · ' + money(t.price) : ''}</option>`).join('')}</optgroup>`).join('') +
+        countryList(IC.tours.filter(t => effStatus(t) !== 'past')).map(c => `<optgroup label="${esc(c.name)}">${IC.tours.filter(t => cSlug(t.country) === c.slug && effStatus(t) !== 'past').map(t => `<option value="${esc(t.id)}">${esc(t.name)}${t.duration ? ' · ' + esc(t.duration) : ''}${t.price ? ' · ' + money(t.price) : ''}</option>`).join('')}</optgroup>`).join('') +
         '<option value="custom">Custom itinerary (describe below)</option>';
     }
 
@@ -1616,6 +1656,9 @@
     const step1Nav = $('.fstep[data-step="1"] .form-nav', form); if (step1Nav) step1Nav.style.display = 'none';
 
     if (params.get('package') && !params.get('service')) params.set('service', 'tour');
+    // A departed package cannot be picked: ask for its next departure as a custom request instead
+    const gone = IC.tours && IC.tours.find(t => t.id === params.get('package') && effStatus(t) === 'past');
+    if (gone) { params.set('package', 'custom'); if (!params.get('notes')) params.set('notes', `Please let me know the next departure of the ${gone.name}.`); }
     params.forEach((v, k) => setVal(k, v));
     showFor();
     // Arriving from a service page with the trip filled in: skip the service choice, and
@@ -1671,8 +1714,8 @@
       // Estimated total, used on the quotation and carried to the payment page
       let amount = '';
       if (tour && tour.price) {
-        const heads = paxCount(o.pax || o.guests || o.epax);
-        amount = heads ? money(tour.price, tour.price.from * heads) : money(tour.price) + ' ' + tour.price.unit;
+        const est = estimate(tour, o);   // includes the surcharge of the date picked
+        amount = est.total || money(tour.price) + ' ' + tour.price.unit;
       }
 
       const lines = Object.keys(o).filter(k => LABELS[k]).map(k => `${LABELS[k]}: ${k === 'service' ? serviceName : fmtField(k, o[k])}`).join('\n');
@@ -2517,7 +2560,7 @@
     const team = realTeam();
     const m = slug ? team.find(x => x.slug === slug) : team[0];
     if (!m) {
-      root.innerHTML = `<section class="section"><div class="container text-center"><span class="eyebrow center">Profile not found</span><h1 class="h2" style="margin-bottom:12px">We couldn\u2019t find that team member</h1><a class="btn btn-primary btn-lg" href="about#team">Meet the team ${I.arrow}</a></div></section>`;
+      root.innerHTML = `<section class="section"><div class="container text-center"><span class="eyebrow center">Profile not found</span><h1 class="h2" style="margin-bottom:12px">We couldn\u2019t find that team member</h1><a class="btn btn-primary btn-lg" href="about">About us ${I.arrow}</a></div></section>`;
       return;
     }
     const first = (m.name || '').split(' ')[0] || 'this desk';
@@ -2651,6 +2694,10 @@
   // Figures that come from the package data, so they stay true when packages change
   function initStats() {
     $$('[data-stat="countries"]').forEach(el => { el.textContent = String(countryList().filter(c => c.name !== 'Other').length); });
+    // package counts leave out departed packages, like the Tours list and its FAQ
+    const live = (IC.tours || []).filter(t => effStatus(t) !== 'past');
+    const n = { packages: live.length, 'packages-local': live.filter(t => t.region !== 'intl').length, 'packages-abroad': live.filter(t => t.region === 'intl').length };
+    Object.keys(n).forEach(k => $$(`[data-stat="${k}"]`).forEach(el => { el.textContent = String(n[k]); }));
   }
 
   // The service pages, gallery and blog (pages.js) build on the same helpers

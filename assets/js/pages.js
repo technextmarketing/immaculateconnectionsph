@@ -608,7 +608,7 @@
   function initBoard() {
     const board = $('[data-board]');
     if (!board || !IC.tours) return;
-    const rows = IC.tours.filter(t => LEG[t.id]).map(t => {
+    const rows = IC.tours.filter(t => LEG[t.id] && U.effStatus(t) !== 'past').map(t => {   // departed packages leave the board
       const inc = (t.inclusions || []).join(' · ');
       const air = (t.inclusions || []).find(x => /airfare|charter/i.test(x)) || '';
       const carrier = /charter/i.test(air) ? 'Charter flight' : ((air.match(/(?:via|with)\s+([A-Z][A-Za-z]+(?:\s[A-Z][A-Za-z]+)*)/) || [])[1] || 'Scheduled flight');
