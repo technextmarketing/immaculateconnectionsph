@@ -1,6 +1,6 @@
 # Tour packages and prices: Immaculate Connections Travel Agency
 
-Updated 2026-10-14. Prices are per person unless stated. Only travel dates still to come are listed; a peak date shows its surcharge per pax in brackets. Confirm availability and the final quotation with the agency (free).
+Updated 2026-10-15. Prices are per person unless stated. Only travel dates still to come are listed; a peak date shows its surcharge per pax in brackets. Confirm availability and the final quotation with the agency (free).
 
 ## Da Nang Charter Flight 6D4N Tour
 

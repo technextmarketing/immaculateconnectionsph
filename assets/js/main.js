@@ -165,7 +165,8 @@
   const setMeta = (name, v) => { const el = $(`meta[name="${name}"]`); if (el) el.content = v || ''; };
   const ctaLabel = t => { const s = effStatus(t); return s === 'past' ? 'Ask about the next departure' : s === 'soon' ? 'Ask about this tour' : s === 'offer' ? 'Book this offer' : 'Request a quote'; };
   const flagImg = t => (t.flag ? `<img class="flag" src="https://flagcdn.com/w40/${t.flag}.png" srcset="https://flagcdn.com/w80/${t.flag}.png 2x" width="20" height="15" alt="${esc(t.country || '')} flag" loading="lazy">` : '');
-  const statusPill = t => `<span class="status-pill ${effStatus(t)}"><i></i>${esc(statusLabel(t))}</span>`;
+  // no pill for special offers (owner, 15 Oct 2026): the price and the Special offers section say it already
+  const statusPill = t => effStatus(t) === 'offer' ? '' : `<span class="status-pill ${effStatus(t)}"><i></i>${esc(statusLabel(t))}</span>`;
   // Destination label: the country for overseas packages, the region for local ones
   const destLabel = t => (t.region === 'intl' && t.country ? t.country : regionLabel(t));
   // Image badge: "Departed", a price tag for priced offers, or a label that does not repeat the status pill
