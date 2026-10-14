@@ -675,7 +675,7 @@
         <div class="trow-foot">
           ${priceBlock(t)}
           <div class="actions">
-            <a class="btn btn-outline" href="${pkgUrl(t)}">Details</a>
+            <a class="btn btn-outline" href="${pkgUrl(t)}">Details<span class="sr-only"> on ${esc(t.name)}</span></a>
             <a class="btn btn-primary" href="contact?service=tour&package=${encodeURIComponent(t.id)}">${s === 'past' || s === 'soon' ? 'Ask us' : 'Get a quote'}${I.arrow}</a>
           </div>
         </div>
@@ -1108,6 +1108,7 @@
 
     // Sticky mobile CTA visibility
     const sticky = $('#stickyCta', root);
+    document.body.classList.add('has-sticky-cta');   // components.css pads the page bottom and lifts the floating buttons
     window.addEventListener('scroll', () => sticky.classList.toggle('show', window.scrollY > 500), { passive: true });
 
     // Structured data
@@ -1733,8 +1734,17 @@
       const step = steps.find(s => parseInt(s.dataset.step, 10) === n);
       let ok = true, first = null;
       $$('.field', step).forEach(f => f.classList.remove('error'));
-      if (n === 1) { const chosen = !!form.elements.service.value; $('#serviceErr', form).style.display = chosen ? 'none' : 'block'; return chosen; }
-      $$('input,select,textarea', step).forEach(el => { if (el.disabled) return; if (!el.checkValidity()) { ok = false; const f = el.closest('.field'); if (f) f.classList.add('error'); if (!first) first = el; } });
+      if (n === 1) {
+        const chosen = !!form.elements.service.value; $('#serviceErr', form).style.display = chosen ? 'none' : 'block';
+        if (!chosen) { const r = $('input[name="service"]', step); if (r) r.focus(); }   // the error is announced (role=alert) and focus lands on the choice
+        return chosen;
+      }
+      $$('input,select,textarea', step).forEach(el => {
+        if (el.disabled) return;
+        const bad = !el.checkValidity();
+        if (bad) el.setAttribute('aria-invalid', 'true'); else el.removeAttribute('aria-invalid');
+        if (bad) { ok = false; const f = el.closest('.field'); if (f) f.classList.add('error'); if (!first) first = el; }
+      });
       if (first) first.focus();
       return ok;
     };

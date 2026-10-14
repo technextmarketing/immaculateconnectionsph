@@ -60,7 +60,7 @@
 .hero-sub { font-size: clamp(1.02rem, 1.25vw, 1.14rem); line-height: 1.6; color: rgba(255, 255, 255, .9); max-width: 48ch; margin-bottom: 28px; }
 .hero-stats { margin-top: 4px; }
 .hero-tl .hero-stats { display: grid; grid-template-columns: repeat(2, max-content); gap: 18px 44px; }
-.hero-tl .hero-stats span { font-size: max(.72rem, 11px); }
+.hero-tl .hero-stats span { font-size: max(.72rem, 12px); }
 .hero-tl .hero-actions .btn { flex: 1 1 auto; }
 .hero-tl .hero-actions .btn-lg { padding: 0 22px; font-size: .95rem; min-width: 0; }
 /* Big screens: a wider stage so the pile of prints can grow */
@@ -250,7 +250,7 @@
 .hero-next:hover, .hero-next:focus-visible { border-color: rgba(255, 183, 48, .7); background: rgba(15, 59, 120, .52); }
 .hero-next .hn-label {
   display: inline-flex; align-items: center; gap: 8px; flex: none;
-  font-size: max(.66rem, 11px); font-weight: 800; letter-spacing: .16em; text-transform: uppercase;
+  font-size: max(.66rem, 12px); font-weight: 800; letter-spacing: .16em; text-transform: uppercase;
   color: rgba(255, 255, 255, .72);
 }
 .hero-next .hn-label .dot { width: 7px; height: 7px; border-radius: 50%; background: var(--gold); animation: pulse 2s infinite; }
@@ -299,11 +299,11 @@
   transform: scaleX(var(--v, 0)); transition: transform .45s var(--ease-out);
   background: linear-gradient(90deg, var(--blue), var(--gold));
 }
-.qc-meter .qc-count { font-size: max(.72rem, 11px); font-weight: 800; letter-spacing: .08em; text-transform: uppercase; color: var(--muted); flex: none; }
+.qc-meter .qc-count { font-size: max(.72rem, 12px); font-weight: 800; letter-spacing: .08em; text-transform: uppercase; color: var(--muted); flex: none; }
 .quote-card.ready .qc-meter .qc-count { color: var(--success); }
 
 .qq-picks { display: flex; flex-wrap: wrap; gap: 6px; margin-top: -4px; }
-.qq-picks .pick-label { flex: 100%; font-size: max(.72rem, 11px); font-weight: 700; color: var(--muted); margin-bottom: 2px; }
+.qq-picks .pick-label { flex: 100%; font-size: max(.72rem, 12px); font-weight: 700; color: var(--muted); margin-bottom: 2px; }
 .pick {
   display: inline-flex; align-items: center; gap: 6px; min-height: var(--chip-h-sm); padding: 0 12px; border-radius: 999px;
   border: 1.5px solid var(--chip-border); background: var(--chip-bg); color: var(--navy);
@@ -363,20 +363,20 @@
 
 @media (max-width: 640px) {
   .hero-next { margin-bottom: 18px; padding: 8px 14px 8px 12px; gap: 10px; width: 100%; }
-  .hero-next .hn-label { font-size: max(.58rem, 11px); letter-spacing: .12em; }
+  .hero-next .hn-label { font-size: max(.58rem, 12px); letter-spacing: .12em; }
   .hero-next .hn-slot { height: 19px; }
   .hn-item b { font-size: .82rem; }
   .hn-item i { font-size: .74rem; }
   .qc-meter { margin-bottom: 12px; }
   .qq-picks .pick:nth-child(n+6) { display: none; }   /* label + four chips */
-  .pick { font-size: max(.74rem, 11px); min-height: var(--chip-h-sm); padding: 0 11px; }
+  .pick { font-size: max(.74rem, 12px); min-height: var(--chip-h-sm); padding: 0 11px; }
   .hero-tl { padding: calc(var(--nav-h) + 16px) 0 118px; }
   .hero-tl .hero-title { font-size: clamp(2rem, 9vw, 2.6rem); max-width: none; }
   .hero-stats div { flex: 1 1 42%; }
   .tl-grid { row-gap: 24px; }
   .print { padding: 9px 9px 0; }
   .print figcaption { height: 44px; font-size: 1.25rem; }
-  .print-zoom { top: 16px; right: 16px; width: 34px; height: 34px; }
+  .print-zoom { top: 14px; right: 14px; width: 44px; height: 44px; }
   .tl-arrow { width: var(--icon-btn); height: var(--icon-btn); }
   .tl-thumbs button { width: 58px; height: 44px; }
   .hero-next { min-height: 44px; }

@@ -682,6 +682,19 @@
   let raf = 0;
   const schedule = () => { if (!raf) raf = requestAnimationFrame(() => { raf = 0; place(); }); };
 
+  /* Phones and tablets: while the visitor scrolls down to read, the floating buttons step
+     aside (body.fab-away); they come back on any scroll up or after 1.2 s without scrolling. */
+  (() => {
+    let lastY = window.scrollY, idle = 0;
+    const away = on => document.body.classList.toggle('fab-away', on);
+    window.addEventListener('scroll', () => {
+      const y = window.scrollY;
+      if (!compactMQ.matches) { lastY = y; return; }
+      if (y > lastY + 40) { away(true); lastY = y; } else if (y < lastY - 10) { away(false); lastY = y; }
+      clearTimeout(idle); idle = setTimeout(() => away(false), 1200);
+    }, { passive: true });
+  })();
+
   /* ---------- stay out of the way ----------
      body.fab-quiet fades the floating buttons out (chat.css / components.css):
        1. phones and tablets: while a primary call to action or form is on screen

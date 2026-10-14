@@ -53,6 +53,7 @@
 /* the chat is open: the launcher steps back behind the panel */
 html.icc-open .icc-launch { opacity: 0; transform: scale(.85); pointer-events: none; }
 /* chat.js: CTAs, forms or controls under the floating buttons -> they step aside */
+body.fab-away .icc-launch, body.fab-away .fab-msg, body.fab-away .to-top.show { opacity: 0; transform: translate3d(0, 16px, 0) scale(.9); pointer-events: none; }
 body.fab-quiet .icc-launch { opacity: 0; transform: translate3d(0, 16px, 0) scale(.9); pointer-events: none; }
 body.fab-quiet .fab-msg, body.fab-quiet .to-top.show { opacity: 0; transform: translate3d(0, 16px, 0) scale(.9); pointer-events: none; }
 .fab-msg { transition: opacity .25s var(--icc-ease), transform .3s var(--icc-ease), background-color .2s, box-shadow .3s; }
