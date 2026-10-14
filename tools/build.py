@@ -33,7 +33,7 @@ from datetime import date
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 os.chdir(ROOT)
-SITE = "https://technextmarketing.github.io/immaculateconnectionsph/"   # keep in step with CONFIG.siteUrl in main.js
+SITE = "https://www.immaculateconnectionsph.com/"   # keep in step with CONFIG.siteUrl in main.js
 BRAND = "Immaculate Connections"
 
 

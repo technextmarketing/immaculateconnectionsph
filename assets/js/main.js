@@ -16,7 +16,7 @@
     brand: 'Immaculate Connections Travel Agency',
     // Public address of the site: canonical links and structured data are built on it.
     // Change it (with the other GitHub addresses, see the README) when the domain moves.
-    siteUrl: 'https://technextmarketing.github.io/immaculateconnectionsph/',
+    siteUrl: 'https://www.immaculateconnectionsph.com/',
     shortName: 'Immaculate Connections',
     mobile: '+63 917 318 8997',
     mobileHref: 'tel:+639173188997',

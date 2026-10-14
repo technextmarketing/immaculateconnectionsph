@@ -3,4 +3,4 @@ Allow: /
 Disallow: /payment.html
 Disallow: /team.html
 
-Sitemap: https://technextmarketing.github.io/immaculateconnectionsph/sitemap.xml
+Sitemap: https://www.immaculateconnectionsph.com/sitemap.xml

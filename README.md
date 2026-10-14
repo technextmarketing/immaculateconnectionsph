@@ -130,14 +130,14 @@ Every page opens on a photo from `assets/img/hero/`. Unsplash photos are free fo
 ## Go-live checklist
 
 - **FormSubmit activation:** submit the inquiry form once from the live site and click the activation link that arrives at `inquiries@immaculateconnectionsph.com`.
-- **Domain move:** `CONFIG.siteUrl` in `main.js`, `SITE` in `tools/build.py`, canonical tags, `og:url`, `twitter:image`, `sitemap.xml` and `robots.txt` all carry the GitHub Pages address. When the site moves to the agency's domain, replace `https://technextmarketing.github.io/immaculateconnectionsph/` with the new address in every file (`grep -rl technextmarketing.github.io`). `robots.txt` only takes effect at the root of a domain, so submit `sitemap.xml` in Search Console until then.
+- **Domain:** live at https://www.immaculateconnectionsph.com/ since 14 Oct 2026. DNS stays at Wix (ns0/ns1.wixdns.net): A `@` -> 185.199.108-111.153, CNAME `www` -> technextmarketing.github.io, custom domain set under Settings -> Pages. Keep the Microsoft 365 MX/TXT/CNAME records (email for `inquiries@`) untouched. `CONFIG.siteUrl` in `main.js`, `SITE` in `tools/build.py`, canonical tags, `og:url`, `sitemap.xml` and `robots.txt` carry this address.
 - **Team profiles:** the team section on the About page stays hidden while every entry in `IC.team` (data.js) is marked `placeholder: true`. Put in the real names and photos and drop `placeholder` from each one, and the section and `team.html` profiles appear; then remove the `noindex` tag from `team.html` and the `Disallow: /team.html` line in `robots.txt`.
 - **Payments:** `payment.html` is `noindex` and unlinked while `CONFIG.payments` is false. When payments are switched on, remove that tag and the `Disallow` line.
 - **Departure rule:** a travel date closes on its departure day (same as the Immaculate Ops dashboard).
 
 ## Publishing
 
-Every push to `main` is deployed to GitHub Pages by `.github/workflows/deploy-pages.yml` (Pages source: GitHub Actions). The live preview is https://technextmarketing.github.io/immaculateconnectionsph/. To move to the agency's own domain, point the domain at GitHub Pages and set it under Settings → Pages, or upload the folder to any static host:
+Every push to `main` is deployed to GitHub Pages by `.github/workflows/deploy-pages.yml` (Pages source: GitHub Actions). The live site is https://www.immaculateconnectionsph.com/ (custom domain on GitHub Pages). To move to another static host, upload the folder:
 
 ```bash
 python -m http.server 8080 --directory .
