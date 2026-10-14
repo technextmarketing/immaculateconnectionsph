@@ -80,11 +80,11 @@ def inject_partials():
 
 # ---------------------------------------------------------------- assets
 BUNDLES = [
-    ("assets/css/site.min.css", ["assets/css/fonts.css", "assets/css/style.css", "assets/css/components.css"]),
+    ("assets/css/site.min.css", ["assets/css/fonts.css", "assets/css/style.css", "assets/css/components.css", "assets/css/chat.css"]),
     ("assets/css/hero.min.css", ["assets/css/hero.css"]),
     ("assets/css/quotation.min.css", ["assets/css/quotation.css"]),
     ("assets/css/pages.min.css", ["assets/css/pages.css"]),
-    ("assets/js/site.min.js", ["assets/js/data.js", "assets/js/main.js"]),
+    ("assets/js/site.min.js", ["assets/js/data.js", "assets/js/main.js", "assets/js/chat.js"]),
     ("assets/js/pages.min.js", ["assets/js/pages.js"]),
 ]
 

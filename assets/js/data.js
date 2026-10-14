@@ -69,7 +69,9 @@ window.IC = window.IC || {};
   };
   /** Site image by media id: wix(id, width) picks the 800px copy for small slots */
   const wix = (id, w) => {
-    const f = LOCAL[id] || id, g = w && w <= 800 && /\.jpe?g$/i.test(f) ? f.replace(/\.jpe?g$/i, '-800.jpg') : f;
+    const f = LOCAL[id] || id;
+    if (/^gallery\//.test(f)) return MEDIA + (w && w <= 900 ? f.replace(/\.webp$/, '-800.webp') : f);   // trip stills: WebP only, 1600 + 800
+    const g = w && w <= 800 && /\.jpe?g$/i.test(f) ? f.replace(/\.jpe?g$/i, '-800.jpg') : f;
     return MEDIA + g.replace(/\.jpe?g$/i, '.webp');   // every photo has a WebP twin; the JPEGs stay as masters and share cards
   };
   /** The JPEG master, for share cards and structured data */
@@ -520,6 +522,29 @@ window.IC = window.IC || {};
 
   /* ---------- Photos from the agency's galleries ---------- */
   IC.gallery = [
+    /* Group tours, events and transfers: stills from the agency's own trip videos (assets/img/media/gallery/, each with an -800 copy) */
+    { id: 'gallery/tokyo-shibuya-group.webp', shape: 'tall', title: 'Shibuya, Tokyo', sub: 'Japan group tour', cat: 'intl' },
+    { id: 'gallery/hongkong-disneyland-gate.webp', shape: 'tall', title: 'Hong Kong Disneyland', sub: 'Hong Kong group tour', cat: 'intl' },
+    { id: 'gallery/group-resort-pool.webp', shape: 'wide', title: 'Resort day out', sub: 'Group tour', cat: 'groups' },
+    { id: 'gallery/event-concert-stage.webp', shape: 'tall', title: 'Live band night', sub: 'Events', cat: 'events' },
+    { id: 'gallery/tokyo-shibuya-crossing.webp', shape: 'tall', title: 'Shibuya Crossing', sub: 'Japan group tour', cat: 'intl' },
+    { id: 'gallery/group-hilltop.webp', shape: 'wide', title: 'Hilltop stop', sub: 'Group tour', cat: 'groups' },
+    { id: 'gallery/event-seminar-talk.webp', shape: 'tall', title: 'Seminar session', sub: 'Seminars & events', cat: 'events' },
+    { id: 'gallery/hongkong-disneyland-castle.webp', shape: 'tall', title: 'Castle of Magical Dreams', sub: 'Hong Kong Disneyland', cat: 'intl' },
+    { id: 'gallery/group-heritage-house.webp', shape: 'wide', title: 'Heritage house visit', sub: 'Group tour', cat: 'groups' },
+    { id: 'gallery/airport-check-in.webp', shape: 'tall', title: 'Airport check-in', sub: 'Assisted by our team', cat: 'transport' },
+    { id: 'gallery/hongkong-skyline-group.webp', shape: 'tall', title: 'Harbour view', sub: 'Hong Kong group tour', cat: 'intl' },
+    { id: 'gallery/group-orchid-farm.webp', shape: 'tall', title: 'Orchid farm visit', sub: 'Group tour', cat: 'groups' },
+    { id: 'gallery/event-awarding.webp', shape: 'tall', title: 'On stage', sub: 'Seminars & events', cat: 'events' },
+    { id: 'gallery/group-hall-banner.webp', shape: 'wide', title: 'All set to go', sub: 'Group tour', cat: 'groups' },
+    { id: 'gallery/hongkong-museum-group.webp', shape: 'tall', title: 'Museum stop', sub: 'Hong Kong group tour', cat: 'intl' },
+    { id: 'gallery/group-hotel-departure.webp', shape: 'wide', title: 'Hotel departure', sub: 'Group tour', cat: 'groups' },
+    { id: 'gallery/transport-coach-bus.webp', shape: 'tall', title: 'Tour coach', sub: 'Transfers', cat: 'transport' },
+    { id: 'gallery/group-site-visit.webp', shape: 'tall', title: 'Site visit', sub: 'Group tour', cat: 'groups' },
+    { id: 'gallery/group-airport-arrival.webp', shape: 'wide', title: 'Wheels down', sub: 'Group tour', cat: 'groups' },
+    { id: 'gallery/group-farm-stop.webp', shape: 'wide', title: 'Farm stop', sub: 'Group tour', cat: 'groups' },
+    { id: 'gallery/group-gala-hall.webp', shape: 'wide', title: 'Gala night', sub: 'Events', cat: 'events' },
+    /* Earlier photos from the agency's Wix galleries */
     { id: '952787_6a8b5ab3b00d41bcb1a8915073aa4861~mv2.jpg', shape: 'wide',   title: 'Loboc River Lunch', sub: 'Bohol', cat: 'local' },
     { id: '952787_a67b7dcf552942a294501fc5c8a044f8~mv2.jpg', shape: 'tall',   title: 'Underground River', sub: 'Puerto Princesa, Palawan', cat: 'local' },
     { id: '952787_9bc781dfae87479dae7fd84ed8b09c42~mv2.jpg', shape: 'wide',   title: 'Orientation course for local legislators', sub: 'MICE & seminars', cat: 'events' },

@@ -650,11 +650,71 @@
     Object.values(groups).forEach(list => list.forEach(b => b.addEventListener('click', () => list.forEach(x => x.setAttribute('aria-pressed', String(x === b))))));
   }
 
+  /* ---------- Gallery: video cards open in a player; hover plays a silent preview ---------- */
+  function initVideos() {
+    const cards = $$('[data-video]');
+    const hero = $('.gal-hero video');
+    if (hero && reduced) { hero.removeAttribute('autoplay'); hero.pause(); }
+    if (!cards.length) return;
+    let box, vid, cap, at = 0, back = null;
+    const ICON = d => `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="${d}"/></svg>`;
+    const build = () => {
+      box = document.createElement('div');
+      box.className = 'vid-modal';
+      box.setAttribute('role', 'dialog'); box.setAttribute('aria-modal', 'true'); box.setAttribute('aria-label', 'Video player');
+      box.innerHTML = `<div class="vm-backdrop" data-vm-close></div>
+        <figure class="vm-frame"><video controls playsinline preload="metadata"></video><figcaption></figcaption></figure>
+        <button type="button" class="vm-close" data-vm-close aria-label="Close video">${ICON('M18 6 6 18M6 6l12 12')}</button>
+        <button type="button" class="vm-nav prev" data-step="-1" aria-label="Previous video">${ICON('m15 18-6-6 6-6')}</button>
+        <button type="button" class="vm-nav next" data-step="1" aria-label="Next video">${ICON('m9 18 6-6-6-6')}</button>`;
+      document.body.appendChild(box);
+      vid = $('video', box); cap = $('figcaption', box);
+      box.addEventListener('click', e => {
+        if (e.target.closest('[data-vm-close]')) close();
+        const s = e.target.closest('[data-step]'); if (s) show(at + Number(s.dataset.step));
+      });
+      document.addEventListener('keydown', e => {
+        if (!box.classList.contains('open')) return;
+        if (e.key === 'Escape') close();
+        else if (e.key === 'ArrowRight' && e.target !== vid) show(at + 1);
+        else if (e.key === 'ArrowLeft' && e.target !== vid) show(at - 1);
+      });
+    };
+    const show = i => {
+      at = (i + cards.length) % cards.length;
+      const c = cards[at];
+      vid.poster = c.dataset.poster; vid.src = c.dataset.video; cap.textContent = c.dataset.title || '';
+      const p = vid.play(); if (p && p.catch) p.catch(() => {});
+    };
+    const open = c => {
+      if (!box) build();
+      back = document.activeElement;
+      show(cards.indexOf(c));
+      box.classList.add('open'); document.body.style.overflow = 'hidden';
+      $('.vm-close', box).focus({ preventScroll: true });
+    };
+    const close = () => {
+      vid.pause(); vid.removeAttribute('src'); vid.load();
+      box.classList.remove('open'); document.body.style.overflow = '';
+      if (back) back.focus({ preventScroll: true });
+    };
+    cards.forEach(c => c.addEventListener('click', () => open(c)));
+    if (fine && !reduced) cards.forEach(c => {
+      let v = null;
+      c.addEventListener('pointerenter', () => {
+        if (!v) { v = document.createElement('video'); v.className = 'vid-preview'; v.muted = true; v.loop = true; v.playsInline = true; v.preload = 'auto'; v.src = c.dataset.video; v.setAttribute('aria-hidden', 'true'); }
+        $('.vid-media', c).appendChild(v);
+        const p = v.play(); if (p && p.catch) p.catch(() => {});
+      });
+      c.addEventListener('pointerleave', () => { if (v) { v.pause(); v.remove(); } });
+    });
+  }
+
   /* =========================================================
      Boot
      ========================================================= */
   document.addEventListener('DOMContentLoaded', () => {
-    initServiceHero(); initFill(); initPressed(); initStoryboards(); initSwitchers(); initRelated(); initBoard();
+    initServiceHero(); initFill(); initPressed(); initStoryboards(); initSwitchers(); initRelated(); initBoard(); initVideos();
     if (IC.pagesExtra) IC.pagesExtra.forEach(fn => { try { fn(U); } catch (e) { /* one section failing leaves the rest working */ } });
   });
 })();

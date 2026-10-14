@@ -1209,7 +1209,7 @@
   function initGalleryFilters(root) {
     const bar = $('#galFilters'); if (!bar) return;
     const tiles = $$('.gal-item', root);
-    const CATS = [['all', 'All photos'], ['local', 'Philippine tours'], ['intl', 'International'], ['events', 'Seminars & events'], ['transport', 'Transport']];
+    const CATS = [['all', 'All photos'], ['groups', 'Group tours'], ['local', 'Philippine tours'], ['intl', 'International'], ['events', 'Seminars & events'], ['transport', 'Transport']];
     const count = k => (k === 'all' ? tiles.length : tiles.filter(t => t.dataset.cat === k).length);
     bar.innerHTML = CATS.filter(([k]) => count(k)).map(([k, l]) => `<button type="button" data-f="${k}" aria-pressed="${k === 'all'}">${esc(l)}<span class="n">${count(k)}</span></button>`).join('');
     bar.addEventListener('click', e => {
