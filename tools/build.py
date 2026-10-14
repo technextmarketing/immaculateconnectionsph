@@ -35,6 +35,15 @@ ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 os.chdir(ROOT)
 SITE = "https://www.immaculateconnectionsph.com/"   # keep in step with CONFIG.siteUrl in main.js
 BRAND = "Immaculate Connections"
+# search titles where the package's own name hides what it is (the page itself keeps the name)
+SEO_TITLES = {
+    "bohol-breezes": "Bohol Tour Package: Bohol Breezes",
+    "boracay-bliss": "Boracay Tour Package: Boracay Bliss",
+    "coron": "Coron, Palawan Tour Package",
+    "camotes-discover": "Camotes Island Tour Package",
+    "el-nido": "El Nido, Palawan Tour Package",
+    "japan-tokyo-fuji-5d4n": "Tokyo & Mt. Fuji 5D4N Japan Tour",
+}
 
 
 def read(p): return io.open(p, encoding="utf-8").read()
@@ -246,7 +255,8 @@ def build_pages():
         if f[8:-5] not in ids: os.remove(f); print("  removed", f)
     for t in pages:
         url = f"{SITE}package-{t['id']}"   # clean URL; Pages serves package-<id>.html
-        title = f"{t['name']} | {BRAND}" if len(t["name"]) + len(BRAND) + 3 <= 62 else t["name"]
+        name = SEO_TITLES.get(t["id"], t["name"])
+        title = f"{name} | {BRAND}" if len(name) + len(BRAND) + 3 <= 62 else name
         desc = trim(t["summary"])
         og = og_card(t, t["key"])
         og_url = SITE + og if og else None
@@ -266,7 +276,11 @@ def build_pages():
                    f'  <link rel="preload" as="image" href="{hero.group(2)}-1280.webp" imagesrcset="{hero.group(1)}" imagesizes="100vw" media="(max-width: 700px)" fetchpriority="high">\n')
             s = s.replace('  <link rel="preload" href="assets/fonts/', pre + '  <link rel="preload" href="assets/fonts/', 1)
         ld = t["ld"].replace("</", "<\\/")
-        s = s.replace("</head>", f'  <script type="application/ld+json" data-ld="pkg">{ld}</script>\n</head>', 1)
+        crumbs = json.dumps({"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [
+            {"@type": "ListItem", "position": 1, "name": "Home", "item": SITE},
+            {"@type": "ListItem", "position": 2, "name": "Tours", "item": SITE + "tours"},
+            {"@type": "ListItem", "position": 3, "name": t["name"], "item": url}]}, ensure_ascii=False).replace("</", "<\\/")
+        s = s.replace("</head>", f'  <script type="application/ld+json" data-ld="pkg">{ld}</script>\n  <script type="application/ld+json">{crumbs}</script>\n</head>', 1)
         s = s.replace("<body data-page=\"tours\" data-hero-top", f"<body data-page=\"tours\" data-hero-top data-pkg=\"{t['id']}\"", 1)
         body = t["pkg"].replace('<div class="tour-grid" id="relatedGrid"></div>', f'<div class="tour-grid" id="relatedGrid">{t["related"]}</div>')
         s, n = re.subn(r'<div id="pkgPage" aria-live="polite">.*?\n    </div>\n  </main>', lambda m: f'<div id="pkgPage">{body}\n    </div>\n  </main>', s, count=1, flags=re.S)
