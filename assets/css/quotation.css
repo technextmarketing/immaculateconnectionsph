@@ -239,7 +239,7 @@ table.qt-table tfoot .sum { font-size: 1.45rem; font-weight: 700; color: var(--q
 .inq-tab.is-on .ic { background: rgba(255, 255, 255, .12); color: var(--gold); }
 .inq-tab.is-on strong { color: #fff; }
 .inq-tab.is-on small { color: rgba(255, 255, 255, .72); }
-.inq-tab:focus-visible { outline: 3px solid var(--gold); outline-offset: 2px; }
+.inq-tab:focus-visible { outline: 3px solid var(--focus, #0f3b78); outline-offset: 2px; }
 
 /* the optional code */
 .pcode { display: grid; grid-template-columns: auto minmax(0, 1fr); align-items: center; gap: 10px 18px; padding: 16px 18px; border: 1px solid var(--line); border-top: 3px solid var(--gold); border-radius: 18px; background: #fff; box-shadow: var(--shadow-sm); animation: fadeUp .35s var(--ease-out); }
@@ -284,10 +284,10 @@ table.qt-table tfoot .sum { font-size: 1.45rem; font-weight: 700; color: var(--q
 .pf-chips { display: flex; flex-wrap: wrap; gap: 8px; }
 .pf-chips label { position: relative; cursor: pointer; }
 .pf-chips input { position: absolute; opacity: 0; inset: 0; pointer-events: none; }
-.pf-chips span { display: inline-flex; align-items: center; min-height: 36px; padding: 7px 14px; border-radius: 999px; border: 1.5px solid var(--line); background: var(--bg); font-size: .86rem; font-weight: 700; color: var(--ink-2); transition: border-color .2s, background-color .2s, color .2s; }
-.pf-chips label:hover span { border-color: var(--blue); }
+.pf-chips span { display: inline-flex; align-items: center; min-height: var(--chip-h); padding: 4px var(--chip-px); border-radius: 999px; border: 1.5px solid var(--chip-border); background: #fff; font-size: .86rem; font-weight: 700; color: var(--ink-2); transition: border-color .2s, background-color .2s, color .2s; }
+.pf-chips label:hover span { border-color: var(--blue); background: var(--blue-soft); color: var(--blue-2); }
 .pf-chips input:checked + span { background: var(--blue); border-color: var(--blue); color: #fff; }
-.pf-chips input:focus-visible + span { outline: 3px solid var(--gold); outline-offset: 2px; }
+.pf-chips input:focus-visible + span { outline: 3px solid var(--focus, #0f3b78); outline-offset: 2px; }
 .pf-nums { display: grid; grid-template-columns: repeat(6, minmax(0, 1fr)); gap: 10px; }
 .pf-nums .input { text-align: center; font-variant-numeric: tabular-nums; }
 .pf-nums label { white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }

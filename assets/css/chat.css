@@ -23,7 +23,7 @@
   padding: 0 18px 0 6px; border: 0; border-radius: 999px; cursor: pointer;
   background: var(--navy, #324158); color: #fff;
   font: 700 .92rem/1 var(--font-body, system-ui, sans-serif); letter-spacing: .01em;
-  box-shadow: 0 14px 30px -12px rgba(26, 36, 51, .75);
+  box-shadow: 0 0 0 2px #fff, 0 14px 30px -12px rgba(26, 36, 51, .75);   /* white ring: same floating-button family as .fab-msg / .to-top */
   transition: transform .3s var(--icc-ease), opacity .25s var(--icc-ease), background-color .2s, box-shadow .3s;
   -webkit-tap-highlight-color: transparent;
 }
@@ -32,7 +32,7 @@
   background: var(--orange, #f6931e); color: var(--navy-3, #1a2433);
 }
 .icc-launch:hover { background: var(--navy-2, #263346); transform: translateY(-3px) scale(1.03); }
-.icc-launch:focus-visible { outline: 3px solid var(--gold, #ffb730); outline-offset: 3px; }
+.icc-launch:focus-visible { outline: 3px solid var(--focus, #0f3b78); outline-offset: 3px; }
 .icc-badge {
   position: absolute; top: 2px; left: 34px; width: 12px; height: 12px; border-radius: 50%;
   background: var(--gold, #ffb730); border: 2px solid var(--navy, #324158);
@@ -57,8 +57,8 @@ html.icc-ready body .to-top { bottom: calc(var(--icc-b) + var(--icc-lh) + 12px);
 /* ---------- Panel ---------- */
 .icc-panel {
   position: fixed; right: var(--icc-r); bottom: 20px; z-index: 65;
-  width: 380px; max-width: calc(100vw - 32px);
-  height: 560px; max-height: calc(100vh - 110px); max-height: calc(100dvh - 110px);
+  width: 460px; max-width: calc(100vw - 32px);
+  height: 720px; max-height: calc(100vh - 48px); max-height: calc(100dvh - 48px);
   display: flex; flex-direction: column; overflow: hidden;
   background: var(--white, #fff); color: var(--ink, #1f2a3a);
   border: 1px solid var(--line, #dde5ee); border-radius: var(--r-lg, 24px);
@@ -86,7 +86,7 @@ html.icc-ready body .to-top { bottom: calc(var(--icc-b) + var(--icc-lh) + 12px);
 }
 .icc-x svg { width: 22px; height: 22px; }
 .icc-x:hover { background: rgba(255, 255, 255, .14); }
-.icc-x:focus-visible { outline: 3px solid var(--gold, #ffb730); outline-offset: -3px; }
+.icc-x:focus-visible { outline: 3px solid var(--focus, #0f3b78); outline-offset: -3px; }
 
 /* ---------- Message log ---------- */
 .icc-log {
@@ -177,15 +177,16 @@ html.icc-ready body .to-top { bottom: calc(var(--icc-b) + var(--icc-lh) + 12px);
 .icc-actions.is-wrap .icc-btn { flex: 1 1 auto; }
 .icc-msg .icc-btn {
   display: inline-flex; align-items: center; justify-content: center; gap: 6px; min-height: 44px; padding: 0 14px;
-  border-radius: 999px; border: 1.5px solid var(--blue, #1d67cd); background: #fff; color: var(--blue-2, #154f9f);
+  border-radius: 999px; border: 2px solid var(--btn-outline-border, #1d67cd); background: #fff; color: var(--btn-outline-fg, #154f9f);
   font-size: .84rem; font-weight: 700; text-decoration: none; white-space: nowrap;
-  transition: background-color .2s, color .2s, transform .2s var(--icc-ease);
+  transition: background-color .2s, color .2s, border-color .2s, transform .2s var(--icc-ease);
 }
-.icc-msg .icc-btn:hover { background: var(--blue, #1d67cd); color: #fff; }
+.icc-msg .icc-btn:hover { background: var(--btn-outline-bg-hover, #e7effb); color: var(--btn-outline-fg-hover, #0f3b78); border-color: var(--blue-2, #154f9f); }
+.icc-msg .icc-btn:active { transform: scale(.98); }
 .icc-msg .icc-btn.is-primary { background: var(--orange, #f6931e); border-color: var(--orange, #f6931e); color: var(--navy-3, #1a2433); }
 .icc-msg .icc-btn.is-primary:hover { background: var(--orange-2, #d97c0e); border-color: var(--orange-2, #d97c0e); }
 .icc-msg .icc-btn.is-msgr { background: var(--messenger, #0084ff); border-color: var(--messenger, #0084ff); color: #fff; }
-.icc-msg .icc-btn.is-msgr:hover { background: #006fd6; }
+.icc-msg .icc-btn.is-msgr:hover { background: #0657d9; border-color: #0657d9; color: #fff; }
 .icc-btn .icc-i { vertical-align: 0; }
 
 /* ---------- Suggestions ---------- */
@@ -199,13 +200,13 @@ html.icc-ready body .to-top { bottom: calc(var(--icc-b) + var(--icc-lh) + 12px);
 .icc-chips[hidden] { display: none; }
 .icc-chip {
   flex: none; min-height: 44px; max-width: 240px; padding: 0 14px; border-radius: 999px; cursor: pointer;
-  border: 1.5px solid var(--line, #dde5ee); background: #fff; color: var(--navy-3, #1a2433);
+  border: 1.5px solid var(--chip-border, #c9d5e3); background: #fff; color: var(--navy-3, #1a2433);
   font: 700 .82rem/1.2 var(--font-body, system-ui, sans-serif); white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
   transition: border-color .2s, background-color .2s, color .2s;
 }
 .icc-chip:last-child { margin-right: 18px; }
-.icc-chip:hover { border-color: var(--blue, #1d67cd); color: var(--blue-2, #154f9f); }
-.icc-chip:focus-visible, .icc-send:focus-visible { outline: 3px solid var(--gold, #ffb730); outline-offset: 2px; }
+.icc-chip:hover { border-color: var(--blue, #1d67cd); color: var(--blue-2, #154f9f); background: var(--blue-soft, #e7effb); }
+.icc-chip:focus-visible, .icc-send:focus-visible, .icc-msg .icc-btn:focus-visible { outline: 3px solid var(--focus, #0f3b78); outline-offset: 2px; }
 
 /* ---------- Composer ---------- */
 .icc-form { flex: none; display: flex; gap: 8px; align-items: center; padding: 10px 12px 4px; background: #fff; border-top: 1px solid var(--line, #dde5ee); }
@@ -253,3 +254,10 @@ html.icc-ready body .to-top { bottom: calc(var(--icc-b) + var(--icc-lh) + 12px);
 .motion-paused .icc-launch.is-nudge { animation: none; }
 
 @media print { .icc-launch, .icc-panel { display: none !important; } }
+
+/* phones: chat sits beside Messenger (chat.js sets html.icc-side); back-to-top steps aside, the
+   pair would otherwise cover a third of the screen with buttons */
+@media (max-width: 640px) {
+  html.icc-ready body .to-top { display: none; }
+  html.icc-side .icc-launch { box-shadow: 0 0 0 2px #fff, 0 10px 22px -10px rgba(26, 36, 51, .7); }
+}

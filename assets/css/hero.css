@@ -83,7 +83,7 @@
   position: relative; display: grid; grid-template-columns: minmax(0, 1fr); justify-items: center; gap: 14px; min-width: 0;
 }
 .tl-stack { position: relative; width: var(--tlw); aspect-ratio: 540 / 492; perspective: 1600px; touch-action: pan-y; border-radius: 8px; }
-.tl-stack:focus-visible { outline: 3px solid var(--gold); outline-offset: 6px; }
+.tl-stack:focus-visible { outline: 3px solid var(--focus, #0f3b78); outline-offset: 6px; }
 .tl-deck { position: absolute; inset: 0; transform-style: preserve-3d; transform: translate3d(0, var(--sy, 0px), 0) rotateX(var(--tx, 0deg)) rotateY(var(--ty, 0deg)); }
 .print {
   --fx: 12px; --fy: -16px; --fr: .45;
@@ -119,7 +119,7 @@
 .print-zoom svg { width: 16px; height: 16px; }
 .print-zoom:hover { background: rgba(9, 22, 48, .85); }
 .print.is-top:hover .print-zoom, .print-zoom:focus-visible { opacity: 1; transform: none; }
-.print-zoom:focus-visible { outline: 2px solid var(--gold); outline-offset: 2px; }
+.print-zoom:focus-visible { outline: 3px solid var(--focus, #0f3b78); outline-offset: 2px; }
 @media (hover: none) { .print.is-top .print-zoom { opacity: 1; transform: none; } }
 /* One authored entrance: the first prints are dealt onto the pile, the back one first */
 .print.deal { animation: tlDeal .95s var(--ease-out) both; animation-delay: calc(420ms + var(--k, 0) * 130ms); }
@@ -140,13 +140,13 @@
 .tl-thumbs button img { width: 100%; height: 100%; object-fit: cover; display: block; }
 .tl-thumbs button:hover { opacity: .95; }
 .tl-thumbs button[aria-current="true"] { opacity: 1; border-color: var(--gold); transform: translateY(-3px); }
-.tl-thumbs button:focus-visible { outline: 2px solid var(--gold); outline-offset: 2px; }
+.tl-thumbs button:focus-visible { outline: 3px solid var(--focus, #0f3b78); outline-offset: 2px; }
 .tl-arrow {
-  flex: none; width: 40px; height: 40px; border-radius: 50%; display: grid; place-items: center; cursor: pointer;
-  border: 1px solid rgba(255, 255, 255, .4); background: rgba(12, 32, 70, .5); color: #fff;
+  flex: none; width: var(--icon-btn); height: var(--icon-btn); border-radius: 50%; display: grid; place-items: center; cursor: pointer;
+  border: 1.5px solid var(--icon-btn-dark-border); background: var(--icon-btn-dark-bg); color: #fff;
   transition: background .25s, border-color .25s, transform .2s var(--ease);
 }
-.tl-arrow:hover { background: rgba(12, 32, 70, .82); border-color: rgba(255, 183, 48, .85); }
+.tl-arrow:hover { background: rgba(9, 22, 48, .85); border-color: var(--gold); }
 .tl-arrow:active { transform: scale(.94); }
 .tl-arrow svg { width: 18px; height: 18px; }
 .tl-arrow.next svg { transform: scaleX(-1); }
@@ -162,15 +162,15 @@
 .tl-chips { display: flex; gap: 6px; min-width: 0; overflow-x: auto; scrollbar-width: none; padding: 3px 2px; max-width: calc(100% - 180px); }
 .tl-chips::-webkit-scrollbar { display: none; }
 .tl-chips button {
-  position: relative; flex: none; overflow: hidden; min-height: 34px; padding: 0 14px; border-radius: 999px; cursor: pointer;
-  border: 1px solid rgba(255, 255, 255, .28); background: rgba(9, 22, 48, .42); color: rgba(255, 255, 255, .9);
-  font: 600 .78rem/1 var(--font-body); letter-spacing: .02em;
+  position: relative; flex: none; overflow: hidden; min-height: var(--chip-h-sm); padding: 0 14px; border-radius: 999px; cursor: pointer;
+  border: 1.5px solid var(--chip-dark-border); background: var(--chip-dark-bg); color: var(--chip-dark-fg);
+  font: 700 .8rem/1 var(--font-body); letter-spacing: .02em;
   transition: background .25s, color .25s, border-color .25s, transform .2s var(--ease);
 }
-.tl-chips button:hover { background: rgba(9, 22, 48, .7); color: #fff; border-color: rgba(255, 255, 255, .55); }
+.tl-chips button:hover { background: rgba(9, 22, 48, .85); color: #fff; border-color: #fff; }
 .tl-chips button:active { transform: scale(.96); }
 .tl-chips button[aria-pressed="true"] { background: #fff; color: var(--navy-3); border-color: #fff; }
-.tl-chips button:focus-visible { outline: 2px solid var(--gold); outline-offset: 2px; }
+.tl-chips button:focus-visible { outline: 3px solid var(--focus, #0f3b78); outline-offset: 2px; }
 .tl-chips button i { position: absolute; left: 12px; right: 12px; bottom: 4px; height: 2px; border-radius: 2px; background: var(--gold); transform: scaleX(0); transform-origin: left center; }
 .tl-chips button.run i { animation: tlMeter var(--tl-dwell, 3s) linear forwards; }
 @keyframes tlMeter { to { transform: scaleX(1); } }
@@ -301,15 +301,15 @@
 .qq-picks { display: flex; flex-wrap: wrap; gap: 6px; margin-top: -4px; }
 .qq-picks .pick-label { flex: 100%; font-size: max(.72rem, 11px); font-weight: 700; color: var(--muted); margin-bottom: 2px; }
 .pick {
-  display: inline-flex; align-items: center; gap: 6px; padding: 6px 11px; border-radius: 999px;
-  border: 1px solid var(--line); background: #fff; color: var(--navy);
-  font-size: .78rem; font-weight: 700; line-height: 1; cursor: pointer;
+  display: inline-flex; align-items: center; gap: 6px; min-height: var(--chip-h-sm); padding: 0 12px; border-radius: 999px;
+  border: 1.5px solid var(--chip-border); background: var(--chip-bg); color: var(--navy);
+  font-size: .8rem; font-weight: 700; line-height: 1; cursor: pointer;
   transition: border-color .2s, background .2s, color .2s, transform .2s var(--ease);
   animation: heroIn .5s var(--ease-out) both; animation-delay: calc(var(--i, 0) * 60ms + 700ms);
 }
-.pick:hover { border-color: var(--blue); background: var(--blue-soft); }
+.pick:hover { border-color: var(--blue); background: var(--blue-soft); color: var(--blue-2); }
 .pick:active { transform: scale(.96); }
-.pick.on { border-color: var(--blue); background: var(--blue); color: #fff; }
+.pick.on { border-color: var(--chip-on-bg); background: var(--chip-on-bg); color: var(--chip-on-fg); }
 .pick .flag { border-radius: 2px; }
 .pick.on .flag { box-shadow: 0 0 0 1px rgba(255, 255, 255, .6); }
 
@@ -365,7 +365,7 @@
   .hn-item i { font-size: .74rem; }
   .qc-meter { margin-bottom: 12px; }
   .qq-picks .pick:nth-child(n+6) { display: none; }   /* label + four chips */
-  .pick { font-size: max(.72rem, 11px); padding: 5px 9px; }
+  .pick { font-size: max(.74rem, 11px); min-height: var(--chip-h-sm); padding: 0 11px; }
   .hero-tl { padding: calc(var(--nav-h) + 16px) 0 118px; }
   .hero-tl .hero-title { font-size: clamp(2rem, 9vw, 2.6rem); max-width: none; }
   .hero-stats div { flex: 1 1 42%; }
@@ -373,7 +373,9 @@
   .print { padding: 9px 9px 0; }
   .print figcaption { height: 44px; font-size: 1.25rem; }
   .print-zoom { top: 16px; right: 16px; width: 34px; height: 34px; }
-  .tl-arrow { width: 36px; height: 36px; }
+  .tl-arrow { width: var(--icon-btn); height: var(--icon-btn); }
+  .tl-thumbs button { width: 58px; height: 44px; }
+  .hero-next { min-height: 44px; }
   .tl-place { font-size: .84rem; }
   .plan { padding: 48px 0 64px; }
   .plan-actions .btn { flex-basis: 100%; }

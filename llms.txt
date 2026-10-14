@@ -1,0 +1,41 @@
+# Immaculate Connections Travel Agency
+
+> Travel agency in Cebu City, Philippines. Local and international tour packages, flight and ferry ticketing, hotel bookings, vehicle hire with driver, and seminars, events and MICE. Quotations are free.
+
+Contact: +63 917 319 8540 (mobile), (032) 238 3343 (landline), immaculateconnectionsph@gmail.com, Facebook Messenger: https://www.facebook.com/ImmaculateConnections.ph
+Office: Unit 4E, 4th Floor, JL Millennium Building, Don Jose Avila Street, Cebu City 6000, Philippines
+
+## Pages
+
+- [Home](https://www.immaculateconnectionsph.com/): Services, special offers and featured packages
+- [Tours](https://www.immaculateconnectionsph.com/tours): All tour packages with filters
+- [Services](https://www.immaculateconnectionsph.com/services): Ticketing, hotels, transport and events
+- [Car Rental](https://www.immaculateconnectionsph.com/car-rental): Vans, coasters, buses and cars with driver in Cebu
+- [Hotel Booking](https://www.immaculateconnectionsph.com/hotel-booking): Hotel and resort bookings
+- [Ticketing](https://www.immaculateconnectionsph.com/ticketing): Flight and ferry tickets, group bookings
+- [MICE and events](https://www.immaculateconnectionsph.com/mice): Seminars, conventions and corporate events
+- [Gallery](https://www.immaculateconnectionsph.com/gallery): Photos and videos from our group tours
+- [About](https://www.immaculateconnectionsph.com/about): About the agency and team
+- [Contact](https://www.immaculateconnectionsph.com/contact): Free quotation and inquiry form
+
+## Tour packages
+
+- [Da Nang Charter Flight 6D4N Tour](https://www.immaculateconnectionsph.com/package-danang-6d4n): 6 days 4 nights; departs Manila (NAIA); Starts at ₱23,888 per pax. Roundtrip charter flight from Manila, four nights in Da Nang, Ba Na Hills, Hoi An, the Dragon Bridge and the Hai Van Pass, all guided in English.
+- [Da Nang Charter Flight 5D3N Tour](https://www.immaculateconnectionsph.com/package-danang-5d3n): 5 days 3 nights; departs Manila (NAIA); Starts at ₱21,888 per pax. The shorter Da Nang charter: roundtrip flight from Manila, three nights at Sea Garden Hotel or a similar local 4-star, Ba Na Hills and the city highlights.
+- [Hanoi – Sapa – Ha Long Bay 4D3N Tour](https://www.immaculateconnectionsph.com/package-hanoi-sapa-halong-4d3n): 4 days 3 nights; departs Cebu (Mactan-Cebu International); From ₱32,888 all-in per person. Fly Vietnam Airlines from Cebu for Hanoi’s Old Quarter, the Fansipan cable car in Sapa and an exclusive Ha Long Bay cruise, with two lunch buffets upgraded.
+- [Bohol Breezes: Embrace Island Serenity!](https://www.immaculateconnectionsph.com/package-bohol-breezes): Day tour; departs Cebu City pier; price on request. A full day across Bohol’s icons, from the Blood Compact Shrine and Baclayon Church to the Chocolate Hills, with lunch on a Loboc River cruise.
+- [Discover Enchanting Camotes](https://www.immaculateconnectionsph.com/package-camotes-discover): 2 days 1 night; departs Cebu (Danao port); price on request. Beaches, caves and Cebu’s largest lake over two days on the Camotes Islands, with hotel, meals, boat tickets and guide arranged.
+- [Camotes Charms: Lakwatsa sa Tudela](https://www.immaculateconnectionsph.com/package-camotes-tudela): 2 days 1 night; departs Cebu (Danao port); price on request. The quieter Tudela side of Camotes: Bukilat sea cave, the Villahermosa mangroves, the heritage Kaompang tree and Busay Falls, with an overnight stay.
+- [Cebu Highlands Vista Tour](https://www.immaculateconnectionsph.com/package-cebu-highlands): Day tour; departs Cebu City hotels; price on request. Cebu’s most photographed hilltop spots in one day: the Temple of Leah, Little Kyoto, Seoul Sierra and the flower fields of Sirao Garden.
+- [Queen City Tour: Cebu](https://www.immaculateconnectionsph.com/package-queen-city): Day tour; departs Cebu City hotels; price on request. Cebu City’s heritage trail: Magellan’s Cross, the Basilica del Sto. Niño, Fort San Pedro, the ancestral houses of Parian and the Taoist Temple.
+- [Twin City Tour: Cebu](https://www.immaculateconnectionsph.com/package-twin-city): Day tour; departs Cebu City or Mactan hotels; price on request. Cebu City’s landmarks plus a crossing to Mactan for the Alegre Guitar Factory. Ideal for first-time visitors with one day to spare.
+- [Boracay Bliss](https://www.immaculateconnectionsph.com/package-boracay-bliss): departs Cebu; price on request. Our Boracay package is being finalised. Ask to be notified when it launches, or request a custom Boracay itinerary now.
+- [El Nido Escapade: Memory Keepers](https://www.immaculateconnectionsph.com/package-el-nido): departs Cebu; price on request. Lagoons and limestone cliffs at the northern tip of Palawan. The package is being finalised; custom El Nido itineraries can be arranged now.
+- [Coron Captures](https://www.immaculateconnectionsph.com/package-coron): departs Cebu; price on request. Coron’s lakes, lagoons and shipwrecks. The package is being finalised; custom Coron itineraries can be arranged now.
+- [Charming Yunnan 8D7N Tour](https://www.immaculateconnectionsph.com/package-charming-yunnan-8d7n): 8 days 7 nights; departs Manila (NAIA); From US$1,488 all-in per person. Kunming, Dali, Lijiang and Shangri-La in eight days: China Southern flights from Manila, 5-star hotels, a high-speed train ride and two upgraded lunch buffets.
+- [Japan: Tokyo · Yokohama · Mt. Fuji 5D4N Tour](https://www.immaculateconnectionsph.com/package-japan-tokyo-fuji-5d4n): 5 days 4 nights; departs Cebu (Mactan-Cebu International); From US$1,049 all-in per person. Winter in Japan direct from Cebu on Cebu Pacific: Tokyo, Yokohama and Mt. Fuji with hotel breakfasts, an English-speaking guide and two upgraded lunch buffets.
+
+## More
+
+- [Packages, prices and dates in one file](https://www.immaculateconnectionsph.com/packages.md)
+- [Sitemap](https://www.immaculateconnectionsph.com/sitemap.xml)

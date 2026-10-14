@@ -657,8 +657,11 @@
         h = fab.offsetHeight || h;
       } else { h = 0; b = parseFloat(cs.bottom) || b; }
     }
-    root.style.setProperty('--icc-r', r + 'px');
-    root.style.setProperty('--icc-b', (b + h + (h ? 12 : 0)) + 'px');
+    // phones: side by side with Messenger, so the pair takes one row of the screen, not three
+    const side = phoneMQ.matches && fab && h;
+    root.classList.toggle('icc-side', !!side);
+    root.style.setProperty('--icc-r', (side ? r + fab.offsetWidth + 10 : r) + 'px');
+    root.style.setProperty('--icc-b', (side ? b + (h - 44) / 2 : b + h + (h ? 12 : 0)) + 'px');
   };
   let raf = 0;
   const schedule = () => { if (!raf) raf = requestAnimationFrame(() => { raf = 0; place(); }); };

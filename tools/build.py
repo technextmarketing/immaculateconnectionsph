@@ -91,6 +91,7 @@ BUNDLES = [
 
 def build_assets():
     inject_partials()
+    import seo; seo.faq_ld(); seo.robots()
     import rcssmin
     sys.path.insert(0, os.path.join(ROOT, 'tools'))
     from jsmin_safe import minify as jsmin
@@ -241,6 +242,9 @@ def build_pages():
               return { id: t.id, name: t.name, summary: t.summary, key: (IC.destHero || {})[t.id] || '', imageFile: media.split('/').pop(),
                        pkg: __html.pkgPage, related: __html.relatedGrid || '', ld: document.querySelector('script[data-ld="pkg"]').textContent }; })())""" % json.dumps(pid)))
             pages.append(got)
+        full = json.loads(b.eval("""JSON.stringify(IC.tours.map(t => ({ id: t.id, name: t.name, country: t.country, region: t.region, regionLabel: (IC.regions[t.region] || {}).label || t.region,
+          duration: t.duration, days: t.days, departure: t.departure, price: t.price, status: t.status, summary: t.summary, ends: t.ends,
+          inclusions: t.inclusions || [], dates: (t.travelDates || []).map(d => d.d) })))"""))
     finally:
         b.close(); srv.shutdown()
 
@@ -301,6 +305,12 @@ def build_pages():
     rows = [f"  <url><loc>{SITE}{p[:-5]}</loc><lastmod>{lastmod(SITE + p[:-5], False)}</lastmod><changefreq>{f}</changefreq><priority>{pr}</priority></url>" for p, f, pr in main]
     rows += [f"  <url><loc>{SITE}package-{t['id']}</loc><lastmod>{lastmod(SITE + 'package-' + t['id'], False)}</lastmod><changefreq>weekly</changefreq><priority>0.8</priority></url>" for t in pages]
     print("  sitemap.xml:", "updated" if write("sitemap.xml", '<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n' + "\n".join(rows) + "\n</urlset>\n") else "unchanged")
+
+    # search and AI-search files from the same package data
+    import seo
+    files = {t["id"]: t["imageFile"] for t in pages}
+    for t in full: t["imageFile"] = files.get(t["id"], "")
+    seo.agency_ld(full); seo.tours_faq(full); seo.ai_files(full); seo.sitemap_media(full)
 
 
 if __name__ == "__main__":

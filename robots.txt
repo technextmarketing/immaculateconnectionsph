@@ -1,6 +1,25 @@
+# Immaculate Connections Travel Agency, Cebu City
+# Search engines and AI assistants are welcome; only the private pages are closed.
+
 User-agent: *
 Allow: /
 Disallow: /payment
 Disallow: /team
 
+User-agent: Googlebot
+User-agent: Bingbot
+User-agent: Google-Extended
+User-agent: GPTBot
+User-agent: OAI-SearchBot
+User-agent: ChatGPT-User
+User-agent: PerplexityBot
+User-agent: ClaudeBot
+User-agent: Claude-SearchBot
+User-agent: anthropic-ai
+User-agent: Applebot-Extended
+Allow: /
+Disallow: /payment
+Disallow: /team
+
 Sitemap: https://www.immaculateconnectionsph.com/sitemap.xml
+# Summary for AI assistants: https://www.immaculateconnectionsph.com/llms.txt

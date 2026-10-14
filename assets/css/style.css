@@ -29,7 +29,7 @@
   --muted: #5d6b7e;
   --line: #dde5ee;
   --success: #1f9d55;
-  --messenger: #0084ff;
+  --messenger: #0866ff;  /* Messenger blue, darkened to the current Meta blue: white text 4.8:1 (was 3.7:1 on #0084ff) */
 
   --r-sm: 10px;
   --r: 16px;
@@ -64,7 +64,7 @@ button, input, select, textarea { font: inherit; color: inherit; }
 button { cursor: pointer; background: none; border: 0; padding: 0; }
 ul, ol { margin: 0; padding: 0; list-style: none; }
 h1, h2, h3, h4, p { margin: 0; }
-:focus-visible { outline: 3px solid var(--gold); outline-offset: 3px; border-radius: 6px; }
+:focus-visible { outline: 3px solid var(--focus, var(--blue-3)); outline-offset: 3px; border-radius: 6px; }
 
 .skip-link { position: absolute; left: 16px; top: -60px; z-index: 1000; background: var(--navy); color: #fff; padding: 10px 16px; border-radius: 8px; transition: top .2s; }
 .skip-link:focus { top: 16px; }
@@ -96,28 +96,141 @@ h1, h2, h3, h4, p { margin: 0; }
 .section-head.split { max-width: none; display: flex; align-items: flex-end; justify-content: space-between; gap: 24px; flex-wrap: wrap; }
 .section-head.split > div { max-width: 640px; }
 
-/* ---------- Buttons ---------- */
-.btn { display: inline-flex; align-items: center; justify-content: center; gap: 10px; padding: 14px 24px; border-radius: 999px; font-weight: 700; font-size: .95rem; line-height: 1; white-space: nowrap; border: 2px solid transparent; transition: transform .25s var(--ease), box-shadow .25s var(--ease), background .25s, color .25s, border-color .25s; }
-.btn svg { width: 18px; height: 18px; flex: none; transition: transform .25s var(--ease); }
-.btn:hover { transform: translateY(-2px); }
-.btn:hover svg.arrow { transform: translateX(4px); }
-.btn-primary { background: var(--orange); color: var(--navy-3); box-shadow: 0 10px 24px -10px rgba(246, 147, 30, .75); }
-.btn-primary:hover { background: var(--orange-2); }
-.btn-blue { background: var(--blue); color: #fff; box-shadow: 0 10px 24px -10px rgba(29, 103, 205, .6); }
-.btn-blue:hover { background: var(--blue-2); }
-.btn-ghost { background: rgba(255,255,255,.16); color: #fff; border-color: rgba(255,255,255,.45); }
-.btn-ghost:hover { background: rgba(255,255,255,.22); border-color: rgba(255,255,255,.7); }
-.btn-outline { background: transparent; color: var(--blue-2); border-color: var(--blue); }
-.btn-outline:hover { background: var(--blue); color: #fff; }
-.btn-light { background: #fff; color: var(--navy); }
-.btn-light:hover { background: var(--bg-2); }
-.btn-sm { padding: 10px 16px; font-size: .88rem; }
-.btn-lg { padding: 18px 30px; font-size: 1.02rem; }
+/* =========================================================
+   Button system (one source for every button on the site)
+   ---------------------------------------------------------
+   Tiers
+     .btn-primary   orange "Inquire Now" CTA: the one main action
+     .btn-blue      brand blue, the secondary filled action
+     .btn-outline   blue outline, for light surfaces
+     .btn-ghost     outline for dark surfaces and photos
+     .btn-light     white button (on dark), quiet option (on light)
+     .link-arrow    text action with an arrow
+   Sizes        .btn-sm / .btn / .btn-lg   (44px minimum on phones)
+   Icon buttons  .icon-btn family: to-top, arrows, viewer controls
+   Chips         .tab, .tf-chip, .pick, .gal-filters, .icc-chip ...
+                 pressed = solid blue on light, solid white on dark
+   Colours are tokens below; every pairing passes WCAG AA.
+   ========================================================= */
+:root {
+  --btn-h: 46px;  --btn-h-sm: 40px;  --btn-h-lg: 52px;
+  --btn-px: 22px; --btn-px-sm: 16px; --btn-px-lg: 28px;
+  --btn-fs: .94rem; --btn-fs-sm: .86rem; --btn-fs-lg: 1rem;
+  --btn-radius: 999px;
+  --btn-border: 2px;
+  --btn-fw: 700;
+  --btn-ls: .01em;
+  --btn-gap: 10px;
+  --btn-dur: .2s;
+  --btn-press: scale(.98);
+
+  /* primary: orange, navy text (6.8:1; 5.1:1 on hover) */
+  --btn-primary-bg: var(--orange);
+  --btn-primary-bg-hover: var(--orange-2);
+  --btn-primary-fg: var(--navy-3);
+  --btn-primary-shadow: 0 8px 18px -10px rgba(217, 124, 14, .75);
+  /* secondary: brand blue, white text (5.4:1; 7.9:1 on hover) */
+  --btn-secondary-bg: var(--blue);
+  --btn-secondary-bg-hover: var(--blue-2);
+  --btn-secondary-fg: #fff;
+  --btn-secondary-shadow: 0 8px 18px -10px rgba(21, 79, 159, .7);
+  /* outline on light surfaces (7.9:1, hover 9.9:1 on blue-soft) */
+  --btn-outline-fg: var(--blue-2);
+  --btn-outline-border: var(--blue);
+  --btn-outline-bg: #fff;
+  --btn-outline-bg-hover: var(--blue-soft);
+  --btn-outline-fg-hover: var(--blue-3);
+  /* ghost on dark surfaces and photos: a dark glass fill keeps white text >= 4.5:1 on any photo */
+  --btn-ghost-bg: rgba(9, 22, 48, .62);
+  --btn-ghost-border: rgba(255, 255, 255, .8);
+  --btn-ghost-fg: #fff;
+  --btn-ghost-bg-hover: #fff;
+  --btn-ghost-fg-hover: var(--navy-3);
+  /* light: white button */
+  --btn-light-bg: #fff;
+  --btn-light-fg: var(--navy);
+  --btn-light-border: #c9d5e3;
+  --btn-light-bg-hover: var(--bg-2);
+  /* disabled: flat grey, never just faded */
+  --btn-disabled-bg: #e9edf2;
+  --btn-disabled-fg: #5d6b7e;
+  --btn-disabled-border: #dde5ee;
+
+  /* chips, filters, tabs */
+  --chip-h: 40px;      /* filters, tabs, date chips */
+  --chip-h-sm: 34px;   /* compact chips: quick picks, hero reel, active-filter pills */
+  --chip-px: 16px;
+  --chip-fs: .86rem;
+  --chip-border: #c9d5e3;
+  --chip-fg: var(--ink-2);
+  --chip-bg: #fff;
+  --chip-on-bg: var(--blue);
+  --chip-on-fg: #fff;
+  /* chips on dark surfaces */
+  --chip-dark-bg: rgba(9, 22, 48, .62);
+  --chip-dark-border: rgba(255, 255, 255, .5);
+  --chip-dark-fg: #fff;
+
+  /* round icon buttons */
+  --icon-btn: 44px;
+  --icon-btn-dark-bg: rgba(9, 22, 48, .62);
+  --icon-btn-dark-border: rgba(255, 255, 255, .55);
+
+  /* focus ring: navy-blue on light surfaces, gold on dark ones (both >= 3:1) */
+  --focus: var(--blue-3);
+}
+/* dark surfaces switch the focus ring to gold */
+.header.on-hero, .hero, .page-hero, .pkg-hero, .svc-hero, .cta-band, .footer, .lightbox, .vid-modal,
+.inq-tab.is-on, .icc-head { --focus: var(--gold); }
+/* light cards that sit inside a dark section keep the navy-blue ring */
+.quote-card, .side-card, .svc-doc, .form-card, .footer .logo-plate { --focus: var(--blue-3); }
+:where(a, button, [role="button"], [role="tab"], summary, label):focus-visible { outline-color: var(--focus) !important; }
+
+.btn {
+  display: inline-flex; align-items: center; justify-content: center; gap: var(--btn-gap);
+  min-height: var(--btn-h); padding: 0 var(--btn-px); border-radius: var(--btn-radius);
+  border: var(--btn-border) solid transparent;
+  font-family: var(--font-body); font-weight: var(--btn-fw); font-size: var(--btn-fs); letter-spacing: var(--btn-ls);
+  line-height: 1.15; text-align: center; white-space: nowrap; text-decoration: none; cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
+  transition: background-color var(--btn-dur) var(--ease), color var(--btn-dur) var(--ease), border-color var(--btn-dur) var(--ease),
+              box-shadow var(--btn-dur) var(--ease), transform var(--btn-dur) var(--ease);
+}
+.btn svg { width: 18px; height: 18px; flex: none; transition: transform var(--btn-dur) var(--ease); }
+.btn:hover svg.arrow, .btn:focus-visible svg.arrow { transform: translateX(3px); }
+.btn:active { transform: var(--btn-press); }
+.btn:focus-visible { outline: 3px solid var(--focus); outline-offset: 3px; }
+
+.btn-primary { background: var(--btn-primary-bg); color: var(--btn-primary-fg); box-shadow: var(--btn-primary-shadow); }
+.btn-primary:hover { background: var(--btn-primary-bg-hover); color: var(--btn-primary-fg); }
+.btn-blue { background: var(--btn-secondary-bg); color: var(--btn-secondary-fg); box-shadow: var(--btn-secondary-shadow); }
+.btn-blue:hover { background: var(--btn-secondary-bg-hover); color: var(--btn-secondary-fg); }
+.btn-outline { background: var(--btn-outline-bg); color: var(--btn-outline-fg); border-color: var(--btn-outline-border); }
+.btn-outline:hover { background: var(--btn-outline-bg-hover); color: var(--btn-outline-fg-hover); border-color: var(--blue-2); }
+.btn-ghost { background: var(--btn-ghost-bg); color: var(--btn-ghost-fg); border-color: var(--btn-ghost-border); }
+.btn-ghost:hover { background: var(--btn-ghost-bg-hover); color: var(--btn-ghost-fg-hover); border-color: var(--btn-ghost-bg-hover); }
+.btn-light { background: var(--btn-light-bg); color: var(--btn-light-fg); border-color: var(--btn-light-border); }
+.btn-light:hover { background: var(--btn-light-bg-hover); color: var(--navy-3); border-color: var(--blue); }
+
+.btn-sm { min-height: var(--btn-h-sm); padding: 0 var(--btn-px-sm); font-size: var(--btn-fs-sm); gap: 8px; }
+.btn-sm svg { width: 16px; height: 16px; }
+.btn-lg { min-height: var(--btn-h-lg); padding: 0 var(--btn-px-lg); font-size: var(--btn-fs-lg); }
 .btn-block { width: 100%; }
-.btn[disabled] { opacity: .55; cursor: not-allowed; transform: none !important; }
-.link-arrow { display: inline-flex; align-items: center; gap: 8px; font-weight: 700; color: var(--blue); }
-.link-arrow svg { width: 18px; height: 18px; transition: transform .25s var(--ease); }
-.link-arrow:hover svg { transform: translateX(4px); }
+
+.btn[disabled], .btn[aria-disabled="true"], .btn.is-disabled {
+  background: var(--btn-disabled-bg); color: var(--btn-disabled-fg); border-color: var(--btn-disabled-border);
+  box-shadow: none; cursor: not-allowed; transform: none !important; opacity: 1;
+}
+
+.link-arrow { display: inline-flex; align-items: center; gap: 8px; min-height: 24px; font-weight: 700; color: var(--blue-2); text-decoration: underline; text-decoration-color: transparent; text-underline-offset: 4px; text-decoration-thickness: 2px; transition: color var(--btn-dur) var(--ease), text-decoration-color var(--btn-dur) var(--ease); }
+.link-arrow svg { width: 18px; height: 18px; flex: none; transition: transform var(--btn-dur) var(--ease); }
+.link-arrow:hover { color: var(--blue-3); text-decoration-color: currentColor; }
+.link-arrow:hover svg { transform: translateX(3px); }
+
+@media (prefers-reduced-motion: reduce) {
+  .btn, .btn svg, .link-arrow, .link-arrow svg { transition: none; }
+  .btn:active, .btn:hover svg.arrow, .btn:focus-visible svg.arrow, .link-arrow:hover svg { transform: none; }
+}
 
 /* ---------- Pills / badges ---------- */
 .pill { display: inline-flex; align-items: center; gap: 6px; padding: 6px 12px; border-radius: 999px; font-size: .78rem; font-weight: 700; background: var(--bg-2); color: var(--ink-2); }
@@ -534,7 +647,7 @@ h1, h2, h3, h4, p { margin: 0; }
 .choice label span { font-size: .82rem; color: var(--muted); }
 .choice label:hover { border-color: var(--blue); transform: translateY(-2px); }
 .choice input:checked + label { border-color: var(--blue); background: var(--blue-soft); box-shadow: 0 0 0 4px rgba(29,103,205,.12); }
-.choice input:focus-visible + label { outline: 3px solid var(--gold); outline-offset: 2px; }
+.choice input:focus-visible + label { outline: 3px solid var(--focus, #0f3b78); outline-offset: 2px; }
 .fields { display: grid; gap: 16px; }
 [data-for] { display: none; }
 [data-for].show { display: grid; gap: 16px; }
