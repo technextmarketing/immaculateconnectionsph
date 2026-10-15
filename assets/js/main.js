@@ -43,8 +43,8 @@
       { h: 'd436ce945e02ed5b039f400a4c1e9c1a5e77f13436efcc7411bda1160bee23e6', type: 'Events and MICE organiser' },
       { h: '1fe50ac307eeefd4163da7a06e2ffe4b59d288f58b1f983e120ec5032577d4c4', type: 'Government and LGU partner' },
       { h: '01d38a0538d7812276ede6041bc619dfe11abb62d80940ff40832e0ad141b28b', type: 'School and institution partner' },
-      { h: '07d8d13392fe1d717cc3d02bd30291b85a348d4774e7aa194a1d09672ccf0a3e', type: 'Travelpreneur member' },
-      { h: '611454f6489e42925a9a71dbcf2ccb1bbd225581045b7355388ee00547111a27', type: 'Travelpreneur member' },
+      { h: '07d8d13392fe1d717cc3d02bd30291b85a348d4774e7aa194a1d09672ccf0a3e', type: 'Travelpreneur member', d: 'pYx+P/1RlKagJ7i+qiwQDSnlIquCfQMKz4mIE8li407jxwjbFB0F9SsLCWyztr5QF9eopbeyuY21ADlxlIIATdTy58vXKdVcr4nT65waK5cnfdk=' },
+      { h: '611454f6489e42925a9a71dbcf2ccb1bbd225581045b7355388ee00547111a27', type: 'Travelpreneur member', d: 'XrLb5nZl03b7BI2VwhM/jIIEmI5v7m+4D+j+Vrdh7HNisEO7E3RgQHfJ/X6XN71Xgg6pibR+7raUettUww9GEE7JOiR6Tjf914Ex8SNU8J+0a0dcIH8w19nBThys+deyOqnKwPrm8Usbh7U=' },
       { h: 'a855564d3559742e6a1698a15eccbf89a894ff829825399b95794d19e3af2608', type: 'Travelpreneur member' },
       { h: 'b695ee2cb60205a6292d4da7d755440760de4d995dae740486e0b6bce9a2f01f', type: 'Travelpreneur member' },
       { h: '703802847a123d197c04895060409fa23e3b9e88e550f9c5ce5065bb0a079d04', type: 'Travelpreneur member' },
@@ -1935,7 +1935,20 @@
     const buf = await crypto.subtle.digest('SHA-256', new TextEncoder().encode('icp:' + n));
     const h = Array.from(new Uint8Array(buf), x => x.toString(16).padStart(2, '0')).join('');
     const hit = (CONFIG.partnerCodes || []).find(c => c.h === h);
-    return hit ? { type: hit.type, code: String(raw).trim().toUpperCase().replace(/\s+/g, '-') } : null;
+    if (!hit) return null;
+    return { type: hit.type, code: String(raw).trim().toUpperCase().replace(/\s+/g, '-'), info: hit.d ? await partnerInfo(n, hit.d) : null };
+  }
+  /* A code can carry the member's own details (company, name, email, phone), encrypted with AES-GCM under a key
+     made from the code itself (tools/partner_details.py), so they fill the partner form for that member only and
+     stay unreadable in the public page source. */
+  async function partnerInfo(n, blob) {
+    try {
+      const raw = Uint8Array.from(atob(blob), ch => ch.charCodeAt(0));
+      const k = await crypto.subtle.digest('SHA-256', new TextEncoder().encode('ick:' + n));
+      const key = await crypto.subtle.importKey('raw', k, 'AES-GCM', false, ['decrypt']);
+      const out = await crypto.subtle.decrypt({ name: 'AES-GCM', iv: raw.slice(0, 12) }, key, raw.slice(12));
+      return JSON.parse(new TextDecoder().decode(out));
+    } catch (_) { return null; }
   }
 
   function buildPartnerDoc(o, partner, ref, issued) {
@@ -2082,8 +2095,16 @@
         $$('[data-partner-code]').forEach(el => { el.textContent = partner.code; });
       }
     };
+    // the member's saved details (if the code carries them) fill the empty contact fields; anything typed stays
+    const fillInfo = hit => {
+      if (!hit || !hit.info) return;
+      [['#p_company', hit.info.company], ['#p_name', hit.info.name], ['#p_email', hit.info.email], ['#p_phone', hit.info.phone]].forEach(([sel, v]) => {
+        const el = $(sel, pf); if (el && v && !el.value) { el.value = v; el.dispatchEvent(new Event('input', { bubbles: true })); }
+      });
+    };
     const unlock = (hit, focus) => {
       partner = hit; keep(hit.code); paint(); setMode('partner');
+      fillInfo(hit);
       if (focus) {
         const top = pf.getBoundingClientRect().top + window.scrollY - 180;
         window.scrollTo({ top, behavior: reduced ? 'auto' : 'smooth' });
@@ -2148,7 +2169,7 @@
     };
     if (start) partnerFor(start).then(hit => {
       if (hit && (fromLink || fromPkg)) { unlock(hit, true); prefill(); }   // a partner booking a package goes straight to the partner form
-      else if (hit) { partner = hit; paint(); }   // remembered on this device: ready when the Partner tab is clicked
+      else if (hit) { partner = hit; paint(); fillInfo(hit); }   // remembered on this device: ready when the Partner tab is clicked
       else { keep(null); if (fromLink) { setMode('partner'); say('The partner code in that link did not match. Type it below, or message us.', 'bad'); } }
     });
 
