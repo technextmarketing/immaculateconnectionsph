@@ -110,7 +110,7 @@ html.icc-ready body .to-top { bottom: calc(var(--icc-b) + var(--icc-lh) + 12px);
 .icc-avatar { width: 42px; height: 42px; flex: none; border-radius: 50%; background: #fff; display: grid; place-items: center; box-shadow: 0 0 0 2px rgba(255, 183, 48, .7); overflow: hidden; }
 .icc-avatar img { width: 34px; height: 34px; object-fit: contain; }
 .icc-who { flex: 1; min-width: 0; }
-.icc-who h2 { margin: 0; font: 700 1.08rem/1.2 var(--font-display, Georgia, serif); color: #fff; letter-spacing: .005em; }
+.icc-who h2 { margin: 0; font: 700 1.08rem/1.2 var(--font-display, system-ui, sans-serif); color: #fff; letter-spacing: .005em; }
 .icc-who p { margin: 3px 0 0; font-size: .76rem; color: rgba(255, 255, 255, .82); display: flex; align-items: center; gap: 6px; }
 .icc-who p i { width: 7px; height: 7px; border-radius: 50%; background: #3ddc84; box-shadow: 0 0 0 3px rgba(61, 220, 132, .22); }
 .icc-x {

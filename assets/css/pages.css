@@ -672,7 +672,9 @@ body[data-hero-top] .svc-hero { padding-top: calc(var(--nav-h) + 18px); }
   .rs-chain { grid-column: 1 / 2; grid-row: 2; }
   .rs-go { grid-row: 1 / 3; grid-column: 2; width: 40px; height: 40px; }
   .needs-board { grid-template-columns: minmax(0, 1fr); }
-  .db-row { padding: 12px; gap: 12px; }
+  /* phones: the package name gets a full-width line under the route, next date and arrow */
+  .db-row { padding: 12px; gap: 10px 12px; grid-template-columns: auto minmax(0, 1fr) 40px; grid-template-areas: "leg next go" "pkg pkg pkg"; }
+  .db-leg { grid-area: leg; } .db-pkg { grid-area: pkg; } .db-next { grid-area: next; } .db-go { grid-area: go; width: 40px; height: 40px; }
   .db-code i { width: 22px; height: 30px; font-size: .95rem; }
   .plan { grid-template-columns: minmax(0, 1fr); }
   .plan-row { padding: 8px 34px 8px 10px; }
