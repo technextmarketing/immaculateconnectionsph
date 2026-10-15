@@ -577,7 +577,7 @@
     if (!text || state.busy) return;
     state.busy = true;
     addMsg('me', text);
-    state.hist.push({ u: text, f: force || undefined });
+    state.hist.push({ u: text, f: force || undefined, c: state.last || undefined });   // c: the package(s) it was asked about, so a replay on another page answers the same
     setChips([]);
     const dots = typing();
     const t0 = Date.now();
@@ -610,6 +610,7 @@
       state.hist.forEach(h => {
         if (typeof h.u === 'string') {
           addMsg('me', h.u);
+          if (Array.isArray(h.c)) state.last = h.c.map(String);
           const r = run(h.u, h.f && typeof h.f === 'object' ? { pkg: String(h.f.pkg || ''), intent: String(h.f.intent || '') } : null);
           if (r.need) needs.push(r.need);
           // a remote answer, when one follows, replaces the local one
@@ -619,8 +620,11 @@
       });
     }
     setChips(chips);
+    // on a package page, "what is included?" means this package until another one is named
+    const here = !again && byId(document.body.dataset.pkg || '');
+    if (here) state.last = [here.id];
     // answers that needed a package's details are redrawn once those are in
-    if (needs.length && !again) Promise.all(needs.map(fetchFull)).then(() => { if (!state.busy) { state.last = last0; restore(true); } });
+    if (needs.length && !again) Promise.all(needs.map(fetchFull)).then(() => { if (!state.busy) { const keep = state.last; state.last = last0; restore(true); state.last = keep; } });
   };
 
   /* ---------- open / close ---------- */
