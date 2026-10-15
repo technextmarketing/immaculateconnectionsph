@@ -606,9 +606,11 @@
   const LEG = new Proxy({}, { get: (_, id) => (/danang/.test(id) ? 'DAD' : /hanoi|sapa|halong/.test(id) ? 'HAN' : /beijing/.test(id) ? 'PEK' : /yunnan/.test(id) ? 'KMG'
     : /harbin/.test(id) ? 'HRB' : /chongqing/.test(id) ? 'CKG' : /furong/.test(id) ? 'CSX' : /tokyo|kamakura|fuji|hakone/.test(id) ? 'NRT' : /osaka|kyoto-nara|nara|nagoya/.test(id) ? 'KIX' : /hokkaido/.test(id) ? 'CTS' : /shanghai|kyoto|cruise/.test(id) ? 'PVG'
     : /chengdu|jiuzhaigou|leshan/.test(id) ? 'TFU' : /xi-an|shaanxi/.test(id) ? 'XIY' : /xinjiang/.test(id) ? 'URC' : /tibet/.test(id) ? 'LXA' : /xiamen|tulou|jinmen/.test(id) ? 'XMN' : /guilin/.test(id) ? 'KWL' : /qingdao/.test(id) ? 'TAO' : /hainan/.test(id) ? 'HAK' : /wuhan/.test(id) ? 'WUH' : /canton|guangzhou/.test(id) ? 'CAN' : undefined) });
-  function initBoard() {
+  function initBoard(ready) {
     const board = $('[data-board]');
     if (!board || !IC.tours) return;
+    // carriers and baggage come from the inclusions, which the card index leaves out (main.js, IC.loadMore)
+    if (!ready && IC.loadMore) { IC.loadMore().catch(() => {}).then(() => initBoard(true)); return; }
     const rows = IC.tours.filter(t => LEG[t.id] && U.effStatus(t) !== 'past').map(t => {   // departed packages leave the board
       const inc = (t.inclusions || []).join(' · ');
       const air = (t.inclusions || []).find(x => /airfare|charter/i.test(x)) || '';

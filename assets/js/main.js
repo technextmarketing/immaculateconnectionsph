@@ -148,6 +148,27 @@
     if (t.travelDates && t.travelDates.length && t.travelDates.every(d => isPastDate(d, t))) return 'past';
     return t.status;
   };
+  /* ---- Package details on demand ----
+     site.min.js carries a light card index of every package (tools/build.py, split_tours). The rest of a
+     package (overview, itinerary, inclusions, hotels, notes...) is in assets/data/pkg/<id>.json, which a
+     pre-built package page also carries inline (#pkgData); the day titles and inclusions of every package,
+     for the Tours rows and search and the Ticketing board, are in assets/data/tours-more.json. */
+  const getJson = url => fetch(url).then(r => { if (!r.ok) throw new Error(url + ' ' + r.status); return r.json(); });
+  const tourLoads = {};
+  IC.loadTour = t => {
+    if (!t || t.full) return Promise.resolve(t);
+    return tourLoads[t.id] || (tourLoads[t.id] = getJson(`assets/data/pkg/${t.id}.json`)
+      .then(d => { Object.assign(t, d); t.full = true; return t; })
+      .catch(e => { delete tourLoads[t.id]; throw e; }));
+  };
+  let moreLoad = null;
+  IC.loadMore = () => moreLoad || (moreLoad = getJson('assets/data/tours-more.json')
+    .then(m => {
+      (IC.tours || []).forEach(t => { const x = m[t.id]; if (!x || t.full) return; t.inclusions = x.inc; t.itinerary = x.it.map(([day, title]) => ({ day, title })); });
+      return IC.tours;
+    })
+    .catch(e => { moreLoad = null; throw e; }));
+
   // Departure dates still open, and how they read: "22 departure dates in 2026", "1 departure date in 2027"
   const openDates = t => (t.travelDates || []).filter(d => !isPastDate(d, t));
   const yearsOf = (dates, t) => {
@@ -228,7 +249,9 @@
     { re: /pasalubong|souvenir/i, label: 'Pasalubong', icon: 'gift' }
   ];
   const incTags = t => {
-    if (!t || !t.inclusions || !t.inclusions.length || t.status === 'soon') return [];
+    if (!t || t.status === 'soon') return [];
+    if (!t.inclusions) return INC_TAGS.filter((x, i) => (t.incMask || 0) & (1 << i));   // the card index carries the tags as bits (tools/build.py)
+    if (!t.inclusions.length) return [];
     const hay = t.inclusions.join(' · ');
     if (/provided on request|coming soon/i.test(hay)) return [];
     return INC_TAGS.filter(x => x.re.test(hay));
@@ -756,9 +779,11 @@
      choices (zero-result options are disabled), active choices show as
      removable chips, and the state lives in the address so a filtered
      list can be shared. Past departures are left out unless asked for. */
-  function initToursPage() {
+  function initToursPage(ready) {
     const grid = $('#toursGrid');
     if (!grid || !IC.tours) return;
+    // the rows show each package's days and search reads its inclusions: draw once those are in (the pre-built grid shows meanwhile)
+    if (!ready) { IC.loadMore().catch(() => {}).then(() => initToursPage(true)); return; }
     const T = IC.tours;
     const search = $('#tourSearch'), sort = $('#sortSel'), count = $('#resultsCount'), active = $('#activeFilters'), badge = $('#filterCount');
     const sel = { len: $('#fLen'), from: $('#fFrom'), month: $('#fMonth'), status: $('#fStatus') };
@@ -806,7 +831,7 @@
     search.value = st.q; sort.value = st.sort;
 
     // ---- matching; `skip` leaves one facet out so its options can be counted
-    const hay = t => (t.name + ' ' + regionLabel(t) + ' ' + (t.country || '') + ' ' + t.places.join(' ') + ' ' + t.inclusions.join(' ') + ' ' + (t.itinerary || []).map(d => d.title).join(' ')).toLowerCase();
+    const hay = t => (t.name + ' ' + regionLabel(t) + ' ' + (t.country || '') + ' ' + t.places.join(' ') + ' ' + (t.inclusions || []).join(' ') + ' ' + (t.itinerary || []).map(d => d.title).join(' ')).toLowerCase();
     const statusOk = (t, v) => { const s = effStatus(t); return v === 'every' || (v === 'current' ? s !== 'past' : s === v); };
     const match = (t, skip, o = st) =>
       (skip === 'country' || o.country === 'all' || cSlug(t.country) === o.country) &&
@@ -946,6 +971,9 @@
       root.innerHTML = `<section class="section"><div class="container text-center"><span class="eyebrow center">Package not found</span><h1 class="h2" style="margin-bottom:12px">We couldn’t find that package</h1><p class="lead" style="margin:0 auto 24px">It may have been renamed. Browse all current packages instead.</p><a class="btn btn-primary btn-lg" href="tours">Browse tour packages ${I.arrow}</a></div></section>`;
       return;
     }
+    // the card index lacks the itinerary, inclusions and the rest: a pre-built page has them inline, the template fetches them
+    if (!t.full && baked) { const inl = $('#pkgData'); if (inl) { try { Object.assign(t, JSON.parse(inl.textContent)); t.full = true; } catch (_) { /* fetched below */ } } }
+    if (!t.full) { IC.loadTour(t).then(() => initPackagePage(), () => {}); return; }   // on failure a pre-built page keeps its markup
     const region = destLabel(t);
     const related = IC.tours.filter(x => x.id !== t.id && x.country === t.country).slice(0, 3);
     const hasDates = t.travelDates && t.travelDates.length;
@@ -1798,6 +1826,7 @@
 
       const serviceName = SERVICE_LABELS[o.service] || 'Travel';
       const tour = rawPkg && IC.tours ? IC.tours.find(t => t.id === rawPkg) : null;
+      const tourFull = tour ? IC.loadTour(tour).catch(() => {}) : null;   // inclusions and itinerary for the quotation
       const ref = quoteRef();
       const issued = new Date();
       const valid = new Date(issued.getTime() + CONFIG.quoteValidDays * 864e5);
@@ -1833,6 +1862,7 @@
         const r = await fetch(CONFIG.formEndpoint, { method: 'POST', headers: { 'Content-Type': 'application/json', Accept: 'application/json' }, body: JSON.stringify(payload) });
         const j = await r.json().catch(() => ({})); sent = r.ok && String(j.success) !== 'false'; detail = j.message || '';
       } catch (_) { sent = false; }
+      await tourFull;
 
       const text = `Quotation ${ref}\n\n${lines}${amount ? `\nEstimated total: ${amount}` : ''}`;
       const success = $('#success', form);
@@ -1899,6 +1929,7 @@
       const success = $('#success', form);
       $('#formBody', form).style.display = 'none';
       $('#quotation', success).innerHTML = buildQuotation(demo, sample, ref, issued, valid);
+      if (sample && !sample.full) IC.loadTour(sample).then(() => { $('#quotation', success).innerHTML = buildQuotation(demo, sample, ref, issued, valid); }, () => {});
       $('#successMsg', success).textContent = 'This is a preview of the quotation template. Nothing has been sent. Remove ?preview=quote from the address to use the normal inquiry form.';
       $('#success h3', success).textContent = 'Quotation template preview';
       const pay = $('#qtPay', success);

@@ -12,8 +12,13 @@ assets  Copies the shared header and footer (_partials/) into every page, minifi
           assets/css/hero.min.css       hero.css (home)
           assets/css/quotation.min.css  quotation.css (contact, payment)
           assets/css/pages.min.css      pages.css (service pages, gallery, blog)
-          assets/js/site.min.js         data.js + main.js (every page)
+          assets/js/site.min.js         data.js + main.js + chat.js (every page)
           assets/js/pages.min.js        pages.js (service pages, gallery, blog)
+        data.js keeps every package in full, but only a light card index of IC.tours goes into
+        site.min.js. The rest of each package (itinerary, inclusions, hotels, notes...) is written
+        to assets/data/pkg/<id>.json and inlined into its package page (#pkgData), and the day
+        titles and inclusions of every package to assets/data/tours-more.json (Tours page rows,
+        search and the Ticketing board). See split_tours().
 
 pages   Opens each package in headless Chrome, takes the markup the site's own script
         renders, and writes it into a real page, package-<id>.html, with that package's
@@ -116,6 +121,87 @@ BUNDLES = [
 ]
 
 
+# ---------------------------------------------------------------- package data
+# IC.tours in data.js is one JSON array (written by ~/ClaudeWork/qa/uos/inject.py) with every package in full.
+# The pages only need a card index up front: id, name, country, dates, price, places, posters... The fields
+# below are only read by a package's own page, the chat (on request) and the quotation, so they leave the bundle.
+HEAVY = ("subtitle", "gallery", "overview", "travelDatesNote", "itinerary", "inclusions", "exclusions", "hotelsLabel", "hotels", "optional", "notes")
+DATE_KEYS = ("d", "y", "add", "cur")
+PKG_DIR = "assets/data/pkg"
+
+
+def tours_span(s):
+    i = s.index("  IC.tours = [") + len("  IC.tours = ")
+    return i, s.index("\n  ];\n", i) + 4
+
+
+def load_tours():
+    s = read("assets/js/data.js"); i, j = tours_span(s)
+    return json.loads(s[i:j])
+
+
+def inc_rules():
+    # the inclusion tags (Airfare, Hotel, Meals...) are defined once, in main.js (INC_TAGS); the card index carries
+    # each package's tags as bits in that order (incMask), so cards can show them without the inclusion list
+    block = re.search(r"const INC_TAGS = \[(.*?)\n  \];", read("assets/js/main.js"), re.S).group(1)
+    return [re.compile(rx, re.I) for rx in re.findall(r"\{ re: /(.+?)/i, label: '", block)]
+
+
+def pkg_tag(pid):
+    return '<script type="application/json" id="pkgData">' + read(f"{PKG_DIR}/{pid}.json").replace("</", "<\\/") + "</script>"
+
+
+def split_tours():
+    """Write the per-package files and return data.js with IC.tours reduced to the card index."""
+    s = read("assets/js/data.js"); i, j = tours_span(s)
+    T = json.loads(s[i:j])
+    rules = inc_rules()
+    os.makedirs(PKG_DIR, exist_ok=True)
+    keys, rows, more, n = [], [], {}, 0
+    for t in T:
+        heavy = {k: t[k] for k in HEAVY if k in t}
+        dates = t.get("travelDates")
+        if dates and any(set(d) - set(DATE_KEYS) for d in dates): heavy["travelDates"] = dates   # anything beyond the dates themselves
+        n += write(f"{PKG_DIR}/{t['id']}.json", json.dumps(heavy, ensure_ascii=False, separators=(",", ":")))
+        inc = t.get("inclusions") or []
+        hay = " · ".join(inc)
+        light = {k: v for k, v in t.items() if k not in HEAVY}
+        if dates is not None:   # [d, y, add, cur], trailing blanks dropped
+            light["travelDates"] = [[d.get(k) or (0 if k in ("y", "add") else "") for k in DATE_KEYS] for d in dates]
+            for d in light["travelDates"]:
+                while len(d) > 1 and not d[-1]: d.pop()
+        light["incMask"] = 0 if re.search(r"provided on request|coming soon", hay, re.I) else sum(1 << b for b, rx in enumerate(rules) if rx.search(hay))
+        for k in light:
+            if k not in keys: keys.append(k)
+        rows.append(light)
+        more[t["id"]] = {"it": [[d.get("day", ""), d.get("title", "")] for d in t.get("itinerary") or []], "inc": inc}
+    for f in glob.glob(f"{PKG_DIR}/*.json"):
+        if os.path.basename(f)[:-5] not in more: os.remove(f); print("  removed", f)
+    write("assets/data/tours-more.json", json.dumps(more, ensure_ascii=False, separators=(",", ":")))
+    # packed: one row of values per package under one list of keys; places, which many packages share, by number
+    names = list(dict.fromkeys(p for r in rows for p in r.get("places") or []))
+    at = {p: n for n, p in enumerate(names)}
+    for r in rows:
+        if r.get("places") is not None: r["places"] = [at[p] for p in r["places"]]
+    packed = json.dumps([[r.get(k) for k in keys] for r in rows], ensure_ascii=False, separators=(",", ":"))
+    unpack = ("((K, P, R) => R.map(r => { const t = {}; K.forEach((k, i) => { if (r[i] !== null) t[k] = r[i]; });"
+              " if (t.places) t.places = t.places.map(n => P[n]);"
+              " if (t.travelDates) t.travelDates = t.travelDates.map(d => { const o = { d: d[0] }; if (d[1]) o.y = d[1]; if (d[2]) o.add = d[2]; if (d[3]) o.cur = d[3]; return o; });"
+              " return t; }))(" + json.dumps(keys) + ", " + json.dumps(names, ensure_ascii=False, separators=(",", ":")) + ", " + packed + ")")
+    # pre-built package pages carry their own details, so they render in full without a request
+    m = 0
+    for t in T:
+        f = f"package-{t['id']}.html"
+        if not os.path.exists(f): continue
+        page = read(f)
+        tag = pkg_tag(t["id"])
+        page2, k = re.subn(r'<script type="application/json" id="pkgData">.*?</script>', lambda _: tag, page, count=1, flags=re.S)
+        if not k: page2 = page.replace("</head>", f"  {tag}\n</head>", 1)
+        m += write(f, page2)
+    print(f"  package data: {len(T)} packages, {n} detail file(s) and {m} page(s) updated")
+    return s[:i] + unpack + s[j:]
+
+
 def build_assets():
     inject_partials()
     import seo; seo.legacy_redirects(); seo.faq_ld(); seo.robots(); seo.icons()
@@ -123,8 +209,9 @@ def build_assets():
     sys.path.insert(0, os.path.join(ROOT, 'tools'))
     from jsmin_safe import minify as jsmin
     stamps = {}
+    tours_js = split_tours()
     for out, srcs in BUNDLES:
-        parts = [read(s) for s in srcs]
+        parts = [tours_js if s == "assets/js/data.js" else read(s) for s in srcs]
         body = "\n".join(rcssmin.cssmin(p) for p in parts) if out.endswith(".css") else "\n;".join(jsmin(p) for p in parts)
         text = f"/* {os.path.basename(out)}: built by tools/build.py from {', '.join(os.path.basename(s) for s in srcs)}. Edit those, not this file. */\n{body}\n"
         write(out, text)
@@ -271,10 +358,12 @@ def build_pages():
             pages.append(got)
         full = json.loads(b.eval("""JSON.stringify(IC.tours.map(t => ({ id: t.id, name: t.name, country: t.country, region: t.region, regionLabel: (IC.regions[t.region] || {}).label || t.region,
           duration: t.duration, days: t.days, departure: t.departure, price: t.price, status: t.status, summary: t.summary, ends: t.ends,
-          inclusions: t.inclusions || [], exclusions: t.exclusions || [], year: t.year || null,
+          year: t.year || null,
           dates: (t.travelDates || []).map(d => ({ d: d.d, y: d.y || null, add: d.add || 0, cur: d.cur || '' })) })))"""))
     finally:
         b.close(); srv.shutdown()
+    F = {t["id"]: t for t in load_tours()}   # the page script only has the card index; the lists come from data.js
+    for t in full: t["inclusions"] = F[t["id"]].get("inclusions") or []; t["exclusions"] = F[t["id"]].get("exclusions") or []
 
     # tours.html
     s = read("tours.html")
@@ -313,6 +402,7 @@ def build_pages():
             {"@type": "ListItem", "position": 2, "name": "Tours", "item": SITE + "tours"},
             {"@type": "ListItem", "position": 3, "name": t["name"], "item": url}]}, ensure_ascii=False).replace("</", "<\\/")
         s = s.replace("</head>", f'  <script type="application/ld+json" data-ld="pkg">{ld}</script>\n  <script type="application/ld+json">{crumbs}</script>\n</head>', 1)
+        s = s.replace("</head>", f"  {pkg_tag(t['id'])}\n</head>", 1)   # this package's details, for the page script (see split_tours)
         s = s.replace("<body data-page=\"tours\" data-hero-top", f"<body data-page=\"tours\" data-hero-top data-pkg=\"{t['id']}\"", 1)
         body = t["pkg"].replace('<div class="tour-grid" id="relatedGrid"></div>', f'<div class="tour-grid" id="relatedGrid">{t["related"]}</div>')
         s, n = re.subn(r'<div id="pkgPage" aria-live="polite">.*?\n    </div>\n  </main>', lambda m: f'<div id="pkgPage">{body}\n    </div>\n  </main>', s, count=1, flags=re.S)

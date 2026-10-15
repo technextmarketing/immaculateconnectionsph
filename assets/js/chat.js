@@ -410,6 +410,11 @@
       }
       if (one) {
         const t = one;
+        // inclusions, exclusions and the day-by-day come with the package's details file (main.js, IC.loadTour); ask() fetches it and asks again
+        if (['incl', 'excl', 'itin'].indexOf(intent) >= 0 && !t.full && IC.loadTour) {
+          if (!t.fullFailed) return Object.assign(out(p(`One moment, opening <b>${esc(t.name)}</b>…`), pkgChips(t), [t.id]), { need: t });
+          return out(p(`The full details of <b>${esc(t.name)}</b> are on <a href="${esc(pkgUrl(t))}">its package page</a>.`) + actions(t), pkgChips(t), [t.id]);
+        }
         if (intent === 'incl') {
           if (notPublished(t)) return out(p(`The <b>${esc(t.name)}</b> package is still being finalised, so its inclusions aren’t published yet.`) + actions(t), pkgChips(t), [t.id]);
           return out(p(`<b>Included</b> in ${esc(t.name)}`) + list(t.inclusions || []) + actions(t), pkgChips(t).filter(c => c.intent !== 'incl'), [t.id]);
@@ -541,6 +546,8 @@
     state.last = r.last;
     return r;
   };
+  // a package's details file, once; if it cannot be fetched the answer points to the package page instead
+  const fetchFull = t => IC.loadTour(t).catch(() => { t.fullFailed = true; });
   const typing = () => {
     const el = document.createElement('div');
     el.className = 'icc-msg is-bot icc-typing';
@@ -584,7 +591,8 @@
       state.hist.push({ e: ep });
       setChips(MAIN_CHIPS);
     } else {
-      const r = run(text, force);
+      let r = run(text, force);
+      if (r.need) { await fetchFull(r.need); r = run(text, force); }
       addMsg('bot', r.html);
       setChips(r.chips);
     }
@@ -592,8 +600,8 @@
     state.busy = false;
   }
 
-  const restore = () => {
-    const saved = store.get(KEY);
+  const restore = again => {
+    const saved = store.get(KEY), last0 = state.last, needs = [];
     log.innerHTML = '';
     addMsg('bot', greetReply());
     let chips = MAIN_CHIPS;
@@ -603,6 +611,7 @@
         if (typeof h.u === 'string') {
           addMsg('me', h.u);
           const r = run(h.u, h.f && typeof h.f === 'object' ? { pkg: String(h.f.pkg || ''), intent: String(h.f.intent || '') } : null);
+          if (r.need) needs.push(r.need);
           // a remote answer, when one follows, replaces the local one
           const i = state.hist.indexOf(h), nx = state.hist[i + 1];
           if (!(nx && typeof nx.e === 'string')) { addMsg('bot', r.html); chips = r.chips; }
@@ -610,6 +619,8 @@
       });
     }
     setChips(chips);
+    // answers that needed a package's details are redrawn once those are in
+    if (needs.length && !again) Promise.all(needs.map(fetchFull)).then(() => { if (!state.busy) { state.last = last0; restore(true); } });
   };
 
   /* ---------- open / close ---------- */
