@@ -78,9 +78,7 @@ LEGACY = {
     "package-danang-6d4n": "tours",
     "package-danang-5d3n": "tours",
     "package-hanoi-sapa-halong-4d3n": "tours",
-    "package-charming-yunnan-8d7n": "tours",
     "package-japan-tokyo-fuji-5d4n": "tours",
-    "package-shanghai-mini-kyoto-5d4n": "tours",
     "package-bohol-breezes": "tours",
     "package-camotes-discover": "tours",
     "package-camotes-tudela": "tours",
@@ -151,11 +149,11 @@ def agency_ld(tours):
     if not m: print("  index.html: TravelAgency data not found"); return
     d = json.loads(m.group(1))
     d.update({"@id": SITE + "#agency", "alternateName": "Immaculate Connections",
-              "description": "Cebu City travel agency for groups and families: tour packages, flight and ferry tickets, hotels, vans, coasters and buses with driver, and seminars and events, booked by one team, with Vietnam tour packages that fly from Manila.",
+              "description": "Cebu City travel agency for groups and families: tour packages, flight and ferry tickets, hotels, vans, coasters and buses with driver, and seminars and events, booked by one team, with Vietnam tours from Manila and China tours from Cebu.",
               "contactPoint": [{"@type": "ContactPoint", "telephone": "+63 917 319 8540", "contactType": "customer service", "areaServed": "PH"},
                                {"@type": "ContactPoint", "telephone": "+63 32 238 3343", "contactType": "reservations", "areaServed": "PH"}],
               "areaServed": [{"@type": "City", "name": "Cebu City"}, {"@type": "AdministrativeArea", "name": "Cebu"}, {"@type": "Country", "name": "Philippines"}],
-              "knowsAbout": ["Tour packages", "Vietnam tours", "Da Nang tours", "Hanoi tours", "Sapa tours", "Ha Long Bay tours", "Custom Cebu and Bohol trips", "Flight ticketing", "Ferry tickets", "Hotel booking", "Van and bus rental with driver", "MICE", "Seminars and events"],
+              "knowsAbout": ["Tour packages", "Vietnam tours", "Da Nang tours", "Hanoi tours", "Sapa tours", "Ha Long Bay tours", "China tours", "Shanghai tours", "Beijing tours", "Zhangjiajie tours", "Custom Cebu and Bohol trips", "Flight ticketing", "Ferry tickets", "Hotel booking", "Van and bus rental with driver", "MICE", "Seminars and events"],
               "hasOfferCatalog": {"@type": "OfferCatalog", "name": "Tour packages", "itemListElement": [
                   dict({"@type": "Offer", "itemOffered": {"@type": "TouristTrip", "name": t["name"], "url": SITE + "package-" + t["id"]}},
                        **({"price": t["price"]["from"], "priceCurrency": (t["price"].get("currency") or "PHP").upper()} if t.get("price") else {})) for t in live(tours)]}})
@@ -179,7 +177,7 @@ def tours_faq(tours):
     deps = sorted({t["departure"] for t in intl if t.get("departure")})
     qa = [
         ("What tour packages does Immaculate Connections offer?",
-         f"We currently offer {len(L)} Vietnam packages from Manila: {sum('Da Nang' in t['name'] for t in L)} Da Nang tours and {sum(any(w in t['name'] for w in ('Hanoi', 'Sapa', 'Ha Long')) for t in L)} Hanoi, Sapa and Ha Long Bay tours. Every package page lists the itinerary, inclusions, exclusions and travel dates, and we also build custom itineraries for families, companies and groups."),
+         f"We currently offer {len(L)} packages: {sum(t.get('country') == 'Vietnam' for t in L)} Vietnam tours from Manila (Da Nang, Hanoi, Sapa and Ha Long Bay) and {sum(t.get('country') == 'China' for t in L)} China tours from Cebu (Shanghai, Beijing, Zhangjiajie, Chongqing, Yunnan and Harbin). Every package page lists the itinerary, inclusions, exclusions and travel dates, and we also build custom itineraries for families, companies and groups."),
         ("How much do the tour packages cost?",
          (f"Rates start at {money(min((t for t in priced), key=lambda t: t['price']['from'])['price'])} and differ by departure date; each package page shows the base rate and the amount added on dearer dates. " if priced else "")
          + "Custom trips are quoted on request, and every quotation is free."),
@@ -208,7 +206,7 @@ def tours_faq(tours):
     <!-- /build:faq -->'''
     s = read("tours.html")
     for key, n in (("packages", len(L)), ("packages-local", len(local)), ("packages-abroad", len(intl)),
-                   ("packages-danang", sum("Da Nang" in t["name"] for t in L)), ("packages-hanoi", sum(any(w in t["name"] for w in ("Hanoi", "Sapa", "Ha Long")) for t in L))):
+                   ("packages-danang", sum("Da Nang" in t["name"] for t in L)), ("packages-vietnam", sum(t.get("country") == "Vietnam" for t in L)), ("packages-china", sum(t.get("country") == "China" for t in L)), ("packages-hanoi", sum(any(w in t["name"] for w in ("Hanoi", "Sapa", "Ha Long")) for t in L))):
         s = re.sub(rf'(<strong data-stat="{key}">)\d+(</strong>)', lambda m: f"{m.group(1)}{n}{m.group(2)}", s)
     if "<!-- build:faq" in s:
         s = re.sub(r"<!-- build:faq.*?<!-- /build:faq -->", lambda m: sec, s, count=1, flags=re.S)
@@ -224,7 +222,7 @@ def ai_files(tours):
              ("car-rental", "Vans, coasters, buses and cars with driver in Cebu"), ("hotel-booking", "Hotel and resort bookings"), ("ticketing", "Flight and ferry tickets, group bookings"),
              ("mice", "Seminars, conventions and corporate events"), ("gallery", "Photos and videos from our group tours"), ("about", "About the agency and team"), ("contact", "Free quotation and inquiry form")]
     llms = [f"# {NAME}", "", "> Travel agency in Cebu City, Philippines, for groups and families. Local and international tour packages, flight and ferry ticketing, hotel bookings, vans, coasters and buses with driver, and seminars, events and MICE, booked by one team. Quotations are free.", "",
-            "Departures: all current tour packages fly from Manila (NAIA) to Da Nang or Hanoi. Custom trips around Cebu, Bohol and Camotes are arranged on request.", "",
+            "Departures: the Vietnam packages fly from Manila (NAIA) to Da Nang or Hanoi; the China packages fly from Cebu (Mactan-Cebu International). Custom trips around Cebu, Bohol and Camotes are arranged on request.", "",
             "Contact: +63 917 319 8540 (mobile), (032) 238 3343 (landline), immaculateconnectionsph@gmail.com, Facebook: https://www.facebook.com/ImmaculateConnections.ph, Messenger: https://m.me/ImmaculateConnections.ph",
             "Office: Unit 4E, 4th Floor, JL Millennium Building, Don Jose Avila Street, Cebu City, Cebu, Philippines 6000", "", "## Pages", ""]
     LABEL = {"": "Home", "mice": "MICE and events"}

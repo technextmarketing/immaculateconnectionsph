@@ -129,6 +129,16 @@ Every page opens on a photo from `assets/img/hero/`. Unsplash photos are free fo
 - `dest-golden-bridge-walk-*` and `media/vn-golden-bridge-walk*`: photo by Andreea Popa on Unsplash (https://unsplash.com/photos/people-walking-on-bridge-during-daytime-PknaOrb1lVo), Unsplash License
 - `dest-marble-mountains-*` and `media/vn-marble-mountains*`: photo by Christian on Unsplash (https://unsplash.com/photos/a-building-with-a-statue-on-top-of-it-5XIW-AMQLyA), Unsplash License
 - `media/vn-danang*`, `media/vn-halong*`, `media/vn-hoian-lanterns*`: card copies of the `dest-danang`, `dest-halong` and `dest-hoian-lanterns` photos above
+- `dest-great-wall-*` and `media/cn-great-wall*`: photo by Hanson Lu on Unsplash (https://unsplash.com/photos/great-wall-of-china-china-_8EFj6ISA08), Unsplash License
+- `dest-zhangjiajie-*` and `media/cn-zhangjiajie*`: photo by Robynne O on Unsplash (https://unsplash.com/photos/sandstone-pillars-in-zhangjiajie-national-park-CRvaC071ZXo), Unsplash License
+- `dest-harbin-ice-*` and `media/cn-harbin-ice*`: photo by lin zhaohai on Unsplash (https://unsplash.com/photos/a-group-of-people-standing-around-an-ice-sculpture-HjnrjKUUhlY), Unsplash License
+- `dest-chongqing-night-*` and `media/cn-chongqing-night*`: photo by lastmayday on Unsplash (https://unsplash.com/photos/nighttime-skyline-with-a-bright-red-bridge-Du5FXCrcW9c), Unsplash License
+- `dest-west-lake-*` and `media/cn-west-lake*`: photo by A F on Unsplash (https://unsplash.com/photos/people-on-brown-wooden-dock-during-daytime-r6WjJfTuwQ8), Unsplash License
+- `dest-cruise-ship-*` and `media/cn-cruise-ship*`: photo by Georgy Trofimov on Unsplash (https://unsplash.com/photos/white-cruise-ship-on-sea-during-daytime-xEJoSsDCnR8), Unsplash License
+- `dest-shanghai-disney-*` and `media/cn-shanghai-disney*`: photo by Capricorn song on Unsplash (https://unsplash.com/photos/brown-and-blue-concrete-castle-under-blue-sky-during-daytime-BLYq8Qk8Q98), Unsplash License
+- `dest-forbidden-city-*` and `media/cn-forbidden-city*`: photo by Rafik Wahba on Unsplash (https://unsplash.com/photos/guardian-lion-at-hall-of-supreme-harmony-LkyYLdL3WxE), Unsplash License
+- `dest-wuzhen-*` and `media/cn-wuzhen*`: photo by Calvin Wong on Unsplash (https://unsplash.com/photos/a-bridge-over-a-body-of-water-at-night-0UkWI-xxV9Y), Unsplash License
+- `media/cn-shanghai*`, `media/cn-yunnan*`: card copies of the `dest-shanghai` and `dest-yunnan` photos above
 - `svc-road-palms-*`: photo by Mae De los Santos on Unsplash (https://unsplash.com/photos/an-empty-road-surrounded-by-palm-trees-under-a-cloudy-blue-sky-JCShU4j-jr8), Unsplash License
 - `svc-stay-anda-*`: photo by Bryan Agua on Unsplash (https://unsplash.com/photos/photo-of-four-loungers-under-gazebo-facing-swimming-pool--HTTS0vxkVU), Unsplash License
 - `svc-stay-panglao-*`: photo by Brian Kairuz on Unsplash (https://unsplash.com/photos/blue-calm-sea-under-blue-and-white-skies-hiqElPJaLbM), Unsplash License

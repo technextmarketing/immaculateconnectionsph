@@ -602,8 +602,9 @@
   }
 
   // Ticketing: the flights already inside our packages, as a departures board
-  // arrival airport by package: Da Nang (DAD) or Hanoi (HAN), the two Vietnam gateways the packages fly to
-  const LEG = new Proxy({}, { get: (_, id) => (/danang/.test(id) ? 'DAD' : /hanoi|sapa|halong/.test(id) ? 'HAN' : undefined) });
+  // arrival airport by package: Da Nang or Hanoi for Vietnam; Shanghai, Beijing, Kunming, Harbin, Chongqing or Changsha for China
+  const LEG = new Proxy({}, { get: (_, id) => (/danang/.test(id) ? 'DAD' : /hanoi|sapa|halong/.test(id) ? 'HAN' : /beijing/.test(id) ? 'PEK' : /yunnan/.test(id) ? 'KMG'
+    : /harbin/.test(id) ? 'HRB' : /chongqing/.test(id) ? 'CKG' : /furong/.test(id) ? 'CSX' : /shanghai|kyoto|cruise/.test(id) ? 'PVG' : undefined) });
   function initBoard() {
     const board = $('[data-board]');
     if (!board || !IC.tours) return;
