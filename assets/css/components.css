@@ -1759,3 +1759,21 @@ img[src*="ab1a9837b67f"] { object-fit: contain; }
   .sh-fl { padding: 14px 16px; gap: 14px; }
   .sh-mrow { grid-template-columns: 52px minmax(0, 1fr); }
 }
+
+/* ===== Posters are always shown whole (owner, 16 Oct 2026): every frame that holds an itinerary poster
+   fits the whole image - nothing is cropped - on cards, offers, the package gallery, thumbnails and the poster row ===== */
+.tour-media.is-poster, .offer-media.is-poster { aspect-ratio: 4 / 5; }
+.tour-media.is-poster img { padding: 14px 0 58px; }
+.offer-media.is-poster img { padding: 14px 0; }
+.tour-card:hover .tour-media.is-poster img, .offer-card:hover .offer-media.is-poster img { transform: none; }
+.pkg-gallery-main.is-poster { aspect-ratio: 1 / 1; max-height: 86vh; width: 100%; }
+.pkg-gallery-main.is-poster img { padding: 16px 0; }
+.pkg-thumbs button { background: #eef2f7; }
+.pkg-thumbs button img { object-fit: contain; object-position: center; }
+.poster-row { align-items: start; }
+.poster-row figure { aspect-ratio: auto; background: #eef2f7; }
+.poster-row img { height: auto; object-fit: contain; display: block; }
+.poster-row figure:hover img { transform: none; }
+@media (max-width: 760px) {
+  .pkg-gallery-main.is-poster { aspect-ratio: 3 / 4; max-height: none; }
+}
