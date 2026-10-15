@@ -2819,7 +2819,7 @@
     // package counts leave out departed packages, like the Tours list and its FAQ
     const live = (IC.tours || []).filter(t => effStatus(t) !== 'past');
     const n = { packages: live.length, 'packages-local': live.filter(t => t.region !== 'intl').length, 'packages-abroad': live.filter(t => t.region === 'intl').length,
-      'packages-danang': live.filter(t => /Da Nang/.test(t.name)).length, 'packages-vietnam': live.filter(t => t.country === 'Vietnam').length, 'packages-china': live.filter(t => t.country === 'China').length, 'packages-hanoi': live.filter(t => /Hanoi|Sapa|Ha Long/.test(t.name)).length };
+      'packages-danang': live.filter(t => /Da Nang/.test(t.name)).length, 'packages-vietnam': live.filter(t => t.country === 'Vietnam').length, 'packages-china': live.filter(t => t.country === 'China').length, 'packages-japan': live.filter(t => t.country === 'Japan').length, 'packages-hanoi': live.filter(t => /Hanoi|Sapa|Ha Long/.test(t.name)).length };
     Object.keys(n).forEach(k => $$(`[data-stat="${k}"]`).forEach(el => { el.textContent = String(n[k]); }));
   }
 

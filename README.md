@@ -139,6 +139,39 @@ Every page opens on a photo from `assets/img/hero/`. Unsplash photos are free fo
 - `dest-forbidden-city-*` and `media/cn-forbidden-city*`: photo by Rafik Wahba on Unsplash (https://unsplash.com/photos/guardian-lion-at-hall-of-supreme-harmony-LkyYLdL3WxE), Unsplash License
 - `dest-wuzhen-*` and `media/cn-wuzhen*`: photo by Calvin Wong on Unsplash (https://unsplash.com/photos/a-bridge-over-a-body-of-water-at-night-0UkWI-xxV9Y), Unsplash License
 - `media/cn-shanghai*`, `media/cn-yunnan*`: card copies of the `dest-shanghai` and `dest-yunnan` photos above
+- `dest-panda-*` and `media/cn-panda*`: photo by Pascal Müller on Unsplash (https://unsplash.com/photos/two-white-and-black-pandas-lying-on-floor-during-daytime-4EajIuUxgAQ), Unsplash License
+- `dest-jiuzhaigou-*` and `media/cn-jiuzhaigou*`: photo by Say Wah Lee on Unsplash (https://unsplash.com/photos/a-river-surrounded-by-a-forest-filled-with-lots-of-trees-DkJd8Ve-0Ts), Unsplash License
+- `dest-terracotta-*` and `media/cn-terracotta*`: photo by Aaron Greenwood on Unsplash (https://unsplash.com/photos/terracotta-soldiers-xZDWEEMS3sA), Unsplash License
+- `dest-guilin-*` and `media/cn-guilin*`: photo by Conny Schneider on Unsplash (https://unsplash.com/photos/a-group-of-people-riding-on-top-of-a-boat-NOoAtNhIh-4), Unsplash License
+- `dest-potala-*` and `media/cn-potala*`: photo by Mauricio Manzato on Unsplash (https://unsplash.com/photos/the-potala-palace-towers-above-a-mountain-T1EmuU0819Y), Unsplash License
+- `dest-xinjiang-*` and `media/cn-xinjiang*`: photo by Wang John on Unsplash (https://unsplash.com/photos/green-grass-field-near-mountain-under-blue-sky-during-daytime-L9SEgCJ1TMc), Unsplash License
+- `dest-inner-mongolia-*` and `media/cn-inner-mongolia*`: photo by Charles MingZ on Unsplash (https://unsplash.com/photos/a-yurt-in-a-field-with-mountains-in-the-background-NuAWwfD_j24), Unsplash License
+- `dest-qingdao-*` and `media/cn-qingdao*`: photo by R HAI on Unsplash (https://unsplash.com/photos/an-aerial-view-of-a-city-and-a-body-of-water-BZrJ5tcuJE0), Unsplash License
+- `dest-sanya-*` and `media/cn-sanya*`: photo by Weichao Deng on Unsplash (https://unsplash.com/photos/ocean-waves-crashing-on-shore-during-sunset-HCoylGhhqQg), Unsplash License
+- `dest-yangtze-*` and `media/cn-yangtze*`: photo by Dong Zhang on Unsplash (https://unsplash.com/photos/body-of-water-in-between-mountains-under-white-sky-at-daytime-vfaYObaMRew), Unsplash License
+- `dest-fenghuang-*` and `media/cn-fenghuang*`: photo by Shihan Yin on Unsplash (https://unsplash.com/photos/a-river-running-through-a-city-next-to-tall-buildings-SdmYyjzweHg), Unsplash License
+- `dest-guizhou-*` and `media/cn-guizhou*`: photo by Howen on Unsplash (https://unsplash.com/photos/an-aerial-view-of-a-village-in-the-mountains-51Lbr9j6T7c), Unsplash License
+- `dest-longmen-*` and `media/cn-longmen*`: photo by Eric Zhang on Unsplash (https://unsplash.com/photos/a-large-statue-of-a-buddha-in-a-cave-8YTGBuffXuc), Unsplash License
+- `dest-pingyao-*` and `media/cn-pingyao*`: photo by Peter Burdon on Unsplash (https://unsplash.com/photos/an-aerial-view-of-a-city-with-many-roofs-9xuTzaAw5i4), Unsplash License
+- `dest-wuyishan-*` and `media/cn-wuyishan*`: photo by Yihan Wang on Unsplash (https://unsplash.com/photos/a-green-field-with-mountains-in-the-background-obJrTa2446I), Unsplash License
+- `dest-wuhan-*` and `media/cn-wuhan*`: photo by Bo Zhang on Unsplash (https://unsplash.com/photos/a-tall-building-with-a-yellow-roof-surrounded-by-trees-C2z6-TWsooU), Unsplash License
+- `dest-jeju-*` and `media/cn-jeju*`: photo by Lightscape on Unsplash (https://unsplash.com/photos/cliff-near-body-of-water-during-daytime-JjnCtpzFXo4), Unsplash License
+- `dest-qinghai-*` and `media/cn-qinghai*`: photo by ran liwen on Unsplash (https://unsplash.com/photos/a-large-body-of-water-sitting-next-to-a-lush-green-field-HyGqaGRESGw), Unsplash License
+- `dest-xiamen-*` and `media/cn-xiamen*`: photo by 拍照铺 pjoup on Unsplash (https://unsplash.com/photos/an-aerial-view-of-a-city-and-a-body-of-water-30LZG4gvIE0), Unsplash License
+- `dest-lijiang-*` and `media/cn-lijiang*`: photo by Noppon Meenuch on Unsplash (https://unsplash.com/photos/a-scenic-view-of-a-mountain-range-with-a-lake-in-the-foreground-buk8ZfFM5IA), Unsplash License
+- `dest-shanghai-night-*` and `media/cn-shanghai-night*`: photo by Himmel S on Unsplash (https://unsplash.com/photos/a-view-of-a-city-at-night-from-across-the-water-QfMMmk7arb4), Unsplash License
+- `dest-universal-beijing-*` and `media/cn-universal-beijing*`: photo by fan yang on Unsplash (https://unsplash.com/photos/a-street-sign-in-front-of-a-castle-MKSgu-4WZiA), Unsplash License
+- `dest-xishuangbanna-*` and `media/cn-xishuangbanna*`: photo by kev1n Z on Unsplash (https://unsplash.com/photos/lighted-building-near-body-of-water-during-night-time-x7zeYK0OjQY), Unsplash License
+- `dest-shenzhen-*` and `media/cn-shenzhen*`: photo by Robert Bye on Unsplash (https://unsplash.com/photos/landscape-photo-of-a-city-skyline-xQdUIo_MSQ4), Unsplash License
+- `dest-misty-mountains-*` and `media/cn-misty-mountains*`: photo by Sherry Xu on Unsplash (https://unsplash.com/photos/a-view-of-a-mountain-range-covered-in-fog-YNximhgXa9k), Unsplash License
+- `dest-tokyo-*` and `media/jp-tokyo*`: photo by Jezael Melgoza on Unsplash (https://unsplash.com/photos/cars-in-neon-shibuya-intersection-alY6_OpdwRQ), Unsplash License
+- `dest-osaka-castle-*` and `media/jp-osaka-castle*`: photo by Jeremy Santana on Unsplash (https://unsplash.com/photos/white-and-black-concrete-building-near-green-trees-during-daytime-7_puF4jioPo), Unsplash License
+- `dest-kyoto-*` and `media/jp-kyoto*`: photo by Kazuo ota on Unsplash (https://unsplash.com/photos/black-metal-fence-near-brown-concrete-building-during-daytime-UgojrqCaNu0), Unsplash License
+- `dest-hokkaido-*` and `media/jp-hokkaido*`: photo by Graeme Cross on Unsplash (https://unsplash.com/photos/land-covered-in-snow-AGpwHgBO-Zg), Unsplash License
+- `dest-shirakawago-*` and `media/jp-shirakawago*`: photo by Hyungman Jeon on Unsplash (https://unsplash.com/photos/a-snow-covered-village-in-the-middle-of-a-forest-8nM5OvAtP4k), Unsplash License
+- `dest-okinawa-*` and `media/jp-okinawa*`: photo by Shino Nakamura on Unsplash (https://unsplash.com/photos/a-beach-with-people-walking-on-it-UHgogyYReFM), Unsplash License
+- `dest-hakone-*` and `media/jp-hakone*`: photo by Snowscat on Unsplash (https://unsplash.com/photos/a-large-body-of-water-with-a-mountain-in-the-background-FTBZMXZtdT8), Unsplash License
+- `media/jp-fuji*`: card copies of the `dest-fuji` photo above
 - `svc-road-palms-*`: photo by Mae De los Santos on Unsplash (https://unsplash.com/photos/an-empty-road-surrounded-by-palm-trees-under-a-cloudy-blue-sky-JCShU4j-jr8), Unsplash License
 - `svc-stay-anda-*`: photo by Bryan Agua on Unsplash (https://unsplash.com/photos/photo-of-four-loungers-under-gazebo-facing-swimming-pool--HTTS0vxkVU), Unsplash License
 - `svc-stay-panglao-*`: photo by Brian Kairuz on Unsplash (https://unsplash.com/photos/blue-calm-sea-under-blue-and-white-skies-hiqElPJaLbM), Unsplash License

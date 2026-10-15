@@ -115,7 +115,119 @@ window.IC = window.IC || {};
     'avatar-furong-no-shopping': 'zhangjiajie',
     'avatar-skiing-chongqing-8d7n': 'chongqing-night',
     'charming-yunnan-8d7n': 'yunnan',
-    'harbin-7d6n': 'harbin-ice'
+    'harbin-7d6n': 'harbin-ice',
+    'adora-magic-city-cruise-5d4n-shanghai': 'cruise-ship',
+    'avatar-beijing-8d7n': 'zhangjiajie',
+    'avatar-furong-xiamen-7d6n': 'xiamen',
+    'avatar-furong-6d5n': 'zhangjiajie',
+    'avatar-furong-7d6n': 'zhangjiajie',
+    'avatar-skiing-6d5n': 'zhangjiajie',
+    'avatar-skiing-7d6n': 'zhangjiajie',
+    'avatar-furong-6d5n-china': 'zhangjiajie',
+    'beijing-terra-cotta-warriors-6d5n': 'terracotta',
+    'beijing-5d4n': 'great-wall',
+    'beijing-6d5n': 'forbidden-city',
+    'beijing-skiing-6d5n': 'great-wall',
+    'beijing-terra-cotta-warriors-6d5n-2': 'terracotta',
+    'beijing-shanghai-6d5n': 'forbidden-city',
+    'beijing-skiing-universal-studios-5d4n': 'universal-beijing',
+    'beijing-w-town-5d4n': 'great-wall',
+    'beijing-inner-mongolia-7d6n': 'inner-mongolia',
+    'beijing-shanghai-pilgrimage-7d6n': 'forbidden-city',
+    'canton-fair-shenzhen-4d3n': 'shenzhen',
+    'charming-yunnan-8d7n-no-shopping': 'yunnan',
+    'charming-yunnan-9d8n-no-shopping': 'yunnan',
+    'charter-flight-avatar-changsha-4d3n': 'zhangjiajie',
+    'charter-flight-avatar-furong-town-5d4n': 'zhangjiajie',
+    'avatar-furong-yangtze-river-5d4n': 'yangtze',
+    'avatar-furong-yangtze-river-5d4n-no-shopping': 'yangtze',
+    'charter-flight-avatar-skiing-5d4n': 'zhangjiajie',
+    'charter-flight-avatar-yangtze-river-4d3n': 'yangtze',
+    'avatar-yangtze-river-4d3n-no-shopping': 'yangtze',
+    'chengdu-jiuzhaigou-5d4n-no-shopping': 'jiuzhaigou',
+    'chengdu-skiing-5d4n': 'panda',
+    'chengdu-jiuzhaigou-5d4n': 'jiuzhaigou',
+    'chongqing-yangtze-river-vista-aurora-cruise': 'yangtze',
+    'chongqing-avatar-fenghuang-7d6n': 'fenghuang',
+    'chongqing-avatar-furong-7d6n-skiing': 'zhangjiajie',
+    'chongqing-chengdu-5d4n-ckg-in-ckg-out': 'panda',
+    'chongqing-chengdu-5d4n-5-star-hotel': 'panda',
+    'chongqing-chengdu-5d4n-tfu-in-tfu-out': 'panda',
+    'chongqing-chengdu-5d4n': 'panda',
+    'chongqing-chengdu-5d4n-skiing': 'panda',
+    'chongqing-chengdu-6d5n': 'panda',
+    'chongqing-leshan-5d4n': 'panda',
+    'chongqing-wulong-chengdu-6d5n': 'panda',
+    'chongqing-yangtze-river-vista-aurora-cruise-2': 'yangtze',
+    'tulou-chaozhou-shantou-xiamen-7d6n': 'xiamen',
+    'fuzhou-huangling-jiangxi-6d5n-no-shopping': 'misty-mountains',
+    'fuzhou-wuyishan-wangxian-valley-5d4n-mf': 'wuyishan',
+    'guilin-yangshuo-5d4n-no-shopping': 'guilin',
+    'hainan-haikou-sanya-6d5n': 'sanya',
+    'harbin-6d5n-no-shopping': 'harbin-ice',
+    'harbin-5d4n': 'harbin-ice',
+    'harbin-5d4n-no-shopping': 'harbin-ice',
+    'harbin-6d5n-no-shopping-2': 'harbin-ice',
+    'harbin-6d5n-no-shopping-2-2': 'harbin-ice',
+    'harbin-mohe-6d5n-no-shopping': 'harbin-ice',
+    'harbin-beijing-7d6n-no-shopping': 'harbin-ice',
+    'harbin-changchun-shenyang-7d6n-no-shopping': 'harbin-ice',
+    'harbin-changchun-xiamen-7d6n-no-shopping': 'xiamen',
+    'harbin-shenyang-jilin-7d6n-no-shopping': 'harbin-ice',
+    'hulunbuir-beijing-7d6n': 'inner-mongolia',
+    'inner-mongolia-6d5n-no-shopping': 'inner-mongolia',
+    'jinmen-taiwan-xiamen-4d3n-no-shopping': 'xiamen',
+    'kweichow-6d5n-no-shopping': 'guizhou',
+    'nanxun-hangzhou-shanghai-5d4n': 'wuzhen',
+    'northern-xinjiang-skiing-6d5n-no-shopping': 'xinjiang',
+    'promo-charter-flight-avatar-mini-venice-4d3n': 'zhangjiajie',
+    'qingdao-hongkong-5d4n-no-shopping': 'qingdao',
+    'qinghai-silkroad-china-8d7n-5star': 'qinghai',
+    'shaanxi-shanxi-7d6n-no-shopping': 'terracotta',
+    'shanghai-suzhou-mini-kyoto-6d4n': 'west-lake',
+    'shanghai-jeju-6d5n': 'jeju',
+    'shanghai-jeju-6d5n-winter': 'jeju',
+    'shanghai-4d3n': 'shanghai-night',
+    'shanghai-mini-kyoto-5d4n-2': 'shanghai',
+    'shanghai-mini-kyoto-5d4n-3': 'shanghai-night',
+    'shanghai-mini-kyoto-6d5n': 'shanghai',
+    'shanghai-anji-5d4n-skiing': 'shanghai-night',
+    'shanghai-anji-6d5n-skiing': 'shanghai',
+    'shanghai-anji-6d5n-skiing-2': 'shanghai-night',
+    'shanghai-hangzhou-ruyiqiao-6d5n': 'west-lake',
+    'shanghai-wuxi-maoshan-5d4n-no-shopping': 'shanghai',
+    'shanghai-wuzhen-5d4n': 'wuzhen',
+    'southern-xinjiang-10d9n-no-shopping': 'xinjiang',
+    'spring-festival-avatar-skiing-7d6n': 'zhangjiajie',
+    'spring-festival-shanghai-hangzhou-5d4n': 'west-lake',
+    'spring-festival-shanghai-mini-kyoto-6d5n': 'shanghai-night',
+    'tibet-nyingchi-lhasa-shigatse-9d8n': 'potala',
+    'vista-harmony-cruise-chongqing-yangtze': 'yangtze',
+    'wuhan-hubei-yangtze-river-6d5n-no-shopping': 'yangtze',
+    'wuhan-yangtze-river-yichang-6d5n-no-shopping': 'yangtze',
+    'xi-an-5d4n-no-shopping': 'terracotta',
+    'xiamen-hua-an-tulou-4d3n': 'xiamen',
+    'xinjiang-beijing-9d8n-no-shopping': 'xinjiang',
+    'yellow-river-shanxi-6d5n-no-shopping': 'pingyao',
+    'yinchuan-ningxia-7d6n-no-shopping': 'inner-mongolia',
+    'yunnan-kunming-dali-lijiang-8d7n': 'lijiang',
+    'yunnan-kunming-dali-lijiang-6d5n': 'lijiang',
+    'yunnan-xishuangbanna-laos-9d8n': 'xishuangbanna',
+    'yunnan-lijiang-shangri-la-6d5n-no-shopping': 'lijiang',
+    'zhengzhou-luoyang-henan-5d4n-no-shopping': 'longmen',
+    'adora-flora-cruise-6d5n-ishigaki': 'okinawa',
+    'adora-flora-cruise-7d6n-okinawa': 'okinawa',
+    'discover-osaka-kyoto-nara-5d4n-3-in-1': 'osaka-castle',
+    'hokkaido-icebreaker-6d5n-ana-no-shopping': 'hokkaido',
+    'nagoya-takayama-shirakawago-osaka-5d4n-winter': 'shirakawago',
+    'osaka-kyoto-nara-5d4n-3-in-1': 'kyoto',
+    'tokyo-mt-fuji-kamakura-5d4n': 'fuji',
+    'tokyo-5d4n-cebu': 'tokyo',
+    'discover-osaka-kyoto-nara-5d4n-3-in-1-cebu': 'osaka-castle',
+    'osaka-nara-kyoto-5d4n-cebu': 'kyoto',
+    'osaka-5d4n-cebu': 'osaka-castle',
+    'tokyo-5d4n-pal-cebu': 'tokyo',
+    'tokyo-hakone-cebu': 'hakone'
   };
 
   IC.media = {
@@ -233,7 +345,7 @@ window.IC = window.IC || {};
     'Mt. Fuji': 'Japan’s highest peak at 3,776 metres, viewed from the Fuji Five Lakes, Arakurayama Sengen Park and the 5th Station (weather permitting).'
   };
 
-  /* Vietnam packages from Manila and China packages from Cebu. Itineraries, inclusions, hotels and notes are transcribed from the operator’s
+  /* Vietnam, China and Japan packages from Manila and Cebu. Itineraries, inclusions, hotels and notes are transcribed from the operator’s
      itinerary PDFs; departure dates and rates come from its live availability list. Departures that are sold out or
      have fewer than 10 seats left are not listed. */
   IC.tours = [
@@ -4336,7 +4448,7 @@ window.IC = window.IC || {};
     },
     {
       "id": "shanghai-mini-kyoto-5d4n",
-      "name": "Shanghai – Wuxi Mini Kyoto – Wuzhen 5D4N Tour",
+      "name": "Shanghai – Wuxi Mini Kyoto – Wuzhen 5D4N Tour (Nov departures)",
       "subtitle": "Out Cebu · Cathay Pacific",
       "region": "intl",
       "country": "China",
@@ -7038,6 +7150,20142 @@ window.IC = window.IC || {};
         566,
         800
       ]
+    },
+    {
+      "id": "adora-magic-city-cruise-5d4n-shanghai",
+      "name": "Shanghai – Adora Magic City Cruise 5D4N Fly + Cruise Tour",
+      "subtitle": "Out Manila · Fly + cruise",
+      "region": "intl",
+      "country": "China",
+      "flag": "cn",
+      "duration": "5 days 4 nights",
+      "days": 5,
+      "status": "available",
+      "featured": false,
+      "departure": "Manila (NAIA)",
+      "price": {
+        "from": 1188,
+        "label": "From",
+        "unit": "per pax",
+        "currency": "USD"
+      },
+      "year": 2026,
+      "ends": "2026-12-28",
+      "image": "cn-cruise-ship.jpg",
+      "alt": "A cruise ship at sea",
+      "gallery": [
+        "cn-cruise-ship.jpg"
+      ],
+      "summary": "Fly Manila – Shanghai, see Nanjing Road and The Bund, then sail a 2-night cruise-to-nowhere on Adora Magic City before flying home.",
+      "overview": "Spend two nights in Shanghai and two nights aboard the Adora Magic City, a 136,000-ton ship with a world-first industrial aesthetic exhibition hall. Sightseeing covers Nanjing Road, The Bund, Xintiandi, Zhang Yuan and the Starbucks Reserve Roastery. Flights are with Philippine Airlines or China Southern Airlines.",
+      "travelDates": [
+        {
+          "d": "Dec 10–14"
+        },
+        {
+          "d": "Dec 17–21",
+          "add": 100,
+          "cur": "USD"
+        },
+        {
+          "d": "Dec 24–28",
+          "add": 200,
+          "cur": "USD"
+        }
+      ],
+      "travelDatesNote": "Departures from Manila, Dec 10–14 2026 to Dec 24–28 2026. The rate changes by date: an amount on a date is added to the base rate per pax. Seats are limited and confirmed at booking.",
+      "itinerary": [
+        {
+          "day": "Day 1",
+          "title": "Manila – Shanghai",
+          "items": [
+            "Fly Manila to Shanghai (PR336 12:20/15:50 or MU212 02:05/05:30).",
+            "Airport pick-up.",
+            "Visit Nanjing Road and The Bund; view the Oriental Pearl Tower from outside.",
+            "Check in to the Shanghai hotel. Meals: B/X/D."
+          ]
+        },
+        {
+          "day": "Day 2",
+          "title": "Shanghai – Embark on the cruise",
+          "items": [
+            "Hotel breakfast.",
+            "Visit Xintiandi, City God Temple Commercial Mall, Huaihai Road, Wukang Road and Tianan Qianshu.",
+            "Complete embarkation at Shanghai Wusongkou International Cruise Terminal (bring original passport and ferry ticket).",
+            "Vessel departs 20:00/23:00. Meals: B/L/D, on the cruise ship."
+          ]
+        },
+        {
+          "day": "Day 3",
+          "title": "Sea cruise",
+          "items": [
+            "A full day at sea: global and Chinese dining, live performances, leisure zones, art exhibitions and family entertainment on board.",
+            "Meals: B/L/D, on the cruise ship."
+          ]
+        },
+        {
+          "day": "Day 4",
+          "title": "Shanghai – Disembark",
+          "items": [
+            "Ship berths at 09:00; disembark in groups and take the group transfer bus.",
+            "Visit Zhang Yuan and Starbucks Reserve Roastery; view the LV Cruise Pop-up Building from outside.",
+            "Return to the Shanghai hotel. Meals: B/L/X."
+          ]
+        },
+        {
+          "day": "Day 5",
+          "title": "Shanghai – Manila",
+          "items": [
+            "Hotel breakfast, free time at leisure.",
+            "Private transfer to the airport for the flight home (PR337 16:55/20:50 or MU211 21:10/01:00). Meals: B/L/X."
+          ]
+        }
+      ],
+      "inclusions": [
+        "International airfare, airport taxes and terminal fees",
+        "Baggage: 23 kg check-in with 7 kg hand carry",
+        "2 nights hotel accommodation in Shanghai with daily breakfast",
+        "3 land meals",
+        "2 nights twin-share cabin on the cruise ship with daily breakfast",
+        "Meals at designated complimentary restaurants on board",
+        "Onboard entertainment: interactive parties, theatre performances and designated complimentary facilities"
+      ],
+      "exclusions": [
+        "Port taxes and fees (collect in Manila): USD 80 per person",
+        "Gratuities (pay on board): approx. HKD 140 per person per night",
+        "Single room supplement",
+        "Two-entry China group visa: USD 80 per person",
+        "Philippine travel tax",
+        "Travel insurance",
+        "Personal onboard expenses: Wi-Fi, phone calls, laundry, shopping, bar and cafe, spa, etc.",
+        "Shore excursions"
+      ],
+      "optional": [
+        "Shanghai Disneyland (own expense), recommended rate USD 130 per person"
+      ],
+      "hotelsLabel": "Hotels",
+      "hotels": [
+        "Day 1 and Day 4: Shanghai hotel (class not stated)",
+        "Day 2-3: Adora Magic City cruise ship (interior or balcony twin cabin)"
+      ],
+      "notes": [
+        "Cabin types: Interior twin or Balcony twin.",
+        "Ship: Adora Magic City, 136,000 tons, 2,125 cabins, 15 decks, 324 m long, up to 5,246 passengers.",
+        "Entry to China is needed on Day 1 and Day 5, so a two-entry group visa is required; if using an individual visa, it must be a multiple-entry visa.",
+        "Passport valid at least 6 months from the return date, plus a photocopy of the passport first page and a valid visa for re-entry into China.",
+        "Bring original passport and ferry ticket for boarding.",
+        "Port call and departure times are for reference only and may change with weather, tides or safety decisions by the cruise line."
+      ],
+      "places": [
+        "Nanjing Road",
+        "The Bund",
+        "Oriental Pearl Tower",
+        "Xintiandi",
+        "City God Temple",
+        "Huaihai Road",
+        "Wukang Road",
+        "Tianan Qianshu",
+        "Zhang Yuan",
+        "Starbucks Reserve Roastery",
+        "Adora Magic City cruise ship"
+      ],
+      "posters": [
+        "cn-poster-adora-magic-city-cruise-5d4n-shanghai-0.jpg"
+      ],
+      "posterSize": [
+        571,
+        800
+      ]
+    },
+    {
+      "id": "avatar-beijing-8d7n",
+      "name": "Avatar (Zhangjiajie) – Beijing 8D7N Tour",
+      "subtitle": "Out Manila · Air China",
+      "region": "intl",
+      "country": "China",
+      "flag": "cn",
+      "duration": "8 days 7 nights",
+      "days": 8,
+      "status": "available",
+      "featured": false,
+      "departure": "Manila (NAIA)",
+      "price": {
+        "from": 699,
+        "label": "From",
+        "unit": "per pax",
+        "currency": "USD"
+      },
+      "year": 2026,
+      "ends": "2027-03-02",
+      "image": "cn-zhangjiajie.jpg",
+      "alt": "Sandstone pillars in Zhangjiajie National Forest Park",
+      "gallery": [
+        "cn-zhangjiajie.jpg"
+      ],
+      "summary": "Eight days combining Beijing’s Forbidden City and Great Wall with Zhangjiajie’s Avatar scenic area, flying Air China with 5-star hotels.",
+      "overview": "Spend four days in Beijing, then fly to Zhangjiajie for the “Avatar” scenery of Zhangjiajie National Forest Park, the Grand Canyon glass bridge and the Xibu folk culture street. You fly Air China round trip from Manila and stay in local 5-star hotels. Several shop visits are included in the rate.",
+      "travelDates": [
+        {
+          "d": "Feb 16–23",
+          "y": 2027
+        },
+        {
+          "d": "Feb 23–Mar 2",
+          "y": 2027
+        }
+      ],
+      "travelDatesNote": "Departures from Manila, Feb 16–23 2027 to Feb 23–Mar 2 2027. The rate changes by date: an amount on a date is added to the base rate per pax. Seats are limited and confirmed at booking.",
+      "itinerary": [
+        {
+          "day": "Day 1",
+          "title": "Manila – Beijing",
+          "items": [
+            "Fly Manila to Beijing (CA180, 06:20–10:50) and arrive at Beijing airport",
+            "Water Cube (outside view)",
+            "Bird’s Nest (outside view)",
+            "Tea shop visit",
+            "Wangfujing Walking Street",
+            "Transfer to hotel and check in (lunch included)"
+          ]
+        },
+        {
+          "day": "Day 2",
+          "title": "Beijing",
+          "items": [
+            "Breakfast at the hotel",
+            "Tiananmen Square",
+            "Forbidden City",
+            "Chinese medicine shop visit",
+            "Acrobatic show (optional)"
+          ]
+        },
+        {
+          "day": "Day 3",
+          "title": "Beijing",
+          "items": [
+            "Breakfast at the hotel",
+            "Jade shop visit",
+            "Juyongguan Great Wall",
+            "Hanfu experience",
+            "Summer Palace (cruise excluded)"
+          ]
+        },
+        {
+          "day": "Day 4",
+          "title": "Beijing – Zhangjiajie",
+          "items": [
+            "Breakfast at the hotel",
+            "Jewelry shop visit",
+            "Temple of Heaven (optional)",
+            "Fly Beijing to Zhangjiajie (CA8609, 14:15–16:50)",
+            "Meet your guide at Zhangjiajie airport, transfer to hotel and check in"
+          ]
+        },
+        {
+          "day": "Day 5",
+          "title": "Zhangjiajie – Avatar scenic area",
+          "items": [
+            "Breakfast at the hotel",
+            "Avatar scenic area, up and down by Bailong Lift or Tianzishan cable car",
+            "No. 1 Bridge",
+            "Avatar Hallelujah Mountain",
+            "Breath-taking Platform",
+            "West Sea Clouds",
+            "Seventy-two Odd Buildings (outside view)",
+            "After dinner, transfer back to hotel"
+          ]
+        },
+        {
+          "day": "Day 6",
+          "title": "Zhangjiajie",
+          "items": [
+            "Breakfast at the hotel",
+            "Grand Canyon C Line – Glass Bridge",
+            "Golden Whip Stream",
+            "Water Around Four Gates",
+            "Xibu, the largest folk culture walking street",
+            "Tianmen Fox-Lady Show (optional)",
+            "After dinner, transfer back to hotel"
+          ]
+        },
+        {
+          "day": "Day 7",
+          "title": "Zhangjiajie – Beijing",
+          "items": [
+            "Breakfast at the hotel",
+            "Tujia Cultural Park",
+            "Tianmen Mountain with cable car, glass skywalk and Tianmen Cave (optional)",
+            "Transfer to the airport and fly Zhangjiajie to Beijing (CA8610, 17:50–20:30)"
+          ]
+        },
+        {
+          "day": "Day 8",
+          "title": "Beijing – Manila",
+          "items": [
+            "Breakfast at the hotel",
+            "Free and easy until transfer to the airport",
+            "Panda House at Beijing Zoo (optional)",
+            "Peking duck lunch (optional)",
+            "Fly Beijing to Manila (CA179, 19:05–00:05+1)"
+          ]
+        }
+      ],
+      "inclusions": [
+        "Economy airfare and taxes via Air China, round trip",
+        "Baggage allowance: 1 piece of 23 kg per passenger plus 5 kg carry-on",
+        "7 nights’ accommodation, twin sharing, with daily hotel breakfast (triple rooms not guaranteed)",
+        "Private coach with English-speaking tour guide",
+        "Sightseeing as specified, including first-way entrance fees",
+        "Meals as listed"
+      ],
+      "exclusions": [
+        "Personal expenses such as phone calls and minibar",
+        "Extra baggage",
+        "Travel insurance",
+        "Fuel surcharge USD 60 per person, subject to change",
+        "China group visa (guaranteed) USD 40 per person",
+        "Tips for driver and guide USD 80 per person",
+        "Philippine travel tax USD 30 per person",
+        "Single supplement USD 240 per person"
+      ],
+      "optional": [
+        "Tianmen Fox-Lady Show – USD 70 per person (minimum 10 guests)",
+        "Tianmen Mountain with cable car, glass skywalk and Tianmen Cave – USD 85 per person (minimum 10 guests)",
+        "Beijing package: Acrobatic show + Temple of Heaven + Panda House at Beijing Zoo + Peking duck lunch – USD 100 per person (minimum 10 guests)"
+      ],
+      "hotelsLabel": "Hotels",
+      "hotels": [
+        "Day 1–3 and Day 7: Local 5★ hotel in Beijing",
+        "Day 4–6: Local 5★ hotel in Zhangjiajie",
+        "Day 8: Sweet Home"
+      ],
+      "notes": [
+        "Meals per day: D1 L; D2–D4 B/L; D5–D7 B/L/D; D8 B",
+        "Children: with bed (9–18 yrs) and without bed (2–8 yrs) have separate rates; infants 2 months–2 years",
+        "Single travellers who do not want to share a room pay the single supplement",
+        "Philippine passport holders need a China visa; the group visa (guaranteed) is USD 40 per person, collected with the tour fee",
+        "Shop visits are included in the rate: tea shop, jewelry shop, Chinese medicine shop and jade shop",
+        "Optional tours need a minimum of 10 guests to push through",
+        "Hotels may be replaced by similar ones; the order of sights may change for crowds or special circumstances"
+      ],
+      "places": [
+        "Water Cube",
+        "Bird’s Nest",
+        "Wangfujing Walking Street",
+        "Tiananmen Square",
+        "Forbidden City",
+        "Juyongguan Great Wall",
+        "Summer Palace",
+        "Temple of Heaven",
+        "Zhangjiajie Avatar scenic area",
+        "Bailong Lift",
+        "Tianzishan Cable Car",
+        "No. 1 Bridge",
+        "Avatar Hallelujah Mountain",
+        "Grand Canyon Glass Bridge",
+        "Golden Whip Stream",
+        "Tujia Cultural Park",
+        "Tianmen Mountain"
+      ],
+      "posters": [
+        "cn-poster-avatar-beijing-8d7n-0.jpg"
+      ],
+      "posterSize": [
+        528,
+        800
+      ]
+    },
+    {
+      "id": "avatar-furong-xiamen-7d6n",
+      "name": "Zhangjiajie (Avatar) – Furong – Xiamen 7D6N Tour",
+      "subtitle": "Out Manila · Xiamen Air",
+      "region": "intl",
+      "country": "China",
+      "flag": "cn",
+      "duration": "7 days 6 nights",
+      "days": 7,
+      "status": "available",
+      "featured": false,
+      "departure": "Manila (NAIA)",
+      "price": {
+        "from": 459,
+        "label": "From",
+        "unit": "per pax",
+        "currency": "USD"
+      },
+      "year": 2026,
+      "ends": "2027-03-18",
+      "image": "cn-xiamen.jpg",
+      "alt": "Xiamen’s coast and city",
+      "gallery": [
+        "cn-xiamen.jpg"
+      ],
+      "summary": "Seven days from Xiamen’s coast to Changsha, Furong Town and Zhangjiajie’s Avatar mountains, with 4★ and 5★ hotels and a private coach.",
+      "overview": "Fly to Xiamen with Xiamen Air, then on to Changsha, and travel by private coach to Furong Town, the ancient town hanging on a waterfall, and Zhangjiajie. You see the Avatar scenic area (Zhangjiajie National Forest Park), Avatar Hallelujah Mountain and the Grand Canyon glass bridge. You stay in a local 4★ hotel in Xiamen and 5★ hotels in Changsha and Zhangjiajie, with an English-speaking guide throughout.",
+      "travelDates": [
+        {
+          "d": "Nov 6–12"
+        },
+        {
+          "d": "Nov 12–18"
+        },
+        {
+          "d": "Nov 13–19"
+        },
+        {
+          "d": "Nov 26–Dec 2"
+        },
+        {
+          "d": "Nov 27–Dec 3"
+        },
+        {
+          "d": "Dec 4–10"
+        },
+        {
+          "d": "Dec 11–17"
+        },
+        {
+          "d": "Jan 8–14",
+          "y": 2027
+        },
+        {
+          "d": "Jan 15–21",
+          "y": 2027
+        },
+        {
+          "d": "Mar 12–18",
+          "y": 2027
+        }
+      ],
+      "travelDatesNote": "Departures from Manila, Nov 6–12 2026 to Mar 12–18 2027. The rate changes by date: an amount on a date is added to the base rate per pax. Seats are limited and confirmed at booking.",
+      "itinerary": [
+        {
+          "day": "Day 1",
+          "title": "Manila – Xiamen",
+          "items": [
+            "Fly Manila – Xiamen (departs 21:20, arrives 23:35); meet the tour guide at Xiamen Gaoqi airport",
+            "Transfer to the hotel and check in",
+            "Meals: none"
+          ]
+        },
+        {
+          "day": "Day 2",
+          "title": "Xiamen – Changsha",
+          "items": [
+            "Breakfast at the hotel, check out",
+            "Huwei Mountain of the Xiamen Mountains-to-Sea Trail",
+            "Xiamen University Baicheng coast",
+            "Free time at Zhongshan Road Pedestrian Street (lunch on your own)",
+            "Gather at 13:30 and transfer to the airport; fly Xiamen – Changsha (16:00 – 17:45)",
+            "Meet the guide in Changsha, dinner, then transfer to the hotel",
+            "Meals: B/X/D"
+          ]
+        },
+        {
+          "day": "Day 3",
+          "title": "Changsha – Furong Town – Zhangjiajie",
+          "items": [
+            "Breakfast at the hotel",
+            "Furong Town, the ancient town hanging on the waterfall (including cruise and battery cart)",
+            "Proceed to Zhangjiajie; dinner, then transfer to the hotel",
+            "Meals: B/L/D"
+          ]
+        },
+        {
+          "day": "Day 4",
+          "title": "Zhangjiajie Avatar Scenic Area",
+          "items": [
+            "Breakfast at the hotel",
+            "Avatar scenic area (up and down by Bailong Lift or Tianzishan cable car)",
+            "No.1 Bridge",
+            "Avatar Hallelujah Mountain",
+            "Golden Whip Stream and Water Around Four Gates",
+            "Compulsory shopping stop: Chinese medicine shop",
+            "Dinner, then back to the hotel",
+            "Optional: Tianmen Fox-Lady Show, USD 70/pax",
+            "Meals: B/L/D"
+          ]
+        },
+        {
+          "day": "Day 5",
+          "title": "Zhangjiajie",
+          "items": [
+            "Breakfast at the hotel",
+            "Compulsory shopping stop: latex shop",
+            "Optional tours on the day (see Optional tours); dinner, then back to the hotel",
+            "Meals: B/L/D"
+          ]
+        },
+        {
+          "day": "Day 6",
+          "title": "Zhangjiajie – Changsha",
+          "items": [
+            "Breakfast at the hotel",
+            "Tea tasting at a tea shop",
+            "Junsheng Sandstone Painting Museum",
+            "Compulsory shopping stop: jewelry shop",
+            "Grand Canyon C Line and the glass bridge",
+            "Proceed to Changsha",
+            "Meals: B/L/D"
+          ]
+        },
+        {
+          "day": "Day 7",
+          "title": "Changsha – Xiamen – Manila",
+          "items": [
+            "Breakfast at the hotel",
+            "Free time at Huangxing Road walking street (arranged according to the flight time)",
+            "Fly Changsha – Xiamen (13:15 – 14:55), then Xiamen – Manila (17:35 – 20:20)",
+            "Meals: B/X/X"
+          ]
+        }
+      ],
+      "inclusions": [
+        "Economy airfare and taxes via Xiamen Air (round trip)",
+        "Baggage allowance: 1 pc / 23 kg per passenger plus 7 kg carry-on",
+        "6 nights’ accommodation, twin sharing, with daily hotel breakfast (triple rooms not guaranteed; subject to hotel availability)",
+        "Private coach with English-speaking tour guide",
+        "Sightseeing entrance fees as specified above (first way)",
+        "Meals as listed"
+      ],
+      "exclusions": [
+        "Personal expenses such as telephone calls and minibar",
+        "Extra baggage",
+        "Travel insurance",
+        "Fuel surcharge (subject to change, collected with the tour fee)",
+        "Philippine travel tax PHP 1,620/pax (pay at the airport)",
+        "China group visa USD 40/pax (guaranteed)",
+        "Tips for driver and guide USD 5/pax/day x 7 days = USD 35/pax (collected with the tour fee)",
+        "Single supplement (see notes)"
+      ],
+      "optional": [
+        "Tianmen Fox-Lady Show: USD 70/pax",
+        "Tianmen Mountain (cable car, glass skywalk, Tianmen Cave): USD 85/pax",
+        "Baofeng Lake (including cruise): USD 60/pax"
+      ],
+      "hotelsLabel": "Hotels",
+      "hotels": [
+        "Day 1: Local 4★ hotel in Xiamen",
+        "Day 2: 5★ hotel in Changsha",
+        "Day 3-5: 5★ hotel in Zhangjiajie",
+        "Day 6: 5★ hotel in Changsha",
+        "Day 7: Sweet Home"
+      ],
+      "notes": [
+        "Meal codes: B = breakfast, L = lunch, D = dinner, X = not included",
+        "Includes shopping stops: latex shop, jewelry shop, Chinese medicine shop, tea shop and silk shop",
+        "Single supplement: compulsory USD 30/pax for the Xiamen night; USD 150–175/pax for the whole trip (see season notes)",
+        "Fuel surcharge USD 30–75/pax depending on date, subject to change",
+        "Infant 2–24 months, child without bed 2–9 yrs, child with bed 10–21 yrs, adult 22 yrs and up",
+        "Visa: China group visa USD 40/pax is not included",
+        "Rate based on 6+1 FOC (adult tour fee only; infants do not count)",
+        "If hotels are unavailable they are replaced by similar ones; the order of sights may change in crowded periods",
+        "Passengers who do not accept room sharing pay the single supplement"
+      ],
+      "places": [
+        "Xiamen",
+        "Huwei Mountain",
+        "Xiamen University Baicheng Coast",
+        "Zhongshan Road Pedestrian Street",
+        "Furong Town",
+        "Zhangjiajie Avatar Scenic Area",
+        "Bailong Lift",
+        "Tianzishan",
+        "No.1 Bridge",
+        "Avatar Hallelujah Mountain",
+        "Golden Whip Stream",
+        "Water Around Four Gates",
+        "Junsheng Sandstone Painting Museum",
+        "Grand Canyon Glass Bridge",
+        "Huangxing Road Walking Street"
+      ],
+      "posters": [
+        "cn-poster-avatar-furong-xiamen-7d6n-0.jpg"
+      ],
+      "posterSize": [
+        516,
+        800
+      ]
+    },
+    {
+      "id": "avatar-furong-6d5n",
+      "name": "Zhangjiajie (Avatar) – Furong Town 6D5N Tour",
+      "subtitle": "Out Manila · China Southern Airlines",
+      "region": "intl",
+      "country": "China",
+      "flag": "cn",
+      "duration": "6 days 5 nights",
+      "days": 6,
+      "status": "available",
+      "featured": false,
+      "departure": "Manila (NAIA)",
+      "price": {
+        "from": 459,
+        "label": "From",
+        "unit": "per pax",
+        "currency": "USD"
+      },
+      "year": 2026,
+      "ends": "2027-03-25",
+      "image": "cn-zhangjiajie.jpg",
+      "alt": "Sandstone pillars in Zhangjiajie National Forest Park",
+      "gallery": [
+        "cn-zhangjiajie.jpg"
+      ],
+      "summary": "Fly via Guangzhou to Changsha, then see Furong Town’s hanging waterfall village and the Avatar scenic area of Zhangjiajie, with 5-star hotels.",
+      "overview": "Fly with China Southern Airlines via Guangzhou to Changsha, then travel by private coach to Furong Town, the ancient town hanging on a waterfall, and on to Zhangjiajie. You see the Avatar scenic area (Zhangjiajie National Forest Park), the Grand Canyon glass bridge and more, with an English-speaking guide and 5-star hotels. The tour includes several shopping stops.",
+      "travelDates": [
+        {
+          "d": "Nov 21–26"
+        },
+        {
+          "d": "Mar 6–11",
+          "y": 2027
+        },
+        {
+          "d": "Mar 13–18",
+          "y": 2027
+        },
+        {
+          "d": "Mar 20–25",
+          "y": 2027,
+          "add": 40,
+          "cur": "USD"
+        }
+      ],
+      "travelDatesNote": "Departures from Manila, Nov 21–26 2026 to Mar 20–25 2027. The rate changes by date: an amount on a date is added to the base rate per pax. Seats are limited and confirmed at booking.",
+      "itinerary": [
+        {
+          "day": "Day 1",
+          "title": "Manila – Guangzhou – Changsha",
+          "items": [
+            "Fly Manila to Guangzhou (CZ398, 17:45–20:20), then connect to Changsha (CZ5592, 23:00–00:35+1)",
+            "Meet your tour guide and transfer to the hotel to check in"
+          ]
+        },
+        {
+          "day": "Day 2",
+          "title": "Changsha – Furong Town",
+          "items": [
+            "Breakfast at the hotel",
+            "Drive to Furong Town, the ancient town hanging on a waterfall",
+            "Visit Furong Town (cruise and battery cart included)",
+            "Dinner, then transfer to the hotel"
+          ]
+        },
+        {
+          "day": "Day 3",
+          "title": "Furong – Zhangjiajie",
+          "items": [
+            "Breakfast at the hotel",
+            "Drive to Zhangjiajie",
+            "Compulsory shopping stop: latex shop",
+            "Junsheng Sandstone Painting Museum",
+            "72-floor Stilts Tower (outside view)",
+            "Dinner on your own, then transfer to the hotel"
+          ]
+        },
+        {
+          "day": "Day 4",
+          "title": "Zhangjiajie – Avatar scenic area",
+          "items": [
+            "Breakfast at the hotel",
+            "Compulsory shopping stop: Chinese medicine shop",
+            "Avatar scenic area (up and down by Bailong Lift or Tianzishan cable car)",
+            "No.1 Bridge",
+            "Breath-taking Platform",
+            "Avatar Hallelujah Mountain",
+            "West Sea Clouds",
+            "Golden Whip Stream and the Water Around Four Gates",
+            "Dinner, then transfer to the hotel"
+          ]
+        },
+        {
+          "day": "Day 5",
+          "title": "Zhangjiajie – Grand Canyon",
+          "items": [
+            "Breakfast at the hotel",
+            "Compulsory shopping stop: jewelry shop",
+            "Tea tasting at a tea shop, or a visit to a silk shop",
+            "Grand Canyon C Line glass bridge (VR experience included)",
+            "Dinner, then transfer back to the hotel"
+          ]
+        },
+        {
+          "day": "Day 6",
+          "title": "Zhangjiajie – Guangzhou – Manila",
+          "items": [
+            "Breakfast at the hotel",
+            "Transfer to Zhangjiajie airport and fly to Guangzhou (CZ3382, 09:45–11:30), then connect to Manila (CZ3077, 20:00–22:30)"
+          ]
+        }
+      ],
+      "inclusions": [
+        "Round-trip economy airfare and taxes via China Southern Airlines",
+        "Baggage: 1 piece of 23 kg checked plus 5 kg carry-on per passenger",
+        "Twin-sharing hotel accommodation at 5-star hotels with daily breakfast (triple rooms are not guaranteed and depend on availability)",
+        "Private coach with English-speaking tour guide",
+        "Sightseeing as specified, including the first-way entrance fees",
+        "Meals as listed"
+      ],
+      "exclusions": [
+        "Personal expenses such as phone calls and minibar",
+        "Extra baggage allowance",
+        "Travel insurance",
+        "Fuel surcharge: USD 30 per person, subject to change (collected with the tour fee)",
+        "Philippine travel tax: USD 30 per person (pay directly at the airport)",
+        "China Group Visa (guaranteed): USD 40 per person (collected with the tour fee)",
+        "Tips for driver and guide: USD 30 per person, USD 5 per day for 6 days (collected with the tour fee)",
+        "Single supplement: USD 150 per person"
+      ],
+      "optional": [
+        "Tianmen Mountain (cable car, glass skywalk, Tianmen Cave): USD 85 per person",
+        "Tianmen Fox-Lady Show: USD 70 per person",
+        "Huanglong Cave (including cruise): USD 70 per person"
+      ],
+      "hotelsLabel": "Hotels",
+      "hotels": [
+        "Day 1: 5-star hotel in Changsha",
+        "Day 2: 5-star hotel in Furong",
+        "Day 3-5: 5-star hotel in Zhangjiajie"
+      ],
+      "notes": [
+        "Meals (by day): Day 1 none; Day 2 B/L/D; Day 3 B/L, dinner on your own; Day 4 B/L/D; Day 5 B/L/D; Day 6 breakfast",
+        "Shopping stops are part of the rate: latex shop, jewelry shop, Chinese medicine shop and tea shop",
+        "Child with bed 12 to under 22 years, child without bed 2 to under 12 years, infant 2 to 24 months",
+        "Single travellers booked through an agent may be paired to share a room; otherwise the single supplement applies",
+        "If the listed hotels are not available they will be replaced by similar ones",
+        "All services are private; the order of attractions may be adjusted in crowded periods or special circumstances",
+        "Philippine passport holders need a China visa; the China Group Visa fee is listed under exclusions."
+      ],
+      "places": [
+        "Furong Town",
+        "Junsheng Sandstone Painting Museum",
+        "72-Floor Stilts Tower",
+        "Avatar scenic area (Zhangjiajie National Forest Park)",
+        "Bailong Lift",
+        "Tianzishan",
+        "No.1 Bridge",
+        "Avatar Hallelujah Mountain",
+        "West Sea Clouds",
+        "Golden Whip Stream",
+        "Grand Canyon glass bridge"
+      ],
+      "posters": [
+        "cn-poster-avatar-furong-6d5n-0.jpg"
+      ],
+      "posterSize": [
+        526,
+        800
+      ]
+    },
+    {
+      "id": "avatar-furong-7d6n",
+      "name": "Zhangjiajie (Avatar) – Furong 7D6N Tour (Via Guangzhou)",
+      "subtitle": "Out Manila · China Southern Airlines",
+      "region": "intl",
+      "country": "China",
+      "flag": "cn",
+      "duration": "7 days 6 nights",
+      "days": 7,
+      "status": "available",
+      "featured": false,
+      "departure": "Manila (NAIA)",
+      "price": {
+        "from": 499,
+        "label": "From",
+        "unit": "per pax",
+        "currency": "USD"
+      },
+      "year": 2026,
+      "ends": "2027-04-01",
+      "image": "cn-zhangjiajie.jpg",
+      "alt": "Sandstone pillars in Zhangjiajie National Forest Park",
+      "gallery": [
+        "cn-zhangjiajie.jpg"
+      ],
+      "summary": "Fly via Guangzhou to Changsha, then visit Furong Town and Zhangjiajie, including the Avatar scenic area, with 5-star hotels throughout.",
+      "overview": "This 7-day tour flies with China Southern Airlines from Manila via Guangzhou to Changsha. You visit Furong Town, the ancient town that hangs on a waterfall, then spend three nights in Zhangjiajie, where the Avatar scenic area (Zhangjiajie National Forest Park) with Hallelujah Mountain is the highlight. You stay in 5-star hotels and travel by private coach with an English-speaking guide. The programme includes several shop stops.",
+      "travelDates": [
+        {
+          "d": "Nov 19–25"
+        },
+        {
+          "d": "Nov 25–Dec 1",
+          "add": 20,
+          "cur": "USD"
+        },
+        {
+          "d": "Nov 26–Dec 2",
+          "add": 20,
+          "cur": "USD"
+        },
+        {
+          "d": "Dec 3–9",
+          "add": 20,
+          "cur": "USD"
+        },
+        {
+          "d": "Dec 10–16"
+        },
+        {
+          "d": "Mar 3–9",
+          "y": 2027
+        },
+        {
+          "d": "Mar 21–27",
+          "y": 2027,
+          "add": 200,
+          "cur": "USD"
+        },
+        {
+          "d": "Mar 24–30",
+          "y": 2027,
+          "add": 200,
+          "cur": "USD"
+        },
+        {
+          "d": "Mar 25–31",
+          "y": 2027,
+          "add": 200,
+          "cur": "USD"
+        },
+        {
+          "d": "Mar 26–Apr 1",
+          "y": 2027,
+          "add": 200,
+          "cur": "USD"
+        }
+      ],
+      "travelDatesNote": "Departures from Manila, Nov 19–25 2026 to Mar 26–Apr 1 2027. The rate changes by date: an amount on a date is added to the base rate per pax. Seats are limited and confirmed at booking.",
+      "itinerary": [
+        {
+          "day": "Day 1",
+          "title": "Manila – Guangzhou – Changsha",
+          "items": [
+            "Flight CZ398 Manila to Guangzhou (17:45–20:20)",
+            "Connecting flight CZ5592 Guangzhou to Changsha (23:00–00:35 next day)",
+            "Meet your tour guide and transfer to the hotel",
+            "Meals: none included (X/X/X)"
+          ]
+        },
+        {
+          "day": "Day 2",
+          "title": "Changsha – Furong Town",
+          "items": [
+            "Breakfast at the hotel",
+            "Drive to Furong Town, the ancient town hanging on the waterfall",
+            "Visit Furong Town (cruise and battery cart included)",
+            "After dinner, transfer to the hotel",
+            "Meals: Breakfast / Lunch / Dinner"
+          ]
+        },
+        {
+          "day": "Day 3",
+          "title": "Furong – Zhangjiajie",
+          "items": [
+            "Breakfast at the hotel",
+            "Drive to Zhangjiajie",
+            "Junsheng Sandstone Painting Museum",
+            "72-Floor Stilts Tower (outside view)",
+            "Dinner on your own, then transfer to the hotel",
+            "Meals: Breakfast / Lunch (dinner on your own)"
+          ]
+        },
+        {
+          "day": "Day 4",
+          "title": "Zhangjiajie – Avatar scenic area",
+          "items": [
+            "Breakfast at the hotel",
+            "Compulsory shopping stop at a Chinese medicine shop",
+            "Avatar scenic area (up and down by Bailong Elevator or Tianzishan cable car)",
+            "No. 1 Bridge",
+            "Avatar Hallelujah Mountain",
+            "After dinner, transfer to the hotel",
+            "Meals: Breakfast / Lunch / Dinner"
+          ]
+        },
+        {
+          "day": "Day 5",
+          "title": "Zhangjiajie",
+          "items": [
+            "Breakfast at the hotel",
+            "Compulsory shopping stop at a latex shop",
+            "Golden Whip Stream",
+            "Water Around Four Gates",
+            "Tea tasting at a tea shop or a silk shop visit",
+            "After dinner, transfer back to the hotel",
+            "Meals: Breakfast / Lunch / Dinner"
+          ]
+        },
+        {
+          "day": "Day 6",
+          "title": "Zhangjiajie – Changsha",
+          "items": [
+            "Breakfast at the hotel",
+            "Compulsory shopping stop at a jewelry shop",
+            "Grand Canyon C Line – Glass Bridge (VR experience included)",
+            "Drive to Changsha",
+            "Free shopping at Huangxin Road walkway street",
+            "Taste local cuisine at the food street (dinner on your own)",
+            "Meals: Breakfast / Lunch (dinner on your own)"
+          ]
+        },
+        {
+          "day": "Day 7",
+          "title": "Changsha – Guangzhou – Manila",
+          "items": [
+            "Packaged breakfast",
+            "Transfer to Changsha airport",
+            "Flight CZ3387 Changsha to Guangzhou (08:00–09:40)",
+            "Connecting flight CZ397 Guangzhou to Manila (14:15–16:50)",
+            "Meals: Breakfast only"
+          ]
+        }
+      ],
+      "inclusions": [
+        "Round-trip economy airfare and taxes via China Southern Airlines",
+        "Baggage allowance: 1 piece of 23 kg per passenger plus 5 kg carry-on",
+        "6 nights accommodation, twin sharing, with daily hotel breakfast (triple rooms not guaranteed)",
+        "Private coach with an English-speaking tour guide",
+        "Sightseeing as listed, including first-way entrance fees",
+        "Meals as listed"
+      ],
+      "exclusions": [
+        "Personal expenses such as telephone calls and minibar",
+        "Extra baggage",
+        "Travel insurance",
+        "Fuel surcharge USD 50 per person (collected with the tour fee, subject to change)",
+        "Philippine travel tax USD 30 per person (pay at the airport)",
+        "China group visa (guaranteed) USD 40 per person (collected with the tour fee)",
+        "Tips for driver and guide USD 35 per person (USD 5 per day x 7 days, collected with the tour fee)",
+        "Single supplement USD 150 per person"
+      ],
+      "optional": [
+        "Tianmen Mountain (cable car, glass skywalk, Tianmen Cave): USD 85 per person (Day 3)",
+        "Tianmen Fox-Lady Show: USD 70 per person (Day 3)",
+        "Huanglong Cave (cruise included): USD 70 per person (Day 5)"
+      ],
+      "hotelsLabel": "Hotels",
+      "hotels": [
+        "Day 1 and Day 6: 5★ hotel in Changsha",
+        "Day 2: 5★ hotel in Furong",
+        "Day 3–5: 5★ hotel in Zhangjiajie"
+      ],
+      "notes": [
+        "Meal codes B/L/D = breakfast/lunch/dinner; X = not included.",
+        "Shop stops included in this package: latex shop, jewelry shop, Chinese medicine shop and tea shop.",
+        "Philippine passport holders need a China visa; the China group visa is guaranteed at USD 40 per person.",
+        "Child rates: ages 2–11 without bed and 12–21 with bed; infants 2–24 months have their own rate.",
+        "Single travellers may be paired with another guest to share a room; otherwise the single supplement applies.",
+        "Hotels may be replaced by similar ones; the order of attractions may change in crowded periods or special circumstances."
+      ],
+      "places": [
+        "Furong Town",
+        "Junsheng Sandstone Painting Museum",
+        "72-Floor Stilts Tower",
+        "Avatar Scenic Area (Zhangjiajie National Forest Park)",
+        "No. 1 Bridge",
+        "Avatar Hallelujah Mountain",
+        "Golden Whip Stream",
+        "Water Around Four Gates",
+        "Grand Canyon C Line Glass Bridge",
+        "Huangxin Road Walkway Street",
+        "Tianmen Mountain (optional)",
+        "Huanglong Cave (optional)"
+      ],
+      "posters": [
+        "cn-poster-avatar-furong-7d6n-0.jpg",
+        "cn-poster-avatar-furong-7d6n-1.jpg"
+      ],
+      "posterSize": [
+        516,
+        800
+      ]
+    },
+    {
+      "id": "avatar-skiing-6d5n",
+      "name": "Avatar – Skiing (Changsha – Zhangjiajie) 6D5N Tour",
+      "subtitle": "Out Manila · China Southern Airlines",
+      "region": "intl",
+      "country": "China",
+      "flag": "cn",
+      "duration": "6 days 4 nights",
+      "days": 6,
+      "status": "available",
+      "featured": false,
+      "departure": "Manila (NAIA)",
+      "price": {
+        "from": 569,
+        "label": "From",
+        "unit": "per pax",
+        "currency": "USD"
+      },
+      "year": 2026,
+      "ends": "2027-03-04",
+      "image": "cn-zhangjiajie.jpg",
+      "alt": "Sandstone pillars in Zhangjiajie National Forest Park",
+      "gallery": [
+        "cn-zhangjiajie.jpg"
+      ],
+      "summary": "Six days in Zhangjiajie: Avatar scenery, Qixing Mountain with a 2-hour skiing session, and optional glass-bridge and cave tours, flying via Guangzhou.",
+      "overview": "Fly Manila – Guangzhou – Changsha and head to Zhangjiajie, home of the Avatar scenic area (Zhangjiajie National Forest Park). You get a two-hour skiing experience at Qixing Mountain, then see Avatar Hallelujah Mountain, No.1 Bridge and the Golden Whip Stream. Stays are in 5-star hotels with an English-speaking guide and private coach. This is a shopping-stop package.",
+      "travelDates": [
+        {
+          "d": "Jan 16–21",
+          "y": 2027
+        },
+        {
+          "d": "Jan 23–28",
+          "y": 2027
+        },
+        {
+          "d": "Jan 30–Feb 4",
+          "y": 2027
+        },
+        {
+          "d": "Feb 13–18",
+          "y": 2027
+        },
+        {
+          "d": "Feb 20–25",
+          "y": 2027
+        },
+        {
+          "d": "Feb 27–Mar 4",
+          "y": 2027
+        }
+      ],
+      "travelDatesNote": "Departures from Manila, Jan 16–21 2027 to Feb 27–Mar 4 2027. The rate changes by date: an amount on a date is added to the base rate per pax. Seats are limited and confirmed at booking.",
+      "itinerary": [
+        {
+          "day": "Day 1",
+          "title": "Manila – Guangzhou – Changsha",
+          "items": [
+            "Flight Manila – Guangzhou (CZ398, 17:45/20:20), then connecting flight to Changsha (CZ5592, 23:00/00:35+1)",
+            "Meet your tour guide and transfer to the hotel"
+          ]
+        },
+        {
+          "day": "Day 2",
+          "title": "Changsha – Zhangjiajie, Qixing Mountain skiing",
+          "items": [
+            "Breakfast at the hotel",
+            "Drive to Zhangjiajie",
+            "After lunch, Qixing Mountain Scenic Area (battery car, 1520 Platform and glass skywalk)",
+            "2-hour skiing experience (ski equipment included, snow suit not included); if the ski resort is closed due to weather, Qixing Mountain and skiing are replaced by the indoor Snow and Ice World",
+            "Dinner, then back to the hotel"
+          ]
+        },
+        {
+          "day": "Day 3",
+          "title": "Zhangjiajie city sights",
+          "items": [
+            "Breakfast at the hotel",
+            "Compulsory shopping stop at a latex shop",
+            "Junsheng Sandstone Painting Museum",
+            "72-floor Stilt Tower (outside view)",
+            "Optional: Tianmen Mountain (cable car, glass skywalk, Tianmen Cave), USD 85 per person",
+            "Dinner, then back to the hotel"
+          ]
+        },
+        {
+          "day": "Day 4",
+          "title": "Avatar scenic area",
+          "items": [
+            "Breakfast at the hotel",
+            "Compulsory shopping stop at a Chinese medicine shop",
+            "Avatar scenic area (up and down by Bailong Elevator or Tianzishan cable car)",
+            "No.1 Bridge",
+            "Avatar Hallelujah Mountain",
+            "Golden Whip Stream and Water Around Four Gates",
+            "Optional: Charming Xiangxi Show, USD 70 per person",
+            "Dinner, then back to the hotel"
+          ]
+        },
+        {
+          "day": "Day 5",
+          "title": "Shops, tea tasting and optional tours",
+          "items": [
+            "Breakfast at the hotel",
+            "Compulsory shopping stop at a jewelry shop",
+            "Tea tasting at a tea shop, or visit a silk shop",
+            "Optional: Grand Canyon C Line glass bridge and VR, USD 75 per person",
+            "Optional: Huanglong Cave (including cruise), USD 70 per person",
+            "Dinner, then back to the hotel"
+          ]
+        },
+        {
+          "day": "Day 6",
+          "title": "Zhangjiajie – Guangzhou – Manila",
+          "items": [
+            "Breakfast at the hotel",
+            "Transfer to Zhangjiajie airport, flight to Guangzhou (CZ3382, 09:45/11:30), then connecting flight to Manila (CZ3077, 20:00/22:30)"
+          ]
+        }
+      ],
+      "inclusions": [
+        "Economy round-trip airfare and taxes via China Southern Airlines",
+        "Baggage: 1 piece of 23 kg per passenger plus 5 kg carry-on",
+        "5 nights’ twin-sharing accommodation at 5-star hotels with daily breakfast (triple rooms not guaranteed)",
+        "Private coach with English-speaking tour guide",
+        "Sightseeing as specified, including first-way entrance fees",
+        "Meals as listed"
+      ],
+      "exclusions": [
+        "Personal expenses such as telephone calls and minibar",
+        "Extra baggage",
+        "Travel insurance",
+        "Fuel surcharge USD 30 per person, subject to change (collected with tour fee)",
+        "Philippines travel tax PHP 1,620 per person (pay directly at the airport)",
+        "China group visa USD 40 per person (guaranteed)",
+        "Tips for driver and guide USD 30 per person, USD 5 per day for 6 days (collected with tour fee)",
+        "Single supplement USD 120 per person"
+      ],
+      "optional": [
+        "Tianmen Mountain (cable car, glass skywalk, Tianmen Cave): USD 85 per person",
+        "Charming Xiangxi Show: USD 70 per person",
+        "Grand Canyon C Line glass bridge and VR: USD 75 per person",
+        "Huanglong Cave (including cruise): USD 70 per person"
+      ],
+      "hotelsLabel": "Hotels",
+      "hotels": [
+        "Day 1: 5-star hotel in Changsha",
+        "Day 2-5: 5-star hotel in Zhangjiajie",
+        "Day 6: Home sweet home"
+      ],
+      "notes": [
+        "Meals: Day 1 none; Days 2-5 breakfast, lunch and dinner; Day 6 breakfast only",
+        "Shopping stops: latex shop, Chinese medicine shop, jewelry shop and tea shop; the rate is based on these visits",
+        "Infant (2-24 months) rate applies; child with bed (12-21 years) and child without bed (2-11 years) have separate rates",
+        "Single travellers may be paired with another guest to share a room; otherwise the single supplement applies",
+        "If a listed hotel is unavailable it is replaced by a similar one",
+        "Order of attractions may be adjusted for crowded groups or special circumstances",
+        "Services are on a private basis",
+        "Philippine passport holders need a China group visa, USD 40 per person (not included)"
+      ],
+      "places": [
+        "Qixing Mountain",
+        "1520 Platform",
+        "Zhangjiajie Avatar scenic area",
+        "Bailong Elevator",
+        "Tianzishan",
+        "No.1 Bridge",
+        "Avatar Hallelujah Mountain",
+        "Golden Whip Stream",
+        "Water Around Four Gates",
+        "Junsheng Sandstone Painting Museum",
+        "72-floor Stilt Tower",
+        "Tianmen Mountain",
+        "Huanglong Cave"
+      ],
+      "posters": [
+        "cn-poster-avatar-skiing-6d5n-0.jpg"
+      ],
+      "posterSize": [
+        538,
+        800
+      ]
+    },
+    {
+      "id": "avatar-skiing-7d6n",
+      "name": "Avatar – Skiing 7D6N Tour (via Guangzhou)",
+      "subtitle": "Out Manila · China Southern Airlines",
+      "region": "intl",
+      "country": "China",
+      "flag": "cn",
+      "duration": "7 days 6 nights",
+      "days": 7,
+      "status": "available",
+      "featured": false,
+      "departure": "Manila (NAIA)",
+      "price": {
+        "from": 599,
+        "label": "From",
+        "unit": "per pax",
+        "currency": "USD"
+      },
+      "year": 2026,
+      "ends": "2027-03-03",
+      "image": "cn-zhangjiajie.jpg",
+      "alt": "Sandstone pillars in Zhangjiajie National Forest Park",
+      "gallery": [
+        "cn-zhangjiajie.jpg"
+      ],
+      "summary": "Fly via Guangzhou to Changsha and Zhangjiajie: Avatar scenic area, Qixing Mountain skiing, glass skywalk and Xibu walking street, with 5-star hotels.",
+      "overview": "This 7-day tour flies Manila to Changsha via Guangzhou on China Southern Airlines and spends four nights in Zhangjiajie. Highlights are the Avatar scenic area (Hallelujah Mountain), Qixing Mountain with a 2-hour skiing experience, and the glass skywalk. You stay in 5-star hotels with a private coach and an English-speaking guide. The package includes shop visits.",
+      "travelDates": [
+        {
+          "d": "Dec 30–Jan 5",
+          "add": 100,
+          "cur": "USD"
+        },
+        {
+          "d": "Dec 31–Jan 6",
+          "add": 100,
+          "cur": "USD"
+        },
+        {
+          "d": "Jan 6–12",
+          "y": 2027
+        },
+        {
+          "d": "Jan 7–13",
+          "y": 2027
+        },
+        {
+          "d": "Jan 13–19",
+          "y": 2027
+        },
+        {
+          "d": "Jan 14–20",
+          "y": 2027
+        },
+        {
+          "d": "Jan 21–27",
+          "y": 2027
+        },
+        {
+          "d": "Jan 27–Feb 2",
+          "y": 2027
+        },
+        {
+          "d": "Feb 10–16",
+          "y": 2027
+        },
+        {
+          "d": "Feb 11–17",
+          "y": 2027
+        },
+        {
+          "d": "Feb 18–24",
+          "y": 2027
+        },
+        {
+          "d": "Feb 25–Mar 3",
+          "y": 2027
+        }
+      ],
+      "travelDatesNote": "Departures from Manila, Dec 30–Jan 5 2026 to Feb 25–Mar 3 2027. The rate changes by date: an amount on a date is added to the base rate per pax. Seats are limited and confirmed at booking.",
+      "itinerary": [
+        {
+          "day": "Day 1",
+          "title": "Manila – Guangzhou – Changsha",
+          "items": [
+            "Fly Manila to Guangzhou (CZ398, 17:45/20:20), then connect to Changsha (CZ5592, 23:00/00:35+1)",
+            "Meet your tour guide and transfer to the hotel (meals: none)",
+            "Overnight: 5-star hotel in Changsha"
+          ]
+        },
+        {
+          "day": "Day 2",
+          "title": "Changsha – Zhangjiajie, Qixing Mountain skiing",
+          "items": [
+            "Breakfast at the hotel, then drive to Zhangjiajie",
+            "Lunch, then Qixing Mountain Scenic Area (battery car, 1520 Platform and glass skywalk included)",
+            "2-hour skiing experience (ski equipment included, snow suit not included); if the ski resort is closed due to weather, Qixing Mountain and skiing are replaced by the indoor ski at Snow and Ice World",
+            "Dinner, then back to the hotel (meals: B/L/D)"
+          ]
+        },
+        {
+          "day": "Day 3",
+          "title": "Zhangjiajie city sights",
+          "items": [
+            "Breakfast at the hotel",
+            "Optional tour: Tianmen Mountain (cable car, glass skywalk, Tianmen Cave), USD 85 per person",
+            "Junsheng Sandstone Painting Museum",
+            "72-floor Stilts Tower (outside view)",
+            "Dinner, then back to the hotel (meals: B/L/D)"
+          ]
+        },
+        {
+          "day": "Day 4",
+          "title": "Avatar scenic area",
+          "items": [
+            "Breakfast at the hotel",
+            "Compulsory shopping stop: Chinese medicine shop",
+            "Avatar scenic area (up and down by Bailong Lift or Tianzishan cable car)",
+            "No. 1 Bridge",
+            "Avatar Hallelujah Mountain",
+            "Golden Whip Stream and Water Around Four Gates",
+            "Optional tour: Charming Xiangxi Show, USD 70 per person",
+            "Dinner, then back to the hotel (meals: B/L/D)"
+          ]
+        },
+        {
+          "day": "Day 5",
+          "title": "Zhangjiajie culture and shopping",
+          "items": [
+            "Breakfast at the hotel",
+            "Compulsory shopping stop: latex shop",
+            "Optional tour: Grand Canyon C Line, Glass Bridge and VR, USD 75 per person",
+            "Tea tasting at a tea shop or a visit to a silk shop",
+            "Xibu, the largest folk-culture walking street",
+            "Dinner, then back to the hotel (meals: B/L/D)"
+          ]
+        },
+        {
+          "day": "Day 6",
+          "title": "Zhangjiajie – Changsha",
+          "items": [
+            "Breakfast at the hotel",
+            "Compulsory shopping stop: jewelry shop",
+            "Optional tour: Huanglong Cave (including cruise), USD 70 per person",
+            "Drive to Changsha",
+            "Free time for shopping on Huangxin Road walking street",
+            "Dinner, then back to the hotel (meals: B/L/D)"
+          ]
+        },
+        {
+          "day": "Day 7",
+          "title": "Changsha – Guangzhou – Manila",
+          "items": [
+            "Packaged breakfast",
+            "Transfer to Changsha airport and fly to Guangzhou (CZ3387, 08:00/09:40), then connect to Manila (CZ397, 14:15/16:50) (meals: B/X/X)"
+          ]
+        }
+      ],
+      "inclusions": [
+        "Economy round-trip airfare and tax via China Southern Airlines",
+        "Baggage allowance: 1 piece up to 23 kg per passenger plus 5 kg carry-on",
+        "6 nights’ accommodation, twin sharing, with daily hotel breakfast (triple rooms not guaranteed, subject to availability)",
+        "Private coach with English-speaking tour guide",
+        "Sightseeing as specified, including first-way entrance fees",
+        "Meals as listed"
+      ],
+      "exclusions": [
+        "Personal expenses such as phone calls and minibar",
+        "Extra baggage allowance",
+        "Travel insurance",
+        "Fuel surcharge USD 30 per person (collected with the tour fee, subject to change)",
+        "Philippines travel tax PHP 1,620 per person (pay directly at the airport)",
+        "China group visa (guaranteed) USD 40 per person",
+        "Tips for driver and guide USD 35 per person (USD 5 per day x 7 days, collected with the tour fee)",
+        "Single supplement USD 140 per person"
+      ],
+      "optional": [
+        "Tianmen Mountain (cable car, glass skywalk, Tianmen Cave): USD 85 per person",
+        "Charming Xiangxi Show: USD 70 per person",
+        "Grand Canyon C Line, Glass Bridge and VR: USD 75 per person",
+        "Huanglong Cave (including cruise): USD 70 per person"
+      ],
+      "hotelsLabel": "Hotels",
+      "hotels": [
+        "Day 1: 5-star hotel in Changsha",
+        "Day 2-5: 5-star hotel in Zhangjiajie",
+        "Day 6: 5-star hotel in Changsha"
+      ],
+      "notes": [
+        "Meal codes: B = breakfast, L = lunch, D = dinner, X = not included",
+        "Package includes shop visits: latex shop, jewelry shop, Chinese medicine shop and tea shop",
+        "Philippine passport holders need a China visa; the group visa is not included (USD 40 per person)",
+        "Child categories: 12-21 years with bed; 2-11 years without bed; infant 2-24 months",
+        "Hotels are subject to replacement with similar ones if not available",
+        "All services are on a private basis; the order of attractions may change in crowded or special circumstances",
+        "Single travelers may be paired to share a room; otherwise the single supplement applies"
+      ],
+      "places": [
+        "Qixing Mountain",
+        "1520 Platform",
+        "Glass Skywalk",
+        "Junsheng Sandstone Painting Museum",
+        "72-Floor Stilts Tower",
+        "Zhangjiajie Avatar Scenic Area",
+        "Bailong Lift",
+        "Tianzishan Cable Car",
+        "No. 1 Bridge",
+        "Avatar Hallelujah Mountain",
+        "Golden Whip Stream",
+        "Water Around Four Gates",
+        "Xibu Walking Street",
+        "Huangxin Road Walking Street"
+      ],
+      "posters": [
+        "cn-poster-avatar-skiing-7d6n-0.jpg"
+      ],
+      "posterSize": [
+        516,
+        800
+      ]
+    },
+    {
+      "id": "avatar-furong-6d5n-china",
+      "name": "Avatar – Furong 6D5N Tour (via Hong Kong)",
+      "subtitle": "Out Manila · Cathay Pacific",
+      "region": "intl",
+      "country": "China",
+      "flag": "cn",
+      "duration": "6 days 5 nights",
+      "days": 6,
+      "status": "available",
+      "featured": false,
+      "departure": "Manila (NAIA)",
+      "price": {
+        "from": 499,
+        "label": "From",
+        "unit": "per pax",
+        "currency": "USD"
+      },
+      "year": 2026,
+      "ends": "2027-03-13",
+      "image": "cn-zhangjiajie.jpg",
+      "alt": "Sandstone pillars in Zhangjiajie National Forest Park",
+      "gallery": [
+        "cn-zhangjiajie.jpg"
+      ],
+      "summary": "Six days through Changsha, Furong Town and Zhangjiajie, including the Avatar scenic area and the Grand Canyon Glass Bridge, in local 5-star hotels.",
+      "overview": "Fly via Hong Kong to Changsha, then travel on to the hanging waterfall town of Furong and the Avatar scenic area of Zhangjiajie. The tour includes the Grand Canyon Glass Bridge, Golden Whip Stream and a night view of Furong Town, with local 5-star hotels, an English-speaking guide and a private coach. The connecting flights in Hong Kong are taken on your own.",
+      "travelDates": [
+        {
+          "d": "Jan 25–30",
+          "y": 2027
+        },
+        {
+          "d": "Feb 22–27",
+          "y": 2027
+        },
+        {
+          "d": "Mar 1–6",
+          "y": 2027
+        },
+        {
+          "d": "Mar 8–13",
+          "y": 2027,
+          "add": 70,
+          "cur": "USD"
+        }
+      ],
+      "travelDatesNote": "Departures from Manila, Jan 25–30 2027 to Mar 8–13 2027. The rate changes by date: an amount on a date is added to the base rate per pax. Seats are limited and confirmed at booking.",
+      "itinerary": [
+        {
+          "day": "Day 1",
+          "title": "Manila – Hong Kong – Changsha",
+          "items": [
+            "Fly Manila to Hong Kong (CX906 10:50–13:20), then take the connecting flight to Changsha on your own (CX920 18:20–20:05)",
+            "Meet your guide at Changsha airport and transfer to the hotel"
+          ]
+        },
+        {
+          "day": "Day 2",
+          "title": "Changsha – Zhangjiajie – Furong Town",
+          "items": [
+            "Hotel breakfast",
+            "Transfer to Zhangjiajie (about 4 hours)",
+            "Grand Canyon C Line and Glass Bridge, including VR experience",
+            "Furong Town, the ancient town hanging on the waterfall",
+            "Night view of Furong Town",
+            "Transfer to hotel"
+          ]
+        },
+        {
+          "day": "Day 3",
+          "title": "Furong Town – Zhangjiajie",
+          "items": [
+            "Hotel breakfast",
+            "Compulsory shopping stop: latex shop",
+            "Avatar scenic area (up and down by Bailong Lift)",
+            "No. 1 Bridge",
+            "Avatar Hallelujah Mountain",
+            "Golden Whip Stream and the water around four gates",
+            "Transfer to hotel"
+          ]
+        },
+        {
+          "day": "Day 4",
+          "title": "Zhangjiajie",
+          "items": [
+            "Hotel breakfast",
+            "Compulsory shopping stop: Chinese medicine shop",
+            "Junsheng Sandstone Painting Museum",
+            "72-floor stilts tower (outside view)",
+            "Transfer to hotel"
+          ]
+        },
+        {
+          "day": "Day 5",
+          "title": "Zhangjiajie – Changsha",
+          "items": [
+            "Hotel breakfast",
+            "Compulsory shopping stop: jewelry shop",
+            "Proceed to Changsha",
+            "Free shopping at Huangxing Road walking street",
+            "Local cuisine at the food street (dinner on your own)",
+            "Transfer to hotel"
+          ]
+        },
+        {
+          "day": "Day 6",
+          "title": "Changsha – Hong Kong – Manila",
+          "items": [
+            "Hotel breakfast",
+            "Transfer to airport and fly to Hong Kong (CX967 13:00–15:00)",
+            "Take the connecting flight to Manila on your own (CX913 20:20–22:35)"
+          ]
+        }
+      ],
+      "inclusions": [
+        "5 nights’ accommodation, twin sharing, with daily hotel breakfast",
+        "Economy round-trip airfare and taxes via Cathay Pacific",
+        "23 kg check-in baggage and 7 kg hand carry",
+        "Sightseeing as specified, with all entrance fees needed",
+        "Private coach with English-speaking tour guide",
+        "Meals as listed (D1 none; D2 B/L/D; D3 B/L/D; D4 B/L/D; D5 B/L/X; D6 B/X/X)"
+      ],
+      "exclusions": [
+        "Personal expenses such as phone calls and minibar",
+        "Tips for driver and guide: USD 30 per person (USD 5 per day x 6 days, collected with tour fee)",
+        "Philippines travel tax: USD 31 per person (collected with tour fee)",
+        "China group visa: USD 40 per person (collected with tour fee)",
+        "Fuel surcharge: USD 98 per person (collected with tour fee, subject to change)",
+        "Single supplement: USD 150 per person",
+        "Travel insurance"
+      ],
+      "optional": [
+        "Day 3: Baofeng Lake including cruise, USD 65 per person",
+        "Day 4: Tianmen Mountain (cable car, glass skywalk, Tianmen Cave), USD 85 per person",
+        "Day 4: Tianmen Fox-Lady Show, USD 70 per person"
+      ],
+      "hotelsLabel": "Hotels",
+      "hotels": [
+        "Day 1: Local 5★ hotel in Changsha",
+        "Day 2: Local 5★ hotel in Furong Town",
+        "Day 3–4: Local 5★ hotel in Zhangjiajie",
+        "Day 5: Local 5★ hotel in Changsha"
+      ],
+      "notes": [
+        "Rate includes three compulsory shopping stops: latex shop, Chinese medicine shop and jewelry shop; a penalty applies if you skip the shops",
+        "A China group visa (USD 40) is collected with the tour fee",
+        "Child rates: minor with bed (8–18 yrs) and child without bed (2–7 yrs) are priced separately",
+        "Single supplement USD 150 per person; triple room is not guaranteed and may mean sharing or paying the single supplement",
+        "Not suitable for Muslim travellers",
+        "Twelve percent surcharge if an official receipt is needed (rates exclude VAT)",
+        "Itinerary order may change in crowded groups or special circumstances; hotels may be replaced by similar ones",
+        "Mar 8–13 departure carries a supplement of USD 70 per person"
+      ],
+      "places": [
+        "Changsha",
+        "Grand Canyon Glass Bridge",
+        "Furong Town",
+        "Avatar scenic area",
+        "Bailong Lift",
+        "No. 1 Bridge",
+        "Avatar Hallelujah Mountain",
+        "Golden Whip Stream",
+        "Junsheng Sandstone Painting Museum",
+        "72-floor Stilts Tower",
+        "Huangxing Road Walking Street",
+        "Baofeng Lake",
+        "Tianmen Mountain"
+      ],
+      "posters": [
+        "cn-poster-avatar-furong-6d5n-china-0.jpg"
+      ],
+      "posterSize": [
+        522,
+        800
+      ]
+    },
+    {
+      "id": "beijing-terra-cotta-warriors-6d5n",
+      "name": "Beijing – Xi’an Terracotta Warriors 6D5N Tour",
+      "subtitle": "Out Manila · Air China",
+      "region": "intl",
+      "country": "China",
+      "flag": "cn",
+      "duration": "6 days 5 nights",
+      "days": 6,
+      "status": "available",
+      "featured": false,
+      "departure": "Manila (NAIA)",
+      "price": {
+        "from": 699,
+        "label": "From",
+        "unit": "per pax",
+        "currency": "USD"
+      },
+      "year": 2026,
+      "ends": "2026-12-03",
+      "image": "cn-terracotta.jpg",
+      "alt": "The Terracotta Warriors in Xi’an",
+      "gallery": [
+        "cn-terracotta.jpg"
+      ],
+      "summary": "Beijing’s Forbidden City and Great Wall, then Xi’an’s Terracotta Army and City Wall, with 5-star hotels and a private coach.",
+      "overview": "Three nights in Beijing and two in Xi’an at local 5-star hotels. See Tiananmen Square, the Forbidden City, the Juyongguan Great Wall, the Terracotta Army and the Ancient City Wall, with a private coach and English-speaking guide. Flights are with Air China.",
+      "travelDates": [
+        {
+          "d": "Nov 21–26"
+        },
+        {
+          "d": "Nov 28–Dec 3",
+          "add": 50,
+          "cur": "USD"
+        }
+      ],
+      "travelDatesNote": "Departures from Manila, Nov 21–26 2026 to Nov 28–Dec 3 2026. The rate changes by date: an amount on a date is added to the base rate per pax. Seats are limited and confirmed at booking.",
+      "itinerary": [
+        {
+          "day": "Day 1",
+          "title": "Manila – Beijing",
+          "items": [
+            "Fly Manila to Beijing (CA180 06:25/10:50).",
+            "Visit the Water Cube and the Bird’s Nest (outside view).",
+            "Visit a tea shop and Wangfujing Walking Street.",
+            "Transfer to hotel and check in. Meals: X/L/X."
+          ]
+        },
+        {
+          "day": "Day 2",
+          "title": "Beijing",
+          "items": [
+            "Hotel breakfast.",
+            "Visit Tiananmen Square and the Forbidden City.",
+            "Visit a Chinese medicine shop.",
+            "Optional tour: Panda House at Beijing Zoo. Meals: B/L/X."
+          ]
+        },
+        {
+          "day": "Day 3",
+          "title": "Beijing",
+          "items": [
+            "Hotel breakfast.",
+            "Visit a jade shop.",
+            "Visit the Juyongguan Great Wall.",
+            "Hanfu experience.",
+            "Optional tour: Summer Palace. Meals: B/L/X."
+          ]
+        },
+        {
+          "day": "Day 4",
+          "title": "Beijing – Xi’an",
+          "items": [
+            "Hotel breakfast.",
+            "Visit Qianmen old street.",
+            "Visit a jewelry shop.",
+            "Fly Beijing to Xi’an (CA1205 20:15/22:25); meet the guide at the airport and transfer to hotel. Meals: B/L/X."
+          ]
+        },
+        {
+          "day": "Day 5",
+          "title": "Xi’an",
+          "items": [
+            "Hotel breakfast.",
+            "Explore the Ancient City Wall and No.1 Bridge.",
+            "Visit the Terracotta Army (battery bus included).",
+            "Great Tang All Day Mall.",
+            "After dinner, transfer back to hotel. Meals: B/L/D."
+          ]
+        },
+        {
+          "day": "Day 6",
+          "title": "Xi’an – Beijing – Manila",
+          "items": [
+            "Hotel breakfast.",
+            "Visit Big Wild Goose Pagoda, Bell Tower and Bell and Drum Tower Square.",
+            "Fly Xi’an to Beijing (CA1210 14:00/16:10), then Beijing to Manila (CA179 19:30/00:20+1). Meals: B/L/X."
+          ]
+        }
+      ],
+      "inclusions": [
+        "Economy airfare and taxes with Air China (round trip)",
+        "Baggage: 1 piece 23 kg plus 5 kg carry-on",
+        "5 nights twin-share accommodation with daily breakfast (triple rooms not guaranteed)",
+        "Private coach with English-speaking tour guide",
+        "Sightseeing as specified, including first-way entrance fees",
+        "Meals as listed"
+      ],
+      "exclusions": [
+        "Personal expenses such as phone calls and minibar",
+        "Extra baggage allowance",
+        "Travel insurance",
+        "Fuel surcharge: USD 60 per person, subject to change",
+        "China group visa (guaranteed): USD 40 per person, collected with tour fee",
+        "Tips for driver and guide: USD 60 per person, collected with tour fee",
+        "Philippine travel tax: USD 30 per person, collected with tour fee",
+        "Single supplement: USD 150 per person",
+        "Optional tours"
+      ],
+      "optional": [
+        "Optional package (USD 70 per person, minimum 10 pax): Peking duck dinner + Summer Palace (excluding cruise) + Panda House at Beijing Zoo"
+      ],
+      "hotelsLabel": "Hotels",
+      "hotels": [
+        "Day 1-3: Local 5★ hotel in Beijing",
+        "Day 4-5: Local 5★ hotel in Xi’an"
+      ],
+      "notes": [
+        "Shop visits are included in this rate: tea shop, jewelry shop, Chinese medicine shop and jade shop.",
+        "Child with bed 9-18 yrs, child without bed 2-8 yrs, infant 2 months-2 yrs.",
+        "If a hotel is unavailable it will be replaced by a similar one; all services are private; the order of sights may change.",
+        "A single traveller without a roommate may be paired with another guest, otherwise the single supplement applies."
+      ],
+      "places": [
+        "Water Cube",
+        "Bird’s Nest",
+        "Wangfujing Walking Street",
+        "Tiananmen Square",
+        "Forbidden City",
+        "Juyongguan Great Wall",
+        "Qianmen old street",
+        "Xi’an Ancient City Wall",
+        "Terracotta Army",
+        "Great Tang All Day Mall",
+        "Big Wild Goose Pagoda",
+        "Bell Tower"
+      ],
+      "posters": [
+        "cn-poster-beijing-terra-cotta-warriors-6d5n-0.jpg"
+      ],
+      "posterSize": [
+        525,
+        800
+      ]
+    },
+    {
+      "id": "beijing-5d4n",
+      "name": "Beijing 5D4N Tour",
+      "subtitle": "Out Manila · Philippine Airlines",
+      "region": "intl",
+      "country": "China",
+      "flag": "cn",
+      "duration": "5 days 4 nights",
+      "days": 5,
+      "status": "available",
+      "featured": false,
+      "departure": "Manila (NAIA)",
+      "price": {
+        "from": 439,
+        "label": "From",
+        "unit": "per pax",
+        "currency": "USD"
+      },
+      "year": 2026,
+      "ends": "2027-04-06",
+      "image": "cn-great-wall.jpg",
+      "alt": "The Great Wall of China",
+      "gallery": [
+        "cn-great-wall.jpg"
+      ],
+      "summary": "Five days in Beijing covering the Forbidden City, Great Wall and Temple of Heaven, flying Philippine Airlines with 5-star hotels.",
+      "overview": "A classic Beijing visit: Tiananmen Square, the Forbidden City, the Juyongguan Great Wall, the Temple of Heaven and more. You fly Philippine Airlines round trip from Manila and stay four nights in a 5-star Beijing hotel with daily breakfast. Shop visits are part of the package.",
+      "travelDates": [
+        {
+          "d": "Feb 19–23",
+          "y": 2027
+        },
+        {
+          "d": "Feb 26–Mar 2",
+          "y": 2027
+        },
+        {
+          "d": "Apr 2–6",
+          "y": 2027
+        }
+      ],
+      "travelDatesNote": "Departures from Manila, Feb 19–23 2027 to Apr 2–6 2027. The rate changes by date: an amount on a date is added to the base rate per pax. Seats are limited and confirmed at booking.",
+      "itinerary": [
+        {
+          "day": "Day 1",
+          "title": "Manila – Beijing",
+          "items": [
+            "Fly Manila to Beijing (PR358, 06:55–11:55) and meet your guide at the airport",
+            "Water Cube (outside view)",
+            "Bird’s Nest (outside view)",
+            "Wangfujing Walking Street",
+            "Transfer to hotel and check in (dinner included)"
+          ]
+        },
+        {
+          "day": "Day 2",
+          "title": "Beijing",
+          "items": [
+            "Breakfast at the hotel",
+            "Tiananmen Square",
+            "Forbidden City",
+            "Tea shop visit",
+            "Panda House at Beijing Zoo (optional)",
+            "Peking duck dinner (optional)",
+            "Transfer to hotel"
+          ]
+        },
+        {
+          "day": "Day 3",
+          "title": "Beijing",
+          "items": [
+            "Breakfast at the hotel",
+            "Jade shop visit",
+            "Juyongguan Great Wall",
+            "Hanfu experience",
+            "Foot massage",
+            "Summer Palace, excluding cruise (optional)",
+            "Transfer to hotel"
+          ]
+        },
+        {
+          "day": "Day 4",
+          "title": "Beijing",
+          "items": [
+            "Breakfast at the hotel",
+            "Jewelry shop visit",
+            "Temple of Heaven",
+            "Qianmen Old Street",
+            "Acrobatic show (optional)",
+            "Transfer to hotel"
+          ]
+        },
+        {
+          "day": "Day 5",
+          "title": "Beijing – Manila",
+          "items": [
+            "Breakfast at the hotel",
+            "Transfer to the airport and fly Beijing to Manila (PR359, 12:55–18:05)"
+          ]
+        }
+      ],
+      "inclusions": [
+        "Economy airfare and taxes via Philippine Airlines, round trip",
+        "Baggage allowance: 23 kg checked plus 5 kg carry-on",
+        "4 nights’ accommodation, twin sharing, with daily hotel breakfast",
+        "Private coach with English-speaking tour guide",
+        "Sightseeing as specified, including first-way entrance fees",
+        "Meals as listed"
+      ],
+      "exclusions": [
+        "Personal expenses such as phone calls and minibar",
+        "Extra baggage",
+        "Travel insurance",
+        "Fuel surcharge about USD 30 per person, subject to change, collected with the tour fee",
+        "Philippine travel tax, paid directly at the airport",
+        "China group visa USD 40 per person",
+        "Tips for driver and guide USD 50 per person (USD 10 per day for 5 days)",
+        "Single supplement USD 150 per person"
+      ],
+      "optional": [
+        "Optional package: Peking duck dinner + Summer Palace (excluding cruise) + Acrobatic show + Panda House at Beijing Zoo – USD 100 per person (minimum 10 guests)"
+      ],
+      "hotelsLabel": "Hotels",
+      "hotels": [
+        "Day 1–4: 5★ hotel in Beijing",
+        "Day 5: Sweet Home"
+      ],
+      "notes": [
+        "Meals per day: D1 D; D2–D4 B/L; D5 B",
+        "Children: with bed (11–17 yrs) and without bed (2–10 yrs) have separate rates; infants 2 months–2 years",
+        "Group rate: 10 paying adults plus 1 free of charge (FOC covers the adult tour fee only)",
+        "Philippine passport holders need a China visa (group visa USD 40 per person)",
+        "Shop visits are included in the rate: jade shop, jewelry shop, tea shop and Chinese medicine shop; guests who skip a shop visit may be fined",
+        "Optional package needs a minimum of 10 guests",
+        "Hotels may be replaced by similar ones; the order of sights may change"
+      ],
+      "places": [
+        "Water Cube",
+        "Bird’s Nest",
+        "Wangfujing Walking Street",
+        "Tiananmen Square",
+        "Forbidden City",
+        "Juyongguan Great Wall",
+        "Summer Palace",
+        "Temple of Heaven",
+        "Qianmen Old Street"
+      ],
+      "posters": [
+        "cn-poster-beijing-5d4n-0.jpg"
+      ],
+      "posterSize": [
+        527,
+        800
+      ]
+    },
+    {
+      "id": "beijing-6d5n",
+      "name": "Beijing 6D5N Tour",
+      "subtitle": "Out Manila · Philippine Airlines",
+      "region": "intl",
+      "country": "China",
+      "flag": "cn",
+      "duration": "6 days 5 nights",
+      "days": 6,
+      "status": "available",
+      "featured": false,
+      "departure": "Manila (NAIA)",
+      "price": {
+        "from": 499,
+        "label": "From",
+        "unit": "per pax",
+        "currency": "USD"
+      },
+      "year": 2026,
+      "ends": "2027-07-04",
+      "image": "cn-forbidden-city.jpg",
+      "alt": "A guardian lion in the Forbidden City, Beijing",
+      "gallery": [
+        "cn-forbidden-city.jpg"
+      ],
+      "summary": "Six days in Beijing with the Forbidden City, the Great Wall at Juyongguan and the Temple of Heaven, staying in a 5★ hotel.",
+      "overview": "Fly direct to Beijing with Philippine Airlines and stay five nights in a 5★ hotel. You visit Tiananmen Square, the Forbidden City, the Juyongguan Great Wall and the Temple of Heaven, with a Hanfu experience and a foot massage along the way. Day 5 is free, with an optional Universal Studios Beijing trip, and the guide is English-speaking.",
+      "travelDates": [
+        {
+          "d": "Mar 2–7",
+          "y": 2027
+        },
+        {
+          "d": "Mar 4–9",
+          "y": 2027
+        },
+        {
+          "d": "Mar 7–12",
+          "y": 2027
+        },
+        {
+          "d": "Mar 9–14",
+          "y": 2027
+        },
+        {
+          "d": "Mar 14–19",
+          "y": 2027
+        },
+        {
+          "d": "Mar 16–21",
+          "y": 2027
+        },
+        {
+          "d": "Mar 18–23",
+          "y": 2027,
+          "add": 20,
+          "cur": "USD"
+        },
+        {
+          "d": "Mar 30–Apr 4",
+          "y": 2027
+        },
+        {
+          "d": "Apr 4–9",
+          "y": 2027
+        },
+        {
+          "d": "May 23–28",
+          "y": 2027
+        },
+        {
+          "d": "Jun 6–11",
+          "y": 2027
+        },
+        {
+          "d": "Jun 27–Jul 2",
+          "y": 2027
+        },
+        {
+          "d": "Jun 29–Jul 4",
+          "y": 2027
+        }
+      ],
+      "travelDatesNote": "Departures from Manila, Mar 2–7 2027 to Jun 29–Jul 4 2027. The rate changes by date: an amount on a date is added to the base rate per pax. Seats are limited and confirmed at booking.",
+      "itinerary": [
+        {
+          "day": "Day 1",
+          "title": "Manila – Beijing",
+          "items": [
+            "Fly Manila – Beijing (07:10 – 11:55); meet the tour guide at the airport",
+            "Water Cube (outside view)",
+            "Bird’s Nest (outside view)",
+            "Wangfujing Walking Street",
+            "Transfer to the hotel and check in",
+            "Meals: X/X/D"
+          ]
+        },
+        {
+          "day": "Day 2",
+          "title": "Tiananmen Square and Forbidden City",
+          "items": [
+            "Breakfast at the hotel",
+            "Tiananmen Square",
+            "Forbidden City",
+            "Tea shop visit",
+            "Optional: Panda House at Beijing Zoo",
+            "Optional: Peking duck dinner",
+            "Transfer to the hotel",
+            "Meals: B/L/X"
+          ]
+        },
+        {
+          "day": "Day 3",
+          "title": "Great Wall",
+          "items": [
+            "Breakfast at the hotel",
+            "Jade shop visit",
+            "Juyongguan Great Wall",
+            "Hanfu experience",
+            "Foot massage",
+            "Optional: The Summer Palace (excluding cruise)",
+            "Transfer to the hotel",
+            "Meals: B/L/X"
+          ]
+        },
+        {
+          "day": "Day 4",
+          "title": "Temple of Heaven",
+          "items": [
+            "Breakfast at the hotel",
+            "Jewelry shop visit",
+            "Temple of Heaven",
+            "Qianmen Old Street",
+            "Optional: Acrobatic show",
+            "Transfer to the hotel",
+            "Meals: B/L/X"
+          ]
+        },
+        {
+          "day": "Day 5",
+          "title": "Free day",
+          "items": [
+            "Breakfast at the hotel",
+            "Free and easy whole day; no service if you do not join the optional tour",
+            "Optional: Universal Studios Beijing",
+            "Meals: B/X/X"
+          ]
+        },
+        {
+          "day": "Day 6",
+          "title": "Beijing – Manila",
+          "items": [
+            "Breakfast at the hotel",
+            "Proceed to the airport and fly Beijing – Manila (12:55 – 18:05)",
+            "Meals: B/X/X"
+          ]
+        }
+      ],
+      "inclusions": [
+        "Economy airfare and taxes via Philippine Airlines (round trip)",
+        "Baggage allowance: 23 kg check-in and 5 kg carry-on",
+        "5 nights’ accommodation, twin sharing, with daily hotel breakfast",
+        "Private coach with English-speaking tour guide",
+        "Sightseeing entrance fees as specified above (first way)",
+        "Meals as listed"
+      ],
+      "exclusions": [
+        "Personal expenses such as telephone calls and minibar",
+        "Extra baggage",
+        "Travel insurance",
+        "Fuel surcharge, estimated USD 30/pax, subject to change (collected with the tour fee)",
+        "Philippine travel tax (pay at the airport)",
+        "China group visa USD 40/pax (collected with the tour fee)",
+        "Tips for driver and guide USD 10/pax/day x 6 days = USD 60/pax (collected with the tour fee)",
+        "Single supplement USD 180/pax"
+      ],
+      "optional": [
+        "Package 1, USD 100/pax (minimum 10 pax): Peking duck dinner + The Summer Palace (excluding cruise) + acrobatic show + Panda House at Beijing Zoo",
+        "Package 2, USD 140/pax (minimum 10 pax): Universal Studios Beijing (one-day pass, round-trip transfer, guide assistance)"
+      ],
+      "hotelsLabel": "Hotels",
+      "hotels": [
+        "Day 1-5: 5★ Hotel Beijing",
+        "Day 6: Sweet Home"
+      ],
+      "notes": [
+        "Meal codes: B = breakfast, L = lunch, D = dinner, X = not included",
+        "Includes shopping stops: tea shop, jade shop, jewelry shop and Chinese medicine shop; passengers who skip a shop visit may be fined",
+        "Single supplement USD 180/pax",
+        "Child with bed 11–17 yrs, child without bed 2–10 yrs, infant 2 months–2 yrs",
+        "Rate based on 10+1 FOC (adult tour fee only)",
+        "Visa: China group visa USD 40/pax is not included",
+        "If hotels are unavailable they are replaced by similar ones; the order of sights may change in crowded periods",
+        "Passengers who do not accept room sharing pay the single supplement"
+      ],
+      "places": [
+        "Water Cube",
+        "Bird’s Nest",
+        "Wangfujing Walking Street",
+        "Tiananmen Square",
+        "Forbidden City",
+        "Juyongguan Great Wall",
+        "Temple of Heaven",
+        "Qianmen Old Street"
+      ],
+      "posters": [
+        "cn-poster-beijing-6d5n-0.jpg"
+      ],
+      "posterSize": [
+        535,
+        800
+      ]
+    },
+    {
+      "id": "beijing-skiing-6d5n",
+      "name": "Beijing 6D5N Skiing Tour",
+      "subtitle": "Out Manila · Philippine Airlines",
+      "region": "intl",
+      "country": "China",
+      "flag": "cn",
+      "duration": "6 days 5 nights",
+      "days": 6,
+      "status": "available",
+      "featured": false,
+      "departure": "Manila (NAIA)",
+      "price": {
+        "from": 519,
+        "label": "From",
+        "unit": "per pax",
+        "currency": "USD"
+      },
+      "year": 2026,
+      "ends": "2027-03-05",
+      "image": "cn-great-wall.jpg",
+      "alt": "The Great Wall of China",
+      "gallery": [
+        "cn-great-wall.jpg"
+      ],
+      "summary": "Direct flight to Beijing with the Forbidden City, Great Wall and a day of skiing at Snow World, plus a free-and-easy day, in 5-star hotels.",
+      "overview": "Fly direct to Beijing with Philippine Airlines for five nights in 5-star hotels. See Tiananmen Square, the Forbidden City, the Juyongguan Great Wall and the Temple of Heaven, and try skiing at Snow World with ticket, snow coat and equipment included. Day 5 is free and easy, with Universal Studios Beijing as an optional day.",
+      "travelDates": [
+        {
+          "d": "Feb 18–23",
+          "y": 2027
+        },
+        {
+          "d": "Feb 21–26",
+          "y": 2027
+        },
+        {
+          "d": "Feb 23–28",
+          "y": 2027
+        },
+        {
+          "d": "Feb 28–Mar 5",
+          "y": 2027
+        }
+      ],
+      "travelDatesNote": "Departures from Manila, Feb 18–23 2027 to Feb 28–Mar 5 2027. The rate changes by date: an amount on a date is added to the base rate per pax. Seats are limited and confirmed at booking.",
+      "itinerary": [
+        {
+          "day": "Day 1",
+          "title": "Manila – Beijing",
+          "items": [
+            "Fly Manila to Beijing (PR358, 06:55–11:55)",
+            "Meet the tour guide at the airport",
+            "Water Cube (outside view)",
+            "Bird’s Nest (outside view)",
+            "Wangfujing Walking Street",
+            "Transfer to the hotel and check in"
+          ]
+        },
+        {
+          "day": "Day 2",
+          "title": "Beijing",
+          "items": [
+            "Breakfast at the hotel",
+            "Tiananmen Square",
+            "Forbidden City",
+            "Tea shop visit",
+            "Optional: Panda House at Beijing Zoo",
+            "Optional: Peking duck dinner",
+            "Transfer to the hotel"
+          ]
+        },
+        {
+          "day": "Day 3",
+          "title": "Great Wall and skiing",
+          "items": [
+            "Breakfast at the hotel",
+            "Jade shop visit",
+            "Juyongguan Great Wall",
+            "Skiing at Snow World (ticket, snow coat and ski equipment included)",
+            "Foot massage",
+            "Optional: Summer Palace (excluding cruise)",
+            "Transfer to the hotel"
+          ]
+        },
+        {
+          "day": "Day 4",
+          "title": "Beijing",
+          "items": [
+            "Breakfast at the hotel",
+            "Jewelry shop visit",
+            "Temple of Heaven",
+            "Qianmen Old Street",
+            "Optional: acrobatic show",
+            "Transfer to the hotel"
+          ]
+        },
+        {
+          "day": "Day 5",
+          "title": "Free and easy day",
+          "items": [
+            "Breakfast at the hotel",
+            "Free and easy for the whole day; no service if you do not join an optional tour",
+            "Optional: Universal Studios Beijing"
+          ]
+        },
+        {
+          "day": "Day 6",
+          "title": "Beijing – Manila",
+          "items": [
+            "Breakfast at the hotel",
+            "Transfer to the airport and fly back to Manila (PR359, 12:55–18:05)"
+          ]
+        }
+      ],
+      "inclusions": [
+        "Round-trip economy airfare and taxes via Philippine Airlines",
+        "Baggage: 23 kg checked plus 5 kg carry-on",
+        "5 nights twin-sharing accommodation at 5-star hotels with daily breakfast",
+        "Private coach with English-speaking tour guide",
+        "Sightseeing as specified, including the first-way entrance fees",
+        "Meals as listed",
+        "Skiing at Snow World with ticket, snow coat and equipment"
+      ],
+      "exclusions": [
+        "Personal expenses such as phone calls and minibar",
+        "Extra baggage allowance",
+        "Travel insurance",
+        "Fuel surcharge: estimated USD 30 per person, subject to change (collected with the tour fee)",
+        "Philippine travel tax: USD 30 per person",
+        "China Group Visa: USD 40 per person",
+        "Tips for driver and guide: USD 60 per person, USD 10 per day for 6 days",
+        "Single supplement: USD 180 per person"
+      ],
+      "optional": [
+        "Optional package 1, USD 100 per person (minimum 10 people): Peking duck dinner, Summer Palace (excluding cruise), acrobatic show and Panda House at Beijing Zoo",
+        "Optional package 2, USD 140 per person (minimum 10 people): Universal Studios Beijing (one-day pass, round-trip transfer and guide assistance)"
+      ],
+      "hotelsLabel": "Hotels",
+      "hotels": [
+        "Day 1-5: 5-star hotel in Beijing"
+      ],
+      "notes": [
+        "Meals (by day): Day 1 dinner only; Day 2 B/L; Day 3 B/L; Day 4 B/L; Day 5 breakfast; Day 6 breakfast",
+        "Shopping stops are part of the rate: jade shop, jewelry shop, tea shop and Chinese medicine shop; there is a fine if passengers skip the shops",
+        "Child with bed 11 to 17 years, child without bed 2 to 10 years, infant 2 months to 2 years",
+        "Single travellers booked through an agent may be paired to share a room; otherwise the single supplement applies",
+        "If the listed hotels are not available they will be replaced by similar ones",
+        "All services are private; the order of attractions may be adjusted in crowded periods",
+        "Philippine passport holders need a China visa; the China Group Visa fee is listed under exclusions."
+      ],
+      "places": [
+        "Water Cube",
+        "Bird’s Nest",
+        "Wangfujing Street",
+        "Tiananmen Square",
+        "Forbidden City",
+        "Juyongguan Great Wall",
+        "Snow World",
+        "Temple of Heaven",
+        "Qianmen Street",
+        "Summer Palace",
+        "Universal Studios Beijing"
+      ],
+      "posters": [
+        "cn-poster-beijing-skiing-6d5n-0.jpg"
+      ],
+      "posterSize": [
+        535,
+        800
+      ]
+    },
+    {
+      "id": "beijing-terra-cotta-warriors-6d5n-2",
+      "name": "Beijing – Terra-Cotta Warriors 6D5N Tour",
+      "subtitle": "Out Manila · Air China",
+      "region": "intl",
+      "country": "China",
+      "flag": "cn",
+      "duration": "6 days 5 nights",
+      "days": 6,
+      "status": "available",
+      "featured": false,
+      "departure": "Manila (NAIA)",
+      "price": {
+        "from": 699,
+        "label": "From",
+        "unit": "per pax",
+        "currency": "USD"
+      },
+      "year": 2026,
+      "ends": "2027-03-05",
+      "image": "cn-terracotta.jpg",
+      "alt": "The Terracotta Warriors in Xi’an",
+      "gallery": [
+        "cn-terracotta.jpg"
+      ],
+      "summary": "Fly Air China to Beijing for the Forbidden City and Great Wall, then fly to Xi’an to see the Terracotta Army, staying in 5-star hotels.",
+      "overview": "This 6-day tour flies with Air China from Manila to Beijing, where you see Tiananmen Square, the Forbidden City, the Juyongguan Great Wall and a Hanfu experience. You then fly to Xi’an for the Ancient City Wall, the Terracotta Army and the Big Wild Goose Pagoda. All hotels are local 5-star, and the programme includes several shop stops.",
+      "travelDates": [
+        {
+          "d": "Feb 21–26",
+          "y": 2027
+        },
+        {
+          "d": "Feb 28–Mar 5",
+          "y": 2027
+        }
+      ],
+      "travelDatesNote": "Departures from Manila, Feb 21–26 2027 to Feb 28–Mar 5 2027. The rate changes by date: an amount on a date is added to the base rate per pax. Seats are limited and confirmed at booking.",
+      "itinerary": [
+        {
+          "day": "Day 1",
+          "title": "Manila – Beijing",
+          "items": [
+            "Flight CA180 Manila to Beijing (06:20–10:50)",
+            "Water Cube (outside view)",
+            "Bird’s Nest (outside view)",
+            "Tea shop visit",
+            "Wangfujing Walking Street",
+            "Transfer to the hotel and check in",
+            "Meals: Lunch"
+          ]
+        },
+        {
+          "day": "Day 2",
+          "title": "Beijing",
+          "items": [
+            "Breakfast at the hotel",
+            "Tiananmen Square",
+            "Forbidden City",
+            "Chinese medicine shop visit",
+            "Optional: Panda House at Beijing Zoo",
+            "Meals: Breakfast / Lunch"
+          ]
+        },
+        {
+          "day": "Day 3",
+          "title": "Beijing",
+          "items": [
+            "Breakfast at the hotel",
+            "Jade shop visit",
+            "Juyongguan Great Wall",
+            "Hanfu experience",
+            "Optional: Summer Palace",
+            "Meals: Breakfast / Lunch"
+          ]
+        },
+        {
+          "day": "Day 4",
+          "title": "Beijing – Xi’an",
+          "items": [
+            "Breakfast at the hotel",
+            "Qianmen old street",
+            "Jewelry shop visit",
+            "Proceed to the airport for flight CA1205 Beijing to Xi’an (20:00–22:25)",
+            "Meet the guide in Xi’an, transfer to the hotel and check in",
+            "Meals: Breakfast / Lunch"
+          ]
+        },
+        {
+          "day": "Day 5",
+          "title": "Xi’an",
+          "items": [
+            "Breakfast at the hotel",
+            "Ancient City Wall",
+            "Terracotta Army (battery bus included)",
+            "Great Tang All Day Mall",
+            "After dinner, transfer back to the hotel",
+            "Meals: Breakfast / Lunch / Dinner"
+          ]
+        },
+        {
+          "day": "Day 6",
+          "title": "Xi’an – Beijing – Manila",
+          "items": [
+            "Breakfast at the hotel",
+            "Big Wild Goose Pagoda",
+            "Bell Tower",
+            "Bell and Drum Tower Square",
+            "Transfer to the airport for flight CA1210 Xi’an to Beijing (14:00–16:10)",
+            "Flight CA179 Beijing to Manila (19:05–00:05 next day)",
+            "Meals: Breakfast / Lunch"
+          ]
+        }
+      ],
+      "inclusions": [
+        "Round-trip economy airfare and taxes via Air China",
+        "Baggage allowance: 1 piece of 23 kg per passenger plus 5 kg carry-on",
+        "5 nights accommodation, twin sharing, with daily hotel breakfast (triple rooms not guaranteed)",
+        "Private coach with an English-speaking tour guide",
+        "Sightseeing as listed, including first-way entrance fees",
+        "Meals as listed"
+      ],
+      "exclusions": [
+        "Personal expenses such as telephone calls and minibar",
+        "Extra baggage",
+        "Travel insurance",
+        "Fuel surcharge USD 60 per person (collected with the tour fee, subject to change)",
+        "China group visa (guaranteed) USD 40 per person (collected with the tour fee)",
+        "Tips for driver and guide USD 60 per person (collected with the tour fee)",
+        "Philippine travel tax USD 30 per person (collected with the tour fee)",
+        "Single supplement USD 150 per person"
+      ],
+      "optional": [
+        "Optional package, USD 70 per person, minimum 10 travellers: Peking duck dinner + Summer Palace (excluding cruise) + Panda House at Beijing Zoo"
+      ],
+      "hotelsLabel": "Hotels",
+      "hotels": [
+        "Day 1–3: Local 5★ hotel in Beijing",
+        "Day 4–5: Local 5★ hotel in Xi’an"
+      ],
+      "notes": [
+        "Meal codes B/L/D = breakfast/lunch/dinner; X = not included.",
+        "Shop stops included: tea shop, jewelry shop, Chinese medicine shop and jade shop.",
+        "Philippine passport holders need a China visa; the China group visa is guaranteed at USD 40 per person.",
+        "Child rates: 9–18 years with bed; 2–8 years without bed; infants 2 months to 2 years have their own rate.",
+        "Single travellers may be paired with another guest to share a room; otherwise the single supplement applies.",
+        "Hotels may be replaced by similar ones; the order of attractions may change in crowded periods or special circumstances."
+      ],
+      "places": [
+        "Water Cube",
+        "Bird’s Nest",
+        "Wangfujing Walking Street",
+        "Tiananmen Square",
+        "Forbidden City",
+        "Juyongguan Great Wall",
+        "Qianmen Old Street",
+        "Xi’an Ancient City Wall",
+        "Terracotta Army",
+        "Great Tang All Day Mall",
+        "Big Wild Goose Pagoda",
+        "Bell Tower",
+        "Bell and Drum Tower Square",
+        "Summer Palace (optional)",
+        "Panda House, Beijing Zoo (optional)"
+      ],
+      "posters": [
+        "cn-poster-beijing-terra-cotta-warriors-6d5n-2-0.jpg"
+      ],
+      "posterSize": [
+        525,
+        800
+      ]
+    },
+    {
+      "id": "beijing-shanghai-6d5n",
+      "name": "Beijing – Shanghai 6D5N Tour",
+      "subtitle": "Out Manila · Philippine Airlines",
+      "region": "intl",
+      "country": "China",
+      "flag": "cn",
+      "duration": "6 days 5 nights",
+      "days": 6,
+      "status": "available",
+      "featured": false,
+      "departure": "Manila (NAIA)",
+      "price": {
+        "from": 699,
+        "label": "From",
+        "unit": "per pax",
+        "currency": "USD"
+      },
+      "year": 2026,
+      "ends": "2027-05-05",
+      "image": "cn-forbidden-city.jpg",
+      "alt": "A guardian lion in the Forbidden City, Beijing",
+      "gallery": [
+        "cn-forbidden-city.jpg"
+      ],
+      "summary": "Beijing’s Great Wall, Forbidden City and Summer Palace, then bullet train to Shanghai for the Bund, a free day and optional Disneyland, in 5-star hotels.",
+      "overview": "Fly Philippine Airlines from Manila to Beijing for the Great Wall, Tiananmen Square, the Forbidden City and the Summer Palace. Ride the bullet train to Shanghai for the Bund and Oriental Pearl Tower, enjoy a free day (with optional Shanghai Disneyland) and fly home. Five nights in 5-star hotels; this is a shopping-stop package.",
+      "travelDates": [
+        {
+          "d": "Apr 9–14",
+          "y": 2027
+        },
+        {
+          "d": "Apr 30–May 5",
+          "y": 2027,
+          "add": 30,
+          "cur": "USD"
+        }
+      ],
+      "travelDatesNote": "Departures from Manila, Apr 9–14 2027 to Apr 30–May 5 2027. The rate changes by date: an amount on a date is added to the base rate per pax. Seats are limited and confirmed at booking.",
+      "itinerary": [
+        {
+          "day": "Day 1",
+          "title": "Manila – Beijing",
+          "items": [
+            "Flight Manila – Beijing (PR358, 07:10/11:55)",
+            "Meet your tour guide at the airport",
+            "Water Cube (outside view)",
+            "Bird’s Nest (outside view)",
+            "Dinner, then transfer to the hotel and check in"
+          ]
+        },
+        {
+          "day": "Day 2",
+          "title": "Great Wall and Wangfujing",
+          "items": [
+            "Breakfast at the hotel",
+            "Shopping stop at a jewelry shop",
+            "Juyongguan Great Wall",
+            "Shopping stop at a jade shop",
+            "Wangfujing Walking Street (dinner on your own)",
+            "Back to the hotel"
+          ]
+        },
+        {
+          "day": "Day 3",
+          "title": "Tiananmen and the Forbidden City",
+          "items": [
+            "Breakfast at the hotel",
+            "Tiananmen Square",
+            "Forbidden City",
+            "Shopping stop at a Chinese medicine shop",
+            "Shopping stop at a tea shop",
+            "Free shopping at Qianmen Street and Xianyukou food street",
+            "Back to the hotel"
+          ]
+        },
+        {
+          "day": "Day 4",
+          "title": "Beijing – Shanghai by bullet train",
+          "items": [
+            "Breakfast at the hotel",
+            "Summer Palace",
+            "After lunch, bullet train to Shanghai",
+            "Meet your Shanghai guide",
+            "The Bund and Oriental Pearl Tower (outside view)",
+            "Transfer to the hotel and check in"
+          ]
+        },
+        {
+          "day": "Day 5",
+          "title": "Free day in Shanghai",
+          "items": [
+            "Breakfast at the hotel",
+            "Free and easy day",
+            "Optional: Shanghai Disneyland, USD 120 per person, minimum 10 pax (one-day pass, round-trip transfers, guide, pick-up after the fireworks)"
+          ]
+        },
+        {
+          "day": "Day 6",
+          "title": "Shanghai – Manila",
+          "items": [
+            "Breakfast at the hotel",
+            "Shopping stop at a latex shop",
+            "World’s largest Starbucks flagship store",
+            "LV mega ship",
+            "Transfer to the airport for the flight to Manila (PR337, 16:55/20:50)"
+          ]
+        }
+      ],
+      "inclusions": [
+        "Economy round-trip airfare and taxes via Philippine Airlines",
+        "Baggage: 1 piece, 25 kg check-in",
+        "Beijing – Shanghai bullet train, second class",
+        "5 nights’ twin-sharing accommodation at 5-star hotels with daily breakfast",
+        "Private coach with English-speaking tour guide",
+        "Sightseeing as specified, including first-way entrance fees",
+        "Meals as listed"
+      ],
+      "exclusions": [
+        "Personal expenses such as telephone calls and minibar",
+        "Extra baggage",
+        "Travel insurance",
+        "Fuel surcharge USD 30 per person, subject to change",
+        "Philippines travel tax PHP 1,620 per person (pay directly at the airport)",
+        "China group visa USD 40 per person",
+        "Tips for driver and guide USD 60 per person (collected with tour fee)",
+        "Single supplement USD 180 per person"
+      ],
+      "optional": [
+        "Shanghai Disneyland (one-day pass, round-trip transfers, guide, pick-up after fireworks): USD 120 per person, minimum 10 pax"
+      ],
+      "hotelsLabel": "Hotels",
+      "hotels": [
+        "Day 1-3: 5-star hotel in Beijing",
+        "Day 4-5: 5-star hotel in Shanghai"
+      ],
+      "notes": [
+        "Meals: Day 1 dinner; Days 2-3 breakfast and lunch; Day 4 breakfast, lunch and dinner; Days 5-6 breakfast only",
+        "Shopping stops: jade, jewelry, Chinese medicine, tea and latex shops; the rate is based on these visits",
+        "Child with bed (11-18 years) and child without bed (2-10 years) have separate rates",
+        "Single travellers may be paired with another guest to share a room; otherwise the single supplement applies",
+        "If a listed hotel is unavailable it is replaced by a similar one",
+        "Order of attractions may be adjusted for crowded groups or special circumstances",
+        "Services are on a private basis",
+        "Philippine passport holders need a China group visa, USD 40 per person (not included)"
+      ],
+      "places": [
+        "Water Cube",
+        "Bird’s Nest",
+        "Juyongguan Great Wall",
+        "Wangfujing Walking Street",
+        "Tiananmen Square",
+        "Forbidden City",
+        "Qianmen Street",
+        "Xianyukou Food Street",
+        "Summer Palace",
+        "The Bund",
+        "Oriental Pearl Tower",
+        "Starbucks flagship store Shanghai",
+        "Shanghai Disneyland"
+      ],
+      "posters": [
+        "cn-poster-beijing-shanghai-6d5n-0.jpg",
+        "cn-poster-beijing-shanghai-6d5n-1.jpg"
+      ],
+      "posterSize": [
+        510,
+        800
+      ]
+    },
+    {
+      "id": "beijing-skiing-universal-studios-5d4n",
+      "name": "Beijing Skiing and Universal Studios 5D4N Tour",
+      "subtitle": "Out Manila · Air China",
+      "region": "intl",
+      "country": "China",
+      "flag": "cn",
+      "duration": "5 days 4 nights",
+      "days": 5,
+      "status": "available",
+      "featured": true,
+      "departure": "Manila (NAIA)",
+      "price": {
+        "from": 589,
+        "label": "From",
+        "unit": "per pax",
+        "currency": "USD"
+      },
+      "year": 2026,
+      "ends": "2027-03-03",
+      "image": "cn-universal-beijing.jpg",
+      "alt": "Universal Beijing Resort",
+      "gallery": [
+        "cn-universal-beijing.jpg"
+      ],
+      "summary": "Beijing in five days: Forbidden City, Great Wall at Juyongguan, skiing at Snow World and a full day at Universal Studios Beijing, staying in 5-star hotels.",
+      "overview": "Fly Manila to Beijing on Air China for a 5-day winter city break. See Tiananmen Square, the Forbidden City and the Juyongguan Great Wall, try skiing at Snow World (ticket, snow coat and ski equipment included), and spend a whole day at Universal Studios Beijing. You stay four nights in a 5-star hotel in Beijing, with a private coach and an English-speaking guide.",
+      "travelDates": [
+        {
+          "d": "Jan 27–31",
+          "y": 2027
+        },
+        {
+          "d": "Jan 30–Feb 3",
+          "y": 2027
+        },
+        {
+          "d": "Feb 12–16",
+          "y": 2027
+        },
+        {
+          "d": "Feb 13–17",
+          "y": 2027
+        },
+        {
+          "d": "Feb 18–22",
+          "y": 2027
+        },
+        {
+          "d": "Feb 19–23",
+          "y": 2027
+        },
+        {
+          "d": "Feb 20–24",
+          "y": 2027
+        },
+        {
+          "d": "Feb 24–28",
+          "y": 2027
+        },
+        {
+          "d": "Feb 25–Mar 1",
+          "y": 2027
+        },
+        {
+          "d": "Feb 26–Mar 2",
+          "y": 2027
+        },
+        {
+          "d": "Feb 27–Mar 3",
+          "y": 2027
+        }
+      ],
+      "travelDatesNote": "Departures from Manila, Jan 27–31 2027 to Feb 27–Mar 3 2027. The rate changes by date: an amount on a date is added to the base rate per pax. Seats are limited and confirmed at booking.",
+      "itinerary": [
+        {
+          "day": "Day 1",
+          "title": "Manila – Beijing",
+          "items": [
+            "Fly Manila to Beijing (CA180, 06:20/10:50), meet your guide at the airport",
+            "Water Cube (outside view)",
+            "Bird’s Nest (outside view)",
+            "Wangfujing Walking Street",
+            "Optional: night view of Beijing CBD by bus",
+            "Optional: Peking special foods",
+            "Transfer to the hotel and check in (meals: X/L/X)"
+          ]
+        },
+        {
+          "day": "Day 2",
+          "title": "Tiananmen Square and Forbidden City",
+          "items": [
+            "Breakfast at the hotel",
+            "Tiananmen Square",
+            "Forbidden City",
+            "Shopping stop: Chinese medicine shop",
+            "Optional: Temple of Heaven",
+            "Shopping stop: tea shop",
+            "Dinner upgraded to Beijing mutton hot pot",
+            "Optional: acrobatic show",
+            "Transfer to the hotel (meals: B/L/D)"
+          ]
+        },
+        {
+          "day": "Day 3",
+          "title": "Great Wall and skiing",
+          "items": [
+            "Breakfast at the hotel",
+            "Shopping stop: jade shop",
+            "Juyongguan Great Wall",
+            "Skiing at Snow World (ticket, snow coat and ski equipment included)",
+            "Optional: Panda House at Beijing Zoo",
+            "Transfer to the hotel (meals: B/L/D)"
+          ]
+        },
+        {
+          "day": "Day 4",
+          "title": "Universal Studios Beijing",
+          "items": [
+            "Breakfast at the hotel",
+            "Whole day at Universal Studios Beijing",
+            "Transfer to the hotel (meals: B/X/X)"
+          ]
+        },
+        {
+          "day": "Day 5",
+          "title": "Beijing – Manila",
+          "items": [
+            "Breakfast at the hotel",
+            "Shopping stop: jewelry shop",
+            "Lunch upgraded to Peking duck",
+            "Qianmen old street",
+            "Xianyukou food street",
+            "Transfer to the airport and fly to Manila (CA179, 19:05/00:05+1) (meals: B/L/X)"
+          ]
+        }
+      ],
+      "inclusions": [
+        "Economy round-trip airfare and tax via Air China",
+        "Baggage allowance: 1 piece (23 kg) checked-in",
+        "4 nights’ accommodation, twin sharing, with daily hotel breakfast",
+        "Private coach with English-speaking tour guide",
+        "Sightseeing as specified, including first-way entrance fees",
+        "Meals as listed"
+      ],
+      "exclusions": [
+        "Personal expenses such as phone calls and minibar",
+        "Extra baggage allowance",
+        "Travel insurance",
+        "Fuel surcharge about USD 30 per person (subject to change)",
+        "Philippines travel tax USD 30 per person",
+        "China group visa USD 40 per person",
+        "Tips for driver and guide USD 50 per person (USD 10 per day x 5 days)",
+        "Single supplement USD 150 per person"
+      ],
+      "optional": [
+        "Optional tour package USD 140 per person (minimum 10 persons): night view of Beijing CBD by bus + Peking special foods (1 dinner) + Temple of Heaven + acrobatic show + Panda House at Beijing Zoo"
+      ],
+      "hotelsLabel": "Hotels",
+      "hotels": [
+        "Day 1-4: 5-star hotel in Beijing"
+      ],
+      "notes": [
+        "Meal codes: B = breakfast, L = lunch, D = dinner, X = not included",
+        "Package includes shop visits: jade shop, jewelry shop, tea shop and Chinese medicine shop; guests who skip the shops may be fined",
+        "Rate excludes VAT; an official receipt adds 12% of the total amount",
+        "Child categories: 11-17 years with bed; 2-10 years without bed; infant 2 months-2 years",
+        "Philippine passport holders need a China visa; the group visa is not included (USD 40 per person)",
+        "Hotels are subject to replacement with similar ones if not available",
+        "All services are on a private basis; the order of attractions may change",
+        "Single travelers may be paired to share a room; otherwise the single supplement applies"
+      ],
+      "places": [
+        "Water Cube",
+        "Bird’s Nest",
+        "Wangfujing Walking Street",
+        "Tiananmen Square",
+        "Forbidden City",
+        "Juyongguan Great Wall",
+        "Snow World",
+        "Universal Studios Beijing",
+        "Qianmen Old Street",
+        "Xianyukou Food Street"
+      ],
+      "posters": [
+        "cn-poster-beijing-skiing-universal-studios-5d4n-0.jpg"
+      ],
+      "posterSize": [
+        523,
+        800
+      ]
+    },
+    {
+      "id": "beijing-w-town-5d4n",
+      "name": "Beijing – W Town (Fairytale Town) 5D4N Tour",
+      "subtitle": "Out Manila · Air China",
+      "region": "intl",
+      "country": "China",
+      "flag": "cn",
+      "duration": "5 days 4 nights",
+      "days": 5,
+      "status": "available",
+      "featured": false,
+      "departure": "Manila (NAIA)",
+      "price": {
+        "from": 650,
+        "label": "From",
+        "unit": "per pax",
+        "currency": "USD"
+      },
+      "year": 2026,
+      "ends": "2026-12-10",
+      "image": "cn-great-wall.jpg",
+      "alt": "The Great Wall of China",
+      "gallery": [
+        "cn-great-wall.jpg"
+      ],
+      "summary": "Five days in Beijing staying in a 5-star hotel, with Tiananmen Square, the Forbidden City, Simatai Great Wall night view and Gubei Water Town (W Town).",
+      "overview": "A 5-day Beijing tour with a 5-star hotel throughout. See Tiananmen Square and the Forbidden City, visit Gubei Water Town (W Town) and the Simatai Great Wall at night with cable car, then the Temple of Heaven and Qianmen old street. Day 4 is free, or you can join the optional Universal Studios Beijing day.",
+      "travelDates": [
+        {
+          "d": "Nov 21–25"
+        },
+        {
+          "d": "Dec 6–10"
+        }
+      ],
+      "travelDatesNote": "Departures from Manila, Nov 21–25 2026 to Dec 6–10 2026. The rate changes by date: an amount on a date is added to the base rate per pax. Seats are limited and confirmed at booking.",
+      "itinerary": [
+        {
+          "day": "Day 1",
+          "title": "Manila – Beijing",
+          "items": [
+            "Arrival and meet your guide at the airport",
+            "Wangfujing Walking Street",
+            "Tea shop stop",
+            "Transfer to hotel"
+          ]
+        },
+        {
+          "day": "Day 2",
+          "title": "Beijing city",
+          "items": [
+            "Breakfast at the hotel",
+            "Tiananmen Square",
+            "Forbidden City",
+            "Foot massage (Chinese medicine)",
+            "Acrobatic show (optional)",
+            "Transfer to hotel"
+          ]
+        },
+        {
+          "day": "Day 3",
+          "title": "W Town and Great Wall",
+          "items": [
+            "Breakfast at the hotel",
+            "Jade shop stop",
+            "W Town (Gubei Water Town)",
+            "Simatai Great Wall night view, including cable car",
+            "Drone show (if weather permits)",
+            "Musical fountain",
+            "Zhenyuan Escort Agency",
+            "Transfer to hotel"
+          ]
+        },
+        {
+          "day": "Day 4",
+          "title": "Free day / Universal Studios",
+          "items": [
+            "Breakfast at the hotel",
+            "Free day, or join the optional Universal Studios Beijing day (transfer, ticket and guide included)"
+          ]
+        },
+        {
+          "day": "Day 5",
+          "title": "Beijing – Manila",
+          "items": [
+            "Breakfast at the hotel",
+            "Jewelry shop stop",
+            "Temple of Heaven",
+            "Qianmen old street",
+            "Proceed to airport and fly back to Manila"
+          ]
+        }
+      ],
+      "inclusions": [
+        "Economy round-trip airfare and taxes via Air China",
+        "Baggage: 1 piece 23 kg check-in and 5 kg carry-on",
+        "4 nights’ accommodation, twin sharing, with daily hotel breakfast",
+        "Private coach with English-speaking tour guide",
+        "Sightseeing as specified, including first-way entrance fees",
+        "Meals as listed (D1 dinner; D2 B/L/D; D3 B/L/D; D4 breakfast; D5 B/L)"
+      ],
+      "exclusions": [
+        "Personal expenses such as phone calls and minibar",
+        "Travel insurance",
+        "Philippines travel tax: USD 30 per person",
+        "Fuel and taxes surcharge: based on airline policy",
+        "China group visa: USD 40 per person",
+        "Tips for driver and guide: USD 40 per person (USD 10 per day x 4 days)",
+        "Single supplement: USD 130 per person"
+      ],
+      "optional": [
+        "Acrobatic show: USD 30 per person",
+        "Universal Studios Beijing (Day 4): USD 120 per person"
+      ],
+      "hotelsLabel": "Hotels",
+      "hotels": [
+        "Day 1–4: 5★ hotel in Beijing"
+      ],
+      "notes": [
+        "Rate includes compulsory shopping stops (jade, jewelry, tea and Chinese medicine shops); a fine applies if you skip any shop",
+        "Child with bed (11–17 yrs), child without bed (2–10 yrs) and infant (2 months–2 yrs) are priced separately",
+        "Single supplement USD 130 per person; travellers with a single may be paired to share a room, otherwise the supplement applies",
+        "Fuel and taxes may be charged if they increase",
+        "Hotels may be replaced by similar ones; sightseeing order may be adjusted"
+      ],
+      "places": [
+        "Wangfujing Walking Street",
+        "Tiananmen Square",
+        "Forbidden City",
+        "Gubei Water Town (W Town)",
+        "Simatai Great Wall",
+        "Zhenyuan Escort Agency",
+        "Temple of Heaven",
+        "Qianmen Old Street",
+        "Universal Studios Beijing"
+      ],
+      "posters": [
+        "cn-poster-beijing-w-town-5d4n-0.jpg",
+        "cn-poster-beijing-w-town-5d4n-1.jpg"
+      ],
+      "posterSize": [
+        531,
+        800
+      ]
+    },
+    {
+      "id": "beijing-inner-mongolia-7d6n",
+      "name": "Beijing – Hohhot – Inner Mongolia 7D6N Tour",
+      "subtitle": "Out Manila · China Southern Airlines",
+      "region": "intl",
+      "country": "China",
+      "flag": "cn",
+      "duration": "7 days 6 nights",
+      "days": 7,
+      "status": "available",
+      "featured": false,
+      "departure": "Manila (NAIA)",
+      "price": {
+        "from": 899,
+        "label": "From",
+        "unit": "per pax",
+        "currency": "USD"
+      },
+      "year": 2026,
+      "ends": "2026-11-18",
+      "image": "cn-inner-mongolia.jpg",
+      "alt": "A yurt on the grasslands of Inner Mongolia",
+      "gallery": [
+        "cn-inner-mongolia.jpg"
+      ],
+      "summary": "Beijing’s Great Wall and Forbidden City, a bullet train to Hohhot, a night in a Mongolian tent on the Xilamuren Grassland and Wulanhada volcanic geopark.",
+      "overview": "Three nights in a 4-star Beijing hotel, then a bullet train to Inner Mongolia for a grassland night in a Mongolian tent with a bonfire party, and two nights in a 4-star Hohhot hotel. Highlights include the Juyongguan Great Wall, the Forbidden City and the Wulanhada Volcanic Geopark. Flights are with China Southern Airlines.",
+      "travelDates": [
+        {
+          "d": "Nov 12–18"
+        }
+      ],
+      "travelDatesNote": "Departures from Manila, Nov 12–18 2026 to Nov 12–18 2026. The rate changes by date: an amount on a date is added to the base rate per pax. Seats are limited and confirmed at booking.",
+      "itinerary": [
+        {
+          "day": "Day 1",
+          "title": "Manila – Beijing",
+          "items": [
+            "Fly Manila to Guangzhou (CZ3078 08:20/10:55), then Guangzhou to Beijing (CZ3109 15:00/18:15).",
+            "Meet the English-speaking guide at the airport; transfer to hotel. Meals: X/X/X."
+          ]
+        },
+        {
+          "day": "Day 2",
+          "title": "Beijing",
+          "items": [
+            "Hotel breakfast.",
+            "Visit a jade shop.",
+            "Visit the Juyongguan Great Wall.",
+            "Visit a Chinese herbal medicine shop.",
+            "Visit the Bird’s Nest and Water Cube (outside view). Meals: B/L/D."
+          ]
+        },
+        {
+          "day": "Day 3",
+          "title": "Beijing",
+          "items": [
+            "Hotel breakfast.",
+            "Visit a jewel shop.",
+            "Visit the Forbidden City (with ticket).",
+            "Visit a tea shop.",
+            "Optional tour: Acrobatic Show. Meals: B/L/D."
+          ]
+        },
+        {
+          "day": "Day 4",
+          "title": "Beijing – Hohhot – Xilamuren",
+          "items": [
+            "Hotel breakfast and check out.",
+            "Bullet train from Beijing to Hohhot.",
+            "Visit the Xilamuren Grassland.",
+            "Optional tour: Mongolian Farm Experience (archery, local dress, ATV, grass slides, milk tea and cookie tasting, horse riding or carriage, upgraded Zha Ma banquet dinner).",
+            "Check in to a Mongolian tent; bonfire party after dinner. Meals: B/L/D."
+          ]
+        },
+        {
+          "day": "Day 5",
+          "title": "Xilamuren – Hohhot",
+          "items": [
+            "Hotel breakfast and check out.",
+            "Visit Honggeer Tribe Village and an amber shop.",
+            "Optional tour: Xiangsha Bay (14 km desert crossing, singing dunes, camel riding, zipline, desert ATV, dune buggy or quad bike, sand boarding, return train ride).",
+            "Transfer to hotel in Hohhot. Meals: B/X/D."
+          ]
+        },
+        {
+          "day": "Day 6",
+          "title": "Hohhot – Wulanhada – Hohhot",
+          "items": [
+            "Hotel breakfast.",
+            "Visit Mengliang Ethnic Folk Culture Park (souvenir shop).",
+            "Visit Wulanhada Volcanic Geopark, No.6 Crater, with spacesuit experience. Meals: B/L/X."
+          ]
+        },
+        {
+          "day": "Day 7",
+          "title": "Hohhot – Manila",
+          "items": [
+            "Hotel breakfast, check out.",
+            "Transfer to the airport; fly Hohhot to Guangzhou (CZ3198 11:45/15:05), then Guangzhou to Manila (CZ3077 20:30/23:15). Meals: B/X/X."
+          ]
+        }
+      ],
+      "inclusions": [
+        "6 nights twin-share accommodation with daily breakfast (triple rooms not guaranteed)",
+        "Private coach with English-speaking tour guide",
+        "Sightseeing as specified, including first-way entrance fees",
+        "Meals as listed",
+        "Round-trip airfare with China Southern Airlines (1 piece 23 kg plus 7 kg hand carry)"
+      ],
+      "exclusions": [
+        "Personal expenses such as phone calls and minibar",
+        "Philippine travel tax",
+        "Optional tours",
+        "Tips for driver and guide: USD 10 per person per day x 7 days = USD 70",
+        "Single supplement: USD 189 per person",
+        "Visa"
+      ],
+      "optional": [
+        "Acrobatic Show: USD 60 per person",
+        "Mongolian Farm Experience + Xiangsha Bay: USD 150 per person"
+      ],
+      "hotelsLabel": "Hotels",
+      "hotels": [
+        "Day 1-3: Beijing Kaiyuan International Hotel or similar 4★",
+        "Day 4: Local Mongolian tent",
+        "Day 5-6: Hohhot Langyi Hotel or similar 4★"
+      ],
+      "notes": [
+        "This is a shopping tour with 6 stops: jade shop, Chinese herbal medicine shop, jewel shop, tea shop, amber shop and Mengliang Ethnic Folk Culture Park.",
+        "Child without bed is 2-11 yrs.",
+        "Itinerary may change without notice and is subject to weather; rooms are twin-share by default; hotels may be replaced by similar ones."
+      ],
+      "places": [
+        "Juyongguan Great Wall",
+        "Forbidden City",
+        "Bird’s Nest",
+        "Water Cube",
+        "Xilamuren Grassland",
+        "Honggeer Tribe Village",
+        "Mengliang Ethnic Folk Culture Park",
+        "Wulanhada Volcanic Geopark",
+        "Xiangsha Bay"
+      ],
+      "posters": [
+        "cn-poster-beijing-inner-mongolia-7d6n-0.jpg"
+      ],
+      "posterSize": [
+        529,
+        800
+      ]
+    },
+    {
+      "id": "beijing-shanghai-pilgrimage-7d6n",
+      "name": "Beijing – Shanghai Pilgrimage 7D6N Tour",
+      "subtitle": "Out Manila · Philippine Airlines",
+      "region": "intl",
+      "country": "China",
+      "flag": "cn",
+      "duration": "7 days 6 nights",
+      "days": 7,
+      "status": "available",
+      "featured": false,
+      "departure": "Manila (NAIA)",
+      "price": {
+        "from": 999,
+        "label": "From",
+        "unit": "per pax",
+        "currency": "USD"
+      },
+      "year": 2026,
+      "ends": "2026-12-12",
+      "image": "cn-forbidden-city.jpg",
+      "alt": "A guardian lion in the Forbidden City, Beijing",
+      "gallery": [
+        "cn-forbidden-city.jpg"
+      ],
+      "summary": "Seven days visiting Beijing and Shanghai’s historic churches and landmarks, with a high-speed train between the two cities.",
+      "overview": "A pilgrimage-themed tour that pairs Beijing’s landmarks (Forbidden City, Great Wall, Summer Palace) with its historic churches, then takes the high-speed train to Shanghai for the Xujiahui Cathedral and the Shrine of Our Lady of Lourdes. You stay in 5-star Beijing and 4-star Shanghai hotels with daily breakfast.",
+      "travelDates": [
+        {
+          "d": "Nov 1–7"
+        },
+        {
+          "d": "Nov 3–9"
+        },
+        {
+          "d": "Nov 6–12"
+        },
+        {
+          "d": "Nov 10–16"
+        },
+        {
+          "d": "Nov 13–19"
+        },
+        {
+          "d": "Nov 15–21"
+        },
+        {
+          "d": "Nov 17–23"
+        },
+        {
+          "d": "Nov 20–26"
+        },
+        {
+          "d": "Nov 22–28"
+        },
+        {
+          "d": "Nov 24–30"
+        },
+        {
+          "d": "Dec 1–7"
+        },
+        {
+          "d": "Dec 4–10"
+        },
+        {
+          "d": "Dec 6–12"
+        }
+      ],
+      "travelDatesNote": "Departures from Manila, Nov 1–7 2026 to Dec 6–12 2026. The rate changes by date: an amount on a date is added to the base rate per pax. Seats are limited and confirmed at booking.",
+      "itinerary": [
+        {
+          "day": "Day 1",
+          "title": "Manila – Beijing",
+          "items": [
+            "Arrive in Beijing and meet the English-speaking tour guide at the airport",
+            "Wudaoying Hutong",
+            "Shichahai",
+            "Transfer to hotel and check in (dinner included)"
+          ]
+        },
+        {
+          "day": "Day 2",
+          "title": "Beijing",
+          "items": [
+            "Hotel breakfast",
+            "Cathedral of the Immaculate Conception (Xuanwumen Church)",
+            "Tiananmen Square",
+            "Palace Museum (Forbidden City)",
+            "Tea shop visit",
+            "Wangfujing Street"
+          ]
+        },
+        {
+          "day": "Day 3",
+          "title": "Beijing",
+          "items": [
+            "Hotel breakfast",
+            "Fengtai Church (Christian church)",
+            "Jade shop visit",
+            "Juyongguan Great Wall",
+            "Chinese medicine shop visit"
+          ]
+        },
+        {
+          "day": "Day 4",
+          "title": "Beijing",
+          "items": [
+            "Hotel breakfast",
+            "Haidian Christian Church",
+            "Jewelry shop visit",
+            "Summer Palace (excluding boat tour)",
+            "Huaxi LIVE · Wukesong"
+          ]
+        },
+        {
+          "day": "Day 5",
+          "title": "Beijing – Shanghai",
+          "items": [
+            "Hotel breakfast, check out",
+            "St. Michael’s Church",
+            "Dongjiaominxiang, the longest hutong in Beijing",
+            "High-speed train to Shanghai, then transfer to hotel and check in"
+          ]
+        },
+        {
+          "day": "Day 6",
+          "title": "Shanghai",
+          "items": [
+            "Hotel breakfast",
+            "Saint Ignatius Cathedral (Xujiahui Cathedral)",
+            "Bibliotheca Zi-Ka-Wei (Xujiahui Library)",
+            "Starbucks + LV cruise (photo stop)",
+            "City God Temple"
+          ]
+        },
+        {
+          "day": "Day 7",
+          "title": "Shanghai – Manila",
+          "items": [
+            "Hotel breakfast, check out",
+            "Shrine of Our Lady of Lourdes",
+            "Transfer to the airport and fly back to Manila"
+          ]
+        }
+      ],
+      "inclusions": [
+        "6 nights’ accommodation, twin sharing, with daily hotel breakfast",
+        "Private coach with English-speaking tour guide",
+        "Sightseeing as specified, including first-way entrance fees",
+        "Meals as listed"
+      ],
+      "exclusions": [
+        "Personal expenses such as phone calls and minibar",
+        "Philippine travel tax",
+        "Optional tour",
+        "Tips for driver and guide USD 35 per person (USD 5 per day for 7 days)",
+        "Single supplement USD 199 per person",
+        "Visa"
+      ],
+      "optional": [
+        "Huangpu River Cruise (world-class night view of Shanghai) – USD 30 per person"
+      ],
+      "hotelsLabel": "Hotels",
+      "hotels": [
+        "Day 1–4: Local 5★ Howard Johnson Junhe Hot Springs Resort Beijing or similar",
+        "Day 5–6: Local 4★ Shanghai Hongqiao NECC Glory Hotel or similar",
+        "Day 7: Sweet Home"
+      ],
+      "notes": [
+        "Meals per day: D1 D; D2–D4 B/L; D5–D6 B/L (D5 includes dinner); D7 B",
+        "Child without bed rate applies to ages 2–12; adult and child with bed share one rate",
+        "Departures over Christmas and New Year (Dec 22–Jan 2) carry a higher rate",
+        "Visa is not included; Philippine passport holders need a China visa",
+        "Shop visits are included in the rate: tea shop, jade shop, Chinese medicine shop and jewelry store",
+        "Rooms are twin sharing by default; triple rooms not guaranteed",
+        "Itinerary may change without prior notice and depends on weather; hotels may be replaced by similar ones"
+      ],
+      "places": [
+        "Wudaoying Hutong",
+        "Shichahai",
+        "Xuanwumen Church",
+        "Tiananmen Square",
+        "Palace Museum",
+        "Wangfujing Street",
+        "Juyongguan Great Wall",
+        "Summer Palace",
+        "St. Michael’s Church",
+        "Dongjiaominxiang",
+        "Xujiahui Cathedral",
+        "Zi-Ka-Wei Library",
+        "City God Temple",
+        "Shrine of Our Lady of Lourdes"
+      ],
+      "posters": [
+        "cn-poster-beijing-shanghai-pilgrimage-7d6n-0.jpg"
+      ],
+      "posterSize": [
+        529,
+        800
+      ]
+    },
+    {
+      "id": "canton-fair-shenzhen-4d3n",
+      "name": "Canton Fair – Guangzhou – Shenzhen 4D3N Tour",
+      "subtitle": "Out Manila · Shenzhen Airlines",
+      "region": "intl",
+      "country": "China",
+      "flag": "cn",
+      "duration": "4 days 3 nights",
+      "days": 4,
+      "status": "available",
+      "featured": false,
+      "departure": "Manila (NAIA)",
+      "price": {
+        "from": 799,
+        "label": "From",
+        "unit": "per pax",
+        "currency": "USD"
+      },
+      "year": 2026,
+      "ends": "2027-04-26",
+      "image": "cn-shenzhen.jpg",
+      "alt": "The Shenzhen skyline",
+      "gallery": [
+        "cn-shenzhen.jpg"
+      ],
+      "summary": "Four days with two full days at the Canton Fair, plus Guangzhou city sights and Shenzhen’s robot block and Huaqiangbei electronics market.",
+      "overview": "Fly to Shenzhen with Shenzhen Airlines and transfer to Guangzhou, where you stay three nights in a 4★ hotel. Two days are set aside for the Canton Fair, with pick-up and dinner arranged, and the tour starts and ends with Guangzhou and Shenzhen sights. The tour has an English-speaking guide and private coach.",
+      "travelDates": [
+        {
+          "d": "Apr 16–19",
+          "y": 2027
+        },
+        {
+          "d": "Apr 23–26",
+          "y": 2027
+        }
+      ],
+      "travelDatesNote": "Departures from Manila, Apr 16–19 2027 to Apr 23–26 2027. The rate changes by date: an amount on a date is added to the base rate per pax. Seats are limited and confirmed at booking.",
+      "itinerary": [
+        {
+          "day": "Day 1",
+          "title": "Manila – Shenzhen – Guangzhou",
+          "items": [
+            "Fly Manila – Shenzhen (02:55 – 05:20); pick-up and transfer to Guangzhou, with box breakfast",
+            "Huacheng Square",
+            "Canton Tower (outside view)",
+            "Beijing Pedestrian Street",
+            "Great Buddha Temple",
+            "Transfer to the hotel and check in",
+            "Meals: B/L/X"
+          ]
+        },
+        {
+          "day": "Day 2",
+          "title": "Canton Fair",
+          "items": [
+            "After breakfast, transfer to the Canton Fair",
+            "Pick-up and transfer to dinner, then back to the hotel",
+            "Meals: B/X/D"
+          ]
+        },
+        {
+          "day": "Day 3",
+          "title": "Canton Fair",
+          "items": [
+            "After breakfast, transfer to the Canton Fair",
+            "Pick-up and transfer to dinner, then back to the hotel",
+            "Meals: B/X/D"
+          ]
+        },
+        {
+          "day": "Day 4",
+          "title": "Guangzhou – Shenzhen – Manila",
+          "items": [
+            "Breakfast at the hotel, check out",
+            "Transfer to Shenzhen",
+            "Longgang Robot Block (with China’s first Robot 6S Store)",
+            "Huaqiangbei Electronics Market",
+            "Uniwalk Qianhai",
+            "Transfer to Shenzhen airport and fly Shenzhen – Manila (23:20 – 01:40 next day)",
+            "Meals: B/L/X"
+          ]
+        }
+      ],
+      "inclusions": [
+        "Economy airfare and taxes via Shenzhen Airlines (round trip)",
+        "Baggage allowance: 1 pc (23 kg) check-in and 5 kg carry-on",
+        "3 nights’ accommodation, twin sharing, with daily hotel breakfast",
+        "Private coach with English-speaking tour guide",
+        "Sightseeing entrance fees as specified above (first way)",
+        "Meals as listed"
+      ],
+      "exclusions": [
+        "Personal expenses such as telephone calls and minibar",
+        "Travel insurance",
+        "Philippine travel tax (pay at the airport)",
+        "Fuel and taxes surcharge, if any, based on airline policy",
+        "China group visa USD 40/pax",
+        "Tips for driver and guide USD 5/pax/day x 4 days = USD 20/pax",
+        "Single supplement USD 110/pax"
+      ],
+      "hotelsLabel": "Hotels",
+      "hotels": [
+        "Day 1-3: 4★ Guangzhou hotel",
+        "Day 4: Sweet Home"
+      ],
+      "notes": [
+        "Meal codes: B = breakfast, L = lunch, D = dinner, X = not included",
+        "Rate is a compulsory-shopping package",
+        "Single supplement USD 110/pax",
+        "Visa: China group visa USD 40/pax is not included",
+        "Fuel and taxes surcharge is charged only if the airline raises it",
+        "If hotels are unavailable they are replaced by similar ones; the order of sights may change in crowded periods",
+        "Passengers who do not accept room sharing pay the single supplement"
+      ],
+      "places": [
+        "Huacheng Square",
+        "Canton Tower",
+        "Beijing Pedestrian Street",
+        "Great Buddha Temple",
+        "Canton Fair",
+        "Longgang Robot Block",
+        "Huaqiangbei Electronics Market",
+        "Uniwalk Qianhai"
+      ],
+      "posters": [
+        "cn-poster-canton-fair-shenzhen-4d3n-0.jpg"
+      ],
+      "posterSize": [
+        566,
+        800
+      ]
+    },
+    {
+      "id": "charming-yunnan-8d7n-no-shopping",
+      "name": "Charming Yunnan 8D7N Tour (No Shopping)",
+      "subtitle": "Out Manila · China Southern Airlines",
+      "region": "intl",
+      "country": "China",
+      "flag": "cn",
+      "duration": "8 days 7 nights",
+      "days": 8,
+      "status": "available",
+      "featured": false,
+      "departure": "Manila (NAIA)",
+      "price": {
+        "from": 1488,
+        "label": "From",
+        "unit": "per pax",
+        "currency": "USD"
+      },
+      "year": 2026,
+      "ends": "2027-03-29",
+      "image": "cn-yunnan.jpg",
+      "alt": "Mountains reflected in a lake, Yunnan",
+      "gallery": [
+        "cn-yunnan.jpg"
+      ],
+      "summary": "Kunming, Stone Forest, Dali, Lijiang and Shangri-La over eight days in 5-star hotels, with a Dali to Kunming high-speed train ride.",
+      "overview": "Fly with China Southern Airlines via Guangzhou to Kunming and travel through Yunnan in a private bus: Stone Forest, Dali, Lijiang with Jade Dragon Snow Mountain, Tiger Leaping Gorge and Shangri-La. You stay in 5-star hotels and return from Dali to Kunming by high-speed train. This is a no-shopping package.",
+      "travelDates": [
+        {
+          "d": "Dec 9–16",
+          "add": 100,
+          "cur": "USD"
+        },
+        {
+          "d": "Dec 18–25",
+          "add": 400,
+          "cur": "USD"
+        },
+        {
+          "d": "Dec 31–Jan 7",
+          "add": 400,
+          "cur": "USD"
+        },
+        {
+          "d": "Jan 13–20",
+          "y": 2027
+        },
+        {
+          "d": "Feb 19–26",
+          "y": 2027,
+          "add": 300,
+          "cur": "USD"
+        },
+        {
+          "d": "Mar 5–12",
+          "y": 2027,
+          "add": 100,
+          "cur": "USD"
+        },
+        {
+          "d": "Mar 12–19",
+          "y": 2027,
+          "add": 200,
+          "cur": "USD"
+        },
+        {
+          "d": "Mar 22–29",
+          "y": 2027,
+          "add": 300,
+          "cur": "USD"
+        }
+      ],
+      "travelDatesNote": "Departures from Manila, Dec 9–16 2026 to Mar 22–29 2027. The rate changes by date: an amount on a date is added to the base rate per pax. Seats are limited and confirmed at booking.",
+      "itinerary": [
+        {
+          "day": "Day 1",
+          "title": "Manila – Guangzhou – Kunming",
+          "items": [
+            "Fly Manila to Guangzhou (CZ3078, 08:20–10:50; on Nov 6 CZ3092, 12:00–14:40)",
+            "Connect to Kunming (CZ3449, 14:55–17:35; on Nov 6 CZ3489, 18:55–21:30)",
+            "Meet the tour guide at the airport",
+            "Transfer to the hotel and check in"
+          ]
+        },
+        {
+          "day": "Day 2",
+          "title": "Kunming – Stone Forest – Chuxiong",
+          "items": [
+            "Breakfast and check out",
+            "Stone Forest Scenic Area (shuttle cart included)",
+            "Transfer to Chuxiong",
+            "Yi People Ancient Town",
+            "Transfer back to the hotel"
+          ]
+        },
+        {
+          "day": "Day 3",
+          "title": "Chuxiong – Dali – Lijiang",
+          "items": [
+            "Breakfast and check out",
+            "Transfer to Dali",
+            "Santorini of Dali with afternoon tea (battery car included)",
+            "Transfer to Lijiang",
+            "Black Dragon Pool",
+            "Lijiang Ancient Town and Sifang Street (taste local specialties at your own expense)",
+            "Transfer back to the hotel"
+          ]
+        },
+        {
+          "day": "Day 4",
+          "title": "Lijiang",
+          "items": [
+            "Breakfast at the hotel",
+            "Jade Dragon Snow Mountain Scenic Area, Glacier Park (shuttle bus and large ropeway round trip included)",
+            "Ganhaizi",
+            "Impression Lijiang live song and dance show",
+            "Baishui River and Blue Moon Valley (battery car included)",
+            "Yushui Village",
+            "Transfer to the hotel and check in"
+          ]
+        },
+        {
+          "day": "Day 5",
+          "title": "Lijiang – Shangri-La",
+          "items": [
+            "Breakfast and check out",
+            "Transfer to Shangri-La by bus",
+            "Tiger Leaping Gorge on the way (round-trip hand escalators included)",
+            "Napa Sea (one complimentary cup of coffee)",
+            "Shangri-La Dukezong Ancient City and Guishan Park, with the world’s largest prayer wheel",
+            "Transfer to the hotel and check in"
+          ]
+        },
+        {
+          "day": "Day 6",
+          "title": "Shangri-La – Dali",
+          "items": [
+            "Breakfast and check out",
+            "Songzanlin Monastery (shuttle cart included)",
+            "Transfer to Dali",
+            "Dali Ancient City (electric sightseeing cart not included)",
+            "Foreigner Street",
+            "Transfer to the hotel and check in"
+          ]
+        },
+        {
+          "day": "Day 7",
+          "title": "Dali – Kunming",
+          "items": [
+            "Breakfast and check out",
+            "High-speed train Dali to Kunming, 2nd-class seats (train to be confirmed)",
+            "Kunming Heilongtan Park (pear blossoms and azaleas in season, mid-March to mid-April)",
+            "Kunming City Walk: Jingxinghua Street, Qianwang Old Street, Nanping Pedestrian Street, Jinbi Square and Jinri Building",
+            "Transfer to the hotel and check in"
+          ]
+        },
+        {
+          "day": "Day 8",
+          "title": "Kunming – Guangzhou – Manila",
+          "items": [
+            "Breakfast and check out",
+            "Fly Kunming to Guangzhou (CZ3416, 14:35–16:40; on Jan 7 and Mar 18 CZ3420, 07:00–08:55)",
+            "Connect to Manila (CZ3077, 20:00–22:30; on Jan 7 and Mar 18 CZ397, 14:15–16:50)"
+          ]
+        }
+      ],
+      "inclusions": [
+        "Round-trip economy airfare and taxes via China Southern Airlines",
+        "Baggage: 1 piece of 23 kg checked plus 7 kg hand carry",
+        "High-speed train Dali to Kunming, 2nd-class seats",
+        "7 nights twin-sharing accommodation at 5-star hotels with daily breakfast",
+        "Private bus with English-speaking tour guide",
+        "Sightseeing with first entrance tickets for all scenic spots and the listed in-park transport",
+        "Meals: breakfast plus 12 meals in total, one upgraded to a seafood buffet",
+        "One complimentary bottle of water per person per day"
+      ],
+      "exclusions": [
+        "Personal expenses such as phone calls and minibar",
+        "Travel insurance",
+        "Philippine travel tax: USD 30 per person (collected with the tour fee)",
+        "China Group Visa: USD 40 per person (collected with the tour fee)",
+        "Tips for driver and guide: USD 48 per person, USD 6 per day for 8 days (collected with the tour fee)",
+        "Single supplement: USD 250 per person",
+        "Fuel surcharge: estimated USD 75 per person, subject to change"
+      ],
+      "hotelsLabel": "Hotels",
+      "hotels": [
+        "Day 1: 5-star hotel in Kunming",
+        "Day 2: 5-star hotel in Chuxiong",
+        "Day 3-4: 5-star hotel in Lijiang",
+        "Day 5: 5-star hotel in Shangri-La",
+        "Day 6: 5-star hotel in Dali",
+        "Day 7: 5-star hotel in Kunming"
+      ],
+      "notes": [
+        "Meals (by day): Day 1 dinner; Day 2 B/L/D; Day 3 B/L; Day 4 B/L/D; Day 5 B/L/D; Day 6 B/L/D; Day 7 B/L/D; Day 8 breakfast",
+        "Child with bed 11 to 17 years, child without bed 2 to 10 years",
+        "The tour guide may sell souvenirs or local specialties on the bus; buy only if you wish",
+        "Order of attractions may be adjusted for weather, traffic or visitor volume; the agency is not liable for reduced attractions caused by force majeure such as policy changes or weather",
+        "If the Glacier Park ropeway is out of service it is replaced by the Yunshanping ropeway and RMB 60 per person is refunded",
+        "If Impression Lijiang is cancelled for force majeure it is replaced by a performance of the same level, without refund",
+        "If the listed hotels are not available they will be replaced by similar ones",
+        "No refunds if you cancel any part of the itinerary or accommodation during the trip; tips must be paid for the full number of days",
+        "Itinerary, flight times and hotels are subject to final confirmation",
+        "Philippine passport holders need a China visa; the China Group Visa fee is listed under exclusions."
+      ],
+      "places": [
+        "Kunming",
+        "Stone Forest",
+        "Yi People Ancient Town",
+        "Dali Santorini",
+        "Black Dragon Pool",
+        "Lijiang Ancient Town",
+        "Sifang Street",
+        "Jade Dragon Snow Mountain",
+        "Ganhaizi",
+        "Impression Lijiang",
+        "Baishui River",
+        "Blue Moon Valley",
+        "Yushui Village",
+        "Tiger Leaping Gorge",
+        "Napa Sea",
+        "Dukezong Ancient City",
+        "Guishan Park",
+        "Songzanlin Monastery",
+        "Dali Ancient City",
+        "Heilongtan Park",
+        "Qianwang Old Street"
+      ],
+      "posters": [
+        "cn-poster-charming-yunnan-8d7n-no-shopping-0.jpg"
+      ],
+      "posterSize": [
+        541,
+        800
+      ]
+    },
+    {
+      "id": "charming-yunnan-9d8n-no-shopping",
+      "name": "Charming Yunnan 9D8N Tour (No Shopping)",
+      "subtitle": "Out Manila · Xiamen Airlines",
+      "region": "intl",
+      "country": "China",
+      "flag": "cn",
+      "duration": "9 days 8 nights",
+      "days": 9,
+      "status": "available",
+      "featured": false,
+      "departure": "Manila (NAIA)",
+      "price": {
+        "from": 1388,
+        "label": "From",
+        "unit": "per pax",
+        "currency": "USD"
+      },
+      "year": 2026,
+      "ends": "2027-01-25",
+      "image": "cn-yunnan.jpg",
+      "alt": "Mountains reflected in a lake, Yunnan",
+      "gallery": [
+        "cn-yunnan.jpg"
+      ],
+      "summary": "A no-shopping Yunnan loop from Kunming to Stone Forest, Dali, Lijiang and Shangri-La, with 5-star hotels and a flight via Xiamen.",
+      "overview": "This 9-day no-shopping tour flies Xiamen Airlines from Manila via Xiamen to Kunming. You visit the Stone Forest, Dali, Lijiang with Jade Dragon Snow Mountain, and Shangri-La with Songzanlin Monastery, then return by high-speed train to Kunming. You stay seven nights in 5-star hotels and one night in a 4-star hotel, with one meal upgraded to a seafood buffet.",
+      "travelDates": [
+        {
+          "d": "Dec 11–19"
+        },
+        {
+          "d": "Jan 7–15",
+          "y": 2027
+        },
+        {
+          "d": "Jan 17–25",
+          "y": 2027
+        }
+      ],
+      "travelDatesNote": "Departures from Manila, Dec 11–19 2026 to Jan 17–25 2027. The rate changes by date: an amount on a date is added to the base rate per pax. Seats are limited and confirmed at booking.",
+      "itinerary": [
+        {
+          "day": "Day 1",
+          "title": "Manila – Xiamen",
+          "items": [
+            "Flight MF820 Manila to Xiamen (21:15–23:35)",
+            "Meet the tour guide at the airport",
+            "Transfer to the hotel and check in",
+            "Meals: none included (X/X/X)"
+          ]
+        },
+        {
+          "day": "Day 2",
+          "title": "Xiamen – Kunming",
+          "items": [
+            "Hotel breakfast and check out",
+            "Flight MF8405 Xiamen to Kunming (07:45–10:55); meet the tour guide at the airport",
+            "Daguan Park (in seagull season, late Nov to end Feb, a trip to Haigeng Dam to see red-billed gulls is arranged, subject to on-site conditions)",
+            "Jinbi Square and Jinri Building",
+            "Transfer to the hotel and check in",
+            "Meals: Breakfast / Lunch / Dinner"
+          ]
+        },
+        {
+          "day": "Day 3",
+          "title": "Kunming – Stone Forest – Chuxiong",
+          "items": [
+            "Hotel breakfast and check out",
+            "Stone Forest Scenic Area (shuttle cart included)",
+            "Transfer to Chuxiong",
+            "Yi People Ancient Town",
+            "Transfer to the hotel and check in",
+            "Meals: Breakfast / Lunch / Dinner"
+          ]
+        },
+        {
+          "day": "Day 4",
+          "title": "Chuxiong – Dali – Lijiang",
+          "items": [
+            "Hotel breakfast and check out",
+            "Transfer to Dali",
+            "Santorini of Dali with afternoon tea (battery car included)",
+            "Transfer to Lijiang",
+            "Black Dragon Pool",
+            "Lijiang Ancient Town and Sifang Street (dinner on your own in the ancient town)",
+            "Transfer to the hotel and check in",
+            "Meals: Breakfast / Lunch (dinner on your own)"
+          ]
+        },
+        {
+          "day": "Day 5",
+          "title": "Lijiang",
+          "items": [
+            "Hotel breakfast",
+            "Jade Dragon Snow Mountain Scenic Area, Glacier Park (shuttle bus and large ropeway round trip included)",
+            "Gan Haizi",
+            "Impression Lijiang live song and dance show",
+            "Baishui River and Blue Moon Valley (battery car included)",
+            "Jade Water Village",
+            "Transfer back to the hotel",
+            "Meals: Breakfast / Lunch / Dinner"
+          ]
+        },
+        {
+          "day": "Day 6",
+          "title": "Lijiang – Shangri-La",
+          "items": [
+            "Hotel breakfast and check out",
+            "Transfer to Shangri-La by bus",
+            "Tiger Leaping Gorge on the way (round-trip hand escalators included)",
+            "Napa Sea (one complimentary cup of coffee) and Sky Gate Viewpoint",
+            "Shangri-La Dukezong Ancient City, Guishan Park and the World’s Largest Prayer Wheel",
+            "Transfer to the hotel and check in",
+            "Meals: Breakfast / Lunch / Dinner"
+          ]
+        },
+        {
+          "day": "Day 7",
+          "title": "Shangri-La – Dali",
+          "items": [
+            "Hotel breakfast and check out",
+            "Songzanlin Monastery (shuttle cart included)",
+            "Transfer to Dali",
+            "Dali Ancient City (electric sightseeing cart not included)",
+            "Foreigner Street",
+            "Transfer to the hotel and check in",
+            "Meals: Breakfast / Lunch / Dinner"
+          ]
+        },
+        {
+          "day": "Day 8",
+          "title": "Dali – Kunming",
+          "items": [
+            "Hotel breakfast and check out",
+            "High-speed train Dali to Kunming, 2nd class seats (specific train to be confirmed)",
+            "Kunming Heilongtan Park (pear blossoms and azaleas in season, mid-March to mid-April)",
+            "Kunming city walk: Jingxinghua Street, Qianwang Old Street and Nanping Pedestrian Street",
+            "Dinner upgraded to a seafood buffet",
+            "Transfer to the hotel and check in",
+            "Meals: Breakfast / Lunch / Dinner (seafood buffet)"
+          ]
+        },
+        {
+          "day": "Day 9",
+          "title": "Kunming – Xiamen – Manila",
+          "items": [
+            "Hotel breakfast and check out",
+            "Flight MF8406 Kunming to Xiamen (12:25–14:45)",
+            "Connecting flight MF819 Xiamen to Manila (17:35–20:15)",
+            "Meals: Breakfast only"
+          ]
+        }
+      ],
+      "inclusions": [
+        "Round-trip economy airfare and taxes with Xiamen Airlines",
+        "Baggage allowance: 1 piece of 23 kg check-in plus 7 kg hand carry",
+        "High-speed train Dali to Kunming, 2nd class seats",
+        "8 nights accommodation, twin sharing: 7 nights in 5★ hotels and 1 night in a 4★ hotel, with daily hotel breakfast",
+        "Private bus with an English-speaking tour guide",
+        "Sightseeing as listed, including first entrance tickets and listed in-park transport",
+        "Breakfast and a total of 13 meals, with one meal upgraded to a seafood buffet",
+        "One complimentary bottle of water per person per day"
+      ],
+      "exclusions": [
+        "Personal expenses such as telephone calls and minibar",
+        "Travel insurance",
+        "Philippine travel tax USD 30 per person (collected with the tour fee)",
+        "China group visa USD 40 per person (collected with the tour fee)",
+        "Tips for driver and guide USD 45 per person (USD 5 per day x 9 days, collected with the tour fee)",
+        "Single supplement USD 250 per person",
+        "Fuel surcharge, estimated USD 75 per person (subject to change)"
+      ],
+      "hotelsLabel": "Hotels",
+      "hotels": [
+        "Day 1: 4★ hotel in Xiamen (arranged by Xiamen Airlines)",
+        "Day 2 and Day 8: Wyndham Garden Hotel Kunming or similar 5★",
+        "Day 3: Wyndham Garden Hotel Chuxiong or similar 5★",
+        "Day 4–5: Yulong Wyndham Hotel Lijiang or similar 5★",
+        "Day 6: Tangxiang Jiaxiu Hotel Shangri-La or similar 5★",
+        "Day 7: Iridescent Clouds Hotel Dali or similar 5★"
+      ],
+      "notes": [
+        "Meal codes B/L/D = breakfast/lunch/dinner; X = not included.",
+        "This is a No Shopping package; the guide may sell souvenirs or local specialties on the bus, which guests can buy if they wish.",
+        "Philippine passport holders need a China visa; the China group visa is USD 40 per person.",
+        "Child rates: with bed ages 2–10 or 11–17 (adult rate), without bed ages 2–10.",
+        "If the Glacier Park ropeway is out of service it is replaced by the Yunshanping ropeway, with a refund of the RMB 60 per person price difference.",
+        "If Impression Lijiang is cancelled due to force majeure, it is replaced by another performance of the same level without refund.",
+        "The itinerary, flights and hotels are subject to final confirmation; the order of attractions may change because of weather, traffic or crowds.",
+        "No refund for services cancelled or skipped during the trip; tips are charged for the full number of days."
+      ],
+      "places": [
+        "Daguan Park",
+        "Haigeng Dam (seagull season)",
+        "Jinbi Square",
+        "Stone Forest",
+        "Yi People Ancient Town",
+        "Santorini of Dali",
+        "Black Dragon Pool",
+        "Lijiang Ancient Town",
+        "Sifang Street",
+        "Jade Dragon Snow Mountain",
+        "Gan Haizi",
+        "Impression Lijiang",
+        "Baishui River",
+        "Blue Moon Valley",
+        "Jade Water Village",
+        "Tiger Leaping Gorge",
+        "Napa Sea",
+        "Dukezong Ancient City",
+        "Guishan Park",
+        "Songzanlin Monastery",
+        "Dali Ancient City",
+        "Foreigner Street",
+        "Heilongtan Park",
+        "Kunming City Walk"
+      ],
+      "posters": [
+        "cn-poster-charming-yunnan-9d8n-no-shopping-0.jpg",
+        "cn-poster-charming-yunnan-9d8n-no-shopping-1.jpg"
+      ],
+      "posterSize": [
+        541,
+        800
+      ]
+    },
+    {
+      "id": "charter-flight-avatar-changsha-4d3n",
+      "name": "Charter Flight Avatar – Mini Venice (Changsha – Zhangjiajie) 4D3N Tour",
+      "subtitle": "Out Manila · Qingdao Airlines charter",
+      "region": "intl",
+      "country": "China",
+      "flag": "cn",
+      "duration": "4 days 3 nights",
+      "days": 4,
+      "status": "available",
+      "featured": false,
+      "departure": "Manila (NAIA)",
+      "price": {
+        "from": 349,
+        "label": "From",
+        "unit": "per pax",
+        "currency": "USD"
+      },
+      "year": 2026,
+      "ends": "2027-06-25",
+      "image": "cn-zhangjiajie.jpg",
+      "alt": "Sandstone pillars in Zhangjiajie National Forest Park",
+      "gallery": [
+        "cn-zhangjiajie.jpg"
+      ],
+      "summary": "Direct charter flight to Changsha and Zhangjiajie: Orange Isle, Mini Venice Town, the Avatar scenic area and the Grand Canyon glass bridge in 4 days.",
+      "overview": "A short charter-flight break from Manila to Changsha, then on to Zhangjiajie. See Orange Isle and Mini Venice Town in Changsha, then the Avatar scenic area (Zhangjiajie National Forest Park) with Avatar Hallelujah Mountain, and cross the Grand Canyon glass bridge. Hotels are Days Hotel by Wyndham Changsha and Qingxinyuan Hotel Zhangjiajie, or similar. This is a shopping-stop package.",
+      "travelDates": [
+        {
+          "d": "Oct 27–30",
+          "add": 80,
+          "cur": "USD"
+        },
+        {
+          "d": "Jan 5–8",
+          "y": 2027
+        },
+        {
+          "d": "Jan 19–22",
+          "y": 2027
+        },
+        {
+          "d": "Feb 2–5",
+          "y": 2027
+        },
+        {
+          "d": "Feb 16–19",
+          "y": 2027
+        },
+        {
+          "d": "Mar 2–5",
+          "y": 2027
+        },
+        {
+          "d": "Mar 16–19",
+          "y": 2027
+        },
+        {
+          "d": "Mar 30–Apr 2",
+          "y": 2027
+        },
+        {
+          "d": "Apr 13–16",
+          "y": 2027
+        },
+        {
+          "d": "Apr 27–30",
+          "y": 2027
+        },
+        {
+          "d": "May 11–14",
+          "y": 2027
+        },
+        {
+          "d": "May 25–28",
+          "y": 2027
+        },
+        {
+          "d": "Jun 8–11",
+          "y": 2027
+        },
+        {
+          "d": "Jun 22–25",
+          "y": 2027
+        }
+      ],
+      "travelDatesNote": "Departures from Manila, Oct 27–30 2026 to Jun 22–25 2027. The rate changes by date: an amount on a date is added to the base rate per pax. Seats are limited and confirmed at booking.",
+      "itinerary": [
+        {
+          "day": "Day 1",
+          "title": "Manila – Changsha",
+          "items": [
+            "Charter flight Manila – Changsha (QW956, 03:45/07:00)",
+            "Meet your tour guide at the airport",
+            "Hotel buffet breakfast",
+            "Orange Isle (battery car not included)",
+            "Mini Venice Town in Changsha (entrance fee only included)",
+            "Taiping Old Street and Huangxing Road walking street",
+            "Dinner on your own",
+            "Transfer to the hotel and check in"
+          ]
+        },
+        {
+          "day": "Day 2",
+          "title": "Changsha – Zhangjiajie",
+          "items": [
+            "Breakfast at the hotel and check out",
+            "Drive to Zhangjiajie",
+            "Optional Tour 1: Tianmen Mountain (cable car, glass skywalk, Tianmen Cave), USD 85 per person",
+            "Optional Tour 2: Tianmen Fox-Lady Show, USD 70 per person",
+            "Transfer back to the hotel"
+          ]
+        },
+        {
+          "day": "Day 3",
+          "title": "Avatar scenic area",
+          "items": [
+            "Breakfast at the hotel",
+            "Compulsory shopping stop at a Chinese medicine shop",
+            "Avatar scenic area (up and down by Bailong Elevator)",
+            "No.1 Bridge",
+            "Avatar Hallelujah Mountain",
+            "Breath-taking Platform",
+            "West Sea Clouds",
+            "Compulsory shopping stop at a latex shop",
+            "Dinner, then transfer to the hotel and check in"
+          ]
+        },
+        {
+          "day": "Day 4",
+          "title": "Zhangjiajie – Changsha – Manila",
+          "items": [
+            "Breakfast at the hotel and check out",
+            "Compulsory shopping stop at a jewelry shop",
+            "Grand Canyon scenic area, glass bridge",
+            "Compulsory shopping stop at a silk shop",
+            "Transfer back to Changsha for the flight to Manila (QW955, 23:30/02:45+1)"
+          ]
+        }
+      ],
+      "inclusions": [
+        "Charter flight Manila – Changsha – Manila, economy class, via Qingdao Airlines",
+        "Baggage: 20 kg per passenger",
+        "3 nights’ twin-sharing accommodation with daily hotel breakfast (triple rooms not guaranteed)",
+        "Private coach with English-speaking tour guide",
+        "Sightseeing as specified, including first-way entrance fees",
+        "Meals as listed"
+      ],
+      "exclusions": [
+        "Personal expenses such as telephone calls and minibar",
+        "Travel insurance",
+        "Airport tax USD 40 per person (collected with tour fee)",
+        "Fuel surcharge USD 30 per person, subject to change (collected with tour fee)",
+        "China group visa USD 40 per person (guaranteed, collected with tour fee)",
+        "Tips for driver and guide USD 20 per person (collected with tour fee)",
+        "Philippines travel tax PHP 1,620 per person (pay directly at the airport)",
+        "Single supplement USD 75 per person"
+      ],
+      "optional": [
+        "Tianmen Mountain (cable car, glass skywalk, Tianmen Cave): USD 85 per person",
+        "Tianmen Fox-Lady Show: USD 70 per person"
+      ],
+      "hotelsLabel": "Hotels",
+      "hotels": [
+        "Day 1: Days Hotel by Wyndham Changsha or similar",
+        "Day 2-3: Qingxinyuan Hotel Zhangjiajie or similar",
+        "Day 4: Home sweet home"
+      ],
+      "notes": [
+        "Meals: Day 1 breakfast and lunch (dinner on your own); Days 2-3 breakfast, lunch and dinner; Day 4 breakfast, lunch and dinner",
+        "Shopping stops: Chinese medicine, latex, jewelry and silk or tea shops; the rate is based on these visits",
+        "Infant (2-24 months), child with bed (12-21 years) and child without bed (2-11 years) have separate rates",
+        "Single travellers may be paired with another guest to share a room; otherwise the single supplement applies",
+        "If a listed hotel is unavailable it is replaced by a similar one",
+        "Order of attractions may be adjusted for crowded groups or special circumstances",
+        "Services are on a private basis",
+        "Philippine passport holders need a China group visa, USD 40 per person (not included)"
+      ],
+      "places": [
+        "Orange Isle",
+        "Mini Venice Town",
+        "Taiping Old Street",
+        "Huangxing Road",
+        "Tianmen Mountain",
+        "Zhangjiajie Avatar scenic area",
+        "Bailong Elevator",
+        "No.1 Bridge",
+        "Avatar Hallelujah Mountain",
+        "Breath-taking Platform",
+        "West Sea Clouds",
+        "Grand Canyon Glass Bridge"
+      ],
+      "posters": [
+        "cn-poster-charter-flight-avatar-changsha-4d3n-0.jpg",
+        "cn-poster-charter-flight-avatar-changsha-4d3n-1.jpg"
+      ],
+      "posterSize": [
+        460,
+        800
+      ]
+    },
+    {
+      "id": "charter-flight-avatar-furong-town-5d4n",
+      "name": "Charter Flight Avatar – Furong Town (Mini Venice) 5D4N Tour",
+      "subtitle": "Out Manila · Qingdao Airlines",
+      "region": "intl",
+      "country": "China",
+      "flag": "cn",
+      "duration": "5 days 4 nights",
+      "days": 5,
+      "status": "available",
+      "featured": false,
+      "departure": "Manila (NAIA)",
+      "price": {
+        "from": 379,
+        "label": "From",
+        "unit": "per pax",
+        "currency": "USD"
+      },
+      "year": 2026,
+      "ends": "2027-06-30",
+      "image": "cn-zhangjiajie.jpg",
+      "alt": "Sandstone pillars in Zhangjiajie National Forest Park",
+      "gallery": [
+        "cn-zhangjiajie.jpg"
+      ],
+      "summary": "Charter flight to Changsha and Zhangjiajie: Mini Venice Town, Furong Town, the Avatar scenic area, Tusi City and Golden Whip Stream, in 5 days.",
+      "overview": "Fly direct to Changsha on a Qingdao Airlines charter flight, then travel on to Zhangjiajie. You will see Mini Venice Town in Changsha, Furong Town (the ancient town hanging on a waterfall) and the Avatar scenic area. Hotels are Wyndham-group or similar; a private coach and English-speaking guide are included. The package includes shop visits.",
+      "travelDates": [
+        {
+          "d": "Dec 31–Jan 4",
+          "add": 80,
+          "cur": "USD"
+        },
+        {
+          "d": "Jan 9–13",
+          "y": 2027
+        },
+        {
+          "d": "Jan 23–27",
+          "y": 2027
+        },
+        {
+          "d": "Jan 28–Feb 1",
+          "y": 2027
+        },
+        {
+          "d": "Feb 6–10",
+          "y": 2027,
+          "add": 120,
+          "cur": "USD"
+        },
+        {
+          "d": "Feb 11–15",
+          "y": 2027
+        },
+        {
+          "d": "Feb 20–24",
+          "y": 2027
+        },
+        {
+          "d": "Feb 25–Mar 1",
+          "y": 2027
+        },
+        {
+          "d": "Mar 6–10",
+          "y": 2027
+        },
+        {
+          "d": "Mar 11–15",
+          "y": 2027
+        },
+        {
+          "d": "Mar 20–24",
+          "y": 2027,
+          "add": 80,
+          "cur": "USD"
+        },
+        {
+          "d": "Mar 25–29",
+          "y": 2027,
+          "add": 200,
+          "cur": "USD"
+        },
+        {
+          "d": "Apr 3–7",
+          "y": 2027
+        },
+        {
+          "d": "Apr 8–12",
+          "y": 2027
+        },
+        {
+          "d": "Apr 17–21",
+          "y": 2027
+        },
+        {
+          "d": "Apr 22–26",
+          "y": 2027
+        },
+        {
+          "d": "May 1–5",
+          "y": 2027
+        },
+        {
+          "d": "May 6–10",
+          "y": 2027
+        },
+        {
+          "d": "May 15–19",
+          "y": 2027
+        },
+        {
+          "d": "May 20–24",
+          "y": 2027
+        },
+        {
+          "d": "May 29–Jun 2",
+          "y": 2027
+        },
+        {
+          "d": "Jun 3–7",
+          "y": 2027
+        },
+        {
+          "d": "Jun 12–16",
+          "y": 2027
+        },
+        {
+          "d": "Jun 17–21",
+          "y": 2027
+        },
+        {
+          "d": "Jun 26–30",
+          "y": 2027
+        }
+      ],
+      "travelDatesNote": "Departures from Manila, Dec 31–Jan 4 2026 to Jun 26–30 2027. The rate changes by date: an amount on a date is added to the base rate per pax. Seats are limited and confirmed at booking.",
+      "itinerary": [
+        {
+          "day": "Day 1",
+          "title": "Manila – Changsha",
+          "items": [
+            "Fly Manila to Changsha (QW956, 03:45/07:00), meet your guide at the airport",
+            "Hotel buffet breakfast",
+            "Orange Isle (battery car excluded)",
+            "Mini Venice Town in Changsha (entrance fee only included)",
+            "Taiping Old Street",
+            "Huangxing Road walking street",
+            "Dinner on your own",
+            "Transfer to the hotel and check in (meals: B/L/X)"
+          ]
+        },
+        {
+          "day": "Day 2",
+          "title": "Changsha – Zhangjiajie – Furong Town",
+          "items": [
+            "Breakfast at the hotel and check out",
+            "Drive to Zhangjiajie",
+            "Optional tour: Tianmen Mountain (cable car, glass skywalk, Tianmen Cave), USD 85 per person",
+            "Furong Town, the ancient town hanging on a waterfall, and its night view",
+            "Transfer back to the hotel (meals: B/L/D)"
+          ]
+        },
+        {
+          "day": "Day 3",
+          "title": "Furong Town – Zhangjiajie Avatar scenic area",
+          "items": [
+            "Breakfast at the hotel and check out",
+            "Drive to Zhangjiajie",
+            "Compulsory shopping stop: Chinese medicine shop",
+            "Avatar scenic area (up and down by Bailong Lift or Tianzishan cable car)",
+            "No. 1 Bridge",
+            "Avatar Hallelujah Mountain",
+            "Breath-taking Platform",
+            "West Sea Clouds",
+            "Optional tour: Tianmen Fox-Lady Show, USD 70 per person",
+            "Dinner, then transfer to the hotel and check in (meals: B/L/D)"
+          ]
+        },
+        {
+          "day": "Day 4",
+          "title": "Zhangjiajie",
+          "items": [
+            "Breakfast at the hotel",
+            "Compulsory shopping stop: latex shop",
+            "Golden Whip Stream and Water Around Four Gates",
+            "Compulsory shopping stop: silk shop",
+            "Tusi City",
+            "Optional tour: Baofeng Lake (including cruise), USD 60 per person",
+            "Dinner, then transfer to the hotel and check in (meals: B/L/D)"
+          ]
+        },
+        {
+          "day": "Day 5",
+          "title": "Zhangjiajie – Changsha – Manila",
+          "items": [
+            "Breakfast at the hotel and check out",
+            "Compulsory shopping stop: jewelry shop",
+            "Optional tour: Grand Canyon scenic area and Glass Bridge, USD 70 per person",
+            "Compulsory shopping stop: tea shop",
+            "Transfer back to Changsha and fly to Manila (QW955, 23:30/02:45+1) (meals: B/L/D)"
+          ]
+        }
+      ],
+      "inclusions": [
+        "Charter flight Manila – Changsha – Manila, economy class, via Qingdao Airlines",
+        "Baggage allowance: 20 kg per passenger",
+        "4 nights’ accommodation, twin sharing, with daily hotel breakfast (triple rooms not guaranteed, subject to availability)",
+        "Private coach with English-speaking tour guide",
+        "Sightseeing as specified, including first-way entrance fees",
+        "Meals as listed"
+      ],
+      "exclusions": [
+        "Personal expenses such as phone calls and minibar",
+        "Travel insurance",
+        "Airport tax USD 40 per person (collected with the tour fee)",
+        "Fuel surcharge USD 30 per person (collected with the tour fee, subject to change)",
+        "China group visa (guaranteed) USD 40 per person (collected with the tour fee)",
+        "Tips for driver and guide USD 25 per person (collected with the tour fee)",
+        "Philippines travel tax PHP 1,620 per person (pay directly at the airport)",
+        "Single supplement USD 90 per person on regular dates (USD 120 for the 6-10 Feb 2027 departure)"
+      ],
+      "optional": [
+        "Tianmen Mountain (cable car, glass skywalk, Tianmen Cave): USD 85 per person",
+        "Tianmen Fox-Lady Show: USD 70 per person",
+        "Baofeng Lake (including cruise): USD 60 per person",
+        "Grand Canyon scenic area and Glass Bridge: USD 70 per person"
+      ],
+      "hotelsLabel": "Hotels",
+      "hotels": [
+        "Day 1: Days Hotel by Wyndham Changsha or similar",
+        "Day 2: Wingate by Wyndham (Furong Town / Zhangjiajie area)",
+        "Day 3-4: Qingxinyuan Hotel Zhangjiajie or similar"
+      ],
+      "notes": [
+        "Meal codes: B = breakfast, L = lunch, D = dinner, X = not included",
+        "Package includes shop visits: latex shop, jewelry shop, Chinese medicine shop, silk shop and tea shop",
+        "Child categories: 12-21 years with bed; 2-11 years without bed; infant 2-24 months",
+        "Philippine passport holders need a China visa; the group visa is not included (USD 40 per person)",
+        "Hotels are subject to replacement with similar ones if not available",
+        "All services are on a private basis; the order of attractions may change",
+        "Single travelers may be paired to share a room; otherwise the single supplement applies"
+      ],
+      "places": [
+        "Orange Isle",
+        "Mini Venice Town",
+        "Taiping Old Street",
+        "Huangxing Road Walking Street",
+        "Furong Town",
+        "Zhangjiajie Avatar Scenic Area",
+        "Bailong Lift",
+        "Tianzishan Cable Car",
+        "No. 1 Bridge",
+        "Avatar Hallelujah Mountain",
+        "Breath-taking Platform",
+        "West Sea Clouds",
+        "Golden Whip Stream",
+        "Water Around Four Gates",
+        "Tusi City"
+      ],
+      "posters": [
+        "cn-poster-charter-flight-avatar-furong-town-5d4n-0.jpg",
+        "cn-poster-charter-flight-avatar-furong-town-5d4n-1.jpg"
+      ],
+      "posterSize": [
+        538,
+        800
+      ]
+    },
+    {
+      "id": "avatar-furong-yangtze-river-5d4n",
+      "name": "Avatar – Furong – Yangtze River 5D4N Charter Flight Tour",
+      "subtitle": "Out Manila · Air Changan (charter)",
+      "region": "intl",
+      "country": "China",
+      "flag": "cn",
+      "duration": "5 days 4 nights",
+      "days": 5,
+      "status": "available",
+      "featured": false,
+      "departure": "Manila (NAIA)",
+      "price": {
+        "from": 339,
+        "label": "From",
+        "unit": "per pax",
+        "currency": "USD"
+      },
+      "year": 2026,
+      "ends": "2026-12-27",
+      "image": "cn-yangtze.jpg",
+      "alt": "Mountains along the Yangtze River gorges",
+      "gallery": [
+        "cn-yangtze.jpg"
+      ],
+      "summary": "Charter flight to Yichang with Furong Town, the Avatar scenic area in Zhangjiajie and the Three Gorges Tribe on the Yangtze River over five days.",
+      "overview": "A charter flight takes you from Manila to Yichang, then by coach to Furong Town and Zhangjiajie for the Avatar scenic area (Bailong Lift, No. 1 Bridge, Avatar Hallelujah Mountain) and Tusi City. On the last day, enjoy the Yangtze River Three Gorges Tribe scenic area with a cruise before flying home.",
+      "travelDates": [
+        {
+          "d": "Nov 6–10",
+          "add": 30,
+          "cur": "USD"
+        },
+        {
+          "d": "Nov 11–15"
+        },
+        {
+          "d": "Nov 20–24"
+        },
+        {
+          "d": "Nov 25–29"
+        },
+        {
+          "d": "Dec 4–8"
+        },
+        {
+          "d": "Dec 9–13"
+        },
+        {
+          "d": "Dec 23–27",
+          "add": 150,
+          "cur": "USD"
+        }
+      ],
+      "travelDatesNote": "Departures from Manila, Nov 6–10 2026 to Dec 23–27 2026. The rate changes by date: an amount on a date is added to the base rate per pax. Seats are limited and confirmed at booking.",
+      "itinerary": [
+        {
+          "day": "Day 1",
+          "title": "Manila – Yichang – Zhangjiajie – Furong Town",
+          "items": [
+            "Fly Manila to Yichang (9H8384 02:40–05:25) and meet your guide",
+            "Transfer to hotel for breakfast and rest until 11:00 check-out",
+            "Proceed to Zhangjiajie",
+            "Optional: Grand Canyon Glass Bridge",
+            "Furong Town, the ancient town hanging on the waterfall, with night view",
+            "Transfer to hotel"
+          ]
+        },
+        {
+          "day": "Day 2",
+          "title": "Furong Town – Zhangjiajie",
+          "items": [
+            "Breakfast at the hotel and check out",
+            "Proceed to Zhangjiajie",
+            "Compulsory shopping stop: Chinese medicine shop",
+            "Tusi City",
+            "Optional: Tianmen Mountain (cable car, glass skywalk, Tianmen Cave)",
+            "Transfer to hotel"
+          ]
+        },
+        {
+          "day": "Day 3",
+          "title": "Zhangjiajie – Avatar scenic area",
+          "items": [
+            "Breakfast at the hotel",
+            "Compulsory shopping stop: latex shop",
+            "Compulsory shopping stop: silk shop",
+            "Avatar scenic area (up and down by Bailong Lift)",
+            "No. 1 Bridge, Avatar Hallelujah Mountain, Breath-taking Platform, West Sea Clouds",
+            "Optional: Tianmen Fox-Lady Show"
+          ]
+        },
+        {
+          "day": "Day 4",
+          "title": "Zhangjiajie – Yichang",
+          "items": [
+            "Breakfast at the hotel",
+            "Compulsory shopping stop: jewelry shop",
+            "Compulsory shopping stop: tea shop",
+            "Optional: Baofeng Lake including cruise",
+            "Proceed to Yichang",
+            "Dinner on your own at the night market"
+          ]
+        },
+        {
+          "day": "Day 5",
+          "title": "Yichang – Manila",
+          "items": [
+            "Breakfast at the hotel and check out",
+            "Yangtze River Three Gorges Tribe scenic area, cruise included",
+            "Qu Yuan’s hometown",
+            "San You Cave",
+            "Transfer to Yichang airport and fly to Manila (9H8383 23:00–01:40+1)"
+          ]
+        }
+      ],
+      "inclusions": [
+        "Charter flight Manila–Yichang–Manila, economy class, via Air Changan",
+        "Baggage: 20 kg check-in and 5 kg hand carry",
+        "5 nights’ accommodation, twin sharing, with daily hotel breakfast (triple rooms not guaranteed)",
+        "Private coach with English-speaking tour guide",
+        "Sightseeing as specified, including first-way entrance fees",
+        "Meals as listed (D1 B/L/D; D2 B/L/D; D3 B/L/D; D4 B/L; D5 B/L/D)"
+      ],
+      "exclusions": [
+        "Personal expenses such as phone calls and minibar",
+        "Travel insurance",
+        "Fuel surcharge: USD 30 per person (collected with tour fee, subject to change)",
+        "Airport tax: USD 40 per person (collected with tour fee)",
+        "China group visa (guaranteed): USD 40 per person (collected with tour fee)",
+        "Tips for driver and guide: USD 25 per person (collected with tour fee)",
+        "Philippines travel tax: PHP 1,620 per person (paid directly at the airport)",
+        "Single supplement: USD 100 per person"
+      ],
+      "optional": [
+        "Day 1: Grand Canyon Glass Bridge, USD 70 per person",
+        "Day 2: Tianmen Mountain, USD 85 per person",
+        "Day 3: Tianmen Fox-Lady Show, USD 70 per person",
+        "Day 4: Baofeng Lake including cruise, USD 60 per person"
+      ],
+      "hotelsLabel": "Hotels",
+      "hotels": [
+        "Day 1: Wingate by Wyndham",
+        "Day 2–3: Ramada Hotel Zhangjiajie or similar",
+        "Day 4: Ramada Hotel Yichang or similar"
+      ],
+      "notes": [
+        "Rate includes compulsory shopping stops: Chinese medicine, latex, silk, jewelry and tea shops",
+        "Infant (2–24 months), child (2–11 yrs without bed) and 12–21 yrs with bed are priced separately; some dates cost more",
+        "If you have a Philippine domestic flight, allow at least 12 hours between it and the international flight",
+        "Not suitable for incentive, student, company team-building or travel agent groups",
+        "Single supplement USD 100 per person",
+        "Hotels may be replaced by similar ones; sightseeing order may be adjusted"
+      ],
+      "places": [
+        "Furong Town",
+        "Grand Canyon Glass Bridge",
+        "Tusi City",
+        "Tianmen Mountain",
+        "Avatar scenic area",
+        "Bailong Lift",
+        "No. 1 Bridge",
+        "Avatar Hallelujah Mountain",
+        "West Sea Clouds",
+        "Baofeng Lake",
+        "Three Gorges Tribe",
+        "Qu Yuan’s Hometown",
+        "San You Cave"
+      ],
+      "posters": [
+        "cn-poster-avatar-furong-yangtze-river-5d4n-0.jpg",
+        "cn-poster-avatar-furong-yangtze-river-5d4n-1.jpg"
+      ],
+      "posterSize": [
+        507,
+        800
+      ]
+    },
+    {
+      "id": "avatar-furong-yangtze-river-5d4n-no-shopping",
+      "name": "Zhangjiajie (Avatar) – Furong – Yangtze River 5D4N Charter Tour (No Shopping)",
+      "subtitle": "Out Manila · Chang An Airlines (charter)",
+      "region": "intl",
+      "country": "China",
+      "flag": "cn",
+      "duration": "5 days 4 nights",
+      "days": 5,
+      "status": "available",
+      "featured": false,
+      "departure": "Manila (NAIA)",
+      "price": {
+        "from": 959,
+        "label": "From",
+        "unit": "per pax",
+        "currency": "USD"
+      },
+      "year": 2026,
+      "ends": "2026-12-27",
+      "image": "cn-yangtze.jpg",
+      "alt": "Mountains along the Yangtze River gorges",
+      "gallery": [
+        "cn-yangtze.jpg"
+      ],
+      "summary": "Charter flight to Yichang, then Zhangjiajie’s Avatar mountains, Tianmen Mountain, Furong Town and a Yangtze Three Gorges cruise, with no shopping stops.",
+      "overview": "A no-shopping charter package through Zhangjiajie, home of the Avatar scenery at Zhangjiajie National Forest Park, plus the Grand Canyon Glass Bridge, Furong Town, Tianmen Mountain and the Yangtze River Three Gorges. Flights are by charter with Chang An Airlines.",
+      "travelDates": [
+        {
+          "d": "Dec 23–27"
+        }
+      ],
+      "travelDatesNote": "Departures from Manila, Dec 23–27 2026 to Dec 23–27 2026. The rate changes by date: an amount on a date is added to the base rate per pax. Seats are limited and confirmed at booking.",
+      "itinerary": [
+        {
+          "day": "Day 1",
+          "title": "Manila – Yichang – Zhangjiajie",
+          "items": [
+            "Charter flight Manila to Yichang (9H8384 02:40/05:25); meet the guide.",
+            "Transfer to hotel for breakfast and rest until 11am, then check out and drive to Zhangjiajie.",
+            "Visit Grand Canyon scenic area and the Glass Bridge.",
+            "Visit Furong Town, the ancient town hanging on a waterfall, and see its night view.",
+            "Transfer to hotel. Meals: B/L/D."
+          ]
+        },
+        {
+          "day": "Day 2",
+          "title": "Furong Town – Zhangjiajie",
+          "items": [
+            "Hotel breakfast and check out.",
+            "Visit Tusi City.",
+            "Visit Tianmen Mountain (cable car, glass skywalk and Tianmen Cave included).",
+            "Transfer to hotel. Meals: B/L/D."
+          ]
+        },
+        {
+          "day": "Day 3",
+          "title": "Zhangjiajie",
+          "items": [
+            "Hotel breakfast.",
+            "Avatar scenic area, up and down by Bailong Lift: No.1 Bridge, Avatar Hallelujah Mountain, Breath-taking Platform and West Sea Clouds.",
+            "Optional tour: Tianmen Fox-Lady Show (USD 70 per person).",
+            "After dinner, transfer to hotel. Meals: B/L/D."
+          ]
+        },
+        {
+          "day": "Day 4",
+          "title": "Zhangjiajie – Yichang",
+          "items": [
+            "Hotel breakfast and check out.",
+            "Visit Baofeng Lake (cruise included).",
+            "Proceed to Yichang; after dinner, check in at hotel. Meals: B/L/D."
+          ]
+        },
+        {
+          "day": "Day 5",
+          "title": "Zhangjiajie – Yichang – Manila",
+          "items": [
+            "Hotel breakfast and check out.",
+            "Visit the Yangtze River Three Gorges Tribe Scenic Area (cruise included).",
+            "Visit Qu Yuan’s hometown and San You Cave.",
+            "Transfer to Yichang airport for the flight to Manila (9H8383 23:00/01:40+1). Meals: B/L/X."
+          ]
+        }
+      ],
+      "inclusions": [
+        "Charter flight, economy class, with Chang An Airlines",
+        "Baggage: 20 kg check-in and 5 kg hand carry",
+        "5 nights twin-share accommodation with daily breakfast (triple rooms not guaranteed)",
+        "Private coach with English-speaking tour guide",
+        "Sightseeing as specified, including first-way entrance fees",
+        "Meals as listed"
+      ],
+      "exclusions": [
+        "Personal expenses such as phone calls and minibar",
+        "Travel insurance",
+        "Fuel surcharge: USD 30 per person, subject to change",
+        "Airport tax: USD 40 per person, collected with tour fee",
+        "China group visa (guaranteed): USD 40 per person, collected with tour fee",
+        "Tips for driver and guide: USD 25 per person, collected with tour fee",
+        "Philippine travel tax: PHP 1,620 per person, paid directly at the airport",
+        "Single supplement: from USD 100 per person"
+      ],
+      "optional": [
+        "Tianmen Fox-Lady Show: USD 70 per person"
+      ],
+      "hotelsLabel": "Hotels",
+      "hotels": [
+        "Day 1: Wingate by Wyndham (Furong Town area)",
+        "Day 2-3: Ramada Hotel Zhangjiajie or similar",
+        "Day 4: Ramada Hotel Yichang or similar"
+      ],
+      "notes": [
+        "No shopping stops on this package.",
+        "Infant 2-24 months; child without bed 2-11 yrs.",
+        "If you have a Philippine domestic flight, keep at least a 12-hour gap before the international flight.",
+        "If a hotel is unavailable it will be replaced by a similar one; services are private; the order of sights may change."
+      ],
+      "places": [
+        "Grand Canyon Glass Bridge",
+        "Furong Town",
+        "Tusi City",
+        "Tianmen Mountain",
+        "Zhangjiajie National Forest Park (Avatar)",
+        "Bailong Lift",
+        "Avatar Hallelujah Mountain",
+        "Baofeng Lake",
+        "Three Gorges Tribe Scenic Area",
+        "Qu Yuan’s hometown",
+        "San You Cave"
+      ],
+      "posters": [
+        "cn-poster-avatar-furong-yangtze-river-5d4n-no-shopping-0.jpg"
+      ],
+      "posterSize": [
+        515,
+        800
+      ]
+    },
+    {
+      "id": "charter-flight-avatar-skiing-5d4n",
+      "name": "Charter Flight Avatar (Zhangjiajie) Skiing 5D4N Tour",
+      "subtitle": "Out Manila · Qingdao Airlines",
+      "region": "intl",
+      "country": "China",
+      "flag": "cn",
+      "duration": "5 days 4 nights",
+      "days": 5,
+      "status": "available",
+      "featured": false,
+      "departure": "Manila (NAIA)",
+      "price": {
+        "from": 499,
+        "label": "From",
+        "unit": "per pax",
+        "currency": "USD"
+      },
+      "year": 2026,
+      "ends": "2027-02-15",
+      "image": "cn-zhangjiajie.jpg",
+      "alt": "Sandstone pillars in Zhangjiajie National Forest Park",
+      "gallery": [
+        "cn-zhangjiajie.jpg"
+      ],
+      "summary": "Charter flight to Changsha, then Zhangjiajie’s Avatar scenery plus a Qixing Mountain skiing experience, over five days.",
+      "overview": "Fly a Qingdao Airlines charter from Manila to Changsha, then travel on to Zhangjiajie for the “Avatar” scenery of Zhangjiajie National Forest Park, Tusi City and a 2-hour skiing experience at Qixing Mountain. Stays are in Days Hotel by Wyndham Changsha and Ramada Hotel Zhangjiajie or similar. Several shop stops are compulsory.",
+      "travelDates": [
+        {
+          "d": "Dec 31–Jan 4",
+          "add": 70,
+          "cur": "USD"
+        },
+        {
+          "d": "Jan 9–13",
+          "y": 2027
+        },
+        {
+          "d": "Jan 23–27",
+          "y": 2027
+        },
+        {
+          "d": "Jan 28–Feb 1",
+          "y": 2027
+        },
+        {
+          "d": "Feb 11–15",
+          "y": 2027
+        }
+      ],
+      "travelDatesNote": "Departures from Manila, Dec 31–Jan 4 2026 to Feb 11–15 2027. The rate changes by date: an amount on a date is added to the base rate per pax. Seats are limited and confirmed at booking.",
+      "itinerary": [
+        {
+          "day": "Day 1",
+          "title": "Manila – Changsha",
+          "items": [
+            "Fly Manila to Changsha (QW956, 03:45–07:00) and meet your guide at the airport",
+            "Hotel buffet breakfast",
+            "Orange Isle (battery car excluded)",
+            "Mini Venice Town in Changsha (entrance fee only)",
+            "Taiping Old Street",
+            "Huangxing Road Walking Street",
+            "Dinner on your own",
+            "Transfer to hotel and check in"
+          ]
+        },
+        {
+          "day": "Day 2",
+          "title": "Changsha – Zhangjiajie",
+          "items": [
+            "Breakfast at the hotel and check out",
+            "Proceed to Zhangjiajie",
+            "Avatar scenic area, up and down by Bailong Lift or Tianzishan cable car",
+            "No. 1 Bridge",
+            "Avatar Hallelujah Mountain",
+            "Breath-taking Platform",
+            "West Sea Clouds",
+            "Eternal Love Show or Charming Xiangxi Show (optional)",
+            "Transfer back to hotel"
+          ]
+        },
+        {
+          "day": "Day 3",
+          "title": "Zhangjiajie",
+          "items": [
+            "Breakfast at the hotel",
+            "Compulsory shopping stop: Chinese medicine shop",
+            "Tusi City",
+            "Baofeng Lake including cruise (optional)",
+            "Tianmen Mountain with cable car, glass skywalk and Tianmen Cave (optional)",
+            "After dinner, transfer back to hotel"
+          ]
+        },
+        {
+          "day": "Day 4",
+          "title": "Zhangjiajie – Qixing Mountain skiing",
+          "items": [
+            "Breakfast at the hotel",
+            "Compulsory shopping stop: latex shop",
+            "Qixing Mountain Scenic Area with battery car, 1520 Platform and glass skywalk",
+            "2-hour skiing experience including ski equipment (snow suit excluded); if the ski resort is closed due to weather, Qixing Mountain and skiing change to the indoor ski at Snow and Ice World",
+            "Compulsory shopping stop: silk shop",
+            "After dinner, transfer back to hotel"
+          ]
+        },
+        {
+          "day": "Day 5",
+          "title": "Zhangjiajie – Changsha – Manila",
+          "items": [
+            "Breakfast at the hotel and check out",
+            "Compulsory shopping stop: jewelry shop",
+            "Grand Canyon scenic area – Glass Bridge (optional)",
+            "Compulsory shopping stop: tea shop",
+            "Transfer back to Changsha and fly to Manila (QW955, 23:30–02:45+1)"
+          ]
+        }
+      ],
+      "inclusions": [
+        "Charter flight Manila – Changsha – Manila, economy class, via Qingdao Airlines",
+        "Baggage allowance: 20 kg per passenger",
+        "4 nights’ accommodation, twin sharing, with daily hotel breakfast (triple rooms not guaranteed)",
+        "Private coach with English-speaking tour guide",
+        "Sightseeing as specified, including first-way entrance fees",
+        "Meals as listed"
+      ],
+      "exclusions": [
+        "Personal expenses such as phone calls and minibar",
+        "Travel insurance",
+        "Airport tax USD 40 per person, collected with the tour fee",
+        "Fuel surcharge USD 30 per person, subject to change",
+        "China group visa (guaranteed) USD 40 per person, collected with the tour fee",
+        "Tips for driver and guide USD 25 per person",
+        "Philippine travel tax PHP 1,620 per person, paid directly at the airport",
+        "Single supplement USD 90 per person"
+      ],
+      "optional": [
+        "Eternal Love Show or Charming Xiangxi Show – USD 70 per person",
+        "Baofeng Lake (including cruise) – USD 60 per person",
+        "Tianmen Mountain (cable car, glass skywalk, Tianmen Cave) – USD 85 per person",
+        "Grand Canyon scenic area – Glass Bridge – USD 70 per person"
+      ],
+      "hotelsLabel": "Hotels",
+      "hotels": [
+        "Day 1: Days Hotel by Wyndham Changsha or similar",
+        "Day 2–4: Ramada Hotel Zhangjiajie or similar",
+        "Day 5: Sweet Home"
+      ],
+      "notes": [
+        "Meals per day: D1 B/L; D2–D5 B/L/D",
+        "Age bands: 22 and above; 12–21 with bed; 2–11 without bed; infants 2–24 months. The Dec 31–Jan 4 departure carries a higher rate",
+        "Philippine passport holders need a China visa (group visa USD 40 per person)",
+        "Compulsory shop stops: Chinese medicine shop, latex shop, silk shop, jewelry shop and tea shop",
+        "Hotels may be replaced by similar ones; order of sights may change for crowds or special circumstances"
+      ],
+      "places": [
+        "Orange Isle",
+        "Mini Venice Town",
+        "Taiping Old Street",
+        "Huangxing Road Walking Street",
+        "Zhangjiajie Avatar scenic area",
+        "Bailong Lift",
+        "Tianzishan Cable Car",
+        "No. 1 Bridge",
+        "Avatar Hallelujah Mountain",
+        "Tusi City",
+        "Qixing Mountain",
+        "1520 Platform",
+        "Baofeng Lake",
+        "Tianmen Mountain",
+        "Grand Canyon Glass Bridge"
+      ],
+      "posters": [
+        "cn-poster-charter-flight-avatar-skiing-5d4n-0.jpg"
+      ],
+      "posterSize": [
+        533,
+        800
+      ]
+    },
+    {
+      "id": "charter-flight-avatar-yangtze-river-4d3n",
+      "name": "Charter Flight Zhangjiajie (Avatar) – Yangtze River 4D3N Tour",
+      "subtitle": "Out Manila · Air Changan",
+      "region": "intl",
+      "country": "China",
+      "flag": "cn",
+      "duration": "4 days 3 nights",
+      "days": 4,
+      "status": "available",
+      "featured": false,
+      "departure": "Manila (NAIA)",
+      "price": {
+        "from": 299,
+        "label": "From",
+        "unit": "per pax",
+        "currency": "USD"
+      },
+      "year": 2026,
+      "ends": "2026-12-31",
+      "image": "cn-yangtze.jpg",
+      "alt": "Mountains along the Yangtze River gorges",
+      "gallery": [
+        "cn-yangtze.jpg"
+      ],
+      "summary": "A 4-day charter flight tour to Yichang, Zhangjiajie’s Avatar mountains and the Yangtze River Three Gorges Tribe scenic area.",
+      "overview": "Take the charter flight to Yichang with Air Changan, then drive to Zhangjiajie for Baofeng Lake and the Avatar scenic area (Zhangjiajie National Forest Park). You return to Yichang for a cruise at the Yangtze River Three Gorges Tribe scenic area before flying home. Hotels are Ramada in Zhangjiajie and Yichang, or similar.",
+      "travelDates": [
+        {
+          "d": "Nov 2–5"
+        },
+        {
+          "d": "Nov 16–19"
+        },
+        {
+          "d": "Nov 30–Dec 3"
+        },
+        {
+          "d": "Dec 14–17"
+        },
+        {
+          "d": "Dec 28–31",
+          "add": 150,
+          "cur": "USD"
+        }
+      ],
+      "travelDatesNote": "Departures from Manila, Nov 2–5 2026 to Dec 28–31 2026. The rate changes by date: an amount on a date is added to the base rate per pax. Seats are limited and confirmed at booking.",
+      "itinerary": [
+        {
+          "day": "Day 1",
+          "title": "Manila – Yichang – Zhangjiajie",
+          "items": [
+            "Charter flight Manila – Yichang (02:40 – 05:25); meet the tour guide",
+            "Transfer to the hotel for breakfast and rest until 11:00",
+            "Check out and proceed to Zhangjiajie",
+            "Baofeng Lake (including cruise)",
+            "Optional: 72 Wonder Buildings (including ticket), USD 30/pax",
+            "Dinner on your own; transfer to the hotel and check in",
+            "Meals: B/L/X"
+          ]
+        },
+        {
+          "day": "Day 2",
+          "title": "Zhangjiajie",
+          "items": [
+            "Breakfast at the hotel",
+            "Compulsory shopping stop: latex shop",
+            "Compulsory shopping stop: Chinese medicine shop",
+            "Optional: Tianmen Mountain (cable car, glass skywalk, Tianmen Cave), USD 85/pax",
+            "Optional: Tianmen Fox-Lady Show, USD 70/pax",
+            "Transfer back to the hotel",
+            "Meals: B/L/D"
+          ]
+        },
+        {
+          "day": "Day 3",
+          "title": "Zhangjiajie – Yichang",
+          "items": [
+            "Breakfast at the hotel and check out",
+            "Compulsory shopping stop: silk shop",
+            "Compulsory shopping stop: jewelry shop",
+            "Avatar scenic area (up and down by Bailong Lift)",
+            "No.1 Bridge, Avatar Hallelujah Mountain, Breath-taking Platform, West Sea Clouds",
+            "Optional: Grand Canyon scenic area glass bridge, USD 70/pax",
+            "Proceed to Yichang",
+            "Meals: B/L/D"
+          ]
+        },
+        {
+          "day": "Day 4",
+          "title": "Yichang – Manila",
+          "items": [
+            "Breakfast at the hotel and check out",
+            "Yangtze River Three Gorges Tribe scenic area (cruise included)",
+            "Qu Yuan’s hometown",
+            "San You Cave",
+            "Transfer to Yichang airport and fly back to Manila (23:00 – 01:40 next day)",
+            "Meals: B/L/D"
+          ]
+        }
+      ],
+      "inclusions": [
+        "Charter flight Manila – Yichang – Manila, economy class, via Air Changan",
+        "Baggage allowance: 20 kg check-in and 5 kg hand carry",
+        "4 nights’ accommodation as per the tour, twin sharing, with daily hotel breakfast (triple rooms not guaranteed; subject to hotel availability)",
+        "Private coach with English-speaking tour guide",
+        "Sightseeing entrance fees as specified above (first way)",
+        "Meals as listed"
+      ],
+      "exclusions": [
+        "Personal expenses such as telephone calls and minibar",
+        "Travel insurance",
+        "Fuel surcharge USD 30/pax, subject to change (collected with the tour fee)",
+        "Airport tax USD 40/pax (collected with the tour fee)",
+        "China group visa USD 40/pax (guaranteed, collected with the tour fee)",
+        "Tips for driver and guide USD 20/pax (collected with the tour fee)",
+        "Philippine travel tax PHP 1,620/pax (pay at the airport)",
+        "Single supplement USD 85/pax"
+      ],
+      "optional": [
+        "72 Wonder Buildings (including ticket): USD 30/pax",
+        "Tianmen Mountain (cable car, glass skywalk, Tianmen Cave): USD 85/pax",
+        "Tianmen Fox-Lady Show: USD 70/pax",
+        "Grand Canyon scenic area glass bridge: USD 70/pax"
+      ],
+      "hotelsLabel": "Hotels",
+      "hotels": [
+        "Day 1-2: Ramada Hotel Zhangjiajie or similar",
+        "Day 3: Ramada Hotel Yichang or similar",
+        "Day 4: Sweet Home"
+      ],
+      "notes": [
+        "Meal codes: B = breakfast, L = lunch, D = dinner, X = not included",
+        "Includes shopping stops: latex shop, jewelry shop, Chinese medicine shop and silk shop",
+        "Single supplement USD 85/pax",
+        "Infant 2–24 months, child without bed 2–11 yrs, child with bed 12–21 yrs, adult 22 yrs and above",
+        "If you have a Philippine domestic flight, keep at least a 12-hour gap between it and the international flight",
+        "Rate is not suitable for incentive, student, company team-building or travel agent groups",
+        "Visa: China group visa USD 40/pax is not included",
+        "If hotels are unavailable they are replaced by similar ones; the order of sights may change in crowded periods"
+      ],
+      "places": [
+        "Baofeng Lake",
+        "72 Wonder Buildings",
+        "Tianmen Mountain",
+        "Zhangjiajie Avatar Scenic Area",
+        "Bailong Lift",
+        "No.1 Bridge",
+        "Avatar Hallelujah Mountain",
+        "Breath-taking Platform",
+        "West Sea Clouds",
+        "Grand Canyon Glass Bridge",
+        "Yangtze River Three Gorges Tribe",
+        "Qu Yuan’s Hometown",
+        "San You Cave"
+      ],
+      "posters": [
+        "cn-poster-charter-flight-avatar-yangtze-river-4d3n-0.jpg",
+        "cn-poster-charter-flight-avatar-yangtze-river-4d3n-1.jpg"
+      ],
+      "posterSize": [
+        536,
+        800
+      ]
+    },
+    {
+      "id": "avatar-yangtze-river-4d3n-no-shopping",
+      "name": "Zhangjiajie (Avatar) – Yangtze River Charter Flight 4D3N Tour (No Shopping)",
+      "subtitle": "Out Manila · Chang An Airlines",
+      "region": "intl",
+      "country": "China",
+      "flag": "cn",
+      "duration": "4 days 3 nights",
+      "days": 4,
+      "status": "available",
+      "featured": false,
+      "departure": "Manila (NAIA)",
+      "price": {
+        "from": 899,
+        "label": "From",
+        "unit": "per pax",
+        "currency": "USD"
+      },
+      "year": 2026,
+      "ends": "2026-12-31",
+      "image": "cn-yangtze.jpg",
+      "alt": "Mountains along the Yangtze River gorges",
+      "gallery": [
+        "cn-yangtze.jpg"
+      ],
+      "summary": "Charter flight to Yichang, then Zhangjiajie’s Avatar scenic area, Tianmen Mountain and a Three Gorges cruise, with no shopping stops.",
+      "overview": "A short no-shopping charter-flight tour: land in Yichang, drive to Zhangjiajie for Baofeng Lake, Tianmen Mountain, the Avatar scenic area (Zhangjiajie National Forest Park) and the Grand Canyon glass bridge, then return to Yichang for a Yangtze River Three Gorges Tribe cruise before flying home. Hotels are Ramada or similar.",
+      "travelDates": [
+        {
+          "d": "Dec 28–31"
+        }
+      ],
+      "travelDatesNote": "Departures from Manila, Dec 28–31 2026 to Dec 28–31 2026. The rate changes by date: an amount on a date is added to the base rate per pax. Seats are limited and confirmed at booking.",
+      "itinerary": [
+        {
+          "day": "Day 1",
+          "title": "Manila – Yichang – Zhangjiajie",
+          "items": [
+            "Fly Manila to Yichang by charter flight (9H8384, 02:40–05:25)",
+            "Meet the tour guide",
+            "Transfer to the hotel for breakfast and rest until 11:00",
+            "Check out and drive to Zhangjiajie",
+            "Baofeng Lake (cruise included)",
+            "72 Wander Buildings (ticket included)",
+            "Transfer to the hotel and check in"
+          ]
+        },
+        {
+          "day": "Day 2",
+          "title": "Zhangjiajie",
+          "items": [
+            "Breakfast at the hotel",
+            "Tianmen Mountain (cable car, glass skywalk and Tianmen Cave included)",
+            "Transfer back to the hotel"
+          ]
+        },
+        {
+          "day": "Day 3",
+          "title": "Zhangjiajie – Yichang",
+          "items": [
+            "Breakfast at the hotel and check out",
+            "Avatar scenic area (up and down by Bailong Lift)",
+            "No.1 Bridge, Avatar Hallelujah Mountain, Breath-taking Platform and West Sea Clouds",
+            "Grand Canyon scenic area glass bridge",
+            "Drive to Yichang"
+          ]
+        },
+        {
+          "day": "Day 4",
+          "title": "Yichang – Manila",
+          "items": [
+            "Breakfast at the hotel and check out",
+            "Yangtze River Three Gorges Tribe Scenic Area (cruise included)",
+            "Qu Yuan’s hometown",
+            "San You Cave",
+            "Transfer to Yichang airport and fly back to Manila (9H8383, 23:00–01:40+1)"
+          ]
+        }
+      ],
+      "inclusions": [
+        "Charter flight, economy class, via Chang An Airlines (the source lists the route as Manila–Changsha–Manila; flights are scheduled to and from Yichang)",
+        "Baggage: 20 kg checked plus 5 kg hand carry",
+        "4 nights twin-sharing accommodation with daily breakfast (triple rooms are not guaranteed)",
+        "Private coach with English-speaking tour guide",
+        "Sightseeing as specified, including the first-way entrance fees",
+        "Meals as listed"
+      ],
+      "exclusions": [
+        "Personal expenses such as phone calls and minibar",
+        "Travel insurance",
+        "Fuel surcharge: USD 30 per person, subject to change (collected with the tour fee)",
+        "Airport tax: USD 40 per person (collected with the tour fee)",
+        "China Group Visa (guaranteed): USD 40 per person (collected with the tour fee)",
+        "Tips for driver and guide: USD 20 per person (collected with the tour fee)",
+        "Philippine travel tax: PHP 1,620 per person (pay directly at the airport)",
+        "Single supplement: from USD 85 per person"
+      ],
+      "optional": [
+        "Tianmen Fox-Lady Show: USD 70 per person"
+      ],
+      "hotelsLabel": "Hotels",
+      "hotels": [
+        "Day 1-2: Ramada Hotel Zhangjiajie or similar",
+        "Day 3: Ramada Hotel Yichang or similar"
+      ],
+      "notes": [
+        "Meals (by day): Day 1 B/L/D; Day 2 B/L/D; Day 3 B/L/D; Day 4 B/L",
+        "No shopping stops",
+        "Child with bed is priced as an adult; infant 2 to 24 months",
+        "If you have a Philippine domestic flight, keep at least a 12-hour gap between it and the international flight in case flight times change",
+        "Single supplement is higher on Dec 28 to 31 departures",
+        "If the listed hotels are not available they will be replaced by similar ones",
+        "All services are private; the order of attractions may be adjusted in crowded periods",
+        "Philippine passport holders need a China visa; the China Group Visa fee is listed under exclusions."
+      ],
+      "places": [
+        "Baofeng Lake",
+        "72 Wander Buildings",
+        "Tianmen Mountain",
+        "Tianmen Cave",
+        "Avatar scenic area (Zhangjiajie National Forest Park)",
+        "Bailong Lift",
+        "No.1 Bridge",
+        "Avatar Hallelujah Mountain",
+        "West Sea Clouds",
+        "Grand Canyon glass bridge",
+        "Three Gorges Tribe Scenic Area",
+        "Qu Yuan’s hometown",
+        "San You Cave"
+      ],
+      "posters": [
+        "cn-poster-avatar-yangtze-river-4d3n-no-shopping-0.jpg"
+      ],
+      "posterSize": [
+        547,
+        800
+      ]
+    },
+    {
+      "id": "chengdu-jiuzhaigou-5d4n-no-shopping",
+      "name": "Chengdu – Jiuzhaigou 5D4N Tour (No Shopping)",
+      "subtitle": "Out Manila · Air China",
+      "region": "intl",
+      "country": "China",
+      "flag": "cn",
+      "duration": "5 days 4 nights",
+      "days": 5,
+      "status": "available",
+      "featured": false,
+      "departure": "Manila (NAIA)",
+      "price": {
+        "from": 488,
+        "label": "From",
+        "unit": "per pax",
+        "currency": "USD"
+      },
+      "year": 2026,
+      "ends": "2027-03-25",
+      "image": "cn-jiuzhaigou.jpg",
+      "alt": "A clear blue lake in Jiuzhaigou Valley",
+      "gallery": [
+        "cn-jiuzhaigou.jpg"
+      ],
+      "summary": "A no-shopping tour from Chengdu to Jiuzhaigou Valley, Songpan, Maoxian and Dujiangyan, with 4-star hotels and Air China flights.",
+      "overview": "This 5-day no-shopping tour flies Air China from Manila to Chengdu, then heads north to Jiuzhaigou for Jiuzhai Valley National Park, the Love Sea scenic area and the ancient town of Songpan. You return via Maoxian and Dujiangyan before flying home. You stay in 4-star hotels and travel by private coach with an English-speaking guide.",
+      "travelDates": [
+        {
+          "d": "Jan 15–19",
+          "y": 2027
+        },
+        {
+          "d": "Feb 28–Mar 4",
+          "y": 2027
+        },
+        {
+          "d": "Mar 7–11",
+          "y": 2027
+        },
+        {
+          "d": "Mar 14–18",
+          "y": 2027
+        },
+        {
+          "d": "Mar 21–25",
+          "y": 2027,
+          "add": 200,
+          "cur": "USD"
+        }
+      ],
+      "travelDatesNote": "Departures from Manila, Jan 15–19 2027 to Mar 21–25 2027. The rate changes by date: an amount on a date is added to the base rate per pax. Seats are limited and confirmed at booking.",
+      "itinerary": [
+        {
+          "day": "Day 1",
+          "title": "Manila – Chengdu – Jiuzhaigou",
+          "items": [
+            "Flight CA480 Manila to Chengdu (02:55–06:55)",
+            "Meet the Chengdu guide at the airport",
+            "Eastern Suburb Memory",
+            "Transfer to Jiuzhaigou",
+            "Diexi Haizi",
+            "Songpan Ancient City (outside view)",
+            "Transfer to the hotel and check in",
+            "Meals: Breakfast / Lunch / Dinner"
+          ]
+        },
+        {
+          "day": "Day 2",
+          "title": "Jiuzhaigou",
+          "items": [
+            "Hotel breakfast",
+            "Jiuzhai Valley National Park (shuttle bus included)",
+            "Back to the hotel",
+            "Optional: Tibetan/Qiang song and dance performance",
+            "Meals: Breakfast / Lunch / Dinner"
+          ]
+        },
+        {
+          "day": "Day 3",
+          "title": "Jiuzhaigou – Maoxian",
+          "items": [
+            "Hotel breakfast and check out",
+            "Jiuzhaigou Love Sea scenic area",
+            "Transfer to Maoxian, then to the hotel and check in",
+            "Optional: Mouni Gou Scenic Area and Zhaga Waterfall",
+            "Meals: Breakfast / Dinner (lunch not included)"
+          ]
+        },
+        {
+          "day": "Day 4",
+          "title": "Maoxian – Dujiangyan",
+          "items": [
+            "Hotel breakfast and check out",
+            "Qiang City Opening Ceremony",
+            "Transfer to Dujiangyan",
+            "Zhongshuge bookstore",
+            "Science and Technology Museum",
+            "Selfie-taking Panda Statue at Yangtianwo Square",
+            "Guanxian Ancient City",
+            "South Bridge (Blue Tears)",
+            "Transfer to the hotel and check in",
+            "Optional: hot pot dinner",
+            "Meals: Breakfast / Lunch (dinner not included)"
+          ]
+        },
+        {
+          "day": "Day 5",
+          "title": "Dujiangyan – Chengdu – Manila",
+          "items": [
+            "Hotel breakfast and check out",
+            "Transfer to the airport and fly home",
+            "Flight CA479 Chengdu to Manila (21:30–01:30 next day)",
+            "Optional: Panda Park or Panda Valley with lunch, Florentia Village Outlets, Chunxi Road and IFS Plaza, Sino-Ocean Taikoo Li with naked-eye 3D LED screen",
+            "Meals: Breakfast only"
+          ]
+        }
+      ],
+      "inclusions": [
+        "Round-trip airfare via Air China with 23 kg checked baggage",
+        "4 nights accommodation, twin sharing, with daily hotel breakfast",
+        "Private coach with an English-speaking tour guide",
+        "Sightseeing as listed, including first-way entrance fees",
+        "Meals as listed"
+      ],
+      "exclusions": [
+        "Personal expenses such as telephone calls and minibar",
+        "Extra baggage",
+        "Fuel surcharge USD 30 per person (subject to change)",
+        "Philippine travel tax USD 30 per person",
+        "Group visa USD 40 per person",
+        "Tips for driver and guide USD 50 per person (USD 10 per day x 5 days)",
+        "Single supplement from USD 139 per person",
+        "Optional tours"
+      ],
+      "optional": [
+        "Optional package, USD 200 per person: Tibetan/Qiang song and dance performance; Mouni Gou Scenic Area and Zhaga Waterfall; hot pot dinner; Panda Park or Panda Valley with lunch, Florentia Village Outlets, Chunxi Road and IFS Plaza, Sino-Ocean Taikoo Li and naked-eye 3D LED screen"
+      ],
+      "hotelsLabel": "Hotels",
+      "hotels": [
+        "Day 1–2: Poly New Jiuzhai Hotel or similar 4★ (Jiuzhaigou)",
+        "Day 3: The Whisper Mountain Hotel or similar, local 4★ (Maoxian)",
+        "Day 4: Lavande Hotel or similar, local 4★ (Dujiangyan)"
+      ],
+      "notes": [
+        "Meal codes B/L/D = breakfast/lunch/dinner; X = not included.",
+        "This is a No Shopping package.",
+        "Philippine passport holders need a China visa; the group visa is USD 40 per person.",
+        "Child rates: child with bed; child without bed under 5 years; infants under 2 years have their own rate.",
+        "The fares do not include VAT; an official receipt incurs a 12% surcharge on the total amount.",
+        "Itinerary is subject to change without prior notice and to weather conditions.",
+        "Rooms are twin sharing by default; triple rooms are not guaranteed. Hotels may be replaced by similar ones."
+      ],
+      "places": [
+        "Eastern Suburb Memory",
+        "Diexi Haizi",
+        "Songpan Ancient City",
+        "Jiuzhai Valley National Park",
+        "Jiuzhaigou Love Sea",
+        "Qiang City Opening Ceremony",
+        "Zhongshuge",
+        "Science and Technology Museum",
+        "Yangtianwo Square Panda Statue",
+        "Guanxian Ancient City",
+        "South Bridge (Blue Tears)",
+        "Mouni Gou Scenic Area (optional)",
+        "Zhaga Waterfall (optional)"
+      ],
+      "posters": [
+        "cn-poster-chengdu-jiuzhaigou-5d4n-no-shopping-0.jpg"
+      ],
+      "posterSize": [
+        542,
+        800
+      ]
+    },
+    {
+      "id": "chengdu-skiing-5d4n",
+      "name": "Chengdu Skiing 5D4N Tour",
+      "subtitle": "Out Manila · Air China",
+      "region": "intl",
+      "country": "China",
+      "flag": "cn",
+      "duration": "5 days 4 nights",
+      "days": 5,
+      "status": "available",
+      "featured": false,
+      "departure": "Manila (NAIA)",
+      "price": {
+        "from": 468,
+        "label": "From",
+        "unit": "per pax",
+        "currency": "USD"
+      },
+      "year": 2026,
+      "ends": "2027-01-21",
+      "image": "cn-panda.jpg",
+      "alt": "Giant panda cubs in Chengdu",
+      "gallery": [
+        "cn-panda.jpg"
+      ],
+      "summary": "Pandas, a two-hour ski session at Zhegu Mountain, Dujiangyan and Chengdu city sights over five days, with local 5-star hotels, flying Air China.",
+      "overview": "Fly Air China from Manila to Chengdu and visit the Panda Park or Panda Valley, Guanxian Ancient City and Dujiangyan. Spend two hours skiing at Zhegu Mountain (ski equipment included), then explore Chengdu: Broad and Narrow Alley, Jinli Walking Street, Chunxi Road and Taikoo Li. Stays are in local 5-star hotels. This is a shopping-stop package.",
+      "travelDates": [
+        {
+          "d": "Jan 10–14",
+          "y": 2027
+        },
+        {
+          "d": "Jan 17–21",
+          "y": 2027
+        }
+      ],
+      "travelDatesNote": "Departures from Manila, Jan 10–14 2027 to Jan 17–21 2027. The rate changes by date: an amount on a date is added to the base rate per pax. Seats are limited and confirmed at booking.",
+      "itinerary": [
+        {
+          "day": "Day 1",
+          "title": "Manila – Chengdu – Dujiangyan",
+          "items": [
+            "Flight Manila – Chengdu (CA480, 02:55/06:55)",
+            "Meet your guide at the airport and transfer to Dujiangyan",
+            "Panda Park or Panda Valley",
+            "Guanxian Ancient City",
+            "Selfie-taking Panda Statue in Yangtianwo Square",
+            "South Bridge (Blue Tears)",
+            "Transfer to the hotel and check in"
+          ]
+        },
+        {
+          "day": "Day 2",
+          "title": "Zhegu Mountain skiing",
+          "items": [
+            "Hotel breakfast",
+            "Transfer to Zhegu Mountain",
+            "Zhegu Mountain Ski Resort (2 hours of skiing, ski equipment included, snow suits excluded)",
+            "Transfer back to Dujiangyan and the hotel",
+            "Optional: Flying Acrobatics Show “Dreaming Back to Qingcheng”"
+          ]
+        },
+        {
+          "day": "Day 3",
+          "title": "Dujiangyan – Chengdu",
+          "items": [
+            "Hotel breakfast and check out",
+            "Shopping stop at a Chinese medicine shop",
+            "Shopping stop at a jade store",
+            "Zhongshuge bookstore",
+            "Science and Technology Museum",
+            "Transfer to Chengdu",
+            "Broad and Narrow Alley",
+            "Transfer to the hotel and check in",
+            "Optional: Sichuan Opera Face Changing Show and hot pot dinner"
+          ]
+        },
+        {
+          "day": "Day 4",
+          "title": "Chengdu city",
+          "items": [
+            "Hotel breakfast",
+            "Florentia Village Outlets",
+            "Shopping stop at a latex store",
+            "Jinli Walking Street",
+            "Back to the hotel",
+            "Optional: BBQ buffet dinner and the Tower of Life at SKP"
+          ]
+        },
+        {
+          "day": "Day 5",
+          "title": "Chengdu – Manila",
+          "items": [
+            "Hotel breakfast and check out",
+            "Chunxi Road and IFS Plaza",
+            "Sino-Ocean Taikoo Li and the naked-eye 3D LED screen",
+            "Transfer to the airport for the flight home (CA479, 21:30/01:30+1)"
+          ]
+        }
+      ],
+      "inclusions": [
+        "4 nights’ twin-sharing accommodation with daily hotel breakfast",
+        "Private coach with English-speaking tour guide",
+        "Sightseeing as specified, including first-way entrance fees",
+        "Meals as listed",
+        "Round-trip airfare via Air China with 23 kg checked baggage"
+      ],
+      "exclusions": [
+        "Personal expenses such as telephone calls and minibar",
+        "Extra baggage",
+        "Fuel surcharge USD 30 per person, subject to change",
+        "Philippines travel tax USD 30 per person",
+        "Optional tours USD 120 per person",
+        "China group visa USD 40 per person",
+        "Tips for driver and guide USD 50 per person",
+        "Single supplement USD 169 per person"
+      ],
+      "optional": [
+        "Optional package, USD 120 per person: Flying Acrobatics Show “Dreaming Back to Qingcheng”, Sichuan Opera Face Changing Show with hot pot dinner, BBQ buffet dinner and night view of the Twin Towers (Tower of Life at SKP)"
+      ],
+      "hotelsLabel": "Hotels",
+      "hotels": [
+        "Day 1-2: Local 5-star Dujiangyan Tianfu Source Hotel or similar",
+        "Day 3-4: Local 5-star Holiday Inn Chengdu Century City – West Tower or similar",
+        "Day 5: Home sweet home"
+      ],
+      "notes": [
+        "Meals: Day 1 breakfast, lunch and dinner; Day 2 breakfast, lunch and dinner; Days 3-5 breakfast and lunch",
+        "Shopping stops: jade shop, Chinese medicine shop and latex store; the rate is based on these three shops",
+        "Child with bed (under 18), child without bed (under 5) and infant (under 2) have separate rates",
+        "Rates do not include VAT; an official receipt carries a 12% surcharge on the total amount",
+        "Itinerary is subject to change without prior notice and to weather conditions",
+        "Rooms are twin sharing by default, triple rooms not guaranteed",
+        "If a listed hotel is unavailable it is replaced by a similar one",
+        "Philippine passport holders need a China group visa, USD 40 per person (not included)"
+      ],
+      "places": [
+        "Panda Park",
+        "Panda Valley",
+        "Guanxian Ancient City",
+        "Yangtianwo Square",
+        "South Bridge (Blue Tears)",
+        "Zhegu Mountain Ski Resort",
+        "Zhongshuge Bookstore",
+        "Science and Technology Museum",
+        "Broad and Narrow Alley",
+        "Florentia Village Outlets",
+        "Jinli Walking Street",
+        "Chunxi Road",
+        "IFS Plaza",
+        "Sino-Ocean Taikoo Li"
+      ],
+      "posters": [
+        "cn-poster-chengdu-skiing-5d4n-0.jpg"
+      ],
+      "posterSize": [
+        551,
+        800
+      ]
+    },
+    {
+      "id": "chengdu-jiuzhaigou-5d4n",
+      "name": "Chengdu – Jiuzhaigou 5D4N Tour",
+      "subtitle": "Out Manila · Air China",
+      "region": "intl",
+      "country": "China",
+      "flag": "cn",
+      "duration": "5 days 4 nights",
+      "days": 5,
+      "status": "available",
+      "featured": true,
+      "departure": "Manila (NAIA)",
+      "price": {
+        "from": 399,
+        "label": "From",
+        "unit": "per pax",
+        "currency": "USD"
+      },
+      "year": 2026,
+      "ends": "2026-11-14",
+      "image": "cn-jiuzhaigou.jpg",
+      "alt": "A clear blue lake in Jiuzhaigou Valley",
+      "gallery": [
+        "cn-jiuzhaigou.jpg"
+      ],
+      "summary": "Five days in Sichuan: Chengdu’s Jinli and Broad and Narrow Alley, Diexi Haizi, Songpan Ancient City and Jiuzhai Valley National Park, with 4-star hotels.",
+      "overview": "Fly Manila to Chengdu on Air China and head north to Jiuzhaigou. You will visit Diexi Haizi, Songpan Ancient City (outside view) and Jiuzhai Valley National Park (shuttle bus included), then return via Chuanzhusi and Dujiangyan. Four nights are in 4-star hotels, with a private coach and an English-speaking guide. The rate includes four shop visits.",
+      "travelDates": [
+        {
+          "d": "Nov 10–14"
+        }
+      ],
+      "travelDatesNote": "Departures from Manila, Nov 10–14 2026 to Nov 10–14 2026. The rate changes by date: an amount on a date is added to the base rate per pax. Seats are limited and confirmed at booking.",
+      "itinerary": [
+        {
+          "day": "Day 1",
+          "title": "Manila – Chengdu",
+          "items": [
+            "Fly Manila to Chengdu (CA480, 02:55/06:55) and meet the Chengdu guide at the airport",
+            "Jinli Walking Street",
+            "Broad and Narrow Alley",
+            "IFS Plaza",
+            "Sino-Ocean Taikoo Li",
+            "Transfer to the hotel and check in",
+            "Optional: hotpot dinner (meals: X/L/X)"
+          ]
+        },
+        {
+          "day": "Day 2",
+          "title": "Chengdu – Jiuzhaigou",
+          "items": [
+            "Hotel breakfast and check out",
+            "Transfer to Jiuzhaigou",
+            "Diexi Haizi",
+            "Songpan Ancient City (outside view)",
+            "Transfer to the hotel and check in",
+            "Optional tour: Panda Park (including battery bus) (meals: B/L/D)"
+          ]
+        },
+        {
+          "day": "Day 3",
+          "title": "Jiuzhai Valley National Park",
+          "items": [
+            "Hotel breakfast",
+            "Jiuzhai Valley National Park (shuttle bus included)",
+            "Back to the hotel",
+            "Optional tour: Tibetan dinner with song and dance performance (meals: B/L/X)"
+          ]
+        },
+        {
+          "day": "Day 4",
+          "title": "Jiuzhaigou – Chuanzhusi – Dujiangyan",
+          "items": [
+            "Hotel breakfast and check out",
+            "Transfer to Chuanzhusi",
+            "Shopping stop: jade shop",
+            "Tibetan Cultural Village (tea and silver craft store)",
+            "Distant view of the Red Army Long March Monument",
+            "Transfer to Dujiangyan, then to the hotel and check in",
+            "Optional tour: Baishi Qiang Village (meals: B/L/D)"
+          ]
+        },
+        {
+          "day": "Day 5",
+          "title": "Dujiangyan – Chengdu – Manila",
+          "items": [
+            "Hotel breakfast and check out",
+            "Shopping stop: Tibetan medicine shop",
+            "Shopping stop: latex shop",
+            "Selfie-taking Panda Statue at Yangtianwo Square",
+            "South Bridge",
+            "Transfer to the airport and fly to Manila (CA479, 21:30/01:30+1) (meals: B/L/D)"
+          ]
+        }
+      ],
+      "inclusions": [
+        "Round-trip airfare via Air China with 23 kg checked baggage",
+        "4 nights’ accommodation, twin sharing, with daily hotel breakfast",
+        "Private coach with English-speaking tour guide",
+        "Sightseeing as specified, including first-way entrance fees",
+        "Meals as listed"
+      ],
+      "exclusions": [
+        "Personal expenses such as phone calls and minibar",
+        "Extra baggage allowance",
+        "Fuel surcharge USD 30 per person (subject to change)",
+        "Philippines travel tax USD 30 per person",
+        "Optional tour package USD 150 per person",
+        "China group visa USD 40 per person",
+        "Tips for driver and guide USD 50 per person (USD 10 per day x 5 days)",
+        "Single supplement from USD 149 per person"
+      ],
+      "optional": [
+        "Optional package, USD 150 per person: hotpot dinner + Panda Park (including battery bus) + Tibetan dinner with song and dance performance + Baishi Qiang Village"
+      ],
+      "hotelsLabel": "Hotels",
+      "hotels": [
+        "Day 1: Guz Platinum Celebrity Taiming Hotel or similar 4★ (Chengdu)",
+        "Day 2-3: Poly New Jiuzhai Hotel or similar 4★ (Jiuzhaigou)",
+        "Day 4: Lugui International Hotel or similar 4★ (Dujiangyan)"
+      ],
+      "notes": [
+        "Meal codes: B = breakfast, L = lunch, D = dinner, X = not included",
+        "Rate includes 4 shop visits: jade shop, Tibetan medicine shop, Tibetan Cultural Village (tea and silver craft store) and latex shop",
+        "Child categories: 11-17 years with bed; 2-10 years without bed; infant under 2 years",
+        "Philippine passport holders need a China visa; the group visa is not included (USD 40 per person)",
+        "Itinerary is subject to change without prior notice and to weather conditions",
+        "All rooms are twin sharing by default; triple rooms not guaranteed",
+        "Hotels are subject to replacement with similar ones if not available"
+      ],
+      "places": [
+        "Jinli Walking Street",
+        "Broad and Narrow Alley",
+        "IFS Plaza",
+        "Sino-Ocean Taikoo Li",
+        "Diexi Haizi",
+        "Songpan Ancient City",
+        "Jiuzhai Valley National Park",
+        "Tibetan Cultural Village",
+        "Red Army Long March Monument",
+        "Yangtianwo Square",
+        "South Bridge"
+      ],
+      "posters": [
+        "cn-poster-chengdu-jiuzhaigou-5d4n-0.jpg"
+      ],
+      "posterSize": [
+        542,
+        800
+      ]
+    },
+    {
+      "id": "chongqing-yangtze-river-vista-aurora-cruise",
+      "name": "Vista Aurora Cruise – Chongqing – Yangtze River – Yichang 7D6N Tour (No Shopping)",
+      "subtitle": "Out Manila · Fly + cruise",
+      "region": "intl",
+      "country": "China",
+      "flag": "cn",
+      "duration": "7 days 6 nights",
+      "days": 7,
+      "status": "available",
+      "featured": false,
+      "departure": "Manila (NAIA)",
+      "price": {
+        "from": 2199,
+        "label": "From",
+        "unit": "per pax",
+        "currency": "USD"
+      },
+      "year": 2026,
+      "ends": "2026-12-27",
+      "image": "cn-yangtze.jpg",
+      "alt": "Mountains along the Yangtze River gorges",
+      "gallery": [
+        "cn-yangtze.jpg"
+      ],
+      "summary": "Seven days combining a 4-night Vista Aurora Yangtze cruise through the Three Gorges with Yichang and Chongqing sightseeing, flying via Guangzhou.",
+      "overview": "Fly via Guangzhou to Yichang, then board the luxury Vista Aurora for a 4-night cruise through the Three Gorges, with shore excursions along the way. Disembark in Chongqing for a city tour and a 5-star hotel stay before flying home. Cruise accommodation is a Deck 2 balcony cabin, with 2 nights in 5-star hotels.",
+      "travelDates": [
+        {
+          "d": "Dec 21–27"
+        }
+      ],
+      "travelDatesNote": "Departures from Manila, Dec 21–27 2026 to Dec 21–27 2026. The rate changes by date: an amount on a date is added to the base rate per pax. Seats are limited and confirmed at booking.",
+      "itinerary": [
+        {
+          "day": "Day 1",
+          "title": "Manila – Guangzhou – Yichang",
+          "items": [
+            "Fly Manila to Guangzhou (CZ3092 12:00–14:40), then to Yichang (CZ3311 22:00–23:55)",
+            "Meet the English-speaking guide at Yichang airport",
+            "Hotel check-in"
+          ]
+        },
+        {
+          "day": "Day 2",
+          "title": "Yichang – board the cruise",
+          "items": [
+            "Hotel breakfast and check out",
+            "Sanyou Cave",
+            "Lunch",
+            "Arrive at Yichang Three Gorges Cruise Center before 15:00 for the complimentary sightseeing cruise of the eastern Xiling Gorge and the Three Gorges Ship Lift, then transfer to the Vista cruise (if you arrive after 15:00, you are driven directly to Zigui port; if the ship lift is out of service, a bus runs from Sandouping to Zigui Port)",
+            "Board the cruise"
+          ]
+        },
+        {
+          "day": "Day 3",
+          "title": "Three Gorges cruise",
+          "items": [
+            "Cruise breakfast",
+            "Three Gorges Dam and Dam Closure Memorial Park",
+            "Cruise through the western Xiling Gorge and Wu Gorge",
+            "Night tour by sightseeing boat of Wushan and the Three Gorges Light"
+          ]
+        },
+        {
+          "day": "Day 4",
+          "title": "Three Gorges cruise",
+          "items": [
+            "Cruise breakfast",
+            "Cruise through Qutang Gorge",
+            "Shore excursion to Baidi City or The Top of Three Gorges (choose when registering; Baidi City is the default)"
+          ]
+        },
+        {
+          "day": "Day 5",
+          "title": "Three Gorges cruise",
+          "items": [
+            "Cruise breakfast",
+            "Shore excursion to Baiheliang Underwater Museum or Project 816 Site (choose when registering; Baiheliang Underwater Museum is the default)",
+            "If the cruise docks at Fengdu Port because of weather or waterway conditions, the excursion becomes Fengdu Ghost City"
+          ]
+        },
+        {
+          "day": "Day 6",
+          "title": "Chongqing city",
+          "items": [
+            "Cruise breakfast",
+            "Meet the Chongqing guide after disembarking",
+            "People’s Square",
+            "The Great Hall of the People (exterior view)",
+            "Light rail passing through a building at Liziba Station",
+            "Jiefangbei Pedestrian Street",
+            "Guotai Arts Center (exterior view)",
+            "Kuixinglou Viewing Platform",
+            "Hongyadong Stilted Buildings"
+          ]
+        },
+        {
+          "day": "Day 7",
+          "title": "Chongqing – Guangzhou – Manila",
+          "items": [
+            "Hotel or packed breakfast and check out",
+            "Transfer to airport and fly Chongqing to Guangzhou (CZ2305 09:00–10:35), then to Manila (CZ397 14:15–16:50)"
+          ]
+        }
+      ],
+      "inclusions": [
+        "Economy round-trip airfare and taxes via China Southern Airlines",
+        "Baggage: 1 piece 23 kg check-in and 7 kg hand carry",
+        "2 nights in a 5★ hotel and 4 nights in a Deck 2 balcony cruise cabin, twin sharing",
+        "Private bus with English-speaking tour guide",
+        "Sightseeing as specified, including first-way entrance fees",
+        "Meals: breakfast (hotel and cruise) and 10 meals, including 3 land local-specialty meals and 7 cruise meals"
+      ],
+      "exclusions": [
+        "Personal expenses such as phone calls and minibar",
+        "Travel insurance",
+        "Philippines travel tax: USD 30 per person (collected with tour fee)",
+        "China group visa: USD 40 per person",
+        "Tips for driver and guide: USD 56 per person (USD 8 per day x 7 days, collected with tour fee)",
+        "Single supplement: USD 610 per person",
+        "Fuel surcharge (subject to change)"
+      ],
+      "optional": [
+        "Day 6: VIP seating (Section C) for the fantasy acrobatic show “Yangtze River” + Nanbin Road night cruise + 131 Observation Deck, USD 100 per person"
+      ],
+      "hotelsLabel": "Hotels",
+      "hotels": [
+        "Day 1: 5★ hotel in Yichang",
+        "Day 2–5: Vista Aurora Cruise (Deck 2 balcony cabin)",
+        "Day 6: 5★ hotel in Chongqing"
+      ],
+      "notes": [
+        "Cruise is popular: provide a name list when booking; cabins are subject to the cruise company’s confirmation",
+        "Shore excursions follow the cruise ship’s information on the day and the cruise itinerary may change with water level, weather or waterway conditions",
+        "No refunds for cancelled itinerary or accommodation during the trip; tips are payable for the full number of days",
+        "Child with bed (2–11 yrs) pays the adult rate; child without bed (2–11 yrs) is priced separately",
+        "Single supplement USD 610 per person",
+        "The tour guide may sell local specialties on the bus; purchase is optional",
+        "Itinerary, flight times and hotels are subject to final confirmation; hotels may be replaced by similar ones",
+        "Complimentary Day 2 cruise tour depends on arrival time; no refund for non-participation",
+        "Weather, traffic or force majeure may change the order or number of attractions, with extra costs borne by travellers"
+      ],
+      "places": [
+        "Sanyou Cave",
+        "Three Gorges Cruise Center",
+        "Xiling Gorge",
+        "Three Gorges Ship Lift",
+        "Three Gorges Dam",
+        "Wu Gorge",
+        "Wushan",
+        "Qutang Gorge",
+        "Baidi City",
+        "Baiheliang Underwater Museum",
+        "Project 816 Site",
+        "People’s Square",
+        "Liziba Station",
+        "Jiefangbei Pedestrian Street",
+        "Hongyadong"
+      ],
+      "posters": [
+        "cn-poster-chongqing-yangtze-river-vista-aurora-cruise-0.jpg"
+      ],
+      "posterSize": [
+        540,
+        800
+      ]
+    },
+    {
+      "id": "chongqing-avatar-fenghuang-7d6n",
+      "name": "Chongqing – Zhangjiajie (Avatar) – Fenghuang 7D6N Tour",
+      "subtitle": "Out Manila · Air China",
+      "region": "intl",
+      "country": "China",
+      "flag": "cn",
+      "duration": "7 days 6 nights",
+      "days": 7,
+      "status": "available",
+      "featured": false,
+      "departure": "Manila (NAIA)",
+      "price": {
+        "from": 588,
+        "label": "From",
+        "unit": "per pax",
+        "currency": "USD"
+      },
+      "year": 2026,
+      "ends": "2026-12-01",
+      "image": "cn-fenghuang.jpg",
+      "alt": "Riverside houses of Fenghuang Ancient Town",
+      "gallery": [
+        "cn-fenghuang.jpg"
+      ],
+      "summary": "Chongqing’s light rail and night views, Fenghuang Ancient Town, and two days in Zhangjiajie including the Avatar mountains and the Glass Bridge.",
+      "overview": "Six nights at local 5-star hotels from Chongqing through Qianjiang and Fenghuang to Zhangjiajie. See Liziba Station, Fenghuang Ancient Town and Zhangjiajie National Forest Park (the Avatar mountains) by the Bailong Lift, plus the Grand Canyon Glass Bridge. Flights are with Air China.",
+      "travelDates": [
+        {
+          "d": "Nov 25–Dec 1"
+        }
+      ],
+      "travelDatesNote": "Departures from Manila, Nov 25–Dec 1 2026 to Nov 25–Dec 1 2026. The rate changes by date: an amount on a date is added to the base rate per pax. Seats are limited and confirmed at booking.",
+      "itinerary": [
+        {
+          "day": "Day 1",
+          "title": "Manila – Chongqing – Qianjiang",
+          "items": [
+            "Fly Manila to Chongqing (CA482 01:50/05:40; from Oct 28: 02:25/06:20); meet the guide.",
+            "Visit Liziba Station, where light rail runs through residential buildings.",
+            "Visit the People’s Great Hall of Chongqing (outside view).",
+            "Visit Kuixing Building (the 22nd floor that feels like the 1st).",
+            "Night view of Hongya Cave.",
+            "Transfer to hotel. Meals: X/L/D."
+          ]
+        },
+        {
+          "day": "Day 2",
+          "title": "Chongqing – Qianjiang – Fenghuang",
+          "items": [
+            "Hotel breakfast.",
+            "Transfer to Qianjiang (3.5 hrs); visit Zhuoshui Ancient Town.",
+            "After lunch, transfer to Fenghuang (3-4 hrs).",
+            "Visit Fenghuang Ancient Town (Tuojiang River, Wanming Tower, Stone Slabs Street, Bar Street) and its night view. Meals: B/L/D."
+          ]
+        },
+        {
+          "day": "Day 3",
+          "title": "Fenghuang – Zhangjiajie",
+          "items": [
+            "Hotel breakfast.",
+            "Transfer to Zhangjiajie (3 hrs).",
+            "Visit 72 Wonder Tower (outside view).",
+            "Optional tour 1: Tianmen Mountain (cable car, glass skywalk, Tianmen Cave), USD 85 per person.",
+            "Optional tour 2: Tianmen Fox-Lady Show, USD 70 per person. Meals: B/L/D."
+          ]
+        },
+        {
+          "day": "Day 4",
+          "title": "Zhangjiajie",
+          "items": [
+            "Hotel breakfast.",
+            "Visit a Chinese medicine shop.",
+            "Visit Zhangjiajie National Forest Park, up and down by Bailong Lift: No.1 Bridge, Breath-taking Platform, Avatar Hallelujah Mountain and Tianzi Mountain.",
+            "Back to hotel. Meals: B/L/D."
+          ]
+        },
+        {
+          "day": "Day 5",
+          "title": "Zhangjiajie",
+          "items": [
+            "Hotel breakfast.",
+            "Visit a latex store.",
+            "Visit Golden Whip Stream and Water Around Four Gates.",
+            "Tea tasting at a tea shop or a visit to a silk shop.",
+            "Visit Grand Canyon C Line Glass Bridge (VR experience included).",
+            "Back to hotel. Meals: B/L/D."
+          ]
+        },
+        {
+          "day": "Day 6",
+          "title": "Zhangjiajie – Qianjiang",
+          "items": [
+            "Hotel breakfast.",
+            "Visit a jewelry store.",
+            "Transfer to Qianjiang (3-4 hrs) and check in.",
+            "Optional tour 3: Huanglong Cave (sightseeing boat included), USD 70 per person. Meals: B/L/D."
+          ]
+        },
+        {
+          "day": "Day 7",
+          "title": "Qianjiang – Chongqing – Manila",
+          "items": [
+            "Hotel breakfast.",
+            "Transfer to Chongqing (3-4 hrs).",
+            "Visit Danzishi Old Street and Jiefangbei Pedestrian Street.",
+            "Visit Bayi Food Street (food at your own expense).",
+            "Transfer to airport; fly home (CA481 20:50/00:50+1; Nov-Dec: 21:30/01:20+1). Meals: B/L/X."
+          ]
+        }
+      ],
+      "inclusions": [
+        "6 nights twin-share accommodation with daily breakfast",
+        "Private coach with English-speaking tour guide",
+        "Sightseeing as specified, including first-way entrance fees",
+        "Meals as listed",
+        "Round-trip airfare with Air China, 23 kg checked baggage"
+      ],
+      "exclusions": [
+        "Personal expenses such as phone calls and minibar",
+        "Extra baggage allowance",
+        "Fuel surcharge: USD 30 per person, subject to change",
+        "Philippine travel tax: USD 30 per person",
+        "Group visa: USD 40 per person",
+        "Tips for driver and guide: USD 10 per person per day x 7 days = USD 70",
+        "Single supplement: USD 179 per person",
+        "Optional tours"
+      ],
+      "optional": [
+        "Tianmen Mountain (cable car, glass skywalk, Tianmen Cave): USD 85 per person",
+        "Tianmen Fox-Lady Show: USD 70 per person (changed to the “Charming Xiangxi” show if suspended by weather)",
+        "Huanglong Cave (sightseeing boat included): USD 70 per person"
+      ],
+      "hotelsLabel": "Hotels",
+      "hotels": [
+        "Day 1: Chongqing Gangsen International Grand Hotel or similar 5★",
+        "Day 2: Hawthorn by Wyndham (Fenghuang) or similar 5★",
+        "Day 3-5: Best Western Plus Qingxinyuan Hotel or similar 5★",
+        "Day 6: Hampton by Hilton (Qianjiang) or similar 5★"
+      ],
+      "notes": [
+        "Shop visits are included in this rate (4 stops): latex store, Chinese medicine shop, jewelry store, and silk store or tea shop.",
+        "Child with bed under 18, child without bed under 10, infant under 2.",
+        "Rooms are twin-share by default, triple not guaranteed; itinerary may change with weather; hotels may be replaced by similar ones.",
+        "VAT is not included; an official receipt carries a 12% surcharge on the total."
+      ],
+      "places": [
+        "Liziba Station",
+        "People’s Great Hall of Chongqing",
+        "Kuixing Building",
+        "Hongya Cave",
+        "Zhuoshui Ancient Town",
+        "Fenghuang Ancient Town",
+        "72 Wonder Tower",
+        "Zhangjiajie National Forest Park (Avatar)",
+        "Bailong Lift",
+        "Avatar Hallelujah Mountain",
+        "Tianzi Mountain",
+        "Golden Whip Stream",
+        "Grand Canyon Glass Bridge",
+        "Danzishi Old Street",
+        "Jiefangbei",
+        "Bayi Food Street"
+      ],
+      "posters": [
+        "cn-poster-chongqing-avatar-fenghuang-7d6n-0.jpg"
+      ],
+      "posterSize": [
+        521,
+        800
+      ]
+    },
+    {
+      "id": "chongqing-avatar-furong-7d6n-skiing",
+      "name": "Chongqing – Furong – Zhangjiajie (Avatar) Skiing 7D6N Tour",
+      "subtitle": "Out Manila · Air China",
+      "region": "intl",
+      "country": "China",
+      "flag": "cn",
+      "duration": "7 days 6 nights",
+      "days": 7,
+      "status": "available",
+      "featured": false,
+      "departure": "Manila (NAIA)",
+      "price": {
+        "from": 629,
+        "label": "From",
+        "unit": "per pax",
+        "currency": "USD"
+      },
+      "year": 2026,
+      "ends": "2027-01-16",
+      "image": "cn-zhangjiajie.jpg",
+      "alt": "Sandstone pillars in Zhangjiajie National Forest Park",
+      "gallery": [
+        "cn-zhangjiajie.jpg"
+      ],
+      "summary": "Seven days from Chongqing to Furong Ancient Town and Zhangjiajie’s Avatar scenery, with a 2-hour skiing experience at Qixing Mountain.",
+      "overview": "Start in Chongqing, then travel to Qianjiang and Furong Town, the ancient town hanging on a waterfall. Continue to Zhangjiajie for the Grand Canyon Glass Bridge, a skiing experience at Qixing Mountain and Zhangjiajie National Forest Park, the “Avatar” scenery. You fly Air China round trip and stay in local 5-star hotels.",
+      "travelDates": [
+        {
+          "d": "Dec 30–Jan 5",
+          "add": 170,
+          "cur": "USD"
+        },
+        {
+          "d": "Jan 10–16",
+          "y": 2027
+        }
+      ],
+      "travelDatesNote": "Departures from Manila, Dec 30–Jan 5 2026 to Jan 10–16 2027. The rate changes by date: an amount on a date is added to the base rate per pax. Seats are limited and confirmed at booking.",
+      "itinerary": [
+        {
+          "day": "Day 1",
+          "title": "Manila – Chongqing",
+          "items": [
+            "Fly Manila to Chongqing (CA482, 02:25–06:20) and meet your guide at the airport",
+            "Liziba Station",
+            "People’s Great Hall of Chongqing (outside view)",
+            "Kuixing Tower",
+            "Jiefangbei Pedestrian Street",
+            "Bayi Food Street (food on your own)",
+            "Night view of Hongya Cave",
+            "Transfer to hotel and check in (lunch included)"
+          ]
+        },
+        {
+          "day": "Day 2",
+          "title": "Chongqing – Qianjiang – Furong",
+          "items": [
+            "Hotel breakfast and check out",
+            "Transfer to Qianjiang (3.5 hrs)",
+            "Qianjiang Wind & Rain Bridge",
+            "After lunch, transfer to Furong (3 hrs)",
+            "Furong Town, the ancient town hanging on the waterfall (battery bus included)",
+            "After dinner, enjoy the night view",
+            "Transfer to hotel and check in"
+          ]
+        },
+        {
+          "day": "Day 3",
+          "title": "Furong – Zhangjiajie",
+          "items": [
+            "Hotel breakfast and check out",
+            "Transfer to Zhangjiajie (2 hrs)",
+            "Latex store visit",
+            "Grand Canyon C Line – Glass Bridge (VR experience included)",
+            "Charming Xiangxi Show (optional)",
+            "Transfer to hotel and check in"
+          ]
+        },
+        {
+          "day": "Day 4",
+          "title": "Zhangjiajie – Qixing Mountain skiing",
+          "items": [
+            "Hotel breakfast",
+            "Chinese medicine shop visit",
+            "Qixing Mountain Scenic Area with battery car, 1520 Platform and glass skywalk",
+            "2-hour skiing experience including ski equipment (snow suit excluded); if the ski resort is closed due to weather, Qixing Mountain and skiing change to the indoor ski at Snow and Ice World",
+            "72 Wonder Tower (outside view)",
+            "Back to hotel"
+          ]
+        },
+        {
+          "day": "Day 5",
+          "title": "Zhangjiajie National Forest Park (Avatar)",
+          "items": [
+            "Hotel breakfast",
+            "Tea tasting at a tea shop or silk shop visit",
+            "Zhangjiajie National Forest Park, up and down by Bailong Lift",
+            "No. 1 Bridge",
+            "Breath-taking Platform",
+            "Avatar Hallelujah Mountain",
+            "Tianzi Mountain",
+            "Huanglong Cave including sightseeing boat and battery car (optional)",
+            "Back to hotel"
+          ]
+        },
+        {
+          "day": "Day 6",
+          "title": "Zhangjiajie – Qianjiang",
+          "items": [
+            "Hotel breakfast and check out",
+            "Jewelry store visit",
+            "Transfer to Qianjiang (3.5 hrs)",
+            "Tianmen Mountain with cable car, glass skywalk and Tianmen Cave (optional)",
+            "Transfer to hotel and check in"
+          ]
+        },
+        {
+          "day": "Day 7",
+          "title": "Qianjiang – Chongqing – Manila",
+          "items": [
+            "Hotel breakfast and check out",
+            "Transfer to Chongqing (4 hrs)",
+            "Ciqikou Ancient Town",
+            "The Ring Shopping Park",
+            "Transfer to the airport and fly Chongqing to Manila (CA481, 21:30–01:20+1)"
+          ]
+        }
+      ],
+      "inclusions": [
+        "6 nights’ accommodation, twin sharing, with daily hotel breakfast",
+        "Private coach with English-speaking tour guide",
+        "Sightseeing as specified, including first-way entrance fees",
+        "Meals as listed",
+        "Round-trip airfare via Air China with 23 kg checked baggage"
+      ],
+      "exclusions": [
+        "Personal expenses such as phone calls and minibar",
+        "Extra baggage",
+        "Fuel surcharge USD 30 per person, subject to change",
+        "Philippine travel tax USD 30 per person",
+        "Group visa USD 40 per person",
+        "Tips for driver and guide USD 70 per person (USD 10 per day for 7 days)",
+        "Single supplement from USD 169 per person (USD 199 for the Dec 23–29 and Dec 30–Jan 5 departures)",
+        "Optional tours"
+      ],
+      "optional": [
+        "Charming Xiangxi Show – USD 65 per person",
+        "Huanglong Cave (sightseeing boat + battery car) – USD 70 per person",
+        "Tianmen Mountain (cable car, glass skywalk, Tianmen Cave) – USD 85 per person"
+      ],
+      "hotelsLabel": "Hotels",
+      "hotels": [
+        "Day 1: Local 5★ Holiday Inn & Suites Chongqing Nanan or similar",
+        "Day 2: Local 5★ Blossomy Pictyresque Hotel (Furong) or similar",
+        "Day 3–5: Local 5★ Best Western Plus Qingxinyuan Hotel (Zhangjiajie) or similar",
+        "Day 6: Local 5★ Qianjiang Hampton by Hilton or similar",
+        "Day 7: Sweet Home"
+      ],
+      "notes": [
+        "Meals per day: D1 L; D2–D7 B/L/D",
+        "Children: with bed (under 18) and without bed (under 10) have separate rates; infants under 2",
+        "Philippine passport holders need a China visa (group visa USD 40 per person)",
+        "The rate includes 4 shop visits: latex store, Chinese medicine shop, jewelry store, and silk store or tea shop",
+        "VAT not included; an official receipt carries a 12% surcharge on the total amount",
+        "Itinerary may change without prior notice and depends on weather; rooms are twin sharing, triple rooms not guaranteed; hotels may be replaced by similar ones"
+      ],
+      "places": [
+        "Liziba Station",
+        "Kuixing Tower",
+        "Jiefangbei Pedestrian Street",
+        "Bayi Food Street",
+        "Hongya Cave",
+        "Qianjiang Wind & Rain Bridge",
+        "Furong Town",
+        "Grand Canyon Glass Bridge",
+        "Qixing Mountain",
+        "1520 Platform",
+        "Zhangjiajie National Forest Park",
+        "Bailong Lift",
+        "No. 1 Bridge",
+        "Avatar Hallelujah Mountain",
+        "Tianzi Mountain",
+        "Huanglong Cave",
+        "Tianmen Mountain",
+        "Ciqikou Ancient Town"
+      ],
+      "posters": [
+        "cn-poster-chongqing-avatar-furong-7d6n-skiing-0.jpg"
+      ],
+      "posterSize": [
+        533,
+        800
+      ]
+    },
+    {
+      "id": "chongqing-chengdu-5d4n-ckg-in-ckg-out",
+      "name": "Chongqing – Chengdu 5D4N Tour",
+      "subtitle": "Out Manila · Air China",
+      "region": "intl",
+      "country": "China",
+      "flag": "cn",
+      "duration": "5 days 4 nights",
+      "days": 5,
+      "status": "available",
+      "featured": false,
+      "departure": "Manila (NAIA)",
+      "price": {
+        "from": 369,
+        "label": "From",
+        "unit": "per pax",
+        "currency": "USD"
+      },
+      "year": 2026,
+      "ends": "2026-12-10",
+      "image": "cn-panda.jpg",
+      "alt": "Giant panda cubs in Chengdu",
+      "gallery": [
+        "cn-panda.jpg"
+      ],
+      "summary": "Five days through Chongqing, Dujiangyan and Chengdu with Ciqikou, Liziba light rail, Guanxian Ancient City and Chunxi Road, flying in and out of Chongqing.",
+      "overview": "Fly Air China into Chongqing and out of Chongqing again, with 4★ hotels in Chongqing, Dujiangyan and Chengdu. You see Ciqikou Ancient Town, the Liziba light rail through apartment blocks, Guanxian Ancient City and Chengdu’s Chunxi Road, with an English-speaking guide on a private coach.",
+      "travelDates": [
+        {
+          "d": "Nov 29–Dec 3",
+          "add": 20,
+          "cur": "USD"
+        },
+        {
+          "d": "Dec 6–10"
+        }
+      ],
+      "travelDatesNote": "Departures from Manila, Nov 29–Dec 3 2026 to Dec 6–10 2026. The rate changes by date: an amount on a date is added to the base rate per pax. Seats are limited and confirmed at booking.",
+      "itinerary": [
+        {
+          "day": "Day 1",
+          "title": "Manila – Chongqing",
+          "items": [
+            "Fly Manila – Chongqing (Nov/Dec: 02:25 – 06:20; other dates 01:50 – 05:40); meet the guide at the airport",
+            "Ciqikou Ancient Town",
+            "Liziba Station, to see light rail running through residential buildings (2 stations)",
+            "People’s Great Hall of Chongqing (outside view)",
+            "Transfer to the hotel and check in",
+            "Optional: dinner at the world’s largest hot pot restaurant, Pipa Yuan",
+            "Meals: X/L/X"
+          ]
+        },
+        {
+          "day": "Day 2",
+          "title": "Chongqing",
+          "items": [
+            "Hotel breakfast",
+            "Shibati (Eighteen Stairs)",
+            "Jiefangbei Pedestrian Street",
+            "Bayi Food Street (food on your own)",
+            "Guotai Art Center (outside view)",
+            "Kuixing Tower, which feels like the 1st floor but is on the 22nd",
+            "Chaotianmen Square",
+            "Back to the hotel",
+            "Optional: night view of Hongya Cave and Two Rivers Cruise",
+            "Meals: B/X/D"
+          ]
+        },
+        {
+          "day": "Day 3",
+          "title": "Chongqing – Dujiangyan",
+          "items": [
+            "Hotel breakfast and check out",
+            "Latex store",
+            "Transfer to Dujiangyan",
+            "Selfie-taking Panda Statue at Yangtianwo Square",
+            "Guanxian Ancient City",
+            "Night view of South Bridge",
+            "Transfer to the hotel and check in",
+            "Meals: B/L/D"
+          ]
+        },
+        {
+          "day": "Day 4",
+          "title": "Dujiangyan – Chengdu",
+          "items": [
+            "Hotel breakfast and check out",
+            "Chinese medicine shop and silk store",
+            "Zhongshuge, the most beautiful bookstore",
+            "Transfer to Chengdu",
+            "Chunxi Road and IFS Plaza",
+            "Sino-Ocean Taikoo Li",
+            "Transfer to the hotel and check in",
+            "Optional: Panda Park (including battery bus)",
+            "Meals: B/L/D"
+          ]
+        },
+        {
+          "day": "Day 5",
+          "title": "Chengdu – Chongqing – Manila",
+          "items": [
+            "Hotel breakfast and check out",
+            "Jewelry store",
+            "Transfer to Chongqing, then to the airport",
+            "Fly Chongqing – Manila (Nov/Dec: 21:30 – 01:20 next day; other dates 20:50 – 00:50 next day)",
+            "Meals: B/L/X"
+          ]
+        }
+      ],
+      "inclusions": [
+        "Round-trip airfare via Air China with 23 kg checked baggage",
+        "4 nights’ accommodation, twin sharing, with daily hotel breakfast",
+        "Private coach with English-speaking tour guide",
+        "Sightseeing entrance fees as specified above (first way)",
+        "Meals as listed"
+      ],
+      "exclusions": [
+        "Personal expenses such as telephone calls and minibar",
+        "Extra baggage",
+        "Fuel surcharge USD 30/pax (subject to change)",
+        "Philippine travel tax USD 30/pax",
+        "Optional tours",
+        "China group visa USD 40/pax",
+        "Tips for driver and guide USD 10/pax/day x 5 days = USD 50/pax",
+        "Single supplement USD 149/pax"
+      ],
+      "optional": [
+        "Optional package, USD 150/pax: dinner at Pipa Yuan hot pot restaurant, night view of Hongya Cave with Two Rivers Cruise, and Panda Park (including battery bus)"
+      ],
+      "hotelsLabel": "Hotels",
+      "hotels": [
+        "Day 1-2: Holiday Inn Express Chongqing Caiyun Lake 4★ or similar",
+        "Day 3: Lugui International Hotel 4★ or similar",
+        "Day 4: Holiday Inn Express Chengdu Wuhou 4★ or similar",
+        "Day 5: Sweet Home"
+      ],
+      "notes": [
+        "Meal codes: B = breakfast, L = lunch, D = dinner, X = not included",
+        "Includes 4 shopping stops: latex store, Chinese medicine shop, jewelry store and silk store",
+        "Single supplement USD 149/pax",
+        "Child with bed under 18 yrs, child without bed under 5 yrs, infant under 2 yrs",
+        "VAT not included; an official receipt carries a 12% surcharge on the total",
+        "Visa: China group visa USD 40/pax is not included",
+        "Itinerary is subject to change without notice and to weather; triple rooms not guaranteed",
+        "If hotels are unavailable they are replaced by similar ones"
+      ],
+      "places": [
+        "Ciqikou Ancient Town",
+        "Liziba Station",
+        "People’s Great Hall of Chongqing",
+        "Shibati",
+        "Jiefangbei Pedestrian Street",
+        "Bayi Food Street",
+        "Guotai Art Center",
+        "Kuixing Tower",
+        "Chaotianmen Square",
+        "Guanxian Ancient City",
+        "Zhongshuge Bookstore",
+        "Chunxi Road",
+        "IFS Plaza",
+        "Sino-Ocean Taikoo Li"
+      ],
+      "posters": [
+        "cn-poster-chongqing-chengdu-5d4n-ckg-in-ckg-out-0.jpg"
+      ],
+      "posterSize": [
+        545,
+        800
+      ]
+    },
+    {
+      "id": "chongqing-chengdu-5d4n-5-star-hotel",
+      "name": "Chongqing – Chengdu 5D4N Tour (5-Star Hotels)",
+      "subtitle": "Out Manila · Air China",
+      "region": "intl",
+      "country": "China",
+      "flag": "cn",
+      "duration": "5 days 4 nights",
+      "days": 5,
+      "status": "available",
+      "featured": false,
+      "departure": "Manila (NAIA)",
+      "price": {
+        "from": 428,
+        "label": "From",
+        "unit": "per pax",
+        "currency": "USD"
+      },
+      "year": 2026,
+      "ends": "2026-11-26",
+      "image": "cn-panda.jpg",
+      "alt": "Giant panda cubs in Chengdu",
+      "gallery": [
+        "cn-panda.jpg"
+      ],
+      "summary": "Fly Air China to Chengdu, then Chongqing’s Ciqikou and Hongya Cave, Dujiangyan and the Chengdu Panda Park, staying in local 5-star hotels.",
+      "overview": "Fly with Air China into Chengdu and drive to Chongqing for old-town streets, Liziba light-rail station and the Hongya Cave night view. Then continue to Dujiangyan and Chengdu for the Panda Park, Broad and Narrow Alley and Chunxi Road. Four nights in local 5-star hotels; the rate includes three shopping stops.",
+      "travelDates": [
+        {
+          "d": "Nov 22–26"
+        }
+      ],
+      "travelDatesNote": "Departures from Manila, Nov 22–26 2026 to Nov 22–26 2026. The rate changes by date: an amount on a date is added to the base rate per pax. Seats are limited and confirmed at booking.",
+      "itinerary": [
+        {
+          "day": "Day 1",
+          "title": "Manila – Chengdu – Chongqing",
+          "items": [
+            "Fly Manila to Chengdu (CA480, 02:55–06:55) and meet the guide at the airport",
+            "After breakfast, transfer to Chongqing",
+            "Ciqikou Ancient Town",
+            "Liziba Station, where light rail runs through residential buildings",
+            "Transfer to the hotel and check in",
+            "Optional: dinner at Pipa Yuan, the world’s largest hot pot restaurant"
+          ]
+        },
+        {
+          "day": "Day 2",
+          "title": "Chongqing",
+          "items": [
+            "Hotel breakfast",
+            "Jiefangbei Pedestrian Street",
+            "Bayi Food Street (enjoy local food at your own expense)",
+            "Kuixing Tower, where the 22nd floor feels like the 1st floor",
+            "Chaotianmen Square",
+            "Night view of Hongya Cave",
+            "Back to the hotel",
+            "Optional: Two Rivers Cruise Tour or Sichuan Opera Face Changing Show"
+          ]
+        },
+        {
+          "day": "Day 3",
+          "title": "Chongqing – Dujiangyan",
+          "items": [
+            "Hotel breakfast and check out",
+            "Selfie-taking Panda Statue at Yangtianwo Square",
+            "Zhongshuge bookstore",
+            "Jade store visit",
+            "Chinese medicine shop visit",
+            "South Bridge (Blue Tears)",
+            "Transfer to the hotel and check in",
+            "Optional: flying acrobatics show Dreaming Back to Qingcheng"
+          ]
+        },
+        {
+          "day": "Day 4",
+          "title": "Dujiangyan – Chengdu",
+          "items": [
+            "Hotel breakfast and check out",
+            "Panda Park (battery bus included)",
+            "Latex store visit",
+            "Transfer to Chengdu",
+            "Florentia Village Outlets",
+            "Transfer to the hotel and check in"
+          ]
+        },
+        {
+          "day": "Day 5",
+          "title": "Chengdu – Manila",
+          "items": [
+            "Hotel breakfast and check out",
+            "Broad and Narrow Alley",
+            "Sino-Ocean Taikoo Li",
+            "Chunxi Road and IFS Plaza",
+            "Transfer to the airport and fly home (CA479, 21:30–01:30+1)"
+          ]
+        }
+      ],
+      "inclusions": [
+        "Round-trip airfare via Air China with 23 kg checked baggage",
+        "4 nights twin-sharing accommodation with daily breakfast",
+        "Private coach with English-speaking tour guide",
+        "Sightseeing as specified, including the first-way entrance fees",
+        "Meals as listed"
+      ],
+      "exclusions": [
+        "Personal expenses such as phone calls and minibar",
+        "Extra baggage allowance",
+        "Fuel surcharge: USD 30 per person, subject to change",
+        "Philippine travel tax: USD 30 per person",
+        "Optional tours: USD 120 per person for the optional package",
+        "China Group Visa: USD 40 per person",
+        "Tips for driver and guide: USD 50 per person, USD 10 per day for 5 days",
+        "Single supplement: USD 169 per person"
+      ],
+      "optional": [
+        "Optional package, USD 120 per person: dinner at Pipa Yuan hot pot restaurant, Two Rivers Cruise Tour, Night View of Hongya Cave and Sichuan Opera Face Changing Show",
+        "Flying acrobatics show Dreaming Back to Qingcheng (optional, Day 3)"
+      ],
+      "hotelsLabel": "Hotels",
+      "hotels": [
+        "Day 1-2: Nanfang Junlin Hotel (local 5-star, Chongqing) or similar",
+        "Day 3: Tianfu Source Hotel (local 5-star, Dujiangyan) or similar",
+        "Day 4: Holiday Inn Chengdu Century City – West Tower (local 5-star) or similar"
+      ],
+      "notes": [
+        "Meals (by day): Day 1 B/L; Day 2 B/D, lunch on your own; Day 3 B/L/D; Day 4 B/L/D; Day 5 B/L",
+        "Three shopping stops are part of the rate: latex store, Chinese medicine shop and jade store",
+        "Child with bed under 18 years, child without bed under 5 years, infant under 2 years",
+        "Rate does not include VAT; an official receipt costs 12% of the total amount",
+        "All rooms are twin sharing by default; triple rooms are not guaranteed",
+        "Itinerary is subject to change without prior notice and to weather",
+        "If the listed hotels are not available they will be replaced by similar ones",
+        "Philippine passport holders need a China visa; the China Group Visa fee is listed under exclusions."
+      ],
+      "places": [
+        "Ciqikou Ancient Town",
+        "Liziba Station",
+        "Jiefangbei",
+        "Bayi Food Street",
+        "Kuixing Tower",
+        "Chaotianmen Square",
+        "Hongya Cave",
+        "Yangtianwo Square",
+        "Zhongshuge",
+        "South Bridge",
+        "Panda Park",
+        "Florentia Village",
+        "Broad and Narrow Alley",
+        "Sino-Ocean Taikoo Li",
+        "Chunxi Road"
+      ],
+      "posters": [
+        "cn-poster-chongqing-chengdu-5d4n-5-star-hotel-0.jpg"
+      ],
+      "posterSize": [
+        551,
+        800
+      ]
+    },
+    {
+      "id": "chongqing-chengdu-5d4n-tfu-in-tfu-out",
+      "name": "Chengdu – Chongqing 5D4N Tour (in and out of Chengdu, Air China)",
+      "subtitle": "Out Manila · Air China",
+      "region": "intl",
+      "country": "China",
+      "flag": "cn",
+      "duration": "5 days 4 nights",
+      "days": 5,
+      "status": "available",
+      "featured": false,
+      "departure": "Manila (NAIA)",
+      "price": {
+        "from": 369,
+        "label": "From",
+        "unit": "per pax",
+        "currency": "USD"
+      },
+      "year": 2026,
+      "ends": "2027-03-02",
+      "image": "cn-panda.jpg",
+      "alt": "Giant panda cubs in Chengdu",
+      "gallery": [
+        "cn-panda.jpg"
+      ],
+      "summary": "Fly Air China into and out of Chengdu, with two nights in Chongqing and two in Dujiangyan, a panda park, and 4-star hotels.",
+      "overview": "This 5-day tour flies Air China from Manila to Chengdu and back from Chengdu. You drive to Chongqing for Ciqikou Ancient Town, Liziba light rail station and the old streets, then return to Chengdu and Dujiangyan for Chunxi Road, Panda Park and Guanxian Ancient City. Hotels are 4-star and the programme includes four shop stops.",
+      "travelDates": [
+        {
+          "d": "Dec 6–10"
+        },
+        {
+          "d": "Dec 8–12"
+        },
+        {
+          "d": "Dec 11–15"
+        },
+        {
+          "d": "Jan 5–9",
+          "y": 2027,
+          "add": 19,
+          "cur": "USD"
+        },
+        {
+          "d": "Jan 12–16",
+          "y": 2027,
+          "add": 19,
+          "cur": "USD"
+        },
+        {
+          "d": "Jan 19–23",
+          "y": 2027,
+          "add": 19,
+          "cur": "USD"
+        },
+        {
+          "d": "Jan 22–26",
+          "y": 2027,
+          "add": 19,
+          "cur": "USD"
+        },
+        {
+          "d": "Jan 26–30",
+          "y": 2027,
+          "add": 19,
+          "cur": "USD"
+        },
+        {
+          "d": "Feb 16–20",
+          "y": 2027,
+          "add": 19,
+          "cur": "USD"
+        },
+        {
+          "d": "Feb 21–25",
+          "y": 2027,
+          "add": 19,
+          "cur": "USD"
+        },
+        {
+          "d": "Feb 23–27",
+          "y": 2027,
+          "add": 19,
+          "cur": "USD"
+        },
+        {
+          "d": "Feb 26–Mar 2",
+          "y": 2027,
+          "add": 19,
+          "cur": "USD"
+        }
+      ],
+      "travelDatesNote": "Departures from Manila, Dec 6–10 2026 to Feb 26–Mar 2 2027. The rate changes by date: an amount on a date is added to the base rate per pax. Seats are limited and confirmed at booking.",
+      "itinerary": [
+        {
+          "day": "Day 1",
+          "title": "Manila – Chengdu – Chongqing",
+          "items": [
+            "Flight CA480 Manila to Chengdu (02:55–06:55)",
+            "Meet the guide at the airport and transfer to Chongqing",
+            "After lunch, Ciqikou Ancient Town",
+            "TESTBED2",
+            "Liziba Station, where light rail trains run through residential buildings (2 stations)",
+            "After dinner, transfer to the hotel and check in",
+            "Optional: Two Rivers cruise and night view of Hongya Cave",
+            "Meals: Lunch / Dinner (no breakfast)"
+          ]
+        },
+        {
+          "day": "Day 2",
+          "title": "Chongqing",
+          "items": [
+            "Hotel breakfast",
+            "Kuixing Tower, where the 22nd floor feels like the 1st floor",
+            "Jiefangbei Pedestrian Street",
+            "Bayi Food Street (food on your own)",
+            "Chongqing Kaibu Ruins Park",
+            "Danzishi Old Street",
+            "Back to the hotel",
+            "Optional: dinner at the world’s largest hot pot restaurant, Pipa Yuan",
+            "Meals: Breakfast only"
+          ]
+        },
+        {
+          "day": "Day 3",
+          "title": "Chongqing – Chengdu – Dujiangyan",
+          "items": [
+            "Hotel breakfast and check out",
+            "Latex store visit",
+            "Transfer to Chengdu",
+            "Chunxi Road and IFS Plaza",
+            "Sino-Ocean Taikoo Li",
+            "Transfer to Dujiangyan and check in at the hotel",
+            "Optional: Sichuan Opera face-changing show",
+            "Meals: Breakfast / Lunch / Dinner"
+          ]
+        },
+        {
+          "day": "Day 4",
+          "title": "Dujiangyan",
+          "items": [
+            "Hotel breakfast",
+            "Chinese medicine shop visit",
+            "Zhongshuge bookstore",
+            "Panda Park (battery bus included)",
+            "Guanxian Ancient City",
+            "South Bridge (Blue Tears)",
+            "Back to the hotel",
+            "Optional: BBQ buffet dinner",
+            "Meals: Breakfast / Lunch"
+          ]
+        },
+        {
+          "day": "Day 5",
+          "title": "Dujiangyan – Chengdu – Manila",
+          "items": [
+            "Hotel breakfast and check out",
+            "Selfie-taking Panda Statue at Yangtianwo Square",
+            "Jewelry store visit",
+            "Silk store visit",
+            "Transfer to the airport and fly home",
+            "Flight CA479 Chengdu to Manila (21:30–01:30 next day)",
+            "Meals: Breakfast / Lunch / Dinner"
+          ]
+        }
+      ],
+      "inclusions": [
+        "Round-trip airfare via Air China with 23 kg checked baggage",
+        "4 nights accommodation, twin sharing, with daily hotel breakfast",
+        "Private coach with an English-speaking tour guide",
+        "Sightseeing as listed, including first-way entrance fees",
+        "Meals as listed"
+      ],
+      "exclusions": [
+        "Personal expenses such as telephone calls and minibar",
+        "Extra baggage",
+        "Fuel surcharge USD 30 per person (subject to change)",
+        "Philippine travel tax USD 30 per person",
+        "Group visa USD 40 per person",
+        "Tips for driver and guide USD 50 per person (USD 10 per day x 5 days)",
+        "Single supplement from USD 149 per person",
+        "Optional tours (USD 150 per person for the package)"
+      ],
+      "optional": [
+        "Optional package, USD 150 per person: Two Rivers cruise + night view of Hongya Cave + dinner at Pipa Yuan, the world’s largest hot pot restaurant + Sichuan Opera face-changing show + BBQ buffet dinner"
+      ],
+      "hotelsLabel": "Hotels",
+      "hotels": [
+        "Day 1–2: Holiday Inn Express Chongqing Caiyun Lake or similar 4★",
+        "Day 3–4: Lugui International Hotel or similar 4★ (Dujiangyan)"
+      ],
+      "notes": [
+        "Meal codes B/L/D = breakfast/lunch/dinner; X = not included.",
+        "Shop stops included: latex store, Chinese medicine shop, jewelry store and silk store.",
+        "Philippine passport holders need a China visa; the China group visa is USD 40 per person.",
+        "Child rates: child with bed under 18 years; child without bed under 5 years; infants under 2 years have their own rate.",
+        "The fares do not include VAT; an official receipt incurs a 12% surcharge on the total amount.",
+        "Itinerary is subject to change without prior notice and to weather conditions.",
+        "Rooms are twin sharing by default; triple rooms are not guaranteed. Hotels may be replaced by similar ones."
+      ],
+      "places": [
+        "Ciqikou Ancient Town",
+        "TESTBED2",
+        "Liziba Station",
+        "Kuixing Tower",
+        "Jiefangbei Pedestrian Street",
+        "Bayi Food Street",
+        "Chongqing Kaibu Ruins Park",
+        "Danzishi Old Street",
+        "Chunxi Road",
+        "IFS Plaza",
+        "Sino-Ocean Taikoo Li",
+        "Zhongshuge",
+        "Panda Park",
+        "Guanxian Ancient City",
+        "South Bridge (Blue Tears)",
+        "Yangtianwo Square Panda Statue"
+      ],
+      "posters": [
+        "cn-poster-chongqing-chengdu-5d4n-tfu-in-tfu-out-0.jpg",
+        "cn-poster-chongqing-chengdu-5d4n-tfu-in-tfu-out-1.jpg"
+      ],
+      "posterSize": [
+        515,
+        800
+      ]
+    },
+    {
+      "id": "chongqing-chengdu-5d4n",
+      "name": "Chongqing – Chengdu 5D4N Tour (in and out of Chongqing, Xiamen Airlines)",
+      "subtitle": "Out Manila · Xiamen Airlines",
+      "region": "intl",
+      "country": "China",
+      "flag": "cn",
+      "duration": "5 days 4 nights",
+      "days": 5,
+      "status": "available",
+      "featured": false,
+      "departure": "Manila (NAIA)",
+      "price": {
+        "from": 339,
+        "label": "From",
+        "unit": "per pax",
+        "currency": "USD"
+      },
+      "year": 2026,
+      "ends": "2027-03-13",
+      "image": "cn-panda.jpg",
+      "alt": "Giant panda cubs in Chengdu",
+      "gallery": [
+        "cn-panda.jpg"
+      ],
+      "summary": "Five days across Chongqing, Chengdu and Dujiangyan: Liziba light rail, Hongya Cave night view, giant pandas and Chengdu’s famous streets, in 4-star hotels.",
+      "overview": "Fly Xiamen Airlines from Manila to Chongqing, then travel to Chengdu and Dujiangyan for the Panda Park or Panda Valley and Zhongshuge Bookstore. Back in Chongqing you see the Liziba light rail, Jiefangbei, Hongya Cave by night and Ciqikou Ancient Town. Hotels are 4-star. This is a shopping-stop package.",
+      "travelDates": [
+        {
+          "d": "Dec 8–12"
+        },
+        {
+          "d": "Feb 23–27",
+          "y": 2027,
+          "add": 40,
+          "cur": "USD"
+        },
+        {
+          "d": "Mar 9–13",
+          "y": 2027,
+          "add": 40,
+          "cur": "USD"
+        }
+      ],
+      "travelDatesNote": "Departures from Manila, Dec 8–12 2026 to Mar 9–13 2027. The rate changes by date: an amount on a date is added to the base rate per pax. Seats are limited and confirmed at booking.",
+      "itinerary": [
+        {
+          "day": "Day 1",
+          "title": "Manila – Chongqing",
+          "items": [
+            "Flight Manila – Chongqing (MF8648, 21:00/00:25+1)",
+            "Meet your guide at the airport",
+            "Transfer to the hotel and check in"
+          ]
+        },
+        {
+          "day": "Day 2",
+          "title": "Chongqing – Chengdu",
+          "items": [
+            "Hotel breakfast and check out",
+            "Transfer to Chengdu",
+            "Broad and Narrow Alley",
+            "Chunxi Road and IFS Plaza",
+            "Sino-Ocean Taikoo Li",
+            "Back to the hotel",
+            "Optional: BBQ buffet dinner and Twin Towers light show, USD 45 per person"
+          ]
+        },
+        {
+          "day": "Day 3",
+          "title": "Chengdu – Dujiangyan",
+          "items": [
+            "Hotel breakfast and check out",
+            "Transfer to Dujiangyan",
+            "Panda Park or Panda Valley",
+            "Selfie-taking Panda Statue in Yangtianwo Square",
+            "Zhongshuge Bookstore",
+            "Shopping stop at a jade shop and a Chinese medicine shop",
+            "South Bridge (Blue Tears)",
+            "Transfer to the hotel and check in",
+            "Optional: Flying Acrobatics Show “Dreaming Back to Qingcheng”, USD 45 per person"
+          ]
+        },
+        {
+          "day": "Day 4",
+          "title": "Dujiangyan – Chongqing",
+          "items": [
+            "Hotel breakfast and check out",
+            "Shopping stop at a latex store",
+            "Transfer to Chongqing",
+            "Shopping stop at a jewelry store",
+            "Liziba Station, where the light rail runs through residential buildings",
+            "Jiefangbei Pedestrian Street",
+            "Kuixing Tower (feels like the 1st floor but is actually the 22nd)",
+            "Night view of Hongya Cave",
+            "Back to the hotel",
+            "Optional: dinner at the world’s largest hot pot restaurant, Pipa Yuan, or Two Rivers Cruise, USD 45 per person"
+          ]
+        },
+        {
+          "day": "Day 5",
+          "title": "Chongqing – Manila",
+          "items": [
+            "Hotel breakfast and check out",
+            "Ciqikou Ancient Town",
+            "After lunch, transfer to the airport and fly home (MF8647, 16:15/19:45)"
+          ]
+        }
+      ],
+      "inclusions": [
+        "4 nights’ twin-sharing accommodation with daily hotel breakfast",
+        "Private coach with English-speaking tour guide",
+        "Sightseeing as specified, including first-way entrance fees",
+        "Meals as listed",
+        "Round-trip airfare via Xiamen Airlines with 20 kg check-in baggage"
+      ],
+      "exclusions": [
+        "Personal expenses such as telephone calls and minibar",
+        "Extra baggage",
+        "Fuel surcharge USD 30 per person, subject to change",
+        "Philippines travel tax (pay directly at the airport)",
+        "China group visa USD 40 per person",
+        "Tips for driver and guide USD 50 per person (USD 10 per day for 5 days)",
+        "Single supplement from USD 129 per person",
+        "Optional tours"
+      ],
+      "optional": [
+        "BBQ buffet dinner and Twin Towers light show: USD 45 per person",
+        "Flying Acrobatics Show “Dreaming Back to Qingcheng”: USD 45 per person",
+        "Dinner at the world’s largest hot pot restaurant (Pipa Yuan) or Two Rivers Cruise: USD 45 per person",
+        "All three optional tours together: USD 120 per person"
+      ],
+      "hotelsLabel": "Hotels",
+      "hotels": [
+        "Day 1: 4-star Holiday Inn Express Chongqing Airport or similar",
+        "Day 2: 4-star Holiday Inn Chengdu Century City – East Tower or similar",
+        "Day 3: 4-star Lavande Hotel Dujiangyan or similar",
+        "Day 4: 4-star Chongqing Prince Hotel or similar",
+        "Day 5: Home sweet home"
+      ],
+      "notes": [
+        "Meals: Day 1 none; Day 2 breakfast and lunch; Day 3 breakfast, lunch and dinner; Days 4-5 breakfast and lunch",
+        "Shopping stops: latex, Chinese medicine, jewelry and jade shops; the rate is based on these four shops",
+        "Child with bed (under 18), child without bed (under 5) and infant (under 2) have separate rates",
+        "Single supplement is USD 129 per person, rising to USD 159 on peak dates",
+        "Rates do not include VAT; an official receipt carries a 12% surcharge on the total amount",
+        "Itinerary is subject to change without prior notice and to weather conditions",
+        "Rooms are twin sharing by default, triple rooms not guaranteed",
+        "If a listed hotel is unavailable it is replaced by a similar one",
+        "Philippine passport holders need a China group visa, USD 40 per person (not included)"
+      ],
+      "places": [
+        "Broad and Narrow Alley",
+        "Chunxi Road",
+        "IFS Plaza",
+        "Sino-Ocean Taikoo Li",
+        "Panda Park",
+        "Panda Valley",
+        "Yangtianwo Square",
+        "Zhongshuge Bookstore",
+        "South Bridge (Blue Tears)",
+        "Liziba Station",
+        "Jiefangbei Pedestrian Street",
+        "Kuixing Tower",
+        "Hongya Cave",
+        "Ciqikou Ancient Town"
+      ],
+      "posters": [
+        "cn-poster-chongqing-chengdu-5d4n-0.jpg"
+      ],
+      "posterSize": [
+        551,
+        800
+      ]
+    },
+    {
+      "id": "chongqing-chengdu-5d4n-skiing",
+      "name": "Chongqing – Chengdu Skiing 5D4N Tour",
+      "subtitle": "Out Manila · Air China",
+      "region": "intl",
+      "country": "China",
+      "flag": "cn",
+      "duration": "5 days 4 nights",
+      "days": 5,
+      "status": "available",
+      "featured": false,
+      "departure": "Manila (NAIA)",
+      "price": {
+        "from": 488,
+        "label": "From",
+        "unit": "per pax",
+        "currency": "USD"
+      },
+      "year": 2026,
+      "ends": "2027-02-27",
+      "image": "cn-panda.jpg",
+      "alt": "Giant panda cubs in Chengdu",
+      "gallery": [
+        "cn-panda.jpg"
+      ],
+      "summary": "Fly into Chongqing and see Panda Park, skiing at Zhegu Mountain, Chengdu’s Broad and Narrow Alley and Chongqing’s Hongya Cave and Ciqikou, with 5-star hotels.",
+      "overview": "Fly Manila to Chongqing on Air China and travel to Dujiangyan, where you visit Panda Park and enjoy a 2-hour ski session at Zhegu Mountain. Then continue to Chengdu and back to Chongqing for Liziba Station, Jiefangbei, Hongya Cave at night and Ciqikou Ancient Town. Hotels are local 5-star, with a private coach and an English-speaking guide.",
+      "travelDates": [
+        {
+          "d": "Dec 4–8"
+        },
+        {
+          "d": "Dec 8–12"
+        },
+        {
+          "d": "Dec 11–15"
+        },
+        {
+          "d": "Jan 19–23",
+          "y": 2027
+        },
+        {
+          "d": "Jan 22–26",
+          "y": 2027
+        },
+        {
+          "d": "Jan 26–30",
+          "y": 2027
+        },
+        {
+          "d": "Feb 19–23",
+          "y": 2027
+        },
+        {
+          "d": "Feb 21–25",
+          "y": 2027
+        },
+        {
+          "d": "Feb 23–27",
+          "y": 2027
+        }
+      ],
+      "travelDatesNote": "Departures from Manila, Dec 4–8 2026 to Feb 23–27 2027. The rate changes by date: an amount on a date is added to the base rate per pax. Seats are limited and confirmed at booking.",
+      "itinerary": [
+        {
+          "day": "Day 1",
+          "title": "Manila – Chongqing – Dujiangyan",
+          "items": [
+            "Fly Manila to Chongqing (CA482, 02:25/06:20) and meet the guide at the airport",
+            "After breakfast, transfer to Dujiangyan",
+            "Panda Park (including battery bus)",
+            "Guanxian Ancient City",
+            "Selfie-taking Panda Statue at Yangtianwo Square",
+            "Transfer to the hotel and check in (meals: B/L/D)"
+          ]
+        },
+        {
+          "day": "Day 2",
+          "title": "Zhegu Mountain skiing",
+          "items": [
+            "Hotel breakfast",
+            "Transfer to Zhegu Mountain",
+            "Zhegu Mountain Ski Resort (2-hour skiing experience, ski equipment included, snow suits excluded)",
+            "Transfer back to Dujiangyan and the hotel",
+            "Optional tour: Flying Acrobatics Show “Dreaming Back to Qingcheng” (meals: B/L/D)"
+          ]
+        },
+        {
+          "day": "Day 3",
+          "title": "Dujiangyan – Chengdu",
+          "items": [
+            "Hotel breakfast and check out",
+            "Shopping stops: Chinese medicine shop and jade shop",
+            "Zhongshuge bookstore",
+            "Science and Technology Museum",
+            "Transfer to Chengdu",
+            "Broad and Narrow Alley",
+            "Sino-Ocean Taikoo Li and Chunxi Road",
+            "Transfer to the hotel and check in",
+            "Optional tour: hotpot dinner or Sichuan Opera face-changing show (meals: B/L/X)"
+          ]
+        },
+        {
+          "day": "Day 4",
+          "title": "Chengdu – Chongqing",
+          "items": [
+            "Hotel breakfast and check out",
+            "Shopping stop: latex store",
+            "Transfer to Chongqing",
+            "Liziba Station",
+            "Jiefangbei Pedestrian Street",
+            "Bayi Food Street (enjoy local food on your own)",
+            "Night view of Hongya Cave",
+            "Transfer to the hotel and check in",
+            "Optional tour: Two Rivers Cruise Tour and Nanbin Road (meals: B/L/X)"
+          ]
+        },
+        {
+          "day": "Day 5",
+          "title": "Chongqing – Manila",
+          "items": [
+            "Hotel breakfast and check out",
+            "Ciqikou Ancient Town",
+            "The Ring Shopping Park",
+            "Transfer to the airport and fly to Manila (CA481, 21:30/01:20+1) (meals: B/L/X)"
+          ]
+        }
+      ],
+      "inclusions": [
+        "Round-trip airfare via Air China with 23 kg checked baggage",
+        "4 nights’ accommodation, twin sharing, with daily hotel breakfast",
+        "Private coach with English-speaking tour guide",
+        "Sightseeing as specified, including first-way entrance fees",
+        "Meals as listed"
+      ],
+      "exclusions": [
+        "Personal expenses such as phone calls and minibar",
+        "Extra baggage allowance",
+        "Fuel surcharge USD 30 per person (subject to change)",
+        "Philippines travel tax USD 30 per person",
+        "Optional tour package USD 120 per person",
+        "China group visa USD 40 per person",
+        "Tips for driver and guide USD 50 per person (USD 10 per day x 5 days)",
+        "Single supplement from USD 169 per person"
+      ],
+      "optional": [
+        "Optional package, USD 120 per person: Flying Acrobatics Show “Dreaming Back to Qingcheng” + hotpot dinner or Sichuan Opera face-changing show + Two Rivers Cruise Tour + Nanbin Road"
+      ],
+      "hotelsLabel": "Hotels",
+      "hotels": [
+        "Day 1-2: Dujiangyan Tianfu Source Hotel or similar, local 5★",
+        "Day 3: Holiday Inn Chengdu Century City – West Tower or similar, local 5★",
+        "Day 4: Citadines Connect Chayuan Chongqing or similar, local 5★"
+      ],
+      "notes": [
+        "Meal codes: B = breakfast, L = lunch, D = dinner, X = not included",
+        "Rate includes 3 shop visits: jade shop, Chinese medicine shop and latex store",
+        "Child categories: with bed under 18 years; without bed under 5 years; infant under 2 years",
+        "Rate excludes VAT; an official receipt adds 12% of the total amount",
+        "Philippine passport holders need a China visa; the group visa is not included (USD 40 per person)",
+        "Itinerary is subject to change without prior notice and to weather conditions",
+        "All rooms are twin sharing by default; triple rooms not guaranteed",
+        "Hotels are subject to replacement with similar ones if not available"
+      ],
+      "places": [
+        "Panda Park",
+        "Guanxian Ancient City",
+        "Yangtianwo Square",
+        "Zhegu Mountain Ski Resort",
+        "Zhongshuge",
+        "Science and Technology Museum",
+        "Broad and Narrow Alley",
+        "Sino-Ocean Taikoo Li",
+        "Chunxi Road",
+        "Liziba Station",
+        "Jiefangbei Pedestrian Street",
+        "Bayi Food Street",
+        "Hongya Cave",
+        "Ciqikou Ancient Town",
+        "The Ring Shopping Park"
+      ],
+      "posters": [
+        "cn-poster-chongqing-chengdu-5d4n-skiing-0.jpg"
+      ],
+      "posterSize": [
+        519,
+        800
+      ]
+    },
+    {
+      "id": "chongqing-chengdu-6d5n",
+      "name": "Chongqing – Chengdu 6D5N Tour",
+      "subtitle": "Out Manila · Xiamen Airlines",
+      "region": "intl",
+      "country": "China",
+      "flag": "cn",
+      "duration": "6 days 5 nights",
+      "days": 6,
+      "status": "available",
+      "featured": false,
+      "departure": "Manila (NAIA)",
+      "price": {
+        "from": 369,
+        "label": "From",
+        "unit": "per pax",
+        "currency": "USD"
+      },
+      "year": 2026,
+      "ends": "2027-01-05",
+      "image": "cn-panda.jpg",
+      "alt": "Giant panda cubs in Chengdu",
+      "gallery": [
+        "cn-panda.jpg"
+      ],
+      "summary": "Six days in Chongqing, Chengdu and Dujiangyan with 4-star hotels, Liziba light rail, Panda Valley or Panda Park and the Broad and Narrow Alley.",
+      "overview": "A 6-day Sichuan and Chongqing tour with 4-star hotels. See the light rail running through buildings at Liziba, Ciqikou Ancient Town, Chengdu’s Broad and Narrow Alley, and the pandas at Panda Valley or Panda Park near Dujiangyan, then return to Chongqing for the flight home.",
+      "travelDates": [
+        {
+          "d": "Nov 26–Dec 1"
+        },
+        {
+          "d": "Dec 3–8",
+          "add": 30,
+          "cur": "USD"
+        },
+        {
+          "d": "Dec 10–15",
+          "add": 30,
+          "cur": "USD"
+        },
+        {
+          "d": "Dec 12–17",
+          "add": 30,
+          "cur": "USD"
+        },
+        {
+          "d": "Dec 17–22",
+          "add": 200,
+          "cur": "USD"
+        },
+        {
+          "d": "Dec 31–Jan 5",
+          "add": 200,
+          "cur": "USD"
+        }
+      ],
+      "travelDatesNote": "Departures from Manila, Nov 26–Dec 1 2026 to Dec 31–Jan 5 2026. The rate changes by date: an amount on a date is added to the base rate per pax. Seats are limited and confirmed at booking.",
+      "itinerary": [
+        {
+          "day": "Day 1",
+          "title": "Manila – Chongqing",
+          "items": [
+            "Fly Manila to Chongqing (MF8648 21:00–00:25+1)",
+            "Meet the guide at the airport",
+            "Transfer to hotel"
+          ]
+        },
+        {
+          "day": "Day 2",
+          "title": "Chongqing",
+          "items": [
+            "Hotel breakfast",
+            "Ciqikou Ancient Town",
+            "Liziba Station, where light rail runs through residential buildings",
+            "Jiefangbei Pedestrian Street",
+            "Danzishi Old Street",
+            "Night view of Hongya Cave"
+          ]
+        },
+        {
+          "day": "Day 3",
+          "title": "Chongqing – Chengdu",
+          "items": [
+            "Hotel breakfast and check out",
+            "Transfer to Chengdu",
+            "Broad and Narrow Alley",
+            "Sino-Ocean Taikoo Li",
+            "Chunxi Road and IFS Plaza",
+            "Transfer to hotel"
+          ]
+        },
+        {
+          "day": "Day 4",
+          "title": "Chengdu – Dujiangyan",
+          "items": [
+            "Hotel breakfast and check out",
+            "Transfer to Dujiangyan",
+            "Panda Valley or Panda Park",
+            "Zhongshuge bookstore",
+            "Science and Technology Museum",
+            "Chinese medicine shop stop",
+            "Jade store stop",
+            "Selfie panda statue at Yangtianwo Square",
+            "South Bridge (Blue Tears)",
+            "Transfer to hotel"
+          ]
+        },
+        {
+          "day": "Day 5",
+          "title": "Dujiangyan – Chengdu – Chongqing",
+          "items": [
+            "Hotel breakfast and check out",
+            "Transfer to Chengdu",
+            "Jinli Ancient Street",
+            "Latex shop stop",
+            "Transfer to Chongqing and hotel"
+          ]
+        },
+        {
+          "day": "Day 6",
+          "title": "Chongqing – Manila",
+          "items": [
+            "Hotel breakfast and check out",
+            "The Ring Shopping Park",
+            "Transfer to airport and fly to Manila (MF8647 16:15–19:45)"
+          ]
+        }
+      ],
+      "inclusions": [
+        "5 nights’ accommodation, twin sharing, with daily hotel breakfast",
+        "Round-trip airfare via Xiamen Airlines with 20 kg checked baggage",
+        "Private coach with English-speaking tour guide",
+        "Sightseeing as specified, including first-way entrance fees",
+        "Meals as listed (D1 none; D2 B/L/D; D3 B/L; D4 B/L/D; D5 B/L; D6 B/L)"
+      ],
+      "exclusions": [
+        "Personal expenses such as phone calls and minibar",
+        "Extra baggage allowance",
+        "Fuel surcharge: USD 30 per person (subject to change)",
+        "Philippines travel tax (paid directly at the airport)",
+        "Group visa: USD 40 per person",
+        "Tips for driver and guide: USD 60 per person (USD 10 per day x 6 days)",
+        "Single supplement: from USD 149 per person",
+        "Optional tours"
+      ],
+      "optional": [
+        "Day 2: Two Rivers Cruise Tour + Nanbin Road, USD 45 per person",
+        "Day 3: BBQ buffet dinner + Twin Towers light show, USD 45 per person",
+        "Day 4: Flying Acrobatics Show “Dreaming Back to Qingcheng”, USD 45 per person",
+        "Day 5: Dinner at Pipa Yuan, the world’s largest hot pot restaurant, USD 45 per person"
+      ],
+      "hotelsLabel": "Hotels",
+      "hotels": [
+        "Day 1–2: Holiday Inn Express Chongqing Airport Zone or similar 4★",
+        "Day 3: Holiday Inn Chengdu Century City East Tower or similar 4★",
+        "Day 4: Holiday Inn Dujiangyan Ancient Town or similar 4★",
+        "Day 5: Chongqing Girit Holiday Inn or similar 4★"
+      ],
+      "notes": [
+        "Rate includes three shop visits: jade store, Chinese medicine shop and latex shop",
+        "Child with bed (under 18 yrs), child without bed (under 10 yrs) and infant (under 2 yrs) are priced separately; some dates cost more",
+        "Single supplement from USD 149 per person (USD 189 on peak dates)",
+        "Rates exclude VAT; a 12% surcharge applies if an official receipt is needed",
+        "Room bookings are twin sharing; triple rooms are not guaranteed",
+        "Itinerary may change with weather or circumstances; hotels may be replaced by similar ones"
+      ],
+      "places": [
+        "Ciqikou Ancient Town",
+        "Liziba Station",
+        "Jiefangbei Pedestrian Street",
+        "Danzishi Old Street",
+        "Hongya Cave",
+        "Broad and Narrow Alley",
+        "Sino-Ocean Taikoo Li",
+        "Chunxi Road",
+        "Panda Valley",
+        "Zhongshuge",
+        "Yangtianwo Square",
+        "South Bridge (Blue Tears)",
+        "Jinli Ancient Street",
+        "The Ring Shopping Park"
+      ],
+      "posters": [
+        "cn-poster-chongqing-chengdu-6d5n-0.jpg"
+      ],
+      "posterSize": [
+        517,
+        800
+      ]
+    },
+    {
+      "id": "chongqing-leshan-5d4n",
+      "name": "Chongqing – Leshan – Chengdu 5D4N Tour",
+      "subtitle": "Out Manila · Air China",
+      "region": "intl",
+      "country": "China",
+      "flag": "cn",
+      "duration": "5 days 4 nights",
+      "days": 5,
+      "status": "available",
+      "featured": false,
+      "departure": "Manila (NAIA)",
+      "price": {
+        "from": 388,
+        "label": "From",
+        "unit": "per pax",
+        "currency": "USD"
+      },
+      "year": 2026,
+      "ends": "2026-11-28",
+      "image": "cn-panda.jpg",
+      "alt": "Giant panda cubs in Chengdu",
+      "gallery": [
+        "cn-panda.jpg"
+      ],
+      "summary": "Chongqing’s Liziba light rail and Hongya Cave, a cruise to the Leshan Giant Buddha, Dujiangyan and Chengdu, then back to Chongqing.",
+      "overview": "Four nights in local 4-star hotels, flying in and out of Chongqing. See Kuixing Building, Liziba Station, Hongya Cave, the Leshan Giant Buddha by cruise, Guanxian Ancient City and Ciqikou Ancient Town. Flights are with Air China.",
+      "travelDates": [
+        {
+          "d": "Nov 24–28"
+        }
+      ],
+      "travelDatesNote": "Departures from Manila, Nov 24–28 2026 to Nov 24–28 2026. The rate changes by date: an amount on a date is added to the base rate per pax. Seats are limited and confirmed at booking.",
+      "itinerary": [
+        {
+          "day": "Day 1",
+          "title": "Manila – Chongqing",
+          "items": [
+            "Fly Manila to Chongqing (CA482 02:25/06:20); meet the guide.",
+            "Visit Kuixing Building (the 22nd floor that feels like the 1st).",
+            "Visit Shibati Pedestrian Street and Bayi Food Street (food at your own expense).",
+            "Visit Liziba Station, where light rail runs through buildings (2 stations).",
+            "Visit Jiefangbei Pedestrian Street and Hongya Cave.",
+            "Optional tour: Two Rivers Cruise Night Tour. Meals: B/L/D."
+          ]
+        },
+        {
+          "day": "Day 2",
+          "title": "Chongqing – Leshan – Dujiangyan",
+          "items": [
+            "Hotel breakfast and check out.",
+            "Transfer to Leshan; cruise tour of the Leshan Giant Buddha.",
+            "Transfer to Dujiangyan and check in.",
+            "Optional tour: Night Tour of South Bridge (Blue Tears). Meals: B/L/D."
+          ]
+        },
+        {
+          "day": "Day 3",
+          "title": "Dujiangyan – Chengdu",
+          "items": [
+            "Hotel breakfast and check out.",
+            "Visit a latex shop and a Chinese medicine shop.",
+            "Visit Zhongshuge bookstore.",
+            "Photo stop at the panda statue in Yangtianwo Square.",
+            "Visit Guanxian Ancient City.",
+            "Transfer to Chengdu.",
+            "Optional tour: Panda Valley + BBQ buffet dinner. Meals: B/L/X."
+          ]
+        },
+        {
+          "day": "Day 4",
+          "title": "Chengdu – Chongqing",
+          "items": [
+            "Hotel breakfast and check out.",
+            "Visit a silk shop.",
+            "Transfer to Chongqing.",
+            "Night tour of Nanbin Road and Xiaohaoli Old Street.",
+            "Optional tour: dinner at the world’s largest hot pot restaurant, Pipa Yuan. Meals: B/L/X."
+          ]
+        },
+        {
+          "day": "Day 5",
+          "title": "Chongqing – Manila",
+          "items": [
+            "Hotel breakfast and check out.",
+            "Visit a jewelry shop.",
+            "Visit Ciqikou Ancient Town.",
+            "Transfer to airport; fly home (CA481 21:30/01:20+1). Meals: B/L/X."
+          ]
+        }
+      ],
+      "inclusions": [
+        "4 nights twin-share accommodation with daily breakfast",
+        "Private coach with English-speaking tour guide",
+        "Sightseeing as specified, including first-way entrance fees",
+        "Meals as listed",
+        "Round-trip airfare with Air China, 23 kg checked baggage"
+      ],
+      "exclusions": [
+        "Personal expenses such as phone calls and minibar",
+        "Extra baggage allowance",
+        "Fuel surcharge: USD 30 per person, subject to change",
+        "Philippine travel tax: USD 30 per person",
+        "Optional tours: USD 160 per person",
+        "Group visa: USD 40 per person",
+        "Tips for driver and guide: USD 10 per person per day x 5 days = USD 50",
+        "Single supplement: USD 149 per person"
+      ],
+      "optional": [
+        "Optional package 1 (surcharge USD 160 per person for both packages): Two Rivers Cruise Night Tour + Night Tour of South Bridge (Blue Tears)",
+        "Optional package 2: Panda Valley + BBQ buffet dinner + dinner at Pipa Yuan, the world’s largest hot pot restaurant"
+      ],
+      "hotelsLabel": "Hotels",
+      "hotels": [
+        "Day 1 and Day 4: Local 4★ hotel in Chongqing",
+        "Day 2: Local 4★ hotel in Dujiangyan",
+        "Day 3: Local 4★ hotel in Chengdu"
+      ],
+      "notes": [
+        "Shop visits are included in this rate (4 stops): latex shop, Chinese medicine shop, silk shop and jewelry shop.",
+        "Child with bed under 18 pays the adult under-70 rate; adults over 70 and child without bed (under 5) have separate rates; infant under 2.",
+        "Rooms are twin-share by default, triple not guaranteed; itinerary may change with weather; hotels may be replaced by similar ones.",
+        "VAT is not included; an official receipt carries a 12% surcharge on the total."
+      ],
+      "places": [
+        "Kuixing Building",
+        "Shibati Pedestrian Street",
+        "Bayi Food Street",
+        "Liziba Station",
+        "Jiefangbei",
+        "Hongya Cave",
+        "Leshan Giant Buddha",
+        "Dujiangyan",
+        "Zhongshuge Bookstore",
+        "Guanxian Ancient City",
+        "Nanbin Road",
+        "Xiaohaoli Old Street",
+        "Ciqikou Ancient Town"
+      ],
+      "posters": [
+        "cn-poster-chongqing-leshan-5d4n-0.jpg"
+      ],
+      "posterSize": [
+        535,
+        800
+      ]
+    },
+    {
+      "id": "chongqing-wulong-chengdu-6d5n",
+      "name": "Chongqing – Wulong – Chengdu 6D5N Tour",
+      "subtitle": "Out Manila · Xiamen Airlines",
+      "region": "intl",
+      "country": "China",
+      "flag": "cn",
+      "duration": "6 days 5 nights",
+      "days": 6,
+      "status": "available",
+      "featured": false,
+      "departure": "Manila (NAIA)",
+      "price": {
+        "from": 389,
+        "label": "From",
+        "unit": "per pax",
+        "currency": "USD"
+      },
+      "year": 2026,
+      "ends": "2026-12-24",
+      "image": "cn-panda.jpg",
+      "alt": "Giant panda cubs in Chengdu",
+      "gallery": [
+        "cn-panda.jpg"
+      ],
+      "summary": "Six days across Chongqing, Wulong’s natural bridges and Chengdu’s Panda Valley, flying Xiamen Airlines with 4-star hotels.",
+      "overview": "Visit Wulong’s Three Natural Bridges and Fairy Mountain, then head to Chengdu for the Broad and Narrow Alley, Panda Valley and Dujiangyan, before returning to Chongqing for the night view of Hongya Cave and Ciqikou Ancient Town. You fly Xiamen Airlines round trip and stay in 4-star hotels.",
+      "travelDates": [
+        {
+          "d": "Nov 26–Dec 1"
+        },
+        {
+          "d": "Dec 3–8",
+          "add": 30,
+          "cur": "USD"
+        },
+        {
+          "d": "Dec 5–10",
+          "add": 30,
+          "cur": "USD"
+        },
+        {
+          "d": "Dec 10–15",
+          "add": 30,
+          "cur": "USD"
+        },
+        {
+          "d": "Dec 12–17",
+          "add": 30,
+          "cur": "USD"
+        },
+        {
+          "d": "Dec 17–22",
+          "add": 200,
+          "cur": "USD"
+        },
+        {
+          "d": "Dec 19–24",
+          "add": 200,
+          "cur": "USD"
+        }
+      ],
+      "travelDatesNote": "Departures from Manila, Nov 26–Dec 1 2026 to Dec 19–24 2026. The rate changes by date: an amount on a date is added to the base rate per pax. Seats are limited and confirmed at booking.",
+      "itinerary": [
+        {
+          "day": "Day 1",
+          "title": "Manila – Chongqing",
+          "items": [
+            "Fly Manila to Chongqing (MF8648, 21:00–00:25+1) and meet your guide at the airport",
+            "Transfer to hotel and check in"
+          ]
+        },
+        {
+          "day": "Day 2",
+          "title": "Chongqing – Wulong – Chongqing",
+          "items": [
+            "Hotel breakfast",
+            "Transfer to Wulong",
+            "Three Natural Bridges (shuttle bus and down elevator included)",
+            "Fairy Mountain National Forest Park (small train included)",
+            "Two Rivers Cruise Tour + Nanbin Road (optional)",
+            "Back to hotel"
+          ]
+        },
+        {
+          "day": "Day 3",
+          "title": "Chongqing – Chengdu",
+          "items": [
+            "Hotel breakfast and check out",
+            "Transfer to Chengdu",
+            "Silk shop or jade store visit",
+            "Broad and Narrow Alley",
+            "Chunxi Road & IFS Plaza",
+            "Sino-Ocean Taikoo Li",
+            "BBQ buffet dinner + the Tower of Life at SKP (optional)",
+            "Transfer to hotel and check in"
+          ]
+        },
+        {
+          "day": "Day 4",
+          "title": "Chengdu – Dujiangyan",
+          "items": [
+            "Hotel breakfast and check out",
+            "Transfer to Dujiangyan",
+            "Chinese medicine shop visit",
+            "Panda Valley",
+            "Zhongshuge, the most beautiful book store",
+            "Selfie-taking Panda Statue in Yangtianwo Square",
+            "South Bridge (Blue Tears)",
+            "Flying acrobatics show “Dreaming Back to Qingcheng” (optional)",
+            "Transfer to hotel and check in"
+          ]
+        },
+        {
+          "day": "Day 5",
+          "title": "Dujiangyan – Chongqing",
+          "items": [
+            "Hotel breakfast and check out",
+            "Transfer to Chongqing",
+            "Latex shop visit",
+            "Liziba Station",
+            "Kuixing Tower",
+            "Jiefangbei Pedestrian Street",
+            "Night view of Hongya Cave",
+            "Dinner at Pipa Yuan, the world’s largest hot pot restaurant (optional)",
+            "Transfer to hotel and check in"
+          ]
+        },
+        {
+          "day": "Day 6",
+          "title": "Chongqing – Manila",
+          "items": [
+            "Hotel breakfast and check out",
+            "Jewelry shop visit",
+            "Ciqikou Ancient Town",
+            "Transfer to the airport and fly Chongqing to Manila (MF8647, 16:15–19:45)"
+          ]
+        }
+      ],
+      "inclusions": [
+        "5 nights’ accommodation, twin sharing, with daily hotel breakfast",
+        "Private coach with English-speaking tour guide",
+        "Sightseeing as specified, including first-way entrance fees",
+        "Meals as listed",
+        "Round-trip airfare via Xiamen Airlines with 20 kg checked baggage"
+      ],
+      "exclusions": [
+        "Personal expenses such as phone calls and minibar",
+        "Extra baggage",
+        "Fuel surcharge USD 30 per person, subject to change",
+        "Philippine travel tax, paid directly at the airport",
+        "Group visa USD 40 per person",
+        "Tips for driver and guide USD 60 per person (USD 10 per day for 6 days)",
+        "Single supplement from USD 149 per person (USD 189 for the peak December departures)",
+        "Optional tours"
+      ],
+      "optional": [
+        "Two Rivers Cruise Tour + Nanbin Road – USD 45 per person",
+        "BBQ buffet dinner + the Tower of Life at SKP – USD 45 per person",
+        "Flying acrobatics show “Dreaming Back to Qingcheng” – USD 45 per person",
+        "Dinner at Pipa Yuan, the world’s largest hot pot restaurant – USD 45 per person"
+      ],
+      "hotelsLabel": "Hotels",
+      "hotels": [
+        "Day 1–2 and Day 5: 4★ Holiday Inn Express Chongqing Airport Zone or similar",
+        "Day 3: 4★ Holiday Inn Express Chengdu Airport Zone by IHG or similar",
+        "Day 4: 4★ SL Potala Hotel (Dujiangyan) or similar",
+        "Day 6: Sweet Home"
+      ],
+      "notes": [
+        "Meals per day: D1 none; D2 B/L/D; D3 B/L; D4 B/L/D; D5 B/L; D6 B/L",
+        "Children: with bed (under 18) and without bed (under 10) have separate rates; infants under 2",
+        "Philippine passport holders need a China visa (group visa USD 40 per person)",
+        "The rate includes 4 shop visits: silk shop or jade store, Chinese medicine shop, latex shop and jewelry shop",
+        "VAT not included; an official receipt carries a 12% surcharge on the total amount",
+        "Itinerary may change without prior notice and depends on weather; rooms are twin sharing, triple rooms not guaranteed; hotels may be replaced by similar ones"
+      ],
+      "places": [
+        "Three Natural Bridges",
+        "Fairy Mountain National Forest Park",
+        "Broad and Narrow Alley",
+        "Chunxi Road",
+        "IFS Plaza",
+        "Sino-Ocean Taikoo Li",
+        "Panda Valley",
+        "Zhongshuge Bookstore",
+        "Yangtianwo Square",
+        "South Bridge (Blue Tears)",
+        "Liziba Station",
+        "Kuixing Tower",
+        "Jiefangbei Pedestrian Street",
+        "Hongya Cave",
+        "Ciqikou Ancient Town"
+      ],
+      "posters": [
+        "cn-poster-chongqing-wulong-chengdu-6d5n-0.jpg"
+      ],
+      "posterSize": [
+        520,
+        800
+      ]
+    },
+    {
+      "id": "chongqing-yangtze-river-vista-aurora-cruise-2",
+      "name": "Chongqing – Yangtze River – Vista Aurora Cruise 7D6N Charter Tour (No Shopping)",
+      "subtitle": "Out Manila · Fly + cruise",
+      "region": "intl",
+      "country": "China",
+      "flag": "cn",
+      "duration": "7 days 6 nights",
+      "days": 7,
+      "status": "available",
+      "featured": false,
+      "departure": "Manila (NAIA)",
+      "price": {
+        "from": 1649,
+        "label": "From",
+        "unit": "per pax",
+        "currency": "USD"
+      },
+      "year": 2026,
+      "ends": "2026-12-16",
+      "image": "cn-yangtze.jpg",
+      "alt": "Mountains along the Yangtze River gorges",
+      "gallery": [
+        "cn-yangtze.jpg"
+      ],
+      "summary": "Seven days flying via Guangzhou to Yichang, a 4-night Vista Aurora Yangtze River cruise through the Three Gorges, then Chongqing city sights.",
+      "overview": "Fly China Southern via Guangzhou to Yichang, spend one night in a 5★ hotel, then board the Vista Aurora for four nights on the Yangtze River through the Three Gorges. You finish in Chongqing with a 5★ hotel night and sights such as Liziba light rail, Hongyadong and Ciqikou Ancient Town. The package has no shopping stops, and an English-speaking guide travels with you.",
+      "travelDates": [
+        {
+          "d": "Nov 26–Dec 2"
+        },
+        {
+          "d": "Dec 3–9"
+        },
+        {
+          "d": "Dec 10–16"
+        }
+      ],
+      "travelDatesNote": "Departures from Manila, Nov 26–Dec 2 2026 to Dec 10–16 2026. The rate changes by date: an amount on a date is added to the base rate per pax. Seats are limited and confirmed at booking.",
+      "itinerary": [
+        {
+          "day": "Day 1",
+          "title": "Manila – Guangzhou – Yichang",
+          "items": [
+            "Fly Manila – Guangzhou (12:00 – 14:40), then Guangzhou – Yichang (21:30 – 23:15); on Sep 3, Sep 10 and Oct 8 the flights are 08:20 – 10:55 and 17:55 – 19:50",
+            "Arrive at Yichang airport and meet the English-speaking guide",
+            "Hotel check-in",
+            "Meals: X/X/X"
+          ]
+        },
+        {
+          "day": "Day 2",
+          "title": "Yichang – board the cruise",
+          "items": [
+            "Hotel breakfast and check out",
+            "Sanyou Cave",
+            "After lunch, complimentary tour of Gezhou Dam and view of the Eastern Section of Xiling Gorge (participation depends on arrival time; no refund for non-participation)",
+            "Board the Vista Aurora cruise",
+            "Meals: B/L/D"
+          ]
+        },
+        {
+          "day": "Day 3",
+          "title": "Three Gorges of the Yangtze River",
+          "items": [
+            "Cruise breakfast",
+            "Shore excursion to the Three Gorges Dam",
+            "Cruise tour of the Three Gorges Ship Lift",
+            "Badong Yuxian Valley (Apr – Oct) or Wushan Goddess Stream (Nov – Mar, visited next morning)",
+            "If weather, water level or a ship lift suspension prevents this, the Three Gorges Project Museum and Damping Memorial Park are visited instead",
+            "Meals: B/L/D"
+          ]
+        },
+        {
+          "day": "Day 4",
+          "title": "On the cruise",
+          "items": [
+            "Cruise breakfast",
+            "Shore excursion to Baidi City or The Top of Three Gorges (choose when registering)",
+            "Meals: B/L/D"
+          ]
+        },
+        {
+          "day": "Day 5",
+          "title": "On the cruise",
+          "items": [
+            "Cruise breakfast",
+            "Shore excursion to Baiheliang Underwater Museum plus Fuling Pickled Mustard Tuber Memory Museum, or Project 816 Site (choose when registering)",
+            "If the cruise docks at Fengdu Port because of weather or waterway conditions, the excursion changes to Fengdu Ghost City",
+            "Meals: B/L/D"
+          ]
+        },
+        {
+          "day": "Day 6",
+          "title": "Chongqing",
+          "items": [
+            "Cruise breakfast",
+            "After disembarking, meet the Chongqing guide",
+            "People’s Square",
+            "The Great Hall of the People (exterior view)",
+            "Liziba Station, to see the light rail passing through a building",
+            "Jiefangbei Pedestrian Street",
+            "Guotai Arts Center (exterior view)",
+            "Kuixinglou Viewing Platform",
+            "Hongyadong Stilted Buildings",
+            "Optional: VIP seating (Section C) for the fantasy acrobatic show “Yangtze River” + Nanbin Road night cruise + 131 Observation Deck, USD 100/pax",
+            "Meals: B/L/D"
+          ]
+        },
+        {
+          "day": "Day 7",
+          "title": "Chongqing – Guangzhou – Manila",
+          "items": [
+            "Hotel breakfast and check out",
+            "Ciqikou Ancient Town",
+            "Bamboo Charcoal Lifestyle Museum",
+            "Transfer to the airport; fly Chongqing – Guangzhou (15:00 – 17:00), then Guangzhou – Manila (20:00 – 22:30); on Sep 9, Sep 16 and Oct 14 the flights are 16:20 – 18:30 and 23:45 – 02:25 next day",
+            "Meals: B/L/X"
+          ]
+        }
+      ],
+      "inclusions": [
+        "Economy airfare and taxes with China Southern Airlines (round trip)",
+        "Baggage allowance: 1 pc / 23 kg check-in and 7 kg hand carry",
+        "2 nights in a 5★ hotel of choice and 4 nights in a cruise cabin, twin sharing",
+        "Private bus with English-speaking tour guide",
+        "Sightseeing entrance fees as specified above (first way)",
+        "Meals: hotel and cruise breakfasts and 11 meals, including local specialties and cruise meals"
+      ],
+      "exclusions": [
+        "Personal expenses such as telephone calls and minibar",
+        "Travel insurance",
+        "Philippine travel tax USD 30/pax (collected with the tour fee)",
+        "China group visa USD 40/pax (collected with the tour fee)",
+        "Tips for driver and guide USD 8/pax/day x 7 days = USD 56/pax (collected with the tour fee)",
+        "Single supplement USD 610/pax",
+        "Fuel surcharge (subject to change)",
+        "Optional tour: VIP seating for the Yangtze River acrobatic show + Nanbin Road night cruise + 131 Observation Deck, USD 100/pax"
+      ],
+      "optional": [
+        "VIP seating (Section C) for the large-scale fantasy acrobatic show “Yangtze River” + Nanbin Road night cruise + 131 Observation Deck: USD 100/pax"
+      ],
+      "hotelsLabel": "Hotels and cruise",
+      "hotels": [
+        "Day 1: 5★ hotel in Yichang",
+        "Day 2-5: Vista Aurora cruise (4 nights)",
+        "Day 6: 5★ hotel in Chongqing",
+        "Day 7: Sweet Home"
+      ],
+      "notes": [
+        "Meal codes: B = breakfast, L = lunch, D = dinner, X = not included",
+        "Single supplement USD 610/pax",
+        "Child with bed 2–11 yrs pays the adult rate; child without bed 2–11 yrs has a lower rate",
+        "Visa: China group visa USD 40/pax is not included",
+        "No shopping stops are in the itinerary; the guide may sell local specialties on the bus, purchases are optional",
+        "Cruise rooms are subject to confirmation by the cruise company; a name list is needed when booking",
+        "Shore excursions follow the information released by the cruise ship on the day; the cruise itinerary may change for water level, waterway or weather, with safety first",
+        "Flight times, hotels and itinerary are subject to final confirmation",
+        "No refund if you cancel any itinerary or accommodation during the trip, and tips are paid for the full number of days",
+        "Order of sights may change with weather, traffic or visitor volume; the agency is not liable for losses from force majeure"
+      ],
+      "places": [
+        "Sanyou Cave",
+        "Gezhou Dam",
+        "Xiling Gorge",
+        "Vista Aurora Cruise",
+        "Three Gorges Dam",
+        "Three Gorges Ship Lift",
+        "Badong Yuxian Valley",
+        "Wushan Goddess Stream",
+        "Baidi City",
+        "Baiheliang Underwater Museum",
+        "Fuling Pickled Mustard Tuber Museum",
+        "Project 816 Site",
+        "Fengdu Ghost City",
+        "Liziba Station",
+        "Jiefangbei Pedestrian Street",
+        "Hongyadong",
+        "Ciqikou Ancient Town"
+      ],
+      "posters": [
+        "cn-poster-chongqing-yangtze-river-vista-aurora-cruise-2-0.jpg"
+      ],
+      "posterSize": [
+        540,
+        800
+      ]
+    },
+    {
+      "id": "tulou-chaozhou-shantou-xiamen-7d6n",
+      "name": "Tulou – Chaozhou – Shantou – Nan’ao – Xiamen 7D6N Tour",
+      "subtitle": "Out Manila · Philippine Airlines",
+      "region": "intl",
+      "country": "China",
+      "flag": "cn",
+      "duration": "7 days 6 nights",
+      "days": 7,
+      "status": "available",
+      "featured": false,
+      "departure": "Manila (NAIA)",
+      "price": {
+        "from": 799,
+        "label": "From",
+        "unit": "per pax",
+        "currency": "USD"
+      },
+      "year": 2026,
+      "ends": "2027-03-26",
+      "image": "cn-xiamen.jpg",
+      "alt": "Xiamen’s coast and city",
+      "gallery": [
+        "cn-xiamen.jpg"
+      ],
+      "summary": "Fly direct to Xiamen for the Tianluokeng earthen buildings, Chaozhou, Shantou, Nan’ao Island and Gulangyu over seven days in 4-star hotels.",
+      "overview": "Fly direct to Xiamen with Philippine Airlines and start with the Tianluokeng earthen building cluster (tulou). Then follow the Chaoshan coast through Chaozhou’s old city, Shantou and Nan’ao Island with its Tropic of Cancer landmark, and finish in Xiamen with Gulangyu Island. Six nights in 4-star hotels with a private bus and English-speaking guide.",
+      "travelDates": [
+        {
+          "d": "Nov 26–Dec 2"
+        },
+        {
+          "d": "Dec 5–11"
+        },
+        {
+          "d": "Jan 16–22",
+          "y": 2027
+        },
+        {
+          "d": "Feb 20–26",
+          "y": 2027
+        },
+        {
+          "d": "Mar 6–12",
+          "y": 2027
+        },
+        {
+          "d": "Mar 20–26",
+          "y": 2027
+        }
+      ],
+      "travelDatesNote": "Departures from Manila, Nov 26–Dec 2 2026 to Mar 20–26 2027. The rate changes by date: an amount on a date is added to the base rate per pax. Seats are limited and confirmed at booking.",
+      "itinerary": [
+        {
+          "day": "Day 1",
+          "title": "Manila – Xiamen – Nanjing",
+          "items": [
+            "Fly Manila to Xiamen (PR334, 07:30–09:55)",
+            "Meet the tour guide at Xiamen airport",
+            "After lunch, drive to Nanjing and visit the Tianluokeng Earthen Building Cluster",
+            "Hotel check in"
+          ]
+        },
+        {
+          "day": "Day 2",
+          "title": "Nanjing – Chaozhou",
+          "items": [
+            "Hotel breakfast and check out",
+            "Guangji Bridge",
+            "Chaozhou Ancient City, Paifang Street",
+            "Kaiyuan Temple",
+            "Tea and a Yingge Dance performance at the Old Teahouse",
+            "Guangji Bridge Light and Shadow Show (complimentary, no refund if cancelled)",
+            "Hotel check in"
+          ]
+        },
+        {
+          "day": "Day 3",
+          "title": "Chaozhou – Shantou – Nan’ao",
+          "items": [
+            "Hotel breakfast and check out",
+            "Thai Buddha Hall, a popular Nanyang-style photo spot",
+            "West Lake Park",
+            "Drive to Shantou: Former Residence of Chen Cihong (filming location of Dear You)",
+            "Cross Nan’ao Bridge to Nan’ao Island",
+            "Qihang Square",
+            "Changshanwei Lighthouse"
+          ]
+        },
+        {
+          "day": "Day 4",
+          "title": "Nan’ao – Shantou",
+          "items": [
+            "Hotel breakfast and check out",
+            "Rainbow Sea (sea oyster harvesting excluded)",
+            "Qing’ao Bay",
+            "Gate of Nature, Tropic of Cancer landmark",
+            "Zongbing Mansion",
+            "Nanshan Temple",
+            "Drive to Shantou, free time at Longyan South Road Food Street"
+          ]
+        },
+        {
+          "day": "Day 5",
+          "title": "Shantou",
+          "items": [
+            "Hotel breakfast",
+            "Chaoshan History and Culture Expo Center",
+            "Neihai Bay ferry, with views along both sides of the bay",
+            "Small Park",
+            "Shantou Hostel",
+            "Qiaopi Museum",
+            "Movie Street",
+            "Xiti Park"
+          ]
+        },
+        {
+          "day": "Day 6",
+          "title": "Shantou – Xiamen",
+          "items": [
+            "Hotel breakfast and check out",
+            "Drive to Xiamen",
+            "Gulangyu Island",
+            "Free time at Zhongshan Road"
+          ]
+        },
+        {
+          "day": "Day 7",
+          "title": "Xiamen – Manila",
+          "items": [
+            "Hotel breakfast and check out",
+            "Free time",
+            "Transfer to the airport and fly home (PR331, 17:40–20:30)"
+          ]
+        }
+      ],
+      "inclusions": [
+        "Round-trip economy airfare and taxes via Philippine Airlines",
+        "Baggage: 1 piece of 23 kg checked plus 1 piece of 7 kg carry-on",
+        "6 nights twin-sharing accommodation at 4-star hotels with daily breakfast",
+        "Private bus with English-speaking tour guide",
+        "Sightseeing as specified, including the first-way entrance fees",
+        "Meals: breakfast plus 7 meals",
+        "One complimentary bottle of water per person per day"
+      ],
+      "exclusions": [
+        "Personal expenses such as phone calls and minibar",
+        "Travel insurance",
+        "Philippine travel tax: USD 30 per person (collected with the tour fee)",
+        "China Group Visa: USD 40 per person (collected with the tour fee)",
+        "Tips for driver and guide: USD 35 per person, USD 5 per day for 7 days (collected with the tour fee)",
+        "Single supplement: USD 180 per person",
+        "Fuel surcharge (subject to change)"
+      ],
+      "hotelsLabel": "Hotels",
+      "hotels": [
+        "Day 1: 4-star hotel in Nanjing",
+        "Day 2: 4-star hotel in Chaozhou",
+        "Day 3: 4-star hotel in Nan’ao",
+        "Day 4-5: 4-star hotel in Shantou",
+        "Day 6: 4-star hotel in Xiamen"
+      ],
+      "notes": [
+        "Meals (by day): Day 1 lunch; Day 2 B/L; Day 3 B/L; Day 4 B/L; Day 5 B/L; Day 6 B/L; Day 7 B/L",
+        "Child without bed 2 to 11 years",
+        "Order of attractions may be adjusted for weather, traffic or visitor volume; the agency is not liable for reduced attractions caused by force majeure and no refund is given for expenses already incurred",
+        "If the listed hotels are not available they will be replaced by similar ones",
+        "Itinerary, flight times and hotels are subject to final confirmation",
+        "No refunds if you cancel any part of the itinerary or accommodation during the trip; tips must be paid for the full number of days",
+        "Philippine passport holders need a China visa; the China Group Visa fee is listed under exclusions."
+      ],
+      "places": [
+        "Tianluokeng Earthen Building Cluster",
+        "Guangji Bridge",
+        "Chaozhou Ancient City",
+        "Paifang Street",
+        "Kaiyuan Temple",
+        "Thai Buddha Hall",
+        "West Lake Park",
+        "Chen Cihong Former Residence",
+        "Nan’ao Island",
+        "Qihang Square",
+        "Changshanwei Lighthouse",
+        "Rainbow Sea",
+        "Qing’ao Bay",
+        "Tropic of Cancer Landmark",
+        "Nanshan Temple",
+        "Neihai Bay",
+        "Qiaopi Museum",
+        "Gulangyu Island",
+        "Zhongshan Road"
+      ],
+      "posters": [
+        "cn-poster-tulou-chaozhou-shantou-xiamen-7d6n-0.jpg"
+      ],
+      "posterSize": [
+        566,
+        800
+      ]
+    },
+    {
+      "id": "fuzhou-huangling-jiangxi-6d5n-no-shopping",
+      "name": "Fuzhou – Huangling – Jiangxi 6D5N Tour (No Shopping)",
+      "subtitle": "Out Manila · Xiamen Airlines",
+      "region": "intl",
+      "country": "China",
+      "flag": "cn",
+      "duration": "6 days 5 nights",
+      "days": 6,
+      "status": "available",
+      "featured": false,
+      "departure": "Manila (NAIA)",
+      "price": {
+        "from": 699,
+        "label": "From",
+        "unit": "per pax",
+        "currency": "USD"
+      },
+      "year": 2026,
+      "ends": "2027-03-31",
+      "image": "cn-misty-mountains.jpg",
+      "alt": "Peaks rising above a sea of clouds",
+      "gallery": [
+        "cn-misty-mountains.jpg"
+      ],
+      "summary": "A no-shopping tour from Fuzhou through Shangrao, Quzhou and Wuyuan, with a themed sightseeing train, Lingshan, Huangling and bullet-train travel.",
+      "overview": "This 6-day no-shopping tour flies Xiamen Airlines from Manila to Fuzhou, then travels by themed sightseeing train and coach through Shangrao, Quzhou and Wuyuan. Highlights include Lingshan, Wangxian Valley and Huangling, the terraced village famous for its autumn colours. You return to Fuzhou by bullet train for a walk through Three Lanes and Seven Alleys before flying home. Hotels are 4-star, with 5-star in Wuyuan.",
+      "travelDates": [
+        {
+          "d": "Nov 25–30"
+        },
+        {
+          "d": "Dec 4–9"
+        },
+        {
+          "d": "Dec 23–28",
+          "add": 200,
+          "cur": "USD"
+        },
+        {
+          "d": "Dec 25–30",
+          "add": 200,
+          "cur": "USD"
+        },
+        {
+          "d": "Jan 8–13",
+          "y": 2027
+        },
+        {
+          "d": "Feb 24–Mar 1",
+          "y": 2027
+        },
+        {
+          "d": "Mar 5–10",
+          "y": 2027,
+          "add": 50,
+          "cur": "USD"
+        },
+        {
+          "d": "Mar 26–31",
+          "y": 2027,
+          "add": 250,
+          "cur": "USD"
+        }
+      ],
+      "travelDatesNote": "Departures from Manila, Nov 25–30 2026 to Mar 26–31 2027. The rate changes by date: an amount on a date is added to the base rate per pax. Seats are limited and confirmed at booking.",
+      "itinerary": [
+        {
+          "day": "Day 1",
+          "title": "Manila – Fuzhou",
+          "items": [
+            "Flight from Manila to Fuzhou",
+            "Airport pick-up and transfer to the hotel to check in",
+            "Meals: none included (X/X/X)"
+          ]
+        },
+        {
+          "day": "Day 2",
+          "title": "Fuzhou – Shangrao",
+          "items": [
+            "Breakfast at the hotel and check out",
+            "Travel to Shangrao on the Magnificent Shangrao themed sightseeing train, passing Wuyishan, with dance and music performances, interactive activities, stamp collecting and a snack gift pack",
+            "Transfer to the hotel and check in",
+            "Meals: Breakfast / Lunch / Dinner"
+          ]
+        },
+        {
+          "day": "Day 3",
+          "title": "Shangrao",
+          "items": [
+            "Breakfast at the hotel",
+            "Lingshan (ticket, cable car and 10-section sky escalator included)",
+            "Tian Kong Zhi Jing (photo stop)",
+            "Wangxian Valley (ticket included)",
+            "Back to the hotel",
+            "Meals: Breakfast / Lunch / Dinner"
+          ]
+        },
+        {
+          "day": "Day 4",
+          "title": "Shangrao – Quzhou",
+          "items": [
+            "Breakfast at the hotel and check out",
+            "Transfer to Quzhou (about 2 hours)",
+            "Root Palace Buddhist Culture Tourism Area (ticket included); in November and December this changes to Changtai Maple Leaf Garden",
+            "Shuitingmen Historical and Cultural Block",
+            "Transfer to the hotel and check in",
+            "Meals: Breakfast / Lunch / Dinner"
+          ]
+        },
+        {
+          "day": "Day 5",
+          "title": "Quzhou – Wuyuan",
+          "items": [
+            "Breakfast at the hotel and check out",
+            "Transfer to Wuyuan (about 2 hours)",
+            "Huangling (ticket and cable car included)",
+            "Wunvzhou Resort (ticket included)",
+            "Transfer to the hotel and check in",
+            "Meals: Breakfast / Lunch / Dinner"
+          ]
+        },
+        {
+          "day": "Day 6",
+          "title": "Wuyuan – Fuzhou – Manila",
+          "items": [
+            "Breakfast at the hotel and check out",
+            "Bullet train to Fuzhou, 2nd class, with guide assistance on the train (carry your own luggage)",
+            "Pick-up at Fuzhou station",
+            "Three Lanes and Seven Alleys",
+            "Transfer to the airport and fly back to Manila",
+            "Meals: Breakfast only"
+          ]
+        }
+      ],
+      "inclusions": [
+        "Round-trip economy airfare and taxes via Xiamen Airlines",
+        "Baggage allowance: 1 piece of 23 kg check-in plus 8 kg carry-on",
+        "5 nights accommodation, twin sharing, with daily hotel breakfast",
+        "Private coach with an English-speaking tour guide",
+        "Sightseeing as listed, including first-way entrance fees",
+        "Meals as listed"
+      ],
+      "exclusions": [
+        "Personal expenses such as telephone calls and minibar",
+        "Travel insurance",
+        "Philippine travel tax (pay at the airport)",
+        "Fuel and tax surcharge, if any, according to airline policy",
+        "China group visa USD 40 per person",
+        "Tips for driver and guide USD 60 per person (USD 10 per day x 6 days)",
+        "Single supplement USD 115 per person (plus USD 20 per person for March departures)"
+      ],
+      "hotelsLabel": "Hotels",
+      "hotels": [
+        "Day 1: 4★ hotel in Fuzhou",
+        "Day 2–3: 4★ hotel in Shangrao",
+        "Day 4: 4★ hotel in Quzhou",
+        "Day 5: 5★ hotel in Wuyuan"
+      ],
+      "notes": [
+        "Meal codes B/L/D = breakfast/lunch/dinner; X = not included.",
+        "Sold as a No Shopping package.",
+        "Philippine passport holders need a China visa; the China group visa is USD 40 per person.",
+        "Child without bed rate applies; infant fares are not listed in the itinerary.",
+        "If fuel or taxes increase, the airline’s surcharge is collected from travellers.",
+        "Single travellers may be paired with another guest to share a room; otherwise the single supplement applies.",
+        "Hotels may be replaced by similar ones; the order of attractions may change in crowded periods or special circumstances."
+      ],
+      "places": [
+        "Magnificent Shangrao Themed Sightseeing Train",
+        "Lingshan",
+        "Tian Kong Zhi Jing",
+        "Wangxian Valley",
+        "Root Palace Buddhist Culture Tourism Area",
+        "Changtai Maple Leaf Garden (Nov–Dec)",
+        "Shuitingmen Historical and Cultural Block",
+        "Huangling",
+        "Wunvzhou Resort",
+        "Three Lanes and Seven Alleys"
+      ],
+      "posters": [
+        "cn-poster-fuzhou-huangling-jiangxi-6d5n-no-shopping-0.jpg",
+        "cn-poster-fuzhou-huangling-jiangxi-6d5n-no-shopping-1.jpg"
+      ],
+      "posterSize": [
+        483,
+        800
+      ]
+    },
+    {
+      "id": "fuzhou-wuyishan-wangxian-valley-5d4n-mf",
+      "name": "Fuzhou – Wuyishan – Wangxian Valley 5D4N Tour (No Shopping)",
+      "subtitle": "Out Manila · Xiamen Airlines",
+      "region": "intl",
+      "country": "China",
+      "flag": "cn",
+      "duration": "5 days 4 nights",
+      "days": 5,
+      "status": "available",
+      "featured": false,
+      "departure": "Manila (NAIA)",
+      "price": {
+        "from": 699,
+        "label": "From",
+        "unit": "per pax",
+        "currency": "USD"
+      },
+      "year": 2026,
+      "ends": "2027-02-28",
+      "image": "cn-wuyishan.jpg",
+      "alt": "Green fields below the Wuyi Mountains",
+      "gallery": [
+        "cn-wuyishan.jpg"
+      ],
+      "summary": "Five days through Fuzhou, Gexian Village, Wangxian Valley and Wuyishan with bamboo rafting on Jiuqu Stream, 5-star hotels and no compulsory shopping.",
+      "overview": "Fly Xiamen Airlines from Manila to Fuzhou, then visit Gexian Village and its night view, Lingshan Mountain and Wangxian Valley, and Wuyishan for Jiuqu Stream bamboo rafting and Wuyi Palace. The last morning explores Three Lanes and Seven Alleys in Fuzhou. Stays are in 5-star hotels, with one bottle of mineral water per person per day. No compulsory shopping.",
+      "travelDates": [
+        {
+          "d": "Nov 4–8"
+        },
+        {
+          "d": "Nov 16–20"
+        },
+        {
+          "d": "Nov 25–29"
+        },
+        {
+          "d": "Dec 2–6"
+        },
+        {
+          "d": "Dec 23–27",
+          "add": 230,
+          "cur": "USD"
+        },
+        {
+          "d": "Dec 30–Jan 3",
+          "add": 330,
+          "cur": "USD"
+        },
+        {
+          "d": "Jan 13–17",
+          "y": 2027,
+          "add": 30,
+          "cur": "USD"
+        },
+        {
+          "d": "Feb 24–28",
+          "y": 2027,
+          "add": 30,
+          "cur": "USD"
+        }
+      ],
+      "travelDatesNote": "Departures from Manila, Nov 4–8 2026 to Feb 24–28 2027. The rate changes by date: an amount on a date is added to the base rate per pax. Seats are limited and confirmed at booking.",
+      "itinerary": [
+        {
+          "day": "Day 1",
+          "title": "Manila – Fuzhou",
+          "items": [
+            "Flight Manila – Fuzhou (MF8736, 21:00/23:45)",
+            "Arrival and meet your guide",
+            "Transfer to the hotel and check in"
+          ]
+        },
+        {
+          "day": "Day 2",
+          "title": "Fuzhou – Gexian Village – Shangrao",
+          "items": [
+            "Breakfast at the hotel and check out",
+            "Transfer to Gexian Village",
+            "Night view at Gexian Village",
+            "After dinner, transfer to the hotel in Shangrao"
+          ]
+        },
+        {
+          "day": "Day 3",
+          "title": "Lingshan Mountain and Wangxian Valley",
+          "items": [
+            "Breakfast at the hotel",
+            "Lingshan Mountain (elevator included)",
+            "Wangxian Valley",
+            "Night view of Wangxian Valley",
+            "Transfer to the hotel and check in"
+          ]
+        },
+        {
+          "day": "Day 4",
+          "title": "Shangrao – Wuyishan",
+          "items": [
+            "Breakfast at the hotel and check out",
+            "Transfer to Wuyishan",
+            "Jiuqu Stream bamboo rafting",
+            "Wuyi Palace",
+            "Imitation Song Dynasty Ancient Street",
+            "Transfer to the hotel and check in"
+          ]
+        },
+        {
+          "day": "Day 5",
+          "title": "Wuyishan – Fuzhou – Manila",
+          "items": [
+            "Breakfast at the hotel and check out",
+            "Three Lanes and Seven Alleys",
+            "Lunch on your own with local specialities",
+            "Transfer to Fuzhou airport for departure (MF8735, 17:05/19:45)"
+          ]
+        }
+      ],
+      "inclusions": [
+        "International airfare and airport tax",
+        "Baggage: 1 piece of 23 kg check-in and 1 piece of 5 kg hand carry",
+        "4 nights’ twin-sharing accommodation with daily breakfast",
+        "Private coach with English-speaking tour guide",
+        "Sightseeing as specified, including all entrance fees",
+        "Meals as listed (6 meals)",
+        "1 bottle of mineral water per person per day"
+      ],
+      "exclusions": [
+        "Philippines travel tax (USD 30 or PHP 1,620 per person)",
+        "Personal expenses such as telephone calls and minibar",
+        "Tips for driver and guide USD 25 per person (USD 5 per day for 5 days)",
+        "Single supplement USD 128 per person",
+        "Optional tours",
+        "Travel insurance",
+        "China visa USD 40 per person"
+      ],
+      "hotelsLabel": "Hotels",
+      "hotels": [
+        "Day 1: 5-star hotel in Fuzhou or similar",
+        "Day 2-3: 5-star hotel in Shangrao or similar",
+        "Day 4: 5-star hotel in Wuyishan or similar",
+        "Day 5: Home sweet home"
+      ],
+      "notes": [
+        "Meals: Day 1 none; Days 2-4 breakfast, lunch and dinner; Day 5 breakfast only (lunch on your own)",
+        "Quoted without compulsory shopping",
+        "Child with bed pays the adult rate; child without bed has a lower rate",
+        "Peak-date supplements apply on some departures (Christmas and New Year period most)",
+        "No rooms are held; rates are subject to change without prior notice",
+        "If a listed hotel is unavailable it is replaced by a similar one",
+        "Itinerary can change depending on local situation",
+        "Please re-inquire if a national holiday or big exhibition falls on your dates",
+        "Philippine passport holders need a China visa, USD 40 per person (not included)"
+      ],
+      "places": [
+        "Gexian Village",
+        "Lingshan Mountain",
+        "Wangxian Valley",
+        "Jiuqu Stream",
+        "Wuyi Palace",
+        "Imitation Song Dynasty Ancient Street",
+        "Three Lanes and Seven Alleys"
+      ],
+      "posters": [
+        "cn-poster-fuzhou-wuyishan-wangxian-valley-5d4n-mf-0.jpg"
+      ],
+      "posterSize": [
+        572,
+        800
+      ]
+    },
+    {
+      "id": "guilin-yangshuo-5d4n-no-shopping",
+      "name": "Guilin – Yangshuo 5D4N Tour (No Shopping)",
+      "subtitle": "Out Manila · China Southern Airlines",
+      "region": "intl",
+      "country": "China",
+      "flag": "cn",
+      "duration": "5 days 4 nights",
+      "days": 5,
+      "status": "available",
+      "featured": false,
+      "departure": "Manila (NAIA)",
+      "price": {
+        "from": 799,
+        "label": "From",
+        "unit": "per pax",
+        "currency": "USD"
+      },
+      "year": 2026,
+      "ends": "2026-12-03",
+      "image": "cn-guilin.jpg",
+      "alt": "A bamboo raft on the Li River among the karst peaks of Guilin",
+      "gallery": [
+        "cn-guilin.jpg"
+      ],
+      "summary": "Guilin and Yangshuo with no shopping stops: Elephant Trunk Hill, a Li River cruise, Yulong River bamboo rafting and West Street, travelling by high-speed train, 4-star hotels.",
+      "overview": "Fly Manila to Guangzhou on China Southern Airlines, take the high-speed train (2nd class) to Yangshuo and spend four nights in 4-star hotels in Yangshuo and Guilin. Highlights are the Li River cruise (Xingping section), Yulong River bamboo rafting, Silver Cave and Yangshuo West Street. A private coach and an English-speaking guide are included.",
+      "travelDates": [
+        {
+          "d": "Nov 29–Dec 3"
+        }
+      ],
+      "travelDatesNote": "Departures from Manila, Nov 29–Dec 3 2026 to Nov 29–Dec 3 2026. The rate changes by date: an amount on a date is added to the base rate per pax. Seats are limited and confirmed at booking.",
+      "itinerary": [
+        {
+          "day": "Day 1",
+          "title": "Manila – Guangzhou – Yangshuo",
+          "items": [
+            "Fly Manila to Guangzhou (CZ5052, 03:20/05:50), meet your guide at the airport",
+            "Transfer to Yangshuo by high-speed train (2nd class seats)",
+            "Check in at the hotel (meals: X/X/D)"
+          ]
+        },
+        {
+          "day": "Day 2",
+          "title": "Guilin – Yangshuo",
+          "items": [
+            "Breakfast at the hotel",
+            "Proceed to Yangshuo by bus",
+            "Elephant Trunk Hill",
+            "Sun and Moon Twin Towers",
+            "Ronghu and Shanhu Scenic Area",
+            "Li River Cruise (Xingping section)",
+            "Back to the hotel (meals: B/L/D)"
+          ]
+        },
+        {
+          "day": "Day 3",
+          "title": "Silver Cave and Yulong River",
+          "items": [
+            "Breakfast at the hotel",
+            "Silver Cave",
+            "Yulong River bamboo rafting (8-person raft)",
+            "Yangshuo West Street",
+            "Back to the hotel (meals: B/L/D)"
+          ]
+        },
+        {
+          "day": "Day 4",
+          "title": "Yangshuo – Guilin",
+          "items": [
+            "Breakfast at the hotel",
+            "Nanxi Park",
+            "East and West Alleys",
+            "Xiaoyao Tower",
+            "Proceed to Guilin by bus",
+            "Back to the hotel (meals: B/L/D)"
+          ]
+        },
+        {
+          "day": "Day 5",
+          "title": "Guilin – Guangzhou – Manila",
+          "items": [
+            "Breakfast at the hotel",
+            "Transfer to Guangzhou by high-speed train (2nd class seats)",
+            "Transfer to the airport and fly to Manila (CZ5051, 23:45/02:20+1) (meals: B/L/X)"
+          ]
+        }
+      ],
+      "inclusions": [
+        "International air ticket and terminal tax",
+        "Baggage: 1 piece 23 kg checked-in and 1 piece 5 kg hand carry",
+        "4 nights’ accommodation, twin sharing, with daily breakfast",
+        "8 meals as listed",
+        "High-speed train with 2nd class seats, Guangzhou to Guilin and Guilin to Guangzhou",
+        "Private coach with English-speaking tour guide",
+        "Sightseeing as specified, with all entrance fees",
+        "Mineral water"
+      ],
+      "exclusions": [
+        "Philippines travel tax (USD 30 or PHP 1,620 per person)",
+        "Personal expenses such as phone calls and minibar",
+        "Single supplement USD 130 per person",
+        "Tips for driver and guide USD 25 per person (USD 5 per day x 5 days)",
+        "Optional tour package",
+        "China visa USD 40 per person",
+        "Travel insurance"
+      ],
+      "hotelsLabel": "Hotels",
+      "hotels": [
+        "Day 1: Mercure Gaoxin Hotel or similar 4★ (Yangshuo)",
+        "Day 2-3: Xin West Street Licheng Huating or similar 4★",
+        "Day 4: Mercure Gaoxin Hotel or similar 4★ (Guilin)"
+      ],
+      "notes": [
+        "Meal codes: B = breakfast, L = lunch, D = dinner, X = not included",
+        "No shopping stops",
+        "Philippine passport holders need a China visa; it is not included (USD 40 per person)",
+        "All services are on a private basis",
+        "Hotels are subject to replacement with similar ones if not available",
+        "Itinerary may change according to local situation",
+        "Rates may change without prior notice; please re-inquire if the dates fall on a national holiday or a big exhibition"
+      ],
+      "places": [
+        "Elephant Trunk Hill",
+        "Sun and Moon Twin Towers",
+        "Ronghu and Shanhu Scenic Area",
+        "Li River (Xingping)",
+        "Silver Cave",
+        "Yulong River",
+        "Yangshuo West Street",
+        "Nanxi Park",
+        "East and West Alleys",
+        "Xiaoyao Tower"
+      ],
+      "posters": [
+        "cn-poster-guilin-yangshuo-5d4n-no-shopping-0.jpg"
+      ],
+      "posterSize": [
+        519,
+        800
+      ]
+    },
+    {
+      "id": "hainan-haikou-sanya-6d5n",
+      "name": "Paradise Hainan – Haikou – Sanya 6D5N Tour",
+      "subtitle": "Out Manila · Cathay Pacific",
+      "region": "intl",
+      "country": "China",
+      "flag": "cn",
+      "duration": "6 days 5 nights",
+      "days": 6,
+      "status": "available",
+      "featured": false,
+      "departure": "Manila (NAIA)",
+      "price": {
+        "from": 549,
+        "label": "From",
+        "unit": "per pax",
+        "currency": "USD"
+      },
+      "year": 2026,
+      "ends": "2027-03-30",
+      "image": "cn-sanya.jpg",
+      "alt": "Sunset over the sea at Sanya, Hainan",
+      "gallery": [
+        "cn-sanya.jpg"
+      ],
+      "summary": "Six days across Hainan from Haikou to Lingshui, Sanya and Ocean Flower Island in 5-star hotels, with visa-free entry for Philippine passport holders.",
+      "overview": "Fly via Hong Kong to Haikou and travel south through Lingshui and Sanya to Ocean Flower Island, staying in 5-star hotels. Highlights include Haikou Qilou Old Street, Boundary Island, Phoenix Ridge Mountain Top Park, Yalong Bay Rose Valley and the Ocean Flower Island parade. Philippine passport holders enjoy 30-day visa-free entry to Hainan.",
+      "travelDates": [
+        {
+          "d": "Dec 3–8"
+        },
+        {
+          "d": "Dec 21–26",
+          "add": 200,
+          "cur": "USD"
+        },
+        {
+          "d": "Jan 14–19",
+          "y": 2027
+        },
+        {
+          "d": "Mar 25–30",
+          "y": 2027,
+          "add": 100,
+          "cur": "USD"
+        }
+      ],
+      "travelDatesNote": "Departures from Manila, Dec 3–8 2026 to Mar 25–30 2027. The rate changes by date: an amount on a date is added to the base rate per pax. Seats are limited and confirmed at booking.",
+      "itinerary": [
+        {
+          "day": "Day 1",
+          "title": "Manila – Hong Kong – Haikou",
+          "items": [
+            "Fly Manila to Hong Kong (CX912 08:00–10:20), then to Haikou (CX310 14:00–15:35)",
+            "Meet the English-speaking guide at Haikou airport",
+            "Haikou Qilou Old Street, century-old Qilou buildings",
+            "Dongpo Old Wharf",
+            "Hotel check-in"
+          ]
+        },
+        {
+          "day": "Day 2",
+          "title": "Haikou – Lingshui",
+          "items": [
+            "Hotel breakfast and check out",
+            "Hainan Provincial Museum",
+            "Lingshui Boundary Island (round-trip ferry included, marine tours not included)"
+          ]
+        },
+        {
+          "day": "Day 3",
+          "title": "Lingshui – Sanya",
+          "items": [
+            "Hotel breakfast and check out",
+            "Sanya Phoenix Ridge Mountain Top Park (round-trip cable car included)",
+            "Luhuitou Mountain Top Park (electric cart included)",
+            "Dadonghai Tourist Area",
+            "Optional: Yacht night tour on Sanya Bay"
+          ]
+        },
+        {
+          "day": "Day 4",
+          "title": "Sanya",
+          "items": [
+            "Hotel breakfast",
+            "Fish oil store stop",
+            "Binglang Valley Li and Miao Cultural Tourism Area (electric cart included)",
+            "Yalong Bay Rose Valley (electric cart included)",
+            "Optional: Binglang Valley Ancient Charm Show + hotel seafood buffet"
+          ]
+        },
+        {
+          "day": "Day 5",
+          "title": "Sanya – Haikou",
+          "items": [
+            "Hotel breakfast and check out",
+            "Sanya supermarket stop (bamboo charcoal products)",
+            "Riyue Bay, a world-class surfing base",
+            "Danzhou Ocean Flower Island",
+            "Ocean Flower Island parade, wedding chapel light show and strolling the eight themed streets"
+          ]
+        },
+        {
+          "day": "Day 6",
+          "title": "Haikou – Hong Kong – Manila",
+          "items": [
+            "Hotel breakfast and check out",
+            "Danzhou ancient salt fields",
+            "Drive tour to Yangpu Port",
+            "Lunch, then transfer to airport and fly to Hong Kong (CX313 16:45–18:15) and on to Manila (CX939 22:10–00:20+1)"
+          ]
+        }
+      ],
+      "inclusions": [
+        "Economy round-trip airfare and taxes via Cathay Pacific",
+        "Baggage: 1 piece 23 kg check-in",
+        "5 nights’ accommodation, twin sharing, in 5★ hotels with daily breakfast",
+        "Private bus with English-speaking tour guide",
+        "Sightseeing as specified, including first-way entrance fees",
+        "Meals: breakfast and 8 meals, including Hainan local specialties"
+      ],
+      "exclusions": [
+        "Personal expenses such as phone calls and minibar",
+        "Travel insurance",
+        "Philippines travel tax: USD 30 per person (collected with tour fee)",
+        "Tips for driver and guide: USD 60 per person (USD 10 per day x 6 days, collected with tour fee)",
+        "Fuel surcharge: USD 95 per person (collected with tour fee, subject to change)",
+        "Single supplement: USD 190 per person",
+        "Optional tours"
+      ],
+      "optional": [
+        "Yacht night tour on Sanya Bay + Binglang Valley Ancient Charm Show + hotel seafood buffet, USD 150 per person"
+      ],
+      "hotelsLabel": "Hotels",
+      "hotels": [
+        "Day 1: 5★ hotel in Haikou",
+        "Day 2: 5★ hotel in Lingshui",
+        "Day 3–4: 5★ hotel in Sanya",
+        "Day 5: 5★ hotel in Ocean Flower Island"
+      ],
+      "notes": [
+        "Visa: Philippine passport holders enjoy 30-day visa-free entry to Hainan for tourism",
+        "Rate includes two shop visits: Fish Oil Store and Sanya Supermarket (bamboo charcoal products)",
+        "Adult (23–75 yrs), 12–22 yrs and 76 yrs onwards (with bed) and child without bed (2–11 yrs) are priced separately; Dec 21–26 costs more",
+        "Single supplement USD 190 per person",
+        "Many Hainan hotels have no standard triple room; an extra bed may be added to a twin or double room",
+        "No refunds for cancelled itinerary or accommodation during the trip; tips are payable for the full number of days",
+        "Order of attractions may change with weather or traffic; itinerary, flight times and hotels are subject to final confirmation"
+      ],
+      "places": [
+        "Haikou Qilou Old Street",
+        "Dongpo Old Wharf",
+        "Hainan Provincial Museum",
+        "Boundary Island",
+        "Phoenix Ridge Mountain Top Park",
+        "Luhuitou Mountain Top Park",
+        "Dadonghai",
+        "Binglang Valley",
+        "Yalong Bay Rose Valley",
+        "Riyue Bay",
+        "Ocean Flower Island",
+        "Danzhou Salt Fields",
+        "Yangpu Port"
+      ],
+      "posters": [
+        "cn-poster-hainan-haikou-sanya-6d5n-0.jpg"
+      ],
+      "posterSize": [
+        511,
+        800
+      ]
+    },
+    {
+      "id": "harbin-6d5n-no-shopping",
+      "name": "Harbin (via Guangzhou) 6D5N Winter Tour (No Shopping)",
+      "subtitle": "Out Manila · China Southern Airlines",
+      "region": "intl",
+      "country": "China",
+      "flag": "cn",
+      "duration": "6 days 5 nights",
+      "days": 6,
+      "status": "available",
+      "featured": false,
+      "departure": "Manila (NAIA)",
+      "price": {
+        "from": 988,
+        "label": "From",
+        "unit": "per pax",
+        "currency": "USD"
+      },
+      "year": 2026,
+      "ends": "2026-12-07",
+      "image": "cn-harbin-ice.jpg",
+      "alt": "Ice sculptures at the Harbin Ice and Snow World",
+      "gallery": [
+        "cn-harbin-ice.jpg"
+      ],
+      "summary": "Fly via Guangzhou to Harbin for the Siberian Tiger Park, an indoor ice and snow world, Russian-style Chateau Volga and the city’s Central Street.",
+      "overview": "Five nights in 5-star hotels, with a night in Guangzhou on each side of three nights in Harbin. See the Siberian Tiger Park, the Dreamy Ice and Snow Pavilion, Chateau Volga, St. Nicholas Church and Sophia Church Square. Flights are with China Southern Airlines, and one meal is upgraded to BBQ and one to hotpot at no charge.",
+      "travelDates": [
+        {
+          "d": "Dec 2–7"
+        }
+      ],
+      "travelDatesNote": "Departures from Manila, Dec 2–7 2026 to Dec 2–7 2026. The rate changes by date: an amount on a date is added to the base rate per pax. Seats are limited and confirmed at booking.",
+      "itinerary": [
+        {
+          "day": "Day 1",
+          "title": "Manila – Guangzhou",
+          "items": [
+            "Fly Manila to Guangzhou (CZ398 17:55/20:30); meet the Guangzhou guide.",
+            "Transfer to hotel and check in. Meals: X/X/X."
+          ]
+        },
+        {
+          "day": "Day 2",
+          "title": "Guangzhou – Harbin",
+          "items": [
+            "Hotel breakfast and check out.",
+            "Fly Guangzhou to Harbin (CZ3913 10:35/14:55); meet the Harbin guide.",
+            "Visit a cotton-padded jacket shop.",
+            "Transfer to hotel. Meals: B/X/D."
+          ]
+        },
+        {
+          "day": "Day 3",
+          "title": "Harbin",
+          "items": [
+            "Hotel breakfast.",
+            "Visit the Siberian Tiger Park.",
+            "Visit the Dreamy Ice and Snow Pavilion (indoor ice-snow world).",
+            "Harbin Grand Theatre (outside view).",
+            "Optional tour: Circus Show + afternoon tea at Shangri-La Hotel. Meals: B/L/D."
+          ]
+        },
+        {
+          "day": "Day 4",
+          "title": "Harbin",
+          "items": [
+            "Hotel breakfast.",
+            "Visit the Chocolate Workshop and Russian Handicrafts Mall.",
+            "Visit Chateau Volga, St. Nicholas Church, the snow circle, Vodka Fort (small vodka and snack) and the Pushkin Exhibition Hall. Meals: B/L/D."
+          ]
+        },
+        {
+          "day": "Day 5",
+          "title": "Harbin – Guangzhou",
+          "items": [
+            "Hotel breakfast and check out.",
+            "Visit Central Street, Stalin Park, Flood Control Monument and Sophia Church Square.",
+            "Optional tour: Songhua River cable car.",
+            "Fly Harbin to Guangzhou (CZ3914 16:00/21:05); transfer to hotel. Meals: B/L/X."
+          ]
+        },
+        {
+          "day": "Day 6",
+          "title": "Guangzhou – Manila",
+          "items": [
+            "Check out and transfer to the airport; fly to Manila (CZ3091 08:20/10:50). Meals: B/X/X."
+          ]
+        }
+      ],
+      "inclusions": [
+        "Economy airfare and taxes with China Southern Airlines (round trip)",
+        "Baggage: 1 piece 23 kg check-in plus 7 kg carry-on",
+        "5 nights twin-share accommodation with daily breakfast (double/triple rooms and extra beds not guaranteed)",
+        "Private coach with English-speaking tour guide",
+        "Sightseeing as specified, including first-way entrance fees",
+        "Meals as listed, with a free upgrade of 1 meal to BBQ and 1 meal to hotpot"
+      ],
+      "exclusions": [
+        "Personal expenses such as phone calls and minibar",
+        "Extra baggage allowance",
+        "Travel insurance",
+        "Fuel surcharge: USD 75 per person, subject to change",
+        "Philippine travel tax: PHP 1,620 (or USD 28) per person, paid directly at the airport",
+        "China group visa (guaranteed): USD 40 per person",
+        "Tips for driver and guide: USD 5 per person per day x 6 days = USD 30",
+        "Single supplement: USD 180 per person"
+      ],
+      "optional": [
+        "Songhua River cable car + Circus Show + afternoon tea at Shangri-La Hotel: USD 99 per person (package)"
+      ],
+      "hotelsLabel": "Hotels",
+      "hotels": [
+        "Day 1: Local 5★ hotel in Guangzhou",
+        "Day 2-4: 5★ hotel in Harbin",
+        "Day 5: Local 5★ hotel in Guangzhou"
+      ],
+      "notes": [
+        "Marketed as a No Shopping package. The itinerary still lists a cotton-padded jacket shop stop, a chocolate workshop and a Russian handicrafts mall.",
+        "Child without bed is 2-10 yrs.",
+        "Hotels may be replaced by similar ones; services are private; the order of sights may change."
+      ],
+      "places": [
+        "Siberian Tiger Park",
+        "Dreamy Ice and Snow Pavilion",
+        "Harbin Grand Theatre",
+        "Chateau Volga",
+        "St. Nicholas Church",
+        "Vodka Fort",
+        "Pushkin Exhibition Hall",
+        "Central Street",
+        "Stalin Park",
+        "Flood Control Monument",
+        "Sophia Church Square"
+      ],
+      "posters": [
+        "cn-poster-harbin-6d5n-no-shopping-0.jpg"
+      ],
+      "posterSize": [
+        516,
+        800
+      ]
+    },
+    {
+      "id": "harbin-5d4n",
+      "name": "Harbin 5D4N Tour",
+      "subtitle": "Out Manila · China Eastern Airlines",
+      "region": "intl",
+      "country": "China",
+      "flag": "cn",
+      "duration": "5 days 4 nights",
+      "days": 5,
+      "status": "available",
+      "featured": false,
+      "departure": "Manila (NAIA)",
+      "price": {
+        "from": 1458,
+        "label": "From",
+        "unit": "per pax",
+        "currency": "USD"
+      },
+      "year": 2026,
+      "ends": "2027-01-04",
+      "image": "cn-harbin-ice.jpg",
+      "alt": "Ice sculptures at the Harbin Ice and Snow World",
+      "gallery": [
+        "cn-harbin-ice.jpg"
+      ],
+      "summary": "Five days in Harbin with the Siberian Tiger Park, Ice-Snow World and Russian-style sights, flying China Eastern via Shanghai.",
+      "overview": "Fly China Eastern via Shanghai to Harbin for the Siberian Tiger Park, Harbin Ice-Snow World, Chateau Volga, St. Nicholas Church and Sophia Church Square. You stay four nights in a 5-star Harbin hotel, with a free meal upgrade to Ice Palace hotpot and BBQ.",
+      "travelDates": [
+        {
+          "d": "Dec 22–26"
+        },
+        {
+          "d": "Dec 24–28"
+        },
+        {
+          "d": "Dec 26–30"
+        },
+        {
+          "d": "Dec 27–31"
+        },
+        {
+          "d": "Dec 29–Jan 2"
+        },
+        {
+          "d": "Dec 31–Jan 4"
+        }
+      ],
+      "travelDatesNote": "Departures from Manila, Dec 22–26 2026 to Dec 31–Jan 4 2026. The rate changes by date: an amount on a date is added to the base rate per pax. Seats are limited and confirmed at booking.",
+      "itinerary": [
+        {
+          "day": "Day 1",
+          "title": "Manila – Shanghai – Harbin",
+          "items": [
+            "Fly Manila to Shanghai Pudong (MU212, 03:55–07:25), then connecting flight to Harbin (FM9063, 14:00–17:00)",
+            "Meet the Harbin tour guide",
+            "Cotton-padded jacket shop visit",
+            "Transfer to hotel and check in"
+          ]
+        },
+        {
+          "day": "Day 2",
+          "title": "Harbin",
+          "items": [
+            "Breakfast at the hotel",
+            "Siberian Tiger Park",
+            "Harbin Ice-Snow World",
+            "Songhua River cable car + Harbin Grand Theatre, outside view (optional)"
+          ]
+        },
+        {
+          "day": "Day 3",
+          "title": "Harbin",
+          "items": [
+            "Breakfast at the hotel and check out",
+            "Chateau Volga",
+            "St. Nicholas Church",
+            "Snow circle experience",
+            "Vodka Fort, with a small vodka and a snack",
+            "Pushkin Exhibition Hall"
+          ]
+        },
+        {
+          "day": "Day 4",
+          "title": "Harbin",
+          "items": [
+            "Breakfast at the hotel",
+            "Central Street",
+            "Stalin Park",
+            "Flood Control Monument",
+            "Sophia Church Square",
+            "Middle East Railway Bridge",
+            "Chocolate workshop and Russian handicrafts mall",
+            "Winter swimming + ice activities (optional)"
+          ]
+        },
+        {
+          "day": "Day 5",
+          "title": "Harbin – Shanghai – Manila",
+          "items": [
+            "Breakfast at the hotel and check out",
+            "Transfer to the airport and fly Harbin to Shanghai (MU5610, 11:55–14:55)",
+            "Connecting flight Shanghai to Manila (MU211, 21:35–01:20+1)"
+          ]
+        }
+      ],
+      "inclusions": [
+        "Economy airfare and taxes via China Eastern Airlines, round trip",
+        "Baggage allowance: 1 piece of 23 kg per passenger plus 7 kg carry-on",
+        "4 nights’ accommodation, twin sharing, with daily hotel breakfast (double/triple rooms and extra beds not guaranteed)",
+        "Private coach with English-speaking tour guide",
+        "Sightseeing as specified, including first-way entrance fees",
+        "Meals as listed, with a free upgrade of 1 meal to Ice Palace hotpot and 1 meal to BBQ"
+      ],
+      "exclusions": [
+        "Personal expenses such as phone calls and minibar",
+        "Extra baggage",
+        "Travel insurance",
+        "Fuel surcharge USD 50 per person, subject to change",
+        "Philippine travel tax USD 28 per person (PHP 1,620)",
+        "China group visa (guaranteed) USD 40 per person",
+        "Tips for driver and guide USD 25 per person (USD 5 per day for 5 days)",
+        "Single supplement USD 230 per person"
+      ],
+      "optional": [
+        "Optional package: Songhua River cable car + Harbin Grand Theatre (outside view) + winter swimming + ice activities – USD 99 per person"
+      ],
+      "hotelsLabel": "Hotels",
+      "hotels": [
+        "Day 1–4: 5★ hotel in Harbin",
+        "Day 5: Sweet Home"
+      ],
+      "notes": [
+        "Meals per day: D1 none; D2–D4 B/L/D; D5 B",
+        "Adult and child with bed share one rate; child without bed is ages 2–10",
+        "Philippine passport holders need a China visa (group visa USD 40 per person)",
+        "Hotels may be replaced by similar ones; services are on a private basis; order of sights may change for crowds or special circumstances"
+      ],
+      "places": [
+        "Siberian Tiger Park",
+        "Harbin Ice-Snow World",
+        "Chateau Volga",
+        "St. Nicholas Church",
+        "Vodka Fort",
+        "Pushkin Exhibition Hall",
+        "Central Street",
+        "Stalin Park",
+        "Flood Control Monument",
+        "Sophia Church Square",
+        "Middle East Railway Bridge",
+        "Songhua River",
+        "Harbin Grand Theatre"
+      ],
+      "posters": [
+        "cn-poster-harbin-5d4n-0.jpg"
+      ],
+      "posterSize": [
+        534,
+        800
+      ]
+    },
+    {
+      "id": "harbin-5d4n-no-shopping",
+      "name": "Harbin 5D4N Tour (No Shopping)",
+      "subtitle": "Out Manila · Air China / China Eastern Airlines",
+      "region": "intl",
+      "country": "China",
+      "flag": "cn",
+      "duration": "5 days 4 nights",
+      "days": 5,
+      "status": "available",
+      "featured": false,
+      "departure": "Manila (NAIA)",
+      "price": {
+        "from": 1358,
+        "label": "From",
+        "unit": "per pax",
+        "currency": "USD"
+      },
+      "year": 2026,
+      "ends": "2027-02-15",
+      "image": "cn-harbin-ice.jpg",
+      "alt": "Ice sculptures at the Harbin Ice and Snow World",
+      "gallery": [
+        "cn-harbin-ice.jpg"
+      ],
+      "summary": "Five winter days in Harbin with Ice-Snow World, the Siberian Tiger Park and Russian-style old town sights, staying in a 5★ hotel.",
+      "overview": "Fly to Harbin and stay four nights in a 5★ hotel for the Harbin winter: Ice-Snow World, the Siberian Tiger Park, Chateau Volga, Sophia Church Square and a chocolate workshop. The package includes a free meal upgrade to an Ice Palace hot pot and a barbecue, and an English-speaking guide with private coach. Air China flies via Beijing and China Eastern via Shanghai.",
+      "travelDates": [
+        {
+          "d": "Dec 22–26",
+          "add": 100,
+          "cur": "USD"
+        },
+        {
+          "d": "Jan 14–18",
+          "y": 2027
+        },
+        {
+          "d": "Jan 22–26",
+          "y": 2027
+        },
+        {
+          "d": "Jan 23–27",
+          "y": 2027
+        },
+        {
+          "d": "Jan 28–Feb 1",
+          "y": 2027
+        },
+        {
+          "d": "Feb 11–15",
+          "y": 2027
+        }
+      ],
+      "travelDatesNote": "Departures from Manila, Dec 22–26 2026 to Feb 11–15 2027. The rate changes by date: an amount on a date is added to the base rate per pax. Seats are limited and confirmed at booking.",
+      "itinerary": [
+        {
+          "day": "Day 1",
+          "title": "Manila – Beijing – Harbin",
+          "items": [
+            "Air China: fly Manila – Beijing (06:25 – 10:50), then Beijing – Harbin (17:30 – 19:25)",
+            "China Eastern: fly Manila – Shanghai (03:55 – 07:25), then Shanghai – Harbin (14:00 – 17:00)",
+            "Meet the Harbin tour guide",
+            "Cotton-padded jacket shop",
+            "Transfer to the hotel and check in",
+            "Meals: X/X/X"
+          ]
+        },
+        {
+          "day": "Day 2",
+          "title": "Harbin",
+          "items": [
+            "Breakfast at the hotel",
+            "Siberian Tiger Park",
+            "Harbin Ice-Snow World",
+            "Optional: Songhua River cable car and Harbin Grand Theatre (outside view)",
+            "Meals: B/L/D"
+          ]
+        },
+        {
+          "day": "Day 3",
+          "title": "Harbin",
+          "items": [
+            "Breakfast at the hotel and check out",
+            "Chateau Volga",
+            "St. Nicholas Church",
+            "Snow circle experience",
+            "Vodka Fort, with a small vodka and snack",
+            "Pushkin Exhibition Hall",
+            "Meals: B/L/D"
+          ]
+        },
+        {
+          "day": "Day 4",
+          "title": "Harbin",
+          "items": [
+            "Breakfast at the hotel",
+            "Central Street",
+            "Stalin Park",
+            "Flood Control Monument",
+            "Sophia Church Square",
+            "Middle East Railway Bridge",
+            "Chocolate workshop and Russian handicrafts mall",
+            "Optional: winter swimming and ice activities",
+            "Meals: B/L/D"
+          ]
+        },
+        {
+          "day": "Day 5",
+          "title": "Harbin – Manila",
+          "items": [
+            "Breakfast at the hotel and check out",
+            "Air China: fly Harbin – Beijing (11:40 – 13:55), then Beijing – Manila (19:00 – 00:05 next day)",
+            "China Eastern: fly Harbin – Shanghai (11:55 – 14:55), then Shanghai – Manila (21:35 – 01:20 next day)",
+            "Meals: B/X/X"
+          ]
+        }
+      ],
+      "inclusions": [
+        "Economy airfare and taxes via Air China or China Eastern Airlines (round trip, depending on departure)",
+        "Baggage allowance: 1 pc / 23 kg check-in plus 7 kg carry-on",
+        "4 nights’ accommodation, twin sharing, with daily hotel breakfast (double/triple rooms and extra beds not guaranteed)",
+        "Private coach with English-speaking tour guide",
+        "Sightseeing entrance fees as specified above (first way)",
+        "Meals as listed, with a free upgrade of 1 meal to Ice Palace hot pot and 1 meal to BBQ"
+      ],
+      "exclusions": [
+        "Personal expenses such as telephone calls and minibar",
+        "Extra baggage",
+        "Travel insurance",
+        "Fuel surcharge USD 50–75/pax depending on airline, subject to change",
+        "Philippine travel tax USD 28/pax (or PHP 1,620/pax)",
+        "China group visa USD 40/pax (guaranteed)",
+        "Tips for driver and guide USD 5/pax/day x 5 days = USD 25/pax",
+        "Single supplement USD 230/pax"
+      ],
+      "optional": [
+        "Optional package, USD 99/pax: Songhua River cable car + Harbin Grand Theatre (outside view) + winter swimming + ice activities"
+      ],
+      "hotelsLabel": "Hotels",
+      "hotels": [
+        "Day 1-4: 5★ hotel in Harbin",
+        "Day 5: Sweet Home"
+      ],
+      "notes": [
+        "Meal codes: B = breakfast, L = lunch, D = dinner, X = not included",
+        "Package is marketed as no shopping apart from a cotton-padded jacket shop stop on Day 1",
+        "Single supplement USD 230/pax",
+        "Child without bed 2–10 yrs; adult and child with bed share one rate",
+        "Visa: China group visa USD 40/pax is not included",
+        "Rooms are twin sharing by default; double/triple rooms and extra beds not guaranteed",
+        "If hotels are unavailable they are replaced by similar ones; the order of sights may change in crowded periods"
+      ],
+      "places": [
+        "Siberian Tiger Park",
+        "Harbin Ice-Snow World",
+        "Chateau Volga",
+        "St. Nicholas Church",
+        "Vodka Fort",
+        "Pushkin Exhibition Hall",
+        "Central Street",
+        "Stalin Park",
+        "Flood Control Monument",
+        "Sophia Church Square",
+        "Middle East Railway Bridge",
+        "Songhua River Cable Car",
+        "Harbin Grand Theatre"
+      ],
+      "posters": [
+        "cn-poster-harbin-5d4n-no-shopping-0.jpg"
+      ],
+      "posterSize": [
+        534,
+        800
+      ]
+    },
+    {
+      "id": "harbin-6d5n-no-shopping-2",
+      "name": "Harbin – Yabuli – Mudanjiang 6D5N Winter Tour (No Shopping)",
+      "subtitle": "Out Manila · Air China",
+      "region": "intl",
+      "country": "China",
+      "flag": "cn",
+      "duration": "6 days 5 nights",
+      "days": 6,
+      "status": "available",
+      "featured": false,
+      "departure": "Manila (NAIA)",
+      "price": {
+        "from": 1398,
+        "label": "From",
+        "unit": "per pax",
+        "currency": "USD"
+      },
+      "year": 2026,
+      "ends": "2027-02-02",
+      "image": "cn-harbin-ice.jpg",
+      "alt": "Ice sculptures at the Harbin Ice and Snow World",
+      "gallery": [
+        "cn-harbin-ice.jpg"
+      ],
+      "summary": "Fly Air China via Beijing to Harbin for Ice-Snow World, the Yabuli ski resort area, Mudanjiang’s Chateau Volga and the Siberian Tiger Park in 5-star hotels.",
+      "overview": "Fly with Air China via Beijing to Harbin for a winter tour of Harbin Ice-Snow World, Sophia Church Square, the Songhua River and the Siberian Tiger Park. A trip to the Yabuli ski resort area takes you on to Mudanjiang and Chateau Volga. Five nights in 5-star hotels (Crowne Plaza Harbin or similar), with two free meal upgrades.",
+      "travelDates": [
+        {
+          "d": "Dec 31–Jan 5",
+          "add": 100,
+          "cur": "USD"
+        },
+        {
+          "d": "Jan 28–Feb 2",
+          "y": 2027
+        }
+      ],
+      "travelDatesNote": "Departures from Manila, Dec 31–Jan 5 2026 to Jan 28–Feb 2 2027. The rate changes by date: an amount on a date is added to the base rate per pax. Seats are limited and confirmed at booking.",
+      "itinerary": [
+        {
+          "day": "Day 1",
+          "title": "Manila – Beijing – Harbin",
+          "items": [
+            "Fly Manila to Beijing (CA180, 06:20–10:55)",
+            "Connect to Harbin (CA1623, 12:55–14:55 on Dec 31; CA1611, 17:30–19:25 on Jan 28)",
+            "Meet the Harbin tour guide",
+            "Cotton-padded jacket shop",
+            "Transfer to the hotel and check in"
+          ]
+        },
+        {
+          "day": "Day 2",
+          "title": "Harbin – Yabuli – Mudanjiang",
+          "items": [
+            "Breakfast and check out",
+            "Head to Yabuli, Asia’s largest ski resort, with snow and photo spots everywhere (optional skiing)",
+            "Photo stop to enjoy trees and forest frozen in snow on the way",
+            "Head to Mudanjiang",
+            "Transfer to the hotel and check in"
+          ]
+        },
+        {
+          "day": "Day 3",
+          "title": "Mudanjiang – Harbin",
+          "items": [
+            "Breakfast and check out",
+            "Chateau Volga",
+            "St. Nicholas Church",
+            "Snow circle experience",
+            "Vodka Fort, with a small vodka and snack",
+            "Pushkin Exhibition Hall",
+            "Transfer to the hotel"
+          ]
+        },
+        {
+          "day": "Day 4",
+          "title": "Harbin",
+          "items": [
+            "Breakfast at the hotel",
+            "Russian handicrafts mall",
+            "Songhua River",
+            "Stalin Park",
+            "Central Street",
+            "Flood Control Monument",
+            "Sophia Church Square",
+            "Middle East Railway Bridge",
+            "Harbin Ice-Snow World",
+            "Transfer to the hotel"
+          ]
+        },
+        {
+          "day": "Day 5",
+          "title": "Harbin",
+          "items": [
+            "Breakfast at the hotel",
+            "Watch winter swimming",
+            "Best-preserved Baroque-style old street",
+            "Siberian Tiger Park",
+            "Transfer to the hotel"
+          ]
+        },
+        {
+          "day": "Day 6",
+          "title": "Harbin – Beijing – Manila",
+          "items": [
+            "Breakfast and check out",
+            "Transfer to the airport and fly to Beijing (CA1644, 11:40–13:55)",
+            "Connect to Manila (CA179, 19:00–00:05+1)"
+          ]
+        }
+      ],
+      "inclusions": [
+        "Round-trip economy airfare and taxes via Air China",
+        "Baggage: 1 piece of 23 kg checked plus 7 kg carry-on",
+        "5 nights twin-sharing accommodation at 5-star hotels with daily breakfast (double or triple rooms and extra beds are not guaranteed)",
+        "Private coach with English-speaking tour guide",
+        "Sightseeing as specified, including the first-way entrance fees",
+        "Meals as listed, with a free upgrade of one meal to Ice Palace hot pot and one meal to BBQ"
+      ],
+      "exclusions": [
+        "Personal expenses such as phone calls and minibar",
+        "Extra baggage allowance",
+        "Travel insurance",
+        "Fuel surcharge: USD 75 per person, subject to change",
+        "Philippine travel tax: USD 28 per person (PHP 1,620)",
+        "China Group Visa (guaranteed): USD 40 per person",
+        "Tips for driver and guide: USD 30 per person, USD 5 per day for 6 days",
+        "Single supplement: USD 250 per person"
+      ],
+      "optional": [
+        "Yabuli skiing: USD 20 per person, 3 hours including snow poles and snowboard (minimum 10 people)",
+        "Horse-drawn sled, Ice and Snow Gallery and snowmobile: USD 99 per person"
+      ],
+      "hotelsLabel": "Hotels",
+      "hotels": [
+        "Day 1, 3, 4, 5: Crowne Plaza Hotel Harbin or similar 5-star",
+        "Day 2: 5-star hotel in Mudanjiang"
+      ],
+      "notes": [
+        "Meals (by day): Day 1 dinner; Day 2 B/L/D; Day 3 B/L/D; Day 4 B/L/D; Day 5 B/L/D; Day 6 breakfast",
+        "Child with bed is priced as an adult; child without bed 2 to 10 years",
+        "Sold as a No Shopping package, although the source itinerary also lists a cotton-padded jacket shop and a Russian handicrafts mall visit",
+        "If the listed hotels are not available they will be replaced by similar ones",
+        "All services are private; the order of attractions may be adjusted in crowded periods",
+        "Philippine passport holders need a China visa; the China Group Visa fee is listed under exclusions."
+      ],
+      "places": [
+        "Harbin Ice-Snow World",
+        "Yabuli Ski Resort",
+        "Chateau Volga",
+        "St. Nicholas Church",
+        "Pushkin Exhibition Hall",
+        "Songhua River",
+        "Stalin Park",
+        "Central Street",
+        "Flood Control Monument",
+        "Sophia Church Square",
+        "Middle East Railway Bridge",
+        "Baroque Old Street",
+        "Siberian Tiger Park"
+      ],
+      "posters": [
+        "cn-poster-harbin-6d5n-no-shopping-2-0.jpg"
+      ],
+      "posterSize": [
+        510,
+        800
+      ]
+    },
+    {
+      "id": "harbin-6d5n-no-shopping-2-2",
+      "name": "Harbin (Via Guangzhou) 6D5N Tour (No Shopping)",
+      "subtitle": "Out Manila · China Southern Airlines",
+      "region": "intl",
+      "country": "China",
+      "flag": "cn",
+      "duration": "6 days 5 nights",
+      "days": 6,
+      "status": "available",
+      "featured": false,
+      "departure": "Manila (NAIA)",
+      "price": {
+        "from": 1388,
+        "label": "From",
+        "unit": "per pax",
+        "currency": "USD"
+      },
+      "year": 2026,
+      "ends": "2027-01-18",
+      "image": "cn-harbin-ice.jpg",
+      "alt": "Ice sculptures at the Harbin Ice and Snow World",
+      "gallery": [
+        "cn-harbin-ice.jpg"
+      ],
+      "summary": "Fly via Guangzhou to Harbin for Ice-Snow World, the Siberian Tiger Park, Russian-style streets and an optional Yabuli ski day, in 5-star hotels.",
+      "overview": "This 6-day winter tour flies China Southern Airlines from Manila via Guangzhou to Harbin. You visit Harbin Ice-Snow World, the Middle East Railway Bridge, the Baroque-style old street, Chateau Volga and the Siberian Tiger Park, with an optional day trip to Yabuli, Asia’s largest ski resort. Hotels are 5-star, and one lunch is upgraded to Ice Palace hot pot and one meal to BBQ.",
+      "travelDates": [
+        {
+          "d": "Jan 6–11",
+          "y": 2027
+        },
+        {
+          "d": "Jan 8–13",
+          "y": 2027
+        },
+        {
+          "d": "Jan 13–18",
+          "y": 2027
+        }
+      ],
+      "travelDatesNote": "Departures from Manila, Jan 6–11 2027 to Jan 13–18 2027. The rate changes by date: an amount on a date is added to the base rate per pax. Seats are limited and confirmed at booking.",
+      "itinerary": [
+        {
+          "day": "Day 1",
+          "title": "Manila – Guangzhou – Harbin",
+          "items": [
+            "Flight CZ3092 Manila to Guangzhou (12:00–14:40)",
+            "Connecting flight CZ8740 Guangzhou to Harbin (17:25–23:30)",
+            "Meet the Harbin tour guide",
+            "Cotton-padded jacket shop visit",
+            "Transfer to the hotel and check in",
+            "Meals: none included (X/X/X)"
+          ]
+        },
+        {
+          "day": "Day 2",
+          "title": "Harbin – Yabuli",
+          "items": [
+            "Breakfast at the hotel and check out",
+            "Head to Yabuli, Asia’s largest ski resort, for snow and photos",
+            "Photo stop to see snow-frozen trees and forest on the way",
+            "Optional: 3 hours of skiing with poles and snowboard, USD 20 per person (minimum 10 travellers)",
+            "Optional: horse-drawn sled, forest small train and the world’s number one slide, USD 99 per person",
+            "Meals: Breakfast / Lunch / Dinner"
+          ]
+        },
+        {
+          "day": "Day 3",
+          "title": "Harbin",
+          "items": [
+            "Breakfast at the hotel and check out",
+            "Middle East Railway Bridge",
+            "Best-preserved Baroque-style old street",
+            "Harbin Ice-Snow World",
+            "Meals: Breakfast / Lunch / Dinner"
+          ]
+        },
+        {
+          "day": "Day 4",
+          "title": "Harbin",
+          "items": [
+            "Breakfast at the hotel",
+            "Chateau Volga",
+            "St. Nicholas Church",
+            "Snow circle experience",
+            "Vodka Fort, with a small vodka and snack",
+            "Pushkin Exhibition Hall",
+            "Meals: Breakfast / Lunch / Dinner"
+          ]
+        },
+        {
+          "day": "Day 5",
+          "title": "Harbin",
+          "items": [
+            "Breakfast at the hotel",
+            "Siberian Tiger Park",
+            "Central Street, Stalin Park, Flood Control Monument and Sophia Church Square",
+            "Chocolate workshop and Russian handicrafts mall",
+            "Meals: Breakfast / Lunch / Dinner"
+          ]
+        },
+        {
+          "day": "Day 6",
+          "title": "Harbin – Guangzhou – Manila",
+          "items": [
+            "Breakfast at the hotel and check out",
+            "Giant snowman sculpture",
+            "Transfer to the airport",
+            "Flight CZ3616 Harbin to Guangzhou (13:15–18:05)",
+            "Connecting flight CZ3077 Guangzhou to Manila (20:00–22:30)",
+            "Meals: Breakfast only"
+          ]
+        }
+      ],
+      "inclusions": [
+        "Round-trip economy airfare and taxes via China Southern Airlines",
+        "Baggage allowance: 1 piece of 23 kg check-in plus 5 kg carry-on",
+        "5 nights accommodation, twin sharing, with daily hotel breakfast (double/triple rooms and extra bed not guaranteed)",
+        "Private coach with an English-speaking tour guide",
+        "Sightseeing as listed, including first-way entrance fees",
+        "Meals as listed, with one meal upgraded to Ice Palace hot pot and one meal to BBQ"
+      ],
+      "exclusions": [
+        "Personal expenses such as telephone calls and minibar",
+        "Extra baggage",
+        "Travel insurance",
+        "Fuel surcharge USD 75 per person (subject to change)",
+        "Philippine travel tax PHP 1,620 per person (pay at the airport)",
+        "China group visa (guaranteed) USD 40 per person",
+        "Tips for driver and guide USD 30 per person (USD 5 per day x 6 days)",
+        "Single supplement USD 260 per person"
+      ],
+      "optional": [
+        "Yabuli skiing, 3 hours with poles and snowboard: USD 20 per person (minimum 10 travellers)",
+        "Horse-drawn sled + forest small train + the world’s number one slide: USD 99 per person"
+      ],
+      "hotelsLabel": "Hotels",
+      "hotels": [
+        "Day 1 and Day 3–5: 5★ hotel in Harbin",
+        "Day 2: 5★ hotel in Mudanjiang (as printed for the Yabuli day)"
+      ],
+      "notes": [
+        "Meal codes B/L/D = breakfast/lunch/dinner; X = not included.",
+        "Sold as a No Shopping package. The itinerary still lists a cotton-padded jacket shop stop on Day 1 and a chocolate workshop and Russian handicrafts mall on Day 5.",
+        "Philippine passport holders need a China visa; the China group visa is USD 40 per person.",
+        "Child rates: child with bed same as adult; child without bed ages 2–10.",
+        "Hotels may be replaced by similar ones; the order of attractions may change in crowded periods or special circumstances."
+      ],
+      "places": [
+        "Yabuli Ski Resort",
+        "Middle East Railway Bridge",
+        "Baroque-style Old Street",
+        "Harbin Ice-Snow World",
+        "Chateau Volga",
+        "St. Nicholas Church",
+        "Vodka Fort",
+        "Pushkin Exhibition Hall",
+        "Siberian Tiger Park",
+        "Central Street",
+        "Stalin Park",
+        "Flood Control Monument",
+        "Sophia Church Square",
+        "Giant Snowman Sculpture"
+      ],
+      "posters": [
+        "cn-poster-harbin-6d5n-no-shopping-2-2-0.jpg"
+      ],
+      "posterSize": [
+        532,
+        800
+      ]
+    },
+    {
+      "id": "harbin-mohe-6d5n-no-shopping",
+      "name": "Harbin – Mohe Winter 6D5N Tour (No Shopping)",
+      "subtitle": "Out Manila · China Southern Airlines",
+      "region": "intl",
+      "country": "China",
+      "flag": "cn",
+      "duration": "6 days 5 nights",
+      "days": 6,
+      "status": "available",
+      "featured": false,
+      "departure": "Manila (NAIA)",
+      "price": {
+        "from": 1799,
+        "label": "From",
+        "unit": "per pax",
+        "currency": "USD"
+      },
+      "year": 2026,
+      "ends": "2026-12-19",
+      "image": "cn-harbin-ice.jpg",
+      "alt": "Ice sculptures at the Harbin Ice and Snow World",
+      "gallery": [
+        "cn-harbin-ice.jpg"
+      ],
+      "summary": "Winter in China’s far north: Harbin Ice and Snow World, then Mohe and North Pole Village’s Christmas Village, reindeer and Northeast Tiger Park, with no shopping stops.",
+      "overview": "Fly via Guangzhou to Harbin for the Songhua River, St. Sophia Cathedral Square and Ice and Snow World. Fly on to Mohe, China’s northernmost town, to visit Northeast Tiger Park, a reindeer park and North Pole Village’s Christmas Village, Asia’s only Christmas-themed park. Hotels are 5-star in Harbin and Mohe and 4-star in North Pole Village. A no-shopping package.",
+      "travelDates": [
+        {
+          "d": "Nov 16–21"
+        },
+        {
+          "d": "Nov 25–30"
+        },
+        {
+          "d": "Dec 2–7",
+          "add": 300,
+          "cur": "USD"
+        },
+        {
+          "d": "Dec 7–12",
+          "add": 300,
+          "cur": "USD"
+        },
+        {
+          "d": "Dec 14–19",
+          "add": 400,
+          "cur": "USD"
+        }
+      ],
+      "travelDatesNote": "Departures from Manila, Nov 16–21 2026 to Dec 14–19 2026. The rate changes by date: an amount on a date is added to the base rate per pax. Seats are limited and confirmed at booking.",
+      "itinerary": [
+        {
+          "day": "Day 1",
+          "title": "Manila – Guangzhou – Harbin",
+          "items": [
+            "Flights Manila – Guangzhou (CZ3078, 08:20/10:50) and Guangzhou – Harbin (CZ3623, 14:00/18:30); flight details are for reference only and other airlines may be used",
+            "Arrive in Harbin and meet your English-speaking tour guide",
+            "Visit a cotton-padded clothing store to buy warm clothing",
+            "Hotel check in"
+          ]
+        },
+        {
+          "day": "Day 2",
+          "title": "Harbin city and Ice and Snow World",
+          "items": [
+            "Hotel breakfast",
+            "Songhua River",
+            "Middle East Railway Bridge",
+            "Harbin Flood Control Monument",
+            "Free time on Central Street",
+            "St. Sophia Cathedral Square",
+            "Ice and Snow World"
+          ]
+        },
+        {
+          "day": "Day 3",
+          "title": "Harbin – Mohe",
+          "items": [
+            "Hotel breakfast and check out",
+            "Northeast Tiger Park, including the thrilling vehicle trip",
+            "Flight to Mohe (CZ6267, 14:15/16:10; for reference only)",
+            "Mohe Dance Hall"
+          ]
+        },
+        {
+          "day": "Day 4",
+          "title": "Mohe – North Pole Village",
+          "items": [
+            "Hotel breakfast and check out",
+            "Reindeer Park: meet and take photos with the gentle reindeer",
+            "North Pole Village and Christmas Village, with Santa’s House, the Christmas Post Office and Santa Claus Square, Asia’s only Christmas-themed park"
+          ]
+        },
+        {
+          "day": "Day 5",
+          "title": "North Pole Village – Mohe – Harbin",
+          "items": [
+            "Hotel breakfast and check out",
+            "North Pole Village Monument and photo stop",
+            "Songyuan Park, a primeval forest, in Mohe",
+            "May 6th Fire Memorial Hall",
+            "Polaris Square, viewing Mohe’s mountain city and natural landscape",
+            "Flight to Harbin (CZ6268, 16:55/18:30; for reference only) and hotel check in"
+          ]
+        },
+        {
+          "day": "Day 6",
+          "title": "Harbin – Guangzhou – Manila",
+          "items": [
+            "Hotel breakfast and check out",
+            "Giant snowman photo stop",
+            "Transfer to the airport; flights Harbin – Guangzhou (CZ3616, 13:15/18:05) and Guangzhou – Manila (CZ3077, 20:05/22:30); for reference only"
+          ]
+        }
+      ],
+      "inclusions": [
+        "Economy round-trip airfare and taxes with China Southern Airlines or other airlines",
+        "Baggage as per the operating airline’s rules",
+        "5 nights’ twin-sharing accommodation with daily hotel breakfast",
+        "Private bus with English-speaking tour guide",
+        "Sightseeing as specified, including first-way entrance fees",
+        "Meals: breakfast plus 8 meals, including Chinese set meals, barbecue and local flavours"
+      ],
+      "exclusions": [
+        "Personal expenses such as telephone calls and minibar",
+        "Travel insurance",
+        "Philippines travel tax USD 30 per person (collected with tour fee)",
+        "China group visa USD 40 per person",
+        "Tips for driver and guide USD 30 per person, USD 5 per day for 6 days (collected with tour fee)",
+        "Single supplement USD 320 per person",
+        "Fuel surcharge (subject to change)"
+      ],
+      "hotelsLabel": "Hotels",
+      "hotels": [
+        "Day 1-2: 5-star hotel in Harbin",
+        "Day 3: 5-star hotel in Mohe",
+        "Day 4: 4-star hotel in North Pole Village",
+        "Day 5: 5-star hotel in Harbin",
+        "Day 6: Home sweet home"
+      ],
+      "notes": [
+        "Meals: Day 1 none; Days 2-5 breakfast, lunch and dinner; Day 6 breakfast only",
+        "No-shopping package; the guide may sell souvenirs or local specialties on the bus, purchase is optional",
+        "Day 1 includes a stop at a cotton-padded clothing store to buy warm clothing",
+        "Child without bed (2-11 years) has a lower rate",
+        "Flight numbers and times are for reference only; other airlines may be used",
+        "Order of attractions may be adjusted for weather, traffic or visitor volume",
+        "Itinerary, flight times and hotels are subject to final confirmation",
+        "If attractions are reduced because of force majeure such as policy changes or weather, the travel agency is not liable and no refunds are given for expenses incurred",
+        "No refunds for itinerary or accommodation waived during the trip; tips must be paid for the full number of tour days",
+        "If a listed hotel is unavailable it is replaced by a similar one",
+        "Philippine passport holders need a China group visa, USD 40 per person (not included)"
+      ],
+      "places": [
+        "Songhua River",
+        "Middle East Railway Bridge",
+        "Harbin Flood Control Monument",
+        "Central Street",
+        "St. Sophia Cathedral Square",
+        "Ice and Snow World",
+        "Northeast Tiger Park",
+        "Mohe Dance Hall",
+        "Reindeer Park",
+        "North Pole Village",
+        "Christmas Village",
+        "Songyuan Park",
+        "May 6th Fire Memorial Hall",
+        "Polaris Square"
+      ],
+      "posters": [
+        "cn-poster-harbin-mohe-6d5n-no-shopping-0.jpg"
+      ],
+      "posterSize": [
+        503,
+        800
+      ]
+    },
+    {
+      "id": "harbin-beijing-7d6n-no-shopping",
+      "name": "Harbin – Beijing 7D6N Tour (No Shopping)",
+      "subtitle": "Out Manila · Air China",
+      "region": "intl",
+      "country": "China",
+      "flag": "cn",
+      "duration": "7 days 6 nights",
+      "days": 7,
+      "status": "available",
+      "featured": false,
+      "departure": "Manila (NAIA)",
+      "price": {
+        "from": 1598,
+        "label": "From",
+        "unit": "per pax",
+        "currency": "USD"
+      },
+      "year": 2026,
+      "ends": "2027-01-04",
+      "image": "cn-harbin-ice.jpg",
+      "alt": "Ice sculptures at the Harbin Ice and Snow World",
+      "gallery": [
+        "cn-harbin-ice.jpg"
+      ],
+      "summary": "Winter in Harbin and Beijing: Yabuli, Mudanjiang, Chateau Volga, Harbin Ice-Snow World and the Siberian Tiger Park, then Beijing, with 5-star hotels.",
+      "overview": "Fly Manila to Beijing on Air China and connect to Harbin for a winter tour of Yabuli, Mudanjiang and Harbin, including Harbin Ice-Snow World and the Siberian Tiger Park. The tour ends with a night in Beijing and free time at Wangfujing before flying home. Hotels are 5-star, including the Crowne Plaza Harbin or similar. A private coach and English-speaking guide are included.",
+      "travelDates": [
+        {
+          "d": "Dec 29–Jan 4"
+        }
+      ],
+      "travelDatesNote": "Departures from Manila, Dec 29–Jan 4 2026 to Dec 29–Jan 4 2026. The rate changes by date: an amount on a date is added to the base rate per pax. Seats are limited and confirmed at booking.",
+      "itinerary": [
+        {
+          "day": "Day 1",
+          "title": "Manila – Beijing – Harbin",
+          "items": [
+            "Fly Manila to Beijing (CA180, 06:20/10:55), meet the Beijing guide",
+            "Free shopping at an outlet, then transfer back to the airport",
+            "Connecting flight to Harbin (CA1639, 20:35/22:25)",
+            "Meet the Harbin guide",
+            "Cotton-padded jacket shop",
+            "Transfer to the hotel and check in (meals: X/X/X)"
+          ]
+        },
+        {
+          "day": "Day 2",
+          "title": "Harbin – Yabuli – Mudanjiang",
+          "items": [
+            "Breakfast at the hotel and check out",
+            "Head to Yabuli, Asia’s largest ski resort (skiing excluded), with photo stops to enjoy the snow-frozen trees and forest on the way",
+            "Head to Mudanjiang",
+            "Optional tour: horse-drawn sled + Ice and Snow Gallery + snowmobile, USD 99 per person",
+            "Transfer to the hotel and check in (meals: B/L/D)"
+          ]
+        },
+        {
+          "day": "Day 3",
+          "title": "Mudanjiang – Harbin",
+          "items": [
+            "Breakfast at the hotel and check out",
+            "Chateau Volga",
+            "St. Nicholas Church",
+            "Snow circle experience",
+            "Vodka Fort, with a small vodka and snack",
+            "Pushkin Exhibition Hall",
+            "Transfer to the hotel (meals: B/L/D)"
+          ]
+        },
+        {
+          "day": "Day 4",
+          "title": "Harbin",
+          "items": [
+            "Breakfast at the hotel",
+            "Russian handicrafts mall",
+            "Songhua River, Stalin Park, Central Street, Flood Control Monument, Sophia Church Square and Middle East Railway Bridge",
+            "Harbin Ice-Snow World",
+            "Transfer to the hotel (meals: B/L/D)"
+          ]
+        },
+        {
+          "day": "Day 5",
+          "title": "Harbin",
+          "items": [
+            "Breakfast at the hotel",
+            "Watch winter swimming",
+            "Best-preserved Baroque-style old street",
+            "Siberian Tiger Park",
+            "Transfer to the hotel (meals: B/L/D)"
+          ]
+        },
+        {
+          "day": "Day 6",
+          "title": "Harbin – Beijing",
+          "items": [
+            "Breakfast at the hotel and check out",
+            "Giant snowman sculpture and the music corridor",
+            "Free and easy time until the transfer to the airport",
+            "Fly to Beijing (CA1642, 22:10/00:20+1) (meals: B/X/X)"
+          ]
+        },
+        {
+          "day": "Day 7",
+          "title": "Beijing – Manila",
+          "items": [
+            "Sleep in until you wake naturally",
+            "Breakfast at the hotel and check out",
+            "Free shopping at Wangfujing walking street",
+            "Transfer to the airport and fly to Manila (CA179, 19:00/00:05+1) (meals: B/X/X)"
+          ]
+        }
+      ],
+      "inclusions": [
+        "Economy round-trip airfare and taxes via Air China",
+        "Baggage allowance: 1 piece 23 kg checked-in plus 7 kg carry-on",
+        "6 nights’ accommodation, twin sharing, with daily hotel breakfast (double/triple rooms and extra bed not guaranteed)",
+        "Private coach with English-speaking tour guide",
+        "Sightseeing as specified, including first-way entrance fees",
+        "Meals as listed, with a free upgrade of 1 meal to Ice Palace hotpot and 1 meal to BBQ"
+      ],
+      "exclusions": [
+        "Personal expenses such as phone calls and minibar",
+        "Extra baggage allowance",
+        "Travel insurance",
+        "Fuel surcharge USD 75 per person (subject to change)",
+        "Philippines travel tax USD 28 per person (or PHP 1,620)",
+        "China group visa (guaranteed) USD 40 per person",
+        "Tips for driver and guide USD 35 per person (USD 5 per day x 7 days)",
+        "Single supplement USD 280 per person"
+      ],
+      "optional": [
+        "Horse-drawn sled + Ice and Snow Gallery + snowmobile: USD 99 per person"
+      ],
+      "hotelsLabel": "Hotels",
+      "hotels": [
+        "Day 1, 3, 4, 5: Crowne Plaza Hotel Harbin or similar 5★",
+        "Day 2: 5★ hotel in Mudanjiang",
+        "Day 6: local 5★ hotel in Beijing"
+      ],
+      "notes": [
+        "Meal codes: B = breakfast, L = lunch, D = dinner, X = not included",
+        "Child categories: adult and child with bed; child without bed 2-10 years",
+        "Philippine passport holders need a China visa; the group visa is not included (USD 40 per person)",
+        "Hotels are subject to replacement with similar ones if not available",
+        "All services are on a private basis; the order of attractions may change in crowded or special circumstances"
+      ],
+      "places": [
+        "Yabuli Ski Resort",
+        "Mudanjiang",
+        "Chateau Volga",
+        "St. Nicholas Church",
+        "Vodka Fort",
+        "Pushkin Exhibition Hall",
+        "Songhua River",
+        "Stalin Park",
+        "Central Street",
+        "Flood Control Monument",
+        "Sophia Church Square",
+        "Middle East Railway Bridge",
+        "Harbin Ice-Snow World",
+        "Siberian Tiger Park",
+        "Baroque-style Old Street",
+        "Giant Snowman Sculpture",
+        "Wangfujing Walking Street"
+      ],
+      "posters": [
+        "cn-poster-harbin-beijing-7d6n-no-shopping-0.jpg"
+      ],
+      "posterSize": [
+        540,
+        800
+      ]
+    },
+    {
+      "id": "harbin-changchun-shenyang-7d6n-no-shopping",
+      "name": "Harbin – Changchun – Shenyang 7D6N Tour (No Shopping)",
+      "subtitle": "Out Manila · China Southern Airlines",
+      "region": "intl",
+      "country": "China",
+      "flag": "cn",
+      "duration": "7 days 6 nights",
+      "days": 7,
+      "status": "available",
+      "featured": false,
+      "departure": "Manila (NAIA)",
+      "price": {
+        "from": 1458,
+        "label": "From",
+        "unit": "per pax",
+        "currency": "USD"
+      },
+      "year": 2026,
+      "ends": "2027-01-03",
+      "image": "cn-harbin-ice.jpg",
+      "alt": "Ice sculptures at the Harbin Ice and Snow World",
+      "gallery": [
+        "cn-harbin-ice.jpg"
+      ],
+      "summary": "Seven-day winter tour of Harbin Ice-Snow World, the Siberian Tiger Park, Changchun and the Shenyang Imperial Palace, in 5-star hotels, flying via Guangzhou.",
+      "overview": "A winter tour across Northeast China, starting in Harbin with Russian-style sights, Ice-Snow World and the Siberian Tiger Park, then Changchun and Shenyang with its Imperial Palace. Stay in 5-star hotels; meals include a free upgrade to Ice Palace hot pot and BBQ. Flights go via Guangzhou.",
+      "travelDates": [
+        {
+          "d": "Dec 28–Jan 3"
+        }
+      ],
+      "travelDatesNote": "Departures from Manila, Dec 28–Jan 3 2026 to Dec 28–Jan 3 2026. The rate changes by date: an amount on a date is added to the base rate per pax. Seats are limited and confirmed at booking.",
+      "itinerary": [
+        {
+          "day": "Day 1",
+          "title": "Manila – Guangzhou – Harbin (Dec 28)",
+          "items": [
+            "Fly Manila to Guangzhou (CZ3092 12:00–14:40), then to Harbin (CZ8740 17:25–23:30)",
+            "Meet the Harbin guide",
+            "Cotton-padded jacket shop",
+            "Transfer to hotel"
+          ]
+        },
+        {
+          "day": "Day 2",
+          "title": "Harbin (Dec 29)",
+          "items": [
+            "Breakfast at the hotel",
+            "Chateau Volga",
+            "St. Nicholas Church",
+            "Snow circle experience",
+            "Vodka Fort, with a small vodka and snack",
+            "Pushkin Exhibition Hall",
+            "Optional: Russian dance and song performance + horse-drawn sleigh ride"
+          ]
+        },
+        {
+          "day": "Day 3",
+          "title": "Harbin (Dec 30)",
+          "items": [
+            "Breakfast at the hotel and check out",
+            "Russian handicrafts mall and chocolate workshop",
+            "Songhua River",
+            "Stalin Park",
+            "Central Street",
+            "Flood Control Monument",
+            "Sophia Church Square",
+            "Harbin Ice-Snow World"
+          ]
+        },
+        {
+          "day": "Day 4",
+          "title": "Harbin – Changchun (Dec 31)",
+          "items": [
+            "Breakfast at the hotel and check out",
+            "Siberian Tiger Park",
+            "Harbin Grand Theater (outside view)",
+            "Giant snowman sculpture",
+            "Proceed to Changchun",
+            "Optional: Songhua River with cable car + afternoon tea at Shangri-La Hotel"
+          ]
+        },
+        {
+          "day": "Day 5",
+          "title": "Changchun – Shenyang (Jan 1)",
+          "items": [
+            "Breakfast at the hotel and check out",
+            "Nanhu Park",
+            "Cultural Square",
+            "Photo stop at Geological Palace",
+            "Free shopping at The Hill business area",
+            "Proceed to Shenyang",
+            "Free shopping at Shenyang Zhongjie walking street"
+          ]
+        },
+        {
+          "day": "Day 6",
+          "title": "Shenyang – Guangzhou (Jan 2)",
+          "items": [
+            "Breakfast at the hotel and check out",
+            "Shenyang Imperial Palace",
+            "Street of the Qing Dynasty",
+            "Photo stop at Shenyang Xiaonan Catholic Church",
+            "Fly Shenyang to Guangzhou (CZ6307 16:30–21:10), meet the guide and transfer to hotel"
+          ]
+        },
+        {
+          "day": "Day 7",
+          "title": "Guangzhou – Manila (Jan 3)",
+          "items": [
+            "Check out and transfer to airport",
+            "Fly Guangzhou to Manila (CZ3091 08:20–10:50)"
+          ]
+        }
+      ],
+      "inclusions": [
+        "Economy round-trip airfare and taxes via China Southern Airlines",
+        "Baggage: 1 piece 23 kg check-in plus 5 kg carry-on",
+        "6 nights’ accommodation, twin sharing, with daily hotel breakfast (double/triple rooms and extra bed not guaranteed)",
+        "Private coach with English-speaking tour guide",
+        "Sightseeing as specified, including first-way entrance fees",
+        "Meals as listed, with a free upgrade of 1 meal to Ice Palace hot pot and 1 meal to BBQ"
+      ],
+      "exclusions": [
+        "Personal expenses such as phone calls and minibar",
+        "Extra baggage allowance",
+        "Travel insurance",
+        "Fuel surcharge: USD 75 per person (subject to change)",
+        "Philippines travel tax: PHP 1,620 per person (paid directly at the airport)",
+        "China group visa (guaranteed): USD 40 per person",
+        "Tips for driver and guide: USD 35 per person (USD 5 per day x 7 days)",
+        "Single supplement: USD 280 per person"
+      ],
+      "optional": [
+        "Day 2: Russian dance and song performance + horse-drawn sleigh ride",
+        "Day 4: Songhua River with cable car + afternoon tea at Shangri-La Hotel",
+        "Optional package of all of the above: USD 99 per person"
+      ],
+      "hotelsLabel": "Hotels",
+      "hotels": [
+        "Day 1–3: 5★ hotel in Harbin",
+        "Day 4: 5★ hotel in Changchun",
+        "Day 5: 5★ hotel in Shenyang",
+        "Day 6: 5★ hotel in Guangzhou"
+      ],
+      "notes": [
+        "Departure Dec 28, 2026 to Jan 3, 2027",
+        "Adult and child with bed share one rate; child without bed (2–10 yrs) is priced separately",
+        "Single supplement USD 280 per person",
+        "Hotels may be replaced by similar ones; sightseeing order may be adjusted"
+      ],
+      "places": [
+        "Chateau Volga",
+        "St. Nicholas Church",
+        "Vodka Fort",
+        "Pushkin Exhibition Hall",
+        "Songhua River",
+        "Stalin Park",
+        "Central Street",
+        "Sophia Church Square",
+        "Harbin Ice-Snow World",
+        "Siberian Tiger Park",
+        "Harbin Grand Theater",
+        "Nanhu Park",
+        "Shenyang Imperial Palace",
+        "Street of the Qing Dynasty"
+      ],
+      "posters": [
+        "cn-poster-harbin-changchun-shenyang-7d6n-no-shopping-0.jpg"
+      ],
+      "posterSize": [
+        521,
+        800
+      ]
+    },
+    {
+      "id": "harbin-changchun-xiamen-7d6n-no-shopping",
+      "name": "Harbin – Changchun – Xiamen 7D6N Winter Tour (No Shopping)",
+      "subtitle": "Out Manila · Xiamen Air",
+      "region": "intl",
+      "country": "China",
+      "flag": "cn",
+      "duration": "7 days 6 nights",
+      "days": 7,
+      "status": "available",
+      "featured": false,
+      "departure": "Manila (NAIA)",
+      "price": {
+        "from": 1558,
+        "label": "From",
+        "unit": "per pax",
+        "currency": "USD"
+      },
+      "year": 2026,
+      "ends": "2027-01-03",
+      "image": "cn-xiamen.jpg",
+      "alt": "Xiamen’s coast and city",
+      "gallery": [
+        "cn-xiamen.jpg"
+      ],
+      "summary": "Ice and snow in Jilin, Harbin and Changchun, bookended by two nights in Xiamen, with Harbin Ice-Snow World and the Siberian Tiger Park.",
+      "overview": "Seven days linking sunny Xiamen with the north-east’s winter sights: Harbin Ice-Snow World, the Russian-style Chateau Volga, the Siberian Tiger Park and Changchun. Hotels are 4-star in Xiamen and 5-star in the north. Flights are with Xiamen Air, with one meal upgraded to Ice Palace hotpot and one to BBQ.",
+      "travelDates": [
+        {
+          "d": "Dec 28–Jan 3"
+        }
+      ],
+      "travelDatesNote": "Departures from Manila, Dec 28–Jan 3 2026 to Dec 28–Jan 3 2026. The rate changes by date: an amount on a date is added to the base rate per pax. Seats are limited and confirmed at booking.",
+      "itinerary": [
+        {
+          "day": "Day 1",
+          "title": "Manila – Xiamen",
+          "items": [
+            "Fly Manila to Xiamen (MF820 21:20/23:35); meet the guide.",
+            "Transfer to hotel. Meals: X/X/X."
+          ]
+        },
+        {
+          "day": "Day 2",
+          "title": "Xiamen – Jilin",
+          "items": [
+            "Hotel breakfast and check out.",
+            "Free and easy until transfer to the airport; fly Xiamen to Changchun (MF8047 14:05/17:45); meet the Harbin guide.",
+            "Visit a cotton-padded jacket shop.",
+            "Transfer to hotel in Jilin. Meals: B/X/D."
+          ]
+        },
+        {
+          "day": "Day 3",
+          "title": "Jilin – Harbin",
+          "items": [
+            "Hotel breakfast and check out.",
+            "Drive to Harbin.",
+            "Visit the Songhua River, Stalin Park, Central Street, Flood Control Monument and Sophia Church Square.",
+            "Visit Harbin Ice-Snow World.",
+            "Transfer to hotel. Meals: B/L/D."
+          ]
+        },
+        {
+          "day": "Day 4",
+          "title": "Harbin",
+          "items": [
+            "Hotel breakfast.",
+            "Visit the Russian handicrafts mall and Chocolate Workshop.",
+            "Visit Chateau Volga, St. Nicholas Church, the snow circle, Vodka Fort (small vodka and snack) and the Pushkin Exhibition Hall.",
+            "Optional tour: Russian dance and song performance + horse-drawn sleigh ride. Meals: B/L/D."
+          ]
+        },
+        {
+          "day": "Day 5",
+          "title": "Harbin – Changchun",
+          "items": [
+            "Hotel breakfast and check out.",
+            "Visit the Siberian Tiger Park and the Middle East Railway Bridge.",
+            "Harbin Grand Theater (outside view) and the giant snowman sculpture.",
+            "Transfer to hotel in Changchun.",
+            "Optional tour: Songhua River cable car + afternoon tea at Shangri-La Hotel. Meals: B/L/D."
+          ]
+        },
+        {
+          "day": "Day 6",
+          "title": "Changchun – Xiamen",
+          "items": [
+            "Hotel breakfast and check out.",
+            "Visit Nanhu Park and Cultural Square; photo stop at Geological Palace.",
+            "Free shopping at The Hill business area.",
+            "Fly Changchun to Xiamen (MF8048 18:50/22:55). Meals: B/X/X."
+          ]
+        },
+        {
+          "day": "Day 7",
+          "title": "Xiamen – Manila",
+          "items": [
+            "Hotel breakfast and check out.",
+            "Visit Huwei Mountain on the Xiamen Mountains-to-Sea Trail and Shapowei Business Area.",
+            "Free shopping at Zhongshan Road Pedestrian Street; lunch at your own expense.",
+            "Transfer to the airport; fly Xiamen to Manila (MF819 17:35/20:20). Meals: B/X/X."
+          ]
+        }
+      ],
+      "inclusions": [
+        "Economy airfare and taxes with Xiamen Airlines (round trip)",
+        "Baggage: 1 piece 23 kg check-in plus 5 kg carry-on",
+        "6 nights twin-share accommodation with daily breakfast (double/triple rooms and extra beds not guaranteed)",
+        "Private coach with English-speaking tour guide",
+        "Sightseeing as specified, including first-way entrance fees",
+        "Meals as listed, with a free upgrade of 1 meal to Ice Palace hotpot and 1 meal to BBQ"
+      ],
+      "exclusions": [
+        "Personal expenses such as phone calls and minibar",
+        "Extra baggage allowance",
+        "Travel insurance",
+        "Fuel surcharge: USD 75 per person, subject to change",
+        "Philippine travel tax: PHP 1,620 (or USD 28) per person",
+        "China group visa (guaranteed): USD 40 per person",
+        "Tips for driver and guide: USD 5 per person per day x 7 days = USD 35",
+        "Single supplement: USD 50 per person for the 2 nights in Xiamen (compulsory), USD 180 per person for the other 4 nights"
+      ],
+      "optional": [
+        "Russian dance and song performance + horse-drawn sleigh ride + Songhua River cable car + afternoon tea at Shangri-La Hotel: USD 99 per person (package)"
+      ],
+      "hotelsLabel": "Hotels",
+      "hotels": [
+        "Day 1 and Day 6: Local 4★ hotel in Xiamen",
+        "Day 2: Ramada Hotel Jilin or similar 5★",
+        "Day 3-4: Crowne Plaza Hotel Harbin or similar 5★",
+        "Day 5: Wanda Reign Hotel Changchun or similar 5★"
+      ],
+      "notes": [
+        "Marketed as a No Shopping package. The itinerary still lists a cotton-padded jacket shop stop, a chocolate workshop and a Russian handicrafts mall.",
+        "Child without bed is 2-10 yrs.",
+        "Hotels may be replaced by similar ones; services are private; the order of sights may change."
+      ],
+      "places": [
+        "Songhua River",
+        "Stalin Park",
+        "Central Street",
+        "Sophia Church Square",
+        "Harbin Ice-Snow World",
+        "Chateau Volga",
+        "St. Nicholas Church",
+        "Vodka Fort",
+        "Siberian Tiger Park",
+        "Middle East Railway Bridge",
+        "Harbin Grand Theater",
+        "Nanhu Park",
+        "Huwei Mountain",
+        "Shapowei Business Area",
+        "Zhongshan Road Pedestrian Street"
+      ],
+      "posters": [
+        "cn-poster-harbin-changchun-xiamen-7d6n-no-shopping-0.jpg"
+      ],
+      "posterSize": [
+        540,
+        800
+      ]
+    },
+    {
+      "id": "harbin-shenyang-jilin-7d6n-no-shopping",
+      "name": "Harbin – Shenyang – Jilin 7D6N Tour (No Shopping)",
+      "subtitle": "Out Manila · China Southern Airlines",
+      "region": "intl",
+      "country": "China",
+      "flag": "cn",
+      "duration": "7 days 6 nights",
+      "days": 7,
+      "status": "available",
+      "featured": false,
+      "departure": "Manila (NAIA)",
+      "price": {
+        "from": 1458,
+        "label": "From",
+        "unit": "per pax",
+        "currency": "USD"
+      },
+      "year": 2026,
+      "ends": "2027-01-04",
+      "image": "cn-harbin-ice.jpg",
+      "alt": "Ice sculptures at the Harbin Ice and Snow World",
+      "gallery": [
+        "cn-harbin-ice.jpg"
+      ],
+      "summary": "Seven days through Shenyang, Jilin and Harbin over New Year, with the Imperial Palace, Ice-Snow World and Siberian Tiger Park, flying China Southern.",
+      "overview": "Fly China Southern via Guangzhou to Shenyang, visit the Shenyang Imperial Palace, travel on to Jilin and then Harbin for the Ice-Snow World, Chateau Volga and the Siberian Tiger Park. You stay in 5-star hotels and get a free meal upgrade to Ice Palace hotpot and BBQ. This is a No Shopping package.",
+      "travelDates": [
+        {
+          "d": "Dec 29–Jan 4"
+        }
+      ],
+      "travelDatesNote": "Departures from Manila, Dec 29–Jan 4 2026 to Dec 29–Jan 4 2026. The rate changes by date: an amount on a date is added to the base rate per pax. Seats are limited and confirmed at booking.",
+      "itinerary": [
+        {
+          "day": "Day 1 (Dec 29)",
+          "title": "Manila – Guangzhou",
+          "items": [
+            "Fly Manila to Guangzhou (CZ398, 17:55–20:30)",
+            "Transfer to hotel and check in"
+          ]
+        },
+        {
+          "day": "Day 2 (Dec 30)",
+          "title": "Guangzhou – Shenyang",
+          "items": [
+            "Breakfast at the hotel and check out",
+            "Fly Guangzhou to Shenyang (CZ6332, 10:25–14:05)",
+            "Cotton-padded jacket shop visit",
+            "Photo stop at Shenyang Xiaonan Catholic Church",
+            "Free shopping at Shenyang Zhongjie walking street",
+            "Transfer to hotel and check in"
+          ]
+        },
+        {
+          "day": "Day 3 (Dec 31)",
+          "title": "Shenyang – Jilin",
+          "items": [
+            "Breakfast at the hotel and check out",
+            "Shenyang Imperial Palace",
+            "Street of the Qing Dynasty",
+            "Proceed to Jilin",
+            "Night view of Songjiang Middle Road (seen from the bus)",
+            "Photo stop at Jilin Catholic Church",
+            "Transfer to hotel and check in"
+          ]
+        },
+        {
+          "day": "Day 4 (Jan 1)",
+          "title": "Jilin – Harbin",
+          "items": [
+            "Breakfast at the hotel and check out",
+            "Proceed to Harbin",
+            "Songhua River",
+            "Stalin Park",
+            "Central Street",
+            "Flood Control Monument",
+            "Sophia Church Square",
+            "Harbin Ice-Snow World",
+            "Transfer to hotel"
+          ]
+        },
+        {
+          "day": "Day 5 (Jan 2)",
+          "title": "Harbin",
+          "items": [
+            "Breakfast at the hotel",
+            "Russian handicrafts mall and chocolate workshop",
+            "Chateau Volga",
+            "St. Nicholas Church",
+            "Snow circle experience",
+            "Vodka Fort, with a small vodka and a snack",
+            "Pushkin Exhibition Hall",
+            "Russian dance and song performance + horse-drawn sleigh ride (optional)",
+            "Transfer to hotel"
+          ]
+        },
+        {
+          "day": "Day 6 (Jan 3)",
+          "title": "Harbin – Shenyang",
+          "items": [
+            "Breakfast at the hotel and check out",
+            "Siberian Tiger Park",
+            "Harbin Grand Theater (outside view)",
+            "Bullet train to Shenyang",
+            "Songhua River cable car + afternoon tea at Shangri-La Hotel (optional)",
+            "Transfer to hotel"
+          ]
+        },
+        {
+          "day": "Day 7 (Jan 4)",
+          "title": "Shenyang – Guangzhou – Manila",
+          "items": [
+            "Breakfast at the hotel and check out",
+            "Transfer to the airport and fly Shenyang to Guangzhou (CZ6367, 10:00–14:35)",
+            "Wait at the airport, then fly Guangzhou to Manila (CZ3077, 20:00–22:30)"
+          ]
+        }
+      ],
+      "inclusions": [
+        "Economy airfare and taxes via China Southern Airlines, round trip",
+        "Baggage allowance: 1 piece of 23 kg checked plus 5 kg carry-on",
+        "6 nights’ accommodation, twin sharing, with daily hotel breakfast (double/triple rooms and extra beds not guaranteed)",
+        "Private coach with English-speaking tour guide",
+        "Sightseeing as specified, including first-way entrance fees",
+        "Meals as listed, with a free upgrade of 1 meal to Ice Palace hotpot and 1 meal to BBQ"
+      ],
+      "exclusions": [
+        "Personal expenses such as phone calls and minibar",
+        "Extra baggage",
+        "Travel insurance",
+        "Fuel surcharge USD 75 per person, subject to change",
+        "Philippine travel tax PHP 1,620 per person, paid directly at the airport",
+        "China group visa (guaranteed) USD 40 per person",
+        "Tips for driver and guide USD 35 per person (USD 5 per day for 7 days)",
+        "Single supplement USD 250 per person"
+      ],
+      "optional": [
+        "Optional package: Russian dance and song performance + horse-drawn sleigh ride + Songhua River cable car + afternoon tea at Shangri-La Hotel – USD 99 per person"
+      ],
+      "hotelsLabel": "Hotels",
+      "hotels": [
+        "Day 1: 5★ hotel in Guangzhou",
+        "Day 2 and Day 6: 5★ hotel in Shenyang",
+        "Day 3: 5★ hotel in Jilin",
+        "Day 4–5: 5★ hotel in Harbin",
+        "Day 7: Sweet Home"
+      ],
+      "notes": [
+        "Meals per day: D1 none; D2 B/D; D3–D6 B/L/D; D7 B",
+        "Single departure only (Dec 29–Jan 4)",
+        "Adult and child with bed share one rate; child without bed is ages 2–10",
+        "Philippine passport holders need a China visa (group visa USD 40 per person)",
+        "Hotels may be replaced by similar ones; services are on a private basis; order of sights may change for crowds or special circumstances"
+      ],
+      "places": [
+        "Shenyang Xiaonan Catholic Church",
+        "Zhongjie Walking Street",
+        "Shenyang Imperial Palace",
+        "Street of the Qing Dynasty",
+        "Songjiang Middle Road",
+        "Jilin Catholic Church",
+        "Songhua River",
+        "Stalin Park",
+        "Central Street",
+        "Flood Control Monument",
+        "Sophia Church Square",
+        "Harbin Ice-Snow World",
+        "Chateau Volga",
+        "St. Nicholas Church",
+        "Vodka Fort",
+        "Pushkin Exhibition Hall",
+        "Siberian Tiger Park",
+        "Harbin Grand Theater"
+      ],
+      "posters": [
+        "cn-poster-harbin-shenyang-jilin-7d6n-no-shopping-0.jpg"
+      ],
+      "posterSize": [
+        521,
+        800
+      ]
+    },
+    {
+      "id": "hulunbuir-beijing-7d6n",
+      "name": "Hulunbuir – Beijing 7D6N Tour",
+      "subtitle": "Out Manila · Air China",
+      "region": "intl",
+      "country": "China",
+      "flag": "cn",
+      "duration": "7 days 6 nights",
+      "days": 7,
+      "status": "available",
+      "featured": false,
+      "departure": "Manila (NAIA)",
+      "price": {
+        "from": 1399,
+        "label": "From",
+        "unit": "per pax",
+        "currency": "USD"
+      },
+      "year": 2026,
+      "ends": "2027-02-27",
+      "image": "cn-inner-mongolia.jpg",
+      "alt": "A yurt on the grasslands of Inner Mongolia",
+      "gallery": [
+        "cn-inner-mongolia.jpg"
+      ],
+      "summary": "Seven days across Inner Mongolia’s Hulunbuir, from Hailar’s ski resort to Genhe, Ergun and Manzhouli, with Beijing at both ends.",
+      "overview": "Fly Air China to Beijing, then on to Hailar for a winter journey through Hulunbuir: Fenghuang Mountain ski resort, Genhe, Ergun’s reindeer tribe and wetland, and Hulun Lake at Manzhouli. Hotels are local 4★ and 5★, and you return through Beijing, where an optional Universal Studios day is available.",
+      "travelDates": [
+        {
+          "d": "Feb 21–27",
+          "y": 2027
+        }
+      ],
+      "travelDatesNote": "Departures from Manila, Feb 21–27 2027 to Feb 21–27 2027. The rate changes by date: an amount on a date is added to the base rate per pax. Seats are limited and confirmed at booking.",
+      "itinerary": [
+        {
+          "day": "Day 1",
+          "title": "Manila – Beijing – Hailar",
+          "items": [
+            "Fly Manila – Beijing (06:20 – 10:50); meet the English-speaking guide",
+            "Peking duck meal",
+            "Outlets (free time for shopping)",
+            "Fly Beijing – Hailar (19:20 – 21:30)",
+            "Meet the guide in Hailar, transfer to the hotel and check in",
+            "Meals: B/L/D"
+          ]
+        },
+        {
+          "day": "Day 2",
+          "title": "Hailar",
+          "items": [
+            "Hotel breakfast",
+            "Fenghuang Mountain Scenic Area",
+            "Fenghuang Mountain Ski Resort (with ski suit and sled)",
+            "Transfer to the hotel",
+            "Meals: B/L/D"
+          ]
+        },
+        {
+          "day": "Day 3",
+          "title": "Hailar – Genhe",
+          "items": [
+            "Hotel breakfast, check out",
+            "Moergele River Scenic Area",
+            "Daily Ice and Snow Naadam (free-time activities)",
+            "Transfer to the hotel and check in",
+            "Meals: B/L/D"
+          ]
+        },
+        {
+          "day": "Day 4",
+          "title": "Genhe – Ergun",
+          "items": [
+            "Hotel breakfast, check out",
+            "Aoluguya Reindeer Tribe",
+            "Ergun Wetland",
+            "Optional Tour 1: Aoluguya Primitive Tribe reindeer sleigh ride, reindeer moss, Lepa (Russian bread) Culture Museum",
+            "Transfer to the hotel and check in",
+            "Meals: B/L/D"
+          ]
+        },
+        {
+          "day": "Day 5",
+          "title": "Ergun – Manzhouli",
+          "items": [
+            "Hotel breakfast, check out",
+            "Hulun Lake",
+            "Optional Tour 2: Manzhouli Northern Border Pearl Observation Tower",
+            "Dinner of Russian-style western cuisine",
+            "Transfer to the hotel and check in",
+            "Meals: B/L/D"
+          ]
+        },
+        {
+          "day": "Day 6",
+          "title": "Manzhouli – Hailar – Beijing",
+          "items": [
+            "Hotel breakfast, check out",
+            "Xishan Park",
+            "Hulunbuir History Museum",
+            "Transfer to the airport and fly Hailar – Beijing (22:15 – 00:35 next day)",
+            "Meet the guide in Beijing, transfer to the hotel and check in",
+            "Meals: B/L/D"
+          ]
+        },
+        {
+          "day": "Day 7",
+          "title": "Beijing – Manila",
+          "items": [
+            "Hotel breakfast, check out",
+            "Free day (no transfer, no meal)",
+            "Optional: whole day at Universal Studios Beijing with weekday pass ticket",
+            "Transfer to the airport and fly Beijing – Manila (19:05 – 00:05 next day)",
+            "Meals: B/X/X"
+          ]
+        }
+      ],
+      "inclusions": [
+        "6 nights’ accommodation, twin sharing, with daily hotel breakfast",
+        "Private coach with English-speaking tour guide",
+        "Sightseeing entrance fees as specified above (first way)",
+        "Meals as listed",
+        "Round-trip airfare via Air China (1 pc 23 kg plus 5 kg hand carry-on)",
+        "1 bottle of water per day"
+      ],
+      "exclusions": [
+        "Personal expenses such as telephone calls and minibar",
+        "Philippine travel tax",
+        "Optional tours",
+        "Tips for driver and guide USD 5/pax/day x 7 days = USD 35/pax",
+        "Single supplement USD 359/pax",
+        "Visa"
+      ],
+      "optional": [
+        "Optional Tours 1 + 2 (Aoluguya reindeer sleigh ride and reindeer moss + Manzhouli Northern Border Pearl Observation Tower): USD 120/pax",
+        "Universal Studios Beijing: USD 140/pax weekdays, USD 160/pax holidays (minimum 10 pax)"
+      ],
+      "hotelsLabel": "Hotels",
+      "hotels": [
+        "Day 1-2: Local 5★ Jiashihao Hotel (Hailar) or similar",
+        "Day 3: Local 4★ Gen He Leng Ji Feng Hotel or similar",
+        "Day 4: Local 4★ Ergun Guna International Grand Hotel or similar",
+        "Day 5: Local 5★ Manzhouli Matryoshka Hotel or similar",
+        "Day 6: Local 5★ Cordis, Beijing Capital Airport or similar",
+        "Day 7: Sweet Home"
+      ],
+      "notes": [
+        "Meal codes: B = breakfast, L = lunch, D = dinner, X = not included",
+        "Single supplement USD 359/pax",
+        "Child without bed 2–12 yrs; adult and child with bed share one rate",
+        "Visa is not included",
+        "Itinerary is subject to change and to weather; triple rooms not guaranteed",
+        "If hotels are unavailable they are replaced by similar ones"
+      ],
+      "places": [
+        "Fenghuang Mountain Scenic Area",
+        "Fenghuang Mountain Ski Resort",
+        "Moergele River Scenic Area",
+        "Aoluguya Reindeer Tribe",
+        "Ergun Wetland",
+        "Hulun Lake",
+        "Manzhouli",
+        "Xishan Park",
+        "Hulunbuir History Museum",
+        "Universal Studios Beijing"
+      ],
+      "posters": [
+        "cn-poster-hulunbuir-beijing-7d6n-0.jpg"
+      ],
+      "posterSize": [
+        544,
+        800
+      ]
+    },
+    {
+      "id": "inner-mongolia-6d5n-no-shopping",
+      "name": "Inner Mongolia – Hohhot Grassland & Skiing 6D5N Tour (No Shopping)",
+      "subtitle": "Out Manila · China Southern Airlines",
+      "region": "intl",
+      "country": "China",
+      "flag": "cn",
+      "duration": "6 days 5 nights",
+      "days": 6,
+      "status": "available",
+      "featured": false,
+      "departure": "Manila (NAIA)",
+      "price": {
+        "from": 799,
+        "label": "From",
+        "unit": "per pax",
+        "currency": "USD"
+      },
+      "year": 2026,
+      "ends": "2027-03-03",
+      "image": "cn-inner-mongolia.jpg",
+      "alt": "A yurt on the grasslands of Inner Mongolia",
+      "gallery": [
+        "cn-inner-mongolia.jpg"
+      ],
+      "summary": "Fly via Guangzhou to Hohhot for Xilamuren Grassland, the Whistling Dune Bay desert, the Genghis Khan Mausoleum and a ski session at Mazongshan, with no shopping.",
+      "overview": "Fly with China Southern Airlines via Guangzhou to Hohhot, the capital of Inner Mongolia. See Xilamuren Grassland, the Yinken Whistling Dune Bay desert, the Genghis Khan Mausoleum and the Inner Mongolia Museum, and ski at Mazongshan Ski Resort with equipment included. Local 5-star hotels, private coach and English-speaking guide; a no-shopping package.",
+      "travelDates": [
+        {
+          "d": "Jan 4–9",
+          "y": 2027
+        },
+        {
+          "d": "Feb 26–Mar 3",
+          "y": 2027,
+          "add": 100,
+          "cur": "USD"
+        }
+      ],
+      "travelDatesNote": "Departures from Manila, Jan 4–9 2027 to Feb 26–Mar 3 2027. The rate changes by date: an amount on a date is added to the base rate per pax. Seats are limited and confirmed at booking.",
+      "itinerary": [
+        {
+          "day": "Day 1",
+          "title": "Manila – Guangzhou – Hohhot",
+          "items": [
+            "Fly Manila to Guangzhou (CZ3092, 11:55–14:30)",
+            "Connect to Hohhot (CZ3181, 20:20–23:35)",
+            "Meet the English-speaking tour guide at the airport",
+            "Transfer to the hotel and check in"
+          ]
+        },
+        {
+          "day": "Day 2",
+          "title": "Hohhot – Xilamuren – Hohhot",
+          "items": [
+            "Hotel breakfast",
+            "Transfer to Xilamuren Grassland",
+            "Option 1: Mongolian farm (milk tea, photos in Mongolian clothes and archery)",
+            "Option 2: horse riding",
+            "Heshuo Kejing Princess Mansion",
+            "Back to Hohhot"
+          ]
+        },
+        {
+          "day": "Day 3",
+          "title": "Hohhot – Dalad Qi",
+          "items": [
+            "Hotel breakfast and check out",
+            "5A Yinken Whistling Dune Bay (admission ticket and cable car included; other entertainment tickets excluded)",
+            "Option 3: Xiangshawan Port entertainment",
+            "Chinese paper-cutting (intangible heritage experience)",
+            "Transfer to the hotel and check in"
+          ]
+        },
+        {
+          "day": "Day 4",
+          "title": "Dalad Qi – Hohhot",
+          "items": [
+            "Hotel breakfast and check out",
+            "Genghis Khan Mausoleum",
+            "Transfer to Hohhot and visit Mengliang Folkland",
+            "Transfer to the hotel and check in"
+          ]
+        },
+        {
+          "day": "Day 5",
+          "title": "Hohhot",
+          "items": [
+            "Hotel breakfast",
+            "Mazongshan Ski Resort (3 hours of skiing and 3 hours of rental for a full ski set: boots, poles, skis, helmet, ski suit, goggles and protective gear)",
+            "Inner Mongolia Museum (closed on Monday; replaced by Baoerhan Pagoda when closed)",
+            "Kuan Alley Food Street",
+            "Transfer to the hotel"
+          ]
+        },
+        {
+          "day": "Day 6",
+          "title": "Hohhot – Guangzhou – Manila",
+          "items": [
+            "Hotel breakfast",
+            "Check out and transfer to the airport",
+            "Fly Hohhot to Guangzhou (CZ3182, 07:20–10:35)",
+            "Connect to Manila (CZ397, 14:15–16:50)"
+          ]
+        }
+      ],
+      "inclusions": [
+        "Round-trip airfare via China Southern Airlines (1 piece of 23 kg plus 7 kg hand carry)",
+        "5 nights twin-sharing accommodation with daily breakfast (triple rooms are not guaranteed; if none are available, a suitable roommate is arranged where possible)",
+        "Private coach with English-speaking tour guide",
+        "Sightseeing as specified, including the first-way entrance fees",
+        "Meals as listed",
+        "Skiing at Mazongshan with full equipment rental"
+      ],
+      "exclusions": [
+        "Personal expenses such as phone calls and minibar",
+        "Philippine travel tax",
+        "Optional tours",
+        "Tips for driver and guide: USD 30 per person, USD 5 per day for 6 days",
+        "Single supplement: USD 159 per person",
+        "Visa"
+      ],
+      "optional": [
+        "Option 1, Mongolian farm: USD 25 per person",
+        "Option 2, horse riding: USD 30 per person",
+        "Option 3, Xiangshawan Port entertainment: USD 30 per person"
+      ],
+      "hotelsLabel": "Hotels",
+      "hotels": [
+        "Day 1, 2, 4, 5: Blueocean Lindun Hotel or similar (local 5-star, Hohhot)",
+        "Day 3: Zhenjin International Hotel or similar (local 5-star, Dalad Qi)"
+      ],
+      "notes": [
+        "Meals (by day): Day 1 none; Day 2 B/L/D; Day 3 B/L/D; Day 4 B/L/D; Day 5 B/L/D; Day 6 breakfast",
+        "Child without bed 2 to 11 years",
+        "No shopping stops (all-in non-shopping tour)",
+        "All rooms are twin sharing by default; triple rooms are not guaranteed",
+        "Itinerary is subject to change without prior notice and to weather",
+        "If the listed hotels are not available they will be replaced by similar ones",
+        "The visa is not included; Philippine passport holders need a China visa (visa fee is not stated in the source itinerary)"
+      ],
+      "places": [
+        "Hohhot",
+        "Xilamuren Grassland",
+        "Heshuo Kejing Princess Mansion",
+        "Yinken Whistling Dune Bay",
+        "Xiangshawan",
+        "Genghis Khan Mausoleum",
+        "Mengliang Folkland",
+        "Mazongshan Ski Resort",
+        "Inner Mongolia Museum",
+        "Baoerhan Pagoda",
+        "Kuan Alley Food Street"
+      ],
+      "posters": [
+        "cn-poster-inner-mongolia-6d5n-no-shopping-0.jpg"
+      ],
+      "posterSize": [
+        511,
+        800
+      ]
+    },
+    {
+      "id": "jinmen-taiwan-xiamen-4d3n-no-shopping",
+      "name": "Jinmen (Taiwan) – Xiamen 4D3N Tour (No Shopping)",
+      "subtitle": "Out Manila · Philippine Airlines",
+      "region": "intl",
+      "country": "China",
+      "flag": "cn",
+      "duration": "4 days 3 nights",
+      "days": 4,
+      "status": "available",
+      "featured": false,
+      "departure": "Manila (NAIA)",
+      "price": {
+        "from": 699,
+        "label": "From",
+        "unit": "per pax",
+        "currency": "USD"
+      },
+      "year": 2026,
+      "ends": "2026-11-17",
+      "image": "cn-xiamen.jpg",
+      "alt": "Xiamen’s coast and city",
+      "gallery": [
+        "cn-xiamen.jpg"
+      ],
+      "summary": "Fly Philippine Airlines to Xiamen, ferry to Jinmen (Kinmen) for forts, tunnels and Lieyu Township, then enjoy Xiamen with hot springs and a 5-star stay.",
+      "overview": "This 4-day no-shopping tour flies Philippine Airlines from Manila to Xiamen, then crosses by ferry to Jinmen (Kinmen), Taiwan. You see Jyuguang Tower, the Golden Gate Bridge to Lieyu Township, Jiugong Tunnel and the Cidi Triangle Fortress, then return to Xiamen for two nights at the 5-star Kempinski Hotel, with free time at an outlet mall, Zhongshan Road and a hot spring soak. One meal is upgraded to lobster seafood.",
+      "travelDates": [
+        {
+          "d": "Nov 14–17"
+        }
+      ],
+      "travelDatesNote": "Departures from Manila, Nov 14–17 2026 to Nov 14–17 2026. The rate changes by date: an amount on a date is added to the base rate per pax. Seats are limited and confirmed at booking.",
+      "itinerary": [
+        {
+          "day": "Day 1",
+          "title": "Manila – Xiamen – Jinmen",
+          "items": [
+            "Flight PR334 Manila to Xiamen (07:30–09:55)",
+            "Meet the tour guide at Xiamen airport",
+            "After lunch, ferry to Jinmen",
+            "Jyuguang Tower, with distant views of Jinmen",
+            "Zhongshan Memorial Forest: Ching-kuo Memorial Hall, Rushan Historic Fort, fighter jet, anti-aircraft gun and tank display areas",
+            "Jinmen specialty: Kung Tang (peanut brittle)",
+            "Hotel check in",
+            "Meals: Lunch / Dinner (no breakfast)"
+          ]
+        },
+        {
+          "day": "Day 2",
+          "title": "Jinmen – Lieyu – Jinmen – Xiamen",
+          "items": [
+            "Hotel breakfast and check out",
+            "Jinmen tea house, learning the history of the Military Recreation Centers",
+            "Cross the Golden Gate Bridge, the newest Jinmen landmark linking Greater Jinmen and Lieyu Township",
+            "Lieyu Township: Badalouzi, Shengli Gate and the August 23 Artillery Battle Victory Memorial",
+            "Jiugong Tunnel",
+            "Shuangkou Beach Park, Jinmen’s closest beach to Xiamen Island",
+            "Cidi Triangle Fortress",
+            "Model Street",
+            "Jinmen specialty: kaoliang products (face masks, enzymes and more)",
+            "Jinmen specialty: kitchen knives",
+            "Ferry back to Xiamen",
+            "After dinner, hotel check in",
+            "Meals: Breakfast / Lunch / Dinner"
+          ]
+        },
+        {
+          "day": "Day 3",
+          "title": "Xiamen",
+          "items": [
+            "Hotel breakfast and check out",
+            "Free time at the outlet mall",
+            "Zhongshan Road Pedestrian Street",
+            "Hot spring soak",
+            "Meals: Breakfast / Dinner (lunch not included)"
+          ]
+        },
+        {
+          "day": "Day 4",
+          "title": "Xiamen – Manila",
+          "items": [
+            "Hotel breakfast and check out",
+            "Free time",
+            "Transfer to the airport",
+            "Flight PR331 Xiamen to Manila (17:40–20:30)",
+            "Meals: Breakfast only"
+          ]
+        }
+      ],
+      "inclusions": [
+        "Round-trip economy airfare and taxes with Philippine Airlines",
+        "Baggage allowance: 1 piece of 23 kg check-in plus 1 piece of 7 kg carry-on",
+        "3 nights accommodation, twin sharing, with daily hotel breakfast (1 night local business hotel in Jinmen, 2 nights 5★ hotel in Xiamen)",
+        "Private bus with Jinmen and Xiamen English-speaking guides (no guide on the ferry)",
+        "Sightseeing as listed, including first-way entrance fees",
+        "Breakfast and 5 meals, with 1 meal upgraded to lobster seafood",
+        "Xiamen Wutong – Jinmen round-trip ferry ticket and pier tax"
+      ],
+      "exclusions": [
+        "Personal expenses such as telephone calls and minibar",
+        "Travel insurance",
+        "Philippine travel tax USD 30 per person (collected with the tour fee)",
+        "China group visa for two entries USD 80 per person (collected with the tour fee)",
+        "Tips for driver and guide USD 20 per person (USD 5 per day x 4 days, collected with the tour fee)",
+        "Single supplement USD 170 per person",
+        "Extra bed or triple room difference USD 40 per person",
+        "Fuel surcharge (subject to change)",
+        "Entry permit fees for Taiwan/Jinmen (Philippine passport holders can enter Jinmen visa-free for 14 days)"
+      ],
+      "hotelsLabel": "Hotels",
+      "hotels": [
+        "Day 1: Local business hotel in Jinmen",
+        "Day 2–3: Kempinski Hotel Xiamen 5★"
+      ],
+      "notes": [
+        "Meal codes B/L/D = breakfast/lunch/dinner; X = not included.",
+        "Sold as a No Shopping package.",
+        "Philippine passport holders need a China visa (group visa for two entries, USD 80 per person) but can enter Jinmen visa-free for 14 days.",
+        "Child rates: child with bed ages 6–11; child without bed ages 2–5.",
+        "Travellers above 60, under 20, or with mobility impairments must be accompanied by an adult relative.",
+        "No refund if you cancel or skip itinerary or accommodation items during the trip; tips are charged for the full number of days.",
+        "The itinerary, flight times and hotels are subject to final confirmation; the order of attractions may change because of weather or traffic."
+      ],
+      "places": [
+        "Jyuguang Tower",
+        "Zhongshan Memorial Forest",
+        "Ching-kuo Memorial Hall",
+        "Rushan Historic Fort",
+        "Golden Gate Bridge (Jinmen)",
+        "Lieyu Township",
+        "Badalouzi",
+        "August 23 Artillery Battle Victory Memorial",
+        "Jiugong Tunnel",
+        "Shuangkou Beach Park",
+        "Cidi Triangle Fortress",
+        "Model Street",
+        "Zhongshan Road Pedestrian Street",
+        "Xiamen hot springs"
+      ],
+      "posters": [
+        "cn-poster-jinmen-taiwan-xiamen-4d3n-no-shopping-0.jpg"
+      ],
+      "posterSize": [
+        528,
+        800
+      ]
+    },
+    {
+      "id": "kweichow-6d5n-no-shopping",
+      "name": "Guizhou (Guiyang – Huangguoshu) 6D5N Tour (No Shopping)",
+      "subtitle": "Out Manila · China Southern Airlines",
+      "region": "intl",
+      "country": "China",
+      "flag": "cn",
+      "duration": "6 days 5 nights",
+      "days": 6,
+      "status": "available",
+      "featured": false,
+      "departure": "Manila (NAIA)",
+      "price": {
+        "from": 729,
+        "label": "From",
+        "unit": "per pax",
+        "currency": "USD"
+      },
+      "year": 2026,
+      "ends": "2027-03-26",
+      "image": "cn-guizhou.jpg",
+      "alt": "A mountain village in Guizhou",
+      "gallery": [
+        "cn-guizhou.jpg"
+      ],
+      "summary": "Guizhou highlights on a no-shopping tour: Yelang Valley, the Pingtang Sky Eye telescope and Huangguoshu Waterfall, in local 5-star hotels.",
+      "overview": "Fly via Guangzhou to Guiyang and discover Guizhou: Yelang Valley, the Qingyun Market pedestrian street, the Pingtang Sky Eye (FAST radio telescope) and Huangguoshu Waterfall, one of Asia’s famous waterfalls. Stay in local 5-star hotels in Guiyang and Anshun, with bottled water provided. A no-shopping package.",
+      "travelDates": [
+        {
+          "d": "Dec 20–25",
+          "add": 370,
+          "cur": "USD"
+        },
+        {
+          "d": "Jan 12–17",
+          "y": 2027
+        },
+        {
+          "d": "Mar 21–26",
+          "y": 2027,
+          "add": 170,
+          "cur": "USD"
+        }
+      ],
+      "travelDatesNote": "Departures from Manila, Dec 20–25 2026 to Mar 21–26 2027. The rate changes by date: an amount on a date is added to the base rate per pax. Seats are limited and confirmed at booking.",
+      "itinerary": [
+        {
+          "day": "Day 1",
+          "title": "Manila – Guangzhou – Guiyang",
+          "items": [
+            "Flights Manila – Guangzhou (CZ3092, 12:00/14:40) and Guangzhou – Guiyang (CZ3662, 20:45/22:30)",
+            "Arrive in Guiyang and meet your tour guide",
+            "Hotel check in"
+          ]
+        },
+        {
+          "day": "Day 2",
+          "title": "Guiyang city",
+          "items": [
+            "Hotel breakfast",
+            "Yelang Valley, the Kingdom of Stones",
+            "Qingyun Market, internet-famous pedestrian street",
+            "Jiaxiu Pavilion",
+            "Guiyang North Catholic Church",
+            "Optional tours (USD 150 per person): Sky Eye electric vehicle, headphones, guided tour, round-trip sightseeing bus to the observation deck, Huangguoshu electric vehicle, round-trip escalator at Huangguoshu and seafood BBQ buffet"
+          ]
+        },
+        {
+          "day": "Day 3",
+          "title": "Guiyang – Pingtang – Anshun",
+          "items": [
+            "Hotel breakfast and check out",
+            "Pingtang Sky Eye (entrance ticket included; transportation within the scenic area, commentary headset and round-trip sightseeing bus to the observation deck not included)",
+            "Anshun Academy"
+          ]
+        },
+        {
+          "day": "Day 4",
+          "title": "Huangguoshu Waterfall",
+          "items": [
+            "Hotel breakfast",
+            "Huangguoshu Waterfall, one of Asia’s famous waterfalls (entrance ticket included; electric vehicle and round-trip escalator not included)"
+          ]
+        },
+        {
+          "day": "Day 5",
+          "title": "Anshun – Guiyang",
+          "items": [
+            "Hotel breakfast and check out",
+            "The White House in Guiyang",
+            "Guiyang Twin Towers",
+            "Dolphin Square, a landmark commercial complex in Huaguoyuan Orchard Business District",
+            "Hi-Le District: food street and Hi-Le Fashion Mall"
+          ]
+        },
+        {
+          "day": "Day 6",
+          "title": "Guiyang – Guangzhou – Manila",
+          "items": [
+            "Packed or hotel breakfast and check out",
+            "Transfer to the airport; flights Guiyang – Guangzhou (CZ3661, 07:50/09:30) and Guangzhou – Manila (CZ397, 14:15/16:50)",
+            "On Jan 17 and Mar 26 departures: Guiyang – Guangzhou CZ3617 (12:15/13:50) and Guangzhou – Manila CZ3077 (20:00/22:30)"
+          ]
+        }
+      ],
+      "inclusions": [
+        "Economy round-trip airfare and taxes with China Southern Airlines",
+        "Baggage: 1 piece of 23 kg check-in and 1 piece of 7 kg carry-on",
+        "5 nights’ twin-sharing accommodation at local 5-star hotels",
+        "Private bus with English-speaking tour guide",
+        "Sightseeing as specified, including first-way entrance fees",
+        "Meals: breakfast plus 6 meals, Chinese communal dining and local flavours such as free-range chicken",
+        "Complimentary bottled water"
+      ],
+      "exclusions": [
+        "Personal expenses such as telephone calls and minibar",
+        "Travel insurance",
+        "Philippines travel tax USD 30 per person (collected with tour fee)",
+        "China group visa USD 40 per person (collected with tour fee)",
+        "Tips for driver and guide USD 60 per person, USD 10 per day for 6 days (collected with tour fee)",
+        "Single supplement USD 150 per person",
+        "Fuel surcharge (subject to change)",
+        "Optional tours: Sky Eye electric vehicle, headphones, guided tour, round-trip sightseeing bus to observation deck, Huangguoshu electric vehicle, round-trip escalator and seafood BBQ buffet, USD 150 per person"
+      ],
+      "optional": [
+        "Optional package, USD 150 per person: Sky Eye electric vehicle, headphones, guided tour, round-trip sightseeing bus to the observation deck, Huangguoshu electric vehicle, round-trip escalator at Huangguoshu and seafood BBQ buffet"
+      ],
+      "hotelsLabel": "Hotels",
+      "hotels": [
+        "Day 1-2: Local 5-star hotel in Guiyang",
+        "Day 3-4: Local 5-star hotel in Anshun",
+        "Day 5: Local 5-star hotel in Guiyang",
+        "Day 6: Home sweet home"
+      ],
+      "notes": [
+        "Meals: Day 1 none; Day 2 breakfast and lunch; Days 3-4 breakfast, lunch and dinner; Day 5 breakfast and lunch; Day 6 breakfast only",
+        "No-shopping package",
+        "Child aged 2-11 without bed has a lower rate",
+        "Hotels have no triple rooms; a single traveller pays the single supplement",
+        "Hotels do not provide free disposable toiletries; please bring your own",
+        "Order of attractions may be adjusted for weather, traffic or visitor volume",
+        "If attractions are reduced because of force majeure, the travel agency is not liable and no refunds are given for expenses incurred",
+        "No refunds for itinerary or accommodation waived during the trip; tips must be paid for the full number of tour days",
+        "Itinerary, flight times and hotels are subject to final confirmation",
+        "The tour guide will recommend the USD 150 optional package",
+        "Philippine passport holders need a China group visa, USD 40 per person (not included)"
+      ],
+      "places": [
+        "Yelang Valley",
+        "Qingyun Market",
+        "Jiaxiu Pavilion",
+        "Guiyang North Catholic Church",
+        "Pingtang Sky Eye",
+        "Anshun Academy",
+        "Huangguoshu Waterfall",
+        "The White House Guiyang",
+        "Guiyang Twin Towers",
+        "Dolphin Square",
+        "Hi-Le District"
+      ],
+      "posters": [
+        "cn-poster-kweichow-6d5n-no-shopping-0.jpg"
+      ],
+      "posterSize": [
+        517,
+        800
+      ]
+    },
+    {
+      "id": "nanxun-hangzhou-shanghai-5d4n",
+      "name": "Nanxun – Hangzhou – Shanghai 5D4N Tour",
+      "subtitle": "Out Manila · Philippine Airlines",
+      "region": "intl",
+      "country": "China",
+      "flag": "cn",
+      "duration": "5 days 4 nights",
+      "days": 5,
+      "status": "available",
+      "featured": false,
+      "departure": "Manila (NAIA)",
+      "price": {
+        "from": 598,
+        "label": "From",
+        "unit": "per pax",
+        "currency": "USD"
+      },
+      "year": 2026,
+      "ends": "2026-12-08",
+      "image": "cn-wuzhen.jpg",
+      "alt": "Wuzhen water town lit up at night",
+      "gallery": [
+        "cn-wuzhen.jpg"
+      ],
+      "summary": "Nanxun Ancient Town, West Lake in Hangzhou and Shanghai’s Bund and Nanjing Road on a 5-day tour with Philippine Airlines flights and 5-star hotels.",
+      "overview": "Fly Manila to Shanghai on Philippine Airlines and head to the water town of Nanxun, then Hangzhou for West Lake and the Meijiawu tea plantation, and finish in Shanghai at the Bund and Nanjing Road. All four nights are in 5-star hotels, with a private coach and an English-speaking guide. The rate includes two shop visits.",
+      "travelDates": [
+        {
+          "d": "Nov 6–10"
+        },
+        {
+          "d": "Nov 20–24"
+        },
+        {
+          "d": "Dec 4–8"
+        }
+      ],
+      "travelDatesNote": "Departures from Manila, Nov 6–10 2026 to Dec 4–8 2026. The rate changes by date: an amount on a date is added to the base rate per pax. Seats are limited and confirmed at booking.",
+      "itinerary": [
+        {
+          "day": "Day 1",
+          "title": "Manila – Shanghai – Nanxun",
+          "items": [
+            "Fly Manila to Shanghai (PR338, 06:05/09:50, or PR336, 11:10/14:55) and meet the English-speaking guide at the airport",
+            "Transfer to Nanxun and visit Nanxun Ancient Town",
+            "Transfer to the hotel and check in (meals: X/X/D)"
+          ]
+        },
+        {
+          "day": "Day 2",
+          "title": "Nanxun – Hangzhou",
+          "items": [
+            "Hotel breakfast and check out",
+            "Rowing boat ride in Nanxun Ancient Town",
+            "Transfer to Hangzhou and visit West Lake, with West Lake Xintiandi Black Pearl afternoon tea (ice-cream hot-pot, nine-square grid snacks and edible bird’s nest)",
+            "Optional tour: Romance of Song Dynasty",
+            "Transfer to the hotel and check in (meals: B/L/X)"
+          ]
+        },
+        {
+          "day": "Day 3",
+          "title": "Hangzhou",
+          "items": [
+            "Hotel breakfast",
+            "Meijiawu Tea Plantation (tea tasting and Hanfu experience)",
+            "Hubin Yintai in 77 Mall",
+            "Belt and Road Silk Factory experience (meals: B/L/X)"
+          ]
+        },
+        {
+          "day": "Day 4",
+          "title": "Hangzhou – Shanghai",
+          "items": [
+            "Hotel breakfast and check out",
+            "Shopping stop: jade shop",
+            "Transfer to Shanghai and visit the Shanghai 5D Illusion Interactive Space",
+            "Shopping stop: Chinese medicine shop",
+            "Nanjing Road",
+            "Louis Vuitton Cruise (photo stop)",
+            "Starbucks Reserve Roastery",
+            "The Bund",
+            "Oriental Pearl Tower (photo stop)",
+            "Optional tour: Huangpu River Cruise with one cup of Starbucks coffee",
+            "Transfer to the hotel and check in (meals: B/L/X)"
+          ]
+        },
+        {
+          "day": "Day 5",
+          "title": "Shanghai – Manila",
+          "items": [
+            "Hotel breakfast and check out",
+            "Transfer to the airport and fly to Manila (PR339, 10:50/14:50, or PR337, 16:00/19:50) (meals: B/X/X)"
+          ]
+        }
+      ],
+      "inclusions": [
+        "Round-trip airfare via Philippine Airlines (1 piece 23 kg plus 7 kg hand carry-on)",
+        "4 nights’ accommodation, twin sharing, with daily hotel breakfast (triple rooms not guaranteed; if none are available, a suitable roommate will be arranged)",
+        "Private coach with English-speaking tour guide",
+        "Sightseeing as specified, including first-way entrance fees",
+        "Meals as listed, including 1 grilled meat and seafood small hot-pot and 1 Tongxiang farmhouse banquet"
+      ],
+      "exclusions": [
+        "Personal expenses such as phone calls and minibar",
+        "Philippines travel tax",
+        "Optional tours",
+        "Tips for driver and guide USD 50 per person (USD 10 per day x 5 days)",
+        "Single supplement USD 180 per person",
+        "Visa"
+      ],
+      "optional": [
+        "Romance of Song Dynasty: USD 55 per person",
+        "Huangpu River Cruise + Starbucks coffee: USD 55 per person"
+      ],
+      "hotelsLabel": "Hotels",
+      "hotels": [
+        "Day 1: Hilton Huzhou Nanxun or similar 5★",
+        "Day 2-3: Sheraton Hangzhou or similar 5★",
+        "Day 4: voco Shanghai Zhangjiang or similar 5★"
+      ],
+      "notes": [
+        "Meal codes: B = breakfast, L = lunch, D = dinner, X = not included",
+        "Rate includes 2 shop visits: jade shop and Chinese medicine shop",
+        "Child categories: adult and child with bed; child without bed 2-18 years",
+        "Philippine passport holders need a China visa; the PDF lists visa as not included",
+        "Itinerary is subject to change without prior notice and to weather conditions",
+        "All rooms are twin sharing by default; triple rooms not guaranteed",
+        "Hotels are subject to replacement with similar ones if not available"
+      ],
+      "places": [
+        "Nanxun Ancient Town",
+        "West Lake",
+        "Meijiawu Tea Plantation",
+        "Hubin Yintai in 77 Mall",
+        "Belt and Road Silk Factory",
+        "Shanghai 5D Illusion Interactive Space",
+        "Nanjing Road",
+        "Starbucks Reserve Roastery",
+        "The Bund",
+        "Oriental Pearl Tower"
+      ],
+      "posters": [
+        "cn-poster-nanxun-hangzhou-shanghai-5d4n-0.jpg"
+      ],
+      "posterSize": [
+        518,
+        800
+      ]
+    },
+    {
+      "id": "northern-xinjiang-skiing-6d5n-no-shopping",
+      "name": "Northern Xinjiang Skiing 6D5N Tour (No Shopping)",
+      "subtitle": "Out Manila · China Southern Airlines",
+      "region": "intl",
+      "country": "China",
+      "flag": "cn",
+      "duration": "6 days 5 nights",
+      "days": 6,
+      "status": "available",
+      "featured": false,
+      "departure": "Manila (NAIA)",
+      "price": {
+        "from": 1385,
+        "label": "From",
+        "unit": "per pax",
+        "currency": "USD"
+      },
+      "year": 2026,
+      "ends": "2027-03-10",
+      "image": "cn-xinjiang.jpg",
+      "alt": "Green valleys below snowy peaks in Xinjiang",
+      "gallery": [
+        "cn-xinjiang.jpg"
+      ],
+      "summary": "Six days in northern Xinjiang with Kanas Lake, Jiangjun Mountain, a 4-hour beginner ski experience at Jikepulin and 4-star hotels.",
+      "overview": "Fly via Guangzhou to Urumqi and travel through Altay, Hemu and Kanas to Burqin, with desert highway views, Kanas Lake, Hanasi Old Village and a beginner ski experience at Jikepulin International Ski Resort. Stay in 4-star hotels with an English-speaking guide and a private coach. Quoted for 20 people without compulsory shopping.",
+      "travelDates": [
+        {
+          "d": "Nov 18–23"
+        },
+        {
+          "d": "Nov 20–25"
+        },
+        {
+          "d": "Dec 2–7"
+        },
+        {
+          "d": "Dec 8–13",
+          "add": 150,
+          "cur": "USD"
+        },
+        {
+          "d": "Jan 3–8",
+          "y": 2027
+        },
+        {
+          "d": "Jan 9–14",
+          "y": 2027
+        },
+        {
+          "d": "Jan 16–21",
+          "y": 2027
+        },
+        {
+          "d": "Feb 27–Mar 4",
+          "y": 2027
+        },
+        {
+          "d": "Mar 5–10",
+          "y": 2027
+        }
+      ],
+      "travelDatesNote": "Departures from Manila, Nov 18–23 2026 to Mar 5–10 2027. The rate changes by date: an amount on a date is added to the base rate per pax. Seats are limited and confirmed at booking.",
+      "itinerary": [
+        {
+          "day": "Day 1",
+          "title": "Manila – Urumqi",
+          "items": [
+            "Fly Manila to Guangzhou (CZ5052 03:20–05:50), then to Urumqi (CZ6886 08:10–13:40)",
+            "Meet your guide at Urumqi airport",
+            "Transfer to hotel"
+          ]
+        },
+        {
+          "day": "Day 2",
+          "title": "Urumqi – Altay",
+          "items": [
+            "Breakfast at hotel and check out",
+            "S21 Desert Highway",
+            "Kelameili Desert Park",
+            "Jiangjun Mountain (cable car included)",
+            "Sunset party",
+            "Mountain open-air movie"
+          ]
+        },
+        {
+          "day": "Day 3",
+          "title": "Altay – Hemu",
+          "items": [
+            "Breakfast at hotel and check out",
+            "Ahe Highway (national highway and mountain road)",
+            "Jikepulin International Ski Resort, including a 4-hour beginner ski experience (snow equipment included, snow clothing not included)"
+          ]
+        },
+        {
+          "day": "Day 4",
+          "title": "Hemu – Kanas – Burqin",
+          "items": [
+            "Breakfast at hotel and check out",
+            "Kanas Scenic Area",
+            "Kanas Lake",
+            "Hanasi Old Village",
+            "Fairy Bay, Moon Bay and Wolong Bay"
+          ]
+        },
+        {
+          "day": "Day 5",
+          "title": "Burqin – Altay – Urumqi",
+          "items": [
+            "Breakfast at hotel and check out",
+            "Wulunguhu Park",
+            "Devil City on the Sea",
+            "Xinjiang International Grand Bazaar"
+          ]
+        },
+        {
+          "day": "Day 6",
+          "title": "Urumqi – Manila",
+          "items": [
+            "Breakfast at hotel and check out",
+            "Transfer to airport and fly to Guangzhou (CZ6881 16:45–21:45), then to Manila (CZ5051 23:45–02:20+1)"
+          ]
+        }
+      ],
+      "inclusions": [
+        "International airfare and airport tax",
+        "Baggage: 1 piece 23 kg check-in and 1 piece 8 kg hand carry",
+        "Accommodation, twin sharing, with daily breakfast",
+        "Private coach with English-speaking tour guide",
+        "Sightseeing as specified, including all entrance fees",
+        "Meals as listed (8 meals)",
+        "2 bottles of mineral water per person per day"
+      ],
+      "exclusions": [
+        "Philippines travel tax: USD 30 per person",
+        "China group visa: USD 40 per person",
+        "Personal expenses such as phone calls and minibar",
+        "Tips for driver and guide: USD 30 per person (USD 5 per day x 6 days)",
+        "Single supplement: USD 220 per person",
+        "Optional tours",
+        "Travel insurance"
+      ],
+      "hotelsLabel": "Hotels",
+      "hotels": [
+        "Day 1 and 5: Ramada by Wyndham Urumqi Midong or similar 4★",
+        "Day 2: Altay Melody Hotel or similar 4★",
+        "Day 3: Quanji Hotel Hemu or similar 4★",
+        "Day 4: City Story Hotel Burqin or similar 4★"
+      ],
+      "notes": [
+        "Quotation is based on 20 people without a compulsory shopping tour",
+        "Dec 8–13 departure carries a supplement of USD 150 per person",
+        "Rooms are not held; rates may change without notice",
+        "Itinerary can change with local conditions; hotels may be replaced by similar ones",
+        "Re-enquire if your dates fall on a national holiday or large exhibition"
+      ],
+      "places": [
+        "S21 Desert Highway",
+        "Kelameili Desert Park",
+        "Jiangjun Mountain",
+        "Ahe Highway",
+        "Jikepulin International Ski Resort",
+        "Kanas Scenic Area",
+        "Kanas Lake",
+        "Hanasi Old Village",
+        "Fairy Bay",
+        "Moon Bay",
+        "Wolong Bay",
+        "Wulunguhu Park",
+        "Devil City on the Sea",
+        "Xinjiang International Grand Bazaar"
+      ],
+      "posters": [
+        "cn-poster-northern-xinjiang-skiing-6d5n-no-shopping-0.jpg"
+      ],
+      "posterSize": [
+        525,
+        800
+      ]
+    },
+    {
+      "id": "promo-charter-flight-avatar-mini-venice-4d3n",
+      "name": "Promo Charter Zhangjiajie (Avatar) – Changsha Mini Venice 4D3N Tour",
+      "subtitle": "Out Manila · Qingdao Airlines (charter)",
+      "region": "intl",
+      "country": "China",
+      "flag": "cn",
+      "duration": "4 days 3 nights",
+      "days": 4,
+      "status": "available",
+      "featured": false,
+      "departure": "Manila (NAIA)",
+      "price": {
+        "from": 329,
+        "label": "From",
+        "unit": "per pax",
+        "currency": "USD"
+      },
+      "year": 2026,
+      "ends": "2026-12-11",
+      "image": "cn-zhangjiajie.jpg",
+      "alt": "Sandstone pillars in Zhangjiajie National Forest Park",
+      "gallery": [
+        "cn-zhangjiajie.jpg"
+      ],
+      "summary": "Short charter trip to Changsha’s Mini Venice Town and Orange Isle, then Zhangjiajie’s Avatar mountains and the Grand Canyon Glass Bridge.",
+      "overview": "A 4-day promo charter via Changsha with Qingdao Airlines. Visit Orange Isle, Mini Venice Town and Taiping old street, then Zhangjiajie National Forest Park (the Avatar mountains) and the Grand Canyon Glass Bridge with VR experience. Shopping stops are part of this promo rate.",
+      "travelDates": [
+        {
+          "d": "Dec 8–11"
+        }
+      ],
+      "travelDatesNote": "Departures from Manila, Dec 8–11 2026 to Dec 8–11 2026. The rate changes by date: an amount on a date is added to the base rate per pax. Seats are limited and confirmed at booking.",
+      "itinerary": [
+        {
+          "day": "Day 1",
+          "title": "Manila – Changsha",
+          "items": [
+            "Charter flight Manila to Changsha (QW956 03:45/07:00); meet the guide.",
+            "Hotel buffet breakfast.",
+            "Visit Orange Isle (battery car excluded).",
+            "Visit Mini Venice Town in Changsha (entrance fee only).",
+            "Visit Taiping old street and Huangxing Road walking street.",
+            "Dinner at your own expense; transfer to hotel. Meals: B/L/X."
+          ]
+        },
+        {
+          "day": "Day 2",
+          "title": "Changsha – Zhangjiajie",
+          "items": [
+            "Hotel breakfast and check out; drive to Zhangjiajie.",
+            "Optional tour 1: Tianmen Mountain (cable car, glass skywalk, Tianmen Cave), USD 85 per person.",
+            "Optional tour 2: Tianmen Fox-Lady Show, USD 70 per person.",
+            "Transfer back to hotel. Meals: B/L/D."
+          ]
+        },
+        {
+          "day": "Day 3",
+          "title": "Zhangjiajie",
+          "items": [
+            "Hotel breakfast.",
+            "Compulsory shopping stop: Chinese medicine shop.",
+            "Avatar scenic area, up and down by Bailong Lift or Tianzishan cable car: No.1 Bridge, Avatar Hallelujah Mountain, Breath-taking Platform and West Sea Clouds.",
+            "Compulsory shopping stop: latex shop.",
+            "After dinner, transfer to hotel. Meals: B/L/D."
+          ]
+        },
+        {
+          "day": "Day 4",
+          "title": "Zhangjiajie – Changsha – Manila",
+          "items": [
+            "Hotel breakfast and check out.",
+            "Compulsory shopping stop: jewelry shop.",
+            "Visit Grand Canyon scenic area, Glass Bridge with VR experience.",
+            "Compulsory shopping stop: silk shop.",
+            "Transfer back to Changsha to fly to Manila (QW955 23:30/02:45+1). Meals: B/L/D."
+          ]
+        }
+      ],
+      "inclusions": [
+        "Charter flight Manila – Changsha – Manila, economy class, with Qingdao Airlines",
+        "Baggage: 20 kg per passenger",
+        "3 nights twin-share accommodation with daily breakfast (triple rooms not guaranteed)",
+        "Private coach with English-speaking tour guide",
+        "Sightseeing as specified, including first-way entrance fees",
+        "Meals as listed"
+      ],
+      "exclusions": [
+        "Personal expenses such as phone calls and minibar",
+        "Travel insurance",
+        "Airport tax: USD 40 per person, collected with tour fee",
+        "China group visa (guaranteed): USD 40 per person, collected with tour fee",
+        "Tips for driver and guide: USD 20 per person, collected with tour fee",
+        "Philippine travel tax: PHP 1,620 per person, paid directly at the airport",
+        "Single supplement: USD 75 per person"
+      ],
+      "optional": [
+        "Tianmen Mountain (cable car, glass skywalk, Tianmen Cave): USD 85 per person",
+        "Tianmen Fox-Lady Show: USD 70 per person"
+      ],
+      "hotelsLabel": "Hotels",
+      "hotels": [
+        "Day 1: Days Hotel by Wyndham Changsha or similar",
+        "Day 2-3: Qingxinyuan Hotel Zhangjiajie or similar"
+      ],
+      "notes": [
+        "Shopping stops are included in this rate: latex shop, jewelry shop, Chinese medicine shop, and silk shop or tea shop.",
+        "Infant 2-24 months.",
+        "Hotels may be replaced by similar ones; services are private; the order of sights may change."
+      ],
+      "places": [
+        "Orange Isle",
+        "Mini Venice Town",
+        "Taiping old street",
+        "Huangxing Road walking street",
+        "Zhangjiajie National Forest Park (Avatar)",
+        "Bailong Lift",
+        "Avatar Hallelujah Mountain",
+        "Grand Canyon Glass Bridge"
+      ],
+      "posters": [
+        "cn-poster-promo-charter-flight-avatar-mini-venice-4d3n-0.jpg"
+      ],
+      "posterSize": [
+        545,
+        800
+      ]
+    },
+    {
+      "id": "qingdao-hongkong-5d4n-no-shopping",
+      "name": "Qingdao Snow Fun & City Sightseeing 5D4N Tour (No Shopping)",
+      "subtitle": "Out Manila · Cathay Pacific Airlines",
+      "region": "intl",
+      "country": "China",
+      "flag": "cn",
+      "duration": "5 days 4 nights",
+      "days": 5,
+      "status": "available",
+      "featured": false,
+      "departure": "Manila (NAIA)",
+      "price": {
+        "from": 999,
+        "label": "From",
+        "unit": "per pax",
+        "currency": "USD"
+      },
+      "year": 2026,
+      "ends": "2027-02-28",
+      "image": "cn-qingdao.jpg",
+      "alt": "Qingdao’s seafront and pier",
+      "gallery": [
+        "cn-qingdao.jpg"
+      ],
+      "summary": "Five days in Qingdao with snow fun at Yuejishan or Zangmashan, Badaguan, Zhanqiao Pier and seafood dinners, flying Cathay Pacific via Hong Kong.",
+      "overview": "Fly Cathay Pacific via Hong Kong to Qingdao for four nights in 5-star hotels. See Zhanqiao Pier, St. Michael’s Cathedral, the Badaguan Scenic Area and the World Horticultural Expo, enjoy snow fun at a ski resort (late December to February), and dine on hot pot buffet and seafood barbecue. This is a No Shopping package.",
+      "travelDates": [
+        {
+          "d": "Jan 7–11",
+          "y": 2027
+        },
+        {
+          "d": "Jan 14–18",
+          "y": 2027
+        },
+        {
+          "d": "Feb 18–22",
+          "y": 2027
+        },
+        {
+          "d": "Feb 24–28",
+          "y": 2027
+        }
+      ],
+      "travelDatesNote": "Departures from Manila, Jan 7–11 2027 to Feb 24–28 2027. The rate changes by date: an amount on a date is added to the base rate per pax. Seats are limited and confirmed at booking.",
+      "itinerary": [
+        {
+          "day": "Day 1",
+          "title": "Manila – Hong Kong – Qingdao",
+          "items": [
+            "Fly Manila to Hong Kong (CX976, 05:45–08:10), then Hong Kong to Qingdao (CX954, 10:05–13:15)",
+            "Meet the tour guide at the airport",
+            "National Wetland Park",
+            "Confucius Statue",
+            "Sundial Square",
+            "Bright Moon & Mountains-Sea Sleepless City, with street performances such as “Mountains and Seas Under the Bright Moon” and interaction with NPC actors",
+            "Transfer to hotel and check in"
+          ]
+        },
+        {
+          "day": "Day 2",
+          "title": "Qingdao",
+          "items": [
+            "Hotel breakfast",
+            "Century-old Zhanqiao Pier",
+            "St. Michael’s Cathedral (exterior only)",
+            "Liyuan Leisure Block",
+            "Qingdao City Memory Hall (time-travel bus tour through a century of Qingdao)",
+            "Taidong Pedestrian Street",
+            "Hot pot buffet dinner",
+            "Tsingtao Beer Museum, with 1 cup of freshly brewed pure draft beer, 1 cup of draft beer and 1 pack of beer snacks (optional)"
+          ]
+        },
+        {
+          "day": "Day 3",
+          "title": "Qingdao",
+          "items": [
+            "Hotel breakfast",
+            "Sea-crossing bridge and Tangdao Bay Park",
+            "Yuejishan or Zangmashan Ski Resort – snow fun (late December to February)",
+            "Internet-famous wall at University Road",
+            "Hayao Miyazaki-themed cartoon street",
+            "Governor’s Mansion (optional)"
+          ]
+        },
+        {
+          "day": "Day 4",
+          "title": "Qingdao",
+          "items": [
+            "Hotel breakfast",
+            "World Horticultural Exposition, with small train to view the Metasequoia Avenue and Pine Forest",
+            "Badaguan Scenic Area",
+            "May Fourth Square",
+            "Olympic Sailing Center",
+            "Lovers’ Dam",
+            "MixC Shopping Mall",
+            "Seafood barbecue buffet dinner (one Jiaodong sea cucumber per person)",
+            "Sky Sea in Clouds (optional)"
+          ]
+        },
+        {
+          "day": "Day 5",
+          "title": "Qingdao – Hong Kong – Manila",
+          "items": [
+            "Hotel breakfast and check out",
+            "Transfer to the airport and fly Qingdao to Hong Kong (CX951, 14:30–18:15)",
+            "Connecting flight Hong Kong to Manila (CX913, 20:20–22:35)"
+          ]
+        }
+      ],
+      "inclusions": [
+        "Economy airfare and taxes with Cathay Pacific Airlines, round trip",
+        "Baggage allowance: 1 piece of 23 kg checked plus 7 kg hand carry",
+        "4 nights’ accommodation, twin sharing, in 5★ hotels with daily hotel breakfast",
+        "Private bus with English-speaking tour guide",
+        "Sightseeing as specified, including first-way entrance fees",
+        "Meals: breakfast plus 6 meals, including seafood barbecue buffet (one Jiaodong sea cucumber per person), Shandong cuisine, hot pot buffet, Jiaodong regional style and Chinese set dishes"
+      ],
+      "exclusions": [
+        "Personal expenses such as phone calls and minibar",
+        "Travel insurance",
+        "Philippine travel tax USD 30 per person, collected with the tour fee",
+        "China group visa USD 40 per person, collected with the tour fee",
+        "Tips for driver and guide USD 40 per person (USD 8 per day for 5 days), collected with the tour fee",
+        "Single supplement USD 140 per person",
+        "Optional tours (see below)",
+        "Fuel surcharge USD 30, subject to change"
+      ],
+      "optional": [
+        "Optional package: Tsingtao Beer Museum + Governor’s Mansion + Sky Sea in Clouds – USD 80 per person (can also be ordered and paid in advance)"
+      ],
+      "hotelsLabel": "Hotels",
+      "hotels": [
+        "Day 1–4: 5★ hotel in Qingdao",
+        "Day 5: Sweet Home"
+      ],
+      "notes": [
+        "Meals per day: D1 none; D2–D4 B/L/D; D5 B",
+        "Child without bed is ages 2–6",
+        "Philippine passport holders need a China visa (group visa USD 40 per person)",
+        "The rate has no shopping stops, but the tour guide will sell some souvenirs or local specialties on the bus; purchases are optional",
+        "The order of attractions may change due to weather, traffic or visitor volume; hotels may be replaced by similar ones",
+        "No refunds for tours or accommodation cancelled during the trip, and tips are payable for the full number of days"
+      ],
+      "places": [
+        "National Wetland Park",
+        "Confucius Statue",
+        "Sundial Square",
+        "Zhanqiao Pier",
+        "St. Michael’s Cathedral",
+        "Liyuan Leisure Block",
+        "Qingdao City Memory Hall",
+        "Taidong Pedestrian Street",
+        "Tangdao Bay Park",
+        "Yuejishan Ski Resort",
+        "Zangmashan Ski Resort",
+        "University Road",
+        "World Horticultural Exposition",
+        "Badaguan Scenic Area",
+        "May Fourth Square",
+        "Olympic Sailing Center",
+        "Lovers’ Dam",
+        "Tsingtao Beer Museum",
+        "Governor’s Mansion"
+      ],
+      "posters": [
+        "cn-poster-qingdao-hongkong-5d4n-no-shopping-0.jpg"
+      ],
+      "posterSize": [
+        514,
+        800
+      ]
+    },
+    {
+      "id": "qinghai-silkroad-china-8d7n-5star",
+      "name": "Qinghai – Silk Road Northwest China 8D7N 5-Star Tour",
+      "subtitle": "Out Manila · China Southern / Air China / China Eastern",
+      "region": "intl",
+      "country": "China",
+      "flag": "cn",
+      "duration": "8 days 7 nights",
+      "days": 8,
+      "status": "available",
+      "featured": false,
+      "departure": "Manila (NAIA)",
+      "price": {
+        "from": 1399,
+        "label": "From",
+        "unit": "per pax",
+        "currency": "USD"
+      },
+      "year": 2026,
+      "ends": "2026-11-28",
+      "image": "cn-qinghai.jpg",
+      "alt": "Qinghai Lake beside green fields",
+      "gallery": [
+        "cn-qinghai.jpg"
+      ],
+      "summary": "Eight days along Qinghai and the Silk Road: Qinghai Lake, Chaka and Qarhan Salt Lakes, Dunhuang’s Mogao Grottoes, Jiayuguan and Zhangye Danxia.",
+      "overview": "Fly to Xining and travel by private coach through Qinghai and Gansu: Qinghai Lake, the Chaka Salt Lake, the Mogao Grottoes, Mingsha Mountain and Crescent Moon Spring, Jiayuguan and the colourful Zhangye Danxia. Hotels are local 5★ (4★ in Chaka) and the guide is English-speaking. Flights go via Guangzhou, Beijing or Shanghai depending on the departure and airline.",
+      "travelDates": [
+        {
+          "d": "Oct 24–31"
+        },
+        {
+          "d": "Nov 5–12"
+        },
+        {
+          "d": "Nov 21–28"
+        }
+      ],
+      "travelDatesNote": "Departures from Manila, Oct 24–31 2026 to Nov 21–28 2026. The rate changes by date: an amount on a date is added to the base rate per pax. Seats are limited and confirmed at booking.",
+      "itinerary": [
+        {
+          "day": "Day 1",
+          "title": "Manila – Xining",
+          "items": [
+            "Fly to Xining via Guangzhou (China Southern), Beijing (Air China) or Shanghai (China Eastern), depending on the departure date",
+            "Arrive in Xining and meet the English-speaking guide",
+            "Transfer to the hotel and check in",
+            "Moji Street Night Market",
+            "Meals: X/X/X"
+          ]
+        },
+        {
+          "day": "Day 2",
+          "title": "Xining – Qinghai Lake – Chaka",
+          "items": [
+            "Hotel breakfast and check out",
+            "Qinghai Lake Erlangjian Scenic Area (including electric car)",
+            "Transfer to Chaka",
+            "Meals: B/L/D"
+          ]
+        },
+        {
+          "day": "Day 3",
+          "title": "Chaka – Golmud",
+          "items": [
+            "Hotel breakfast and check out",
+            "Chaka Salt Lake (including one-way small train and shoe covers)",
+            "Transfer to Golmud",
+            "Meals: B/L/D"
+          ]
+        },
+        {
+          "day": "Day 4",
+          "title": "Golmud – Dunhuang",
+          "items": [
+            "Hotel breakfast and check out",
+            "Qarhan Salt Lake (including electric car)",
+            "Transfer to Dunhuang",
+            "Shazhou Night Market, to taste local snacks",
+            "Meals: B/L/X"
+          ]
+        },
+        {
+          "day": "Day 5",
+          "title": "Dunhuang",
+          "items": [
+            "Hotel breakfast and check out",
+            "Mogao Grottoes (including digital movies and shuttle buses)",
+            "The Boundaryless building",
+            "Mingsha Mountain and Crescent Moon Spring (including electric car, shoe covers and camel ride)",
+            "Statue of Emperor Wu of Han Dynasty",
+            "Meals: B/L/D"
+          ]
+        },
+        {
+          "day": "Day 6",
+          "title": "Dunhuang – Jiayuguan – Zhangye",
+          "items": [
+            "Hotel breakfast and check out",
+            "The Child of Earth, a desert sculpture symbolizing rebirth",
+            "The Boundaryless building",
+            "Jiayuguan Ancient City Wall (including ticket and electric car)",
+            "Ganzhou Night Market",
+            "Transfer to Zhangye",
+            "Meals: B/L/X"
+          ]
+        },
+        {
+          "day": "Day 7",
+          "title": "Zhangye – Xining",
+          "items": [
+            "Hotel breakfast and check out",
+            "Zhangye Colorful Danxia scenic spot",
+            "Pass through the Qilian Mountains grassland",
+            "Return to Xining by bus and bullet train",
+            "Meals: B/L/D"
+          ]
+        },
+        {
+          "day": "Day 8",
+          "title": "Xining – Manila",
+          "items": [
+            "Hotel breakfast and check out",
+            "Transfer to the airport according to the flight time and fly home via Guangzhou, Beijing or Shanghai",
+            "Meals: B/X/X"
+          ]
+        }
+      ],
+      "inclusions": [
+        "Economy airfare and taxes (round trip)",
+        "Baggage allowance: 1 pc / 23 kg check-in and 7 kg carry-on",
+        "Private transfer with English-speaking tour guide",
+        "7 nights’ accommodation, twin sharing, with daily hotel breakfast",
+        "Sightseeing entrance fees as specified above (first way)",
+        "Meals as listed"
+      ],
+      "exclusions": [
+        "Personal expenses such as telephone calls and minibar",
+        "Extra baggage",
+        "Travel insurance",
+        "Philippine travel tax USD 30/pax (paid together with the tour fee)",
+        "Tips for driver and guide USD 5/pax/day x 8 days = USD 40/pax",
+        "Single supplement USD 260 per room",
+        "China group visa USD 40/pax",
+        "Optional tours"
+      ],
+      "hotelsLabel": "Hotels",
+      "hotels": [
+        "Day 1: Local 5★ hotel in Xining or similar",
+        "Day 2: Local 4★ hotel in Chaka or similar",
+        "Day 3: Local 5★ hotel in Golmud or similar",
+        "Day 4-5: Local 5★ hotel in Dunhuang or similar",
+        "Day 6: Local 5★ hotel in Zhangye or similar",
+        "Day 7: Local 5★ hotel in Xining or similar",
+        "Day 8: Sweet Home"
+      ],
+      "notes": [
+        "Meal codes: B = breakfast, L = lunch, D = dinner, X = not included",
+        "Single supplement USD 260 per room",
+        "Child with bed 11–17 yrs and child without bed 2–10 yrs",
+        "Visa: China group visa USD 40/pax is not included",
+        "Some dates carry a seasonal supplement (this is reflected in the price list)",
+        "All services are on a private basis; hotels replaced by similar ones if unavailable; the order of sights may change in crowded periods"
+      ],
+      "places": [
+        "Moji Street Night Market",
+        "Qinghai Lake",
+        "Erlangjian Scenic Area",
+        "Chaka Salt Lake",
+        "Qarhan Salt Lake",
+        "Shazhou Night Market",
+        "Mogao Grottoes",
+        "Mingsha Mountain",
+        "Crescent Moon Spring",
+        "Jiayuguan Ancient City Wall",
+        "Ganzhou Night Market",
+        "Zhangye Colorful Danxia",
+        "Qilian Mountains Grassland"
+      ],
+      "posters": [
+        "cn-poster-qinghai-silkroad-china-8d7n-5star-0.jpg",
+        "cn-poster-qinghai-silkroad-china-8d7n-5star-1.jpg"
+      ],
+      "posterSize": [
+        526,
+        800
+      ]
+    },
+    {
+      "id": "shaanxi-shanxi-7d6n-no-shopping",
+      "name": "Shaanxi – Shanxi Wave Valley & Yellow River 7D6N Tour (No Shopping)",
+      "subtitle": "Out Manila · China Southern Airlines",
+      "region": "intl",
+      "country": "China",
+      "flag": "cn",
+      "duration": "7 days 6 nights",
+      "days": 7,
+      "status": "available",
+      "featured": false,
+      "departure": "Manila (NAIA)",
+      "price": {
+        "from": 888,
+        "label": "From",
+        "unit": "per pax",
+        "currency": "USD"
+      },
+      "year": 2026,
+      "ends": "2027-07-01",
+      "image": "cn-terracotta.jpg",
+      "alt": "The Terracotta Warriors in Xi’an",
+      "gallery": [
+        "cn-terracotta.jpg"
+      ],
+      "summary": "Jingbian Wave Valley, Hukou Waterfall on the Yellow River, Yunqiu Mountain and Pingyao Ancient City over seven days in 4-star hotels, with no shopping stops.",
+      "overview": "Fly with China Southern Airlines via Guangzhou into northwest and north China for the Danxia landforms of Jingbian Wave Valley, the Yellow River’s Hukou Waterfall, Yunqiu Mountain’s ice caves and the World Heritage city of Pingyao. Six nights in 4-star hotels, 11 listed meals, a private bus and an English-speaking guide. A no-shopping package.",
+      "travelDates": [
+        {
+          "d": "Nov 6–12"
+        },
+        {
+          "d": "Nov 13–19"
+        },
+        {
+          "d": "Dec 17–23",
+          "add": 200,
+          "cur": "USD"
+        },
+        {
+          "d": "Mar 24–30",
+          "y": 2027,
+          "add": 500,
+          "cur": "USD"
+        },
+        {
+          "d": "Apr 18–24",
+          "y": 2027,
+          "add": 400,
+          "cur": "USD"
+        },
+        {
+          "d": "May 7–13",
+          "y": 2027,
+          "add": 200,
+          "cur": "USD"
+        },
+        {
+          "d": "May 16–22",
+          "y": 2027
+        },
+        {
+          "d": "May 28–Jun 3",
+          "y": 2027
+        },
+        {
+          "d": "Jun 4–10",
+          "y": 2027,
+          "add": 200,
+          "cur": "USD"
+        },
+        {
+          "d": "Jun 11–17",
+          "y": 2027
+        },
+        {
+          "d": "Jun 25–Jul 1",
+          "y": 2027
+        }
+      ],
+      "travelDatesNote": "Departures from Manila, Nov 6–12 2026 to Jun 25–Jul 1 2027. The rate changes by date: an amount on a date is added to the base rate per pax. Seats are limited and confirmed at booking.",
+      "itinerary": [
+        {
+          "day": "Day 1",
+          "title": "Manila – Guangzhou – Yulin",
+          "items": [
+            "Fly Manila to Guangzhou (CZ5052, 03:45–06:25; CZ3078, 08:20–10:55 on Apr 18, May 7 and Jun 4)",
+            "Connect to Yulin (CZ6631, 12:35–17:35, stopover at Zhengzhou)",
+            "Meet the tour guide at the airport",
+            "Dinner, then transfer to the hotel and check in"
+          ]
+        },
+        {
+          "day": "Day 2",
+          "title": "Yulin – Jingbian – Yan’an",
+          "items": [
+            "Hotel breakfast and check out",
+            "Zhenbeitai, the first watchtower of the Great Wall",
+            "Jingbian Wave Valley, Danxia landform (elevator and glass bridge included)"
+          ]
+        },
+        {
+          "day": "Day 3",
+          "title": "Yan’an – Ganquan – Jixian",
+          "items": [
+            "Hotel breakfast and check out",
+            "Baota Mountain (sightseeing cart included)",
+            "Ganquan Yucha Grand Canyon (shuttle bus included), a Danxia “earth fissure” on the Loess Plateau"
+          ]
+        },
+        {
+          "day": "Day 4",
+          "title": "Hukou – Yunqiu Mountain",
+          "items": [
+            "Hotel breakfast and check out",
+            "Shanxi Hukou Waterfall (interval shuttle included)",
+            "Yunqiu Mountain (interval shuttle included): Ta’erpo Ancient Village",
+            "Yunqiu Mountain Ice Cave Cluster (electric cart included)"
+          ]
+        },
+        {
+          "day": "Day 5",
+          "title": "Yunqiu Mountain – Hongdong – Pingyao",
+          "items": [
+            "Hotel breakfast and check out",
+            "Feihong Pagoda at Guangsheng Temple (shuttle bus included), a filming location of Black Myth: Wukong",
+            "Shuanglin Temple",
+            "Pingyao Ancient City, a World Heritage Site (electric cart in and out included; paid-attraction tickets excluded)",
+            "Shanxi merchant costume makeover on Ming-Qing Street"
+          ]
+        },
+        {
+          "day": "Day 6",
+          "title": "Pingyao – Taiyuan",
+          "items": [
+            "Hotel breakfast and check out",
+            "Jinci Park (museum tickets and electric cart excluded)",
+            "Shuangzuo Temple (Twin Pagoda Temple)",
+            "Free time at Liuxiang, Zhonglou Street and the Food Street"
+          ]
+        },
+        {
+          "day": "Day 7",
+          "title": "Taiyuan – Guangzhou – Manila",
+          "items": [
+            "Hotel or packed breakfast and check out",
+            "Transfer to the airport and fly to Guangzhou (CZ3378, 08:45–11:40; CZ3702, 12:00–15:05 on Mar 30)",
+            "Connect to Manila (CZ397, 14:05–16:45; CZ3077, 20:35–23:15 on Mar 30)"
+          ]
+        }
+      ],
+      "inclusions": [
+        "Round-trip economy airfare and taxes via China Southern Airlines",
+        "Baggage: 1 piece of 23 kg checked plus 7 kg hand carry",
+        "6 nights twin-sharing accommodation at 4-star hotels with daily breakfast",
+        "Private bus with English-speaking tour guide",
+        "Sightseeing as specified, including the first-way entrance fees",
+        "Meals: breakfast plus 11 meals (Chinese mixed dishes, Pingyao snacks, Shanxi noodles, farm-style meals, Yunqiu health-preserving meals, Yulin-style meals), meal allowance USD 8 per meal per person",
+        "Two complimentary bottles of water per person per day"
+      ],
+      "exclusions": [
+        "Personal expenses such as phone calls and minibar",
+        "Travel insurance",
+        "Philippine travel tax: USD 30 per person (collected with the tour fee)",
+        "China Group Visa: USD 40 per person (collected with the tour fee)",
+        "Tips for driver and guide: USD 35 per person, USD 5 per day for 7 days (collected with the tour fee)",
+        "Fuel surcharge: USD 30 per person (collected with the tour fee, subject to change)",
+        "Single supplement: USD 150 per person"
+      ],
+      "hotelsLabel": "Hotels",
+      "hotels": [
+        "Day 1: 4-star hotel in Yulin",
+        "Day 2: 4-star hotel in Yan’an",
+        "Day 3: 4-star hotel in Jixian",
+        "Day 4: 4-star hotel at Yunqiu Mountain",
+        "Day 5: 4-star hotel in Pingyao",
+        "Day 6: 4-star hotel in Taiyuan"
+      ],
+      "notes": [
+        "Meals (by day): Day 1 dinner; Day 2 to Day 6 B/L/D; Day 7 breakfast",
+        "Child with bed (2 to 12 years) pays the adult price; child without bed 2 to 12 years",
+        "No shopping stops; the guide may recommend products on the bus, buy only if you wish",
+        "Group tour: guests must enter and exit as a group. If you leave midway, the unused meals, tours and accommodation count as waived, you pay the difference in tour fee, and tips are due for the full number of days",
+        "Hotel rooms are twin rooms with two single beds; a king-size bed room may cost extra",
+        "Please tell us about special dietary needs in advance",
+        "Group prices; no refund for senior citizen discount tickets",
+        "The order of hotels, attractions and restaurants may be adjusted for weather, transport or flights",
+        "The northwest region has beautiful scenery, but hotels and restaurants are simpler than in other developed Chinese cities",
+        "If the listed hotels are not available they will be replaced by similar ones",
+        "Itinerary, flight times and hotels are subject to final confirmation",
+        "Philippine passport holders need a China visa; the China Group Visa fee is listed under exclusions."
+      ],
+      "places": [
+        "Zhenbeitai",
+        "Jingbian Wave Valley",
+        "Baota Mountain",
+        "Ganquan Yucha Grand Canyon",
+        "Hukou Waterfall",
+        "Yunqiu Mountain",
+        "Ta’erpo Ancient Village",
+        "Yunqiu Mountain Ice Cave",
+        "Feihong Pagoda",
+        "Guangsheng Temple",
+        "Shuanglin Temple",
+        "Pingyao Ancient City",
+        "Ming-Qing Street",
+        "Jinci Park",
+        "Shuangzuo Temple",
+        "Liuxiang",
+        "Zhonglou Street"
+      ],
+      "posters": [
+        "cn-poster-shaanxi-shanxi-7d6n-no-shopping-0.jpg",
+        "cn-poster-shaanxi-shanxi-7d6n-no-shopping-1.jpg"
+      ],
+      "posterSize": [
+        525,
+        800
+      ]
+    },
+    {
+      "id": "shanghai-suzhou-mini-kyoto-6d4n",
+      "name": "Shanghai – Suzhou – Mini Kyoto 6D4N Tour",
+      "subtitle": "Out Manila · Philippine Airlines",
+      "region": "intl",
+      "country": "China",
+      "flag": "cn",
+      "duration": "6 days 4 nights",
+      "days": 6,
+      "status": "available",
+      "featured": false,
+      "departure": "Manila (NAIA)",
+      "price": {
+        "from": 499,
+        "label": "From",
+        "unit": "per pax",
+        "currency": "USD"
+      },
+      "year": 2026,
+      "ends": "2026-12-20",
+      "image": "cn-west-lake.jpg",
+      "alt": "A pavilion on West Lake, Hangzhou",
+      "gallery": [
+        "cn-west-lake.jpg"
+      ],
+      "summary": "Fly Philippine Airlines to Shanghai for Suzhou, Wuxi’s Mini Kyoto (Nianhua Bay), the Bund and Nanjing Road, with a free day for Disneyland.",
+      "overview": "This 6-day tour flies Philippine Airlines from Manila to Shanghai on a late-night flight. You visit Suzhou’s Jinji Lake and Pingjiang Road, Nianhua Bay in Wuxi, and Shanghai’s Nanjing Road, the Bund and Oriental Pearl Tower. Day 4 is free, with optional Shanghai Disneyland or a city tour. Hotels are 4-star, and the programme includes several shop stops.",
+      "travelDates": [
+        {
+          "d": "Dec 15–20"
+        }
+      ],
+      "travelDatesNote": "Departures from Manila, Dec 15–20 2026 to Dec 15–20 2026. The rate changes by date: an amount on a date is added to the base rate per pax. Seats are limited and confirmed at booking.",
+      "itinerary": [
+        {
+          "day": "Day 1",
+          "title": "Manila – Shanghai",
+          "items": [
+            "Flight PR342 Manila to Shanghai (21:10–00:40 next day)",
+            "Airport pick-up and transfer to the hotel to check in",
+            "Meals: none included (X/X/X)"
+          ]
+        },
+        {
+          "day": "Day 2",
+          "title": "Shanghai – Suzhou – Wuxi",
+          "items": [
+            "Breakfast at the hotel and check out",
+            "Transfer to Suzhou",
+            "Jinji Lake",
+            "The Gate of the Orient (outside view)",
+            "Pingjiang Road",
+            "Transfer to Wuxi",
+            "Nianhua Bay",
+            "Transfer to the hotel and check in",
+            "Meals: Breakfast / Lunch (dinner not included)"
+          ]
+        },
+        {
+          "day": "Day 3",
+          "title": "Wuxi – Shanghai",
+          "items": [
+            "Breakfast at the hotel and check out",
+            "Pearl shop visit",
+            "Transfer to Shanghai",
+            "Jade shop visit",
+            "Nanjing Road",
+            "The Bund",
+            "Oriental Pearl Tower (outside view)",
+            "Transfer to the hotel and check in",
+            "Meals: Breakfast / Lunch (dinner not included)"
+          ]
+        },
+        {
+          "day": "Day 4",
+          "title": "Shanghai (free day)",
+          "items": [
+            "Free and easy, no service",
+            "Optional: Shanghai Disneyland, USD 130 per person (minimum 10 travellers): all-day visit with day pass ticket, with pick-up and drop-off to the hotel",
+            "Optional: Shanghai city tour, USD 60 per person (minimum 10 travellers): Jinmao Tower, Xintiandi and Qipu Road Market",
+            "Meals: Breakfast only"
+          ]
+        },
+        {
+          "day": "Day 5",
+          "title": "Shanghai – Manila",
+          "items": [
+            "Breakfast at the hotel and check out",
+            "Latex store visit",
+            "Largest Starbucks and the Louis Vuitton Maison (photo stop)",
+            "Chenghuang Temple market",
+            "Chinese medicine shop visit",
+            "Transfer to the airport for your flight",
+            "Flight PR343 Shanghai to Manila (01:45–05:35 next day)",
+            "Meals: Breakfast / Lunch (dinner not included)"
+          ]
+        }
+      ],
+      "inclusions": [
+        "Round-trip economy airfare and taxes via Philippine Airlines",
+        "Baggage allowance: 1 piece of 23 kg check-in plus 7 kg carry-on",
+        "4 nights accommodation, twin sharing, with daily hotel breakfast",
+        "Private coach with an English-speaking tour guide",
+        "Sightseeing as listed, including first-way entrance fees",
+        "Meals as listed"
+      ],
+      "exclusions": [
+        "Personal expenses such as telephone calls and minibar",
+        "Travel insurance",
+        "Philippine travel tax (pay at the airport)",
+        "Fuel and tax surcharge, if any, according to airline policy",
+        "China group visa USD 40 per person",
+        "Tips for driver and guide USD 20 per person (USD 5 per day x 4 days)",
+        "Single supplement USD 90 per person"
+      ],
+      "optional": [
+        "Shanghai Disneyland (day pass ticket and transfers): USD 130 per person, minimum 10 travellers",
+        "Shanghai city tour (Jinmao Tower, Xintiandi, Qipu Road Market): USD 60 per person, minimum 10 travellers"
+      ],
+      "hotelsLabel": "Hotels",
+      "hotels": [
+        "Day 1, 3 and 4: 4★ hotel in Shanghai or similar",
+        "Day 2: 4★ hotel in Wuxi or similar"
+      ],
+      "notes": [
+        "Meal codes B/L/D = breakfast/lunch/dinner; X = not included.",
+        "Shop stops included in this package: pearl farm or shop, jade shop, latex store and Chinese medicine shop. A fine applies if travellers do not visit the shops.",
+        "Philippine passport holders need a China visa; the China group visa is USD 40 per person.",
+        "Child rates: under 18 years is considered a child; child with bed and child without bed rates apply.",
+        "Single travellers may be paired with another guest to share a room; otherwise the single supplement applies.",
+        "Hotels may be replaced by similar ones; the order of attractions may change in crowded periods or special circumstances.",
+        "Late-night flights: arrival in Shanghai is after midnight on the morning of Day 2’s calendar date, and the return flight leaves in the early hours after the last day, so the trip counts as 6 days."
+      ],
+      "places": [
+        "Jinji Lake",
+        "The Gate of the Orient",
+        "Pingjiang Road",
+        "Nianhua Bay (Mini Kyoto)",
+        "Nanjing Road",
+        "The Bund",
+        "Oriental Pearl Tower",
+        "Chenghuang Temple Market",
+        "Shanghai Disneyland (optional)",
+        "Xintiandi (optional)",
+        "Jinmao Tower (optional)"
+      ],
+      "posters": [
+        "cn-poster-shanghai-suzhou-mini-kyoto-6d4n-0.jpg"
+      ],
+      "posterSize": [
+        517,
+        800
+      ]
+    },
+    {
+      "id": "shanghai-jeju-6d5n",
+      "name": "Shanghai – Jeju 6D5N Tour",
+      "subtitle": "Out Manila · Juneyao Airlines",
+      "region": "intl",
+      "country": "China",
+      "flag": "cn",
+      "duration": "6 days 5 nights",
+      "days": 6,
+      "status": "available",
+      "featured": false,
+      "departure": "Manila (NAIA)",
+      "price": {
+        "from": 799,
+        "label": "From",
+        "unit": "per pax",
+        "currency": "USD"
+      },
+      "year": 2026,
+      "ends": "2027-03-18",
+      "image": "cn-jeju.jpg",
+      "alt": "Sea cliffs on Jeju Island",
+      "gallery": [
+        "cn-jeju.jpg"
+      ],
+      "summary": "Shanghai city sights, then four days on Korea’s Jeju Island with K-drama filming spots, Seongsan Ilchulbong and Hallasan 1100 Highland.",
+      "overview": "Fly Juneyao Airlines from Manila to Shanghai for Nanjing Road, the Bund and Xinchang Ancient Town, then on to Jeju Island, South Korea. Jeju days include Seongsan Ilchulbong, Haenyeo Village, Hallasan 1100 Highland, Osulloc Tea Museum and K-drama filming locations. You return via Shanghai’s 1192 Old Shanghai Style Street. This is a shopping-stop package and is not suited to Muslim travellers.",
+      "travelDates": [
+        {
+          "d": "Dec 5–10"
+        },
+        {
+          "d": "Mar 6–11",
+          "y": 2027
+        },
+        {
+          "d": "Mar 13–18",
+          "y": 2027
+        }
+      ],
+      "travelDatesNote": "Departures from Manila, Dec 5–10 2026 to Mar 13–18 2027. The rate changes by date: an amount on a date is added to the base rate per pax. Seats are limited and confirmed at booking.",
+      "itinerary": [
+        {
+          "day": "Day 1",
+          "title": "Manila – Shanghai",
+          "items": [
+            "Flight Manila – Shanghai Pudong (HO1566, 03:10/06:35)",
+            "Meet your tour guide at the airport",
+            "Nanjing Road Walking Street",
+            "The Bund and Oriental Pearl Tower (photo stop)",
+            "Chenghuang Temple",
+            "Transfer to the hotel and check in",
+            "Optional: Shanghai Huangpu River Cruise, USD 30 per person"
+          ]
+        },
+        {
+          "day": "Day 2",
+          "title": "Shanghai – Jeju",
+          "items": [
+            "Hotel breakfast",
+            "Shopping stop at a jade shop",
+            "Xinchang Ancient Town",
+            "Transfer to the airport and fly to Jeju (HO1373, 19:00/21:25)",
+            "Meet your Jeju tour guide, transfer to the hotel and check in"
+          ]
+        },
+        {
+          "day": "Day 3",
+          "title": "Jeju east coast",
+          "items": [
+            "Hotel breakfast",
+            "Iho Tewoo Horse Lighthouse (Samdal-ri filming location)",
+            "Dodu Rainbow Coastal Road",
+            "Yongduam Rock (The Legend of the Blue Sea filming location)",
+            "Seongsan Ilchulbong and Haenyeo Village",
+            "Seongeup Folk Village (Jewel in the Palace filming location)",
+            "Arboretum Night Market",
+            "Transfer to the hotel"
+          ]
+        },
+        {
+          "day": "Day 4",
+          "title": "Jeju mountains and old town",
+          "items": [
+            "Hotel breakfast",
+            "Shopping stop at a ginseng gallery",
+            "Shopping stop at a cosmetic outlet",
+            "Gwaneumsa Temple",
+            "Hallasan 1100 Highland",
+            "Jeju-mok Government Office",
+            "Dongmun Traditional Market",
+            "Transfer to the hotel"
+          ]
+        },
+        {
+          "day": "Day 5",
+          "title": "Jeju tea, hanbok and coast",
+          "items": [
+            "Hotel breakfast",
+            "Shopping stop at a Red Pine gallery",
+            "Seaweed Museum with hanbok wearing experience and kimchi making",
+            "Osulloc Tea Museum",
+            "Oedolgae Rock",
+            "Olle Trail",
+            "Yeondong shopping street",
+            "Transfer to the hotel"
+          ]
+        },
+        {
+          "day": "Day 6",
+          "title": "Jeju – Shanghai – Manila",
+          "items": [
+            "Hotel breakfast",
+            "Fly Jeju – Shanghai (HO1376, 12:00/12:30)",
+            "Meet your Shanghai guide",
+            "1192 Old Shanghai Style Street",
+            "Shopping stop at a Chinese medicine shop",
+            "Transfer to the airport for the flight to Manila (HO1565, 22:20/02:10+1)"
+          ]
+        }
+      ],
+      "inclusions": [
+        "5 nights’ twin-sharing accommodation with daily hotel breakfast",
+        "Sightseeing as specified, including all entrance fees",
+        "Private coach with English-speaking tour guide",
+        "Meals as listed",
+        "Economy round-trip airfare and taxes via Juneyao Airlines",
+        "Baggage: 23 kg check-in and 7 kg hand carry"
+      ],
+      "exclusions": [
+        "Personal expenses such as telephone calls and minibar",
+        "Tips for driver and guide USD 40 per person (collected with tour fee)",
+        "China group visa USD 40 per person (collected with tour fee)",
+        "Philippines travel tax PHP 1,620 per person",
+        "Korea visa (if needed)",
+        "Single supplement USD 159 per person",
+        "Travel insurance"
+      ],
+      "optional": [
+        "Shanghai Huangpu River Cruise: USD 30 per person"
+      ],
+      "hotelsLabel": "Hotels",
+      "hotels": [
+        "Day 1: 4-star Holiday Inn Express Shanghai Songjiang Fangta by IHG or similar",
+        "Day 2-5: 3-star Jeju Inn Hotel or similar",
+        "Day 6: Home sweet home"
+      ],
+      "notes": [
+        "Meals: Day 1 lunch only; Days 2-5 breakfast, lunch (no dinner); Day 6 breakfast only",
+        "Shopping stops: Shanghai - Chinese medicine shop, jade shop; Jeju - ginseng gallery, cosmetic outlet, Red Pine gallery; a penalty applies if you do not visit the shops",
+        "Child with bed pays the adult rate; child without bed (2-8 years) has a lower rate",
+        "Not suited to Muslim travellers",
+        "Rates do not include VAT; an official receipt carries a 12% surcharge on the total amount",
+        "Rooms are twin sharing by default; triple room not guaranteed, otherwise share with other guests or pay the single supplement",
+        "Order of attractions may be adjusted without prior notice",
+        "Services are on a private basis",
+        "If a listed hotel is unavailable it is replaced by a similar one",
+        "Philippine passport holders need a China group visa (USD 40 per person, not included) and a Korea visa if required"
+      ],
+      "places": [
+        "Nanjing Road",
+        "The Bund",
+        "Oriental Pearl Tower",
+        "Chenghuang Temple",
+        "Xinchang Ancient Town",
+        "Iho Tewoo Horse Lighthouse",
+        "Dodu Rainbow Coastal Road",
+        "Yongduam Rock",
+        "Seongsan Ilchulbong",
+        "Haenyeo Village",
+        "Seongeup Folk Village",
+        "Arboretum Night Market",
+        "Gwaneumsa Temple",
+        "Hallasan 1100 Highland",
+        "Dongmun Traditional Market",
+        "Osulloc Tea Museum",
+        "Oedolgae Rock",
+        "Olle Trail",
+        "1192 Old Shanghai Style Street"
+      ],
+      "posters": [
+        "cn-poster-shanghai-jeju-6d5n-0.jpg"
+      ],
+      "posterSize": [
+        510,
+        800
+      ]
+    },
+    {
+      "id": "shanghai-jeju-6d5n-winter",
+      "name": "Shanghai – Jeju Winter 6D5N Tour",
+      "subtitle": "Out Manila · Juneyao Air",
+      "region": "intl",
+      "country": "China",
+      "flag": "cn",
+      "duration": "6 days 5 nights",
+      "days": 6,
+      "status": "available",
+      "featured": false,
+      "departure": "Manila (NAIA)",
+      "price": {
+        "from": 799,
+        "label": "From",
+        "unit": "per pax",
+        "currency": "USD"
+      },
+      "year": 2026,
+      "ends": "2027-03-01",
+      "image": "cn-jeju.jpg",
+      "alt": "Sea cliffs on Jeju Island",
+      "gallery": [
+        "cn-jeju.jpg"
+      ],
+      "summary": "Shanghai’s Bund and Nanjing Road, then four days on Jeju Island: Seongsan Ilchulbong, Hallasan 1100 Highland, Osulloc Tea Museum and Yongduam Rock.",
+      "overview": "Fly Manila to Shanghai on Juneyao Air for city sights, then continue by air to Jeju Island in South Korea for four days of coastlines, markets and drama filming locations. You return via Shanghai for the Old Shanghai-style 1192 street before flying home. Hotels are 4-star in Shanghai and 3-star on Jeju, with a private coach and English-speaking guide.",
+      "travelDates": [
+        {
+          "d": "Feb 24–Mar 1",
+          "y": 2027
+        }
+      ],
+      "travelDatesNote": "Departures from Manila, Feb 24–Mar 1 2027 to Feb 24–Mar 1 2027. The rate changes by date: an amount on a date is added to the base rate per pax. Seats are limited and confirmed at booking.",
+      "itinerary": [
+        {
+          "day": "Day 1",
+          "title": "Manila – Shanghai",
+          "items": [
+            "Fly Manila to Shanghai Pudong (HO1566, 03:10/06:35) and meet the tour guide",
+            "Nanjing Road walking street",
+            "The Bund and Oriental Pearl Tower (photo stop)",
+            "Chenghuang Temple",
+            "Transfer to the hotel and check in",
+            "Optional tour: Shanghai Huangpu River Cruise, USD 30 per person (meals: X/L/X)"
+          ]
+        },
+        {
+          "day": "Day 2",
+          "title": "Shanghai – Jeju",
+          "items": [
+            "Hotel breakfast",
+            "Shopping stop: jade shop",
+            "Xinchang Ancient Town",
+            "Transfer to the airport and fly to Jeju (HO1373, 19:00/21:25)",
+            "Meet the Jeju tour guide, transfer to the hotel and check in (meals: B/L/X)"
+          ]
+        },
+        {
+          "day": "Day 3",
+          "title": "Jeju east coast",
+          "items": [
+            "Hotel breakfast",
+            "Iho Tewoo Horse Lighthouse (Samdal-ri shooting place)",
+            "Dodu Rainbow Coastal Road",
+            "Yongduam Rock (The Legend of the Blue Sea shooting place)",
+            "Seongsan Ilchulbong and Haenyeo Village",
+            "Seongeup Folk Village (Jewel in the Palace shooting place)",
+            "Arboretum Night Market",
+            "Transfer to the hotel and check in (meals: B/L/X)"
+          ]
+        },
+        {
+          "day": "Day 4",
+          "title": "Jeju city and Hallasan",
+          "items": [
+            "Hotel breakfast",
+            "Shopping stop: Ginseng Gallery",
+            "Shopping stop: cosmetic outlet",
+            "Gwaneumsa Temple",
+            "Hallasan 1100 Highland",
+            "Jeju-mok Government Office",
+            "Dongmun Traditional Market",
+            "Transfer to the hotel and check in (meals: B/L/X)"
+          ]
+        },
+        {
+          "day": "Day 5",
+          "title": "Jeju south coast",
+          "items": [
+            "Hotel breakfast",
+            "Shopping stop: Red Pine Gallery",
+            "Seaweed Museum, with hanbok wearing experience and kimchi making",
+            "Osulloc Tea Museum",
+            "Oedolgae Rock",
+            "Olle Trail",
+            "Yeondong shopping street",
+            "Transfer to the hotel and check in (meals: B/L/X)"
+          ]
+        },
+        {
+          "day": "Day 6",
+          "title": "Jeju – Shanghai – Manila",
+          "items": [
+            "Hotel breakfast",
+            "Transfer to the airport and fly to Shanghai (HO1376, 12:00/12:30) and meet the tour guide",
+            "1192 Old Shanghai Style Street",
+            "Shopping stop: Chinese medicine shop",
+            "Transfer to the airport and fly to Manila (HO1565, 22:20/02:10+1) (meals: B/X/X)"
+          ]
+        }
+      ],
+      "inclusions": [
+        "Economy round-trip airfare and tax via Juneyao Airlines",
+        "Baggage: 23 kg checked-in plus 7 kg hand carry",
+        "5 nights’ accommodation, twin sharing, with daily hotel breakfast",
+        "Sightseeing as specified, with all entrance fees",
+        "Private coach with English-speaking tour guide",
+        "Meals as listed"
+      ],
+      "exclusions": [
+        "Personal expenses such as phone calls and minibar",
+        "Tips for driver and guide USD 40 per person (Shanghai USD 5 x 3 days = USD 15; Jeju USD 5 x 5 days = USD 25, collected with the tour fee)",
+        "China group visa fee USD 40 per person (collected with the tour fee)",
+        "Philippines travel tax PHP 1,620 per person",
+        "Korea visa (if needed)",
+        "Single supplement",
+        "Travel insurance"
+      ],
+      "optional": [
+        "Shanghai Huangpu River Cruise: USD 30 per person"
+      ],
+      "hotelsLabel": "Hotels",
+      "hotels": [
+        "Day 1: Holiday Inn Express Shanghai Songjiang Fangta by IHG or similar 4★",
+        "Day 2-5: Jeju Inn Hotel or similar 3★"
+      ],
+      "notes": [
+        "Meal codes: B = breakfast, L = lunch, D = dinner, X = not included",
+        "Rate includes shop visits: Shanghai - Chinese medicine shop and jade shop; Jeju - Ginseng Gallery, cosmetic outlet and Red Pine Gallery; a penalty applies if guests do not visit the shops",
+        "This rate is not suitable for Muslims",
+        "Rate excludes VAT; an official receipt adds 12% of the total amount",
+        "Child categories: adult and child with bed; child without bed 2-8 years",
+        "Philippine passport holders need a China visa (group visa USD 40 per person); a Korea visa is not included, if needed",
+        "All services are on a private basis; the order of attractions may be adjusted without prior notice",
+        "All rooms are twin sharing by default; no guaranteed triple room (otherwise share a room with other guests or pay the single supplement)",
+        "Hotels are subject to replacement with similar ones if not available"
+      ],
+      "places": [
+        "Nanjing Road",
+        "The Bund",
+        "Oriental Pearl Tower",
+        "Chenghuang Temple",
+        "Xinchang Ancient Town",
+        "Iho Tewoo Horse Lighthouse",
+        "Dodu Rainbow Coastal Road",
+        "Yongduam Rock",
+        "Seongsan Ilchulbong",
+        "Haenyeo Village",
+        "Seongeup Folk Village",
+        "Arboretum Night Market",
+        "Gwaneumsa Temple",
+        "Hallasan 1100 Highland",
+        "Jeju-mok Government Office",
+        "Dongmun Traditional Market",
+        "Seaweed Museum",
+        "Osulloc Tea Museum",
+        "Oedolgae Rock",
+        "Olle Trail",
+        "Yeondong Shopping Street",
+        "1192 Old Shanghai Style Street"
+      ],
+      "posters": [
+        "cn-poster-shanghai-jeju-6d5n-winter-0.jpg"
+      ],
+      "posterSize": [
+        540,
+        800
+      ]
+    },
+    {
+      "id": "shanghai-4d3n",
+      "name": "Shanghai 4D3N Tour",
+      "subtitle": "Out Manila · Philippine Airlines",
+      "region": "intl",
+      "country": "China",
+      "flag": "cn",
+      "duration": "4 days 3 nights",
+      "days": 4,
+      "status": "available",
+      "featured": false,
+      "departure": "Manila (NAIA)",
+      "price": {
+        "from": 369,
+        "label": "From",
+        "unit": "per pax",
+        "currency": "USD"
+      },
+      "year": 2026,
+      "ends": "2026-12-14",
+      "image": "cn-shanghai-night.jpg",
+      "alt": "The Shanghai skyline at night",
+      "gallery": [
+        "cn-shanghai-night.jpg"
+      ],
+      "summary": "Four days in Shanghai with a Hanfu experience and imperial-style banquet at Xinshi Ancient Town, the Bund and Nanjing Road, with a free day for optional Disneyland.",
+      "overview": "Fly direct to Shanghai and start at Xinshi Ancient Town with a Hanfu experience and imperial-style banquet, staying in a local 5-star Holiday Inn. Then see the Bund, Oriental Pearl Tower and Nanjing Road, with a free day on Day 3 for the optional Shanghai Disneyland.",
+      "travelDates": [
+        {
+          "d": "Dec 11–14"
+        }
+      ],
+      "travelDatesNote": "Departures from Manila, Dec 11–14 2026 to Dec 11–14 2026. The rate changes by date: an amount on a date is added to the base rate per pax. Seats are limited and confirmed at booking.",
+      "itinerary": [
+        {
+          "day": "Day 1",
+          "title": "Manila – Shanghai – Xinshi Ancient Town",
+          "items": [
+            "Fly Manila to Shanghai (PR338 06:15–09:50)",
+            "Meet the guide at the airport",
+            "Proceed to Xinshi Ancient Town",
+            "Hanfu experience",
+            "Imperial-style banquet dinner",
+            "Night view of the ancient town",
+            "Transfer to hotel"
+          ]
+        },
+        {
+          "day": "Day 2",
+          "title": "Xinshi Ancient Town – Shanghai",
+          "items": [
+            "Hotel breakfast and check out",
+            "Proceed to Shanghai",
+            "The Bund and Oriental Pearl Tower (outside view)",
+            "Nanjing Road walking street",
+            "Compulsory shopping stop: Chinese medicine shop",
+            "Chenghuang Temple Market",
+            "Compulsory shopping stop: latex shop",
+            "Optional: Huangpu River cruise"
+          ]
+        },
+        {
+          "day": "Day 3",
+          "title": "Shanghai",
+          "items": [
+            "Hotel breakfast, free day",
+            "Optional: Shanghai Disneyland"
+          ]
+        },
+        {
+          "day": "Day 4",
+          "title": "Shanghai – Manila",
+          "items": [
+            "Hotel breakfast and check out",
+            "Compulsory shopping stop: Intangible Cultural Heritage Jade Craft Exhibition Center",
+            "LV mega ship",
+            "Transfer to airport and fly to Manila (PR337 16:55–20:50)"
+          ]
+        }
+      ],
+      "inclusions": [
+        "Economy round-trip airfare and taxes via Philippine Airlines",
+        "23 kg check-in baggage and 5 kg hand carry",
+        "3 nights’ accommodation, twin sharing, with daily hotel breakfast",
+        "Private coach with English-speaking tour guide",
+        "Sightseeing as specified, including first-way entrance fees",
+        "Meals as listed (D1 dinner; D2 B/L; D3 breakfast; D4 breakfast)"
+      ],
+      "exclusions": [
+        "Personal expenses such as phone calls and minibar",
+        "Extra baggage allowance",
+        "Travel insurance",
+        "Philippines travel tax (paid directly at the airport)",
+        "China group visa: USD 40 per person (collected with tour fee)",
+        "Tips for driver and guide: USD 15 per person (USD 5 per day x 3 days, collected with tour fee)",
+        "Single supplement: USD 75 per person",
+        "Fuel surcharge: USD 30 per person (subject to change, collected with tour fee)"
+      ],
+      "optional": [
+        "Day 2: Huangpu River cruise, USD 30 per person (minimum 3 people)",
+        "Day 3: Shanghai Disneyland, USD 120 per person (minimum 10 people; includes ticket, transfers and guide)"
+      ],
+      "hotelsLabel": "Hotels",
+      "hotels": [
+        "Day 1: Local 5★ Holiday Inn Xinshi Ancient Town (IHG)",
+        "Day 2–3: 4★ hotel in Shanghai"
+      ],
+      "notes": [
+        "Rate includes shop visits: jade, latex and Chinese medicine shops; a penalty applies if you skip them",
+        "Child with bed (9–17 yrs), child without bed (2–8 yrs) and infant (2–24 months) are priced separately",
+        "If you use the group visa, do not book other operators’ tours during the free day",
+        "Travellers with a single may be paired to share a room, otherwise the single supplement of USD 75 applies",
+        "Hotels may be replaced by similar ones; sightseeing order may be adjusted"
+      ],
+      "places": [
+        "Xinshi Ancient Town",
+        "The Bund",
+        "Oriental Pearl Tower",
+        "Nanjing Road",
+        "Chenghuang Temple Market",
+        "Jade Craft Exhibition Center",
+        "The Louis (LV mega ship)",
+        "Shanghai Disneyland",
+        "Huangpu River"
+      ],
+      "posters": [
+        "cn-poster-shanghai-4d3n-0.jpg"
+      ],
+      "posterSize": [
+        545,
+        800
+      ]
+    },
+    {
+      "id": "shanghai-mini-kyoto-5d4n-2",
+      "name": "Shanghai – Wuxi Mini Kyoto – Wuzhen 5D4N Tour (Jan–Jul departures)",
+      "subtitle": "Out Manila · Philippine Airlines",
+      "region": "intl",
+      "country": "China",
+      "flag": "cn",
+      "duration": "5 days 4 nights",
+      "days": 5,
+      "status": "available",
+      "featured": false,
+      "departure": "Manila (NAIA)",
+      "price": {
+        "from": 429,
+        "label": "From",
+        "unit": "per pax",
+        "currency": "USD"
+      },
+      "year": 2026,
+      "ends": "2027-07-04",
+      "image": "cn-shanghai.jpg",
+      "alt": "The Lujiazui skyline from the Bund, Shanghai",
+      "gallery": [
+        "cn-shanghai.jpg"
+      ],
+      "summary": "Shanghai’s Bund, Nanjing Road and Starbucks Roastery, the Mini Kyoto night view at Nianhua Bay in Wuxi, and Wuzhen East Gate.",
+      "overview": "Four nights in 4-star hotels in Shanghai and Wuxi. See the world’s largest Starbucks flagship, Zhang Garden, Nanjing Road, The Bund, the Nianhua Bay “Mini Kyoto” night view and Wuzhen East Gate, with a free day for optional Shanghai Disneyland. Flights are with Philippine Airlines.",
+      "travelDates": [
+        {
+          "d": "Jan 23–27",
+          "y": 2027
+        },
+        {
+          "d": "Jan 28–Feb 1",
+          "y": 2027
+        },
+        {
+          "d": "Feb 18–22",
+          "y": 2027
+        },
+        {
+          "d": "Feb 20–24",
+          "y": 2027
+        },
+        {
+          "d": "Feb 27–Mar 3",
+          "y": 2027
+        },
+        {
+          "d": "Mar 4–8",
+          "y": 2027
+        },
+        {
+          "d": "Mar 11–15",
+          "y": 2027
+        },
+        {
+          "d": "Mar 13–17",
+          "y": 2027
+        },
+        {
+          "d": "Mar 22–26",
+          "y": 2027,
+          "add": 100,
+          "cur": "USD"
+        },
+        {
+          "d": "Mar 27–31",
+          "y": 2027,
+          "add": 100,
+          "cur": "USD"
+        },
+        {
+          "d": "Apr 15–19",
+          "y": 2027
+        },
+        {
+          "d": "Apr 23–27",
+          "y": 2027
+        },
+        {
+          "d": "Apr 24–28",
+          "y": 2027
+        },
+        {
+          "d": "Apr 29–May 3",
+          "y": 2027,
+          "add": 20,
+          "cur": "USD"
+        },
+        {
+          "d": "May 5–9",
+          "y": 2027
+        },
+        {
+          "d": "May 6–10",
+          "y": 2027
+        },
+        {
+          "d": "May 7–11",
+          "y": 2027
+        },
+        {
+          "d": "May 8–12",
+          "y": 2027
+        },
+        {
+          "d": "May 12–16",
+          "y": 2027
+        },
+        {
+          "d": "May 13–17",
+          "y": 2027
+        },
+        {
+          "d": "May 15–19",
+          "y": 2027
+        },
+        {
+          "d": "May 19–23",
+          "y": 2027
+        },
+        {
+          "d": "May 20–24",
+          "y": 2027
+        },
+        {
+          "d": "May 26–30",
+          "y": 2027
+        },
+        {
+          "d": "May 27–31",
+          "y": 2027
+        },
+        {
+          "d": "May 28–Jun 1",
+          "y": 2027
+        },
+        {
+          "d": "May 29–Jun 2",
+          "y": 2027
+        },
+        {
+          "d": "Jun 2–6",
+          "y": 2027
+        },
+        {
+          "d": "Jun 3–7",
+          "y": 2027
+        },
+        {
+          "d": "Jun 4–8",
+          "y": 2027
+        },
+        {
+          "d": "Jun 5–9",
+          "y": 2027
+        },
+        {
+          "d": "Jun 9–13",
+          "y": 2027
+        },
+        {
+          "d": "Jun 10–14",
+          "y": 2027
+        },
+        {
+          "d": "Jun 11–15",
+          "y": 2027
+        },
+        {
+          "d": "Jun 12–16",
+          "y": 2027
+        },
+        {
+          "d": "Jun 16–20",
+          "y": 2027
+        },
+        {
+          "d": "Jun 17–21",
+          "y": 2027
+        },
+        {
+          "d": "Jun 18–22",
+          "y": 2027
+        },
+        {
+          "d": "Jun 19–23",
+          "y": 2027
+        },
+        {
+          "d": "Jun 23–27",
+          "y": 2027
+        },
+        {
+          "d": "Jun 24–28",
+          "y": 2027
+        },
+        {
+          "d": "Jun 26–30",
+          "y": 2027
+        },
+        {
+          "d": "Jun 30–Jul 4",
+          "y": 2027
+        }
+      ],
+      "travelDatesNote": "Departures from Manila, Jan 23–27 2027 to Jun 30–Jul 4 2027. The rate changes by date: an amount on a date is added to the base rate per pax. Seats are limited and confirmed at booking.",
+      "itinerary": [
+        {
+          "day": "Day 1",
+          "title": "Manila – Shanghai",
+          "items": [
+            "Fly Manila to Shanghai (PR336, 11:10/14:55 on most dates).",
+            "Meet the guide at the airport.",
+            "Visit the world’s largest Starbucks Flagship store, the LV mega ship and Zhang Garden.",
+            "Check in at hotel. Meals: X/X/D."
+          ]
+        },
+        {
+          "day": "Day 2",
+          "title": "Shanghai – Wuxi",
+          "items": [
+            "Hotel breakfast and check out.",
+            "Compulsory shopping stop: latex shop.",
+            "Nanjing Road walking street.",
+            "The Bund and Oriental Pearl Tower (photo stop).",
+            "City God Temple of Shanghai.",
+            "Lunch: Yuyuan hotpot.",
+            "Proceed to Wuxi; night view of Nianhua Bay scenic spot, the Mini Kyoto of China.",
+            "Check in at hotel. Meals: B/L/X."
+          ]
+        },
+        {
+          "day": "Day 3",
+          "title": "Wuxi – Shanghai",
+          "items": [
+            "Hotel breakfast and check out.",
+            "Compulsory shopping stop: Pearl Exhibition Center.",
+            "Proceed to Wuzhen East Gate.",
+            "Compulsory shopping stop: jewelry shop.",
+            "Proceed to Shanghai; check in at hotel. Meals: B/L/X."
+          ]
+        },
+        {
+          "day": "Day 4",
+          "title": "Shanghai (free day)",
+          "items": [
+            "Hotel breakfast, free day.",
+            "Optional tour 1: Shanghai Disneyland (ticket, transfers and guide included; minimum 10 pax).",
+            "Optional tour 2: Jinmao Tower 88th floor sightseeing hall + Xintiandi and Shikumen + Taobao underground market (ticket, transfers and guide included; minimum 10 pax). Meals: B/X/X."
+          ]
+        },
+        {
+          "day": "Day 5",
+          "title": "Shanghai – Manila",
+          "items": [
+            "Hotel breakfast and check out.",
+            "Compulsory shopping stop: Chinese medicine shop.",
+            "Holy Trinity Church (photo stop).",
+            "Transfer to the airport for the flight to Manila (PR337 16:00/19:50). Meals: B/X/X."
+          ]
+        }
+      ],
+      "inclusions": [
+        "Economy airfare and tax with Philippine Airlines (round trip)",
+        "Baggage: 1 piece 23 kg check-in plus 1 piece 5 kg carry-on",
+        "4 nights twin-share accommodation with daily breakfast (triple room not guaranteed)",
+        "Private coach with English-speaking tour guide",
+        "Sightseeing as specified, including first-way entrance fees",
+        "Meals as listed"
+      ],
+      "exclusions": [
+        "Personal expenses such as phone calls and minibar",
+        "Travel insurance",
+        "Fuel surcharge: estimate USD 30 per person, subject to change, collected with tour fee",
+        "Philippine travel tax: PHP 1,620 per person, paid directly at the airport",
+        "China group visa: USD 40 per person",
+        "Tips for driver and guide: USD 5 per person per day x 4 days = USD 20, collected with tour fee",
+        "Single supplement: USD 90 per person"
+      ],
+      "optional": [
+        "Shanghai Disneyland: surcharge USD 120 per person (USD 140 for May 1-6, Jul 1-Aug 31 and Dec 24-Jan 3), minimum 10 pax",
+        "Jinmao Tower 88th floor + Xintiandi and Shikumen + Taobao underground market: surcharge USD 60 per person, minimum 10 pax"
+      ],
+      "hotelsLabel": "Hotels",
+      "hotels": [
+        "Day 1 and Day 4: 4★ hotel in Shanghai",
+        "Day 2: 4★ hotel in Wuxi",
+        "Day 3: 4★ hotel in Shanghai"
+      ],
+      "notes": [
+        "Shopping stops are included in this rate: latex, pearl, jade and Chinese medicine shops; a penalty applies if guests skip the shops.",
+        "Minor with bed is 11-17 yrs; child without bed 2-10 yrs; infant 2-24 months (airfare only).",
+        "This rate is not suitable for Muslim travellers.",
+        "Guests on the group visa may not book other operators’ tours on the free day.",
+        "VAT is not included; an official receipt carries a 12% surcharge on the total.",
+        "Hotels may be replaced by similar ones; services are private; the order of sights may change.",
+        "A single traveller without a roommate may be paired with another guest, otherwise the single supplement applies."
+      ],
+      "places": [
+        "Starbucks Reserve Roastery Shanghai",
+        "Zhang Garden",
+        "Nanjing Road",
+        "The Bund",
+        "Oriental Pearl Tower",
+        "City God Temple",
+        "Nianhua Bay (Mini Kyoto)",
+        "Wuzhen East Gate",
+        "Holy Trinity Church"
+      ],
+      "posters": [
+        "cn-poster-shanghai-mini-kyoto-5d4n-2-0.jpg",
+        "cn-poster-shanghai-mini-kyoto-5d4n-2-1.jpg"
+      ],
+      "posterSize": [
+        524,
+        800
+      ]
+    },
+    {
+      "id": "shanghai-mini-kyoto-5d4n-3",
+      "name": "Shanghai – Wuxi – Hangzhou Mini Kyoto 5D4N Tour",
+      "subtitle": "Out Manila · Juneyao Airlines",
+      "region": "intl",
+      "country": "China",
+      "flag": "cn",
+      "duration": "5 days 4 nights",
+      "days": 5,
+      "status": "available",
+      "featured": false,
+      "departure": "Manila (NAIA)",
+      "price": {
+        "from": 419,
+        "label": "From",
+        "unit": "per pax",
+        "currency": "USD"
+      },
+      "year": 2026,
+      "ends": "2027-03-23",
+      "image": "cn-shanghai-night.jpg",
+      "alt": "The Shanghai skyline at night",
+      "gallery": [
+        "cn-shanghai-night.jpg"
+      ],
+      "summary": "Five days from Shanghai to Wuxi’s Mini Kyoto, Nanxun Ancient Town and Hangzhou’s West Lake, with a free day in Shanghai.",
+      "overview": "Fly Juneyao Airlines to Shanghai, then visit Wuxi’s Nianhua Bay (the “Mini Kyoto” of China), Nanxun Ancient Town and West Lake in Hangzhou before returning to Shanghai for the Bund and Starbucks Flagship store. You stay in 4-star hotels, enjoy a free upgrade to a BBQ lunch and a Yuyuan hotpot lunch, and have a free day in Shanghai, with Shanghai Disneyland available as an optional tour.",
+      "travelDates": [
+        {
+          "d": "Oct 27–31",
+          "add": 30,
+          "cur": "USD"
+        },
+        {
+          "d": "Jan 12–16",
+          "y": 2027
+        },
+        {
+          "d": "Jan 19–23",
+          "y": 2027
+        },
+        {
+          "d": "Jan 22–26",
+          "y": 2027
+        },
+        {
+          "d": "Jan 26–30",
+          "y": 2027
+        },
+        {
+          "d": "Jan 29–Feb 2",
+          "y": 2027
+        },
+        {
+          "d": "Feb 12–16",
+          "y": 2027
+        },
+        {
+          "d": "Feb 16–20",
+          "y": 2027
+        },
+        {
+          "d": "Feb 19–23",
+          "y": 2027
+        },
+        {
+          "d": "Feb 26–Mar 2",
+          "y": 2027
+        },
+        {
+          "d": "Mar 2–6",
+          "y": 2027
+        },
+        {
+          "d": "Mar 5–9",
+          "y": 2027
+        },
+        {
+          "d": "Mar 9–13",
+          "y": 2027
+        },
+        {
+          "d": "Mar 12–16",
+          "y": 2027
+        },
+        {
+          "d": "Mar 19–23",
+          "y": 2027
+        }
+      ],
+      "travelDatesNote": "Departures from Manila, Oct 27–31 2026 to Mar 19–23 2027. The rate changes by date: an amount on a date is added to the base rate per pax. Seats are limited and confirmed at booking.",
+      "itinerary": [
+        {
+          "day": "Day 1",
+          "title": "Manila – Shanghai – Wuxi",
+          "items": [
+            "Fly Manila to Shanghai (HO1566, 03:50–07:20) and meet your guide at the airport",
+            "Nanjing Road Walking Street",
+            "The Bund and Oriental Pearl Tower (photo stop)",
+            "Proceed to Wuxi",
+            "Night view of Nianhua Bay scenic spot, the Mini Kyoto of China",
+            "Check in at hotel (lunch included)"
+          ]
+        },
+        {
+          "day": "Day 2",
+          "title": "Wuxi – Hangzhou",
+          "items": [
+            "Hotel breakfast and check out",
+            "Compulsory shopping stop: Pearl Exhibition Center",
+            "Nanxun Ancient Town (boat ride included)",
+            "Proceed to Hangzhou",
+            "Free upgrade lunch: BBQ",
+            "Stroll along West Lake",
+            "West Lake New World",
+            "Check in at hotel"
+          ]
+        },
+        {
+          "day": "Day 3",
+          "title": "Hangzhou – Shanghai",
+          "items": [
+            "Hotel breakfast and check out",
+            "Meijiawu Tea Garden, with Hanfu experience",
+            "Compulsory shopping stop: jade shop",
+            "Free upgrade lunch: Yuyuan hotpot",
+            "Asia’s largest Starbucks Flagship store",
+            "LV mega ship",
+            "Zhang Garden",
+            "Check in at hotel"
+          ]
+        },
+        {
+          "day": "Day 4",
+          "title": "Shanghai – free day",
+          "items": [
+            "Hotel breakfast, free day",
+            "Shanghai Disneyland (optional)",
+            "Jinmao Tower 88th floor sightseeing hall + Xintiandi & Shikumen + Taobao underground market (optional)"
+          ]
+        },
+        {
+          "day": "Day 5",
+          "title": "Shanghai – Manila",
+          "items": [
+            "Hotel breakfast and check out",
+            "Compulsory shopping stop: Chinese medicine shop",
+            "Free shopping at the Chenghuang Temple business area",
+            "Transfer to the airport and fly Shanghai to Manila (HO1565, 23:00–02:40+1)"
+          ]
+        }
+      ],
+      "inclusions": [
+        "Economy airfare and taxes via Juneyao Airlines, round trip",
+        "Baggage allowance: 1 piece of 23 kg checked plus 1 piece of 5 kg carry-on",
+        "4 nights’ accommodation, twin sharing, with daily hotel breakfast (no guaranteed triple room)",
+        "Private coach with English-speaking tour guide",
+        "Sightseeing as specified, including first-way entrance fees",
+        "Meals as listed, with a free upgrade of 1 meal to BBQ and 1 meal to Yuyuan hotpot"
+      ],
+      "exclusions": [
+        "Personal expenses such as phone calls and minibar",
+        "Travel insurance",
+        "Fuel surcharge USD 30 per person, subject to change",
+        "Philippine travel tax, paid directly at the airport",
+        "China group visa USD 40 per person",
+        "Tips for driver and guide USD 20 per person (USD 5 per day for 4 days), collected with the tour fee",
+        "Single supplement USD 90 per person"
+      ],
+      "optional": [
+        "Shanghai Disneyland (ticket, transfers and guide included; minimum 10 guests) – USD 120 per person (USD 140 on May 1–6, Jul 1–Aug 31 and Dec 24–Jan 3)",
+        "Jinmao Tower 88th floor sightseeing hall + Xintiandi & Shikumen + Taobao underground market (ticket, transfers and guide included; minimum 10 guests) – USD 60 per person"
+      ],
+      "hotelsLabel": "Hotels",
+      "hotels": [
+        "Day 1: 4★ hotel in Wuxi",
+        "Day 2: 4★ hotel in Hangzhou",
+        "Day 3–4: 4★ hotel in Shanghai",
+        "Day 5: Sweet Home"
+      ],
+      "notes": [
+        "Meals per day: D1 L; D2–D3 B/L; D4–D5 B",
+        "Minor with bed 11–17 yrs; child without bed 2–10 yrs; infant 2–24 months (airfare only). Peak dates carry a higher rate",
+        "This rate is not suitable for Muslim travellers",
+        "VAT not included; an official receipt carries a 12% surcharge on the total amount",
+        "Guests on the group visa may not book other operators’ tours on the free day",
+        "Philippine passport holders need a China visa (group visa USD 40 per person)",
+        "Shop visits are included in the rate: pearl, jade, tea and Chinese medicine shops; a penalty applies if guests skip the shops",
+        "Hotels may be replaced by similar ones; services are on a private basis; order of sights may change for crowds or special circumstances"
+      ],
+      "places": [
+        "Nanjing Road Walking Street",
+        "The Bund",
+        "Oriental Pearl Tower",
+        "Nianhua Bay",
+        "Nanxun Ancient Town",
+        "West Lake",
+        "West Lake New World",
+        "Meijiawu Tea Garden",
+        "Starbucks Flagship store",
+        "LV mega ship",
+        "Zhang Garden",
+        "Chenghuang Temple",
+        "Shanghai Disneyland",
+        "Jinmao Tower",
+        "Xintiandi"
+      ],
+      "posters": [
+        "cn-poster-shanghai-mini-kyoto-5d4n-3-0.jpg",
+        "cn-poster-shanghai-mini-kyoto-5d4n-3-1.jpg"
+      ],
+      "posterSize": [
+        520,
+        800
+      ]
+    },
+    {
+      "id": "shanghai-mini-kyoto-6d5n",
+      "name": "Shanghai Mini Kyoto 6D5N Tour",
+      "subtitle": "Out Manila · Juneyao Airlines",
+      "region": "intl",
+      "country": "China",
+      "flag": "cn",
+      "duration": "6 days 5 nights",
+      "days": 6,
+      "status": "available",
+      "featured": false,
+      "departure": "Manila (NAIA)",
+      "price": {
+        "from": 409,
+        "label": "From",
+        "unit": "per pax",
+        "currency": "USD"
+      },
+      "year": 2026,
+      "ends": "2027-03-26",
+      "image": "cn-shanghai.jpg",
+      "alt": "The Lujiazui skyline from the Bund, Shanghai",
+      "gallery": [
+        "cn-shanghai.jpg"
+      ],
+      "summary": "Six days through Shanghai, Wuxi’s Mini Kyoto, Nanxun Ancient Town and Hangzhou’s West Lake, with 4★ hotels throughout.",
+      "overview": "Fly Juneyao Airlines to Shanghai and travel through Shanghai, Wuxi and Hangzhou, staying five nights in 4★ hotels. Sights include the Bund, Nianhua Bay (Mini Kyoto), Nanxun Ancient Town by boat, West Lake and the Lujiazui skywalk, with a free upgrade to a BBQ lunch and a Yuyuan hot pot. Day 5 is free, with optional Shanghai Disneyland.",
+      "travelDates": [
+        {
+          "d": "Nov 7–12"
+        },
+        {
+          "d": "Nov 15–20",
+          "add": 20,
+          "cur": "USD"
+        },
+        {
+          "d": "Nov 21–26",
+          "add": 20,
+          "cur": "USD"
+        },
+        {
+          "d": "Nov 22–27"
+        },
+        {
+          "d": "Dec 2–7"
+        },
+        {
+          "d": "Dec 5–10"
+        },
+        {
+          "d": "Dec 6–11"
+        },
+        {
+          "d": "Dec 9–14"
+        },
+        {
+          "d": "Dec 12–17",
+          "add": 20,
+          "cur": "USD"
+        },
+        {
+          "d": "Jan 13–18",
+          "y": 2027,
+          "add": 40,
+          "cur": "USD"
+        },
+        {
+          "d": "Jan 16–21",
+          "y": 2027,
+          "add": 40,
+          "cur": "USD"
+        },
+        {
+          "d": "Jan 17–22",
+          "y": 2027,
+          "add": 40,
+          "cur": "USD"
+        },
+        {
+          "d": "Jan 20–25",
+          "y": 2027,
+          "add": 40,
+          "cur": "USD"
+        },
+        {
+          "d": "Jan 23–28",
+          "y": 2027,
+          "add": 40,
+          "cur": "USD"
+        },
+        {
+          "d": "Jan 24–29",
+          "y": 2027,
+          "add": 40,
+          "cur": "USD"
+        },
+        {
+          "d": "Jan 27–Feb 1",
+          "y": 2027,
+          "add": 40,
+          "cur": "USD"
+        },
+        {
+          "d": "Jan 30–Feb 4",
+          "y": 2027,
+          "add": 40,
+          "cur": "USD"
+        },
+        {
+          "d": "Feb 10–15",
+          "y": 2027,
+          "add": 40,
+          "cur": "USD"
+        },
+        {
+          "d": "Feb 13–18",
+          "y": 2027,
+          "add": 40,
+          "cur": "USD"
+        },
+        {
+          "d": "Feb 14–19",
+          "y": 2027,
+          "add": 40,
+          "cur": "USD"
+        },
+        {
+          "d": "Feb 17–22",
+          "y": 2027,
+          "add": 40,
+          "cur": "USD"
+        },
+        {
+          "d": "Feb 20–25",
+          "y": 2027,
+          "add": 40,
+          "cur": "USD"
+        },
+        {
+          "d": "Feb 21–26",
+          "y": 2027,
+          "add": 40,
+          "cur": "USD"
+        },
+        {
+          "d": "Feb 24–Mar 1",
+          "y": 2027,
+          "add": 40,
+          "cur": "USD"
+        },
+        {
+          "d": "Feb 28–Mar 5",
+          "y": 2027,
+          "add": 40,
+          "cur": "USD"
+        },
+        {
+          "d": "Mar 3–8",
+          "y": 2027,
+          "add": 40,
+          "cur": "USD"
+        },
+        {
+          "d": "Mar 6–11",
+          "y": 2027,
+          "add": 40,
+          "cur": "USD"
+        },
+        {
+          "d": "Mar 7–12",
+          "y": 2027,
+          "add": 40,
+          "cur": "USD"
+        },
+        {
+          "d": "Mar 10–15",
+          "y": 2027,
+          "add": 40,
+          "cur": "USD"
+        },
+        {
+          "d": "Mar 13–18",
+          "y": 2027,
+          "add": 40,
+          "cur": "USD"
+        },
+        {
+          "d": "Mar 14–19",
+          "y": 2027,
+          "add": 40,
+          "cur": "USD"
+        },
+        {
+          "d": "Mar 17–22",
+          "y": 2027,
+          "add": 40,
+          "cur": "USD"
+        },
+        {
+          "d": "Mar 21–26",
+          "y": 2027,
+          "add": 70,
+          "cur": "USD"
+        }
+      ],
+      "travelDatesNote": "Departures from Manila, Nov 7–12 2026 to Mar 21–26 2027. The rate changes by date: an amount on a date is added to the base rate per pax. Seats are limited and confirmed at booking.",
+      "itinerary": [
+        {
+          "day": "Day 1",
+          "title": "Manila – Shanghai",
+          "items": [
+            "Fly Manila – Shanghai (03:50 – 07:20); meet the tour guide",
+            "Nanjing Road Walking Street",
+            "The Bund and Oriental Pearl Tower (photo stop)",
+            "World’s largest Starbucks flagship store",
+            "LV mega ship",
+            "Zhang Garden",
+            "Check in at the hotel",
+            "Meals: X/L/X"
+          ]
+        },
+        {
+          "day": "Day 2",
+          "title": "Shanghai – Wuxi",
+          "items": [
+            "Hotel breakfast and check out",
+            "Compulsory shopping stop: latex shop",
+            "Huaihai Road",
+            "Proceed to Wuxi",
+            "Night view of Nianhua Bay scenic spot, the Mini Kyoto of China",
+            "Check in at the hotel",
+            "Meals: B/L/X"
+          ]
+        },
+        {
+          "day": "Day 3",
+          "title": "Wuxi – Nanxun – Hangzhou",
+          "items": [
+            "Hotel breakfast and check out",
+            "Compulsory shopping stop: Pearl Exhibition Center",
+            "Nanxun Ancient Town (including boat)",
+            "Proceed to Hangzhou",
+            "Free upgrade lunch: BBQ",
+            "Stroll along West Lake, Jinniu Pond and West Lake New World",
+            "Check in at the hotel",
+            "Meals: B/L/X"
+          ]
+        },
+        {
+          "day": "Day 4",
+          "title": "Hangzhou – Shanghai",
+          "items": [
+            "Hotel breakfast and check out",
+            "Meijiawu Tea Garden, with Hanfu experience",
+            "Compulsory shopping stop: jade shop",
+            "Proceed to Shanghai",
+            "Free upgrade lunch: Yuyuan hot pot",
+            "Shanghai Lujiazui Financial Centre skywalk",
+            "Check in at the hotel",
+            "Meals: B/L/X"
+          ]
+        },
+        {
+          "day": "Day 5",
+          "title": "Shanghai free day",
+          "items": [
+            "Hotel breakfast; free day",
+            "Optional tour 1: Shanghai Disneyland (including ticket, transfers and guide; minimum 10 pax)",
+            "Optional tour 2: Jinmao Tower 88th floor sightseeing hall + Xintiandi and Shikumen + TAOBAO underground market (including ticket, transfers and guide; minimum 10 pax)",
+            "Meals: B/X/X"
+          ]
+        },
+        {
+          "day": "Day 6",
+          "title": "Shanghai – Manila",
+          "items": [
+            "Hotel breakfast and check out",
+            "Compulsory shopping stop: Chinese medicine shop",
+            "Free shopping at the Chenghuang Temple business area",
+            "Transfer to the airport; fly Shanghai – Manila (23:00 – 02:40 next day)",
+            "Meals: B/X/X"
+          ]
+        }
+      ],
+      "inclusions": [
+        "Economy airfare and taxes via Juneyao Airlines (round trip)",
+        "Baggage allowance: 1 pc (23 kg) check-in and 1 pc (5 kg) carry-on",
+        "5 nights’ accommodation, twin sharing, with daily hotel breakfast (triple rooms not guaranteed)",
+        "Private coach with English-speaking tour guide",
+        "Sightseeing entrance fees as specified above (first way)",
+        "Meals as listed, with a free upgrade of 1 meal to BBQ and 1 meal to Yuyuan hot pot"
+      ],
+      "exclusions": [
+        "Personal expenses such as telephone calls and minibar",
+        "Travel insurance",
+        "Fuel surcharge USD 30/pax, subject to change",
+        "Philippine travel tax (pay at the airport)",
+        "China group visa USD 40/pax",
+        "Tips for driver and guide USD 5/pax/day x 5 days = USD 25/pax",
+        "Single supplement USD 120/pax"
+      ],
+      "optional": [
+        "Shanghai Disneyland (ticket, transfers, guide; minimum 10 pax): USD 120/pax; USD 140/pax on May 1-6, Jul 1-Aug 31 and Dec 24-Jan 3",
+        "Jinmao Tower 88th floor sightseeing hall + Xintiandi and Shikumen + TAOBAO underground market (minimum 10 pax): USD 60/pax"
+      ],
+      "hotelsLabel": "Hotels",
+      "hotels": [
+        "Day 1: 4★ hotel in Shanghai",
+        "Day 2: 4★ hotel in Wuxi",
+        "Day 3: 4★ hotel in Hangzhou",
+        "Day 4-5: 4★ hotel in Shanghai",
+        "Day 6: Sweet Home"
+      ],
+      "notes": [
+        "Meal codes: B = breakfast, L = lunch, D = dinner, X = not included",
+        "Includes shopping stops: latex shop, Pearl Exhibition Center, jade shop, tea garden and Chinese medicine shop; there is a penalty if passengers skip the shop visits",
+        "Single supplement USD 120/pax",
+        "Infant 2–24 months (airfare only), child without bed 2–10 yrs, minor with bed 11–17 yrs",
+        "This rate is not suitable for Muslims",
+        "VAT not included; an official receipt carries a 12% surcharge on the total",
+        "With a China group visa, booking other operators’ tours on the free day is not allowed",
+        "Visa: China group visa USD 40/pax is not included",
+        "If hotels are unavailable they are replaced by similar ones; the order of sights may change in crowded periods"
+      ],
+      "places": [
+        "Nanjing Road Walking Street",
+        "The Bund",
+        "Oriental Pearl Tower",
+        "Zhang Garden",
+        "Huaihai Road",
+        "Nianhua Bay (Mini Kyoto)",
+        "Nanxun Ancient Town",
+        "West Lake",
+        "Jinniu Pond",
+        "Meijiawu Tea Garden",
+        "Lujiazui Skywalk",
+        "Shanghai Disneyland",
+        "Jinmao Tower",
+        "Xintiandi",
+        "Chenghuang Temple"
+      ],
+      "posters": [
+        "cn-poster-shanghai-mini-kyoto-6d5n-0.jpg",
+        "cn-poster-shanghai-mini-kyoto-6d5n-1.jpg",
+        "cn-poster-shanghai-mini-kyoto-6d5n-2.jpg"
+      ],
+      "posterSize": [
+        520,
+        800
+      ]
+    },
+    {
+      "id": "shanghai-anji-5d4n-skiing",
+      "name": "Shanghai – Hangzhou – Wuzhen – Anji 5D4N Skiing Tour",
+      "subtitle": "Out Manila · Juneyao Airlines",
+      "region": "intl",
+      "country": "China",
+      "flag": "cn",
+      "duration": "5 days 4 nights",
+      "days": 5,
+      "status": "available",
+      "featured": false,
+      "departure": "Manila (NAIA)",
+      "price": {
+        "from": 668,
+        "label": "From",
+        "unit": "per pax",
+        "currency": "USD"
+      },
+      "year": 2026,
+      "ends": "2027-02-20",
+      "image": "cn-shanghai-night.jpg",
+      "alt": "The Shanghai skyline at night",
+      "gallery": [
+        "cn-shanghai-night.jpg"
+      ],
+      "summary": "Shanghai, Hangzhou’s West Lake, Wuzhen water town, a ski session at Anji and a full day at Shanghai Disneyland, in 5-star hotels.",
+      "overview": "Fly with Juneyao Airlines to Shanghai and travel through Hangzhou’s West Lake, the water town of Wuzhen and Anji’s Yunshang Grassland Ski Resort. Spend a whole day at Shanghai Disneyland with ticket, transfer and guide included. Four nights in 5-star hotels, with free meal upgrades to Yuyuan hot pot and BBQ.",
+      "travelDates": [
+        {
+          "d": "Jan 1–5",
+          "y": 2027,
+          "add": 120,
+          "cur": "USD"
+        },
+        {
+          "d": "Jan 5–9",
+          "y": 2027
+        },
+        {
+          "d": "Jan 8–12",
+          "y": 2027
+        },
+        {
+          "d": "Jan 12–16",
+          "y": 2027
+        },
+        {
+          "d": "Jan 15–19",
+          "y": 2027
+        },
+        {
+          "d": "Jan 19–23",
+          "y": 2027
+        },
+        {
+          "d": "Jan 22–26",
+          "y": 2027
+        },
+        {
+          "d": "Jan 26–30",
+          "y": 2027
+        },
+        {
+          "d": "Jan 29–Feb 2",
+          "y": 2027
+        },
+        {
+          "d": "Feb 12–16",
+          "y": 2027
+        },
+        {
+          "d": "Feb 16–20",
+          "y": 2027
+        }
+      ],
+      "travelDatesNote": "Departures from Manila, Jan 1–5 2027 to Feb 16–20 2027. The rate changes by date: an amount on a date is added to the base rate per pax. Seats are limited and confirmed at booking.",
+      "itinerary": [
+        {
+          "day": "Day 1",
+          "title": "Manila – Shanghai – Hangzhou",
+          "items": [
+            "Fly Manila to Shanghai (HO1566, 03:50–07:20)",
+            "Meet the tour guide at the airport",
+            "The world’s largest Starbucks flagship store",
+            "LV flagship store",
+            "Free upgrade lunch: Yuyuan hot pot",
+            "Nanjing Road Walking Street",
+            "The Bund and Oriental Pearl Tower (photo stop)",
+            "Proceed to Hangzhou and check in at the hotel",
+            "Optional: The Romance of the Song Dynasty show"
+          ]
+        },
+        {
+          "day": "Day 2",
+          "title": "Hangzhou – Wuzhen",
+          "items": [
+            "Breakfast at the hotel",
+            "Stroll along West Lake",
+            "Photo stop at Hangzhou West Lake New World",
+            "Leifeng Tower (outside view)",
+            "Free upgrade lunch: BBQ",
+            "Meijiawu Tea Culture Village with tea tasting and Hanfu experience",
+            "Wuzhen West Gate",
+            "Check in at the hotel"
+          ]
+        },
+        {
+          "day": "Day 3",
+          "title": "Wuzhen – Anji – Shanghai",
+          "items": [
+            "Breakfast at the hotel",
+            "Compulsory shopping stop: jade shop",
+            "Yunshang Grassland Ski Resort in Anji (ski equipment included, snow suits excluded)",
+            "Transfer to Shanghai",
+            "Optional: Huangpu River cruise"
+          ]
+        },
+        {
+          "day": "Day 4",
+          "title": "Shanghai Disneyland",
+          "items": [
+            "Breakfast at the hotel",
+            "Whole day at Shanghai Disneyland (ticket, transfer and tour guide included)"
+          ]
+        },
+        {
+          "day": "Day 5",
+          "title": "Shanghai – Manila",
+          "items": [
+            "Hotel breakfast and check out",
+            "Chinese medicine shop",
+            "Chenghuang Temple business area",
+            "Transfer to the airport and fly home (HO1565, 23:00–02:40+1)"
+          ]
+        }
+      ],
+      "inclusions": [
+        "Round-trip economy airfare and taxes via Juneyao Airlines",
+        "Baggage: 1 piece of 23 kg checked plus 1 piece of 5 kg carry-on",
+        "4 nights twin-sharing accommodation at 5-star hotels with daily breakfast (triple rooms not guaranteed)",
+        "Private coach with English-speaking tour guide",
+        "Sightseeing as specified, including the first-way entrance fees",
+        "Meals as listed, with a free upgrade of one meal to BBQ and one meal to Yuyuan hot pot",
+        "Shanghai Disneyland ticket, transfer and guide",
+        "Ski equipment at Anji"
+      ],
+      "exclusions": [
+        "Personal expenses such as phone calls and minibar",
+        "Travel insurance",
+        "Fuel surcharge: USD 30 per person, subject to change",
+        "Philippine travel tax: PHP 1,620 per person (pay directly at the airport)",
+        "China Group Visa: USD 40 per person",
+        "Tips for driver and guide: USD 25 per person, USD 5 per day for 5 days (collected with the tour fee)",
+        "Single supplement: USD 115 per person"
+      ],
+      "optional": [
+        "The Romance of the Song Dynasty show: USD 50 per person",
+        "Huangpu River cruise: USD 30 per person"
+      ],
+      "hotelsLabel": "Hotels",
+      "hotels": [
+        "Day 1: 5-star hotel in Hangzhou",
+        "Day 2: 5-star hotel in Wuzhen",
+        "Day 3-4: 5-star hotel in Shanghai"
+      ],
+      "notes": [
+        "Meals (by day): Day 1 lunch; Day 2 B/L/D; Day 3 B/L; Day 4 breakfast; Day 5 breakfast",
+        "Shopping stops are part of the rate: jade shop, tea shop and Chinese medicine shop; there is a penalty if passengers do not visit the shops",
+        "Minor with bed 12 to 18 years, child without bed 2 to 11 years, infant 2 to 24 months (airfare only)",
+        "This rate is not suitable for Muslims",
+        "The rate does not include VAT; an official receipt costs 12% of the total amount",
+        "Passengers using the group visa may not book any itinerary from other operators on a free and easy day",
+        "Single travellers booked through an agent may be paired to share a room; otherwise the single supplement applies",
+        "If the listed hotels are not available they will be replaced by similar ones",
+        "All services are private; the order of attractions may be adjusted in crowded periods",
+        "Philippine passport holders need a China visa; the China Group Visa fee is listed under exclusions."
+      ],
+      "places": [
+        "Starbucks Reserve Roastery Shanghai",
+        "Nanjing Road",
+        "The Bund",
+        "Oriental Pearl Tower",
+        "West Lake",
+        "Leifeng Tower",
+        "Meijiawu Tea Culture Village",
+        "Wuzhen West Gate",
+        "Yunshang Grassland Ski Resort",
+        "Shanghai Disneyland",
+        "Chenghuang Temple"
+      ],
+      "posters": [
+        "cn-poster-shanghai-anji-5d4n-skiing-0.jpg"
+      ],
+      "posterSize": [
+        520,
+        800
+      ]
+    },
+    {
+      "id": "shanghai-anji-6d5n-skiing",
+      "name": "Shanghai – Hangzhou – Anji Skiing 6D5N Tour",
+      "subtitle": "Out Manila · Juneyao Airlines",
+      "region": "intl",
+      "country": "China",
+      "flag": "cn",
+      "duration": "6 days 5 nights",
+      "days": 6,
+      "status": "available",
+      "featured": false,
+      "departure": "Manila (NAIA)",
+      "price": {
+        "from": 698,
+        "label": "From",
+        "unit": "per pax",
+        "currency": "USD"
+      },
+      "year": 2026,
+      "ends": "2027-02-19",
+      "image": "cn-shanghai.jpg",
+      "alt": "The Lujiazui skyline from the Bund, Shanghai",
+      "gallery": [
+        "cn-shanghai.jpg"
+      ],
+      "summary": "Fly Juneyao Airlines to Shanghai, then visit Hangzhou’s West Lake, ski at Yunshang Grassland in Anji, see Wuzhen at night and spend a day at Shanghai Disneyland.",
+      "overview": "This 6-day winter tour flies Juneyao Airlines from Manila to Shanghai. You visit Hangzhou’s West Lake, enjoy tea tasting and a Hanfu experience at Meijiawu, and ski at Yunshang Grassland Ski Resort in Anji (ski equipment included, snow suits not). You then see Wuzhen by night and spend a full day at Shanghai Disneyland. Hotels are 5-star, with a free upgrade to Yuyuan hot pot and a BBQ meal.",
+      "travelDates": [
+        {
+          "d": "Dec 19–24",
+          "add": 200,
+          "cur": "USD"
+        },
+        {
+          "d": "Jan 2–7",
+          "y": 2027,
+          "add": 30,
+          "cur": "USD"
+        },
+        {
+          "d": "Jan 6–11",
+          "y": 2027
+        },
+        {
+          "d": "Jan 10–15",
+          "y": 2027
+        },
+        {
+          "d": "Jan 13–18",
+          "y": 2027
+        },
+        {
+          "d": "Jan 16–21",
+          "y": 2027
+        },
+        {
+          "d": "Jan 17–22",
+          "y": 2027
+        },
+        {
+          "d": "Jan 20–25",
+          "y": 2027
+        },
+        {
+          "d": "Jan 23–28",
+          "y": 2027
+        },
+        {
+          "d": "Jan 24–29",
+          "y": 2027
+        },
+        {
+          "d": "Jan 27–Feb 1",
+          "y": 2027
+        },
+        {
+          "d": "Jan 30–Feb 4",
+          "y": 2027
+        },
+        {
+          "d": "Feb 10–15",
+          "y": 2027
+        },
+        {
+          "d": "Feb 14–19",
+          "y": 2027
+        }
+      ],
+      "travelDatesNote": "Departures from Manila, Dec 19–24 2026 to Feb 14–19 2027. The rate changes by date: an amount on a date is added to the base rate per pax. Seats are limited and confirmed at booking.",
+      "itinerary": [
+        {
+          "day": "Day 1",
+          "title": "Manila – Shanghai",
+          "items": [
+            "Flight HO1566 Manila to Shanghai (03:50–07:20)",
+            "Meet the tour guide at the airport",
+            "The world’s largest Starbucks flagship store",
+            "Louis Vuitton mega ship",
+            "Free upgrade lunch: Yuyuan hot pot",
+            "Nanjing Road Walking Street",
+            "The Bund and Oriental Pearl Tower (photo stop)",
+            "Check in at the hotel",
+            "Meals: Lunch"
+          ]
+        },
+        {
+          "day": "Day 2",
+          "title": "Shanghai – Hangzhou",
+          "items": [
+            "Breakfast at the hotel and check out",
+            "Latex shop visit",
+            "Proceed to Hangzhou",
+            "Free upgrade lunch: BBQ",
+            "Stroll along West Lake",
+            "Photo stop at Hangzhou West Lake New World",
+            "Leifeng Tower (outside view)",
+            "Optional: The Romance of the Song Dynasty show",
+            "Meals: Breakfast / Lunch"
+          ]
+        },
+        {
+          "day": "Day 3",
+          "title": "Hangzhou – Anji – Wuzhen",
+          "items": [
+            "Breakfast at the hotel and check out",
+            "Meijiawu Tea Culture Village, with tea tasting and Hanfu experience",
+            "Proceed to Anji, Yunshang Grassland Ski Resort (ski equipment included, snow suits excluded)",
+            "Transfer to Wuzhen",
+            "Night view of Wuzhen",
+            "Meals: Breakfast / Lunch"
+          ]
+        },
+        {
+          "day": "Day 4",
+          "title": "Wuzhen – Shanghai",
+          "items": [
+            "Breakfast at the hotel and check out",
+            "Compulsory shopping stop at a jade shop",
+            "Proceed to Shanghai",
+            "Chenghuang Temple Business Area",
+            "Optional: Huangpu River cruise, USD 30 per person",
+            "Meals: Breakfast / Lunch"
+          ]
+        },
+        {
+          "day": "Day 5",
+          "title": "Shanghai Disneyland",
+          "items": [
+            "Breakfast at the hotel",
+            "Whole day at Shanghai Disneyland (ticket, transfer and tour guide included)",
+            "Meals: Breakfast only"
+          ]
+        },
+        {
+          "day": "Day 6",
+          "title": "Shanghai – Manila",
+          "items": [
+            "Hotel breakfast and check out",
+            "Chinese medicine shop visit",
+            "The sky corridor of Lujiazui Financial Center",
+            "Transfer to the airport",
+            "Flight HO1565 Shanghai to Manila (23:00–02:40 next day)",
+            "Meals: Breakfast / Lunch"
+          ]
+        }
+      ],
+      "inclusions": [
+        "Round-trip economy airfare and taxes via Juneyao Airlines",
+        "Baggage allowance: 1 piece of 23 kg check-in plus 1 piece of 5 kg carry-on",
+        "5 nights accommodation, twin sharing, with daily hotel breakfast (triple room not guaranteed)",
+        "Private coach with an English-speaking tour guide",
+        "Sightseeing as listed, including first-way entrance fees",
+        "Meals as listed, with a free upgrade of 1 meal to BBQ and 1 meal to Yuyuan hot pot",
+        "Ski equipment at Yunshang Grassland Ski Resort (snow suits excluded)",
+        "Shanghai Disneyland ticket, transfer and tour guide (Day 5)"
+      ],
+      "exclusions": [
+        "Personal expenses such as telephone calls and minibar",
+        "Travel insurance",
+        "Fuel surcharge USD 30 per person (subject to change)",
+        "Philippine travel tax PHP 1,620 per person (pay at the airport)",
+        "China group visa USD 40 per person",
+        "Tips for driver and guide USD 30 per person (USD 5 per day x 6 days)",
+        "Single supplement USD 140 per person"
+      ],
+      "optional": [
+        "The Romance of the Song Dynasty show: USD 50 per person (Day 2)",
+        "Huangpu River cruise: USD 30 per person (Day 4)"
+      ],
+      "hotelsLabel": "Hotels",
+      "hotels": [
+        "Day 1, 4 and 5: 5★ hotel in Shanghai",
+        "Day 2: 5★ hotel in Hangzhou",
+        "Day 3: 5★ hotel in Wuzhen"
+      ],
+      "notes": [
+        "Meal codes B/L/D = breakfast/lunch/dinner; X = not included.",
+        "Shop stops included: latex, jade, tea and Chinese medicine shops. A penalty applies if travellers do not visit the shops.",
+        "Philippine passport holders need a China visa; the China group visa is USD 40 per person.",
+        "Child rates: minor with bed ages 12–18; child without bed ages 2–11; infants 2–24 months pay a reduced fare (airfare only).",
+        "This rate is not suitable for Muslim travellers.",
+        "The fare does not include VAT; an official receipt incurs a 12% surcharge on the total amount.",
+        "If you take the group visa, you may not book any itinerary from other operators on the free-and-easy day.",
+        "Single travellers may be paired with another guest to share a room; otherwise the single supplement applies.",
+        "Hotels may be replaced by similar ones; the order of attractions may change in crowded periods or special circumstances."
+      ],
+      "places": [
+        "World’s Largest Starbucks Flagship Store",
+        "Nanjing Road",
+        "The Bund",
+        "Oriental Pearl Tower",
+        "West Lake",
+        "Hangzhou West Lake New World",
+        "Leifeng Tower",
+        "Meijiawu Tea Culture Village",
+        "Yunshang Grassland Ski Resort",
+        "Wuzhen Water Town",
+        "Chenghuang Temple Business Area",
+        "Shanghai Disneyland",
+        "Lujiazui Financial Center Sky Corridor"
+      ],
+      "posters": [
+        "cn-poster-shanghai-anji-6d5n-skiing-0.jpg",
+        "cn-poster-shanghai-anji-6d5n-skiing-1.jpg"
+      ],
+      "posterSize": [
+        539,
+        800
+      ]
+    },
+    {
+      "id": "shanghai-anji-6d5n-skiing-2",
+      "name": "Shanghai – Anji Skiing 6D5N Tour (with Shanghai Disneyland)",
+      "subtitle": "Out Manila · Philippine Airlines",
+      "region": "intl",
+      "country": "China",
+      "flag": "cn",
+      "duration": "6 days 5 nights",
+      "days": 6,
+      "status": "available",
+      "featured": false,
+      "departure": "Manila (NAIA)",
+      "price": {
+        "from": 699,
+        "label": "From",
+        "unit": "per pax",
+        "currency": "USD"
+      },
+      "year": 2026,
+      "ends": "2027-02-24",
+      "image": "cn-shanghai-night.jpg",
+      "alt": "The Shanghai skyline at night",
+      "gallery": [
+        "cn-shanghai-night.jpg"
+      ],
+      "summary": "Shanghai, Hangzhou’s West Lake, a ski session at Anji’s Yunshang Grassland, Wuzhen by night and a full day at Shanghai Disneyland, in 5-star hotels.",
+      "overview": "Fly Philippine Airlines from Manila to Shanghai and visit the Starbucks flagship store, then Hangzhou’s West Lake and Leifeng Tower. Ski at Anji’s Yunshang Grassland Ski Resort (ski equipment included), see Wuzhen by night, and spend a full day at Shanghai Disneyland (ticket, transfer and guide included). Includes a free-upgrade Yuyuan hot pot lunch and BBQ dinner. 5-star hotels; a shopping-stop package.",
+      "travelDates": [
+        {
+          "d": "Jan 6–11",
+          "y": 2027
+        },
+        {
+          "d": "Jan 8–13",
+          "y": 2027
+        },
+        {
+          "d": "Jan 13–18",
+          "y": 2027
+        },
+        {
+          "d": "Jan 15–20",
+          "y": 2027
+        },
+        {
+          "d": "Feb 19–24",
+          "y": 2027
+        }
+      ],
+      "travelDatesNote": "Departures from Manila, Jan 6–11 2027 to Feb 19–24 2027. The rate changes by date: an amount on a date is added to the base rate per pax. Seats are limited and confirmed at booking.",
+      "itinerary": [
+        {
+          "day": "Day 1",
+          "title": "Manila – Shanghai",
+          "items": [
+            "Flight Manila – Shanghai: PR336 (12:20/15:50) on Jan 6 and Jan 13; PR338 (06:15/09:50) on Jan 8, Jan 15, Jan 22 and Feb 19",
+            "Meet your tour guide at the airport",
+            "World’s largest Starbucks flagship store",
+            "LV mega ship",
+            "Free upgrade lunch: Yuyuan hot pot",
+            "Hotel check in"
+          ]
+        },
+        {
+          "day": "Day 2",
+          "title": "Shanghai – Hangzhou",
+          "items": [
+            "Breakfast at the hotel and check out",
+            "Shopping stop at a latex shop",
+            "Drive to Hangzhou",
+            "Stroll along West Lake",
+            "Photo stop at Hangzhou West Lake New World",
+            "Leifeng Tower (outside view)",
+            "Free upgrade dinner: BBQ",
+            "Optional: The Romance of the Song Dynasty show, USD 50 per person"
+          ]
+        },
+        {
+          "day": "Day 3",
+          "title": "Hangzhou – Anji – Wuzhen",
+          "items": [
+            "Breakfast at the hotel and check out",
+            "Meijiawu Tea Culture Village with tea tasting and hanfu experience",
+            "Anji Yunshang Grassland Ski Resort (ski equipment included, snow suits excluded)",
+            "Transfer to Wuzhen",
+            "Night view of Wuzhen"
+          ]
+        },
+        {
+          "day": "Day 4",
+          "title": "Wuzhen – Shanghai",
+          "items": [
+            "Breakfast at the hotel and check out",
+            "Compulsory shopping stop at a jade shop",
+            "Drive to Shanghai",
+            "Nanjing Road Walking Street",
+            "The Bund and Oriental Pearl Tower (photo stop)",
+            "Chenghuang Temple business area",
+            "Optional: Huangpu River Cruise, USD 30 per person"
+          ]
+        },
+        {
+          "day": "Day 5",
+          "title": "Shanghai Disneyland",
+          "items": [
+            "Breakfast at the hotel",
+            "Whole day at Shanghai Disneyland (ticket, transfer and tour guide included)"
+          ]
+        },
+        {
+          "day": "Day 6",
+          "title": "Shanghai – Manila",
+          "items": [
+            "Hotel breakfast and check out",
+            "Shopping stop at a Chinese medicine shop",
+            "Sky corridor of Lujiazui Financial Center",
+            "Transfer to the airport for the flight to Manila (PR337, 16:55/20:50)"
+          ]
+        }
+      ],
+      "inclusions": [
+        "Economy round-trip airfare and taxes via Philippine Airlines",
+        "Baggage: 1 piece (23 kg) check-in and 1 piece (5 kg) carry-on",
+        "5 nights’ twin-sharing accommodation at 5-star hotels with daily breakfast (triple room not guaranteed)",
+        "Private coach with English-speaking tour guide",
+        "Sightseeing as specified, including first-way entrance fees",
+        "Meals as listed, with a free upgrade of 1 meal to BBQ and 1 meal to Yuyuan hot pot"
+      ],
+      "exclusions": [
+        "Personal expenses such as telephone calls and minibar",
+        "Travel insurance",
+        "Fuel surcharge USD 30 per person, subject to change (collected with tour fee)",
+        "Philippines travel tax PHP 1,620 per person (pay directly at the airport)",
+        "China group visa USD 40 per person",
+        "Tips for driver and guide USD 30 per person, USD 5 per day for 6 days",
+        "Single supplement USD 140 per person"
+      ],
+      "optional": [
+        "The Romance of the Song Dynasty show: USD 50 per person",
+        "Huangpu River Cruise: USD 30 per person"
+      ],
+      "hotelsLabel": "Hotels",
+      "hotels": [
+        "Day 1: 5-star hotel in Shanghai",
+        "Day 2: 5-star hotel in Hangzhou",
+        "Day 3: 5-star hotel in Wuzhen",
+        "Day 4-5: 5-star hotel in Shanghai",
+        "Day 6: Home sweet home"
+      ],
+      "notes": [
+        "Meals: Day 1 lunch; Day 2 breakfast and dinner; Day 3 breakfast, lunch and dinner; Day 4 breakfast and lunch; Day 5 breakfast only; Day 6 breakfast and lunch",
+        "Shopping stops: latex, jade, tea and Chinese medicine shops; a penalty applies if you do not visit the shops",
+        "Minor with bed (12-18 years), child without bed (2-11 years) and infant (2-24 months, airfare only) have separate rates",
+        "Not suited to Muslim travellers",
+        "Rates do not include VAT; an official receipt carries a 12% surcharge on the total amount",
+        "Travellers on a group visa may not book other operators’ tours during a free-and-easy day",
+        "Single travellers may be paired with another guest to share a room; otherwise the single supplement applies",
+        "Order of attractions may be adjusted for crowded groups or special circumstances",
+        "Services are on a private basis",
+        "If a listed hotel is unavailable it is replaced by a similar one",
+        "Philippine passport holders need a China group visa, USD 40 per person (not included)"
+      ],
+      "places": [
+        "Starbucks flagship store Shanghai",
+        "West Lake",
+        "West Lake New World",
+        "Leifeng Tower",
+        "Meijiawu Tea Culture Village",
+        "Yunshang Grassland Ski Resort",
+        "Wuzhen",
+        "Nanjing Road",
+        "The Bund",
+        "Oriental Pearl Tower",
+        "Chenghuang Temple",
+        "Shanghai Disneyland",
+        "Lujiazui Financial Center"
+      ],
+      "posters": [
+        "cn-poster-shanghai-anji-6d5n-skiing-2-0.jpg"
+      ],
+      "posterSize": [
+        539,
+        800
+      ]
+    },
+    {
+      "id": "shanghai-hangzhou-ruyiqiao-6d5n",
+      "name": "Shanghai – Hangzhou – Ruyi Bridge 6D5N Tour (Wonders of Jiangnan)",
+      "subtitle": "Out Manila · Philippine Airlines",
+      "region": "intl",
+      "country": "China",
+      "flag": "cn",
+      "duration": "6 days 5 nights",
+      "days": 6,
+      "status": "available",
+      "featured": false,
+      "departure": "Manila (NAIA)",
+      "price": {
+        "from": 699,
+        "label": "From",
+        "unit": "per pax",
+        "currency": "USD"
+      },
+      "year": 2026,
+      "ends": "2026-11-30",
+      "image": "cn-west-lake.jpg",
+      "alt": "A pavilion on West Lake, Hangzhou",
+      "gallery": [
+        "cn-west-lake.jpg"
+      ],
+      "summary": "Wonders of Jiangnan: Puyuan Ancient Town, Hengdian film studios, the Ruyi Bridge at Shenxianju, Wangxian Valley, West Lake and Shanghai, with 5-star hotels.",
+      "overview": "Fly Manila to Shanghai on Philippine Airlines and explore Puyuan Ancient Town, the Hengdian film base with Qin Palace, the Ruyi Bridge at Shenxianju and the cliffside night view at Jiangxi Wangxian Valley. Then enjoy West Lake in Hangzhou and the Bund area of Shanghai. All five nights are in 5-star hotels. The rate includes shop visits.",
+      "travelDates": [
+        {
+          "d": "Nov 7–12"
+        },
+        {
+          "d": "Nov 25–30"
+        }
+      ],
+      "travelDatesNote": "Departures from Manila, Nov 7–12 2026 to Nov 25–30 2026. The rate changes by date: an amount on a date is added to the base rate per pax. Seats are limited and confirmed at booking.",
+      "itinerary": [
+        {
+          "day": "Day 1",
+          "title": "Manila – Shanghai – Puyuan",
+          "items": [
+            "Fly Manila to Shanghai (PR336, 10:50/14:30) and meet the English-speaking guide",
+            "Drive to Puyuan Ancient Town, the newly developed trendy ancient town in Wuzhen",
+            "Hotel check in and night tour of Puyuan Ancient Town (meals: X/X/D)"
+          ]
+        },
+        {
+          "day": "Day 2",
+          "title": "Puyuan – Hengdian – Xianju",
+          "items": [
+            "Hotel breakfast and check out",
+            "Puyuan Ancient Town",
+            "Drive to the China Film and Television Base, Hengdian, and visit Qin Palace (including the 5D stunt car movie)",
+            "Proceed to Xianju",
+            "Dinner, then hotel check in (meals: B/L/D)"
+          ]
+        },
+        {
+          "day": "Day 3",
+          "title": "Xianju – Wangxian Valley",
+          "items": [
+            "Hotel breakfast and check out",
+            "Drive to Shenxianju Scenic Area and take the cable car to see the popular Ruyi Bridge (including aerial photography)",
+            "After lunch, proceed to Jiangxi Wangxian Valley Scenic Area for the cliffside night view (meals: B/L/X)"
+          ]
+        },
+        {
+          "day": "Day 4",
+          "title": "Wangxian Valley – Hangzhou",
+          "items": [
+            "Hotel breakfast and check out",
+            "Drive to Hangzhou, known as “Paradise on Earth”",
+            "Grandma’s home-style cuisine",
+            "West Lake Scenic Area (UNESCO site): boat tour of the lake, exterior view of Leifeng Pagoda and Changqiao Park",
+            "Optional item: Hangzhou Songcheng Show (meals: B/L/D)"
+          ]
+        },
+        {
+          "day": "Day 5",
+          "title": "Hangzhou – Shanghai",
+          "items": [
+            "Hotel breakfast and check out",
+            "Meijiawu Tea Garden (shopping stop)",
+            "Drive to Shanghai and visit the Health and Wellness Center (shopping stop)",
+            "Zhang Garden (a luxury goods hub)",
+            "Nanjing Road Pedestrian Street",
+            "Exterior view of the Oriental Pearl Tower and the International Architecture of the Bund",
+            "Optional tour: Shanghai Huangpu River Cruise, with the night view of the Bund (meals: B/L/D)"
+          ]
+        },
+        {
+          "day": "Day 6",
+          "title": "Shanghai – Manila",
+          "items": [
+            "Hotel breakfast and check out",
+            "Shanghai Intangible Cultural Heritage Center (jade) (shopping stop)",
+            "Transfer to the airport and fly to Manila (PR337, 16:00/19:40) (meals: B/X/X)"
+          ]
+        }
+      ],
+      "inclusions": [
+        "Economy round-trip airfare and tax with Philippine Airlines",
+        "Baggage allowance: 1 piece 23 kg checked-in (sum of three sides up to 158 cm)",
+        "5 nights’ accommodation, twin sharing, at choice 5★ hotel with daily hotel breakfast",
+        "Private bus with English-speaking tour guide",
+        "Sightseeing as specified, including first-way entrance fees",
+        "Meals: breakfast and 8 meals, including local specialties and a Coca-Cola themed buffet (meal standard USD 7 per person per meal)",
+        "One complimentary bottle of water per person per day"
+      ],
+      "exclusions": [
+        "Personal expenses such as phone calls and minibar",
+        "Travel insurance",
+        "Philippines travel tax USD 30 per person (collected with the tour fee)",
+        "China group visa USD 40 per person (collected with the tour fee)",
+        "Tips for driver and guide USD 60 per person (USD 10 per day x 6 days, collected with the tour fee)",
+        "Single supplement USD 200 per person",
+        "Optional tour: Hangzhou Songcheng Show + Shanghai Huangpu River Cruise, USD 80 per person",
+        "Fuel surcharge (subject to change)"
+      ],
+      "optional": [
+        "Hangzhou Songcheng Show + Shanghai Huangpu River Cruise: USD 80 per person"
+      ],
+      "hotelsLabel": "Hotels",
+      "hotels": [
+        "Day 1: 5★ hotel in Puyuan",
+        "Day 2: 5★ hotel in Xianju",
+        "Day 3: 5★ hotel in Shangrao",
+        "Day 4: 5★ hotel in Hangzhou",
+        "Day 5: 5★ hotel in Shanghai"
+      ],
+      "notes": [
+        "Meal codes: B = breakfast, L = lunch, D = dinner, X = not included",
+        "Rate includes shop visits: Meijiawu Tea Garden, Health and Wellness Center and Shanghai Intangible Cultural Heritage Center (jade)",
+        "Age categories: adult 19 years and over; age 1-18 years",
+        "Philippine passport holders need a China visa; the group visa is not included (USD 40 per person)",
+        "The driver may adjust the order of attractions because of weather, traffic or visitor volume",
+        "Extra costs from force majeure that prevent visits are borne by the traveler and fees already incurred are not refundable",
+        "Hotels are subject to replacement with similar ones if not available",
+        "Itinerary, flight times and hotels are subject to final confirmation",
+        "No refunds if guests cancel itinerary or accommodation arrangements during the trip; tips must be paid in full for the number of days of the trip"
+      ],
+      "places": [
+        "Puyuan Ancient Town",
+        "Hengdian China Film and Television Base",
+        "Qin Palace",
+        "Shenxianju Scenic Area",
+        "Ruyi Bridge",
+        "Wangxian Valley",
+        "West Lake",
+        "Leifeng Pagoda",
+        "Changqiao Park",
+        "Meijiawu Tea Garden",
+        "Zhang Garden",
+        "Nanjing Road",
+        "Oriental Pearl Tower",
+        "The Bund"
+      ],
+      "posters": [
+        "cn-poster-shanghai-hangzhou-ruyiqiao-6d5n-0.jpg"
+      ],
+      "posterSize": [
+        524,
+        800
+      ]
+    },
+    {
+      "id": "shanghai-wuxi-maoshan-5d4n-no-shopping",
+      "name": "Shanghai – Wuxi – Maoshan Seasonal Autumn Viewing 5D4N Tour (No Shopping)",
+      "subtitle": "Out Manila · Philippine Airlines",
+      "region": "intl",
+      "country": "China",
+      "flag": "cn",
+      "duration": "5 days 4 nights",
+      "days": 5,
+      "status": "available",
+      "featured": false,
+      "departure": "Manila (NAIA)",
+      "price": {
+        "from": 899,
+        "label": "From",
+        "unit": "per pax",
+        "currency": "USD"
+      },
+      "year": 2026,
+      "ends": "2026-12-07",
+      "image": "cn-shanghai.jpg",
+      "alt": "The Lujiazui skyline from the Bund, Shanghai",
+      "gallery": [
+        "cn-shanghai.jpg"
+      ],
+      "summary": "Five days of 5-star stays with Maoshan onsen, Wuxi Lihu and Huishan Ancient Town, Zhujiajiao and Shanghai, with all-you-can-eat hairy crab.",
+      "overview": "Fly to Shanghai and drive to the Maoshan Onsen Valley, staying at the 5-star Holiday Inn Resort and Spa with a private in-room onsen from geothermal water. Visit Wuxi’s Lihu and Huishan Ancient Town, Zhujiajiao and Panlong Tiandi, then enjoy a free day in Shanghai. Meals include local specialties and an all-you-can-eat hairy crab.",
+      "travelDates": [
+        {
+          "d": "Dec 3–7"
+        }
+      ],
+      "travelDatesNote": "Departures from Manila, Dec 3–7 2026 to Dec 3–7 2026. The rate changes by date: an amount on a date is added to the base rate per pax. Seats are limited and confirmed at booking.",
+      "itinerary": [
+        {
+          "day": "Day 1",
+          "title": "Manila – Shanghai – Maoshan",
+          "items": [
+            "Fly Manila to Shanghai (PR336 10:50–14:30; Nov 5, Nov 19 and Dec 3: 12:10–15:50)",
+            "Meet the English-speaking guide at the airport",
+            "Drive to Maoshan Onsen Valley",
+            "Check in at the 5★ Holiday Inn Resort and Spa (IHG) with a private natural onsen in your room (bring your own swimsuit); water from 1,500 m underground, 53°C, rich in sulfur and metasilicic acid",
+            "Evening fountain, music and light show"
+          ]
+        },
+        {
+          "day": "Day 2",
+          "title": "Maoshan – Wuxi",
+          "items": [
+            "Hotel breakfast and check out",
+            "Lihu Scenic Area in Wuxi",
+            "Huishan Ancient Town, a national 5A tourist attraction",
+            "Nanchang Street Historical and Cultural District along the Grand Canal (UNESCO World Heritage Site)",
+            "Hotel check-in"
+          ]
+        },
+        {
+          "day": "Day 3",
+          "title": "Wuxi – Shanghai",
+          "items": [
+            "Hotel breakfast and check out",
+            "Wuxi Purple Clay Museum",
+            "Zhujiajiao Ancient Town",
+            "Drive to Shanghai and visit Panlong Tiandi",
+            "Hotel check-in"
+          ]
+        },
+        {
+          "day": "Day 4",
+          "title": "Shanghai",
+          "items": [
+            "Hotel breakfast",
+            "Free day, with optional tours at extra cost"
+          ]
+        },
+        {
+          "day": "Day 5",
+          "title": "Shanghai – Manila",
+          "items": [
+            "Hotel check out",
+            "Florentia Village Outlet",
+            "Transfer to airport and fly to Manila (PR337 16:00–19:40; Nov 9, Nov 23 and Dec 7: 16:55–20:50)"
+          ]
+        }
+      ],
+      "inclusions": [
+        "Economy round-trip airfare and taxes via Philippine Airlines",
+        "Baggage: 1 piece 23 kg check-in (sum of three sides up to 158 cm)",
+        "4 nights’ accommodation, twin sharing, in 5★ hotels with daily hotel breakfast",
+        "Private bus with English-speaking tour guide",
+        "Sightseeing as specified, including first-way entrance fees",
+        "Meals: breakfast and 4 meals, including local specialties and all-you-can-eat hairy crab"
+      ],
+      "exclusions": [
+        "Personal expenses such as phone calls and minibar",
+        "Travel insurance",
+        "Philippines travel tax: USD 30 per person (collected with tour fee)",
+        "China group visa: USD 40 per person",
+        "Tips for driver and guide: USD 30 per person (USD 6 per day x 5 days, collected with tour fee)",
+        "Single supplement: USD 180 per person",
+        "Fuel surcharge (subject to change)"
+      ],
+      "optional": [
+        "Day 4: Disneyland, USD 120 per person for groups of 15 or more (+USD 20 on public holidays; includes admission, guide and transport)",
+        "Day 4: Jin Mao Tower 88th floor + The Louis (LV flagship ship, exterior view) + LaBuBu global flagship store + Starbucks Reserve Roastery (classic Americano and pastry each) + Huangpu River cruise, USD 80 per person for groups of 10 or more"
+      ],
+      "hotelsLabel": "Hotels",
+      "hotels": [
+        "Day 1: 5★ Holiday Inn Resort and Spa, Maoshan (IHG) or similar",
+        "Day 2: 5★ hotel in Wuxi",
+        "Day 3–4: 5★ hotel in Shanghai"
+      ],
+      "notes": [
+        "Departures: Oct 16–20, Nov 5–9, Nov 19–23, Dec 3–7",
+        "Child without bed (2–12 yrs) is priced separately",
+        "Single supplement USD 180 per person",
+        "Please prepare a swimsuit for the onsen; do not walk barefoot in the bathroom or shower, and use non-slip mats and waterproof slippers",
+        "No refunds for cancelled itinerary or accommodation during the trip; tips are payable for the full number of days",
+        "The guide may sell souvenirs or local specialties on the bus; purchase is optional",
+        "Optional activities can be booked and paid in advance",
+        "Order of attractions may change with weather or traffic; hotels may be replaced by similar ones"
+      ],
+      "places": [
+        "Maoshan Onsen Valley",
+        "Lihu Scenic Area",
+        "Huishan Ancient Town",
+        "Nanchang Street",
+        "Wuxi Purple Clay Museum",
+        "Zhujiajiao Ancient Town",
+        "Panlong Tiandi",
+        "Florentia Village Outlet",
+        "Jin Mao Tower",
+        "Huangpu River"
+      ],
+      "posters": [
+        "cn-poster-shanghai-wuxi-maoshan-5d4n-no-shopping-0.jpg"
+      ],
+      "posterSize": [
+        509,
+        800
+      ]
+    },
+    {
+      "id": "shanghai-wuzhen-5d4n",
+      "name": "Shanghai – Wuzhen 5D4N Tour",
+      "subtitle": "Out Manila · Philippine Airlines",
+      "region": "intl",
+      "country": "China",
+      "flag": "cn",
+      "duration": "5 days 4 nights",
+      "days": 5,
+      "status": "available",
+      "featured": false,
+      "departure": "Manila (NAIA)",
+      "price": {
+        "from": 419,
+        "label": "From",
+        "unit": "per pax",
+        "currency": "USD"
+      },
+      "year": 2026,
+      "ends": "2027-03-23",
+      "image": "cn-wuzhen.jpg",
+      "alt": "Wuzhen water town lit up at night",
+      "gallery": [
+        "cn-wuzhen.jpg"
+      ],
+      "summary": "Shanghai’s Starbucks Flagship, Nanjing Road and The Bund, a day trip to Wuzhen East Gate and a free day with optional Shanghai Disneyland.",
+      "overview": "Four nights in a 4-star Shanghai hotel. See the City God Temple business area, the world’s largest Starbucks Flagship, the LV mega ship, Nanjing Road, Wuzhen East Gate and The Bund, plus a free day for optional Disneyland. Flights are with Philippine Airlines.",
+      "travelDates": [
+        {
+          "d": "Feb 26–Mar 2",
+          "y": 2027
+        },
+        {
+          "d": "Mar 5–9",
+          "y": 2027
+        },
+        {
+          "d": "Mar 12–16",
+          "y": 2027
+        },
+        {
+          "d": "Mar 17–21",
+          "y": 2027,
+          "add": 30,
+          "cur": "USD"
+        },
+        {
+          "d": "Mar 19–23",
+          "y": 2027,
+          "add": 100,
+          "cur": "USD"
+        }
+      ],
+      "travelDatesNote": "Departures from Manila, Feb 26–Mar 2 2027 to Mar 19–23 2027. The rate changes by date: an amount on a date is added to the base rate per pax. Seats are limited and confirmed at booking.",
+      "itinerary": [
+        {
+          "day": "Day 1",
+          "title": "Manila – Shanghai",
+          "items": [
+            "Fly Manila to Shanghai (PR336 12:10/15:50 on Mar 17; PR338 06:15/09:50 on Feb 26, Mar 5, 12 and 19).",
+            "Meet the guide at the airport.",
+            "Visit the City God Temple business area.",
+            "After dinner, transfer to hotel. Meals: X/X/D."
+          ]
+        },
+        {
+          "day": "Day 2",
+          "title": "Shanghai",
+          "items": [
+            "Hotel breakfast.",
+            "Visit the world’s largest Starbucks Flagship store and the LV mega ship.",
+            "Compulsory shopping stop: Chinese medicine shop.",
+            "Free shopping at Nanjing Road walking street.",
+            "Compulsory shopping stop: latex shop. Meals: B/L/X."
+          ]
+        },
+        {
+          "day": "Day 3",
+          "title": "Shanghai – Wuzhen",
+          "items": [
+            "Hotel breakfast.",
+            "Visit Wuzhen East Gate.",
+            "Compulsory shopping stop: jade shop.",
+            "Transfer back to Shanghai.",
+            "The Bund and Oriental Pearl Tower (outside view). Meals: B/L/X."
+          ]
+        },
+        {
+          "day": "Day 4",
+          "title": "Shanghai (free day)",
+          "items": [
+            "Hotel breakfast.",
+            "Free and easy day (no service if you do not join an optional tour).",
+            "Optional tour 1: Shanghai Disneyland (ticket, transfers and guide included; minimum 10 pax).",
+            "Optional tour 2: Jinmao Tower 88th floor sightseeing hall + Huangpu River cruise (ticket, transfers and guide included; minimum 10 pax). Meals: B/X/X."
+          ]
+        },
+        {
+          "day": "Day 5",
+          "title": "Shanghai – Manila",
+          "items": [
+            "Hotel breakfast and check out.",
+            "Transfer to the airport; fly Shanghai to Manila (PR339 10:50/14:50). Meals: B/X/X."
+          ]
+        }
+      ],
+      "inclusions": [
+        "Economy airfare and tax with Philippine Airlines (round trip)",
+        "Baggage: 1 piece 23 kg check-in plus 1 piece 5 kg carry-on",
+        "4 nights twin-share accommodation with daily breakfast",
+        "Private coach with English-speaking tour guide",
+        "Sightseeing as specified, including first-way entrance fees",
+        "Meals as listed"
+      ],
+      "exclusions": [
+        "Personal expenses such as phone calls and minibar",
+        "Travel insurance",
+        "Philippine travel tax, paid directly at the airport",
+        "China group visa: USD 40 per person, collected with tour fee",
+        "Tips for driver and guide: USD 5 per person per day x 4 days = USD 20, collected with tour fee",
+        "Single supplement: USD 90 per person",
+        "Fuel surcharge: estimate USD 30 per person, subject to change, collected with tour fee"
+      ],
+      "optional": [
+        "Shanghai Disneyland: surcharge USD 120 per person, minimum 10 pax",
+        "Jinmao Tower 88th floor + Huangpu River cruise: surcharge USD 60 per person, minimum 10 pax"
+      ],
+      "hotelsLabel": "Hotels",
+      "hotels": [
+        "Day 1-4: 4★ hotel in Shanghai"
+      ],
+      "notes": [
+        "Shopping stops are included in this rate: Chinese medicine, latex and jade shops; a penalty applies if guests skip the shops.",
+        "Child with bed is 8-18 yrs; child without bed 2-7 yrs; infant 2-24 months (airfare only).",
+        "This rate is not suitable for Muslim travellers.",
+        "Guests on the group visa may not book other operators’ tours on the free day.",
+        "Hotels may be replaced by similar ones; services are private; the order of sights may change.",
+        "A single traveller without a roommate may be paired with another guest, otherwise the single supplement applies."
+      ],
+      "places": [
+        "City God Temple",
+        "Starbucks Reserve Roastery Shanghai",
+        "Nanjing Road",
+        "Wuzhen East Gate",
+        "The Bund",
+        "Oriental Pearl Tower"
+      ],
+      "posters": [
+        "cn-poster-shanghai-wuzhen-5d4n-0.jpg"
+      ],
+      "posterSize": [
+        525,
+        800
+      ]
+    },
+    {
+      "id": "southern-xinjiang-10d9n-no-shopping",
+      "name": "Southern Xinjiang 10D9N Tour (No Shopping)",
+      "subtitle": "Out Manila · China Southern Airlines",
+      "region": "intl",
+      "country": "China",
+      "flag": "cn",
+      "duration": "10 days 9 nights",
+      "days": 10,
+      "status": "available",
+      "featured": false,
+      "departure": "Manila (NAIA)",
+      "price": {
+        "from": 2099,
+        "label": "From",
+        "unit": "per pax",
+        "currency": "USD"
+      },
+      "year": 2026,
+      "ends": "2027-03-24",
+      "image": "cn-xinjiang.jpg",
+      "alt": "Green valleys below snowy peaks in Xinjiang",
+      "gallery": [
+        "cn-xinjiang.jpg"
+      ],
+      "summary": "Ten days along the Silk Road of Southern Xinjiang, from Kuqa and Hotan to Kashgar, Karakul Lake and the Pamir Plateau, with 5-star hotels.",
+      "overview": "Fly China Southern via Guangzhou to Urumqi, then travel the southern Silk Road through Korla, Kuqa, Aksu and Hotan to Kashgar. Highlights include the Kizil Thousand Buddha Caves, the Pamir Plateau, Karakul Lake and Kashgar Ancient City. You stay nine nights in 5-star hotels and receive two complimentary bottles of water per person per day. This is a No Shopping package.",
+      "travelDates": [
+        {
+          "d": "Nov 9–18",
+          "add": 100,
+          "cur": "USD"
+        },
+        {
+          "d": "Dec 2–11",
+          "add": 100,
+          "cur": "USD"
+        },
+        {
+          "d": "Dec 9–18",
+          "add": 100,
+          "cur": "USD"
+        },
+        {
+          "d": "Jan 4–13",
+          "y": 2027
+        },
+        {
+          "d": "Feb 27–Mar 8",
+          "y": 2027
+        },
+        {
+          "d": "Mar 8–17",
+          "y": 2027
+        },
+        {
+          "d": "Mar 15–24",
+          "y": 2027,
+          "add": 300,
+          "cur": "USD"
+        }
+      ],
+      "travelDatesNote": "Departures from Manila, Nov 9–18 2026 to Mar 15–24 2027. The rate changes by date: an amount on a date is added to the base rate per pax. Seats are limited and confirmed at booking.",
+      "itinerary": [
+        {
+          "day": "Day 1",
+          "title": "Manila – Guangzhou – Urumqi",
+          "items": [
+            "Fly Manila to Guangzhou (CZ3078, 08:20–10:50; CZ3092, 12:00–14:40 on Nov 18, Dec 2, Dec 9, Jan 4, Feb 27 and Mar 20)",
+            "Connecting flight Guangzhou to Urumqi (CZ6896, 17:10–22:40)",
+            "Arrive in Urumqi and meet the English-speaking tour guide",
+            "Transfer to hotel and check in"
+          ]
+        },
+        {
+          "day": "Day 2",
+          "title": "Urumqi – Korla",
+          "items": [
+            "Hotel breakfast and check out",
+            "Tianshan Shengli Tunnel",
+            "Kongque River, including Kongque River cruise"
+          ]
+        },
+        {
+          "day": "Day 3",
+          "title": "Korla – Kuqa",
+          "items": [
+            "Hotel breakfast and check out",
+            "Tarim Poplar Forest",
+            "Kuqa Royal Palace",
+            "Restan Street"
+          ]
+        },
+        {
+          "day": "Day 4",
+          "title": "Kuqa – Aksu",
+          "items": [
+            "Hotel breakfast and check out",
+            "Kizil Thousand Buddha Caves",
+            "Wensu Grand Canyon"
+          ]
+        },
+        {
+          "day": "Day 5",
+          "title": "Aksu – Hotan",
+          "items": [
+            "Hotel breakfast and check out",
+            "Desert Gate",
+            "Ahe Desert Highway",
+            "Yotkan Ancient City",
+            "Hotan Night Market"
+          ]
+        },
+        {
+          "day": "Day 6",
+          "title": "Hotan – Kashgar",
+          "items": [
+            "Hotel breakfast and check out",
+            "West Night City",
+            "Zepu Poplar Forest"
+          ]
+        },
+        {
+          "day": "Day 7",
+          "title": "Kashgar – Tashkurgan",
+          "items": [
+            "Hotel breakfast and check out",
+            "Pamir Plateau",
+            "Baisha Lake",
+            "Karakul Lake",
+            "Golden Grass Beach",
+            "Stone City"
+          ]
+        },
+        {
+          "day": "Day 8",
+          "title": "Tashkurgan – Kashgar",
+          "items": [
+            "Hotel breakfast and check out",
+            "Panlong Ancient Path",
+            "Bandir Blue Lake",
+            "Muztagh Glacier Park"
+          ]
+        },
+        {
+          "day": "Day 9",
+          "title": "Kashgar",
+          "items": [
+            "Hotel breakfast",
+            "Kashi Ancient City",
+            "City Opening Ceremony",
+            "Bai Lao Tea House",
+            "Xiangfei Garden",
+            "Gaotai Folk Houses"
+          ]
+        },
+        {
+          "day": "Day 10",
+          "title": "Kashgar – Guangzhou – Manila",
+          "items": [
+            "Hotel or packed breakfast and check out",
+            "Fly Kashgar to Guangzhou (CZ6835, 09:55–15:50; 07:50–13:55 on Mar 29)",
+            "Fly Guangzhou to Manila (CZ3077, 20:00–22:30; CZ5051, 23:45–02:25+1 on Mar 29)"
+          ]
+        }
+      ],
+      "inclusions": [
+        "Economy airfare and taxes with China Southern Airlines, round trip",
+        "Baggage allowance: 1 piece of 23 kg checked",
+        "9 nights’ accommodation, twin sharing, in 5★ hotels with daily hotel breakfast",
+        "Private bus with English-speaking tour guide",
+        "Sightseeing as specified, including first-way entrance fees",
+        "Meals: breakfast plus 16 meals",
+        "Two complimentary bottles of water per person per day"
+      ],
+      "exclusions": [
+        "Personal expenses such as phone calls and minibar",
+        "Travel insurance",
+        "Philippine travel tax USD 30 per person, collected with the tour fee",
+        "China group visa USD 40 per person, collected with the tour fee",
+        "Tips for driver and guide USD 80 per person (USD 8 per day for 10 days), collected with the tour fee",
+        "Single supplement USD 450 per person",
+        "Fuel surcharge, subject to change"
+      ],
+      "hotelsLabel": "Hotels",
+      "hotels": [
+        "Day 1: 5★ hotel in Urumqi",
+        "Day 2: 5★ hotel in Korla",
+        "Day 3: 5★ hotel in Kuqa",
+        "Day 4: 5★ hotel in Aksu",
+        "Day 5: 5★ hotel in Hotan",
+        "Day 6, 8 and 9: 5★ hotel in Kashgar",
+        "Day 7: 5★ hotel in Tashkurgan",
+        "Day 10: Sweet Home"
+      ],
+      "notes": [
+        "Meals per day: D1 none; D2–D9 B/L/D; D10 B",
+        "Child with bed (2–11 yrs) pays the adult rate; child without bed (2–11 yrs) has a lower rate. Rates vary by departure date",
+        "Philippine passport holders need a China visa (group visa USD 40 per person)",
+        "The tour guide will sell some souvenirs on the bus, such as Xinjiang dried fruits, dairy products and essential oils",
+        "Xinjiang runs on a different local time, so lunch is usually around 2:00 PM and activities run roughly 9:00 AM to 8:00 PM",
+        "Xinjiang food is spicy and features beef and mutton; there are large day-night temperature differences",
+        "Hotel facilities in Xinjiang may be simpler than expected; check your room on arrival",
+        "The order of attractions may change due to weather, traffic or visitor volume; hotels may be replaced by similar ones",
+        "No refunds for tours or accommodation cancelled during the trip, and tips are payable for the full number of days"
+      ],
+      "places": [
+        "Tianshan Shengli Tunnel",
+        "Kongque River",
+        "Tarim Poplar Forest",
+        "Kuqa Royal Palace",
+        "Restan Street",
+        "Kizil Thousand Buddha Caves",
+        "Wensu Grand Canyon",
+        "Desert Gate",
+        "Ahe Desert Highway",
+        "Yotkan Ancient City",
+        "Hotan Night Market",
+        "West Night City",
+        "Zepu Poplar Forest",
+        "Pamir Plateau",
+        "Baisha Lake",
+        "Karakul Lake",
+        "Golden Grass Beach",
+        "Stone City",
+        "Panlong Ancient Path",
+        "Bandir Blue Lake",
+        "Muztagh Glacier Park",
+        "Kashi Ancient City",
+        "Xiangfei Garden",
+        "Gaotai Folk Houses"
+      ],
+      "posters": [
+        "cn-poster-southern-xinjiang-10d9n-no-shopping-0.jpg"
+      ],
+      "posterSize": [
+        543,
+        800
+      ]
+    },
+    {
+      "id": "spring-festival-avatar-skiing-7d6n",
+      "name": "Spring Festival Zhangjiajie (Avatar) – Skiing 7D6N Tour",
+      "subtitle": "Out Manila · China Southern Airlines",
+      "region": "intl",
+      "country": "China",
+      "flag": "cn",
+      "duration": "7 days 6 nights",
+      "days": 7,
+      "status": "available",
+      "featured": false,
+      "departure": "Manila (NAIA)",
+      "price": {
+        "from": 659,
+        "label": "From",
+        "unit": "per pax",
+        "currency": "USD"
+      },
+      "year": 2026,
+      "ends": "2027-02-10",
+      "image": "cn-zhangjiajie.jpg",
+      "alt": "Sandstone pillars in Zhangjiajie National Forest Park",
+      "gallery": [
+        "cn-zhangjiajie.jpg"
+      ],
+      "summary": "Spring Festival departures via Guangzhou to Changsha and Zhangjiajie: skiing at Qixing Mountain, the Avatar scenic area, a fireworks display and the Xiangxi show.",
+      "overview": "Fly with China Southern Airlines via Guangzhou to Changsha and travel to Zhangjiajie over the Spring Festival. Enjoy a skiing session at Qixing Mountain, the Avatar scenic area (Zhangjiajie National Forest Park) with a sparkler fireworks display, the Charming Xiangxi Show and free shopping in Changsha. Six nights in 5-star hotels; the rate includes several shopping stops.",
+      "travelDates": [
+        {
+          "d": "Feb 3–9",
+          "y": 2027
+        },
+        {
+          "d": "Feb 4–10",
+          "y": 2027
+        }
+      ],
+      "travelDatesNote": "Departures from Manila, Feb 3–9 2027 to Feb 4–10 2027. The rate changes by date: an amount on a date is added to the base rate per pax. Seats are limited and confirmed at booking.",
+      "itinerary": [
+        {
+          "day": "Day 1",
+          "title": "Manila – Guangzhou – Changsha",
+          "items": [
+            "Fly Manila to Guangzhou (CZ398, 17:45–20:20), then connect to Changsha (CZ5592, 23:00–00:35+1)",
+            "Meet the tour guide and transfer to the hotel to check in"
+          ]
+        },
+        {
+          "day": "Day 2",
+          "title": "Changsha – Zhangjiajie",
+          "items": [
+            "Breakfast at the hotel",
+            "Drive to Zhangjiajie",
+            "After lunch, Qixing Mountain Scenic Area (battery car, 1520 Platform and glass skywalk included)",
+            "2-hour skiing experience (ski equipment included, snow suit not included)",
+            "If the ski resort is closed for weather, Qixing Mountain and skiing change to the indoor Snow and Ice World ski",
+            "72-floor Stilts Tower (outside view)",
+            "After dinner, transfer back to the hotel"
+          ]
+        },
+        {
+          "day": "Day 3",
+          "title": "Zhangjiajie",
+          "items": [
+            "Breakfast at the hotel",
+            "Junsheng Sandstone Painting Museum",
+            "After dinner, transfer back to the hotel"
+          ]
+        },
+        {
+          "day": "Day 4",
+          "title": "Zhangjiajie – Avatar scenic area",
+          "items": [
+            "Breakfast at the hotel",
+            "Compulsory shopping stop: Chinese medicine shop",
+            "Avatar scenic area (up and down by Bailong Lift or Tianzishan cable car)",
+            "No.1 Bridge",
+            "Avatar Hallelujah Mountain",
+            "West Sea Stone Forest",
+            "Fireworks display, where you can take part with 4 handheld sparklers each",
+            "After dinner, transfer back to the hotel"
+          ]
+        },
+        {
+          "day": "Day 5",
+          "title": "Zhangjiajie",
+          "items": [
+            "Breakfast at the hotel",
+            "Compulsory shopping stop: latex shop",
+            "Tea tasting at a tea shop, or a visit to a silk shop",
+            "Dinner upgrade: unlimited buffet-style hot pot",
+            "Charming Xiangxi Show",
+            "Transfer back to the hotel"
+          ]
+        },
+        {
+          "day": "Day 6",
+          "title": "Zhangjiajie – Changsha",
+          "items": [
+            "Breakfast at the hotel",
+            "Compulsory shopping stop: jewelry shop",
+            "Drive to Changsha",
+            "Free shopping at Huangxing Road walkway street and Pozi Street",
+            "After dinner, transfer back to the hotel"
+          ]
+        },
+        {
+          "day": "Day 7",
+          "title": "Changsha – Guangzhou – Manila",
+          "items": [
+            "Packed breakfast",
+            "Transfer to Changsha airport and fly to Guangzhou (CZ3387, 08:00–09:40), then connect to Manila (CZ397, 14:15–16:50)"
+          ]
+        }
+      ],
+      "inclusions": [
+        "Round-trip economy airfare and taxes via China Southern Airlines",
+        "Baggage: 1 piece of 23 kg checked plus 5 kg carry-on per passenger",
+        "6 nights twin-sharing accommodation at 5-star hotels with daily breakfast (triple rooms are not guaranteed and depend on availability)",
+        "Private coach with English-speaking tour guide",
+        "Sightseeing as specified, including the first-way entrance fees",
+        "Meals as listed",
+        "2 hours of skiing at Qixing Mountain with ski equipment"
+      ],
+      "exclusions": [
+        "Personal expenses such as phone calls and minibar",
+        "Extra baggage allowance",
+        "Travel insurance",
+        "Fuel surcharge: USD 30 per person, subject to change (collected with the tour fee)",
+        "Philippine travel tax: PHP 1,620 per person (pay directly at the airport)",
+        "China Group Visa (guaranteed): USD 40 per person",
+        "Tips for driver and guide: USD 35 per person, USD 5 per day for 7 days (collected with the tour fee)",
+        "Single supplement: USD 150 per person"
+      ],
+      "optional": [
+        "Tianmen Mountain (cable car, glass skywalk, Tianmen Cave): USD 85 per person",
+        "Grand Canyon C Line glass bridge and VR: USD 75 per person",
+        "Huanglong Cave (including cruise): USD 70 per person"
+      ],
+      "hotelsLabel": "Hotels",
+      "hotels": [
+        "Day 1: 5-star hotel in Changsha",
+        "Day 2-5: 5-star hotel in Zhangjiajie",
+        "Day 6: 5-star hotel in Changsha"
+      ],
+      "notes": [
+        "Meals (by day): Day 1 none; Day 2 B/L, dinner on your own; Day 3 B/L/D; Day 4 B/L/D; Day 5 B/L/D; Day 6 B/L, dinner after shopping; Day 7 breakfast",
+        "Shopping stops are part of the rate: latex shop, jewelry shop, Chinese medicine shop and tea shop",
+        "Age 12 to under 22 with bed, age 2 to under 12 without bed, infant 2 to 24 months",
+        "Single travellers booked through an agent may be paired to share a room; otherwise the single supplement applies",
+        "If the listed hotels are not available they will be replaced by similar ones",
+        "All services are private; the order of attractions may be adjusted in crowded periods",
+        "Philippine passport holders need a China visa; the China Group Visa fee is listed under exclusions."
+      ],
+      "places": [
+        "Qixing Mountain",
+        "1520 Platform",
+        "72-Floor Stilts Tower",
+        "Junsheng Sandstone Painting Museum",
+        "Avatar scenic area (Zhangjiajie National Forest Park)",
+        "Bailong Lift",
+        "Tianzishan",
+        "No.1 Bridge",
+        "Avatar Hallelujah Mountain",
+        "West Sea Stone Forest",
+        "Charming Xiangxi Show",
+        "Huangxing Road",
+        "Pozi Street"
+      ],
+      "posters": [
+        "cn-poster-spring-festival-avatar-skiing-7d6n-0.jpg"
+      ],
+      "posterSize": [
+        516,
+        800
+      ]
+    },
+    {
+      "id": "spring-festival-shanghai-hangzhou-5d4n",
+      "name": "Spring Festival Shanghai – Hangzhou 5D4N Tour",
+      "subtitle": "Out Manila · Juneyao Airlines",
+      "region": "intl",
+      "country": "China",
+      "flag": "cn",
+      "duration": "5 days 4 nights",
+      "days": 5,
+      "status": "available",
+      "featured": false,
+      "departure": "Manila (NAIA)",
+      "price": {
+        "from": 399,
+        "label": "From",
+        "unit": "per pax",
+        "currency": "USD"
+      },
+      "year": 2026,
+      "ends": "2027-02-13",
+      "image": "cn-west-lake.jpg",
+      "alt": "A pavilion on West Lake, Hangzhou",
+      "gallery": [
+        "cn-west-lake.jpg"
+      ],
+      "summary": "A Chinese New Year tour to Shanghai and Hangzhou with Spring Festival couplets, a dumpling-making lunch, West Lake and a free day.",
+      "overview": "This 5-day tour flies Juneyao Airlines from Manila to Shanghai during the Spring Festival period. You see Nanjing Road, the Bund, Zhang Garden and Xinchang Ancient Town, then Hangzhou’s Grand Canal, Gongchen Bridge and West Lake. A special Chinese New Year activity has you write Spring Festival couplets and make dumplings for lunch. Day 4 is free, with optional Shanghai Disneyland. Hotels are 4-star, and the programme includes several shop stops.",
+      "travelDates": [
+        {
+          "d": "Feb 2–6",
+          "y": 2027
+        },
+        {
+          "d": "Feb 5–9",
+          "y": 2027
+        },
+        {
+          "d": "Feb 9–13",
+          "y": 2027
+        }
+      ],
+      "travelDatesNote": "Departures from Manila, Feb 2–6 2027 to Feb 9–13 2027. The rate changes by date: an amount on a date is added to the base rate per pax. Seats are limited and confirmed at booking.",
+      "itinerary": [
+        {
+          "day": "Day 1",
+          "title": "Manila – Shanghai",
+          "items": [
+            "Flight HO1566 Manila to Shanghai (03:50–07:20)",
+            "Meet the tour guide at the airport",
+            "Nanjing Road Walking Street",
+            "The Bund and Oriental Pearl Tower (photo stop)",
+            "The largest Starbucks flagship store in Asia",
+            "Louis Vuitton mega ship",
+            "Free upgrade lunch: Yuyuan hot pot",
+            "Zhang Garden",
+            "Xinchang Ancient Town",
+            "Check in at the hotel",
+            "Meals: Lunch"
+          ]
+        },
+        {
+          "day": "Day 2",
+          "title": "Shanghai – Hangzhou",
+          "items": [
+            "Hotel breakfast and check out",
+            "Compulsory shopping stop at a latex shop",
+            "Proceed to Hangzhou",
+            "The Grand Canal (Hangzhou section)",
+            "Gongchen Bridge",
+            "Free upgrade lunch: BBQ",
+            "Stroll along West Lake and enjoy the wintersweet",
+            "Check in at the hotel",
+            "Meals: Breakfast / Lunch"
+          ]
+        },
+        {
+          "day": "Day 3",
+          "title": "Hangzhou – Shanghai",
+          "items": [
+            "Hotel breakfast and check out",
+            "Meijiawu Tea Garden and Hanfu experience",
+            "Chinese New Year special: write Spring Festival couplets and make dumplings for your lunch",
+            "Proceed to Shanghai",
+            "Compulsory shopping stop at a jade shop",
+            "Check in at the hotel",
+            "Meals: Breakfast / Lunch"
+          ]
+        },
+        {
+          "day": "Day 4",
+          "title": "Shanghai (free day)",
+          "items": [
+            "Hotel breakfast, free day",
+            "Optional: Shanghai Disneyland, USD 140 per person (ticket, transfers and guide, minimum 10 travellers)",
+            "Optional: Jinmao Tower 88th floor sightseeing hall, Xintiandi and Shikumen, Qipu Road market, USD 60 per person (ticket, transfers and guide, minimum 10 travellers)",
+            "Meals: Breakfast only"
+          ]
+        },
+        {
+          "day": "Day 5",
+          "title": "Shanghai – Manila",
+          "items": [
+            "Hotel breakfast and check out",
+            "Compulsory shopping stop at a Chinese medicine shop",
+            "Free shopping at Chenghuang Temple business area",
+            "Transfer to the airport",
+            "Flight HO1565 Shanghai to Manila (23:00–02:40 next day)",
+            "Meals: Breakfast only"
+          ]
+        }
+      ],
+      "inclusions": [
+        "Round-trip economy airfare and taxes via Juneyao Airlines",
+        "Baggage allowance: 1 piece of 23 kg check-in plus 1 piece of 5 kg carry-on",
+        "4 nights accommodation, twin sharing, with daily hotel breakfast (triple room not guaranteed)",
+        "Private coach with an English-speaking tour guide",
+        "Sightseeing as listed, including first-way entrance fees",
+        "Meals as listed, with a free upgrade of 1 meal to BBQ and 1 meal to Yuyuan hot pot"
+      ],
+      "exclusions": [
+        "Personal expenses such as telephone calls and minibar",
+        "Travel insurance",
+        "Fuel surcharge USD 30 per person (subject to change)",
+        "Philippine travel tax PHP 1,620 per person (pay at the airport)",
+        "China group visa USD 40 per person",
+        "Tips for driver and guide USD 20 per person (USD 5 per day x 4 days)",
+        "Single supplement USD 120 per person"
+      ],
+      "optional": [
+        "Shanghai Disneyland: USD 140 per person, minimum 10 travellers",
+        "Jinmao Tower 88th floor + Xintiandi and Shikumen + Qipu Road market: USD 60 per person, minimum 10 travellers"
+      ],
+      "hotelsLabel": "Hotels",
+      "hotels": [
+        "Day 1 and Day 3–4: 4★ hotel in Shanghai",
+        "Day 2: 4★ hotel in Hangzhou"
+      ],
+      "notes": [
+        "Meal codes B/L/D = breakfast/lunch/dinner; X = not included.",
+        "Shop stops included: pearl, jade, tea and Chinese medicine shops (latex shop also on Day 2). A penalty applies if travellers do not visit the shops.",
+        "Philippine passport holders need a China visa; the China group visa is USD 40 per person.",
+        "Child rates: minor with bed ages 11–17; child without bed ages 2–10; infants 2–24 months pay a reduced fare (airfare only).",
+        "This rate is not suitable for Muslim travellers.",
+        "The fare does not include VAT; an official receipt incurs a 12% surcharge on the total amount.",
+        "If you take the group visa, you may not book any itinerary from other operators on the free-and-easy day.",
+        "Single travellers may be paired with another guest to share a room; otherwise the single supplement applies.",
+        "Hotels may be replaced by similar ones; the order of attractions may change in crowded periods or special circumstances."
+      ],
+      "places": [
+        "Nanjing Road",
+        "The Bund",
+        "Oriental Pearl Tower",
+        "Zhang Garden",
+        "Xinchang Ancient Town",
+        "The Grand Canal (Hangzhou)",
+        "Gongchen Bridge",
+        "West Lake",
+        "Meijiawu Tea Garden",
+        "Chenghuang Temple Business Area",
+        "Shanghai Disneyland (optional)",
+        "Xintiandi (optional)"
+      ],
+      "posters": [
+        "cn-poster-spring-festival-shanghai-hangzhou-5d4n-0.jpg"
+      ],
+      "posterSize": [
+        520,
+        800
+      ]
+    },
+    {
+      "id": "spring-festival-shanghai-mini-kyoto-6d5n",
+      "name": "Spring Festival Shanghai – Wuxi (Mini Kyoto) – Hangzhou 6D5N Tour",
+      "subtitle": "Out Manila · Juneyao Airlines",
+      "region": "intl",
+      "country": "China",
+      "flag": "cn",
+      "duration": "6 days 5 nights",
+      "days": 6,
+      "status": "available",
+      "featured": false,
+      "departure": "Manila (NAIA)",
+      "price": {
+        "from": 429,
+        "label": "From",
+        "unit": "per pax",
+        "currency": "USD"
+      },
+      "year": 2026,
+      "ends": "2027-02-12",
+      "image": "cn-shanghai-night.jpg",
+      "alt": "The Shanghai skyline at night",
+      "gallery": [
+        "cn-shanghai-night.jpg"
+      ],
+      "summary": "Chinese New Year week in Shanghai, Wuxi’s Mini Kyoto night view and Hangzhou’s West Lake, with Spring Festival couplets and dumpling making.",
+      "overview": "Fly Juneyao Airlines to Shanghai for Nanjing Road, the Bund and Zhang Garden, then visit Wuxi’s Nianhua Bay (Mini Kyoto) at night and Hangzhou’s West Lake. A special Spring Festival activity lets you write Spring Festival couplets and make your own dumplings for lunch. Includes free-upgrade Yuyuan hot pot and BBQ meals. 4-star hotels; a shopping-stop package.",
+      "travelDates": [
+        {
+          "d": "Jan 31–Feb 5",
+          "y": 2027
+        },
+        {
+          "d": "Feb 3–8",
+          "y": 2027
+        },
+        {
+          "d": "Feb 6–11",
+          "y": 2027
+        },
+        {
+          "d": "Feb 7–12",
+          "y": 2027
+        }
+      ],
+      "travelDatesNote": "Departures from Manila, Jan 31–Feb 5 2027 to Feb 7–12 2027. The rate changes by date: an amount on a date is added to the base rate per pax. Seats are limited and confirmed at booking.",
+      "itinerary": [
+        {
+          "day": "Day 1",
+          "title": "Manila – Shanghai",
+          "items": [
+            "Flight Manila – Shanghai (HO1566, 03:50/07:20)",
+            "Meet your tour guide at the airport",
+            "Nanjing Road Walking Street",
+            "The Bund and Oriental Pearl Tower (photo stop)",
+            "Free upgrade lunch: Yuyuan hot pot",
+            "World’s largest Starbucks flagship store",
+            "LV mega ship",
+            "Zhang Garden",
+            "Check in at the hotel"
+          ]
+        },
+        {
+          "day": "Day 2",
+          "title": "Shanghai – Wuxi",
+          "items": [
+            "Hotel breakfast and check out",
+            "Compulsory shopping stop at a latex shop",
+            "Huaihai Road",
+            "Drive to Wuxi",
+            "Night view of Nianhua Bay scenic spot, the Mini Kyoto of China",
+            "Check in at the hotel"
+          ]
+        },
+        {
+          "day": "Day 3",
+          "title": "Wuxi – Hangzhou",
+          "items": [
+            "Hotel breakfast and check out",
+            "Compulsory shopping stop at a pearl exhibition center",
+            "Drive to Hangzhou",
+            "Free upgrade lunch: BBQ",
+            "The Grand Canal (Hangzhou section)",
+            "Gongchen Bridge",
+            "Stroll along West Lake and enjoy the wintersweet",
+            "Check in at the hotel"
+          ]
+        },
+        {
+          "day": "Day 4",
+          "title": "Hangzhou – Shanghai",
+          "items": [
+            "Hotel breakfast and check out",
+            "Meijiawu Tea Garden with hanfu experience",
+            "Spring Festival special: write Spring Festival couplets and make dumplings for lunch",
+            "Drive to Shanghai",
+            "Compulsory shopping stop at a jade shop",
+            "Check in at the hotel"
+          ]
+        },
+        {
+          "day": "Day 5",
+          "title": "Free day in Shanghai",
+          "items": [
+            "Hotel breakfast, free day",
+            "Optional tour 1: Shanghai Disneyland (ticket, transfers and guide), USD 140 per person, minimum 10 pax",
+            "Optional tour 2: Jinmao Tower 88th floor sightseeing hall, Xintiandi and Shikumen, and Taobao underground market (ticket, transfers and guide), USD 60 per person, minimum 10 pax"
+          ]
+        },
+        {
+          "day": "Day 6",
+          "title": "Shanghai – Manila",
+          "items": [
+            "Hotel breakfast and check out",
+            "Compulsory shopping stop at a Chinese medicine shop",
+            "Free shopping at Chenghuang Temple business area",
+            "Transfer to the airport for the flight to Manila (HO1565, 23:00/02:40+1)"
+          ]
+        }
+      ],
+      "inclusions": [
+        "Economy round-trip airfare and taxes via Juneyao Airlines",
+        "Baggage: 1 piece (23 kg) check-in and 1 piece (5 kg) carry-on",
+        "5 nights’ twin-sharing accommodation at 4-star hotels with daily breakfast (triple room not guaranteed)",
+        "Private coach with English-speaking tour guide",
+        "Sightseeing as specified, including first-way entrance fees",
+        "Meals as listed, with a free upgrade of 1 meal to BBQ and 1 meal to Yuyuan hot pot"
+      ],
+      "exclusions": [
+        "Personal expenses such as telephone calls and minibar",
+        "Travel insurance",
+        "Fuel surcharge USD 30 per person, subject to change",
+        "Philippines travel tax PHP 1,620 per person (pay directly at the airport)",
+        "China group visa USD 40 per person",
+        "Tips for driver and guide USD 25 per person, USD 5 per day for 5 days (collected with tour fee)",
+        "Single supplement USD 150 per person"
+      ],
+      "optional": [
+        "Shanghai Disneyland (ticket, transfers, guide; minimum 10 pax): USD 140 per person",
+        "Jinmao Tower 88th floor sightseeing hall, Xintiandi and Shikumen, Taobao underground market (minimum 10 pax): USD 60 per person"
+      ],
+      "hotelsLabel": "Hotels",
+      "hotels": [
+        "Day 1: 4-star hotel in Shanghai",
+        "Day 2: 4-star hotel in Wuxi",
+        "Day 3: 4-star hotel in Hangzhou",
+        "Day 4-5: 4-star hotel in Shanghai",
+        "Day 6: Home sweet home"
+      ],
+      "notes": [
+        "Meals: Day 1 lunch; Days 2-4 breakfast and lunch; Days 5-6 breakfast only",
+        "Shopping stops: pearl, jade, tea, latex and Chinese medicine shops; a penalty applies if you do not visit the shops",
+        "Minor with bed (11-17 years), child without bed (2-10 years) and infant (2-24 months, airfare only) have separate rates",
+        "Not suited to Muslim travellers",
+        "Rates do not include VAT; an official receipt carries a 12% surcharge on the total amount",
+        "Travellers on a group visa may not book other operators’ tours during a free-and-easy day",
+        "Single travellers may be paired with another guest to share a room; otherwise the single supplement applies",
+        "Order of attractions may be adjusted for crowded groups or special circumstances",
+        "Services are on a private basis",
+        "If a listed hotel is unavailable it is replaced by a similar one",
+        "Philippine passport holders need a China group visa, USD 40 per person (not included)"
+      ],
+      "places": [
+        "Nanjing Road",
+        "The Bund",
+        "Oriental Pearl Tower",
+        "Starbucks flagship store Shanghai",
+        "Zhang Garden",
+        "Huaihai Road",
+        "Nianhua Bay (Mini Kyoto)",
+        "The Grand Canal Hangzhou",
+        "Gongchen Bridge",
+        "West Lake",
+        "Meijiawu Tea Garden",
+        "Chenghuang Temple",
+        "Shanghai Disneyland",
+        "Jinmao Tower",
+        "Xintiandi"
+      ],
+      "posters": [
+        "cn-poster-spring-festival-shanghai-mini-kyoto-6d5n-0.jpg"
+      ],
+      "posterSize": [
+        520,
+        800
+      ]
+    },
+    {
+      "id": "tibet-nyingchi-lhasa-shigatse-9d8n",
+      "name": "Tibet – Nyingchi – Lhasa – Shigatse 9D8N Classic Tour (No Shopping)",
+      "subtitle": "Out Manila · China Southern Airlines",
+      "region": "intl",
+      "country": "China",
+      "flag": "cn",
+      "duration": "9 days 8 nights",
+      "days": 9,
+      "status": "available",
+      "featured": true,
+      "departure": "Manila (NAIA)",
+      "price": {
+        "from": 1988,
+        "label": "From",
+        "unit": "per pax",
+        "currency": "USD"
+      },
+      "year": 2026,
+      "ends": "2026-12-25",
+      "image": "cn-potala.jpg",
+      "alt": "The Potala Palace in Lhasa, Tibet",
+      "gallery": [
+        "cn-potala.jpg"
+      ],
+      "summary": "Classic Tibet via Guangzhou: Lulang, Basum Tso, Potala Palace, Jokhang Temple, Yamdrok Lake and Tashilhunpo Monastery, with oxygen support, 4-5 star hotels.",
+      "overview": "Fly Manila to Guangzhou on China Southern Airlines, then on to Nyingchi in Tibet. You will see Lulang Forest, Basum Tso, the Potala Palace (interior visit), Jokhang Temple, Yamdrok Lake and Tashilhunpo Monastery in Shigatse. Seven nights are in 5-star hotels and one in a 4-star hotel. Oxygen support is provided: an on-board oxygen cylinder, daily oxygen concentrator supply and more.",
+      "travelDates": [
+        {
+          "d": "Dec 17–25"
+        }
+      ],
+      "travelDatesNote": "Departures from Manila, Dec 17–25 2026 to Dec 17–25 2026. The rate changes by date: an amount on a date is added to the base rate per pax. Seats are limited and confirmed at booking.",
+      "itinerary": [
+        {
+          "day": "Day 1",
+          "title": "Manila – Guangzhou",
+          "items": [
+            "Fly Manila to Guangzhou (CZ3092, 12:00/14:40) and meet the tour guide at the airport",
+            "Transfer to the hotel and check in",
+            "After dinner, free time to rest before the early flight next day (meals: X/X/D)"
+          ]
+        },
+        {
+          "day": "Day 2",
+          "title": "Guangzhou – Nyingchi – Bomi",
+          "items": [
+            "Simple packed breakfast at the hotel and check out",
+            "Transfer to the airport and fly to Nyingchi (CZ3477, 06:35/10:30)",
+            "Meet the tour guide at Nyingchi airport",
+            "Lulang Forest Scenic Area",
+            "Lulang Town",
+            "Transfer to Bomi, then to the hotel and check in (meals: B/L/D)"
+          ]
+        },
+        {
+          "day": "Day 3",
+          "title": "Bomi – Nyingchi",
+          "items": [
+            "Hotel breakfast and check out",
+            "Midui Glacier (scenic shuttle bus included). Midui Glacier is temporarily closed from October 1, with the reopening date subject to the scenic area’s notice; it is replaced by Gawalong Glacier",
+            "Return to Nyingchi",
+            "Transfer to the hotel and check in (meals: B/L/D)"
+          ]
+        },
+        {
+          "day": "Day 4",
+          "title": "Nyingchi – Basum Tso – Lhasa",
+          "items": [
+            "Hotel breakfast and check out",
+            "Basum Tso (scenic shuttle bus included)",
+            "Lake Heart Island",
+            "Tsozong Gongba Monastery",
+            "Follow the Lhasa-Nyingchi Expressway, admire the Nyang River views and proceed to Lhasa",
+            "Transfer to the hotel and check in (meals: B/L/D)"
+          ]
+        },
+        {
+          "day": "Day 5",
+          "title": "Lhasa",
+          "items": [
+            "Hotel breakfast",
+            "Potala Palace (interior visit)",
+            "Jokhang Temple",
+            "Barkhor Street",
+            "Complimentary professional photoshoot in Tibetan costume and headdress (10 raw photos and 3 retouched ones)",
+            "Optional: Princess Wencheng Show (general seats) + Lhasa sweet tea + Potala Palace night view, USD 80 per person (meals: B/L/D)"
+          ]
+        },
+        {
+          "day": "Day 6",
+          "title": "Lhasa – Shigatse",
+          "items": [
+            "Hotel breakfast and check out",
+            "Yamdrok Lake (viewing platform)",
+            "Distant view of Nyainqentanglha Snow Mountain",
+            "Karola Glacier",
+            "Drive past Manla Reservoir",
+            "View the Zongshan Castle ruins from afar",
+            "Arrive in Shigatse, transfer to the hotel and check in (meals: B/L/D)"
+          ]
+        },
+        {
+          "day": "Day 7",
+          "title": "Shigatse – Lhasa",
+          "items": [
+            "Hotel breakfast and check out",
+            "Tashilhunpo Monastery (main highlight: the 26.2 m gilded Maitreya Buddha, the world’s largest indoor bronze Buddha)",
+            "Transfer to Lhasa, then to the hotel and check in (meals: B/L/D)"
+          ]
+        },
+        {
+          "day": "Day 8",
+          "title": "Lhasa – Guangzhou",
+          "items": [
+            "Hotel breakfast and check out",
+            "Zhaqi Temple (Temple of the Wealth Goddess)",
+            "Transfer to the airport and fly to Guangzhou (CZ3464, 13:25/19:15)",
+            "Meet the tour guide, transfer to the hotel and check in (meals: B/X/X)"
+          ]
+        },
+        {
+          "day": "Day 9",
+          "title": "Guangzhou – Manila",
+          "items": [
+            "Hotel breakfast and check out",
+            "Transfer to the airport and fly to Manila (CZ397, 14:15/16:50) (meals: B/L/X)"
+          ]
+        }
+      ],
+      "inclusions": [
+        "Economy round-trip airfare and tax with China Southern Airlines",
+        "Baggage allowance: 1 piece 23 kg checked-in plus 7 kg hand carry",
+        "Tour bus: 26-seat 2+1 VIP buses in Tibet, 37-seat buses in Guangzhou",
+        "8 nights’ accommodation, twin sharing: 7 nights in 5★ hotels and 1 night in a 4★ hotel, with daily hotel breakfast",
+        "Private bus with English-speaking tour guide",
+        "Sightseeing as specified, including first-way entrance fees",
+        "Meals: breakfast and 14 meals, including Cantonese cuisine, stone pot chicken, Tibetan cuisine, Bahe River fish, wild mushroom cuisine and Korean BBQ",
+        "Welcome hada, on-board oxygen cylinder, 5 glucose drinks, 1 mini oxygen and 1 prayer wheel per person",
+        "Daily oxygen concentrator supply and 2 bottles of mineral water daily"
+      ],
+      "exclusions": [
+        "Personal expenses such as phone calls and minibar",
+        "Travel insurance",
+        "Philippines travel tax USD 30 per person (collected with the tour fee)",
+        "China group visa USD 40 per person (collected with the tour fee)",
+        "Tips for driver and guide USD 54 per person (USD 6 per day x 9 days, collected with the tour fee)",
+        "Single supplement USD 430 per person",
+        "Fuel surcharge estimated at USD 75 per person (subject to change)",
+        "Optional: Princess Wencheng Show + Lhasa sweet tea + Potala Palace night view, USD 80 per person"
+      ],
+      "optional": [
+        "Princess Wencheng Show (general seats) + Lhasa sweet tea + Potala Palace night view: USD 80 per person"
+      ],
+      "hotelsLabel": "Hotels",
+      "hotels": [
+        "Day 1: 5★ hotel in Guangzhou",
+        "Day 2: 4★ hotel in Bomi",
+        "Day 3: 5★ hotel in Nyingchi",
+        "Day 4-5: 5★ hotel in Lhasa",
+        "Day 6: 5★ hotel in Shigatse",
+        "Day 7: 5★ hotel in Lhasa",
+        "Day 8: 5★ hotel in Guangzhou"
+      ],
+      "notes": [
+        "Meal codes: B = breakfast, L = lunch, D = dinner, X = not included",
+        "Child categories: child with bed 2-11 years pays the adult rate; child without bed 2-11 years",
+        "Philippine passport holders need a China visa; the group visa is not included (USD 40 per person)",
+        "The guide may sell some souvenirs or local specialties on the bus; guests buy only if they wish",
+        "The driver may adjust the order of attractions because of weather, traffic or visitor volume",
+        "If attractions are reduced or other losses occur through force majeure (policy changes, weather), extra costs are borne by the guests and incurred expenses are not refundable",
+        "Hotels are subject to replacement with similar ones if not available",
+        "Itinerary, flight times and hotels are subject to final confirmation",
+        "No refunds if guests cancel itinerary or accommodation arrangements during the trip; tips must be paid in full for the number of days of the trip"
+      ],
+      "places": [
+        "Lulang Forest Scenic Area",
+        "Lulang Town",
+        "Midui Glacier",
+        "Gawalong Glacier",
+        "Basum Tso",
+        "Lake Heart Island",
+        "Tsozong Gongba Monastery",
+        "Nyang River",
+        "Potala Palace",
+        "Jokhang Temple",
+        "Barkhor Street",
+        "Yamdrok Lake",
+        "Nyainqentanglha Snow Mountain",
+        "Karola Glacier",
+        "Manla Reservoir",
+        "Tashilhunpo Monastery",
+        "Zhaqi Temple"
+      ],
+      "posters": [
+        "cn-poster-tibet-nyingchi-lhasa-shigatse-9d8n-0.jpg"
+      ],
+      "posterSize": [
+        532,
+        800
+      ]
+    },
+    {
+      "id": "vista-harmony-cruise-chongqing-yangtze",
+      "name": "Vista Harmony Cruise – Chongqing – Yangtze River – Yichang 7D6N Tour (No Shopping)",
+      "subtitle": "Out Manila · Fly + cruise",
+      "region": "intl",
+      "country": "China",
+      "flag": "cn",
+      "duration": "7 days 6 nights",
+      "days": 7,
+      "status": "available",
+      "featured": false,
+      "departure": "Manila (NAIA)",
+      "price": {
+        "from": 1549,
+        "label": "From",
+        "unit": "per pax",
+        "currency": "USD"
+      },
+      "year": 2026,
+      "ends": "2026-12-13",
+      "image": "cn-yangtze.jpg",
+      "alt": "Mountains along the Yangtze River gorges",
+      "gallery": [
+        "cn-yangtze.jpg"
+      ],
+      "summary": "Seven days with a 4-night Vista Harmony Yangtze cruise through the Three Gorges, plus Yichang and Chongqing city sightseeing, flying via Guangzhou.",
+      "overview": "Fly via Guangzhou to Yichang and board the Vista Harmony for a 4-night cruise through the Three Gorges, with shore excursions at Three Gorges Dam, Baidi City and more. Finish with a Chongqing city tour and a 5-star hotel stay before flying home.",
+      "travelDates": [
+        {
+          "d": "Dec 7–13"
+        }
+      ],
+      "travelDatesNote": "Departures from Manila, Dec 7–13 2026 to Dec 7–13 2026. The rate changes by date: an amount on a date is added to the base rate per pax. Seats are limited and confirmed at booking.",
+      "itinerary": [
+        {
+          "day": "Day 1",
+          "title": "Manila – Guangzhou – Yichang",
+          "items": [
+            "Fly Manila to Guangzhou (CZ3092 12:00–14:40), then to Yichang (CZ3311 21:30/23:15)",
+            "Meet the English-speaking guide at Yichang airport",
+            "Hotel check-in"
+          ]
+        },
+        {
+          "day": "Day 2",
+          "title": "Yichang – board the cruise",
+          "items": [
+            "Hotel breakfast and check out",
+            "Sanyou Cave",
+            "Lunch, then the complimentary tour of Gezhou Dam and the eastern Xiling Gorge (depends on arrival time; no refund for non-participation)",
+            "Board the cruise"
+          ]
+        },
+        {
+          "day": "Day 3",
+          "title": "Three Gorges cruise",
+          "items": [
+            "Cruise breakfast",
+            "Shore excursion to Three Gorges Dam",
+            "Cruise tour of the Three Gorges Ship Lift",
+            "Badong Yuxian Valley (Apr–Oct) or Wushan Goddess Stream (visited the next morning, Nov–Mar)",
+            "If the ship lift is suspended because of weather, hydrology or navigation, the Three Gorges Project Museum and Damping Memorial Park are visited instead"
+          ]
+        },
+        {
+          "day": "Day 4",
+          "title": "Three Gorges cruise",
+          "items": [
+            "Cruise breakfast",
+            "Shore excursion to Baidi City or The Top of Three Gorges (choose when registering)"
+          ]
+        },
+        {
+          "day": "Day 5",
+          "title": "Three Gorges cruise",
+          "items": [
+            "Cruise breakfast",
+            "Shore excursion to Baiheliang Underwater Museum + Fuling Pickled Mustard Tuber Memory Museum, or Project 816 Site (choose when registering)",
+            "If the cruise docks at Fengdu Port because of weather or waterway conditions, the excursion becomes Fengdu Ghost City"
+          ]
+        },
+        {
+          "day": "Day 6",
+          "title": "Chongqing city",
+          "items": [
+            "Cruise breakfast",
+            "Meet the Chongqing guide after disembarking",
+            "People’s Square",
+            "The Great Hall of the People (exterior view)",
+            "Light rail passing through a building at Liziba Station",
+            "Jiefangbei Pedestrian Street",
+            "Guotai Arts Center (exterior view)",
+            "Kuixinglou Viewing Platform",
+            "Hongyadong Stilted Buildings"
+          ]
+        },
+        {
+          "day": "Day 7",
+          "title": "Chongqing – Guangzhou – Manila",
+          "items": [
+            "Packed breakfast and check out",
+            "Transfer to airport and fly Chongqing to Guangzhou (CZ2305 09:00–10:35), then to Manila (CZ397 14:15–16:50)"
+          ]
+        }
+      ],
+      "inclusions": [
+        "Economy round-trip airfare and taxes via China Southern Airlines",
+        "Baggage: 1 piece 23 kg check-in and 7 kg hand carry",
+        "2 nights in a 5★ hotel and 4 nights in a cruise cabin, twin sharing",
+        "Private bus with English-speaking tour guide",
+        "Sightseeing as specified, including first-way entrance fees",
+        "Meals: breakfast (hotel and cruise) and 10 meals, including local-specialty and cruise meals"
+      ],
+      "exclusions": [
+        "Personal expenses such as phone calls and minibar",
+        "Travel insurance",
+        "Philippines travel tax: USD 30 per person (collected with tour fee)",
+        "China group visa: USD 40 per person",
+        "Tips for driver and guide: USD 56 per person (USD 8 per day x 7 days, collected with tour fee)",
+        "Single supplement: USD 610 per person",
+        "Fuel surcharge (subject to change)"
+      ],
+      "optional": [
+        "Day 6: VIP seating (Section C) for the fantasy acrobatic show “Yangtze River” + Nanbin Road night cruise + 131 Observation Deck, USD 100 per person"
+      ],
+      "hotelsLabel": "Hotels",
+      "hotels": [
+        "Day 1: 5★ hotel in Yichang",
+        "Day 2–5: Vista Harmony Cruise",
+        "Day 6: 5★ hotel in Chongqing"
+      ],
+      "notes": [
+        "Cruise is popular: provide a name list when booking; cabins are subject to the cruise company’s confirmation",
+        "Shore excursions follow the cruise ship’s information on the day and the cruise itinerary may change with water level, weather or waterway conditions",
+        "No refunds for cancelled itinerary or accommodation during the trip; tips are payable for the full number of days",
+        "Child with bed (2–11 yrs) pays the adult rate; child without bed (2–11 yrs) is priced separately",
+        "Single supplement USD 610 per person",
+        "The tour guide may sell local specialties on the bus; purchase is optional",
+        "Itinerary, flight times and hotels are subject to final confirmation; hotels may be replaced by similar ones",
+        "Weather, traffic or force majeure may change the order or number of attractions, with extra costs borne by travellers"
+      ],
+      "places": [
+        "Sanyou Cave",
+        "Gezhou Dam",
+        "Xiling Gorge",
+        "Three Gorges Dam",
+        "Three Gorges Ship Lift",
+        "Badong Yuxian Valley",
+        "Wushan Goddess Stream",
+        "Baidi City",
+        "Baiheliang Underwater Museum",
+        "Project 816 Site",
+        "People’s Square",
+        "Liziba Station",
+        "Jiefangbei Pedestrian Street",
+        "Hongyadong"
+      ],
+      "posters": [
+        "cn-poster-vista-harmony-cruise-chongqing-yangtze-0.jpg"
+      ],
+      "posterSize": [
+        540,
+        800
+      ]
+    },
+    {
+      "id": "wuhan-hubei-yangtze-river-6d5n-no-shopping",
+      "name": "Wuhan – Yichang – Yangtze River 6D5N Winter Tour (No Shopping)",
+      "subtitle": "Out Manila · China Southern Airlines",
+      "region": "intl",
+      "country": "China",
+      "flag": "cn",
+      "duration": "6 days 5 nights",
+      "days": 6,
+      "status": "available",
+      "featured": false,
+      "departure": "Manila (NAIA)",
+      "price": {
+        "from": 649,
+        "label": "From",
+        "unit": "per pax",
+        "currency": "USD"
+      },
+      "year": 2026,
+      "ends": "2027-01-24",
+      "image": "cn-yangtze.jpg",
+      "alt": "Mountains along the Yangtze River gorges",
+      "gallery": [
+        "cn-yangtze.jpg"
+      ],
+      "summary": "Winter trip through Yichang and Wuhan: Xiling Gorge cruise, Three Gorges Sky Road, Water Town in Dream, East Lake and Yellow Crane Tower, with no shopping stops.",
+      "overview": "Five nights in 4-star hotels in Yichang and Wuhan, flying in and out via Guangzhou with China Southern Airlines. Cruise Xiling Gorge, ride the Three Gorges Sky Road, visit Water Town in Dream, East Lake, the Sky Train and Yellow Crane Tower (outside view). There are no shopping stops.",
+      "travelDates": [
+        {
+          "d": "Dec 11–16",
+          "add": 50,
+          "cur": "USD"
+        },
+        {
+          "d": "Dec 31–Jan 5",
+          "add": 350,
+          "cur": "USD"
+        },
+        {
+          "d": "Jan 8–13",
+          "y": 2027
+        },
+        {
+          "d": "Jan 14–19",
+          "y": 2027,
+          "add": 50,
+          "cur": "USD"
+        },
+        {
+          "d": "Jan 19–24",
+          "y": 2027,
+          "add": 50,
+          "cur": "USD"
+        }
+      ],
+      "travelDatesNote": "Departures from Manila, Dec 11–16 2026 to Jan 19–24 2027. The rate changes by date: an amount on a date is added to the base rate per pax. Seats are limited and confirmed at booking.",
+      "itinerary": [
+        {
+          "day": "Day 1",
+          "title": "Manila – Guangzhou – Yichang",
+          "items": [
+            "Fly Manila to Guangzhou (CZ3092 12:00/14:40), then Guangzhou to Yichang (CZ3311 21:30/23:15).",
+            "Meet the English-speaking guide at Yichang airport; drive to hotel. Meals: X/X/X."
+          ]
+        },
+        {
+          "day": "Day 2",
+          "title": "Yichang",
+          "items": [
+            "Hotel breakfast and check out.",
+            "Cruise trip through Xiling Gorge.",
+            "Three Gorges Sanyou Cave and Three Gorges Sky Road (Xiling Gorge section, panoramic viewing platform).",
+            "Yichang CBD Night Market.",
+            "Optional tour: Bailihuang Snowfield (snow play included; skiing costs extra). Meals: B/L/X."
+          ]
+        },
+        {
+          "day": "Day 3",
+          "title": "Yichang – Wuhan",
+          "items": [
+            "Hotel breakfast and check out.",
+            "Visit Water Town in Dream (water forest cruise included).",
+            "Transfer to Wuhan.",
+            "Optional tour: Jingzhou Ancient City Wall (Binyang Tower, round-trip shuttle bus included); in flowering season, Jingzhou Large Plum Garden. Meals: B/L/D."
+          ]
+        },
+        {
+          "day": "Day 4",
+          "title": "Wuhan",
+          "items": [
+            "Hotel breakfast.",
+            "Visit East Lake Scenic Area.",
+            "Ride the Sky Train.",
+            "Jianghan Road Pedestrian Street and Night Market.",
+            "Optional tour: AI robot + flower blossom viewing at Xiaozhuwan + night tour of Jiangxia Lane. Meals: B/L/X."
+          ]
+        },
+        {
+          "day": "Day 5",
+          "title": "Wuhan",
+          "items": [
+            "Hotel breakfast and check out.",
+            "Visit Qingchuan Pavilion Scenic Area and Nan’anzui Two Rivers Confluence.",
+            "Wuchang Bay and Yellow Crane Tower (exterior view).",
+            "Hanzheng Street Small Commodities Wholesale Market.",
+            "Jianghan Customs and Lihuangpi Road; photo spots at Bagong House and Riverside Garden.",
+            "Optional tour: Han-style show with high-tech water show and traditional Chinese acrobatics. Meals: B/L/X."
+          ]
+        },
+        {
+          "day": "Day 6",
+          "title": "Wuhan – Guangzhou – Manila",
+          "items": [
+            "Breakfast and check out.",
+            "Transfer to the airport; fly Wuhan to Guangzhou (CZ6590 09:30/11:30), then Guangzhou to Manila (CZ397 14:15/16:50). Meals: B/X/X."
+          ]
+        }
+      ],
+      "inclusions": [
+        "Economy airfare and tax with China Southern Airlines (round trip)",
+        "Baggage: 1 piece 23 kg check-in plus 7 kg hand carry",
+        "5 nights twin-share accommodation in 4★ hotels with daily breakfast",
+        "Private bus with English-speaking tour guide",
+        "Sightseeing as specified, including first-way entrance fees",
+        "Meals: breakfast and 5 other meals"
+      ],
+      "exclusions": [
+        "Personal expenses such as phone calls and minibar",
+        "Travel insurance",
+        "Philippine travel tax: USD 30 per person, collected with tour fee",
+        "China group visa: USD 40 per person, collected with tour fee",
+        "Tips for driver and guide: USD 10 per person per day x 6 days = USD 60, collected with tour fee",
+        "Single supplement: USD 150 per person (Dec 31-Jan 5: USD 200)",
+        "Optional tours package: USD 80 per person",
+        "Fuel surcharge (subject to change)"
+      ],
+      "optional": [
+        "All optional tours as a package (Bailihuang Snowfield, Jingzhou Ancient City Wall or Plum Garden, AI robot + Xiaozhuwan + Jiangxia Lane, Han-style show): USD 80 per person"
+      ],
+      "hotelsLabel": "Hotels",
+      "hotels": [
+        "Day 1-2: 4★ hotel in Yichang",
+        "Day 3-5: 4★ hotel in Wuhan"
+      ],
+      "notes": [
+        "No shopping stops, but the guide may recommend products on the bus, which you can buy if you wish.",
+        "Child with bed (2-12 yrs) pays the adult rate.",
+        "Tips must be paid in full for the number of trip days; no refunds if you cancel part of the itinerary or accommodation during the trip.",
+        "The order of sights may change with weather, traffic or visitor volume; extra costs from force majeure are borne by the traveller.",
+        "Itinerary, flight times and hotels are subject to final confirmation; hotels may be replaced by similar ones."
+      ],
+      "places": [
+        "Xiling Gorge",
+        "Three Gorges Sanyou Cave",
+        "Three Gorges Sky Road",
+        "Yichang CBD Night Market",
+        "Water Town in Dream",
+        "East Lake",
+        "Sky Train",
+        "Jianghan Road Pedestrian Street",
+        "Qingchuan Pavilion",
+        "Nan’anzui",
+        "Wuchang Bay",
+        "Yellow Crane Tower",
+        "Hanzheng Street",
+        "Lihuangpi Road"
+      ],
+      "posters": [
+        "cn-poster-wuhan-hubei-yangtze-river-6d5n-no-shopping-0.jpg"
+      ],
+      "posterSize": [
+        537,
+        800
+      ]
+    },
+    {
+      "id": "wuhan-yangtze-river-yichang-6d5n-no-shopping",
+      "name": "Yichang – Wuhan – Yangtze River Autumn 6D5N Tour (No Shopping)",
+      "subtitle": "Out Manila · China Southern Airlines",
+      "region": "intl",
+      "country": "China",
+      "flag": "cn",
+      "duration": "6 days 5 nights",
+      "days": 6,
+      "status": "available",
+      "featured": false,
+      "departure": "Manila (NAIA)",
+      "price": {
+        "from": 649,
+        "label": "From",
+        "unit": "per pax",
+        "currency": "USD"
+      },
+      "year": 2026,
+      "ends": "2026-11-29",
+      "image": "cn-yangtze.jpg",
+      "alt": "Mountains along the Yangtze River gorges",
+      "gallery": [
+        "cn-yangtze.jpg"
+      ],
+      "summary": "Six days of autumn scenery in Hubei: a Xiling Gorge cruise from Yichang, the Three Gorges Waterfall and Wuhan’s East Lake and Sky Train.",
+      "overview": "Fly China Southern via Guangzhou to Yichang, cruise through Xiling Gorge past the Gezhouba Dam, then visit the Three Gorges Waterfall and the Water Town in Dream before moving on to Wuhan for East Lake, Jianghan Road and the Sky Train. You stay in 4-star hotels. This is a No Shopping package.",
+      "travelDates": [
+        {
+          "d": "Nov 24–29"
+        }
+      ],
+      "travelDatesNote": "Departures from Manila, Nov 24–29 2026 to Nov 24–29 2026. The rate changes by date: an amount on a date is added to the base rate per pax. Seats are limited and confirmed at booking.",
+      "itinerary": [
+        {
+          "day": "Day 1",
+          "title": "Manila – Guangzhou – Yichang",
+          "items": [
+            "Fly Manila to Guangzhou (CZ3092, 12:00–14:40), then Guangzhou to Yichang (CZ3311, 21:30–23:15)",
+            "Arrive in Yichang and meet the English-speaking tour guide",
+            "Drive to hotel and check in"
+          ]
+        },
+        {
+          "day": "Day 2",
+          "title": "Yichang",
+          "items": [
+            "Hotel breakfast",
+            "Cruise through Xiling Gorge and past the Gezhouba Dam",
+            "Golden autumn scenery along the Yichang Binjiang River",
+            "Yichang CBD Night Market",
+            "Three Gorges Dam, the world’s largest inland waterway project, with shuttle bus (optional)"
+          ]
+        },
+        {
+          "day": "Day 3",
+          "title": "Yichang – Wuhan",
+          "items": [
+            "Hotel breakfast and check out",
+            "Three Gorges Waterfall (scenic area transportation included)",
+            "Water Town in Dream (boat tour included)",
+            "Transfer to Wuhan",
+            "After dinner, hotel check in"
+          ]
+        },
+        {
+          "day": "Day 4",
+          "title": "Wuhan",
+          "items": [
+            "Hotel breakfast",
+            "Sky Train experience",
+            "East Lake Scenic Area (looking for migratory birds)",
+            "Wuchang Bay + Douji Camp",
+            "Jianghan Road, a century-old road",
+            "Wushang Dream Plaza, the world’s largest indoor commercial complex",
+            "AI robot + snow park entertainment, cotton clothing included (optional)"
+          ]
+        },
+        {
+          "day": "Day 5",
+          "title": "Wuhan",
+          "items": [
+            "Hotel breakfast",
+            "Anshan Mountain or Qinglongshan Forest Park",
+            "Ginkgo Avenue on Canglong Island",
+            "Xiaozhu Bay (autumn countryside scenery)",
+            "Popular photo spots: Jianghan Customs, Lihuangpi Road, Bagong House, Riverside Autumn Garden",
+            "Large-scale Han-style performance: high-tech water show + traditional Chinese acrobatics (optional)"
+          ]
+        },
+        {
+          "day": "Day 6",
+          "title": "Wuhan – Guangzhou – Manila",
+          "items": [
+            "Hotel or packed breakfast and check out",
+            "Transfer to the airport and fly Wuhan to Guangzhou (CZ6590, 09:30–11:30)",
+            "Connecting flight Guangzhou to Manila (CZ397, 14:15–16:50)"
+          ]
+        }
+      ],
+      "inclusions": [
+        "Economy airfare and taxes with China Southern Airlines, round trip",
+        "Baggage allowance: 1 piece of 23 kg checked plus 7 kg hand carry",
+        "5 nights’ accommodation, twin sharing, in 4★ hotels with daily breakfast",
+        "Private bus with English-speaking tour guide",
+        "Sightseeing as specified, including first-way entrance fees",
+        "Meals: breakfast plus 5 meals featuring local specialties (meal standard USD 7 per person per meal)"
+      ],
+      "exclusions": [
+        "Personal expenses such as phone calls and minibar",
+        "Travel insurance",
+        "Philippine travel tax USD 30 per person, collected with the tour fee",
+        "China group visa USD 40 per person",
+        "Tips for driver and guide USD 60 per person (USD 10 per day for 6 days), collected with the tour fee",
+        "Single supplement USD 120 per person",
+        "Optional tours",
+        "Fuel surcharge, subject to change"
+      ],
+      "optional": [
+        "Optional package: Three Gorges Dam (with shuttle bus) + AI robot and snow park entertainment (cotton clothing included) + Han-style high-tech water show and acrobatic performance – USD 75 per person"
+      ],
+      "hotelsLabel": "Hotels",
+      "hotels": [
+        "Day 1–2: 4★ hotel in Yichang",
+        "Day 3–5: 4★ hotel in Wuhan",
+        "Day 6: Sweet Home"
+      ],
+      "notes": [
+        "Meals per day: D1 none; D2 B/L; D3 B/L/D; D4–D5 B/L; D6 B",
+        "Single departure only (Nov 24–29)",
+        "Child with bed (2–12 yrs) pays the adult rate; child without bed (2–12 yrs) has a lower rate",
+        "Philippine passport holders need a China visa (group visa USD 40 per person)",
+        "The rate has no shopping stops, but the tour guide may recommend local specialties on the bus; purchases are optional",
+        "The order of attractions may change due to weather, traffic or visitor volume; hotels may be replaced by similar ones",
+        "No refunds for tours or accommodation cancelled during the trip, and tips are payable for the full number of days"
+      ],
+      "places": [
+        "Xiling Gorge",
+        "Gezhouba Dam",
+        "Yichang CBD Night Market",
+        "Three Gorges Dam",
+        "Three Gorges Waterfall",
+        "Water Town in Dream",
+        "Wuhan Sky Train",
+        "East Lake Scenic Area",
+        "Wuchang Bay",
+        "Jianghan Road",
+        "Wushang Dream Plaza",
+        "Anshan Mountain",
+        "Qinglongshan Forest Park",
+        "Canglong Island Ginkgo Avenue",
+        "Xiaozhu Bay"
+      ],
+      "posters": [
+        "cn-poster-wuhan-yangtze-river-yichang-6d5n-no-shopping-0.jpg"
+      ],
+      "posterSize": [
+        537,
+        800
+      ]
+    },
+    {
+      "id": "xi-an-5d4n-no-shopping",
+      "name": "Xi’an 5D4N Tour (No Shopping)",
+      "subtitle": "Out Manila · China Southern Airlines",
+      "region": "intl",
+      "country": "China",
+      "flag": "cn",
+      "duration": "5 days 4 nights",
+      "days": 5,
+      "status": "available",
+      "featured": true,
+      "departure": "Manila (NAIA)",
+      "price": {
+        "from": 599,
+        "label": "From",
+        "unit": "per pax",
+        "currency": "USD"
+      },
+      "year": 2026,
+      "ends": "2027-03-16",
+      "image": "cn-terracotta.jpg",
+      "alt": "The Terracotta Warriors in Xi’an",
+      "gallery": [
+        "cn-terracotta.jpg"
+      ],
+      "summary": "Five days in Xi’an with the Terracotta Army, the ancient City Wall, the Muslim Quarter and the Small and Big Wild Goose Pagodas.",
+      "overview": "Fly China Southern via Guangzhou to Xi’an and stay four nights in a 4★ hotel. You see the Terracotta Army, the Ancient City Wall, the Bell and Drum Tower Square and Muslim Quarter, both Wild Goose Pagodas, and Tang-style night sights, with a Hanfu Qin Dynasty banquet upgrade and one bottle of water per day included. No shopping stops are scheduled.",
+      "travelDates": [
+        {
+          "d": "Nov 17–21"
+        },
+        {
+          "d": "Jan 1–5",
+          "y": 2027,
+          "add": 100,
+          "cur": "USD"
+        },
+        {
+          "d": "Jan 15–19",
+          "y": 2027
+        },
+        {
+          "d": "Mar 5–9",
+          "y": 2027
+        },
+        {
+          "d": "Mar 12–16",
+          "y": 2027
+        }
+      ],
+      "travelDatesNote": "Departures from Manila, Nov 17–21 2026 to Mar 12–16 2027. The rate changes by date: an amount on a date is added to the base rate per pax. Seats are limited and confirmed at booking.",
+      "itinerary": [
+        {
+          "day": "Day 1",
+          "title": "Manila – Guangzhou – Xi’an",
+          "items": [
+            "Fly Manila – Guangzhou (03:20 – 05:50), then Guangzhou – Xi’an (09:05 – 11:40)",
+            "Arrive in Xi’an and meet the tour guide",
+            "After lunch, hotel check-in",
+            "Ever-Bright Tang Boulevard at night, to feel the cultural charm of the Tang Dynasty",
+            "Meals: X/L/D"
+          ]
+        },
+        {
+          "day": "Day 2",
+          "title": "Xi’an old city",
+          "items": [
+            "Hotel breakfast",
+            "Ancient City Wall",
+            "Bell and Drum Tower Square",
+            "Muslim Quarter",
+            "Daming Palace Danfeng Gate",
+            "Yongxingfang Intangible Cultural Heritage Food Street",
+            "Meals: B/L/D"
+          ]
+        },
+        {
+          "day": "Day 3",
+          "title": "Xi’an",
+          "items": [
+            "Hotel breakfast",
+            "Small Wild Goose Pagoda and Xi’an Museum",
+            "Exterior view of the Wild Goose Pagoda in Impression City",
+            "North Square of the Big Wild Goose Pagoda and musical fountain",
+            "Optional: Camel Bell Legend Show + Shengyun BBQ buffet + South Lake night tour, USD 99/pax",
+            "Meals: B/L/X"
+          ]
+        },
+        {
+          "day": "Day 4",
+          "title": "Terracotta Army",
+          "items": [
+            "Hotel breakfast",
+            "Terracotta Army (Pits 1, 2 and 3), one of the world’s top ten ancient tomb treasures (including electric cart)",
+            "Terracotta Army Qin Generals Eternal Hall",
+            "Meals: B/L/D"
+          ]
+        },
+        {
+          "day": "Day 5",
+          "title": "Xi’an – Guangzhou – Manila",
+          "items": [
+            "Hotel breakfast and check out",
+            "Guangren Temple, Xi’an’s only Tibetan Buddhist temple",
+            "Xingqing Palace Park, a Tang-style lakeside imperial garden",
+            "Transfer to the airport; fly Xi’an – Guangzhou (18:00 – 21:05), then Guangzhou – Manila (23:45 – 02:20 next day)",
+            "Meals: B/L/X"
+          ]
+        }
+      ],
+      "inclusions": [
+        "Economy airfare and taxes with China Southern Airlines (round trip)",
+        "Baggage allowance: 1 pc / 23 kg check-in and 7 kg hand carry",
+        "4 nights’ accommodation, twin sharing, in a 4★ hotel with daily hotel breakfast",
+        "Private bus with English-speaking tour guide",
+        "Sightseeing entrance fees as specified above (first way)",
+        "Meals: breakfast and 8 meals of Sichuan, Shaanxi, Cantonese and other Chinese flavors, with 1 meal upgraded to a grand Qin Dynasty banquet (wearing Hanfu and eating Han food)",
+        "One complimentary bottle of water per person per day"
+      ],
+      "exclusions": [
+        "Personal expenses such as telephone calls and minibar",
+        "Travel insurance",
+        "Philippine travel tax USD 30/pax (collected with the tour fee)",
+        "China group visa USD 40/pax (collected with the tour fee)",
+        "Tips for driver and guide USD 8/pax/day x 5 days = USD 40/pax (collected with the tour fee)",
+        "Single supplement USD 110/pax",
+        "Optional tour: Camel Bell Legend Show + Shengyun BBQ buffet + South Lake night tour, USD 99/pax",
+        "Fuel surcharge (subject to change)"
+      ],
+      "optional": [
+        "Camel Bell Legend Show + Shengyun BBQ buffet + South Lake night tour: USD 99/pax (can be ordered and paid in advance)"
+      ],
+      "hotelsLabel": "Hotels",
+      "hotels": [
+        "Day 1-4: 4★ hotel in Xi’an",
+        "Day 5: Sweet Home"
+      ],
+      "notes": [
+        "Meal codes: B = breakfast, L = lunch, D = dinner, X = not included",
+        "No shopping stops are scheduled; the guide may sell souvenirs or local specialties on the bus, purchases are optional",
+        "Single supplement USD 110/pax",
+        "Child without bed 2–12 yrs",
+        "Visa: China group visa USD 40/pax is not included",
+        "Order of sights may change with weather, traffic or visitor volume; the agency is not liable for losses from force majeure",
+        "Flight times, hotels and itinerary are subject to final confirmation",
+        "No refund if you cancel any itinerary or accommodation during the trip, and tips are paid for the full number of days",
+        "If hotels are unavailable they are replaced by similar ones"
+      ],
+      "places": [
+        "Ever-Bright Tang Boulevard",
+        "Ancient City Wall",
+        "Bell and Drum Tower Square",
+        "Muslim Quarter",
+        "Daming Palace Danfeng Gate",
+        "Yongxingfang Food Street",
+        "Small Wild Goose Pagoda",
+        "Xi’an Museum",
+        "Big Wild Goose Pagoda",
+        "Terracotta Army",
+        "Guangren Temple",
+        "Xingqing Palace Park"
+      ],
+      "posters": [
+        "cn-poster-xi-an-5d4n-no-shopping-0.jpg"
+      ],
+      "posterSize": [
+        524,
+        800
+      ]
+    },
+    {
+      "id": "xiamen-hua-an-tulou-4d3n",
+      "name": "Xiamen – Hua’an Tulou 4D3N Tour",
+      "subtitle": "Out Manila · Philippine Airlines",
+      "region": "intl",
+      "country": "China",
+      "flag": "cn",
+      "duration": "4 days 3 nights",
+      "days": 4,
+      "status": "available",
+      "featured": false,
+      "departure": "Manila (NAIA)",
+      "price": {
+        "from": 299,
+        "label": "From",
+        "unit": "per pax",
+        "currency": "USD"
+      },
+      "year": 2026,
+      "ends": "2027-03-21",
+      "image": "cn-xiamen.jpg",
+      "alt": "Xiamen’s coast and city",
+      "gallery": [
+        "cn-xiamen.jpg"
+      ],
+      "summary": "Fly direct to Xiamen for Hua’an Tulou earthen buildings, Gulangyu Island and Zhongshan Road, with three nights in 5-star hotels.",
+      "overview": "A short direct-flight tour with Philippine Airlines: Xiamen’s Huandao Road, Zengcuo’an and Zhongshan Road, a day trip to the Hua’an Tulou earthen buildings, and Gulangyu Island. Three nights in 5-star hotels with a private bus and an English-speaking guide. The rate includes shop visits.",
+      "travelDates": [
+        {
+          "d": "Dec 24–27",
+          "add": 30,
+          "cur": "USD"
+        },
+        {
+          "d": "Dec 26–29",
+          "add": 100,
+          "cur": "USD"
+        },
+        {
+          "d": "Jan 7–10",
+          "y": 2027
+        },
+        {
+          "d": "Jan 14–17",
+          "y": 2027
+        },
+        {
+          "d": "Jan 28–31",
+          "y": 2027
+        },
+        {
+          "d": "Mar 11–14",
+          "y": 2027
+        },
+        {
+          "d": "Mar 18–21",
+          "y": 2027
+        }
+      ],
+      "travelDatesNote": "Departures from Manila, Dec 24–27 2026 to Mar 18–21 2027. The rate changes by date: an amount on a date is added to the base rate per pax. Seats are limited and confirmed at booking.",
+      "itinerary": [
+        {
+          "day": "Day 1",
+          "title": "Manila – Xiamen",
+          "items": [
+            "Fly Manila to Xiamen (PR334, 07:20–10:00)",
+            "Meet the tour guide at the airport",
+            "Jimei University Village",
+            "Huandao Road",
+            "Zengcuo’an, similar to Taiwan’s Jiufen",
+            "Zhongshan Road Pedestrian Street",
+            "Hotel check in"
+          ]
+        },
+        {
+          "day": "Day 2",
+          "title": "Xiamen – Hua’an – Xiamen",
+          "items": [
+            "Hotel breakfast",
+            "Hua’an Tulou",
+            "Tea Tasting Cultural Gallery (tea store)",
+            "Optional: Twin Towers (exterior view), Lujiang River night cruise and BBQ buffet"
+          ]
+        },
+        {
+          "day": "Day 3",
+          "title": "Xiamen",
+          "items": [
+            "Hotel breakfast",
+            "Kiss Dream latex shop (or jewelry store)",
+            "Gulangyu Island: Sunlight Rock (exterior view) and international architecture",
+            "Optional: Yujian Minnan performance and dinner"
+          ]
+        },
+        {
+          "day": "Day 4",
+          "title": "Xiamen – Manila",
+          "items": [
+            "Hotel breakfast and check out",
+            "Silk museum shop (or drug store)",
+            "SM Shopping Mall",
+            "Transfer to the airport and fly home (PR331, 17:25–20:20)"
+          ]
+        }
+      ],
+      "inclusions": [
+        "Round-trip economy airfare and taxes via Philippine Airlines",
+        "Baggage: 1 piece of 23 kg checked plus 1 piece of 7 kg carry-on",
+        "3 nights twin-sharing accommodation at 5-star hotels with daily breakfast",
+        "Private bus with English-speaking tour guide",
+        "Sightseeing as specified, including the first-way entrance fees",
+        "Meals: breakfast plus 4 meals (3 Chinese set meals and one meal upgraded to lobster seafood)",
+        "One complimentary bottle of water per person per day"
+      ],
+      "exclusions": [
+        "Personal expenses such as phone calls and minibar",
+        "Travel insurance",
+        "Philippine travel tax: USD 30 per person (collected with the tour fee)",
+        "China Group Visa: USD 40 per person (collected with the tour fee)",
+        "Tips for driver and guide: USD 40 per person, USD 10 per day for 4 days (collected with the tour fee)",
+        "Single supplement: USD 100 per person",
+        "Fuel surcharge (subject to change)",
+        "Optional tours"
+      ],
+      "optional": [
+        "Twin Towers (exterior view), Lujiang River night cruise and BBQ buffet: USD 70 per person",
+        "Yujian Minnan performance and dinner: USD 50 per person"
+      ],
+      "hotelsLabel": "Hotels",
+      "hotels": [
+        "Day 1-3: 5-star hotel in Xiamen"
+      ],
+      "notes": [
+        "Meals (by day): Day 1 lunch; Day 2 B/L; Day 3 B/L; Day 4 B/L",
+        "Shopping stops are part of the rate: Kiss Dream latex shop (or jewelry store), silk museum shop (or drug store) and tea store",
+        "Adult rate for age 28 and over; the lower-age rate applies to under 28 (child under 12 without bed; age 12 to 27 with bed)",
+        "Order of attractions may be adjusted for weather, traffic or visitor volume; the agency is not liable for reduced attractions caused by force majeure and no refund is given for expenses already incurred",
+        "If the listed hotels are not available they will be replaced by similar ones",
+        "Itinerary, flight times and hotels are subject to final confirmation",
+        "No refunds if you cancel any part of the itinerary or accommodation during the trip; tips must be paid for the full number of days",
+        "Philippine passport holders need a China visa; the China Group Visa fee is listed under exclusions."
+      ],
+      "places": [
+        "Jimei University Village",
+        "Huandao Road",
+        "Zengcuo’an",
+        "Zhongshan Road",
+        "Hua’an Tulou",
+        "Gulangyu Island",
+        "Sunlight Rock",
+        "Lujiang River",
+        "SM Shopping Mall"
+      ],
+      "posters": [
+        "cn-poster-xiamen-hua-an-tulou-4d3n-0.jpg"
+      ],
+      "posterSize": [
+        555,
+        800
+      ]
+    },
+    {
+      "id": "xinjiang-beijing-9d8n-no-shopping",
+      "name": "Fairyland Xinjiang – Beijing 9D8N Tour (No Shopping)",
+      "subtitle": "Out Manila · Air China",
+      "region": "intl",
+      "country": "China",
+      "flag": "cn",
+      "duration": "9 days 8 nights",
+      "days": 9,
+      "status": "available",
+      "featured": false,
+      "departure": "Manila (NAIA)",
+      "price": {
+        "from": 1999,
+        "label": "From",
+        "unit": "per pax",
+        "currency": "USD"
+      },
+      "year": 2026,
+      "ends": "2026-12-17",
+      "image": "cn-xinjiang.jpg",
+      "alt": "Green valleys below snowy peaks in Xinjiang",
+      "gallery": [
+        "cn-xinjiang.jpg"
+      ],
+      "summary": "A no-shopping tour of northern Xinjiang, with Tianchi Lake, Kanas Lake, Sayram Lake and Nalati grassland, then Beijing, in 5-star hotels.",
+      "overview": "This 9-day no-shopping tour flies Air China from Manila via Beijing to Urumqi, then travels north to Altay, Hemu and Kanas Lake, west to Sayram Lake and Yining, and on to the Nalati grasslands before flying back through Beijing. You stay in 5-star hotels, with a whole roasted lamb meal in Xinjiang and a Beijing outlet-mall stop on the last day.",
+      "travelDates": [
+        {
+          "d": "Nov 4–12"
+        },
+        {
+          "d": "Nov 25–Dec 3"
+        },
+        {
+          "d": "Dec 9–17"
+        }
+      ],
+      "travelDatesNote": "Departures from Manila, Nov 4–12 2026 to Dec 9–17 2026. The rate changes by date: an amount on a date is added to the base rate per pax. Seats are limited and confirmed at booking.",
+      "itinerary": [
+        {
+          "day": "Day 1",
+          "title": "Manila – Beijing – Urumqi",
+          "items": [
+            "Flight CA180 Manila to Beijing (06:25–11:10)",
+            "Connecting flight CA1293 Beijing to Urumqi (14:40–18:40)",
+            "Meet the English-speaking tour guide",
+            "Urumqi International Grand Bazaar",
+            "After dinner, transfer to the hotel and check in",
+            "Meals: Dinner only"
+          ]
+        },
+        {
+          "day": "Day 2",
+          "title": "Urumqi – Altay",
+          "items": [
+            "Hotel breakfast and check out",
+            "Tianchi Lake in the Tianshan Mountains (entrance fee and shuttle bus included)",
+            "S21 Desert Highway",
+            "Kelamayi Desert Highway",
+            "Drive to Altay and check in at the hotel",
+            "Meals: Breakfast / Lunch / Dinner"
+          ]
+        },
+        {
+          "day": "Day 3",
+          "title": "Altay – Hemu",
+          "items": [
+            "Hotel breakfast and check out",
+            "Ahe Highway",
+            "Hemu Village",
+            "Hemu Bridge",
+            "Haden Viewing Platform",
+            "Meals: Breakfast / Lunch / Dinner"
+          ]
+        },
+        {
+          "day": "Day 4",
+          "title": "Hemu – Kanas – Burqin",
+          "items": [
+            "Hotel breakfast and check out",
+            "Kanas Lake National Forest Park",
+            "Fish Viewing Pavilion, Fairy Bay, Moon Bay, Crouching Dragon Bay and Tower Bridge",
+            "Colorful Beach (Baihaba Scenic Area with Big Stone Viewing Platform, Lonely Tree, Old Village and China-Kazakhstan Grand Canyon instead from November to December)",
+            "Meals: Breakfast / Lunch / Dinner"
+          ]
+        },
+        {
+          "day": "Day 5",
+          "title": "Burqin – Kuitun",
+          "items": [
+            "Hotel breakfast and check out",
+            "Urho World Devil City",
+            "Karamay oilfield scenery",
+            "Meals: Breakfast / Lunch / Dinner"
+          ]
+        },
+        {
+          "day": "Day 6",
+          "title": "Kuitun – Yining",
+          "items": [
+            "Hotel breakfast and check out",
+            "Sayram Lake, 360° tour around the lake",
+            "Guozigou Valley",
+            "Yangbulak Folk Village",
+            "Six Star Street",
+            "Meals: Breakfast / Lunch / Dinner"
+          ]
+        },
+        {
+          "day": "Day 7",
+          "title": "Yining – Nalati",
+          "items": [
+            "Hotel breakfast and check out",
+            "Swan Spring",
+            "Nalati Sky Grassland",
+            "Meals: Breakfast / Lunch / Dinner"
+          ]
+        },
+        {
+          "day": "Day 8",
+          "title": "Nalati – Yining – Beijing",
+          "items": [
+            "Hotel breakfast and check out",
+            "Nalati River Valley Grassland",
+            "Kazanchi Folk Village",
+            "After dinner, transfer to the airport",
+            "Flight CA1256 Yining to Beijing (21:25–01:35 next day)",
+            "Meet the English-speaking guide in Beijing, transfer to the hotel and check in",
+            "Meals: Breakfast / Lunch / Dinner"
+          ]
+        },
+        {
+          "day": "Day 9",
+          "title": "Beijing – Manila",
+          "items": [
+            "Hotel breakfast and check out",
+            "After lunch, Beijing Springs Outlets Mall",
+            "Transfer to the airport",
+            "Flight CA179 Beijing to Manila (18:55–00:20 next day)",
+            "Meals: Breakfast / Lunch"
+          ]
+        }
+      ],
+      "inclusions": [
+        "Round-trip economy airfare and taxes with Air China",
+        "Baggage allowance: 1 piece of 23 kg check-in",
+        "8 nights accommodation, twin sharing, in 5★ hotels with daily hotel breakfast",
+        "Private bus with an English-speaking tour guide",
+        "Sightseeing as listed, including first-way entrance fees",
+        "Breakfast and 16 meals, with a special upgrade to whole roasted lamb in Xinjiang for 1 meal",
+        "Two complimentary bottles of water per person per day"
+      ],
+      "exclusions": [
+        "Personal expenses such as telephone calls and minibar",
+        "Travel insurance",
+        "Philippine travel tax USD 30 per person (collected with the tour fee)",
+        "China group visa USD 40 per person (collected with the tour fee)",
+        "Tips for driver and guide USD 72 per person (USD 8 per day x 9 days, collected with the tour fee)",
+        "Single supplement USD 700 per person for September departures; USD 460 per person for October–December departures",
+        "Fuel surcharge (subject to change)"
+      ],
+      "hotelsLabel": "Hotels",
+      "hotels": [
+        "Day 1: 5★ hotel in Urumqi",
+        "Day 2: 5★ hotel in Altay",
+        "Day 3: 5★ hotel in Hemu",
+        "Day 4: 5★ hotel in Burqin",
+        "Day 5: 5★ hotel in Kuitun",
+        "Day 6: 5★ hotel in Yining",
+        "Day 7: 5★ hotel in Nalati",
+        "Day 8: 5★ hotel in Beijing"
+      ],
+      "notes": [
+        "Meal codes B/L/D = breakfast/lunch/dinner; X = not included.",
+        "Sold as a No Shopping package; the guide may sell Xinjiang souvenirs on the bus, such as dried fruit, dairy products and essential oils.",
+        "Philippine passport holders need a China visa; the China group visa is USD 40 per person.",
+        "Child rates: child with bed ages 2–12 pays the adult rate; child without bed ages 2–12 has a lower rate.",
+        "Xinjiang runs on a different local time from the rest of China, so daily schedules shift (lunch is usually around 2:00 PM; activities run roughly 9:00 AM to 8:00 PM).",
+        "Xinjiang food is mostly spicy and rich in beef and mutton; there are large day-night temperature differences. Hotel facilities in remote areas are simpler than in big cities.",
+        "The driver may change the order of attractions because of weather, traffic or crowds, without reducing the number of attractions.",
+        "Extra costs caused by force majeure (such as natural disasters) are borne by the traveller and incurred fees are not refunded.",
+        "No refund for services cancelled or skipped during the trip; tips are charged for the full number of days. Hotels may be replaced by similar ones, and the itinerary and flights are subject to final confirmation."
+      ],
+      "places": [
+        "Urumqi International Grand Bazaar",
+        "Tianchi Lake",
+        "S21 Desert Highway",
+        "Ahe Highway",
+        "Hemu Village",
+        "Hemu Bridge",
+        "Haden Viewing Platform",
+        "Kanas Lake National Forest Park",
+        "Fairy Bay",
+        "Moon Bay",
+        "Colorful Beach",
+        "Urho World Devil City",
+        "Karamay Oilfield",
+        "Sayram Lake",
+        "Guozigou Valley",
+        "Yangbulak Folk Village",
+        "Swan Spring",
+        "Nalati Sky Grassland",
+        "Nalati River Valley Grassland",
+        "Kazanchi Folk Village",
+        "Beijing Springs Outlets Mall"
+      ],
+      "posters": [
+        "cn-poster-xinjiang-beijing-9d8n-no-shopping-0.jpg"
+      ],
+      "posterSize": [
+        525,
+        800
+      ]
+    },
+    {
+      "id": "yellow-river-shanxi-6d5n-no-shopping",
+      "name": "Yellow River – Pingyao Ancient City (Shanxi) 6D5N Tour (No Shopping)",
+      "subtitle": "Out Manila · China Southern Airlines",
+      "region": "intl",
+      "country": "China",
+      "flag": "cn",
+      "duration": "6 days 5 nights",
+      "days": 6,
+      "status": "available",
+      "featured": false,
+      "departure": "Manila (NAIA)",
+      "price": {
+        "from": 899,
+        "label": "From",
+        "unit": "per pax",
+        "currency": "USD"
+      },
+      "year": 2026,
+      "ends": "2026-11-27",
+      "image": "cn-pingyao.jpg",
+      "alt": "The rooftops of Pingyao Ancient City, Shanxi",
+      "gallery": [
+        "cn-pingyao.jpg"
+      ],
+      "summary": "Shanxi on a no-shopping tour: Pingyao Ancient City, Hukou Waterfall on the Yellow River, Yunqiu Mountain ice caves and Jinci Temple, in 5-star hotels.",
+      "overview": "Fly via Guangzhou to Taiyuan and explore Shanxi: the walled Pingyao Ancient City, Guangsheng Temple’s Flying Rainbow Pagoda, Hukou Waterfall on the Yellow River, Yunqiu Mountain and its ice cave group, and Jinci Temple. Includes the Situ Town Iron Fireworks Show and local meals such as a Shanxi vinegar banquet. 5-star hotels and two complimentary bottles of water per person per day. A no-shopping package.",
+      "travelDates": [
+        {
+          "d": "Nov 22–27"
+        }
+      ],
+      "travelDatesNote": "Departures from Manila, Nov 22–27 2026 to Nov 22–27 2026. The rate changes by date: an amount on a date is added to the base rate per pax. Seats are limited and confirmed at booking.",
+      "itinerary": [
+        {
+          "day": "Day 1",
+          "title": "Manila – Guangzhou – Taiyuan",
+          "items": [
+            "Flights Manila – Guangzhou (CZ3078, 08:20/10:50; on Aug 25, Sep 10, Sep 18, Oct 17 and Oct 23: CZ5052, 03:45/06:25) and Guangzhou – Taiyuan (CZ6527, 13:50/16:40); reference flights",
+            "Arrive in Taiyuan and meet your tour guide",
+            "After dinner, transfer to the hotel and check in"
+          ]
+        },
+        {
+          "day": "Day 2",
+          "title": "Taiyuan – Pingyao Ancient City",
+          "items": [
+            "Hotel breakfast and check out",
+            "Pingyao Ancient City (electric vehicles in and out included): ancient city wall, Rishengchang Exchange Shop, Ming and Qing Dynasty street, County Government Office",
+            "Pingyao paper-cutting DIY and Shanxi merchant clothing experience"
+          ]
+        },
+        {
+          "day": "Day 3",
+          "title": "Pingyao – Hongdong – Hukou – Yunqiu Mountain",
+          "items": [
+            "Hotel breakfast and check out",
+            "Guangsheng Temple Flying Rainbow Pagoda (shuttle bus included)",
+            "Hukou Waterfall in Shanxi (shuttle bus included)"
+          ]
+        },
+        {
+          "day": "Day 4",
+          "title": "Yunqiu Mountain – Jincheng",
+          "items": [
+            "Hotel breakfast and check out",
+            "Yunqiu Mountain (shuttle bus included): Tarpo Ancient Village and Yunqiu Mountain Ice Cave Group",
+            "Situ Town Iron Fireworks Show (if cancelled due to rain or snow, RMB 150 per person is refunded)"
+          ]
+        },
+        {
+          "day": "Day 5",
+          "title": "Jincheng – Taiyuan",
+          "items": [
+            "Hotel breakfast and check out",
+            "Transfer to Taiyuan",
+            "Free time at Bell Tower Street, Willow Lane and Food Street"
+          ]
+        },
+        {
+          "day": "Day 6",
+          "title": "Taiyuan – Guangzhou – Manila",
+          "items": [
+            "Hotel breakfast and check out",
+            "Jinci Temple (electric vehicles included)",
+            "Transfer to the airport; flights Taiyuan – Guangzhou (CZ8768, 14:25/17:20) and Guangzhou – Manila (CZ3077, 20:45/23:15); reference flights"
+          ]
+        }
+      ],
+      "inclusions": [
+        "Economy round-trip airfare and taxes with China Southern Airlines",
+        "Baggage: 1 piece of 23 kg check-in and 7 kg hand carry",
+        "5 nights’ twin-sharing accommodation at 5-star hotels with daily breakfast",
+        "Private bus with English-speaking tour guide",
+        "Sightseeing as specified, including first-way entrance fees",
+        "Meals: breakfast plus 9 meals, including local specialties, Chinese set meals, a Shanxi vinegar banquet, Yunqiu health-preserving meals, Shanxi merchant banquets, Hunan cuisine and a free upgrade to BBQ and hot pot",
+        "Two complimentary bottles of water per person per day"
+      ],
+      "exclusions": [
+        "Personal expenses such as telephone calls and minibar",
+        "Travel insurance",
+        "Philippines travel tax USD 30 per person (collected with tour fee)",
+        "China group visa USD 40 per person (collected with tour fee)",
+        "Tips for driver and guide USD 30 per person, USD 5 per day for 6 days (collected with tour fee)",
+        "Single supplement USD 190 per person",
+        "Fuel surcharge increase USD 60 per person (the difference is collected if it increases again)"
+      ],
+      "hotelsLabel": "Hotels",
+      "hotels": [
+        "Day 1: 5-star hotel in Taiyuan",
+        "Day 2: 5-star hotel in Pingyao",
+        "Day 3: 5-star hotel in Yunqiu Mountain",
+        "Day 4: 5-star hotel in Jincheng",
+        "Day 5: 5-star hotel in Taiyuan",
+        "Day 6: Home sweet home"
+      ],
+      "notes": [
+        "Meals: Day 1 dinner; Days 2-5 breakfast, lunch and dinner; Day 6 breakfast only",
+        "No shopping stops included, but the guide may recommend products on the bus; purchase is optional",
+        "Child with bed (2-12 years) pays the adult rate; child without bed (2-12 years) has a lower rate",
+        "Group tour: participants must join and leave as a group; leaving midway is treated as waiving meals, tours and accommodation, with the fee difference payable and tips due for the full tour",
+        "Hotel rooms are doubles with two single beds; a king-size room may carry an extra charge",
+        "Tell us in advance about special dietary needs",
+        "No refunds for senior citizen discount tickets or for itinerary or accommodation waived during the tour",
+        "Order of hotels, attractions and restaurants may be adjusted for weather, transport or flights, but the number of attractions will not be reduced",
+        "Itinerary, flight times and hotels are subject to final confirmation",
+        "Northwest China has beautiful scenery, but hotels and restaurants differ somewhat from other developed Chinese cities",
+        "If a listed hotel is unavailable it is replaced by a similar one",
+        "Philippine passport holders need a China group visa, USD 40 per person (not included)"
+      ],
+      "places": [
+        "Pingyao Ancient City",
+        "Ancient City Wall",
+        "Rishengchang Exchange Shop",
+        "County Government Office",
+        "Guangsheng Temple",
+        "Flying Rainbow Pagoda",
+        "Hukou Waterfall",
+        "Yunqiu Mountain",
+        "Tarpo Ancient Village",
+        "Yunqiu Mountain Ice Cave Group",
+        "Situ Town Iron Fireworks Show",
+        "Bell Tower Street",
+        "Willow Lane",
+        "Jinci Temple"
+      ],
+      "posters": [
+        "cn-poster-yellow-river-shanxi-6d5n-no-shopping-0.jpg"
+      ],
+      "posterSize": [
+        542,
+        800
+      ]
+    },
+    {
+      "id": "yinchuan-ningxia-7d6n-no-shopping",
+      "name": "Yinchuan (Ningxia) 7D6N Tour (No Shopping)",
+      "subtitle": "Out Manila · China Southern Airlines",
+      "region": "intl",
+      "country": "China",
+      "flag": "cn",
+      "duration": "7 days 6 nights",
+      "days": 7,
+      "status": "available",
+      "featured": false,
+      "departure": "Manila (NAIA)",
+      "price": {
+        "from": 999,
+        "label": "From",
+        "unit": "per pax",
+        "currency": "USD"
+      },
+      "year": 2026,
+      "ends": "2027-07-01",
+      "image": "cn-inner-mongolia.jpg",
+      "alt": "A yurt on the grasslands of Inner Mongolia",
+      "gallery": [
+        "cn-inner-mongolia.jpg"
+      ],
+      "summary": "Ningxia via Guangzhou: Western Xia Imperial Tombs, Zhenbeipu Western Film Studio, Tengger Desert, Shapotou and the Yellow River Grand Canyon, with no shopping stops.",
+      "overview": "Fly Manila to Yinchuan via Guangzhou on China Southern Airlines for a week in Ningxia. You will see the Western Xia Imperial Tombs, a winery, Zhenbeipu Western Film Studio, Helan Mountain Rock Art, the Three-Lake Traverse and Tengger Desert, Shapotou and the Yellow River Grand Canyon. Hotels are 4-star plus one night at a desert hotel.",
+      "travelDates": [
+        {
+          "d": "Apr 9–15",
+          "y": 2027,
+          "add": 150,
+          "cur": "USD"
+        },
+        {
+          "d": "May 14–20",
+          "y": 2027
+        },
+        {
+          "d": "May 25–31",
+          "y": 2027,
+          "add": 50,
+          "cur": "USD"
+        },
+        {
+          "d": "Jun 13–19",
+          "y": 2027,
+          "add": 50,
+          "cur": "USD"
+        },
+        {
+          "d": "Jun 25–Jul 1",
+          "y": 2027
+        }
+      ],
+      "travelDatesNote": "Departures from Manila, Apr 9–15 2027 to Jun 25–Jul 1 2027. The rate changes by date: an amount on a date is added to the base rate per pax. Seats are limited and confirmed at booking.",
+      "itinerary": [
+        {
+          "day": "Day 1",
+          "title": "Manila – Guangzhou – Yinchuan",
+          "items": [
+            "Fly Manila to Guangzhou (CZ398, 17:45/20:20), then connect to Yinchuan (CZ3253, 22:15/01:15+1)",
+            "Meet the tour guide at Yinchuan airport",
+            "Transfer to the hotel and check in (meals: X/X/X)"
+          ]
+        },
+        {
+          "day": "Day 2",
+          "title": "Yinchuan",
+          "items": [
+            "Hotel breakfast",
+            "Western Xia Imperial Tombs (electric cart, museum and 3D movie screening included)",
+            "COFCO Great Wall Talent Winery (tasting of 2 wines included)",
+            "Lanshan Park, to photograph the famous Roman-style architecture at sunset (meals: B/L/D)"
+          ]
+        },
+        {
+          "day": "Day 3",
+          "title": "Yinchuan",
+          "items": [
+            "Hotel breakfast",
+            "Zhenbeipu Western Film Studio (guided commentary included)",
+            "Helan Mountain Rock Art (electric cart included)",
+            "Huaiyuan Night Market (meals: B/L/X)"
+          ]
+        },
+        {
+          "day": "Day 4",
+          "title": "Yinchuan – Zhongwei",
+          "items": [
+            "Hotel breakfast and check out",
+            "Three-Lake Traverse, crossing the “Heart of the Earth” at Wulan Lake (off-road vehicle transfer included, 4 persons per vehicle)",
+            "Tengger Desert Resort (bonfire party subject to weather conditions) (meals: B/L/D)"
+          ]
+        },
+        {
+          "day": "Day 5",
+          "title": "Zhongwei – Wuzhong",
+          "items": [
+            "Hotel breakfast and check out",
+            "Shapotou (electric cart, shuttle bus, upper and lower escalators, glass bridge and 3D experience included)",
+            "Yellow River Grand Canyon and the 108 Pagodas (boat tour included) (meals: B/L/D)"
+          ]
+        },
+        {
+          "day": "Day 6",
+          "title": "Wuzhong – Yinchuan",
+          "items": [
+            "Hotel breakfast and check out",
+            "Najiahu Grand Mosque",
+            "Shuidonggou (scenic area transport and real-scene experience included)",
+            "Return to Yinchuan and check in at the hotel (meals: B/L/D)"
+          ]
+        },
+        {
+          "day": "Day 7",
+          "title": "Yinchuan – Guangzhou – Manila",
+          "items": [
+            "Packed breakfast and check out",
+            "Transfer to the airport and fly to Guangzhou (CZ3254, 07:10/10:15), then to Manila (CZ397, 14:05/16:45) (meals: B/X/X)"
+          ]
+        }
+      ],
+      "inclusions": [
+        "Economy round-trip airfare and tax with China Southern Airlines",
+        "Baggage allowance: 1 piece 23 kg checked-in plus 7 kg hand carry",
+        "6 nights’ accommodation, twin sharing: 5 nights in 4★ hotels and 1 night at a desert hotel",
+        "Private bus with English-speaking tour guide",
+        "Sightseeing as specified, including first-way entrance fees",
+        "Meals: breakfast and 9 meals, with 2 meals upgraded to hot pot",
+        "One elastic desert headscarf (wind and sand protection), one desert quicksand bottle and bottled water"
+      ],
+      "exclusions": [
+        "Personal expenses such as phone calls and minibar",
+        "Travel insurance",
+        "Philippines travel tax USD 30 per person (collected with the tour fee)",
+        "China group visa USD 40 per person (collected with the tour fee)",
+        "Tips for driver and guide USD 56 per person (USD 8 per day x 7 days, collected with the tour fee)",
+        "Single supplement USD 220 per person",
+        "Fuel surcharge difference USD 40 per person (collected with the tour fee, subject to change)"
+      ],
+      "hotelsLabel": "Hotels",
+      "hotels": [
+        "Day 1-3: 4★ hotel in Yinchuan",
+        "Day 4: Desert Hotel in Zhongwei",
+        "Day 5: 4★ hotel in Wuzhong",
+        "Day 6: 4★ hotel in Yinchuan"
+      ],
+      "notes": [
+        "Meal codes: B = breakfast, L = lunch, D = dinner, X = not included",
+        "No shopping stops",
+        "Child categories: child with bed 2-11 years pays the adult rate; child without bed 2-11 years",
+        "Philippine passport holders need a China visa; the group visa is not included (USD 40 per person)",
+        "This is a group tour: guests enter and exit as a group; leaving midway counts as a personal waiver of meals, tours and accommodation with no refund, and tips must still be paid for the full number of days",
+        "All hotel rooms are twin rooms (two single beds); double or triple rooms may cost extra",
+        "The order of hotels, attractions and restaurants may be adjusted for weather, transport or flights",
+        "No refunds for senior citizen discount tickets or for guests who voluntarily skip internal transport in scenic areas",
+        "Itinerary, flight times and hotels are subject to final confirmation",
+        "Hotels are subject to replacement with similar ones if not available",
+        "Guests are asked to hand the arrival boarding passes to the tour guide, as local tourism authorities follow inbound tour groups"
+      ],
+      "places": [
+        "Western Xia Imperial Tombs",
+        "COFCO Great Wall Talent Winery",
+        "Lanshan Park",
+        "Zhenbeipu Western Film Studio",
+        "Helan Mountain Rock Art",
+        "Huaiyuan Night Market",
+        "Wulan Lake",
+        "Three-Lake Traverse",
+        "Tengger Desert",
+        "Shapotou",
+        "Yellow River Grand Canyon",
+        "108 Pagodas",
+        "Najiahu Grand Mosque",
+        "Shuidonggou"
+      ],
+      "posters": [
+        "cn-poster-yinchuan-ningxia-7d6n-no-shopping-0.jpg"
+      ],
+      "posterSize": [
+        540,
+        800
+      ]
+    },
+    {
+      "id": "yunnan-kunming-dali-lijiang-8d7n",
+      "name": "Yunnan – Kunming – Dali – Lijiang 8D7N Tour",
+      "subtitle": "Out Manila · Xiamen Airlines",
+      "region": "intl",
+      "country": "China",
+      "flag": "cn",
+      "duration": "8 days 7 nights",
+      "days": 8,
+      "status": "available",
+      "featured": false,
+      "departure": "Manila (NAIA)",
+      "price": {
+        "from": 799,
+        "label": "From",
+        "unit": "per pax",
+        "currency": "USD"
+      },
+      "year": 2026,
+      "ends": "2027-03-26",
+      "image": "cn-lijiang.jpg",
+      "alt": "Jade Dragon Snow Mountain above Blue Moon Valley, Lijiang",
+      "gallery": [
+        "cn-lijiang.jpg"
+      ],
+      "summary": "Eight days in Yunnan through Kunming, Dali and Lijiang in 4-star hotels, with Jade Dragon Snow Mountain, Blue Moon Valley and Naigu Stone Forest, flying via Fuzhou.",
+      "overview": "Fly via Fuzhou to Kunming, then travel by private bus through Dali and Lijiang. See Dali Ancient Town and Ideal State, Lijiang Ancient City, Jade Dragon Snow Mountain with the Impression Lijiang show, Blue Moon Valley and the Naigu Stone Forest. Stay in 4-star hotels; the Day 1 Fuzhou hotel is arranged by Xiamen Airlines.",
+      "travelDates": [
+        {
+          "d": "Dec 23–30",
+          "add": 250,
+          "cur": "USD"
+        },
+        {
+          "d": "Dec 27–Jan 3",
+          "add": 230,
+          "cur": "USD"
+        },
+        {
+          "d": "Mar 5–12",
+          "y": 2027
+        },
+        {
+          "d": "Mar 19–26",
+          "y": 2027,
+          "add": 190,
+          "cur": "USD"
+        }
+      ],
+      "travelDatesNote": "Departures from Manila, Dec 23–30 2026 to Mar 19–26 2027. The rate changes by date: an amount on a date is added to the base rate per pax. Seats are limited and confirmed at booking.",
+      "itinerary": [
+        {
+          "day": "Day 1",
+          "title": "Manila – Fuzhou",
+          "items": [
+            "Fly Manila to Fuzhou (MF8736 21:00–23:45)",
+            "Meet the airport staff",
+            "Transfer to hotel (arranged by Xiamen Airlines)"
+          ]
+        },
+        {
+          "day": "Day 2",
+          "title": "Fuzhou – Kunming",
+          "items": [
+            "Packed breakfast and check out",
+            "Fly Fuzhou to Kunming (MF8429 08:05–11:15) and meet the guide",
+            "Nanping Pedestrian Street",
+            "Kunming Old Street",
+            "Nanqiang Pedestrian Street",
+            "Dinner, then hotel check-in"
+          ]
+        },
+        {
+          "day": "Day 3",
+          "title": "Kunming – Dali",
+          "items": [
+            "Hotel breakfast and check out",
+            "Transfer to Dali, wild mushroom lunch at Nanhua Mushroom Town",
+            "Dali Ideal State, blue-and-white scenic spot (free afternoon tea and one-way shuttle)",
+            "Dali Ancient Town, night view and snacks"
+          ]
+        },
+        {
+          "day": "Day 4",
+          "title": "Dali – Lijiang",
+          "items": [
+            "Hotel breakfast and check out",
+            "Xizhou Ancient Town, a Bai ethnic minority town",
+            "Drive to Lijiang",
+            "Lijiang Ancient City",
+            "Optional: Xizhou Music Caravan and Bai “Golden Flower” dance performance",
+            "Optional: Lijiang Eternal Love Show"
+          ]
+        },
+        {
+          "day": "Day 5",
+          "title": "Lijiang",
+          "items": [
+            "Hotel breakfast",
+            "Latex/silk store stop",
+            "Jade Dragon Snow Mountain by Spruce Meadow cable car",
+            "Live performance “Impression Lijiang”",
+            "Blue Moon Valley (electric cart not included, USD 9 per person)",
+            "Optional: upgrade to Lijiang Imperial Banquet"
+          ]
+        },
+        {
+          "day": "Day 6",
+          "title": "Lijiang – Kunming",
+          "items": [
+            "Hotel breakfast and check out",
+            "Medicinal Herbs Exhibition Center (medicine store)",
+            "Xinhua Ethnic Town, Bai water village known for silver craftsmanship",
+            "Drive back to Kunming",
+            "Chuxiong Yi Ancient Town",
+            "Yi Long Table Banquet",
+            "Hotel check-in"
+          ]
+        },
+        {
+          "day": "Day 7",
+          "title": "Kunming – Fuzhou",
+          "items": [
+            "Hotel breakfast and check out",
+            "Astaxanthin shop stop",
+            "Naigu Stone Forest, the “Black Stone Forest”",
+            "Fly Kunming to Fuzhou (MF8480 20:10–22:55)",
+            "Meet the guide and check in at hotel (arranged by Xiamen Airlines)"
+          ]
+        },
+        {
+          "day": "Day 8",
+          "title": "Fuzhou – Manila",
+          "items": [
+            "Hotel breakfast and check out",
+            "Transfer to airport and fly to Manila (MF8735 17:05–19:45)"
+          ]
+        }
+      ],
+      "inclusions": [
+        "Economy round-trip airfare and taxes via Xiamen Airlines",
+        "Baggage: 1 piece 23 kg check-in and 1 piece 7 kg carry-on",
+        "7 nights’ accommodation, twin sharing, in 4★ hotels (Day 1 hotel arranged by Xiamen Airlines)",
+        "Private bus with English-speaking tour guide",
+        "Sightseeing as specified, including first-way entrance fees",
+        "Meals: breakfast and 9 meals"
+      ],
+      "exclusions": [
+        "Personal expenses such as phone calls and minibar",
+        "Travel insurance",
+        "Philippines travel tax: USD 30 per person (collected with tour fee)",
+        "China group visa: USD 40 per person",
+        "Tips for driver and guide: USD 48 per person (USD 6 per day x 8 days, collected with tour fee)",
+        "Single supplement: USD 130 per person",
+        "Fuel surcharge: USD 50 per person (subject to change)",
+        "Optional tours"
+      ],
+      "optional": [
+        "Day 4: Dali Xizhou Music Caravan + singer performance + 1 drink + photo session (3 free digital photos) + drone video (about 30 seconds free) + Bai “Golden Flower” dance, USD 45 per person",
+        "Day 4: Lijiang Eternal Love Show, USD 60 per person",
+        "Day 5: Upgrade to Lijiang Imperial Banquet, price difference USD 25 per person (regular seat) or USD 40 (VIP seat)",
+        "Day 5: Blue Moon Valley electric cart, USD 9 per person"
+      ],
+      "hotelsLabel": "Hotels",
+      "hotels": [
+        "Day 1 and 7: 4★ hotel in Fuzhou (arranged by Xiamen Airlines)",
+        "Day 2 and 6: 4★ hotel in Kunming",
+        "Day 3: 4★ hotel in Dali",
+        "Day 4–5: 4★ hotel in Lijiang"
+      ],
+      "notes": [
+        "Rate includes shop visits: medicine store, latex/silk store and astaxanthin shop",
+        "Adult (11 yrs onwards) and child 2–10 yrs without bed are priced separately; prices differ by departure (Dec 23–30, Dec 27–Jan 3, Mar 5–12, Mar 19–26)",
+        "No refunds for cancelled itinerary or accommodation during the trip; tips are payable for the full number of days",
+        "Large day-night temperature difference and strong UV: bring sun protection, hat, sunglasses and a windproof jacket; a warm coat for high altitude",
+        "At high altitude, slow down, drink warm water and tell your guide at once if you feel severe dizziness or chest tightness",
+        "Carry personal medicines in original packaging; do not pick or eat wild mushrooms or fruits",
+        "Order of attractions may change with weather or traffic; itinerary, flights and hotels are subject to final confirmation"
+      ],
+      "places": [
+        "Kunming Old Street",
+        "Nanping Pedestrian Street",
+        "Nanhua Mushroom Town",
+        "Dali Ideal State",
+        "Dali Ancient Town",
+        "Xizhou Ancient Town",
+        "Lijiang Ancient City",
+        "Jade Dragon Snow Mountain",
+        "Spruce Meadow",
+        "Blue Moon Valley",
+        "Xinhua Ethnic Town",
+        "Chuxiong Yi Ancient Town",
+        "Naigu Stone Forest"
+      ],
+      "posters": [
+        "cn-poster-yunnan-kunming-dali-lijiang-8d7n-0.jpg"
+      ],
+      "posterSize": [
+        540,
+        800
+      ]
+    },
+    {
+      "id": "yunnan-kunming-dali-lijiang-6d5n",
+      "name": "Yunnan – Kunming – Dali – Lijiang 6D5N Tour",
+      "subtitle": "Out Manila · China Southern Airlines",
+      "region": "intl",
+      "country": "China",
+      "flag": "cn",
+      "duration": "6 days 5 nights",
+      "days": 6,
+      "status": "available",
+      "featured": false,
+      "departure": "Manila (NAIA)",
+      "price": {
+        "from": 849,
+        "label": "From",
+        "unit": "per pax",
+        "currency": "USD"
+      },
+      "year": 2026,
+      "ends": "2027-03-26",
+      "image": "cn-lijiang.jpg",
+      "alt": "Jade Dragon Snow Mountain above Blue Moon Valley, Lijiang",
+      "gallery": [
+        "cn-lijiang.jpg"
+      ],
+      "summary": "Kunming, Dali Old Town, Lijiang Ancient City and Jade Dragon Snow Mountain with 4-star hotels and a private bus.",
+      "overview": "Five nights in 4-star hotels across Kunming, Dali and Lijiang. Visit Santorini (Dali Ideal City), Dali Old Town, Xizhou Ancient Town, Lijiang Ancient City, Jade Dragon Snow Mountain by cable car and Blue Moon Valley. Flights are via Guangzhou with China Southern Airlines.",
+      "travelDates": [
+        {
+          "d": "Dec 9–14"
+        },
+        {
+          "d": "Mar 1–6",
+          "y": 2027,
+          "add": 50,
+          "cur": "USD"
+        },
+        {
+          "d": "Mar 8–13",
+          "y": 2027,
+          "add": 50,
+          "cur": "USD"
+        },
+        {
+          "d": "Mar 21–26",
+          "y": 2027,
+          "add": 250,
+          "cur": "USD"
+        }
+      ],
+      "travelDatesNote": "Departures from Manila, Dec 9–14 2026 to Mar 21–26 2027. The rate changes by date: an amount on a date is added to the base rate per pax. Seats are limited and confirmed at booking.",
+      "itinerary": [
+        {
+          "day": "Day 1",
+          "title": "Manila – Guangzhou – Kunming",
+          "items": [
+            "Fly Manila to Guangzhou (CZ3092 12:00/14:40), then Guangzhou to Kunming (CZ3499 17:00/19:30).",
+            "Meet the guide at Kunming airport and check in to hotel. Meals: X/X/X."
+          ]
+        },
+        {
+          "day": "Day 2",
+          "title": "Kunming – Dali",
+          "items": [
+            "Hotel breakfast and check out; drive to Dali.",
+            "After lunch, visit Santorini (Dali Ideal City) with afternoon tea (uphill electric vehicles included).",
+            "Visit Dali Old Town.",
+            "After dinner, hotel check-in. Meals: B/L/D."
+          ]
+        },
+        {
+          "day": "Day 3",
+          "title": "Dali – Lijiang",
+          "items": [
+            "Hotel breakfast and check out.",
+            "Visit Xizhou Ancient Town, a Bai ethnic minority town.",
+            "Drive to Lijiang.",
+            "Visit the Medicinal Herbs Exhibition Center (medicine store).",
+            "Visit Lijiang Ancient City.",
+            "Optional tour 1: Dali Xizhou Music Caravan with singer performance, 1 drink, photo session (3 free digital photos), drone video (about 30 seconds) and Bai “Golden Flower” dance, USD 45 per person.",
+            "Optional tour 2: Lijiang Eternal Love Show, USD 60 per person. Meals: B/L/D."
+          ]
+        },
+        {
+          "day": "Day 4",
+          "title": "Lijiang",
+          "items": [
+            "Hotel breakfast.",
+            "Visit a latex or silk store.",
+            "Jade Dragon Snow Mountain: take the Spruce Meadow cable car and watch the large-scale live performance “Impression Lijiang”.",
+            "Visit Blue Moon Valley (electric cart not included, USD 9 per person).",
+            "Optional upgrade: Lijiang Imperial Banquet instead of the group dinner, USD 25 per person (regular seat) or USD 40 (VIP seat). Meals: B/L/D."
+          ]
+        },
+        {
+          "day": "Day 5",
+          "title": "Lijiang – Kunming",
+          "items": [
+            "Hotel breakfast and check out; drive back to Kunming.",
+            "Visit Chuxiong Yi Ancient Town.",
+            "Visit a jewelry shop.",
+            "Visit Kunming Old Street, Nanping Street and Jinma-Biji Archways. Meals: B/L/X."
+          ]
+        },
+        {
+          "day": "Day 6",
+          "title": "Kunming – Guangzhou – Manila",
+          "items": [
+            "Hotel breakfast and check out.",
+            "Visit Park 1903.",
+            "Transfer to the airport; fly Kunming to Guangzhou (CZ3448 16:05/18:15; on Nov 9 CZ3408 17:15/19:20), then Guangzhou to Manila (CZ5051 23:45/02:20+1). Meals: B/X/X."
+          ]
+        }
+      ],
+      "inclusions": [
+        "Economy airfare and tax with China Southern Airlines (round trip)",
+        "Baggage: 1 piece 23 kg check-in plus 1 piece 7 kg carry-on",
+        "5 nights twin-share accommodation in 4★ hotels with daily breakfast",
+        "Private bus with English-speaking tour guide",
+        "Sightseeing as specified, including first-way entrance fees",
+        "Meals: breakfast and 7 other meals"
+      ],
+      "exclusions": [
+        "Personal expenses such as phone calls and minibar",
+        "Travel insurance",
+        "Philippine travel tax: USD 30 per person, collected with tour fee",
+        "China group visa: USD 40 per person, collected with tour fee",
+        "Tips for driver and guide: USD 6 per person per day x 6 days = USD 36, collected with tour fee",
+        "Single supplement: USD 130 per person",
+        "Fuel surcharge (subject to change)",
+        "Optional tours",
+        "Electric cart at Blue Moon Valley: USD 9 per person"
+      ],
+      "optional": [
+        "Dali Xizhou Music Caravan package: USD 45 per person",
+        "Lijiang Eternal Love Show: USD 60 per person",
+        "Lijiang Imperial Banquet upgrade: USD 25 per person (regular) or USD 40 (VIP)"
+      ],
+      "hotelsLabel": "Hotels",
+      "hotels": [
+        "Day 1 and Day 5: 4★ hotel in Kunming",
+        "Day 2: 4★ hotel in Dali",
+        "Day 3-4: 4★ hotel in Lijiang"
+      ],
+      "notes": [
+        "Shop visits are included in this rate: medicine store, jewelry shop, and latex or silk store.",
+        "Children aged 2-10 without bed have a lower rate; adults and children 11 and over pay the adult rate.",
+        "Yunnan has large day-night temperature differences and strong UV: bring sun protection, a hat, sunglasses, a windproof jacket and a warm coat for high altitude.",
+        "At altitude, move slowly, drink warm water and avoid alcohol and strenuous exercise; tell the guide at once if you feel severe dizziness or chest tightness.",
+        "Bring personal medication in original packaging.",
+        "Tips must be paid in full for the number of trip days; no refunds for unused services.",
+        "The order of sights may change with weather or traffic; hotels may be replaced by similar ones."
+      ],
+      "places": [
+        "Santorini (Dali Ideal City)",
+        "Dali Old Town",
+        "Xizhou Ancient Town",
+        "Lijiang Ancient City",
+        "Jade Dragon Snow Mountain",
+        "Impression Lijiang",
+        "Blue Moon Valley",
+        "Chuxiong Yi Ancient Town",
+        "Kunming Old Street",
+        "Nanping Street",
+        "Jinma-Biji Archways",
+        "Park 1903"
+      ],
+      "posters": [
+        "cn-poster-yunnan-kunming-dali-lijiang-6d5n-0.jpg"
+      ],
+      "posterSize": [
+        525,
+        800
+      ]
+    },
+    {
+      "id": "yunnan-xishuangbanna-laos-9d8n",
+      "name": "Yunnan (Xishuangbanna) – Laos (Luang Prabang – Vientiane) 9D8N Tour",
+      "subtitle": "Out Manila · Xiamen Airlines",
+      "region": "intl",
+      "country": "China",
+      "flag": "cn",
+      "duration": "9 days 8 nights",
+      "days": 9,
+      "status": "available",
+      "featured": false,
+      "departure": "Manila (NAIA)",
+      "price": {
+        "from": 1818,
+        "label": "From",
+        "unit": "per pax",
+        "currency": "USD"
+      },
+      "year": 2026,
+      "ends": "2026-12-19",
+      "image": "cn-xishuangbanna.jpg",
+      "alt": "Xishuangbanna lit up at night",
+      "gallery": [
+        "cn-xishuangbanna.jpg"
+      ],
+      "summary": "Nine days from Yunnan’s Xishuangbanna to Luang Prabang and Vientiane in Laos by high-speed train, flying Xiamen Airlines.",
+      "overview": "Fly Xiamen Airlines via Xiamen to Kunming and travel through Pu’er and Xishuangbanna, then ride the high-speed train (2nd-class seats) into Laos for Luang Prabang and Vientiane, and back to Kunming by train. Stay in 5-star hotels (one night in a 4-star hotel in Xiamen) and enjoy one complimentary bottle of water per person per day. This tour covers both China and Laos.",
+      "travelDates": [
+        {
+          "d": "Dec 11–19"
+        }
+      ],
+      "travelDatesNote": "Departures from Manila, Dec 11–19 2026 to Dec 11–19 2026. The rate changes by date: an amount on a date is added to the base rate per pax. Seats are limited and confirmed at booking.",
+      "itinerary": [
+        {
+          "day": "Day 1",
+          "title": "Manila – Xiamen",
+          "items": [
+            "Fly Manila to Xiamen (MF820, 21:15–23:35) and meet the tour guide at the airport",
+            "Transfer to hotel and check in (hotel arranged by Xiamen Airlines)"
+          ]
+        },
+        {
+          "day": "Day 2",
+          "title": "Xiamen – Kunming – Pu’er",
+          "items": [
+            "Hotel breakfast and check out",
+            "Fly Xiamen to Kunming (MF8405, 07:45–10:55) and meet the tour guide at the airport",
+            "Transfer to Pu’er",
+            "Transfer to hotel and check in"
+          ]
+        },
+        {
+          "day": "Day 3",
+          "title": "Pu’er – Xishuangbanna",
+          "items": [
+            "Hotel breakfast and check out",
+            "Wild Elephant Valley Scenic Area (one-way cableway included)",
+            "Dai Ethnic Garden (electric shuttle bus included)",
+            "Starlight Night Market",
+            "Transfer to hotel and check in"
+          ]
+        },
+        {
+          "day": "Day 4",
+          "title": "Xishuangbanna – Luang Prabang",
+          "items": [
+            "Hotel breakfast and check out",
+            "High-speed train from Xishuangbanna to Luang Prabang, 2nd-class seats (lunch not included)",
+            "Phou Si Mountain",
+            "Sisavangvong Night Market",
+            "Transfer to hotel and check in"
+          ]
+        },
+        {
+          "day": "Day 5",
+          "title": "Luang Prabang",
+          "items": [
+            "Hotel breakfast",
+            "Royal Palace Museum",
+            "Xiang Thong Temple",
+            "Weaving Village (handmade costs excluded)",
+            "Kuang Si Waterfall",
+            "Transfer back to hotel"
+          ]
+        },
+        {
+          "day": "Day 6",
+          "title": "Luang Prabang – Vientiane",
+          "items": [
+            "Hotel breakfast and check out",
+            "Alms-giving (offering items included)",
+            "Morning market",
+            "Xiangman Village (basic hand-making and foot bath included)",
+            "High-speed train from Luang Prabang to Vientiane, 2nd-class seats",
+            "Transfer to hotel and check in"
+          ]
+        },
+        {
+          "day": "Day 7",
+          "title": "Vientiane",
+          "items": [
+            "Hotel breakfast",
+            "Xiangkun Temple",
+            "That Luang Temple",
+            "Vientiane Arc de Triomphe (Patuxai)",
+            "Prime Minister’s Office (exterior visit)",
+            "Mekong River Night Market",
+            "Transfer back to hotel"
+          ]
+        },
+        {
+          "day": "Day 8",
+          "title": "Vientiane – Kunming",
+          "items": [
+            "Hotel breakfast and check out",
+            "High-speed train from Vientiane to Kunming South, 2nd-class seats (lunch not included)",
+            "After dinner, transfer to hotel and check in"
+          ]
+        },
+        {
+          "day": "Day 9",
+          "title": "Kunming – Xiamen – Manila",
+          "items": [
+            "Hotel breakfast and check out",
+            "Transfer to the airport and fly Kunming to Xiamen (MF8406, 12:25–14:45)",
+            "Connecting flight Xiamen to Manila (MF819, 17:35–20:15)"
+          ]
+        }
+      ],
+      "inclusions": [
+        "Economy airfare and taxes with Xiamen Airlines, round trip",
+        "Baggage allowance: 1 piece of 23 kg checked plus 7 kg hand carry",
+        "High-speed trains: Xishuangbanna to Luang Prabang, Luang Prabang to Vientiane, Vientiane to Kunming South (all 2nd-class seats)",
+        "8 nights’ accommodation, twin sharing: 1 night in a 4★ hotel and 7 nights in 5★ hotels, with daily hotel breakfast",
+        "Private bus with English-speaking tour guide",
+        "Sightseeing as specified, including first entrance tickets and listed in-park transportation",
+        "Meals: breakfast plus 12 meals in total",
+        "One complimentary bottle of water per person per day"
+      ],
+      "exclusions": [
+        "Personal expenses such as phone calls and minibar",
+        "Travel insurance",
+        "Philippine travel tax USD 30 per person, collected with the tour fee",
+        "China group visa USD 80 per person (USD 40 twice), collected with the tour fee",
+        "Tips for driver and guide USD 45 per person (USD 5 per day for 9 days), collected with the tour fee",
+        "Single supplement USD 400 per person",
+        "Fuel surcharge, estimated USD 75 per person, subject to change"
+      ],
+      "hotelsLabel": "Hotels",
+      "hotels": [
+        "Day 1: 4★ hotel in Xiamen (arranged by Xiamen Airlines)",
+        "Day 2: 5★ Jianhua International Hotel (Pu’er) or similar",
+        "Day 3: 5★ Sheraton Grand Hotel (Xishuangbanna) or similar",
+        "Day 4–5: 5★ Pullman Luang Prabang or similar",
+        "Day 6–7: 5★ Holiday Inn & Suites Vientiane by IHG or similar",
+        "Day 8: 5★ Wyndham Garden Hotel (Kunming) or similar",
+        "Day 9: Sweet Home"
+      ],
+      "notes": [
+        "Meals per day: D1 none; D2 B/L/D; D3 B/L/D; D4 B/D (lunch not included); D5–D7 B/L/D; D8 B/D (lunch not included); D9 B",
+        "Adult and child with bed (11–17 yrs) share one rate; children 2–10 yrs have a bed rate and a lower no-bed rate",
+        "Philippine passport holders need a China visa; two group visas are required for this tour (USD 80 per person in total)",
+        "The tour guide will sell some souvenirs or local specialties on the bus; purchases are optional",
+        "In Vientiane a 29–31 seater bus and in Luang Prabang a 14–15 seat minibus are used for transfers",
+        "If transport costs in Laos rise for special political reasons, the rate will be adjusted",
+        "The order of attractions may change due to weather, traffic or visitor volume; hotels may be replaced by similar ones",
+        "No refunds for tours or accommodation cancelled during the trip, and tips are payable for the full number of days"
+      ],
+      "places": [
+        "Wild Elephant Valley",
+        "Dai Ethnic Garden",
+        "Starlight Night Market",
+        "Phou Si Mountain",
+        "Sisavangvong Night Market",
+        "Royal Palace Museum",
+        "Xiang Thong Temple",
+        "Weaving Village",
+        "Kuang Si Waterfall",
+        "Luang Prabang Morning Market",
+        "Xiangman Village",
+        "Xiangkun Temple",
+        "That Luang Temple",
+        "Vientiane Arc de Triomphe",
+        "Mekong River Night Market"
+      ],
+      "posters": [
+        "cn-poster-yunnan-xishuangbanna-laos-9d8n-0.jpg"
+      ],
+      "posterSize": [
+        528,
+        800
+      ]
+    },
+    {
+      "id": "yunnan-lijiang-shangri-la-6d5n-no-shopping",
+      "name": "Lijiang – Shangri-La 6D5N Tour (No Shopping)",
+      "subtitle": "Out Manila · China Southern Airlines",
+      "region": "intl",
+      "country": "China",
+      "flag": "cn",
+      "duration": "6 days 5 nights",
+      "days": 6,
+      "status": "available",
+      "featured": false,
+      "departure": "Manila (NAIA)",
+      "price": {
+        "from": 1219,
+        "label": "From",
+        "unit": "per pax",
+        "currency": "USD"
+      },
+      "year": 2026,
+      "ends": "2027-03-10",
+      "image": "cn-lijiang.jpg",
+      "alt": "Jade Dragon Snow Mountain above Blue Moon Valley, Lijiang",
+      "gallery": [
+        "cn-lijiang.jpg"
+      ],
+      "summary": "Six days in Yunnan’s Lijiang and Shangri-La: Yulong Snow Mountain, Tiger Leaping Gorge, Balagezong Grand Canyon and Lijiang Ancient Town.",
+      "overview": "Fly China Southern via Guangzhou to Lijiang and stay five nights in 5★ hotels in Lijiang and Shangri-La. You visit Yulong Snow Mountain, Blue Moon Valley, Tiger Leaping Gorge, Dukezong Ancient City, Balagezong Grand Canyon and Baisha Ancient Town, with meal upgrades such as a Lijiang Royal Banquet with a Hanfu experience, and a Naxi dinner with bonfire party.",
+      "travelDates": [
+        {
+          "d": "Jan 7–12",
+          "y": 2027
+        },
+        {
+          "d": "Jan 15–20",
+          "y": 2027
+        },
+        {
+          "d": "Mar 5–10",
+          "y": 2027
+        }
+      ],
+      "travelDatesNote": "Departures from Manila, Jan 7–12 2027 to Mar 5–10 2027. The rate changes by date: an amount on a date is added to the base rate per pax. Seats are limited and confirmed at booking.",
+      "itinerary": [
+        {
+          "day": "Day 1",
+          "title": "Manila – Guangzhou – Lijiang",
+          "items": [
+            "Fly Manila – Guangzhou (08:20 – 11:00; on Jan 15 and Mar 5: 03:20 – 05:50), then Guangzhou – Lijiang (13:45 – 16:45)",
+            "Arrive in Lijiang and meet the tour guide",
+            "Transfer to the hotel and check in",
+            "Meals: X/X/X"
+          ]
+        },
+        {
+          "day": "Day 2",
+          "title": "Lijiang",
+          "items": [
+            "Hotel breakfast",
+            "Yulong Snow Mountain",
+            "Photo stop at Glacier Park (if the cableway is closed for maintenance or bad weather, the trip changes to the Spruce Meadow Cableway with a refund of RMB 60/pax)",
+            "Ganhaizi",
+            "Impression Lijiang song and dance show",
+            "White Water River / Blue Moon Valley (including shuttle cart)",
+            "Evening dinner at Lijiang Royal Bouquet with Hanfu experience and show",
+            "Lijiang Ancient Town",
+            "Transfer back to the hotel",
+            "Meals: B/L/D"
+          ]
+        },
+        {
+          "day": "Day 3",
+          "title": "Lijiang – Shangri-La",
+          "items": [
+            "Hotel breakfast and check out",
+            "Transfer to Shangri-La by bus",
+            "Tiger Leaping Gorge on the way (including round-trip escalators)",
+            "Harmony Tazhongta",
+            "Shangri-La Dukezong Ancient City and Guishan Park",
+            "Transfer to the hotel and check in",
+            "Meals: B/L/D"
+          ]
+        },
+        {
+          "day": "Day 4",
+          "title": "Balagezong Grand Canyon",
+          "items": [
+            "Hotel breakfast",
+            "Balagezong Grand Canyon (including scenic area eco-friendly vehicles): Sutra Hall, Millennium Bodhi Tree, Bala Village, glass walkway, Echo Wall",
+            "Yila Grassland",
+            "Photo stop at Big Prayer Flags",
+            "Korean BBQ dinner or Tibetan hot pot",
+            "Transfer to the hotel and check in",
+            "Meals: B/L/D"
+          ]
+        },
+        {
+          "day": "Day 5",
+          "title": "Shangri-La – Lijiang",
+          "items": [
+            "Hotel breakfast and check out",
+            "Transfer back to Lijiang",
+            "Black Dragon Pool Park",
+            "Yundi’an Coffee, a popular social media check-in spot (coffee at your own expense)",
+            "Baisha Ancient Town",
+            "Naxi cuisine dinner with bonfire party (bonfire and folk dance may be cancelled in rain, no refund)",
+            "Transfer to the hotel and check in",
+            "Meals: B/L/D"
+          ]
+        },
+        {
+          "day": "Day 6",
+          "title": "Lijiang – Guangzhou – Manila",
+          "items": [
+            "Hotel breakfast and check out",
+            "Transfer to the airport; fly Lijiang – Guangzhou (10:45 – 13:05), then Guangzhou – Manila (20:00 – 22:30; on Jan 7: 20:35 – 23:15)",
+            "Meals: B/X/X"
+          ]
+        }
+      ],
+      "inclusions": [
+        "Economy airfare and taxes with China Southern Airlines (round trip)",
+        "Baggage allowance: 1 pc / 23 kg check-in and 7 kg hand carry",
+        "5 nights’ accommodation, twin sharing, in 5★ hotels with daily hotel breakfast",
+        "Private bus with English-speaking tour guide",
+        "Sightseeing entrance fees as specified above (first way)",
+        "Meals: breakfast and 8 meals including Snow Kitchen self-service hot pot, canyon-style cuisine, Tibetan-style cuisine and Bala Village flavors, with upgrades to Korean BBQ buffet or Tibetan hot pot, Lijiang Royal Banquet (Hanfu experience and show) and Naxi cuisine (bonfire party)"
+      ],
+      "exclusions": [
+        "Personal expenses such as telephone calls and minibar",
+        "Travel insurance",
+        "Philippine travel tax USD 30/pax (collected with the tour fee)",
+        "China group visa USD 40/pax (collected with the tour fee)",
+        "Tips for driver and guide USD 6/pax/day x 6 days = USD 36/pax (collected with the tour fee)",
+        "Single supplement USD 180/pax",
+        "Fuel surcharge estimated at USD 75/pax, subject to change"
+      ],
+      "hotelsLabel": "Hotels",
+      "hotels": [
+        "Day 1-2: 5★ hotel in Lijiang",
+        "Day 3-4: 5★ hotel in Shangri-La",
+        "Day 5: 5★ hotel in Lijiang",
+        "Day 6: Sweet Home"
+      ],
+      "notes": [
+        "Meal codes: B = breakfast, L = lunch, D = dinner, X = not included",
+        "No shopping stops are scheduled; the guide may sell souvenirs or local specialties on the bus, purchases are optional",
+        "Single supplement USD 180/pax",
+        "Child with bed 2–11 yrs pays the adult rate; child without bed 2–11 yrs pays less",
+        "Visa: China group visa USD 40/pax is not included",
+        "Order of sights may change with weather, traffic or visitor volume; the agency is not liable for losses from force majeure",
+        "Flight times, hotels and itinerary are subject to final confirmation",
+        "No refund if you cancel any itinerary or accommodation during the trip, and tips are paid for the full number of days",
+        "If hotels are unavailable they are replaced by similar ones"
+      ],
+      "places": [
+        "Yulong Snow Mountain",
+        "Glacier Park",
+        "Ganhaizi",
+        "Impression Lijiang",
+        "White Water River",
+        "Blue Moon Valley",
+        "Lijiang Ancient Town",
+        "Tiger Leaping Gorge",
+        "Harmony Tazhongta",
+        "Dukezong Ancient City",
+        "Guishan Park",
+        "Balagezong Grand Canyon",
+        "Yila Grassland",
+        "Black Dragon Pool Park",
+        "Baisha Ancient Town"
+      ],
+      "posters": [
+        "cn-poster-yunnan-lijiang-shangri-la-6d5n-no-shopping-0.jpg"
+      ],
+      "posterSize": [
+        520,
+        800
+      ]
+    },
+    {
+      "id": "zhengzhou-luoyang-henan-5d4n-no-shopping",
+      "name": "Henan Ancient Capitals – Zhengzhou, Kaifeng, Luoyang & Dengfeng 5D4N Tour (No Shopping)",
+      "subtitle": "Out Manila · China Southern Airlines",
+      "region": "intl",
+      "country": "China",
+      "flag": "cn",
+      "duration": "5 days 4 nights",
+      "days": 5,
+      "status": "available",
+      "featured": false,
+      "departure": "Manila (NAIA)",
+      "price": {
+        "from": 599,
+        "label": "From",
+        "unit": "per pax",
+        "currency": "USD"
+      },
+      "year": 2026,
+      "ends": "2026-12-15",
+      "image": "cn-longmen.jpg",
+      "alt": "A Buddha statue in the Longmen Grottoes, Luoyang",
+      "gallery": [
+        "cn-longmen.jpg"
+      ],
+      "summary": "Kaifeng, Luoyang’s Longmen Grottoes, Shaolin Temple in Dengfeng and Zhengzhou, with a Hanfu makeup experience and Empress Wu’s Feast dinner.",
+      "overview": "Fly with China Southern Airlines via Guangzhou to Zhengzhou and explore the ancient capitals of Henan: Kaifeng’s Qingming Riverside garden, Luoyang’s old city and Longmen Grottoes, and Shaolin Temple in Dengfeng. A mandatory add-on of makeup, Hanfu experience and Empress Wu’s Feast dinner is paid together with the tour fee. Four nights in 4-star hotels; a no-shopping package.",
+      "travelDates": [
+        {
+          "d": "Nov 8–12"
+        },
+        {
+          "d": "Nov 9–13"
+        },
+        {
+          "d": "Nov 24–28"
+        },
+        {
+          "d": "Dec 5–9"
+        },
+        {
+          "d": "Dec 11–15",
+          "add": 100,
+          "cur": "USD"
+        }
+      ],
+      "travelDatesNote": "Departures from Manila, Nov 8–12 2026 to Dec 11–15 2026. The rate changes by date: an amount on a date is added to the base rate per pax. Seats are limited and confirmed at booking.",
+      "itinerary": [
+        {
+          "day": "Day 1",
+          "title": "Manila – Guangzhou – Zhengzhou – Kaifeng",
+          "items": [
+            "Fly Manila to Guangzhou (reference flight CZ3092, 12:00–14:40), then connect to Zhengzhou (CZ3195, 17:55–20:15); other flights may be used",
+            "Meet the English-speaking tour guide at Zhengzhou airport",
+            "Drive to the hotel in Kaifeng and check in (if the flight arrives in the afternoon, the order of some tours is adjusted)"
+          ]
+        },
+        {
+          "day": "Day 2",
+          "title": "Kaifeng – Luoyang",
+          "items": [
+            "Hotel breakfast and check out",
+            "Qingming Riverside Landscape Garden",
+            "Kaifeng Prefecture",
+            "Drive to Luoyang",
+            "Luoyi Ancient City",
+            "Lijing Gate",
+            "Yingtian Gate (exterior view)",
+            "Mandatory itinerary: makeup, Hanfu experience and Empress Wu’s Feast dinner"
+          ]
+        },
+        {
+          "day": "Day 3",
+          "title": "Luoyang – Dengfeng",
+          "items": [
+            "Hotel breakfast and check out",
+            "Longmen Grottoes (round-trip electric cart and headphones included)",
+            "Drive to Dengfeng: Shaolin Temple (one-way electric cart ride, kung fu performance, headphones and Pagoda Forest included)",
+            "Hotel check in"
+          ]
+        },
+        {
+          "day": "Day 4",
+          "title": "Dengfeng – Zhengzhou",
+          "items": [
+            "Hotel breakfast and check out",
+            "Qinwei Water City",
+            "Mixue Ice Cream flagship store",
+            "Pop Mart flagship store",
+            "Hotel check in"
+          ]
+        },
+        {
+          "day": "Day 5",
+          "title": "Zhengzhou – Guangzhou – Manila",
+          "items": [
+            "Packed breakfast and hotel check out",
+            "Transfer to the airport and fly to Guangzhou (reference flight CZ8685, 08:55–11:25), then connect to Manila (CZ397, 14:05–16:45); other flights may be used"
+          ]
+        }
+      ],
+      "inclusions": [
+        "Round-trip economy airfare and taxes via China Southern Airlines",
+        "Baggage: 1 piece of 23 kg checked plus 7 kg hand carry",
+        "4 nights twin-sharing accommodation at 4-star hotels with daily breakfast as listed in the itinerary",
+        "Private bus with English-speaking tour guide",
+        "Sightseeing as specified, including the first-way entrance fees",
+        "Meals: breakfast plus 5 meals of local specialties, and Empress Wu’s Feast dinner of the mandatory itinerary",
+        "One complimentary bottle of water per person per day"
+      ],
+      "exclusions": [
+        "Personal expenses such as phone calls and minibar",
+        "Travel insurance",
+        "Philippine travel tax: USD 30 per person (collected with the tour fee)",
+        "China Group Visa: USD 40 per person",
+        "Tips for driver and guide: USD 25 per person, USD 5 per day for 5 days (collected with the tour fee)",
+        "Single supplement: USD 120 per person",
+        "Mandatory itinerary (makeup, Hanfu experience and Empress Wu’s Feast dinner): USD 120 per person, collected with the tour fee",
+        "Fuel surcharge (subject to change)"
+      ],
+      "hotelsLabel": "Hotels",
+      "hotels": [
+        "Day 1: 4-star hotel in Kaifeng",
+        "Day 2: 4-star hotel in Luoyang",
+        "Day 3: 4-star hotel in Dengfeng",
+        "Day 4: 4-star hotel in Zhengzhou"
+      ],
+      "notes": [
+        "Meals (by day): Day 1 none; Day 2 B/L plus Empress Wu’s Feast dinner; Day 3 B/L/D; Day 4 B/L/D; Day 5 breakfast",
+        "The mandatory itinerary (makeup, Hanfu experience and Empress Wu’s Feast dinner, USD 120 per person) is not included in the tour fee and is paid with it",
+        "Child without bed 2 to 12 years",
+        "No shopping stops are listed in the itinerary",
+        "Flights listed are for reference only; other flights may be used",
+        "Prices may be negotiated separately for national holidays or insufficient participants",
+        "Order of attractions may be adjusted for weather, traffic or visitor volume; costs from force majeure such as natural disasters are borne by the traveller and fees already incurred are not refundable",
+        "If the listed hotels are not available they will be replaced by similar ones",
+        "Itinerary, flight times and hotels are subject to final confirmation",
+        "No refunds if you cancel any part of the itinerary or accommodation during the trip; tips must be paid for the full number of days",
+        "Philippine passport holders need a China visa; the China Group Visa fee is listed under exclusions."
+      ],
+      "places": [
+        "Qingming Riverside Landscape Garden",
+        "Kaifeng Prefecture",
+        "Luoyi Ancient City",
+        "Lijing Gate",
+        "Yingtian Gate",
+        "Longmen Grottoes",
+        "Shaolin Temple",
+        "Pagoda Forest",
+        "Qinwei Water City"
+      ],
+      "posters": [
+        "cn-poster-zhengzhou-luoyang-henan-5d4n-no-shopping-0.jpg"
+      ],
+      "posterSize": [
+        510,
+        800
+      ]
+    },
+    {
+      "id": "adora-flora-cruise-6d5n-ishigaki",
+      "name": "Adora Flora City Fly + Cruise 6D5N – Guangzhou – Hong Kong – Ishigaki",
+      "subtitle": "Out Manila · Fly + cruise",
+      "region": "intl",
+      "country": "Japan",
+      "flag": "jp",
+      "duration": "6 days 5 nights",
+      "days": 6,
+      "status": "available",
+      "featured": false,
+      "departure": "Manila (NAIA)",
+      "price": {
+        "from": 1488,
+        "label": "From",
+        "unit": "per pax",
+        "currency": "USD"
+      },
+      "year": 2026,
+      "ends": "2027-01-16",
+      "image": "jp-okinawa.jpg",
+      "alt": "A white-sand beach in Okinawa",
+      "gallery": [
+        "jp-okinawa.jpg"
+      ],
+      "summary": "Fly Manila to Guangzhou, board the Adora Flora City for Hong Kong and Ishigaki (Okinawa), then return via Guangzhou to Manila: 5 nights on board.",
+      "overview": "A fly and cruise package: you fly from Manila to Guangzhou, tour the city for half a day, then board the 141,900-ton Adora Flora City for five nights at sea with calls at Hong Kong and Ishigaki in Okinawa, Japan. After disembarking back in Guangzhou you enjoy another half-day city tour before flying home to Manila. Rooms are twin sharing in your chosen cabin type.",
+      "travelDates": [
+        {
+          "d": "Jan 11–16",
+          "y": 2027
+        }
+      ],
+      "travelDatesNote": "Departures from Manila, Jan 11–16 2027 to Jan 11–16 2027. The rate changes by date: an amount on a date is added to the base rate per pax. Seats are limited and confirmed at booking.",
+      "itinerary": [
+        {
+          "day": "Day 1",
+          "title": "Manila – Guangzhou, city tour and boarding",
+          "items": [
+            "Flight CZ3078 Manila – Guangzhou, 08:20–10:50.",
+            "Met at Guangzhou Airport by an English-speaking guide for a half-day city tour.",
+            "Visit Huacheng Square and enjoy a scenic tram ride.",
+            "Photo stop at the Canton Tower.",
+            "Explore the historic Yongqingfang and Shamian Island.",
+            "Transfer to Nansha Port and board the ship (vessel departs 23:30).",
+            "Overnight on the cruise ship.",
+            "Meals: X/L/D (B = breakfast, L = lunch, D = dinner, X = not included)"
+          ]
+        },
+        {
+          "day": "Day 2",
+          "title": "Hong Kong",
+          "items": [
+            "Breakfast on board.",
+            "Arrive Hong Kong 13:00, ship departs 23:00.",
+            "Free time for a do-it-yourself tour, or join the optional shore excursion on a shared bus with a Chinese-speaking guide (register at the Adora Cruise Tourism Counter after boarding).",
+            "Sample excursion: Old & New Hong Kong Tour – East Coast Park, Central Market, Tai Kwun, Man Mo Temple (7 hrs).",
+            "Overnight on the cruise ship.",
+            "Meals: B/X/D (B = breakfast, L = lunch, D = dinner, X = not included)"
+          ]
+        },
+        {
+          "day": "Day 3",
+          "title": "At sea",
+          "items": [
+            "Full day at sea with onboard dining, shows, entertainment, shopping and family activities.",
+            "Overnight on the cruise ship.",
+            "Meals: B/L/D (B = breakfast, L = lunch, D = dinner, X = not included)"
+          ]
+        },
+        {
+          "day": "Day 4",
+          "title": "Ishigaki, Okinawa",
+          "items": [
+            "Arrive Ishigaki 13:00, ship departs 22:00.",
+            "Free time for a do-it-yourself tour of the Yaeyama Islands (white-sand beaches and snorkeling spots), or join the optional shore excursion on a shared bus with a Chinese-speaking guide.",
+            "Sample excursion: Okinawa Tropical Escape – Pineapple Park, Manzamo Cape, PARCO CITY Shopping Center (7.5 hrs, meals not included).",
+            "Overnight on the cruise ship.",
+            "Meals: B/X/D (B = breakfast, L = lunch, D = dinner, X = not included)"
+          ]
+        },
+        {
+          "day": "Day 5",
+          "title": "At sea",
+          "items": [
+            "Full day at sea with onboard activities, dining and shopping.",
+            "Overnight on the cruise ship.",
+            "Meals: B/L/D (B = breakfast, L = lunch, D = dinner, X = not included)"
+          ]
+        },
+        {
+          "day": "Day 6",
+          "title": "Guangzhou – Manila",
+          "items": [
+            "Arrive Guangzhou at 13:00 and disembark.",
+            "Half-day Guangzhou city tour, then private transfer to Guangzhou Airport.",
+            "Flight CZ3077 Guangzhou – Manila, 20:00–22:30.",
+            "Meals: B/L/X (B = breakfast, L = lunch, D = dinner, X = not included)"
+          ]
+        }
+      ],
+      "inclusions": [
+        "International airfare, airport taxes and terminal fees",
+        "Baggage allowance: 20 kg check-in and 7 kg hand carry",
+        "2 land meals in Guangzhou",
+        "5 nights’ cabin accommodation on the cruise ship, twin sharing, with daily breakfast",
+        "Meals at designated complimentary restaurants on board",
+        "Entertainment: interactive parties, theater performances and designated complimentary facilities on board",
+        "Half-day Guangzhou city tours with English-speaking guide on Day 1 and Day 6"
+      ],
+      "exclusions": [
+        "Port taxes and fees (collected in Manila): USD 180 per person",
+        "Gratuities (paid on board): approx. HKD 140 per person per night",
+        "Single room supplement",
+        "China group visa (USD 80 per person); two entries to China are needed (Day 1 and Day 6). If using an individual visa, it must be a multiple-entry visa",
+        "Philippine travel tax",
+        "Travel insurance",
+        "Personal onboard expenses: Wi-Fi, phone calls, laundry, shopping, bar and café, spa, etc.",
+        "Shore excursions (see optional tours)"
+      ],
+      "optional": [
+        "Hong Kong shore excursion (sample: Old & New Hong Kong Tour, 7 hrs): HKD 459 per person",
+        "Ishigaki shore excursion (sample: Okinawa Tropical Escape, 7.5 hrs, meals not included): HKD 559 per person",
+        "Total for the two optional tours: approx. HKD 1,018 per person (shared bus, Chinese-speaking guide only, meals not included)"
+      ],
+      "hotelsLabel": "Accommodation",
+      "hotels": [
+        "Nights 1–5: Adora Flora City cruise ship, twin-share cabin (Interior, Oceanview or Balcony)"
+      ],
+      "notes": [
+        "Ship: Adora Flora City, 141,900 tons, 2,130 cabins, 15 decks, 341 m long, up to 5,232 passengers.",
+        "Cabin types: Interior twin, Oceanview twin or Balcony twin.",
+        "Passport must be valid at least 6 months from the return date; bring a photocopy of the passport’s first page and a valid visa for re-entry into China.",
+        "Port call and departure times are for reference only and may change with weather, tides or safety needs; the cruise line may change the route.",
+        "Shore excursions are optional shared-bus tours with a Chinese-speaking guide, booked on board.",
+        "Meals: Day 1 X/L/D, Day 2 B/X/D, Day 3 B/L/D, Day 4 B/X/D, Day 5 B/L/D, Day 6 B/L/X."
+      ],
+      "places": [
+        "Guangzhou",
+        "Huacheng Square",
+        "Canton Tower",
+        "Yongqingfang",
+        "Shamian Island",
+        "Nansha Port",
+        "Hong Kong",
+        "Ishigaki",
+        "Yaeyama Islands",
+        "Adora Flora City"
+      ],
+      "posters": [
+        "jp-poster-adora-flora-cruise-6d5n-ishigaki-0.jpg"
+      ],
+      "posterSize": [
+        560,
+        800
+      ]
+    },
+    {
+      "id": "adora-flora-cruise-7d6n-okinawa",
+      "name": "Adora Flora City Fly + Cruise 7D6N – Guangzhou – Naha (Okinawa)",
+      "subtitle": "Out Manila · Fly + cruise",
+      "region": "intl",
+      "country": "Japan",
+      "flag": "jp",
+      "duration": "7 days 6 nights",
+      "days": 7,
+      "status": "available",
+      "featured": false,
+      "departure": "Manila (NAIA)",
+      "price": {
+        "from": 1588,
+        "label": "From",
+        "unit": "per pax",
+        "currency": "USD"
+      },
+      "year": 2026,
+      "ends": "2027-01-12",
+      "image": "jp-okinawa.jpg",
+      "alt": "A white-sand beach in Okinawa",
+      "gallery": [
+        "jp-okinawa.jpg"
+      ],
+      "summary": "Fly Manila to Guangzhou, cruise on the Adora Flora City to Naha, Okinawa with an overnight call, then a Guangzhou hotel night before flying home to Manila.",
+      "overview": "A fly and cruise package: you fly from Manila to Guangzhou, tour the city for half a day, then board the Adora Flora City for five nights, including a call at Naha, the capital of Okinawa, over two days. After disembarking in Guangzhou you take a city tour and stay one night at the Grand Mercure Guangzhou Airport Hotel (or similar) before flying back to Manila.",
+      "travelDates": [
+        {
+          "d": "Jan 6–12",
+          "y": 2027
+        }
+      ],
+      "travelDatesNote": "Departures from Manila, Jan 6–12 2027 to Jan 6–12 2027. The rate changes by date: an amount on a date is added to the base rate per pax. Seats are limited and confirmed at booking.",
+      "itinerary": [
+        {
+          "day": "Day 1",
+          "title": "Manila – Guangzhou, city tour and boarding",
+          "items": [
+            "Flight CZ5052 Manila – Guangzhou, 03:20–05:50.",
+            "Met at Guangzhou Airport by an English-speaking guide for a half-day city tour.",
+            "Visit Yuexiu Park and the Five Goats Statue.",
+            "Visit Huacheng Square and take a tram ride.",
+            "Photo stop at the exterior of the Canton Tower.",
+            "Transfer to Nansha Port Terminal and board the ship (vessel departs 15:30).",
+            "Overnight on the cruise ship.",
+            "Meals: X/L/D (B = breakfast, L = lunch, D = dinner, X = not included)"
+          ]
+        },
+        {
+          "day": "Day 2",
+          "title": "At sea",
+          "items": [
+            "Day at sea with onboard dining, shows and entertainment.",
+            "Overnight on the cruise ship.",
+            "Meals: B/L/D (B = breakfast, L = lunch, D = dinner, X = not included)"
+          ]
+        },
+        {
+          "day": "Day 3",
+          "title": "Naha, Okinawa",
+          "items": [
+            "Arrive Naha 15:30; the ship stays overnight in port (departs 14:00 the next day).",
+            "Naha is the capital of Okinawa: free time to see Shuri Castle (UNESCO World Heritage Site) and stroll Kokusai Street, or join the optional shore excursion.",
+            "Sample excursion: Okinawa Dream Discovery – Manzamo Cape, Okashigoten, American Village (6 hrs, no meals).",
+            "Bring original passport and ferry ticket as identification.",
+            "Overnight on the cruise ship.",
+            "Meals: B/X/D (B = breakfast, L = lunch, D = dinner, X = not included)"
+          ]
+        },
+        {
+          "day": "Day 4",
+          "title": "Naha, Okinawa",
+          "items": [
+            "Free time before the ship departs at 14:00.",
+            "Visit Manzamo Cape, known for its cliffs and elephant-trunk rock, and Naminoue Beach, or join the optional shore excursion.",
+            "Sample excursion: Okinawa Tropical Escape – Pineapple Park, Manzamo Cape, PARCO CITY Shopping Center (7.5 hrs, no meals).",
+            "Overnight on the cruise ship.",
+            "Meals: B/X/D (B = breakfast, L = lunch, D = dinner, X = not included)"
+          ]
+        },
+        {
+          "day": "Day 5",
+          "title": "At sea",
+          "items": [
+            "Day at sea with onboard activities, dining and shopping.",
+            "Overnight on the cruise ship.",
+            "Meals: B/L/D (B = breakfast, L = lunch, D = dinner, X = not included)"
+          ]
+        },
+        {
+          "day": "Day 6",
+          "title": "Guangzhou city tour",
+          "items": [
+            "Ship arrives at Nansha Port at 14:00; meet your English-speaking guide.",
+            "Guangzhou city tour: Shamian Island, Yongqingfang and Beijing Road Pedestrian Street.",
+            "Check in at the Grand Mercure Guangzhou Airport Hotel or similar.",
+            "Meals: B/L/D (B = breakfast, L = lunch, D = dinner, X = not included)"
+          ]
+        },
+        {
+          "day": "Day 7",
+          "title": "Guangzhou – Manila",
+          "items": [
+            "Free time at leisure.",
+            "Transfer to Guangzhou Baiyun International Airport for flight CZ3091 Guangzhou – Manila, 08:20–10:50.",
+            "Meals: B/X/X (B = breakfast, L = lunch, D = dinner, X = not included)"
+          ]
+        }
+      ],
+      "inclusions": [
+        "International airfare, airport taxes and terminal fees",
+        "Baggage allowance: 20 kg check-in and 7 kg hand carry",
+        "1 night hotel accommodation in Guangzhou with daily breakfast",
+        "2 land meals in Guangzhou",
+        "5 nights’ cabin accommodation on the cruise ship, twin sharing, with daily breakfast",
+        "Meals at designated complimentary restaurants on board",
+        "Entertainment: interactive parties, theater performances and designated complimentary facilities on board"
+      ],
+      "exclusions": [
+        "Port taxes and fees (collected in Manila): USD 180 per person",
+        "Gratuities (paid on board): approx. HKD 140 per person per night",
+        "Single room supplement",
+        "China group visa (USD 80 per person); two entries to China are needed (Day 1 and Day 6). If using an individual visa, it must be a multiple-entry visa",
+        "Philippine travel tax",
+        "Travel insurance",
+        "Personal onboard expenses: Wi-Fi, phone calls, laundry, shopping, bar and café, spa, etc.",
+        "Shore excursions (see optional tours)"
+      ],
+      "optional": [
+        "Naha shore excursion (sample: Okinawa Dream Discovery, 6 hrs, no meals): HKD 429 per person",
+        "Naha shore excursion (sample: Okinawa Tropical Escape, 7.5 hrs, no meals): HKD 559 per person",
+        "Total for the two optional tours: approx. HKD 988 per person (shared bus, Chinese-speaking guide only, meals not included)"
+      ],
+      "hotelsLabel": "Accommodation",
+      "hotels": [
+        "Nights 1–5: Adora Flora City cruise ship, twin-share cabin (Interior, Oceanview or Balcony)",
+        "Night 6: Grand Mercure Guangzhou Airport Hotel or similar"
+      ],
+      "notes": [
+        "Ship: Adora Flora City, 141,900 tons, 2,130 cabins, 15 decks, 341 m long, up to 5,232 passengers.",
+        "Cabin types: Interior twin, Oceanview twin or Balcony twin.",
+        "Passport must be valid at least 6 months from the return date; bring a photocopy of the passport’s first page and a valid visa for re-entry into China.",
+        "Port call and departure times are for reference only and may change with weather, tides or safety needs; the cruise line may change the route.",
+        "Shore excursions are optional shared-bus tours with a Chinese-speaking guide, booked on board.",
+        "Meals: Day 1 X/L/D, Day 2 B/L/D, Day 3 B/X/D, Day 4 B/X/D, Day 5 B/L/D, Day 6 B/L/D, Day 7 B/X/X."
+      ],
+      "places": [
+        "Guangzhou",
+        "Yuexiu Park",
+        "Five Goats Statue",
+        "Huacheng Square",
+        "Canton Tower",
+        "Nansha Port",
+        "Naha",
+        "Shuri Castle",
+        "Kokusai Street",
+        "Manzamo Cape",
+        "Naminoue Beach",
+        "Shamian Island",
+        "Yongqingfang",
+        "Beijing Road Pedestrian Street",
+        "Adora Flora City"
+      ],
+      "posters": [
+        "jp-poster-adora-flora-cruise-7d6n-okinawa-0.jpg"
+      ],
+      "posterSize": [
+        560,
+        800
+      ]
+    },
+    {
+      "id": "discover-osaka-kyoto-nara-5d4n-3-in-1",
+      "name": "Discover Osaka – Kyoto – Nara 5D4N Tour (Mar–Apr departures, from Manila)",
+      "subtitle": "Out Manila · Cebu Pacific",
+      "region": "intl",
+      "country": "Japan",
+      "flag": "jp",
+      "duration": "5 days 4 nights",
+      "days": 5,
+      "status": "available",
+      "featured": true,
+      "departure": "Manila (NAIA)",
+      "price": {
+        "from": 899,
+        "label": "From",
+        "unit": "per pax",
+        "currency": "USD"
+      },
+      "year": 2026,
+      "ends": "2027-04-01",
+      "image": "jp-osaka-castle.jpg",
+      "alt": "Osaka Castle",
+      "gallery": [
+        "jp-osaka-castle.jpg"
+      ],
+      "summary": "Five days in Japan’s Kansai region: Osaka Castle, Fushimi Inari, Arashiyama Bamboo Grove, Todaiji and the Nara deer, a free day, and Rinku Premium Outlets.",
+      "overview": "Visit the three classic Kansai cities of Osaka, Kyoto and Nara on a private-coach tour with an English-speaking guide. Highlights include Fushimi Inari Shrine, Arashiyama Bamboo Grove, Todaiji Temple and Deer Park, with free time for shopping in Shinsaibashi and Dotonbori and a free day for an optional Universal Studios Japan visit. Fly Manila – Osaka and back with Cebu Pacific; stay in 3–4-star hotels.",
+      "travelDates": [
+        {
+          "d": "Mar 12–16",
+          "y": 2027
+        },
+        {
+          "d": "Mar 19–23",
+          "y": 2027
+        },
+        {
+          "d": "Mar 28–Apr 1",
+          "y": 2027,
+          "add": 100,
+          "cur": "USD"
+        }
+      ],
+      "travelDatesNote": "Departures from Manila, Mar 12–16 2027 to Mar 28–Apr 1 2027. The rate changes by date: an amount on a date is added to the base rate per pax. Seats are limited and confirmed at booking.",
+      "itinerary": [
+        {
+          "day": "Day 1",
+          "title": "Manila – Osaka",
+          "items": [
+            "Flight 5J828 Manila – Kansai (KIX), 13:10–18:20.",
+            "Meet the tour guide at Kansai International Airport.",
+            "Transfer to hotel and check in.",
+            "Meals: X/X/X (B = breakfast, L = lunch, D = dinner, X = not included)"
+          ]
+        },
+        {
+          "day": "Day 2",
+          "title": "Osaka – Kyoto – Osaka",
+          "items": [
+            "Hotel breakfast.",
+            "Osaka Castle (photo stop).",
+            "Duty-free household products shop.",
+            "Fushimi Inari Shrine.",
+            "Arashiyama Bamboo Grove.",
+            "Transfer to hotel and check in; free time for shopping at Shinsaibashi, Dotonbori and Don Quijote on your own.",
+            "Meals: B/L/X (B = breakfast, L = lunch, D = dinner, X = not included)"
+          ]
+        },
+        {
+          "day": "Day 3",
+          "title": "Osaka, free day",
+          "items": [
+            "Hotel breakfast.",
+            "Free and easy day (no tour guide and no transfer).",
+            "Optional tour: Universal Studios Japan, with one-day pass ticket and transfer.",
+            "Meals: B/X/X (B = breakfast, L = lunch, D = dinner, X = not included)"
+          ]
+        },
+        {
+          "day": "Day 4",
+          "title": "Osaka – Nara – Osaka",
+          "items": [
+            "Hotel breakfast.",
+            "Cosmetics duty-free shop.",
+            "Todaiji Temple (photo stop).",
+            "Deer Park.",
+            "Lunch upgraded to Yakiniku BBQ.",
+            "Kitchen products duty-free shop.",
+            "Transfer to hotel and check in.",
+            "Meals: B/L/X (B = breakfast, L = lunch, D = dinner, X = not included)"
+          ]
+        },
+        {
+          "day": "Day 5",
+          "title": "Osaka – Manila",
+          "items": [
+            "Hotel breakfast.",
+            "Rinku Premium Outlets.",
+            "Transfer to the airport; flight 5J827 Kansai (KIX) – Manila, 19:35–23:10.",
+            "Meals: B/X/X (B = breakfast, L = lunch, D = dinner, X = not included)"
+          ]
+        }
+      ],
+      "inclusions": [
+        "4 nights’ hotel accommodation, twin sharing, with daily hotel breakfast",
+        "Sightseeing tours as specified, with all entrance fees needed",
+        "Private coach with English-speaking tour guide",
+        "Meals as listed",
+        "Round-trip airfare via Cebu Pacific with 7 kg hand carry"
+      ],
+      "exclusions": [
+        "Personal expenses such as telephone calls, minibar, etc.",
+        "Tips for driver and guide: USD 35 per person (collected with the tour fee)",
+        "Philippine travel tax: PHP 1,620 per person",
+        "Single supplement",
+        "Travel insurance",
+        "Checked baggage allowance",
+        "Japan visa"
+      ],
+      "optional": [
+        "Day 3: Universal Studios Japan with one-day pass ticket and transfer, USD 159 per person surcharge (minimum 10 persons to push through)"
+      ],
+      "hotelsLabel": "Hotels",
+      "hotels": [
+        "Day 1: 4★ hotel or similar",
+        "Day 2–3: 3★ hotel or similar",
+        "Day 4: 4★ hotel or similar"
+      ],
+      "notes": [
+        "Private tour basis: private coach with English-speaking guide.",
+        "Tour order of attractions may be adjusted without notice in case of crowds or special circumstances.",
+        "Rooms are twin sharing by default; hotels may be replaced by similar ones if unavailable. Triple room not guaranteed: otherwise share with other guests or pay the single supplement.",
+        "Maximum 10 hours of touring per day, including travel time.",
+        "Single supplement USD 250 per person; infant fee about USD 190 per person.",
+        "Child without bed (2–5 years old) pays a lower rate and does not include hotel breakfast (can be paid on site).",
+        "Tips for guide and driver USD 7 per person per day x 5 days = USD 35 per person, collected with the tour fee.",
+        "Philippine travel tax PHP 1,620 per person is not included.",
+        "Baggage: 7 kg hand carry only; checked baggage is not included.",
+        "This package includes shop visits: duty-free household products, kitchen products and cosmetics.",
+        "Package rate is not available to incentive and student groups.",
+        "Meals: Day 1 X/X/X, Day 2 B/L/X, Day 3 B/X/X, Day 4 B/L/X, Day 5 B/X/X."
+      ],
+      "places": [
+        "Osaka Castle",
+        "Fushimi Inari Shrine",
+        "Arashiyama Bamboo Grove",
+        "Shinsaibashi",
+        "Dotonbori",
+        "Todaiji Temple",
+        "Nara Deer Park",
+        "Rinku Premium Outlets",
+        "Universal Studios Japan"
+      ],
+      "posters": [
+        "jp-poster-discover-osaka-kyoto-nara-5d4n-3-in-1-0.jpg"
+      ],
+      "posterSize": [
+        520,
+        800
+      ]
+    },
+    {
+      "id": "hokkaido-icebreaker-6d5n-ana-no-shopping",
+      "name": "Hokkaido Icebreaker 6D5N Tour via ANA (No Shopping)",
+      "subtitle": "Out Manila · ANA",
+      "region": "intl",
+      "country": "Japan",
+      "flag": "jp",
+      "duration": "6 days 5 nights",
+      "days": 6,
+      "status": "available",
+      "featured": true,
+      "departure": "Manila (NAIA)",
+      "price": {
+        "from": 2288,
+        "label": "From",
+        "unit": "per pax",
+        "currency": "USD"
+      },
+      "year": 2026,
+      "ends": "2027-02-07",
+      "image": "jp-hokkaido.jpg",
+      "alt": "Snow-covered hills and a frozen lake in Hokkaido",
+      "gallery": [
+        "jp-hokkaido.jpg"
+      ],
+      "summary": "Winter Hokkaido: Monbetsu Garinko icebreaker drift-ice cruise, Sounkyo Icefall Festival, Asahiyama Zoo and Sapporo, with a crab buffet and onsen stay.",
+      "overview": "A six-day winter tour of Hokkaido flying ANA from Manila, timed with the Sounkyo Icefall Festival and the Sapporo Snow Festival at Odori Park. See drift ice from the Monbetsu Garinko icebreaker, visit Asahiyama Zoo’s penguin parade, enjoy an onsen dinner at Sounkyo and an all-you-can-eat crab buffet in Sapporo. Hotels range from 3.5 to 5 stars and the package has no shopping stops.",
+      "travelDates": [
+        {
+          "d": "Feb 2–7",
+          "y": 2027
+        }
+      ],
+      "travelDatesNote": "Departures from Manila, Feb 2–7 2027 to Feb 2–7 2027. The rate changes by date: an amount on a date is added to the base rate per pax. Seats are limited and confirmed at booking.",
+      "itinerary": [
+        {
+          "day": "Day 1",
+          "title": "Manila – Sapporo",
+          "items": [
+            "ANA NH 0820 Manila – Narita 09:45–15:05, then NH 2155 Narita – New Chitose 17:50–19:40.",
+            "Meet the English-speaking guide at New Chitose Airport.",
+            "Transfer to hotel and check in.",
+            "Meals: X/X/X (B = breakfast, L = lunch, D = dinner, X = not included)"
+          ]
+        },
+        {
+          "day": "Day 2",
+          "title": "Sapporo – Bibai – Sounkyo",
+          "items": [
+            "Hotel breakfast.",
+            "Bibai Snowland (snow tubing included; other snow activities at your own expense).",
+            "Sounkyo Icefall Festival.",
+            "Transfer to hotel and check in; dinner and onsen experience at the hotel.",
+            "Meals: B/L/D (B = breakfast, L = lunch, D = dinner, X = not included)"
+          ]
+        },
+        {
+          "day": "Day 3",
+          "title": "Sounkyo – Monbetsu – Asahikawa",
+          "items": [
+            "Hotel breakfast.",
+            "Ginga and Ryusei waterfalls.",
+            "Crab Claw Statue.",
+            "Monbetsu icebreaker ship.",
+            "Transfer to Asahikawa and check in.",
+            "Meals: B/L/D (B = breakfast, L = lunch, D = dinner, X = not included)"
+          ]
+        },
+        {
+          "day": "Day 4",
+          "title": "Asahikawa – Sapporo",
+          "items": [
+            "Hotel breakfast.",
+            "Asahiyama Zoo (penguin parade).",
+            "Odori Park (Snow Festival in Odori Park, Feb 04–11).",
+            "Tanukikoji Shopping Street.",
+            "Transfer to hotel and check in.",
+            "Meals: B/L/X (B = breakfast, L = lunch, D = dinner, X = not included)"
+          ]
+        },
+        {
+          "day": "Day 5",
+          "title": "Sapporo",
+          "items": [
+            "Hotel breakfast.",
+            "Hill of the Buddha.",
+            "Shiroi Koibito Park.",
+            "Free time for shopping at Mitsui Outlet Mall.",
+            "All-you-can-eat crab buffet dinner.",
+            "Back to hotel.",
+            "Meals: B/L/D (B = breakfast, L = lunch, D = dinner, X = not included)"
+          ]
+        },
+        {
+          "day": "Day 6",
+          "title": "Sapporo – Manila",
+          "items": [
+            "Hotel breakfast.",
+            "Lake Shikotsu (Ice Festival, early to late February).",
+            "Transfer to the airport; ANA NH 2154 New Chitose – Narita 13:35–15:20, then NH 0819 Narita – Manila 18:05–22:05.",
+            "Meals: B/X/X (B = breakfast, L = lunch, D = dinner, X = not included)"
+          ]
+        }
+      ],
+      "inclusions": [
+        "5 nights’ hotel accommodation, twin sharing, with daily hotel breakfast",
+        "Sightseeing tours as specified, with all entrance fees needed",
+        "Private coach with English-speaking tour guide",
+        "Meals as listed",
+        "Round-trip airfare via ANA with 23 kg checked baggage"
+      ],
+      "exclusions": [
+        "Personal expenses such as telephone calls, minibar, etc.",
+        "Tips for driver and guide: USD 30 per person (collected with the tour fee)",
+        "Philippine travel tax: PHP 1,620 per person (collected with the tour fee)",
+        "Single supplement: USD 350 per person",
+        "Travel insurance",
+        "Covid-related procedures",
+        "Extra baggage allowance",
+        "Japan visa"
+      ],
+      "hotelsLabel": "Hotels",
+      "hotels": [
+        "Day 1: 3.5★ hotel or similar (Sapporo)",
+        "Day 2: 4★ hotel or similar (Sounkyo, onsen)",
+        "Day 3: 4★ hotel or similar (Asahikawa)",
+        "Day 4–5: 5★ hotel or similar (Sapporo)"
+      ],
+      "notes": [
+        "No-shopping package.",
+        "Private tour basis: private coach with English-speaking guide.",
+        "Tour order of attractions may be adjusted without notice in case of crowds or special circumstances.",
+        "Rooms are twin sharing by default; hotels may be replaced by similar ones. Triple room not guaranteed: share with other guests or pay the single supplement.",
+        "Maximum 10 hours of touring per day, including travel time.",
+        "Icebreakers may not be able to see drifting ice, and the ship may not sail in bad weather.",
+        "Single supplement USD 350 per person.",
+        "Child without bed (2–5 years old) pays a lower rate and does not include hotel breakfast (can be paid on site).",
+        "Tips for guide and driver USD 5 per person per day x 6 days = USD 30 per person, collected with the tour fee.",
+        "Baggage: 23 kg checked baggage included.",
+        "Meals: Day 1 X/X/X, Day 2 B/L/D, Day 3 B/L/D, Day 4 B/L/X, Day 5 B/L/D, Day 6 B/X/X.",
+        "Only one departure listed: Feb 02–07."
+      ],
+      "places": [
+        "New Chitose Airport",
+        "Bibai Snowland",
+        "Sounkyo Icefall Festival",
+        "Ginga Falls",
+        "Ryusei Falls",
+        "Crab Claw Statue",
+        "Monbetsu Icebreaker",
+        "Asahiyama Zoo",
+        "Odori Park",
+        "Tanukikoji Shopping Street",
+        "Hill of the Buddha",
+        "Shiroi Koibito Park",
+        "Mitsui Outlet Mall",
+        "Lake Shikotsu"
+      ],
+      "posters": [
+        "jp-poster-hokkaido-icebreaker-6d5n-ana-no-shopping-0.jpg"
+      ],
+      "posterSize": [
+        510,
+        800
+      ]
+    },
+    {
+      "id": "nagoya-takayama-shirakawago-osaka-5d4n-winter",
+      "name": "Nagoya – Takayama – Shirakawa-go – Osaka 5D4N Winter Tour",
+      "subtitle": "Out Manila · Cebu Pacific",
+      "region": "intl",
+      "country": "Japan",
+      "flag": "jp",
+      "duration": "5 days 4 nights",
+      "days": 5,
+      "status": "available",
+      "featured": false,
+      "departure": "Manila (NAIA)",
+      "price": {
+        "from": 1099,
+        "label": "From",
+        "unit": "per pax",
+        "currency": "USD"
+      },
+      "year": 2026,
+      "ends": "2027-02-24",
+      "image": "jp-shirakawago.jpg",
+      "alt": "Shirakawa-go village under snow",
+      "gallery": [
+        "jp-shirakawago.jpg"
+      ],
+      "summary": "Fly into Nagoya and travel through Takayama, Shirakawa-go and Kanazawa to Osaka, Kyoto and Nara, with a snow-sled stop and time at Rinku Premium Outlets.",
+      "overview": "A winter route across central Japan: Takayama Old Town and Jinya, the thatched-roof village of Shirakawa-go, a sled stop at Takanbo Ski Resort, Kanazawa’s Kenrokuen Garden and Higashi Chaya District, then Osaka Castle, Fushimi Inari, Arashiyama and Nara Park. Fly Manila – Nagoya and return from Osaka with Cebu Pacific; stay in 3.5–4-star hotels.",
+      "travelDates": [
+        {
+          "d": "Feb 20–24",
+          "y": 2027
+        }
+      ],
+      "travelDatesNote": "Departures from Manila, Feb 20–24 2027 to Feb 20–24 2027. The rate changes by date: an amount on a date is added to the base rate per pax. Seats are limited and confirmed at booking.",
+      "itinerary": [
+        {
+          "day": "Day 1",
+          "title": "Manila – Nagoya",
+          "items": [
+            "Flight 5J5038 Manila – Nagoya (Chubu), 07:20–12:35.",
+            "Meet the tour guide at Nagoya Chubu International Airport.",
+            "Transfer to hotel and check in.",
+            "Meals: X/X/X (B = breakfast, L = lunch, D = dinner, X = not included)"
+          ]
+        },
+        {
+          "day": "Day 2",
+          "title": "Nagoya – Takayama – Shirakawa-go – Kanazawa",
+          "items": [
+            "Hotel breakfast.",
+            "Takayama Jinya (3 hrs by bus).",
+            "Takayama Old Town.",
+            "Shirakawa-go (1 hr by bus).",
+            "Takanbo Ski Resort, including snow sled; depends on weather and will change to other spots if there is no natural snowfall.",
+            "Transfer to hotel and check in.",
+            "Meals: B/X/X (B = breakfast, L = lunch, D = dinner, X = not included)"
+          ]
+        },
+        {
+          "day": "Day 3",
+          "title": "Kanazawa – Osaka",
+          "items": [
+            "Hotel breakfast.",
+            "Kenrokuen Garden.",
+            "Higashi Chaya District.",
+            "Duty-free shop (4 hrs by bus to Osaka).",
+            "Transfer to hotel and check in; free time for shopping at Shinsaibashi, Dotonbori and Don Quijote on your own.",
+            "Meals: B/L/X (B = breakfast, L = lunch, D = dinner, X = not included)"
+          ]
+        },
+        {
+          "day": "Day 4",
+          "title": "Osaka – Kyoto – Nara – Osaka",
+          "items": [
+            "Hotel breakfast.",
+            "Osaka Castle (photo stop).",
+            "Arashiyama Bamboo Grove.",
+            "Fushimi Inari Taisha.",
+            "Nara Park.",
+            "Duty-free shop.",
+            "Transfer to hotel and check in.",
+            "Meals: B/L/X (B = breakfast, L = lunch, D = dinner, X = not included)"
+          ]
+        },
+        {
+          "day": "Day 5",
+          "title": "Osaka – Manila",
+          "items": [
+            "Hotel breakfast.",
+            "Free day: Rinku Premium Outlets are about a 10-minute walk from the hotel.",
+            "Meet at the hotel lobby and transfer to the airport; flight 5J827 Kansai (KIX) – Manila, 19:35–23:10.",
+            "Meals: B/X/X (B = breakfast, L = lunch, D = dinner, X = not included)"
+          ]
+        }
+      ],
+      "inclusions": [
+        "4 nights’ hotel accommodation, twin sharing, with daily hotel breakfast",
+        "Sightseeing tours as specified, with all entrance fees needed",
+        "Private coach with English-speaking tour guide",
+        "Meals as listed",
+        "Round-trip airfare via Cebu Pacific with 7 kg hand carry"
+      ],
+      "exclusions": [
+        "Personal expenses such as telephone calls, minibar, etc.",
+        "Tips for driver and guide: USD 35 per person (collected with the tour fee)",
+        "Philippine travel tax: PHP 1,620 per person",
+        "Single supplement",
+        "Travel insurance",
+        "Checked baggage allowance",
+        "Japan visa"
+      ],
+      "hotelsLabel": "Hotels",
+      "hotels": [
+        "Day 1: 4★ hotel or similar (Nagoya)",
+        "Day 2: 4★ hotel or similar (Kanazawa)",
+        "Day 3: 3.5★ hotel or similar (Osaka)",
+        "Day 4: 4★ hotel near the outlet or similar (Osaka)"
+      ],
+      "notes": [
+        "Private tour basis: private coach with English-speaking guide.",
+        "Tour order of attractions may be adjusted without notice in case of crowds or special circumstances.",
+        "Rooms are twin sharing by default; hotels may be replaced by similar ones if unavailable. Triple room not guaranteed: otherwise share with other guests or pay the single supplement.",
+        "Maximum 10 hours of touring per day, including travel time.",
+        "Single supplement USD 299 per person; infant fee about USD 190 per person.",
+        "Child without bed (2–5 years old) pays a lower rate and does not include hotel breakfast (can be paid on site).",
+        "Tips for guide and driver USD 7 per person per day x 5 days = USD 35 per person, collected with the tour fee.",
+        "Philippine travel tax PHP 1,620 per person is not included.",
+        "Baggage: 7 kg hand carry only; checked baggage is not included.",
+        "Tour day ends no later than 21:00.",
+        "This package includes shop visits: general duty-free shops.",
+        "Meals: Day 1 X/X/X, Day 2 B/X/X, Day 3 B/L/X, Day 4 B/L/X, Day 5 B/X/X."
+      ],
+      "places": [
+        "Nagoya",
+        "Takayama Jinya",
+        "Takayama Old Town",
+        "Shirakawa-go",
+        "Takanbo Ski Resort",
+        "Kenrokuen Garden",
+        "Higashi Chaya District",
+        "Osaka Castle",
+        "Arashiyama Bamboo Grove",
+        "Fushimi Inari Taisha",
+        "Nara Park",
+        "Rinku Premium Outlets"
+      ],
+      "posters": [
+        "jp-poster-nagoya-takayama-shirakawago-osaka-5d4n-winter-0.jpg"
+      ],
+      "posterSize": [
+        551,
+        800
+      ]
+    },
+    {
+      "id": "osaka-kyoto-nara-5d4n-3-in-1",
+      "name": "Osaka – Kyoto – Nara 5D4N Tour",
+      "subtitle": "Out Manila · Cebu Pacific",
+      "region": "intl",
+      "country": "Japan",
+      "flag": "jp",
+      "duration": "5 days 4 nights",
+      "days": 5,
+      "status": "available",
+      "featured": false,
+      "departure": "Manila (NAIA)",
+      "price": {
+        "from": 859,
+        "label": "From",
+        "unit": "per pax",
+        "currency": "USD"
+      },
+      "year": 2026,
+      "ends": "2027-01-30",
+      "image": "jp-kyoto.jpg",
+      "alt": "A traditional machiya house in Kyoto",
+      "gallery": [
+        "jp-kyoto.jpg"
+      ],
+      "summary": "Five days in the Kansai region: Kyoto’s Ninenzaka, Kiyomizu Temple and Fushimi Inari, a matcha experience, Nara’s Todaiji and deer, and a free day in Osaka.",
+      "overview": "A classic Kansai tour of Osaka, Kyoto and Nara with a private coach and English-speaking guide. Walk Ninenzaka and Sannenzaka, visit Kiyomizu Temple and Fushimi Inari Shrine, try a matcha experience, then meet the deer at Todaiji. A free day in Osaka leaves room for an optional Universal Studios Japan trip. Fly Manila – Osaka with Cebu Pacific; stay in 3–4-star hotels.",
+      "travelDates": [
+        {
+          "d": "Jan 14–18",
+          "y": 2027
+        },
+        {
+          "d": "Jan 20–24",
+          "y": 2027
+        },
+        {
+          "d": "Jan 22–26",
+          "y": 2027
+        },
+        {
+          "d": "Jan 26–30",
+          "y": 2027
+        }
+      ],
+      "travelDatesNote": "Departures from Manila, Jan 14–18 2027 to Jan 26–30 2027. The rate changes by date: an amount on a date is added to the base rate per pax. Seats are limited and confirmed at booking.",
+      "itinerary": [
+        {
+          "day": "Day 1",
+          "title": "Manila – Osaka",
+          "items": [
+            "Flight 5J828 Manila – Kansai (KIX), 13:10–18:20.",
+            "Meet the tour guide at Kansai International Airport.",
+            "Transfer to hotel and check in.",
+            "Meals: X/X/X (B = breakfast, L = lunch, D = dinner, X = not included)"
+          ]
+        },
+        {
+          "day": "Day 2",
+          "title": "Osaka – Kyoto – Osaka",
+          "items": [
+            "Hotel breakfast.",
+            "Ninenzaka and Sannenzaka.",
+            "Kiyomizu Temple.",
+            "Matcha experience.",
+            "Fushimi Inari Shrine.",
+            "Transfer to hotel and check in; free time for shopping at Shinsaibashi, Dotonbori and Don Quijote on your own.",
+            "Meals: B/L/X (B = breakfast, L = lunch, D = dinner, X = not included)"
+          ]
+        },
+        {
+          "day": "Day 3",
+          "title": "Osaka, free day",
+          "items": [
+            "Hotel breakfast.",
+            "Free and easy day (no tour guide and no transfer).",
+            "Optional tour: Universal Studios Japan, with one-day pass ticket and transfer.",
+            "Meals: B/X/X (B = breakfast, L = lunch, D = dinner, X = not included)"
+          ]
+        },
+        {
+          "day": "Day 4",
+          "title": "Osaka – Nara – Osaka",
+          "items": [
+            "Hotel breakfast.",
+            "Todaiji Temple (photo stop).",
+            "Deer Park.",
+            "Lunch upgraded to Yakiniku BBQ.",
+            "Osaka Castle (photo stop).",
+            "Duty-free shop.",
+            "Transfer to hotel and check in.",
+            "Meals: B/L/X (B = breakfast, L = lunch, D = dinner, X = not included)"
+          ]
+        },
+        {
+          "day": "Day 5",
+          "title": "Osaka – Manila",
+          "items": [
+            "Hotel breakfast.",
+            "Rinku Premium Outlets.",
+            "Transfer to the airport; flight 5J827 Kansai (KIX) – Manila, 19:35–23:10.",
+            "Meals: B/X/X (B = breakfast, L = lunch, D = dinner, X = not included)"
+          ]
+        }
+      ],
+      "inclusions": [
+        "4 nights’ hotel accommodation, twin sharing, with daily hotel breakfast",
+        "Sightseeing tours as specified, with all entrance fees needed",
+        "Private coach with English-speaking tour guide",
+        "Meals as listed",
+        "Round-trip airfare via Cebu Pacific with 7 kg hand carry"
+      ],
+      "exclusions": [
+        "Personal expenses such as telephone calls, minibar, etc.",
+        "Tips for driver and guide: USD 35 per person (collected with the tour fee)",
+        "Philippine travel tax: PHP 1,620 per person",
+        "Single supplement",
+        "Travel insurance",
+        "Checked baggage allowance",
+        "Japan visa"
+      ],
+      "optional": [
+        "Day 3: Universal Studios Japan with one-day pass ticket and transfer, USD 159 per person surcharge (minimum 10 persons to push through)"
+      ],
+      "hotelsLabel": "Hotels",
+      "hotels": [
+        "Day 1: 4★ hotel or similar",
+        "Day 2–3: 3★ hotel or similar",
+        "Day 4: 4★ hotel or similar"
+      ],
+      "notes": [
+        "Private tour basis: private coach with English-speaking guide.",
+        "Tour order of attractions may be adjusted without notice in case of crowds or special circumstances.",
+        "Rooms are twin sharing by default; hotels may be replaced by similar ones if unavailable. Triple room not guaranteed: otherwise share with other guests or pay the single supplement.",
+        "Maximum 10 hours of touring per day, including travel time.",
+        "Single supplement USD 250 per person; infant fee about USD 190 per person.",
+        "Child without bed (2–5 years old) pays a lower rate and does not include hotel breakfast (can be paid on site).",
+        "Tips for guide and driver USD 7 per person per day x 5 days = USD 35 per person, collected with the tour fee.",
+        "Philippine travel tax PHP 1,620 per person is not included.",
+        "Baggage: 7 kg hand carry only; checked baggage is not included.",
+        "Package rate is not available to incentive and student groups.",
+        "The May–Jun sheet states that the rate includes shop visits (matcha experience and a duty-free shop).",
+        "Meals: Day 1 X/X/X, Day 2 B/L/X, Day 3 B/X/X, Day 4 B/L/X, Day 5 B/X/X."
+      ],
+      "places": [
+        "Ninenzaka",
+        "Sannenzaka",
+        "Kiyomizu Temple",
+        "Fushimi Inari Shrine",
+        "Todaiji Temple",
+        "Nara Deer Park",
+        "Osaka Castle",
+        "Shinsaibashi",
+        "Dotonbori",
+        "Rinku Premium Outlets",
+        "Universal Studios Japan"
+      ],
+      "posters": [
+        "jp-poster-osaka-kyoto-nara-5d4n-3-in-1-0.jpg"
+      ],
+      "posterSize": [
+        528,
+        800
+      ]
+    },
+    {
+      "id": "tokyo-mt-fuji-kamakura-5d4n",
+      "name": "Tokyo – Mt. Fuji – Kamakura 5D4N Tour",
+      "subtitle": "Out Manila · Cebu Pacific",
+      "region": "intl",
+      "country": "Japan",
+      "flag": "jp",
+      "duration": "5 days 4 nights",
+      "days": 5,
+      "status": "available",
+      "featured": true,
+      "departure": "Manila (NAIA)",
+      "price": {
+        "from": 899,
+        "label": "From",
+        "unit": "per pax",
+        "currency": "USD"
+      },
+      "year": 2026,
+      "ends": "2027-06-27",
+      "image": "jp-fuji.jpg",
+      "alt": "Mt. Fuji and the Chureito Pagoda",
+      "gallery": [
+        "jp-fuji.jpg"
+      ],
+      "summary": "Tokyo, Lake Kawaguchi with Mt. Fuji views, Gotemba Premium Outlets, Kamakura’s Great Buddha, Asakusa, Shibuya and Meiji Shrine, with an onsen night near Mt. Fuji.",
+      "overview": "Five days across Tokyo, the Mt. Fuji area and Kamakura on a private-coach tour with an English-speaking guide. See Mt. Fuji from Lake Kawaguchi, try a matcha experience, shop at Gotemba Premium Outlets and enjoy dinner and an onsen at your Mt. Fuji hotel, then visit Kamakura’s Great Buddha, Asakusa and Shibuya Crossing. Fly Manila – Tokyo (Narita) and back with Cebu Pacific; stay in 4-star hotels.",
+      "travelDates": [
+        {
+          "d": "Feb 13–17",
+          "y": 2027,
+          "add": 60,
+          "cur": "USD"
+        },
+        {
+          "d": "Apr 14–18",
+          "y": 2027,
+          "add": 50,
+          "cur": "USD"
+        },
+        {
+          "d": "Apr 15–19",
+          "y": 2027,
+          "add": 30,
+          "cur": "USD"
+        },
+        {
+          "d": "May 6–10",
+          "y": 2027
+        },
+        {
+          "d": "May 13–17",
+          "y": 2027
+        },
+        {
+          "d": "May 20–24",
+          "y": 2027
+        },
+        {
+          "d": "May 26–30",
+          "y": 2027
+        },
+        {
+          "d": "Jun 11–15",
+          "y": 2027
+        },
+        {
+          "d": "Jun 12–16",
+          "y": 2027
+        },
+        {
+          "d": "Jun 16–20",
+          "y": 2027
+        },
+        {
+          "d": "Jun 23–27",
+          "y": 2027
+        }
+      ],
+      "travelDatesNote": "Departures from Manila, Feb 13–17 2027 to Jun 23–27 2027. The rate changes by date: an amount on a date is added to the base rate per pax. Seats are limited and confirmed at booking.",
+      "itinerary": [
+        {
+          "day": "Day 1",
+          "title": "Manila – Tokyo",
+          "items": [
+            "Flight 5J5056 Manila – Narita, 12:15–18:00.",
+            "Meet the tour guide at Narita International Airport.",
+            "Transfer to hotel and check in.",
+            "Meals: X/X/X (B = breakfast, L = lunch, D = dinner, X = not included)"
+          ]
+        },
+        {
+          "day": "Day 2",
+          "title": "Tokyo – Mt. Fuji",
+          "items": [
+            "Hotel breakfast.",
+            "Lake Kawaguchi, with views of Mt. Fuji.",
+            "Matcha experience.",
+            "Oshino Hakkai.",
+            "Gotemba Premium Outlets.",
+            "Transfer to hotel and check in; dinner and onsen experience at the hotel.",
+            "Meals: B/X/D (B = breakfast, L = lunch, D = dinner, X = not included)"
+          ]
+        },
+        {
+          "day": "Day 3",
+          "title": "Mt. Fuji – Kamakura – Tokyo",
+          "items": [
+            "Hotel breakfast.",
+            "Transfer to Kamakura.",
+            "Great Buddha of Kamakura.",
+            "Komachi-dori Shopping Street.",
+            "Transfer to Tokyo.",
+            "Asakusa Temple and Tokyo Skytree (photo stop).",
+            "Duty-free cosmetics store.",
+            "Transfer to hotel and check in.",
+            "Meals: B/L/X (B = breakfast, L = lunch, D = dinner, X = not included)"
+          ]
+        },
+        {
+          "day": "Day 4",
+          "title": "Tokyo",
+          "items": [
+            "Hotel breakfast.",
+            "Pearl duty-free shop.",
+            "Shinjuku shopping street.",
+            "Lunch upgraded to BBQ buffet.",
+            "Shibuya Crossing and Hachiko Statue.",
+            "Meiji Shrine.",
+            "Transfer to hotel and check in.",
+            "Meals: B/L/X (B = breakfast, L = lunch, D = dinner, X = not included)"
+          ]
+        },
+        {
+          "day": "Day 5",
+          "title": "Tokyo – Manila",
+          "items": [
+            "Hotel breakfast.",
+            "Transfer to the airport; flight 5J5055 Narita – Manila, 13:45–18:10.",
+            "Meals: B/X/X (B = breakfast, L = lunch, D = dinner, X = not included)"
+          ]
+        }
+      ],
+      "inclusions": [
+        "4 nights’ hotel accommodation, twin sharing, with daily hotel breakfast",
+        "Sightseeing tours as specified, with all entrance fees needed",
+        "Private coach with English-speaking tour guide",
+        "Meals as listed",
+        "Round-trip airfare via Cebu Pacific with 7 kg hand carry"
+      ],
+      "exclusions": [
+        "Personal expenses such as telephone calls, minibar, etc.",
+        "Tips for driver and guide: USD 35 per person (collected with the tour fee)",
+        "Philippine travel tax: PHP 1,620 per person",
+        "Single supplement",
+        "Travel insurance",
+        "Checked baggage allowance",
+        "Japan visa"
+      ],
+      "hotelsLabel": "Hotels",
+      "hotels": [
+        "Day 1–4: 4★ hotel or similar (Day 2 in the Mt. Fuji area, with dinner and onsen)"
+      ],
+      "notes": [
+        "Private tour basis: private coach with English-speaking guide.",
+        "Tour order of attractions may be adjusted without notice in case of crowds or special circumstances.",
+        "Rooms are twin sharing by default; hotels may be replaced by similar ones if unavailable. Triple room not guaranteed: otherwise share with other guests or pay the single supplement.",
+        "Maximum 10 hours of touring per day, including travel time.",
+        "Single supplement USD 299 per person; infant fee about USD 190 per person.",
+        "Child without bed (2–5 years old) pays a lower rate and does not include hotel breakfast (can be paid on site).",
+        "Tips for guide and driver USD 7 per person per day x 5 days = USD 35 per person, collected with the tour fee.",
+        "Philippine travel tax PHP 1,620 per person is not included.",
+        "Baggage: 7 kg hand carry only; checked baggage is not included.",
+        "Tour day ends no later than 21:00.",
+        "This package includes shop visits: duty-free cosmetics store and Pearl duty-free shop.",
+        "In the May–Jun sheet: the rate does not include VAT; an official receipt is available with a 12% surcharge on the total amount.",
+        "Meals: Day 1 X/X/X, Day 2 B/X/D, Day 3 B/L/X, Day 4 B/L/X, Day 5 B/X/X."
+      ],
+      "places": [
+        "Lake Kawaguchi",
+        "Mt. Fuji",
+        "Oshino Hakkai",
+        "Gotemba Premium Outlets",
+        "Great Buddha of Kamakura",
+        "Komachi-dori",
+        "Asakusa Temple",
+        "Tokyo Skytree",
+        "Shibuya Crossing",
+        "Hachiko Statue",
+        "Meiji Shrine",
+        "Shinjuku"
+      ],
+      "posters": [
+        "jp-poster-tokyo-mt-fuji-kamakura-5d4n-0.jpg",
+        "jp-poster-tokyo-mt-fuji-kamakura-5d4n-1.jpg",
+        "jp-poster-tokyo-mt-fuji-kamakura-5d4n-2.jpg",
+        "jp-poster-tokyo-mt-fuji-kamakura-5d4n-3.jpg",
+        "jp-poster-tokyo-mt-fuji-kamakura-5d4n-4.jpg"
+      ],
+      "posterSize": [
+        515,
+        800
+      ]
+    },
+    {
+      "id": "tokyo-5d4n-cebu",
+      "name": "Tokyo – Mt. Fuji 5D4N Ski Resort Tour",
+      "subtitle": "Out Cebu · Philippine Airlines",
+      "region": "intl",
+      "country": "Japan",
+      "flag": "jp",
+      "duration": "5 days 4 nights",
+      "days": 5,
+      "status": "available",
+      "featured": false,
+      "departure": "Cebu (Mactan-Cebu International)",
+      "price": {
+        "from": 1599,
+        "label": "From",
+        "unit": "per pax",
+        "currency": "USD"
+      },
+      "year": 2026,
+      "ends": "2027-02-12",
+      "image": "jp-tokyo.jpg",
+      "alt": "Shibuya at night, Tokyo",
+      "gallery": [
+        "jp-tokyo.jpg"
+      ],
+      "summary": "Tokyo with a Mt. Fuji day: Lake Kawaguchi, up to 2 hours at the Yeti ski resort, Asakusa and Skytree, and a free day with optional Disneyland.",
+      "overview": "A winter Tokyo tour with a snow day: Shibuya Crossing, Oishi Park and Lake Kawaguchi, and up to two hours at the Yeti ski resort (ski rental not included). Visit Asakusa Temple and Tokyo Skytree, with free time in Shinjuku and a free day for an optional Disneyland trip. Fly Cebu – Narita and back with Philippine Airlines; stay in 4-star hotels.",
+      "travelDates": [
+        {
+          "d": "Jan 18–22",
+          "y": 2027
+        },
+        {
+          "d": "Feb 8–12",
+          "y": 2027
+        }
+      ],
+      "travelDatesNote": "Departures from Cebu, Jan 18–22 2027 to Feb 8–12 2027. The rate changes by date: an amount on a date is added to the base rate per pax. Seats are limited and confirmed at booking.",
+      "itinerary": [
+        {
+          "day": "Day 1",
+          "title": "Cebu – Tokyo",
+          "items": [
+            "Flight PR 434 Cebu – Narita, 08:05–13:35.",
+            "Meet the English-speaking guide at Narita International Airport.",
+            "Visit Shibuya Crossing and Hachiko Statue.",
+            "Free time in Shibuya for shopping.",
+            "Transfer to hotel and check in.",
+            "Meals: X/X/D (B = breakfast, L = lunch, D = dinner, X = not included)"
+          ]
+        },
+        {
+          "day": "Day 2",
+          "title": "Tokyo – Mt. Fuji area",
+          "items": [
+            "Hotel breakfast and check out.",
+            "Transfer to the Mt. Fuji area.",
+            "Oishi Park and Lake Kawaguchi.",
+            "Transfer to the Yeti ski resort for up to 2 hours (ski rental not included).",
+            "Transfer to hotel and check in.",
+            "Meals: B/L/D (B = breakfast, L = lunch, D = dinner, X = not included)"
+          ]
+        },
+        {
+          "day": "Day 3",
+          "title": "Tokyo",
+          "items": [
+            "Hotel breakfast and check out.",
+            "Asakusa Temple and Nakamise Shopping Street.",
+            "Tokyo Skytree (photo stop).",
+            "Free time for shopping in Shinjuku.",
+            "Transfer to hotel and check in.",
+            "Meals: B/L/D (B = breakfast, L = lunch, D = dinner, X = not included)"
+          ]
+        },
+        {
+          "day": "Day 4",
+          "title": "Tokyo, free day",
+          "items": [
+            "Hotel breakfast.",
+            "Free and easy day (no service and no tour).",
+            "Optional tour: Disneyland, with ticket and round-trip transfer.",
+            "Meals: B/X/X (B = breakfast, L = lunch, D = dinner, X = not included)"
+          ]
+        },
+        {
+          "day": "Day 5",
+          "title": "Tokyo – Cebu",
+          "items": [
+            "Hotel breakfast.",
+            "Free time until departure.",
+            "Transfer to the airport; flight PR 433 Narita – Cebu, 14:45–19:25.",
+            "Meals: B/X/X (B = breakfast, L = lunch, D = dinner, X = not included)"
+          ]
+        }
+      ],
+      "inclusions": [
+        "4 nights’ hotel accommodation, twin sharing, with daily hotel breakfast",
+        "Sightseeing tours as specified, with all entrance fees needed",
+        "Private coach with English-speaking tour guide",
+        "Meals as listed",
+        "Round-trip airfare via Philippine Airlines with 7 kg hand carry and 23 kg checked baggage"
+      ],
+      "exclusions": [
+        "Personal expenses such as telephone calls, minibar, etc.",
+        "Tips for driver and guide: USD 20 per person (collected with the tour fee)",
+        "Philippine travel tax: PHP 1,620 per person",
+        "Single supplement",
+        "Travel insurance",
+        "Extra baggage allowance",
+        "Japan visa"
+      ],
+      "optional": [
+        "Day 4: Disneyland with ticket and round-trip transfer, USD 159 per person (minimum 10 persons)"
+      ],
+      "hotelsLabel": "Hotels",
+      "hotels": [
+        "Day 1–4: 4★ hotel or similar"
+      ],
+      "notes": [
+        "Private tour basis: private coach with English-speaking guide.",
+        "Tour order of attractions may be adjusted without notice in case of crowds or special circumstances.",
+        "Rooms are twin sharing by default; hotels may be replaced by similar ones if unavailable. Triple room not guaranteed: otherwise share with other guests or pay the single supplement.",
+        "Maximum 10 hours of touring per day, including travel time.",
+        "Single supplement USD 300 per person; infant fee about USD 200 per person.",
+        "Child without bed (2–5 years old) pays a lower rate and does not include hotel breakfast (can be paid on site).",
+        "Tips for guide and driver USD 5 per person per day x 4 days = USD 20 per person, collected with the tour fee.",
+        "Philippine travel tax PHP 1,620 per person is not included.",
+        "Baggage: 7 kg hand carry and 23 kg checked baggage included; extra baggage is not included.",
+        "Tour day ends no later than 21:00.",
+        "Meals: Day 1 X/X/D, Day 2 B/L/D, Day 3 B/L/D, Day 4 B/X/X, Day 5 B/X/X."
+      ],
+      "places": [
+        "Shibuya Crossing",
+        "Hachiko Statue",
+        "Oishi Park",
+        "Lake Kawaguchi",
+        "Yeti Ski Resort",
+        "Asakusa Temple",
+        "Nakamise Shopping Street",
+        "Tokyo Skytree",
+        "Shinjuku",
+        "Disneyland"
+      ],
+      "posters": [
+        "jp-poster-tokyo-5d4n-cebu-0.jpg"
+      ],
+      "posterSize": [
+        566,
+        800
+      ]
+    },
+    {
+      "id": "discover-osaka-kyoto-nara-5d4n-3-in-1-cebu",
+      "name": "Discover Osaka – Kyoto – Nara 5D4N Tour (Mar–Apr departures, from Cebu)",
+      "subtitle": "Out Cebu · Cebu Pacific",
+      "region": "intl",
+      "country": "Japan",
+      "flag": "jp",
+      "duration": "5 days 4 nights",
+      "days": 5,
+      "status": "available",
+      "featured": false,
+      "departure": "Cebu (Mactan-Cebu International)",
+      "price": {
+        "from": 899,
+        "label": "From",
+        "unit": "per pax",
+        "currency": "USD"
+      },
+      "year": 2026,
+      "ends": "2027-04-25",
+      "image": "jp-osaka-castle.jpg",
+      "alt": "Osaka Castle",
+      "gallery": [
+        "jp-osaka-castle.jpg"
+      ],
+      "summary": "Direct from Cebu to Osaka: Kyoto’s Kiyomizu Temple and Fushimi Inari, a matcha experience, Nara’s Todaiji and deer, Umeda Sky, a free day and Rinku Outlets.",
+      "overview": "A five-day Kansai tour starting with an early-morning arrival in Osaka and going straight into Kyoto sightseeing. Walk Ninenzaka and Sannenzaka, visit Kiyomizu Temple and Fushimi Inari Shrine, try a matcha experience, then see Nara’s deer and Todaiji Temple. A free day leaves room for an optional Universal Studios Japan trip. Fly Cebu – Osaka with Cebu Pacific; stay in 3–4-star hotels.",
+      "travelDates": [
+        {
+          "d": "Mar 4–8",
+          "y": 2027
+        },
+        {
+          "d": "Mar 27–31",
+          "y": 2027,
+          "add": 100,
+          "cur": "USD"
+        },
+        {
+          "d": "Apr 21–25",
+          "y": 2027
+        }
+      ],
+      "travelDatesNote": "Departures from Cebu, Mar 4–8 2027 to Apr 21–25 2027. The rate changes by date: an amount on a date is added to the base rate per pax. Seats are limited and confirmed at booking.",
+      "itinerary": [
+        {
+          "day": "Day 1",
+          "title": "Cebu – Osaka – Kyoto – Osaka",
+          "items": [
+            "Flight 5J5108 Cebu – Kansai (KIX), 02:40–08:15.",
+            "Meet the tour guide at Kansai International Airport.",
+            "Ninenzaka and Sannenzaka.",
+            "Kiyomizu Temple.",
+            "Matcha experience.",
+            "Fushimi Inari Shrine.",
+            "Transfer to hotel and check in; free time for shopping at Shinsaibashi, Dotonbori and Don Quijote on your own.",
+            "Meals: X/X/X (B = breakfast, L = lunch, D = dinner, X = not included)"
+          ]
+        },
+        {
+          "day": "Day 2",
+          "title": "Osaka – Nara – Osaka",
+          "items": [
+            "Hotel breakfast.",
+            "Transfer to Nara.",
+            "Deer Park.",
+            "Todaiji Temple (photo stop).",
+            "Transfer to Osaka.",
+            "Osaka Castle (photo stop).",
+            "Duty-free shop.",
+            "Transfer to hotel and check in.",
+            "Meals: B/L/X (B = breakfast, L = lunch, D = dinner, X = not included)"
+          ]
+        },
+        {
+          "day": "Day 3",
+          "title": "Osaka, free day",
+          "items": [
+            "Hotel breakfast.",
+            "Free and easy day (no tour guide and no transfer).",
+            "Optional tour: Universal Studios Japan, with one-day pass ticket and transfer.",
+            "Meals: B/X/X (B = breakfast, L = lunch, D = dinner, X = not included)"
+          ]
+        },
+        {
+          "day": "Day 4",
+          "title": "Osaka",
+          "items": [
+            "Hotel breakfast.",
+            "Umeda Sky Building (photo stop).",
+            "Namba Yasaka Shrine.",
+            "Lunch upgraded to Yakiniku BBQ.",
+            "Rinku Premium Outlets.",
+            "Transfer to hotel and check in.",
+            "Meals: B/L/X (B = breakfast, L = lunch, D = dinner, X = not included)"
+          ]
+        },
+        {
+          "day": "Day 5",
+          "title": "Osaka – Cebu",
+          "items": [
+            "Packed breakfast.",
+            "Transfer to the airport; flight 5J5109 Kansai (KIX) – Cebu, 09:15–12:55.",
+            "Meals: B/X/X (B = breakfast, L = lunch, D = dinner, X = not included)"
+          ]
+        }
+      ],
+      "inclusions": [
+        "4 nights’ hotel accommodation, twin sharing, with daily hotel breakfast",
+        "Sightseeing tours as specified, with all entrance fees needed",
+        "Private coach with English-speaking tour guide",
+        "Meals as listed",
+        "Round-trip airfare via Cebu Pacific with 7 kg hand carry"
+      ],
+      "exclusions": [
+        "Personal expenses such as telephone calls, minibar, etc.",
+        "Tips for driver and guide: USD 35 per person (collected with the tour fee)",
+        "Philippine travel tax: PHP 1,620 per person",
+        "Single supplement",
+        "Travel insurance",
+        "Checked baggage allowance",
+        "Japan visa"
+      ],
+      "optional": [
+        "Day 3: Universal Studios Japan with one-day pass ticket and transfer, USD 159 per person surcharge (minimum 10 persons to push through)"
+      ],
+      "hotelsLabel": "Hotels",
+      "hotels": [
+        "Day 1–3: 3★ hotel or similar",
+        "Day 4: 4★ hotel or similar"
+      ],
+      "notes": [
+        "Private tour basis: private coach with English-speaking guide.",
+        "Tour order of attractions may be adjusted without notice in case of crowds or special circumstances.",
+        "Rooms are twin sharing by default; hotels may be replaced by similar ones if unavailable. Triple room not guaranteed: otherwise share with other guests or pay the single supplement.",
+        "Maximum 10 hours of touring per day, including travel time.",
+        "Single supplement USD 250 per person; infant fee about USD 190 per person.",
+        "Child without bed (2–5 years old) pays a lower rate and does not include hotel breakfast (can be paid on site).",
+        "Tips for guide and driver USD 7 per person per day x 5 days = USD 35 per person, collected with the tour fee.",
+        "Philippine travel tax PHP 1,620 per person is not included.",
+        "Baggage: 7 kg hand carry only; checked baggage is not included.",
+        "Package rate is not available to incentive and student groups.",
+        "Cherry blossom timing depends on the weather.",
+        "This package includes a duty-free shop visit.",
+        "Meals: Day 1 X/X/X, Day 2 B/L/X, Day 3 B/X/X, Day 4 B/L/X, Day 5 B/X/X."
+      ],
+      "places": [
+        "Ninenzaka",
+        "Sannenzaka",
+        "Kiyomizu Temple",
+        "Fushimi Inari Shrine",
+        "Nara Deer Park",
+        "Todaiji Temple",
+        "Osaka Castle",
+        "Umeda Sky Building",
+        "Namba Yasaka Shrine",
+        "Rinku Premium Outlets",
+        "Universal Studios Japan"
+      ],
+      "posters": [
+        "jp-poster-discover-osaka-kyoto-nara-5d4n-3-in-1-cebu-0.jpg"
+      ],
+      "posterSize": [
+        520,
+        800
+      ]
+    },
+    {
+      "id": "osaka-nara-kyoto-5d4n-cebu",
+      "name": "Osaka – Nara – Kyoto 5D4N Tour",
+      "subtitle": "Out Cebu · Philippine Airlines",
+      "region": "intl",
+      "country": "Japan",
+      "flag": "jp",
+      "duration": "5 days 4 nights",
+      "days": 5,
+      "status": "available",
+      "featured": false,
+      "departure": "Cebu (Mactan-Cebu International)",
+      "price": {
+        "from": 1499,
+        "label": "From",
+        "unit": "per pax",
+        "currency": "USD"
+      },
+      "year": 2026,
+      "ends": "2026-11-29",
+      "image": "jp-kyoto.jpg",
+      "alt": "A traditional machiya house in Kyoto",
+      "gallery": [
+        "jp-kyoto.jpg"
+      ],
+      "summary": "Osaka, Nara and Kyoto in five days: Dotonbori, Nara Deer Park, Arashiyama Bamboo Grove, the Golden Pavilion and Osaka Castle, with a free day and optional Universal Studios.",
+      "overview": "A five-day Kansai tour flying Philippine Airlines from Cebu. Shop at Dotonbori and Shinsaibashi, meet the deer at Nara Park, see Arashiyama Bamboo Grove and the Golden Pavilion in Kyoto, then Osaka Castle, Umeda Sky Building and Rinku Outlet. A free day allows an optional Universal Studios Japan visit. Four-star hotels throughout.",
+      "travelDates": [
+        {
+          "d": "Nov 25–29"
+        }
+      ],
+      "travelDatesNote": "Departures from Cebu, Nov 25–29 2026 to Nov 25–29 2026. The rate changes by date: an amount on a date is added to the base rate per pax. Seats are limited and confirmed at booking.",
+      "itinerary": [
+        {
+          "day": "Day 1",
+          "title": "Cebu – Osaka",
+          "items": [
+            "Flight PR 410 Cebu – Kansai (KIX), 08:25–14:00.",
+            "Arrive Osaka and meet the English-speaking guide.",
+            "Visit Dotonbori and Shinsaibashi shopping area.",
+            "Transfer to hotel and check in.",
+            "Meals: X/X/D (B = breakfast, L = lunch, D = dinner, X = not included)"
+          ]
+        },
+        {
+          "day": "Day 2",
+          "title": "Osaka – Nara – Kyoto",
+          "items": [
+            "Hotel breakfast.",
+            "Transfer to Nara.",
+            "Nara Deer Park.",
+            "Transfer to Kyoto.",
+            "Arashiyama Bamboo Grove.",
+            "Golden Pavilion.",
+            "Transfer to hotel and check in.",
+            "Meals: B/L/D (B = breakfast, L = lunch, D = dinner, X = not included)"
+          ]
+        },
+        {
+          "day": "Day 3",
+          "title": "Kyoto – Osaka",
+          "items": [
+            "Hotel breakfast.",
+            "Osaka Castle (photo stop).",
+            "Umeda Sky Building (photo stop).",
+            "Shopping at Rinku outlet.",
+            "Transfer to hotel and check in.",
+            "Meals: B/L/D (B = breakfast, L = lunch, D = dinner, X = not included)"
+          ]
+        },
+        {
+          "day": "Day 4",
+          "title": "Osaka, free day",
+          "items": [
+            "Hotel breakfast.",
+            "Free and easy day (no service and no tour).",
+            "Optional tour: Universal Studios, with ticket and round-trip transfer.",
+            "Meals: B/X/X (B = breakfast, L = lunch, D = dinner, X = not included)"
+          ]
+        },
+        {
+          "day": "Day 5",
+          "title": "Osaka – Cebu",
+          "items": [
+            "Hotel breakfast.",
+            "Free time until departure.",
+            "Transfer to the airport; flight PR 409 Kansai (KIX) – Cebu, 15:00–18:45.",
+            "Meals: B/X/X (B = breakfast, L = lunch, D = dinner, X = not included)"
+          ]
+        }
+      ],
+      "inclusions": [
+        "4 nights’ hotel accommodation, twin sharing, with daily hotel breakfast",
+        "Sightseeing tours as specified, with all entrance fees needed",
+        "Private coach with English-speaking tour guide",
+        "Meals as listed",
+        "Round-trip airfare via Philippine Airlines with 7 kg hand carry and 23 kg checked baggage"
+      ],
+      "exclusions": [
+        "Personal expenses such as telephone calls, minibar, etc.",
+        "Tips for driver and guide: USD 25 per person (collected with the tour fee)",
+        "Philippine travel tax: USD 30 per person",
+        "Single supplement",
+        "Travel insurance",
+        "Extra baggage allowance",
+        "Japan visa"
+      ],
+      "optional": [
+        "Day 4: Universal Studios Japan with ticket and round-trip transfer, USD 159 per person"
+      ],
+      "hotelsLabel": "Hotels",
+      "hotels": [
+        "Day 1–4: 4★ hotel or similar"
+      ],
+      "notes": [
+        "Private tour basis: private coach with English-speaking guide.",
+        "Tour order of attractions may be adjusted without notice in case of crowds or special circumstances.",
+        "Rooms are twin sharing by default; hotels may be replaced by similar ones if unavailable. Triple room not guaranteed: otherwise share with other guests or pay the single supplement.",
+        "Maximum 10 hours of touring per day, including travel time.",
+        "Single supplement USD 300 per person; infant fee about USD 200 per person.",
+        "Child without bed (2–5 years old) pays a lower rate and does not include hotel breakfast (can be paid on site).",
+        "Tips for guide and driver USD 5 per person per day x 5 days = USD 25 per person, collected with the tour fee.",
+        "Philippine travel tax USD 30 per person is not included.",
+        "Baggage: 7 kg hand carry and 23 kg checked baggage included; extra baggage is not included.",
+        "Tour day ends no later than 21:00.",
+        "Meals: Day 1 X/X/D, Day 2 B/L/D, Day 3 B/L/D, Day 4 B/X/X, Day 5 B/X/X."
+      ],
+      "places": [
+        "Dotonbori",
+        "Shinsaibashi",
+        "Nara Deer Park",
+        "Arashiyama Bamboo Grove",
+        "Golden Pavilion",
+        "Osaka Castle",
+        "Umeda Sky Building",
+        "Rinku Outlet",
+        "Universal Studios Japan"
+      ],
+      "posters": [
+        "jp-poster-osaka-nara-kyoto-5d4n-cebu-0.jpg"
+      ],
+      "posterSize": [
+        566,
+        800
+      ]
+    },
+    {
+      "id": "osaka-5d4n-cebu",
+      "name": "Osaka – Takayama – Shirakawa-go – Kyoto – Nara 5D4N Tour",
+      "subtitle": "Out Cebu · Philippine Airlines",
+      "region": "intl",
+      "country": "Japan",
+      "flag": "jp",
+      "duration": "5 days 4 nights",
+      "days": 5,
+      "status": "available",
+      "featured": false,
+      "departure": "Cebu (Mactan-Cebu International)",
+      "price": {
+        "from": 1599,
+        "label": "From",
+        "unit": "per pax",
+        "currency": "USD"
+      },
+      "year": 2026,
+      "ends": "2027-06-06",
+      "image": "jp-osaka-castle.jpg",
+      "alt": "Osaka Castle",
+      "gallery": [
+        "jp-osaka-castle.jpg"
+      ],
+      "summary": "Based in the Osaka region with a day trip to Shirakawa-go and Takayama, then Osaka Castle, Umeda Sky, Arashiyama, the Golden Pavilion, Gion and Nara Deer Park.",
+      "overview": "A five-day Kansai tour that adds a full day to Shirakawa-go village and Takayama Old Town to the classic Osaka, Kyoto and Nara highlights. See Arashiyama Bamboo Grove, the Golden Pavilion, Gion and Nara Deer Park with Todaiji Temple, and shop at Kuromon Market, Shinsaibashi, Dotonbori and Rinku Premium Outlet. Fly Cebu – Osaka with Philippine Airlines; stay in 4-star hotels.",
+      "travelDates": [
+        {
+          "d": "Jan 20–24",
+          "y": 2027
+        },
+        {
+          "d": "Feb 24–28",
+          "y": 2027
+        },
+        {
+          "d": "Mar 11–15",
+          "y": 2027
+        },
+        {
+          "d": "Apr 7–11",
+          "y": 2027
+        },
+        {
+          "d": "May 12–16",
+          "y": 2027
+        },
+        {
+          "d": "Jun 2–6",
+          "y": 2027
+        }
+      ],
+      "travelDatesNote": "Departures from Cebu, Jan 20–24 2027 to Jun 2–6 2027. The rate changes by date: an amount on a date is added to the base rate per pax. Seats are limited and confirmed at booking.",
+      "itinerary": [
+        {
+          "day": "Day 1",
+          "title": "Cebu – Osaka",
+          "items": [
+            "Flight PR 410 Cebu – Kansai (KIX), 08:25–14:00.",
+            "Meet the English-speaking guide at Kansai International Airport.",
+            "Visit Kuromon Market, Shinsaibashi and Dotonbori shopping street.",
+            "Transfer to hotel and check in.",
+            "Meals: X/X/D (B = breakfast, L = lunch, D = dinner, X = not included)"
+          ]
+        },
+        {
+          "day": "Day 2",
+          "title": "Shirakawa-go and Takayama",
+          "items": [
+            "Hotel breakfast.",
+            "Transfer to Shirakawa-go.",
+            "Shirakawa-go Village.",
+            "Transfer to Takayama.",
+            "Takayama Old Town and Hida Folk Village; walk around Higashiyama and Takayama Jinya.",
+            "Transfer to hotel.",
+            "Meals: B/L/D (B = breakfast, L = lunch, D = dinner, X = not included)"
+          ]
+        },
+        {
+          "day": "Day 3",
+          "title": "Return to Osaka",
+          "items": [
+            "Hotel breakfast and check out.",
+            "Transfer back to Osaka.",
+            "Osaka Castle (photo stop).",
+            "Umeda Sky Building (photo stop) and Rinku Premium Outlet.",
+            "Transfer to hotel and check in.",
+            "Meals: B/L/D (B = breakfast, L = lunch, D = dinner, X = not included)"
+          ]
+        },
+        {
+          "day": "Day 4",
+          "title": "Osaka – Kyoto – Nara – Osaka",
+          "items": [
+            "Hotel breakfast.",
+            "Transfer to Kyoto.",
+            "Arashiyama Bamboo Grove.",
+            "Golden Pavilion and Gion District.",
+            "Transfer to Nara.",
+            "Nara Deer Park and Todaiji Temple.",
+            "Transfer to the hotel.",
+            "Meals: B/L/D (B = breakfast, L = lunch, D = dinner, X = not included)"
+          ]
+        },
+        {
+          "day": "Day 5",
+          "title": "Osaka – Cebu",
+          "items": [
+            "Hotel breakfast.",
+            "Free time until departure.",
+            "Transfer to the airport; flight PR 409 Kansai (KIX) – Cebu, 14:45–19:25.",
+            "Meals: B/X/X (B = breakfast, L = lunch, D = dinner, X = not included)"
+          ]
+        }
+      ],
+      "inclusions": [
+        "4 nights’ hotel accommodation, twin sharing, with daily hotel breakfast",
+        "Sightseeing tours as specified, with all entrance fees needed",
+        "Private coach with English-speaking tour guide",
+        "Meals as listed",
+        "Round-trip airfare via Philippine Airlines with 7 kg hand carry and 23 kg checked baggage"
+      ],
+      "exclusions": [
+        "Personal expenses such as telephone calls, minibar, etc.",
+        "Tips for driver and guide: USD 20 per person (collected with the tour fee)",
+        "Philippine travel tax: USD 30 per person",
+        "Single supplement",
+        "Travel insurance",
+        "Extra baggage allowance",
+        "Japan visa"
+      ],
+      "hotelsLabel": "Hotels",
+      "hotels": [
+        "Day 1–4: 4★ hotel or similar (the Day 2 hotel location is not stated in the source)"
+      ],
+      "notes": [
+        "Private tour basis: private coach with English-speaking guide.",
+        "Tour order of attractions may be adjusted without notice in case of crowds or special circumstances.",
+        "Rooms are twin sharing by default; hotels may be replaced by similar ones if unavailable. Triple room not guaranteed: otherwise share with other guests or pay the single supplement.",
+        "Maximum 10 hours of touring per day, including travel time.",
+        "Single supplement USD 300 per person; infant fee about USD 200 per person.",
+        "Child without bed (2–5 years old) pays a lower rate and does not include hotel breakfast (can be paid on site).",
+        "Tips for guide and driver USD 5 per person per day x 4 days = USD 20 per person, collected with the tour fee.",
+        "Philippine travel tax USD 30 per person is not included.",
+        "Baggage: 7 kg hand carry and two pieces of 23 kg checked baggage included; extra baggage is not included.",
+        "Tour day ends no later than 21:00.",
+        "Meals: Day 1 X/X/D, Day 2 B/L/D, Day 3 B/L/D, Day 4 B/L/D, Day 5 B/X/X."
+      ],
+      "places": [
+        "Kuromon Market",
+        "Shinsaibashi",
+        "Dotonbori",
+        "Shirakawa-go",
+        "Takayama Old Town",
+        "Hida Folk Village",
+        "Higashiyama",
+        "Takayama Jinya",
+        "Osaka Castle",
+        "Umeda Sky Building",
+        "Rinku Premium Outlet",
+        "Arashiyama Bamboo Grove",
+        "Golden Pavilion",
+        "Gion District",
+        "Nara Deer Park",
+        "Todaiji Temple"
+      ],
+      "posters": [
+        "jp-poster-osaka-5d4n-cebu-0.jpg"
+      ],
+      "posterSize": [
+        566,
+        800
+      ]
+    },
+    {
+      "id": "tokyo-5d4n-pal-cebu",
+      "name": "Tokyo – Mt. Fuji 5D4N Tour",
+      "subtitle": "Out Cebu · Philippine Airlines",
+      "region": "intl",
+      "country": "Japan",
+      "flag": "jp",
+      "duration": "5 days 4 nights",
+      "days": 5,
+      "status": "available",
+      "featured": false,
+      "departure": "Cebu (Mactan-Cebu International)",
+      "price": {
+        "from": 1499,
+        "label": "From",
+        "unit": "per pax",
+        "currency": "USD"
+      },
+      "year": 2026,
+      "ends": "2027-05-11",
+      "image": "jp-tokyo.jpg",
+      "alt": "Shibuya at night, Tokyo",
+      "gallery": [
+        "jp-tokyo.jpg"
+      ],
+      "summary": "Tokyo with a Mt. Fuji day: Lake Kawaguchi, a kimono experience, Gotemba Outlet, Asakusa and Skytree, plus a free day with optional Disneyland.",
+      "overview": "A Tokyo tour with a day around Mt. Fuji: Shibuya Crossing, Oishi Park and Lake Kawaguchi, a kimono experience and shopping at Gotemba Outlet. Visit Asakusa Temple and Tokyo Skytree, with free time in Shinjuku and a free day for an optional Disneyland trip. Fly Cebu – Narita and back with Philippine Airlines; stay in 4-star hotels.",
+      "travelDates": [
+        {
+          "d": "Mar 24–28",
+          "y": 2027
+        },
+        {
+          "d": "Apr 12–16",
+          "y": 2027
+        },
+        {
+          "d": "May 3–7",
+          "y": 2027
+        },
+        {
+          "d": "May 7–11",
+          "y": 2027
+        }
+      ],
+      "travelDatesNote": "Departures from Cebu, Mar 24–28 2027 to May 7–11 2027. The rate changes by date: an amount on a date is added to the base rate per pax. Seats are limited and confirmed at booking.",
+      "itinerary": [
+        {
+          "day": "Day 1",
+          "title": "Cebu – Tokyo",
+          "items": [
+            "Flight PR 434 Cebu – Narita, 08:05–13:35.",
+            "Meet the English-speaking guide at Narita International Airport.",
+            "Visit Shibuya Crossing and Hachiko Statue.",
+            "Free time in Shibuya for shopping.",
+            "Transfer to hotel and check in.",
+            "Meals: X/X/D (B = breakfast, L = lunch, D = dinner, X = not included)"
+          ]
+        },
+        {
+          "day": "Day 2",
+          "title": "Tokyo – Mt. Fuji area",
+          "items": [
+            "Hotel breakfast and check out.",
+            "Transfer to the Mt. Fuji area.",
+            "Oishi Park and Lake Kawaguchi.",
+            "Kimono experience.",
+            "Gotemba Outlet for shopping.",
+            "Transfer to hotel and check in.",
+            "Meals: B/L/D (B = breakfast, L = lunch, D = dinner, X = not included)"
+          ]
+        },
+        {
+          "day": "Day 3",
+          "title": "Tokyo",
+          "items": [
+            "Hotel breakfast and check out.",
+            "Asakusa Temple and Nakamise Shopping Street.",
+            "Tokyo Skytree (photo stop).",
+            "Free time for shopping in Shinjuku.",
+            "Transfer to hotel and check in.",
+            "Meals: B/L/D (B = breakfast, L = lunch, D = dinner, X = not included)"
+          ]
+        },
+        {
+          "day": "Day 4",
+          "title": "Tokyo, free day",
+          "items": [
+            "Hotel breakfast.",
+            "Free and easy day (no service and no tour).",
+            "Optional tour: Disneyland, with ticket and round-trip transfer.",
+            "Meals: B/X/X (B = breakfast, L = lunch, D = dinner, X = not included)"
+          ]
+        },
+        {
+          "day": "Day 5",
+          "title": "Tokyo – Cebu",
+          "items": [
+            "Hotel breakfast.",
+            "Free time until departure.",
+            "Transfer to the airport; flight PR 433 Narita – Cebu, 14:45–19:25.",
+            "Meals: B/X/X (B = breakfast, L = lunch, D = dinner, X = not included)"
+          ]
+        }
+      ],
+      "inclusions": [
+        "4 nights’ hotel accommodation, twin sharing, with daily hotel breakfast",
+        "Sightseeing tours as specified, with all entrance fees needed",
+        "Private coach with English-speaking tour guide",
+        "Meals as listed",
+        "Round-trip airfare via Philippine Airlines with 7 kg hand carry and 23 kg checked baggage"
+      ],
+      "exclusions": [
+        "Personal expenses such as telephone calls, minibar, etc.",
+        "Tips for driver and guide: USD 20 per person (collected with the tour fee)",
+        "Philippine travel tax: USD 30 per person",
+        "Single supplement",
+        "Travel insurance",
+        "Extra baggage allowance",
+        "Japan visa"
+      ],
+      "optional": [
+        "Day 4: Disneyland with ticket and round-trip transfer, USD 159 per person (minimum 10 persons)"
+      ],
+      "hotelsLabel": "Hotels",
+      "hotels": [
+        "Day 1–4: 4★ hotel or similar"
+      ],
+      "notes": [
+        "Private tour basis: private coach with English-speaking guide.",
+        "Tour order of attractions may be adjusted without notice in case of crowds or special circumstances.",
+        "Rooms are twin sharing by default; hotels may be replaced by similar ones if unavailable. Triple room not guaranteed: otherwise share with other guests or pay the single supplement.",
+        "Maximum 10 hours of touring per day, including travel time.",
+        "Single supplement USD 300 per person; infant fee about USD 200 per person.",
+        "Child without bed (2–5 years old) pays a lower rate and does not include hotel breakfast (can be paid on site).",
+        "Tips for guide and driver USD 5 per person per day x 4 days = USD 20 per person, collected with the tour fee.",
+        "Philippine travel tax USD 30 per person is not included.",
+        "Baggage: 7 kg hand carry and 23 kg checked baggage included; extra baggage is not included.",
+        "Tour day ends no later than 21:00.",
+        "Meals: Day 1 X/X/D, Day 2 B/L/D, Day 3 B/L/D, Day 4 B/X/X, Day 5 B/X/X."
+      ],
+      "places": [
+        "Shibuya Crossing",
+        "Hachiko Statue",
+        "Oishi Park",
+        "Lake Kawaguchi",
+        "Gotemba Outlet",
+        "Asakusa Temple",
+        "Nakamise Shopping Street",
+        "Tokyo Skytree",
+        "Shinjuku",
+        "Disneyland"
+      ],
+      "posters": [
+        "jp-poster-tokyo-5d4n-pal-cebu-0.jpg"
+      ],
+      "posterSize": [
+        566,
+        800
+      ]
+    },
+    {
+      "id": "tokyo-hakone-cebu",
+      "name": "Tokyo – Mt. Fuji – Hakone – Matsumoto – Shirakawa-go – Osaka 8D7N Tour",
+      "subtitle": "Out Cebu · Philippine Airlines",
+      "region": "intl",
+      "country": "Japan",
+      "flag": "jp",
+      "duration": "8 days 7 nights",
+      "days": 8,
+      "status": "available",
+      "featured": true,
+      "departure": "Cebu (Mactan-Cebu International)",
+      "price": {
+        "from": 2488,
+        "label": "From",
+        "unit": "per pax",
+        "currency": "USD"
+      },
+      "year": 2026,
+      "ends": "2026-12-03",
+      "image": "jp-hakone.jpg",
+      "alt": "Mt. Fuji above Lake Ashi, Hakone",
+      "gallery": [
+        "jp-hakone.jpg"
+      ],
+      "summary": "Eight days across Japan from Tokyo to Osaka: Lake Ashi cruise, Mt. Fuji area, Matsumoto Castle, Takayama, Shirakawa-go, Kyoto and Nara.",
+      "overview": "A one-way journey across central Japan, flying Philippine Airlines into Tokyo and home from Osaka. See Tokyo, take a Lake Ashi cruise in Hakone, visit Lake Kawaguchi and the Kubota Itchiku Art Museum, Matsumoto Castle, Takayama Old Town, Shirakawa-go village, Kyoto’s Arashiyama and Golden Pavilion, Nara Deer Park and Osaka Castle. Seven nights in 3-star hotels with an English-speaking guide.",
+      "travelDates": [
+        {
+          "d": "Nov 26–Dec 3"
+        }
+      ],
+      "travelDatesNote": "Departures from Cebu, Nov 26–Dec 3 2026 to Nov 26–Dec 3 2026. The rate changes by date: an amount on a date is added to the base rate per pax. Seats are limited and confirmed at booking.",
+      "itinerary": [
+        {
+          "day": "Day 1",
+          "title": "Cebu – Tokyo",
+          "items": [
+            "Flight PR 410 Cebu – Narita, 08:15–14:10.",
+            "Meet the English-speaking guide at Narita International Airport.",
+            "Visit Shibuya Crossing and Hachiko Statue.",
+            "Transfer to hotel and check in.",
+            "Meals: X/X/D (B = breakfast, L = lunch, D = dinner, X = not included)"
+          ]
+        },
+        {
+          "day": "Day 2",
+          "title": "Tokyo",
+          "items": [
+            "Hotel breakfast.",
+            "Asakusa Temple and Nakamise Street.",
+            "Tokyo Skytree (photo stop).",
+            "Odaiba Rainbow Bridge.",
+            "Free time for shopping in Shinjuku.",
+            "Transfer back to hotel.",
+            "Meals: B/L/D (B = breakfast, L = lunch, D = dinner, X = not included)"
+          ]
+        },
+        {
+          "day": "Day 3",
+          "title": "Tokyo – Hakone – Mt. Fuji",
+          "items": [
+            "Hotel breakfast and check out.",
+            "Transfer to Hakone (1.5 hrs).",
+            "Lake Ashi cruise (ticket included).",
+            "Transfer to the Mt. Fuji area (1.5 hrs).",
+            "Lake Kawaguchi.",
+            "Kubota Itchiku Art Museum.",
+            "Transfer to hotel and check in.",
+            "Meals: B/L/D (B = breakfast, L = lunch, D = dinner, X = not included)"
+          ]
+        },
+        {
+          "day": "Day 4",
+          "title": "Mt. Fuji area – Matsumoto – Takayama",
+          "items": [
+            "Hotel breakfast and check out.",
+            "Transfer to Matsumoto (3 hrs).",
+            "Matsumoto Castle.",
+            "Lunch in Matsumoto (Nagano specialty meal).",
+            "Transfer to Takayama (2.5 hrs).",
+            "Transfer to hotel and check in.",
+            "Meals: B/L/D (B = breakfast, L = lunch, D = dinner, X = not included)"
+          ]
+        },
+        {
+          "day": "Day 5",
+          "title": "Takayama – Shirakawa-go – Nagoya",
+          "items": [
+            "Hotel breakfast and check out.",
+            "Takayama Old Town.",
+            "Hida Folk Village.",
+            "Walk around Higashiyama and Takayama Jinya.",
+            "Transfer to Shirakawa-go (1 hr).",
+            "Shirakawa-go Village.",
+            "Transfer to Nagoya (2 hrs) and check in to the hotel.",
+            "Meals: B/L/D (B = breakfast, L = lunch, D = dinner, X = not included)"
+          ]
+        },
+        {
+          "day": "Day 6",
+          "title": "Nagoya – Kyoto – Nara",
+          "items": [
+            "Hotel breakfast and check out.",
+            "Transfer to Kyoto (2 hrs).",
+            "Arashiyama Bamboo Grove.",
+            "Golden Pavilion.",
+            "Gion District.",
+            "Transfer to Nara (1 hr).",
+            "Nara Deer Park.",
+            "Transfer to hotel and check in.",
+            "Meals: B/L/D (B = breakfast, L = lunch, D = dinner, X = not included)"
+          ]
+        },
+        {
+          "day": "Day 7",
+          "title": "Osaka",
+          "items": [
+            "Hotel breakfast.",
+            "Osaka Castle (photo stop).",
+            "Shinsaibashi and Dotonbori shopping.",
+            "Transfer back to hotel.",
+            "Meals: B/L/D (B = breakfast, L = lunch, D = dinner, X = not included)"
+          ]
+        },
+        {
+          "day": "Day 8",
+          "title": "Osaka – Cebu",
+          "items": [
+            "Hotel breakfast and check out.",
+            "Drop off at Kansai International Airport.",
+            "Flight PR 409 Kansai (KIX) – Cebu, 15:00–18:45.",
+            "Meals: B/X/X (B = breakfast, L = lunch, D = dinner, X = not included)"
+          ]
+        }
+      ],
+      "inclusions": [
+        "7 nights’ hotel accommodation, twin sharing, with daily hotel breakfast",
+        "Sightseeing tours as specified, with all entrance fees needed",
+        "Private coach with English-speaking tour guide",
+        "Meals as listed",
+        "Lake Ashi cruise ticket",
+        "Round-trip airfare via Philippine Airlines with 7 kg hand carry and 23 kg checked baggage"
+      ],
+      "exclusions": [
+        "Personal expenses such as telephone calls, minibar, etc.",
+        "Tips for driver and guide: USD 40 per person (collected with the tour fee)",
+        "Philippine travel tax: PHP 1,620 per person",
+        "Single supplement",
+        "Travel insurance",
+        "Extra baggage allowance",
+        "Japan visa"
+      ],
+      "hotelsLabel": "Hotels",
+      "hotels": [
+        "Day 1–7: 3★ hotels or similar (Tokyo, Mt. Fuji area, Takayama, Nagoya, Kyoto/Nara area, Osaka)"
+      ],
+      "notes": [
+        "Private tour basis: private coach with English-speaking guide.",
+        "Tour order of attractions may be adjusted without notice in case of crowds or special circumstances.",
+        "Rooms are twin sharing by default; hotels may be replaced by similar ones if unavailable. Triple room not guaranteed: otherwise share with other guests or pay the single supplement.",
+        "Maximum 10 hours of touring per day, including travel time.",
+        "Single supplement USD 650 per person; infant fee about USD 300 per person.",
+        "Child without bed (2–5 years old) pays a lower rate and does not include hotel breakfast (can be paid on site).",
+        "Tips for guide and driver USD 5 per person per day x 8 days = USD 40 per person, collected with the tour fee.",
+        "Philippine travel tax PHP 1,620 per person is not included.",
+        "Baggage: 7 kg hand carry and 23 kg checked baggage included; extra baggage is not included.",
+        "Tour day ends no later than 21:00.",
+        "Only one departure listed: Nov 26 – Dec 3.",
+        "Meals: Day 1 X/X/D, Days 2–7 B/L/D, Day 8 B/X/X."
+      ],
+      "places": [
+        "Shibuya Crossing",
+        "Hachiko Statue",
+        "Asakusa Temple",
+        "Tokyo Skytree",
+        "Odaiba Rainbow Bridge",
+        "Lake Ashi",
+        "Lake Kawaguchi",
+        "Kubota Itchiku Art Museum",
+        "Matsumoto Castle",
+        "Takayama Old Town",
+        "Hida Folk Village",
+        "Shirakawa-go",
+        "Arashiyama Bamboo Grove",
+        "Golden Pavilion",
+        "Gion District",
+        "Nara Deer Park",
+        "Osaka Castle",
+        "Shinsaibashi",
+        "Dotonbori"
+      ],
+      "posters": [
+        "jp-poster-tokyo-hakone-cebu-0.jpg"
+      ],
+      "posterSize": [
+        566,
+        800
+      ]
     }
   ];
 
@@ -7240,8 +27488,10 @@ window.IC = window.IC || {};
     ['Da Nang', fromRate(byName(/Da Nang/)) + ' · out Manila'], ['Ba Na Hills overnight', fromRate(byName(/Ba Na Hills/)) + ' · out Manila'],
     ['Hanoi · Sapa · Ha Long Bay', fromRate(byName(/Ha Long/)) + ' · out Manila'], ['Hanoi · Sapa', fromRate(byName(/^Hanoi – Sapa 4D3N/)) + ' · out Manila'],
     ['Hoi An Ancient Town', 'In every Da Nang tour'], ['Fansipan cable car', 'Sapa tours'], ['Ha Long Bay cruise', 'From Hanoi'],
-    ['Shanghai', fromRate(byName(/Shanghai/)) + ' · out Cebu'], ['Beijing & the Great Wall', fromRate(byName(/Beijing/)) + ' · out Cebu'],
-    ['Zhangjiajie (Avatar)', fromRate(byName(/Zhangjiajie|Avatar/)) + ' · out Cebu'], ['Yunnan', fromRate(byName(/Yunnan/)) + ' · out Cebu'],
+    ['Shanghai', fromRate(byName(/Shanghai/)) + ' · China'], ['Beijing & the Great Wall', fromRate(byName(/Beijing/)) + ' · China'],
+    ['Zhangjiajie (Avatar)', fromRate(byName(/Zhangjiajie|Avatar/)) + ' · China'], ['Yunnan', fromRate(byName(/Yunnan/)) + ' · China'],
+    ['Tokyo & Mt. Fuji', fromRate(byName(/Tokyo|Fuji/)) + ' · Japan'], ['Osaka · Kyoto · Nara', fromRate(byName(/Osaka|Kyoto/)) + ' · Japan'], ['Hokkaido', fromRate(byName(/Hokkaido/)) + ' · Japan'],
+    ['Chengdu & Jiuzhaigou', fromRate(byName(/Chengdu|Jiuzhaigou/)) + ' · China'], ['Xi’an', fromRate(byName(/Xi.an|Terracotta/)) + ' · China'], ['Tibet', fromRate(byName(/Tibet|Lhasa/)) + ' · China'],
     ['Cebu, Bohol & Camotes', 'Custom trips on request']
   ];
 })(window.IC);

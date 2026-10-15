@@ -604,7 +604,8 @@
   // Ticketing: the flights already inside our packages, as a departures board
   // arrival airport by package: Da Nang or Hanoi for Vietnam; Shanghai, Beijing, Kunming, Harbin, Chongqing or Changsha for China
   const LEG = new Proxy({}, { get: (_, id) => (/danang/.test(id) ? 'DAD' : /hanoi|sapa|halong/.test(id) ? 'HAN' : /beijing/.test(id) ? 'PEK' : /yunnan/.test(id) ? 'KMG'
-    : /harbin/.test(id) ? 'HRB' : /chongqing/.test(id) ? 'CKG' : /furong/.test(id) ? 'CSX' : /shanghai|kyoto|cruise/.test(id) ? 'PVG' : undefined) });
+    : /harbin/.test(id) ? 'HRB' : /chongqing/.test(id) ? 'CKG' : /furong/.test(id) ? 'CSX' : /tokyo|kamakura|fuji|hakone/.test(id) ? 'NRT' : /osaka|kyoto-nara|nara|nagoya/.test(id) ? 'KIX' : /hokkaido/.test(id) ? 'CTS' : /shanghai|kyoto|cruise/.test(id) ? 'PVG'
+    : /chengdu|jiuzhaigou|leshan/.test(id) ? 'TFU' : /xi-an|shaanxi/.test(id) ? 'XIY' : /xinjiang/.test(id) ? 'URC' : /tibet/.test(id) ? 'LXA' : /xiamen|tulou|jinmen/.test(id) ? 'XMN' : /guilin/.test(id) ? 'KWL' : /qingdao/.test(id) ? 'TAO' : /hainan/.test(id) ? 'HAK' : /wuhan/.test(id) ? 'WUH' : /canton|guangzhou/.test(id) ? 'CAN' : undefined) });
   function initBoard() {
     const board = $('[data-board]');
     if (!board || !IC.tours) return;
