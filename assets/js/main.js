@@ -942,7 +942,11 @@
     const hasPosters = t.posters && t.posters.length;
     const guide = IC.countryGuide && IC.countryGuide[t.country];
     const hasGuide = !!(guide && guide.length);
-    const gallery = t.gallery && t.gallery.length ? t.gallery : [t.image];
+    // packages with itinerary posters open on the posters, shown whole; the others on their photos
+    const posterGal = !!(t.posters && t.posters.length);
+    const gallery = posterGal ? t.posters : t.gallery && t.gallery.length ? t.gallery : [t.image];
+    const galSrc = g => (posterGal ? wix(g) : wix(g, 960, 640, t.imageAlign));
+    const rootUrl = u => '/' + u;   // CSS url() in a custom property resolves against the stylesheet, so start from the site root
 
     // Dates can run into the next year, so the heading takes its year(s) from the dates themselves.
     const years = hasDates ? [...new Set(t.travelDates.map(d => Number(d.y || t.year)).filter(Boolean))].sort() : [];
@@ -994,7 +998,7 @@
         <div class="container pkg-layout">
           <div class="pkg-main">
             <div class="pkg-gallery reveal" id="pkgGallery">
-              <figure class="pkg-gallery-main" data-lb="${esc(gallery[0])}" data-title="${esc(t.name)}"><img src="${wix(gallery[0], 960, 640, t.imageAlign)}" alt="${esc(t.alt)}" width="960" height="640"><figcaption>Tap to enlarge</figcaption></figure>
+              <figure class="pkg-gallery-main${posterGal ? ' is-poster' : ''}" data-lb="${esc(gallery[0])}" data-title="${esc(t.name)}"${posterGal ? ` style="--poster:url('${rootUrl(wix(gallery[0], 800))}')"` : ''}><img src="${galSrc(gallery[0])}" alt="${esc(posterGal ? t.name + ' itinerary poster' : t.alt)}" width="${posterGal ? (t.posterSize || [566, 800])[0] : 960}" height="${posterGal ? 800 : 640}"><figcaption>Tap to enlarge</figcaption></figure>
               ${gallery.length > 1 ? `<div class="pkg-thumbs">${gallery.map((g, i) => `<button type="button" class="${i === 0 ? 'active' : ''}" data-thumb="${esc(g)}" aria-label="Photo ${i + 1}"><img src="${wix(g, 240, 180, t.imageAlign)}" alt="" width="96" height="72" loading="lazy"></button>`).join('')}</div>` : ''}
             </div>
 
@@ -1101,7 +1105,7 @@
     $$('[data-thumb]', root).forEach(b => b.addEventListener('click', () => {
       $$('[data-thumb]', root).forEach(x => x.classList.remove('active')); b.classList.add('active');
       mainImg.style.opacity = '0';
-      setTimeout(() => { mainImg.src = wix(b.dataset.thumb, 960, 640, t.imageAlign); mainFig.dataset.lb = b.dataset.thumb; mainImg.onload = () => (mainImg.style.opacity = '1'); }, 180);
+      setTimeout(() => { mainImg.src = galSrc(b.dataset.thumb); mainFig.dataset.lb = b.dataset.thumb; if (posterGal) mainFig.style.setProperty('--poster', `url('${rootUrl(wix(b.dataset.thumb, 800))}')`); mainImg.onload = () => (mainImg.style.opacity = '1'); }, 180);
     }));
 
     // Tabs: active section + sliding ink
