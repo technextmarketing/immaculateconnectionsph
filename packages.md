@@ -59,7 +59,7 @@ Updated 2026-10-16. Prices are per person unless stated. Only travel dates still
 - Price: From ₱23,888 per pax
 - Travel dates: Dec 5–9 2026, Dec 7–11 2026 (+₱3,000 per pax), Dec 12–16 2026 (+₱3,000 per pax), Dec 14–18 2026 (+₱3,000 per pax), Dec 21–25 2026 (+₱8,000 per pax), Dec 28–Jan 1 2026 (+₱8,000 per pax), Jan 2–6 2027 (+₱4,000 per pax), Jan 4–8 2027 (+₱1,000 per pax), Jan 9–13 2027 (+₱1,000 per pax), Jan 11–15 2027 (+₱1,000 per pax), Jan 16–20 2027 (+₱1,000 per pax), Jan 18–22 2027 (+₱1,000 per pax), Jan 23–27 2027 (+₱1,000 per pax), Jan 25–29 2027 (+₱1,000 per pax), Jan 30–Feb 3 2027 (+₱1,000 per pax), Feb 1–5 2027 (+₱1,000 per pax), Feb 6–10 2027 (+₱3,000 per pax), Feb 8–12 2027 (+₱1,000 per pax), Feb 13–17 2027 (+₱1,000 per pax), Feb 15–19 2027 (+₱1,000 per pax), Feb 22–26 2027 (+₱3,000 per pax), Feb 27–Mar 3 2027 (+₱1,000 per pax), Mar 1–5 2027 (+₱1,000 per pax), Mar 6–10 2027 (+₱1,000 per pax), Mar 8–12 2027 (+₱3,000 per pax), Mar 13–17 2027 (+₱1,000 per pax), Mar 15–19 2027 (+₱1,000 per pax), Mar 20–24 2027 (+₱1,000 per pax), Mar 22–26 2027 (+₱6,000 per pax), Mar 27–31 2027 (+₱9,000 per pax), Mar 29–Apr 2 2027 (+₱1,000 per pax), Apr 3–7 2027 (+₱1,000 per pax), Apr 5–9 2027 (+₱1,000 per pax), Apr 10–14 2027 (+₱4,000 per pax), Apr 12–16 2027 (+₱1,000 per pax), Apr 19–23 2027 (+₱1,000 per pax), Apr 26–30 2027 (+₱1,000 per pax), May 1–5 2027 (+₱9,000 per pax), May 3–7 2027 (+₱1,000 per pax), May 8–12 2027 (+₱1,000 per pax) …
 - Includes: Charter flight Manila – Da Nang – Manila with VietJet Air; Baggage allowance: 20 kg per person per way, plus 7 kg carry-on; 4 nights’ accommodation, twin sharing, at the hotel of choice with daily hotel breakfast; 7 meals included; Sightseeing tours as specified in the itinerary; Private bus with English-speaking tour guide service
-- Excludes: Visa (if needed); Extra baggage allowance; Single supplement: USD 80 per person; Philippine tax: PHP 1,620 per person; Terminal fees: USD 42 per person (Da Nang and Manila); Tips for driver and guide: USD 5 per person per day x 5 days = USD 25 per person; Personal expenses such as telephone calls and minibar; Fuel surcharge: USD 40 per person (rate subject to change)
+- Excludes: Visa (if needed); Extra baggage allowance; Single supplement: USD 80 per person; Philippine tax: PHP 1,620 per person; Terminal fees: USD 42 per person (Da Nang and Manila); Tips for driver and guide: USD 5 per person per day x 5 days = USD 25 per person; Personal expenses such as telephone calls and minibar; Fuel surcharge: USD 36 per person for 2026 departures, USD 40 per person for 2027 departures (rate subject to change)
 - Summary: Charter flight from Manila to Da Nang with Canaan Island, Hoi An, Ba Na Hills and the Golden Bridge, plus 4 nights at a 4★ hotel and a private bus with an English-speaking guide.
 
 ## Da Nang Charter Flight 5D3N Tour (Nagila Hotel)
@@ -383,7 +383,7 @@ Updated 2026-10-16. Prices are per person unless stated. Only travel dates still
 - Price: From US$1,288 per pax
 - Travel dates: Jan 22–27 2027, Feb 19–24 2027, Mar 12–17 2027
 - Includes: 5 nights’ accommodation, twin sharing, with daily hotel breakfast; Sightseeing tours as specified, including all entrance fees; Private coach with English-speaking tour guide; Meals as listed; Round-trip airfare via Cathay Pacific Airlines (7 kg hand carry and 23 kg checked baggage)
-- Excludes: Personal expenses such as telephone calls, mini bar, etc.; Tips for driver and guide: USD30/pax (USD5 per pax per day for 6 days, collected with the tour fee); Philippine travel tax: USD25/pax; Single supplement: USD300/pax; Travel insurance; Extra baggage allowance; China visa
+- Excludes: Personal expenses such as telephone calls, mini bar, etc.; Tips for driver and guide: USD 25 per person (collected with the tour fee); Philippine travel tax: PHP 1,620 per person; Single supplement: rate on request; Travel insurance; Extra baggage allowance; China visa
 - Summary: Six days from Cebu via Hong Kong to Changsha and Zhangjiajie: Avatar scenic area, Tianmen Mountain, Furong Town and a Hong Kong overnight.
 
 ## Zhangjiajie (Avatar) Skiing – Chongqing 8D7N Tour
@@ -419,7 +419,7 @@ Updated 2026-10-16. Prices are per person unless stated. Only travel dates still
 - Price: From US$1,888 per pax
 - Travel dates: Jan 8–14 2027
 - Includes: 6 nights’ accommodation, twin sharing, with daily hotel breakfast; Sightseeing tours as specified, including all entrance fees; Private coach with English-speaking tour guide; Meals as listed; Round-trip airfare via China Eastern Airlines (7 kg hand carry and 23 kg checked baggage)
-- Excludes: Personal expenses such as telephone calls, mini bar, etc.; Tips for driver and guide: USD35/pax (USD5 per pax per day for 7 days, collected with the tour fee); Philippine travel tax: USD30/pax; Single supplement: USD300/pax; Travel insurance; Extra baggage allowance; China visa; Fuel surcharge: USD50/pax (subject to change)
+- Excludes: Personal expenses such as telephone calls, mini bar, etc.; Tips for driver and guide: USD35/pax (USD5 per pax per day for 7 days, collected with the tour fee); Philippine travel tax: PHP 1,620 per person; Single supplement: USD300/pax; Travel insurance; Extra baggage allowance; China visa; Taxes and fees: to be advised, subject to change
 - Summary: Seven days in Harbin from Cebu: Ice and Snow World, Siberian Tiger Park, Volga Manor, Polar Aquarium and the city’s Russian-style landmarks.
 
 ## Shanghai – Adora Magic City Cruise 5D4N Fly + Cruise Tour
@@ -486,7 +486,7 @@ Updated 2026-10-16. Prices are per person unless stated. Only travel dates still
 
 - Page: https://www.immaculateconnectionsph.com/package-avatar-skiing-6d5n
 - Destination: China (International)
-- Duration: 6 days 4 nights
+- Duration: 6 days 5 nights
 - Departs: Manila (NAIA)
 - Price: From US$569 per pax
 - Travel dates: Jan 16–21 2027, Jan 23–28 2027, Jan 30–Feb 4 2027, Feb 13–18 2027, Feb 20–25 2027, Feb 27–Mar 4 2027
@@ -863,7 +863,7 @@ Updated 2026-10-16. Prices are per person unless stated. Only travel dates still
 - Price: From US$369 per pax
 - Travel dates: Dec 6–10 2026, Dec 8–12 2026, Dec 11–15 2026, Jan 5–9 2027 (+US$19 per pax), Jan 12–16 2027 (+US$19 per pax), Jan 19–23 2027 (+US$19 per pax), Jan 22–26 2027 (+US$19 per pax), Jan 26–30 2027 (+US$19 per pax), Feb 16–20 2027 (+US$19 per pax), Feb 21–25 2027 (+US$19 per pax), Feb 23–27 2027 (+US$19 per pax), Feb 26–Mar 2 2027 (+US$19 per pax)
 - Includes: Round-trip airfare via Air China with 23 kg checked baggage; 4 nights accommodation, twin sharing, with daily hotel breakfast; Private coach with an English-speaking tour guide; Sightseeing as listed, including first-way entrance fees; Meals as listed
-- Excludes: Personal expenses such as telephone calls and minibar; Extra baggage; Fuel surcharge USD 30 per person (subject to change); Philippine travel tax USD 30 per person; Group visa USD 40 per person; Tips for driver and guide USD 50 per person (USD 10 per day x 5 days); Single supplement from USD 149 per person; Optional tours (USD 150 per person for the package)
+- Excludes: Personal expenses such as telephone calls and minibar; Extra baggage; Fuel surcharge USD 30 per person (subject to change); Philippine travel tax USD 30 per person; Group visa USD 40 per person; Tips for driver and guide USD 50 per person (USD 10 per day x 5 days); Single supplement: USD 149 per person for 2026 departures, USD 139 per person for 2027 departures; Optional tours (USD 150 per person for the package)
 - Summary: Fly Air China into and out of Chengdu, with two nights in Chongqing and two in Dujiangyan, a panda park, and 4-star hotels.
 
 ## Chongqing – Chengdu 5D4N Tour (in and out of Chongqing, Xiamen Airlines)
@@ -1031,7 +1031,7 @@ Updated 2026-10-16. Prices are per person unless stated. Only travel dates still
 - Price: From US$1,358 per pax
 - Travel dates: Dec 22–26 2026 (+US$100 per pax), Jan 14–18 2027, Jan 22–26 2027, Jan 23–27 2027, Jan 28–Feb 1 2027, Feb 11–15 2027
 - Includes: Economy airfare and taxes via Air China or China Eastern Airlines (round trip, depending on departure); Baggage allowance: 1 pc / 23 kg check-in plus 7 kg carry-on; 4 nights’ accommodation, twin sharing, with daily hotel breakfast (double/triple rooms and extra beds not guaranteed); Private coach with English-speaking tour guide; Sightseeing entrance fees as specified above (first way); Meals as listed, with a free upgrade of 1 meal to Ice Palace hot pot and 1 meal to BBQ
-- Excludes: Personal expenses such as telephone calls and minibar; Extra baggage; Travel insurance; Fuel surcharge USD 50–75/pax depending on airline, subject to change; Philippine travel tax USD 28/pax (or PHP 1,620/pax); China group visa USD 40/pax (guaranteed); Tips for driver and guide USD 5/pax/day x 5 days = USD 25/pax; Single supplement USD 230/pax
+- Excludes: Personal expenses such as telephone calls and minibar; Extra baggage; Travel insurance; Fuel surcharge USD 75/pax (subject to change); Philippine travel tax USD 28/pax (or PHP 1,620/pax); China group visa USD 40/pax (guaranteed); Tips for driver and guide USD 5/pax/day x 5 days = USD 25/pax; Single supplement USD 230/pax
 - Summary: Five winter days in Harbin with Ice-Snow World, the Siberian Tiger Park and Russian-style old town sights, staying in a 5★ hotel.
 
 ## Harbin – Yabuli – Mudanjiang 6D5N Winter Tour (No Shopping)
@@ -1235,7 +1235,7 @@ Updated 2026-10-16. Prices are per person unless stated. Only travel dates still
 - Price: From US$888 per pax
 - Travel dates: Nov 6–12 2026, Nov 13–19 2026, Dec 17–23 2026 (+US$200 per pax), Mar 24–30 2027 (+US$500 per pax), Apr 18–24 2027 (+US$400 per pax), May 7–13 2027 (+US$200 per pax), May 16–22 2027, May 28–Jun 3 2027, Jun 4–10 2027 (+US$200 per pax), Jun 11–17 2027, Jun 25–Jul 1 2027
 - Includes: Round-trip economy airfare and taxes via China Southern Airlines; Baggage: 1 piece of 23 kg checked plus 7 kg hand carry; 6 nights twin-sharing accommodation at 4-star hotels with daily breakfast; Private bus with English-speaking tour guide; Sightseeing as specified, including the first-way entrance fees; Meals: breakfast plus 11 meals (Chinese mixed dishes, Pingyao snacks, Shanxi noodles, farm-style meals, Yunqiu health-preserving meals, Yulin-style meals), meal allowance USD 8 per meal per person; Two complimentary bottles of water per person per day
-- Excludes: Personal expenses such as phone calls and minibar; Travel insurance; Philippine travel tax: USD 30 per person (collected with the tour fee); China Group Visa: USD 40 per person (collected with the tour fee); Tips for driver and guide: USD 35 per person, USD 5 per day for 7 days (collected with the tour fee); Fuel surcharge: USD 30 per person (collected with the tour fee, subject to change); Single supplement: USD 150 per person
+- Excludes: Personal expenses such as phone calls and minibar; Travel insurance; Philippine travel tax: USD 30 per person (collected with the tour fee); China Group Visa: USD 40 per person (collected with the tour fee); Tips for driver and guide: USD 35 per person, USD 5 per day for 7 days (collected with the tour fee); Fuel surcharge: USD 40 per person for Nov 2026 departures, USD 30 per person for 2027 departures (collected with the tour fee, subject to change); Single supplement: USD 150 per person
 - Summary: Jingbian Wave Valley, Hukou Waterfall on the Yellow River, Yunqiu Mountain and Pingyao Ancient City over seven days in 4-star hotels, with no shopping stops.
 
 ## Shanghai – Suzhou – Mini Kyoto 6D4N Tour
@@ -1702,8 +1702,8 @@ Updated 2026-10-16. Prices are per person unless stated. Only travel dates still
 - Departs: Cebu (Mactan-Cebu International)
 - Price: From US$1,599 per pax
 - Travel dates: Jan 18–22 2027, Feb 8–12 2027
-- Includes: 4 nights’ hotel accommodation, twin sharing, with daily hotel breakfast; Sightseeing tours as specified, with all entrance fees needed; Private coach with English-speaking tour guide; Meals as listed; Round-trip airfare via Philippine Airlines with 7 kg hand carry and 23 kg checked baggage
-- Excludes: Personal expenses such as telephone calls, minibar, etc.; Tips for driver and guide: USD 20 per person (collected with the tour fee); Philippine travel tax: PHP 1,620 per person; Single supplement; Travel insurance; Extra baggage allowance; Japan visa
+- Includes: 4 nights’ hotel accommodation, twin sharing, with daily hotel breakfast; Sightseeing tours as specified, with all entrance fees needed; Private coach with English-speaking tour guide; Meals as listed; Round-trip airfare via Philippine Airlines with 2 pieces of 23 kg checked baggage plus 7 kg hand carry
+- Excludes: Personal expenses such as telephone calls, minibar, etc.; Tips for driver and guide: USD 25 per person (collected with the tour fee); Philippine travel tax: PHP 1,620 per person; Single supplement; Travel insurance; Extra baggage allowance; Japan visa
 - Summary: Tokyo with a Mt. Fuji day: Lake Kawaguchi, up to 2 hours at the Yeti ski resort, Asakusa and Skytree, and a free day with optional Disneyland.
 
 ## Discover Osaka – Kyoto – Nara 5D4N Tour (Mar–Apr departures, from Cebu)
@@ -1727,7 +1727,7 @@ Updated 2026-10-16. Prices are per person unless stated. Only travel dates still
 - Price: From US$1,499 per pax
 - Travel dates: Nov 25–29 2026
 - Includes: 4 nights’ hotel accommodation, twin sharing, with daily hotel breakfast; Sightseeing tours as specified, with all entrance fees needed; Private coach with English-speaking tour guide; Meals as listed; Round-trip airfare via Philippine Airlines with 7 kg hand carry and 23 kg checked baggage
-- Excludes: Personal expenses such as telephone calls, minibar, etc.; Tips for driver and guide: USD 25 per person (collected with the tour fee); Philippine travel tax: USD 30 per person; Single supplement; Travel insurance; Extra baggage allowance; Japan visa
+- Excludes: Personal expenses such as telephone calls, minibar, etc.; Tips for driver and guide: USD 25 per person (collected with the tour fee); Philippine travel tax: PHP 1,620 per person; Single supplement; Travel insurance; Extra baggage allowance; Japan visa
 - Summary: Osaka, Nara and Kyoto in five days: Dotonbori, Nara Deer Park, Arashiyama Bamboo Grove, the Golden Pavilion and Osaka Castle, with a free day and optional Universal Studios.
 
 ## Osaka – Takayama – Shirakawa-go – Kyoto – Nara 5D4N Tour
@@ -1739,7 +1739,7 @@ Updated 2026-10-16. Prices are per person unless stated. Only travel dates still
 - Price: From US$1,599 per pax
 - Travel dates: Jan 20–24 2027, Feb 24–28 2027, Mar 11–15 2027, Apr 7–11 2027, May 12–16 2027, Jun 2–6 2027
 - Includes: 4 nights’ hotel accommodation, twin sharing, with daily hotel breakfast; Sightseeing tours as specified, with all entrance fees needed; Private coach with English-speaking tour guide; Meals as listed; Round-trip airfare via Philippine Airlines with 7 kg hand carry and 23 kg checked baggage
-- Excludes: Personal expenses such as telephone calls, minibar, etc.; Tips for driver and guide: USD 20 per person (collected with the tour fee); Philippine travel tax: USD 30 per person; Single supplement; Travel insurance; Extra baggage allowance; Japan visa
+- Excludes: Personal expenses such as telephone calls, minibar, etc.; Tips for driver and guide: USD 25 per person (collected with the tour fee); Philippine travel tax: PHP 1,620 per person; Single supplement; Travel insurance; Extra baggage allowance; Japan visa
 - Summary: Based in the Osaka region with a day trip to Shirakawa-go and Takayama, then Osaka Castle, Umeda Sky, Arashiyama, the Golden Pavilion, Gion and Nara Deer Park.
 
 ## Tokyo – Mt. Fuji 5D4N Tour
@@ -1750,8 +1750,8 @@ Updated 2026-10-16. Prices are per person unless stated. Only travel dates still
 - Departs: Cebu (Mactan-Cebu International)
 - Price: From US$1,499 per pax
 - Travel dates: Mar 24–28 2027, Apr 12–16 2027, May 3–7 2027, May 7–11 2027
-- Includes: 4 nights’ hotel accommodation, twin sharing, with daily hotel breakfast; Sightseeing tours as specified, with all entrance fees needed; Private coach with English-speaking tour guide; Meals as listed; Round-trip airfare via Philippine Airlines with 7 kg hand carry and 23 kg checked baggage
-- Excludes: Personal expenses such as telephone calls, minibar, etc.; Tips for driver and guide: USD 20 per person (collected with the tour fee); Philippine travel tax: USD 30 per person; Single supplement; Travel insurance; Extra baggage allowance; Japan visa
+- Includes: 4 nights’ hotel accommodation, twin sharing, with daily hotel breakfast; Sightseeing tours as specified, with all entrance fees needed; Private coach with English-speaking tour guide; Meals as listed; Round-trip airfare via Philippine Airlines with 2 pieces of 23 kg checked baggage plus 7 kg hand carry
+- Excludes: Personal expenses such as telephone calls, minibar, etc.; Tips for driver and guide: USD 25 per person (collected with the tour fee); Philippine travel tax: PHP 1,620 per person; Single supplement; Travel insurance; Extra baggage allowance; Japan visa
 - Summary: Tokyo with a Mt. Fuji day: Lake Kawaguchi, a kimono experience, Gotemba Outlet, Asakusa and Skytree, plus a free day with optional Disneyland.
 
 ## Tokyo – Mt. Fuji – Hakone – Matsumoto – Shirakawa-go – Osaka 8D7N Tour

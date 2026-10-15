@@ -82,7 +82,7 @@ window.IC = window.IC || {};
      (and -1280 for phones). Credits are in the README. */
   /* itinerary-pdf:start - written by ~/ClaudeWork/qa/itin/publish.py: package id -> [pages, KB] of
      assets/itinerary/ICTS-Itinerary-<id>.pdf (the printable ICTS itinerary sheet) */
-  IC.itineraryPdf = {"danang-6d4n-bana-overnight":[4,886],"danang-5d3n-bana-overnight":[4,942],"danang-6d4n-charter":[4,969],"danang-5d3n-charter":[4,866],"rose-danang-6d4n":[4,1024],"rose-danang-5d3n":[4,990],"danang-4d3n":[4,833],"danang-4d3n-z2":[4,951],"hanoi-sapa-4d3n":[3,897],"hanoi-sapa-halong-5d4n":[4,1039],"hanoi-sapa-halong-5d3n-charter":[4,935],"hanoi-sapa-halong-5d3n-charter-classic":[4,1047],"hanoi-sapa-halong-6d4n-charter":[5,1001],"hanoi-sapa-halong-6d4n-charter-classic":[4,953],"danang-5d4n-cebu-charter":[4,948],"hanoi-sapa-halong-4d3n":[4,962],"hanoi-sapa-halong-5d3n-cebu":[4,918],"hanoi-sapa-halong-6d4n-cebu":[4,975],"shanghai-disneyland-4d3n":[4,846],"shanghai-5d3n":[4,760],"shanghai-mini-kyoto-5d4n":[4,765],"shanghai-mini-kyoto-6d4n":[4,899],"shanghai-5d4n-no-shopping":[4,734],"avatar-shanghai-5d4n":[4,899],"shanghai-hangzhou-wuzhen-5d4n":[4,939],"shanghai-hangzhou-wuxi-6d5n":[4,884],"adora-cruise-shanghai-5d4n":[4,860],"beijing-5d4n-no-shopping":[4,947],"beijing-shanghai-7d6n":[4,990],"beijing-shanghai-8d7n":[4,963],"avatar-furong-chongqing-8d7n":[4,1012],"avatar-furong-no-shopping":[4,838],"avatar-skiing-chongqing-8d7n":[5,1005],"charming-yunnan-8d7n":[5,924],"harbin-7d6n":[4,819],"adora-magic-city-cruise-5d4n-shanghai":[3,881],"avatar-beijing-8d7n":[5,900],"avatar-furong-xiamen-7d6n":[4,895],"avatar-furong-6d5n":[4,874],"avatar-furong-7d6n":[4,880],"avatar-skiing-6d5n":[4,886],"avatar-skiing-7d6n":[4,884],"avatar-furong-6d5n-china":[4,882],"beijing-terra-cotta-warriors-6d5n":[4,951],"beijing-5d4n":[4,923],"beijing-6d5n":[4,951],"beijing-skiing-6d5n":[4,951],"beijing-terra-cotta-warriors-6d5n-2":[4,936],"beijing-shanghai-6d5n":[4,936],"beijing-skiing-universal-studios-5d4n":[4,808],"beijing-w-town-5d4n":[4,974],"beijing-inner-mongolia-7d6n":[4,826],"beijing-shanghai-pilgrimage-7d6n":[4,934],"canton-fair-shenzhen-4d3n":[3,832],"charming-yunnan-8d7n-no-shopping":[5,897],"charming-yunnan-9d8n-no-shopping":[5,887],"charter-flight-avatar-changsha-4d3n":[4,839],"charter-flight-avatar-furong-town-5d4n":[5,912],"avatar-furong-yangtze-river-5d4n":[4,983],"avatar-furong-yangtze-river-5d4n-no-shopping":[4,950],"charter-flight-avatar-skiing-5d4n":[4,879],"charter-flight-avatar-yangtze-river-4d3n":[4,979],"avatar-yangtze-river-4d3n-no-shopping":[4,952],"chengdu-jiuzhaigou-5d4n-no-shopping":[4,958],"chengdu-skiing-5d4n":[4,845],"chengdu-jiuzhaigou-5d4n":[4,944],"chongqing-yangtze-river-vista-aurora-cruise":[5,993],"chongqing-avatar-fenghuang-7d6n":[4,983],"chongqing-avatar-furong-7d6n-skiing":[5,909],"chongqing-chengdu-5d4n-ckg-in-ckg-out":[4,856],"chongqing-chengdu-5d4n-5-star-hotel":[4,883],"chongqing-chengdu-5d4n-tfu-in-tfu-out":[4,880],"chongqing-chengdu-5d4n":[4,890],"chongqing-chengdu-5d4n-skiing":[4,864],"chongqing-chengdu-6d5n":[4,893],"chongqing-leshan-5d4n":[4,861],"chongqing-wulong-chengdu-6d5n":[4,895],"chongqing-yangtze-river-vista-aurora-cruise-2":[4,988],"tulou-chaozhou-shantou-xiamen-7d6n":[4,900],"fuzhou-huangling-jiangxi-6d5n-no-shopping":[4,791],"fuzhou-wuyishan-wangxian-valley-5d4n-mf":[3,814],"guilin-yangshuo-5d4n-no-shopping":[3,766],"hainan-haikou-sanya-6d5n":[4,897],"harbin-6d5n-no-shopping":[4,833],"harbin-5d4n":[4,805],"harbin-5d4n-no-shopping":[4,840],"harbin-6d5n-no-shopping-2":[4,867],"harbin-6d5n-no-shopping-2-2":[4,820],"harbin-mohe-6d5n-no-shopping":[4,823],"harbin-beijing-7d6n-no-shopping":[4,844],"harbin-changchun-shenyang-7d6n-no-shopping":[4,863],"harbin-changchun-xiamen-7d6n-no-shopping":[4,871],"harbin-shenyang-jilin-7d6n-no-shopping":[4,830],"hulunbuir-beijing-7d6n":[4,832],"inner-mongolia-6d5n-no-shopping":[4,836],"jinmen-taiwan-xiamen-4d3n-no-shopping":[4,829],"kweichow-6d5n-no-shopping":[4,1008],"nanxun-hangzhou-shanghai-5d4n":[4,921],"northern-xinjiang-skiing-6d5n-no-shopping":[4,896],"promo-charter-flight-avatar-mini-venice-4d3n":[4,846],"qingdao-hongkong-5d4n-no-shopping":[4,958],"qinghai-silkroad-china-8d7n-5star":[4,852],"shaanxi-shanxi-7d6n-no-shopping":[5,992],"shanghai-suzhou-mini-kyoto-6d4n":[4,876],"shanghai-jeju-6d5n":[4,947],"shanghai-jeju-6d5n-winter":[4,966],"shanghai-4d3n":[4,870],"shanghai-mini-kyoto-5d4n-2":[4,802],"shanghai-mini-kyoto-5d4n-3":[4,931],"shanghai-mini-kyoto-6d5n":[4,825],"shanghai-anji-5d4n-skiing":[4,914],"shanghai-anji-6d5n-skiing":[4,782],"shanghai-anji-6d5n-skiing-2":[4,898],"shanghai-hangzhou-ruyiqiao-6d5n":[4,909],"shanghai-wuxi-maoshan-5d4n-no-shopping":[4,780],"shanghai-wuzhen-5d4n":[4,944],"southern-xinjiang-10d9n-no-shopping":[5,950],"spring-festival-avatar-skiing-7d6n":[4,879],"spring-festival-shanghai-hangzhou-5d4n":[4,899],"spring-festival-shanghai-mini-kyoto-6d5n":[4,925],"tibet-nyingchi-lhasa-shigatse-9d8n":[5,1022],"vista-harmony-cruise-chongqing-yangtze":[4,982],"wuhan-hubei-yangtze-river-6d5n-no-shopping":[4,990],"wuhan-yangtze-river-yichang-6d5n-no-shopping":[4,959],"xi-an-5d4n-no-shopping":[4,977],"xiamen-hua-an-tulou-4d3n":[4,861],"xinjiang-beijing-9d8n-no-shopping":[5,933],"yellow-river-shanxi-6d5n-no-shopping":[4,962],"yinchuan-ningxia-7d6n-no-shopping":[4,838],"yunnan-kunming-dali-lijiang-8d7n":[4,1074],"yunnan-kunming-dali-lijiang-6d5n":[4,1033],"yunnan-xishuangbanna-laos-9d8n":[4,892],"yunnan-lijiang-shangri-la-6d5n-no-shopping":[4,980],"zhengzhou-luoyang-henan-5d4n-no-shopping":[4,960],"adora-flora-cruise-6d5n-ishigaki":[4,829],"adora-flora-cruise-7d6n-okinawa":[4,840],"discover-osaka-kyoto-nara-5d4n-3-in-1":[4,969],"hokkaido-icebreaker-6d5n-ana-no-shopping":[4,889],"nagoya-takayama-shirakawago-osaka-5d4n-winter":[4,956],"osaka-kyoto-nara-5d4n-3-in-1":[4,902],"tokyo-mt-fuji-kamakura-5d4n":[4,817],"tokyo-5d4n-cebu":[3,950],"discover-osaka-kyoto-nara-5d4n-3-in-1-cebu":[4,977],"osaka-nara-kyoto-5d4n-cebu":[3,862],"osaka-5d4n-cebu":[4,941],"tokyo-5d4n-pal-cebu":[4,961],"tokyo-hakone-cebu":[4,938]};
+  IC.itineraryPdf = {"danang-6d4n-bana-overnight":[4,822],"danang-5d3n-bana-overnight":[4,874],"danang-6d4n-charter":[4,915],"danang-5d3n-charter":[4,808],"rose-danang-6d4n":[4,948],"rose-danang-5d3n":[4,936],"danang-4d3n":[4,772],"danang-4d3n-z2":[4,888],"hanoi-sapa-4d3n":[3,835],"hanoi-sapa-halong-5d4n":[4,975],"hanoi-sapa-halong-5d3n-charter":[4,868],"hanoi-sapa-halong-5d3n-charter-classic":[4,975],"hanoi-sapa-halong-6d4n-charter":[5,941],"hanoi-sapa-halong-6d4n-charter-classic":[4,890],"danang-5d4n-cebu-charter":[4,881],"hanoi-sapa-halong-4d3n":[4,902],"hanoi-sapa-halong-5d3n-cebu":[4,852],"hanoi-sapa-halong-6d4n-cebu":[4,905],"shanghai-disneyland-4d3n":[4,794],"shanghai-5d3n":[4,705],"shanghai-mini-kyoto-5d4n":[4,719],"shanghai-mini-kyoto-6d4n":[4,844],"shanghai-5d4n-no-shopping":[4,686],"avatar-shanghai-5d4n":[4,851],"shanghai-hangzhou-wuzhen-5d4n":[4,888],"shanghai-hangzhou-wuxi-6d5n":[4,838],"adora-cruise-shanghai-5d4n":[4,809],"beijing-5d4n-no-shopping":[4,895],"beijing-shanghai-7d6n":[4,941],"beijing-shanghai-8d7n":[4,916],"avatar-furong-chongqing-8d7n":[5,974],"avatar-furong-no-shopping":[4,786],"avatar-skiing-chongqing-8d7n":[5,955],"charming-yunnan-8d7n":[5,865],"harbin-7d6n":[4,771],"adora-magic-city-cruise-5d4n-shanghai":[3,825],"avatar-beijing-8d7n":[5,856],"avatar-furong-xiamen-7d6n":[4,848],"avatar-furong-6d5n":[4,833],"avatar-furong-7d6n":[4,846],"avatar-skiing-6d5n":[4,840],"avatar-skiing-7d6n":[4,849],"avatar-furong-6d5n-china":[4,837],"beijing-terra-cotta-warriors-6d5n":[4,903],"beijing-5d4n":[4,883],"beijing-6d5n":[4,914],"beijing-skiing-6d5n":[4,904],"beijing-terra-cotta-warriors-6d5n-2":[4,891],"beijing-shanghai-6d5n":[4,889],"beijing-skiing-universal-studios-5d4n":[4,769],"beijing-w-town-5d4n":[4,922],"beijing-inner-mongolia-7d6n":[4,774],"beijing-shanghai-pilgrimage-7d6n":[4,897],"canton-fair-shenzhen-4d3n":[3,793],"charming-yunnan-8d7n-no-shopping":[5,849],"charming-yunnan-9d8n-no-shopping":[5,834],"charter-flight-avatar-changsha-4d3n":[4,802],"charter-flight-avatar-furong-town-5d4n":[5,882],"avatar-furong-yangtze-river-5d4n":[4,937],"avatar-furong-yangtze-river-5d4n-no-shopping":[4,894],"charter-flight-avatar-skiing-5d4n":[4,844],"charter-flight-avatar-yangtze-river-4d3n":[4,939],"avatar-yangtze-river-4d3n-no-shopping":[4,896],"chengdu-jiuzhaigou-5d4n-no-shopping":[4,921],"chengdu-skiing-5d4n":[4,799],"chengdu-jiuzhaigou-5d4n":[4,896],"chongqing-yangtze-river-vista-aurora-cruise":[5,937],"chongqing-avatar-fenghuang-7d6n":[4,932],"chongqing-avatar-furong-7d6n-skiing":[5,864],"chongqing-chengdu-5d4n-ckg-in-ckg-out":[4,813],"chongqing-chengdu-5d4n-5-star-hotel":[4,833],"chongqing-chengdu-5d4n-tfu-in-tfu-out":[4,840],"chongqing-chengdu-5d4n":[4,851],"chongqing-chengdu-5d4n-skiing":[4,820],"chongqing-chengdu-6d5n":[4,846],"chongqing-leshan-5d4n":[4,809],"chongqing-wulong-chengdu-6d5n":[4,853],"chongqing-yangtze-river-vista-aurora-cruise-2":[4,930],"tulou-chaozhou-shantou-xiamen-7d6n":[4,860],"fuzhou-huangling-jiangxi-6d5n-no-shopping":[4,770],"fuzhou-wuyishan-wangxian-valley-5d4n-mf":[3,782],"guilin-yangshuo-5d4n-no-shopping":[3,730],"hainan-haikou-sanya-6d5n":[4,842],"harbin-6d5n-no-shopping":[4,774],"harbin-5d4n":[4,765],"harbin-5d4n-no-shopping":[4,787],"harbin-6d5n-no-shopping-2":[4,811],"harbin-6d5n-no-shopping-2-2":[4,771],"harbin-mohe-6d5n-no-shopping":[4,782],"harbin-beijing-7d6n-no-shopping":[4,787],"harbin-changchun-shenyang-7d6n-no-shopping":[4,806],"harbin-changchun-xiamen-7d6n-no-shopping":[4,818],"harbin-shenyang-jilin-7d6n-no-shopping":[4,779],"hulunbuir-beijing-7d6n":[4,780],"inner-mongolia-6d5n-no-shopping":[4,789],"jinmen-taiwan-xiamen-4d3n-no-shopping":[4,782],"kweichow-6d5n-no-shopping":[4,957],"nanxun-hangzhou-shanghai-5d4n":[4,873],"northern-xinjiang-skiing-6d5n-no-shopping":[4,860],"promo-charter-flight-avatar-mini-venice-4d3n":[4,797],"qingdao-hongkong-5d4n-no-shopping":[4,906],"qinghai-silkroad-china-8d7n-5star":[4,803],"shaanxi-shanxi-7d6n-no-shopping":[5,947],"shanghai-suzhou-mini-kyoto-6d4n":[4,819],"shanghai-jeju-6d5n":[4,910],"shanghai-jeju-6d5n-winter":[5,930],"shanghai-4d3n":[4,821],"shanghai-mini-kyoto-5d4n-2":[4,770],"shanghai-mini-kyoto-5d4n-3":[4,895],"shanghai-mini-kyoto-6d5n":[4,784],"shanghai-anji-5d4n-skiing":[4,871],"shanghai-anji-6d5n-skiing":[4,745],"shanghai-anji-6d5n-skiing-2":[4,858],"shanghai-hangzhou-ruyiqiao-6d5n":[4,847],"shanghai-wuxi-maoshan-5d4n-no-shopping":[4,721],"shanghai-wuzhen-5d4n":[4,898],"southern-xinjiang-10d9n-no-shopping":[5,902],"spring-festival-avatar-skiing-7d6n":[4,827],"spring-festival-shanghai-hangzhou-5d4n":[4,854],"spring-festival-shanghai-mini-kyoto-6d5n":[4,877],"tibet-nyingchi-lhasa-shigatse-9d8n":[5,959],"vista-harmony-cruise-chongqing-yangtze":[5,927],"wuhan-hubei-yangtze-river-6d5n-no-shopping":[4,936],"wuhan-yangtze-river-yichang-6d5n-no-shopping":[4,908],"xi-an-5d4n-no-shopping":[4,924],"xiamen-hua-an-tulou-4d3n":[4,821],"xinjiang-beijing-9d8n-no-shopping":[5,882],"yellow-river-shanxi-6d5n-no-shopping":[4,907],"yinchuan-ningxia-7d6n-no-shopping":[4,793],"yunnan-kunming-dali-lijiang-8d7n":[4,1017],"yunnan-kunming-dali-lijiang-6d5n":[4,980],"yunnan-xishuangbanna-laos-9d8n":[4,838],"yunnan-lijiang-shangri-la-6d5n-no-shopping":[4,931],"zhengzhou-luoyang-henan-5d4n-no-shopping":[4,916],"adora-flora-cruise-6d5n-ishigaki":[4,769],"adora-flora-cruise-7d6n-okinawa":[4,777],"discover-osaka-kyoto-nara-5d4n-3-in-1":[4,924],"hokkaido-icebreaker-6d5n-ana-no-shopping":[4,839],"nagoya-takayama-shirakawago-osaka-5d4n-winter":[4,902],"osaka-kyoto-nara-5d4n-3-in-1":[4,851],"tokyo-mt-fuji-kamakura-5d4n":[4,778],"tokyo-5d4n-cebu":[4,905],"discover-osaka-kyoto-nara-5d4n-3-in-1-cebu":[4,930],"osaka-nara-kyoto-5d4n-cebu":[3,810],"osaka-5d4n-cebu":[4,897],"tokyo-5d4n-pal-cebu":[4,912],"tokyo-hakone-cebu":[4,884]};
   /* itinerary-pdf:end */
 
   IC.destHero = {
@@ -1657,7 +1657,7 @@ window.IC = window.IC || {};
         "Terminal fees: USD 42 per person (Da Nang and Manila)",
         "Tips for driver and guide: USD 5 per person per day x 5 days = USD 25 per person",
         "Personal expenses such as telephone calls and minibar",
-        "Fuel surcharge: USD 40 per person (rate subject to change)"
+        "Fuel surcharge: USD 36 per person for 2026 departures, USD 40 per person for 2027 departures (rate subject to change)"
       ],
       "optional": [
         "Han River Cruise (night view) + Vietnamese massage + buffet dinner: USD 99 per person"
@@ -1674,7 +1674,8 @@ window.IC = window.IC || {};
         "If the hotel is not available on your dates, a similar hotel will be used.",
         "The schedule and meal menus may change depending on local conditions.",
         "Flights: outbound arrives in Da Nang early morning (03:55–04:55); return departs Da Nang 23:05 and lands in Manila 02:40 the next day.",
-        "Some departure dates carry a peak-date surcharge (see the departure list)."
+        "Some departure dates carry a peak-date surcharge (see the departure list).",
+        "Fuel surcharge: USD 36 per person for 2026 departures, USD 40 per person for 2027 departures."
       ],
       "places": [
         "Son Tra Peninsula",
@@ -5671,7 +5672,7 @@ window.IC = window.IC || {};
           "day": "Day 1",
           "title": "Cebu – Hanoi – Beijing",
           "items": [
-            "Fly VN642 CEB-HAN 05:50-07:50, then VN512 HAN-PEK 10:05-14:45",
+            "Fly VN642 CEB-HAN 05:00-07:50, then VN512 HAN-PEK 10:05-14:45",
             "Arrive at Beijing international airport and meet the English-speaking guide",
             "Transfer to the hotel and check in",
             "Meals: none (X/X/X)"
@@ -6472,7 +6473,7 @@ window.IC = window.IC || {};
           "title": "Changsha – Hong Kong",
           "items": [
             "Hotel breakfast and check out",
-            "Transfer to Changsha Airport; flight CX967 Changsha to Hong Kong (departure time printed as 13:99 in the source, arrival 15:00)",
+            "Transfer to Changsha Airport; flight CX967 Changsha to Hong Kong 13:00–15:00",
             "Hong Kong overnight",
             "Transfer to hotel and check in"
           ]
@@ -6495,9 +6496,9 @@ window.IC = window.IC || {};
       ],
       "exclusions": [
         "Personal expenses such as telephone calls, mini bar, etc.",
-        "Tips for driver and guide: USD30/pax (USD5 per pax per day for 6 days, collected with the tour fee)",
-        "Philippine travel tax: USD25/pax",
-        "Single supplement: USD300/pax",
+        "Tips for driver and guide: USD 25 per person (collected with the tour fee)",
+        "Philippine travel tax: PHP 1,620 per person",
+        "Single supplement: rate on request",
         "Travel insurance",
         "Extra baggage allowance",
         "China visa"
@@ -7109,12 +7110,12 @@ window.IC = window.IC || {};
       "exclusions": [
         "Personal expenses such as telephone calls, mini bar, etc.",
         "Tips for driver and guide: USD35/pax (USD5 per pax per day for 7 days, collected with the tour fee)",
-        "Philippine travel tax: USD30/pax",
+        "Philippine travel tax: PHP 1,620 per person",
         "Single supplement: USD300/pax",
         "Travel insurance",
         "Extra baggage allowance",
         "China visa",
-        "Fuel surcharge: USD50/pax (subject to change)"
+        "Taxes and fees: to be advised, subject to change"
       ],
       "hotelsLabel": "Hotels",
       "hotels": [
@@ -7821,7 +7822,7 @@ window.IC = window.IC || {};
           "title": "Zhangjiajie – Guangzhou – Manila",
           "items": [
             "Breakfast at the hotel",
-            "Transfer to Zhangjiajie airport and fly to Guangzhou (CZ3382, 09:45–11:30), then connect to Manila (CZ3077, 20:00–22:30)"
+            "Transfer to Zhangjiajie airport and fly to Guangzhou (CZ3382, 13:25–15:15), then connect to Manila (CZ3077, 20:00–22:30)"
           ]
         }
       ],
@@ -8115,7 +8116,7 @@ window.IC = window.IC || {};
       "region": "intl",
       "country": "China",
       "flag": "cn",
-      "duration": "6 days 4 nights",
+      "duration": "6 days 5 nights",
       "days": 6,
       "status": "available",
       "featured": false,
@@ -9429,7 +9430,7 @@ window.IC = window.IC || {};
           "day": "Day 1",
           "title": "Manila – Beijing",
           "items": [
-            "Flight CA180 Manila to Beijing (06:20–10:50)",
+            "Flight CA180 Manila to Beijing (06:25–10:50)",
             "Water Cube (outside view)",
             "Bird’s Nest (outside view)",
             "Tea shop visit",
@@ -9469,7 +9470,7 @@ window.IC = window.IC || {};
             "Breakfast at the hotel",
             "Qianmen old street",
             "Jewelry shop visit",
-            "Proceed to the airport for flight CA1205 Beijing to Xi’an (20:00–22:25)",
+            "Proceed to the airport for flight CA1205 Beijing to Xi’an (20:15–22:25)",
             "Meet the guide in Xi’an, transfer to the hotel and check in",
             "Meals: Breakfast / Lunch"
           ]
@@ -9704,7 +9705,8 @@ window.IC = window.IC || {};
         "If a listed hotel is unavailable it is replaced by a similar one",
         "Order of attractions may be adjusted for crowded groups or special circumstances",
         "Services are on a private basis",
-        "Philippine passport holders need a China group visa, USD 40 per person (not included)"
+        "Philippine passport holders need a China group visa, USD 40 per person (not included)",
+        "Apr 30–May 5 departure: 1 piece of 23 kg checked baggage; tips USD 50 per person."
       ],
       "places": [
         "Water Cube",
@@ -10384,7 +10386,7 @@ window.IC = window.IC || {};
       "hotelsLabel": "Hotels",
       "hotels": [
         "Day 1–4: Local 5★ Howard Johnson Junhe Hot Springs Resort Beijing or similar",
-        "Day 5–6: Local 4★ Shanghai Hongqiao NECC Glory Hotel or similar",
+        "Day 5–6: Local 5★ hotel in Shanghai or similar",
         "Day 7: Sweet Home"
       ],
       "notes": [
@@ -11448,9 +11450,9 @@ window.IC = window.IC || {};
       ],
       "hotelsLabel": "Hotels",
       "hotels": [
-        "Day 1: Days Hotel by Wyndham Changsha or similar",
-        "Day 2: Wingate by Wyndham (Furong Town / Zhangjiajie area)",
-        "Day 3-4: Qingxinyuan Hotel Zhangjiajie or similar"
+        "Day 1: Days Hotel by Wyndham Changsha or similar 5★",
+        "Day 2: Wingate by Wyndham (Furong Town / Zhangjiajie area) or similar 5★",
+        "Day 3-4: Qingxinyuan Hotel Zhangjiajie or similar 5★"
       ],
       "notes": [
         "Meal codes: B = breakfast, L = lunch, D = dinner, X = not included",
@@ -11860,7 +11862,7 @@ window.IC = window.IC || {};
           "day": "Day 1",
           "title": "Manila – Changsha",
           "items": [
-            "Fly Manila to Changsha (QW956, 03:45–07:00) and meet your guide at the airport",
+            "Fly Manila to Changsha (QW966, 03:45–07:00) and meet your guide at the airport",
             "Hotel buffet breakfast",
             "Orange Isle (battery car excluded)",
             "Mini Venice Town in Changsha (entrance fee only)",
@@ -11917,7 +11919,7 @@ window.IC = window.IC || {};
             "Compulsory shopping stop: jewelry shop",
             "Grand Canyon scenic area – Glass Bridge (optional)",
             "Compulsory shopping stop: tea shop",
-            "Transfer back to Changsha and fly to Manila (QW955, 23:30–02:45+1)"
+            "Transfer back to Changsha and fly to Manila (QW965, 23:30–02:45+1)"
           ]
         }
       ],
@@ -11947,8 +11949,8 @@ window.IC = window.IC || {};
       ],
       "hotelsLabel": "Hotels",
       "hotels": [
-        "Day 1: Days Hotel by Wyndham Changsha or similar",
-        "Day 2–4: Ramada Hotel Zhangjiajie or similar",
+        "Day 1: Days Hotel by Wyndham Changsha or similar 5★",
+        "Day 2–4: Ramada Hotel Zhangjiajie or similar 5★",
         "Day 5: Sweet Home"
       ],
       "notes": [
@@ -12110,8 +12112,7 @@ window.IC = window.IC || {};
       ],
       "hotelsLabel": "Hotels",
       "hotels": [
-        "Day 1-2: Ramada Hotel Zhangjiajie or similar",
-        "Day 3: Ramada Hotel Yichang or similar",
+        "Day 1-3: Ramada Hotel Zhangjiajie or similar",
         "Day 4: Sweet Home"
       ],
       "notes": [
@@ -13819,7 +13820,7 @@ window.IC = window.IC || {};
         "Philippine travel tax USD 30 per person",
         "Group visa USD 40 per person",
         "Tips for driver and guide USD 50 per person (USD 10 per day x 5 days)",
-        "Single supplement from USD 149 per person",
+        "Single supplement: USD 149 per person for 2026 departures, USD 139 per person for 2027 departures",
         "Optional tours (USD 150 per person for the package)"
       ],
       "optional": [
@@ -13837,7 +13838,8 @@ window.IC = window.IC || {};
         "Child rates: child with bed under 18 years; child without bed under 5 years; infants under 2 years have their own rate.",
         "The fares do not include VAT; an official receipt incurs a 12% surcharge on the total amount.",
         "Itinerary is subject to change without prior notice and to weather conditions.",
-        "Rooms are twin sharing by default; triple rooms are not guaranteed. Hotels may be replaced by similar ones."
+        "Rooms are twin sharing by default; triple rooms are not guaranteed. Hotels may be replaced by similar ones.",
+        "Single supplement: USD 149 per person for 2026 departures, USD 139 per person for 2027 departures."
       ],
       "places": [
         "Ciqikou Ancient Town",
@@ -15229,6 +15231,7 @@ window.IC = window.IC || {};
           "day": "Day 1",
           "title": "Manila – Fuzhou",
           "items": [
+            "Fly Manila to Fuzhou (MF8736, 21:00–23:45)",
             "Flight from Manila to Fuzhou",
             "Airport pick-up and transfer to the hotel to check in",
             "Meals: none included (X/X/X)"
@@ -15289,6 +15292,7 @@ window.IC = window.IC || {};
             "Pick-up at Fuzhou station",
             "Three Lanes and Seven Alleys",
             "Transfer to the airport and fly back to Manila",
+            "Transfer to the airport and fly to Manila (MF8735, 17:05–19:45)",
             "Meals: Breakfast only"
           ]
         }
@@ -15714,7 +15718,7 @@ window.IC = window.IC || {};
           "day": "Day 1",
           "title": "Manila – Hong Kong – Haikou",
           "items": [
-            "Fly Manila to Hong Kong (CX912 08:00–10:20), then to Haikou (CX310 14:00–15:35)",
+            "Fly Manila to Hong Kong (CX912 08:00–10:30), then to Haikou (CX310 14:10–15:40)",
             "Meet the English-speaking guide at Haikou airport",
             "Haikou Qilou Old Street, century-old Qilou buildings",
             "Dongpo Old Wharf",
@@ -15872,7 +15876,7 @@ window.IC = window.IC || {};
           "title": "Manila – Guangzhou",
           "items": [
             "Fly Manila to Guangzhou (CZ398 17:55/20:30); meet the Guangzhou guide.",
-            "Transfer to hotel and check in. Meals: X/X/X."
+            "Transfer to hotel and check in. Meals: X/X/D."
           ]
         },
         {
@@ -16266,7 +16270,7 @@ window.IC = window.IC || {};
         "Personal expenses such as telephone calls and minibar",
         "Extra baggage",
         "Travel insurance",
-        "Fuel surcharge USD 50–75/pax depending on airline, subject to change",
+        "Fuel surcharge USD 75/pax (subject to change)",
         "Philippine travel tax USD 28/pax (or PHP 1,620/pax)",
         "China group visa USD 40/pax (guaranteed)",
         "Tips for driver and guide USD 5/pax/day x 5 days = USD 25/pax",
@@ -18614,8 +18618,8 @@ window.IC = window.IC || {};
       ],
       "hotelsLabel": "Hotels",
       "hotels": [
-        "Day 1: Days Hotel by Wyndham Changsha or similar",
-        "Day 2-3: Qingxinyuan Hotel Zhangjiajie or similar"
+        "Day 1: Days Hotel by Wyndham Changsha or similar 5★",
+        "Day 2-3: Qingxinyuan Hotel Zhangjiajie or similar 5★"
       ],
       "notes": [
         "Shopping stops are included in this rate: latex shop, jewelry shop, Chinese medicine shop, and silk shop or tea shop.",
@@ -18966,7 +18970,7 @@ window.IC = window.IC || {};
         "Day 2: Local 4★ hotel in Chaka or similar",
         "Day 3: Local 5★ hotel in Golmud or similar",
         "Day 4-5: Local 5★ hotel in Dunhuang or similar",
-        "Day 6: Local 5★ hotel in Zhangye or similar",
+        "Day 6: Local 4★ hotel in Zhangye or similar",
         "Day 7: Local 5★ hotel in Xining or similar",
         "Day 8: Sweet Home"
       ],
@@ -18994,7 +18998,6 @@ window.IC = window.IC || {};
         "Qilian Mountains Grassland"
       ],
       "posters": [
-        "cn-poster-qinghai-silkroad-china-8d7n-5star-0.jpg",
         "cn-poster-qinghai-silkroad-china-8d7n-5star-1.jpg"
       ],
       "posterSize": [
@@ -19168,7 +19171,7 @@ window.IC = window.IC || {};
         "Philippine travel tax: USD 30 per person (collected with the tour fee)",
         "China Group Visa: USD 40 per person (collected with the tour fee)",
         "Tips for driver and guide: USD 35 per person, USD 5 per day for 7 days (collected with the tour fee)",
-        "Fuel surcharge: USD 30 per person (collected with the tour fee, subject to change)",
+        "Fuel surcharge: USD 40 per person for Nov 2026 departures, USD 30 per person for 2027 departures (collected with the tour fee, subject to change)",
         "Single supplement: USD 150 per person"
       ],
       "hotelsLabel": "Hotels",
@@ -19192,7 +19195,8 @@ window.IC = window.IC || {};
         "The northwest region has beautiful scenery, but hotels and restaurants are simpler than in other developed Chinese cities",
         "If the listed hotels are not available they will be replaced by similar ones",
         "Itinerary, flight times and hotels are subject to final confirmation",
-        "Philippine passport holders need a China visa; the China Group Visa fee is listed under exclusions."
+        "Philippine passport holders need a China visa; the China Group Visa fee is listed under exclusions.",
+        "Fuel surcharge: USD 40 per person for Nov 2026 departures, USD 30 per person for 2027 departures. Nov 2026 departures start in Linfen/Yuncheng with a different route, confirmed at booking."
       ],
       "places": [
         "Zhenbeitai",
@@ -20090,7 +20094,7 @@ window.IC = window.IC || {};
           "day": "Day 1",
           "title": "Manila – Shanghai",
           "items": [
-            "Fly Manila to Shanghai (PR336, 11:10/14:55 on most dates).",
+            "Fly Manila to Shanghai (PR336, 10:50–14:30).",
             "Meet the guide at the airport.",
             "Visit the world’s largest Starbucks Flagship store, the LV mega ship and Zhang Garden.",
             "Check in at hotel. Meals: X/X/D."
@@ -21080,7 +21084,7 @@ window.IC = window.IC || {};
             "Photo stop at Hangzhou West Lake New World",
             "Leifeng Tower (outside view)",
             "Optional: The Romance of the Song Dynasty show",
-            "Meals: Breakfast / Lunch"
+            "Meals: Breakfast / Dinner"
           ]
         },
         {
@@ -21092,7 +21096,7 @@ window.IC = window.IC || {};
             "Proceed to Anji, Yunshang Grassland Ski Resort (ski equipment included, snow suits excluded)",
             "Transfer to Wuzhen",
             "Night view of Wuzhen",
-            "Meals: Breakfast / Lunch"
+            "Meals: Breakfast / Lunch / Dinner"
           ]
         },
         {
@@ -21581,7 +21585,7 @@ window.IC = window.IC || {};
           "day": "Day 1",
           "title": "Manila – Shanghai – Maoshan",
           "items": [
-            "Fly Manila to Shanghai (PR336 10:50–14:30; Nov 5, Nov 19 and Dec 3: 12:10–15:50)",
+            "Fly Manila to Shanghai (PR336 12:10–15:50)",
             "Meet the English-speaking guide at the airport",
             "Drive to Maoshan Onsen Valley",
             "Check in at the 5★ Holiday Inn Resort and Spa (IHG) with a private natural onsen in your room (bring your own swimsuit); water from 1,500 m underground, 53°C, rich in sulfur and metasilicic acid",
@@ -21624,7 +21628,7 @@ window.IC = window.IC || {};
           "items": [
             "Hotel check out",
             "Florentia Village Outlet",
-            "Transfer to airport and fly to Manila (PR337 16:00–19:40; Nov 9, Nov 23 and Dec 7: 16:55–20:50)"
+            "Transfer to airport and fly to Manila (PR337 16:55–20:50)"
           ]
         }
       ],
@@ -23627,7 +23631,8 @@ window.IC = window.IC || {};
         "If the listed hotels are not available they will be replaced by similar ones",
         "Itinerary, flight times and hotels are subject to final confirmation",
         "No refunds if you cancel any part of the itinerary or accommodation during the trip; tips must be paid for the full number of days",
-        "Philippine passport holders need a China visa; the China Group Visa fee is listed under exclusions."
+        "Philippine passport holders need a China visa; the China Group Visa fee is listed under exclusions.",
+        "The USD 299 rate is for adults aged 28 and above; guests aged 12–27 with bed pay from USD 449."
       ],
       "places": [
         "Jimei University Village",
@@ -26391,11 +26396,11 @@ window.IC = window.IC || {};
         "Sightseeing tours as specified, with all entrance fees needed",
         "Private coach with English-speaking tour guide",
         "Meals as listed",
-        "Round-trip airfare via Philippine Airlines with 7 kg hand carry and 23 kg checked baggage"
+        "Round-trip airfare via Philippine Airlines with 2 pieces of 23 kg checked baggage plus 7 kg hand carry"
       ],
       "exclusions": [
         "Personal expenses such as telephone calls, minibar, etc.",
-        "Tips for driver and guide: USD 20 per person (collected with the tour fee)",
+        "Tips for driver and guide: USD 25 per person (collected with the tour fee)",
         "Philippine travel tax: PHP 1,620 per person",
         "Single supplement",
         "Travel insurance",
@@ -26416,9 +26421,9 @@ window.IC = window.IC || {};
         "Maximum 10 hours of touring per day, including travel time.",
         "Single supplement USD 300 per person; infant fee about USD 200 per person.",
         "Child without bed (2–5 years old) pays a lower rate and does not include hotel breakfast (can be paid on site).",
-        "Tips for guide and driver USD 5 per person per day x 4 days = USD 20 per person, collected with the tour fee.",
+        "Tips for guide and driver USD 5 per person per day x 5 days = USD 25 per person, collected with the tour fee.",
         "Philippine travel tax PHP 1,620 per person is not included.",
-        "Baggage: 7 kg hand carry and 23 kg checked baggage included; extra baggage is not included.",
+        "Baggage: 2 pieces of 23 kg checked baggage plus 7 kg hand carry included; extra baggage is not included.",
         "Tour day ends no later than 21:00.",
         "Meals: Day 1 X/X/D, Day 2 B/L/D, Day 3 B/L/D, Day 4 B/X/X, Day 5 B/X/X."
       ],
@@ -26711,7 +26716,7 @@ window.IC = window.IC || {};
       "exclusions": [
         "Personal expenses such as telephone calls, minibar, etc.",
         "Tips for driver and guide: USD 25 per person (collected with the tour fee)",
-        "Philippine travel tax: USD 30 per person",
+        "Philippine travel tax: PHP 1,620 per person",
         "Single supplement",
         "Travel insurance",
         "Extra baggage allowance",
@@ -26732,10 +26737,11 @@ window.IC = window.IC || {};
         "Single supplement USD 300 per person; infant fee about USD 200 per person.",
         "Child without bed (2–5 years old) pays a lower rate and does not include hotel breakfast (can be paid on site).",
         "Tips for guide and driver USD 5 per person per day x 5 days = USD 25 per person, collected with the tour fee.",
-        "Philippine travel tax USD 30 per person is not included.",
+        "Philippine travel tax PHP 1,620 per person is not included.",
         "Baggage: 7 kg hand carry and 23 kg checked baggage included; extra baggage is not included.",
         "Tour day ends no later than 21:00.",
-        "Meals: Day 1 X/X/D, Day 2 B/L/D, Day 3 B/L/D, Day 4 B/X/X, Day 5 B/X/X."
+        "Meals: Day 1 X/X/D, Day 2 B/L/D, Day 3 B/L/D, Day 4 B/X/X, Day 5 B/X/X.",
+        "Booking terms: USD 500 per person non-refundable deposit within 3 days of confirmation; full payment 45 days before departure."
       ],
       "places": [
         "Dotonbori",
@@ -26881,8 +26887,8 @@ window.IC = window.IC || {};
       ],
       "exclusions": [
         "Personal expenses such as telephone calls, minibar, etc.",
-        "Tips for driver and guide: USD 20 per person (collected with the tour fee)",
-        "Philippine travel tax: USD 30 per person",
+        "Tips for driver and guide: USD 25 per person (collected with the tour fee)",
+        "Philippine travel tax: PHP 1,620 per person",
         "Single supplement",
         "Travel insurance",
         "Extra baggage allowance",
@@ -26899,8 +26905,8 @@ window.IC = window.IC || {};
         "Maximum 10 hours of touring per day, including travel time.",
         "Single supplement USD 300 per person; infant fee about USD 200 per person.",
         "Child without bed (2–5 years old) pays a lower rate and does not include hotel breakfast (can be paid on site).",
-        "Tips for guide and driver USD 5 per person per day x 4 days = USD 20 per person, collected with the tour fee.",
-        "Philippine travel tax USD 30 per person is not included.",
+        "Tips for guide and driver USD 5 per person per day x 5 days = USD 25 per person, collected with the tour fee.",
+        "Philippine travel tax PHP 1,620 per person is not included.",
         "Baggage: 7 kg hand carry and two pieces of 23 kg checked baggage included; extra baggage is not included.",
         "Tour day ends no later than 21:00.",
         "Meals: Day 1 X/X/D, Day 2 B/L/D, Day 3 B/L/D, Day 4 B/L/D, Day 5 B/X/X."
@@ -27041,12 +27047,12 @@ window.IC = window.IC || {};
         "Sightseeing tours as specified, with all entrance fees needed",
         "Private coach with English-speaking tour guide",
         "Meals as listed",
-        "Round-trip airfare via Philippine Airlines with 7 kg hand carry and 23 kg checked baggage"
+        "Round-trip airfare via Philippine Airlines with 2 pieces of 23 kg checked baggage plus 7 kg hand carry"
       ],
       "exclusions": [
         "Personal expenses such as telephone calls, minibar, etc.",
-        "Tips for driver and guide: USD 20 per person (collected with the tour fee)",
-        "Philippine travel tax: USD 30 per person",
+        "Tips for driver and guide: USD 25 per person (collected with the tour fee)",
+        "Philippine travel tax: PHP 1,620 per person",
         "Single supplement",
         "Travel insurance",
         "Extra baggage allowance",
@@ -27066,9 +27072,9 @@ window.IC = window.IC || {};
         "Maximum 10 hours of touring per day, including travel time.",
         "Single supplement USD 300 per person; infant fee about USD 200 per person.",
         "Child without bed (2–5 years old) pays a lower rate and does not include hotel breakfast (can be paid on site).",
-        "Tips for guide and driver USD 5 per person per day x 4 days = USD 20 per person, collected with the tour fee.",
-        "Philippine travel tax USD 30 per person is not included.",
-        "Baggage: 7 kg hand carry and 23 kg checked baggage included; extra baggage is not included.",
+        "Tips for guide and driver USD 5 per person per day x 5 days = USD 25 per person, collected with the tour fee.",
+        "Philippine travel tax PHP 1,620 per person is not included.",
+        "Baggage: 2 pieces of 23 kg checked baggage plus 7 kg hand carry included; extra baggage is not included.",
         "Tour day ends no later than 21:00.",
         "Meals: Day 1 X/X/D, Day 2 B/L/D, Day 3 B/L/D, Day 4 B/X/X, Day 5 B/X/X."
       ],
