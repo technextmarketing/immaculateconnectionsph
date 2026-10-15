@@ -170,6 +170,54 @@ Updated 2026-10-15. Prices are per person unless stated. Only travel dates still
 - Excludes: Visa (if needed); Extra baggage allowance; Single supplement: USD 88 per person; Philippine travel tax: PHP 1,620 per person; Airport tax: USD 45 per person (Hanoi and Manila); Tips for driver and guide: USD 5 per person per day x 5 days = USD 25 per person; Personal expenses such as telephone calls, minibar, etc.; Fuel surcharge: USD 45 per person (rate subject to change)
 - Summary: Six days on a VietJet charter through Sapa, Hanoi and Ha Long Bay with Cat Cat Village, Fansipan and a bay cruise; the rate includes shopping stops.
 
+## Da Nang Charter Flight 5D4N Tour
+
+- Page: https://www.immaculateconnectionsph.com/package-danang-5d4n-cebu-charter
+- Destination: Vietnam (International)
+- Duration: 5 days 4 nights
+- Departs: Cebu (Mactan-Cebu International)
+- Price: From ₱32,888 per pax
+- Travel dates: Dec 22–26 2026, Dec 26–30 2026, Dec 30–Jan 3 2026
+- Includes: 4 nights’ accommodation on twin sharing with daily hotel breakfast; Sightseeing tours as specified, with all entrance fees; Private coach with English-speaking tour guide; Meals as listed; VietJet charter flight Cebu – Da Nang – Cebu; Baggage allowance: 20 kg checked baggage plus 7 kg hand carry
+- Excludes: Personal expenses such as phone calls and minibar; Tips for driver and guide: USD 25 per person (USD 5 per day for 5 days), collected with the tour fee; Airport tax: USD 45 per person (Da Nang and Cebu), collected with the tour fee; Fuel surcharge: USD 50 per person, collected with the tour fee and subject to change; Philippine travel tax: PHP 1,620 per person; Single supplement: PHP 4,800 per person; Travel insurance; Covid-related procedures; Visa, if needed
+- Summary: A 5-day charter trip from Cebu to Da Nang: Ba Na Hills and the Golden Bridge, Son Tra, Marble Mountains, Coconut Boat Ride and Hoi An, with 4-star hotel stays.
+
+## Hanoi – Sapa – Ha Long Bay 4D3N Tour
+
+- Page: https://www.immaculateconnectionsph.com/package-hanoi-sapa-halong-4d3n
+- Destination: Vietnam (International)
+- Duration: 4 days 3 nights
+- Departs: Cebu (Mactan-Cebu International)
+- Price: From ₱35,888 per pax
+- Travel dates: Dec 7–10 2026 (+₱4,000 per pax), Dec 28–31 2026 (+₱4,000 per pax), Jan 11–14 2027, Jan 18–21 2027 (+₱2,000 per pax), Feb 1–4 2027, Feb 15–18 2027 (+₱3,000 per pax), Mar 8–11 2027, Mar 22–25 2027, May 3–6 2027, May 10–13 2027, May 17–20 2027, May 24–27 2027, Jun 7–10 2027, Jun 14–17 2027, Jun 21–24 2027, Jun 28–Jul 1 2027
+- Includes: Economy airfare and taxes with Vietnam Airlines (round trip) plus 1 piece of 23 kg baggage; 3 nights’ accommodation on twin sharing at hotels of your choice, with daily hotel breakfast; Private coach with English-speaking tour guide; Sightseeing tours as specified, including main entrance tickets; Meals as listed
+- Excludes: Personal expenses such as phone calls and minibar; Extra baggage allowance; Travel insurance with Covid-19 coverage; Philippine travel tax; Visa; Tips for driver and guide: USD 20 per person (USD 5 per day for 4 days); Single supplement: USD 68 per person; Taxes, surcharges and fees are subject to change
+- Summary: Four days from Cebu to Hanoi, Sapa and Ha Long Bay: Fansipan cable car, an exclusive Ha Long Bay cruise and 4-star hotels, flying Vietnam Airlines.
+
+## Hanoi – Sapa – Ha Long Bay 5D3N Tour (No Shopping)
+
+- Page: https://www.immaculateconnectionsph.com/package-hanoi-sapa-halong-5d3n-cebu
+- Destination: Vietnam (International)
+- Duration: 5 days 3 nights
+- Departs: Cebu (Mactan-Cebu International)
+- Price: From ₱36,888 per pax
+- Travel dates: Dec 1–5 2026, Dec 8–12 2026, Dec 29–Jan 2 2026 (+₱6,000 per pax), Jan 26–30 2027 (+₱3,000 per pax), Feb 2–6 2027 (+₱3,000 per pax), Feb 16–20 2027 (+₱4,000 per pax), Feb 23–27 2027 (+₱2,000 per pax), Mar 2–6 2027 (+₱2,000 per pax), Mar 9–13 2027 (+₱2,000 per pax), Mar 16–20 2027 (+₱2,000 per pax), Mar 23–27 2027 (+₱2,000 per pax)
+- Includes: Economy airfare and taxes with Vietjet Airlines (round trip) plus 1 piece of 20 kg baggage; 3 nights’ accommodation on twin sharing at hotels of your choice, with daily hotel breakfast; Private coach with English-speaking tour guide; Sightseeing tours as specified, including main entrance tickets; Meals as listed
+- Excludes: Personal expenses such as phone calls and minibar; Extra baggage allowance; Travel insurance with Covid-19 coverage; Philippine travel tax; Visa; Tips for driver and guide: USD 20 per person (USD 5 per day for 4 days); Single supplement: USD 68 per person; Fuel surcharge: USD 45 per person (rate subject to change)
+- Summary: Five days from Cebu to Hanoi, Sapa and Ha Long Bay with no shopping stops: Fansipan cable car, an exclusive Ha Long Bay cruise and 4-star hotels, flying Vietjet.
+
+## Hanoi – Sapa – Ha Long Bay 6D4N Tour (No Shopping)
+
+- Page: https://www.immaculateconnectionsph.com/package-hanoi-sapa-halong-6d4n-cebu
+- Destination: Vietnam (International)
+- Duration: 6 days 4 nights
+- Departs: Cebu (Mactan-Cebu International)
+- Price: From ₱38,888 per pax
+- Travel dates: Dec 12–17 2026, Dec 19–24 2026 (+₱6,000 per pax), Dec 26–31 2026 (+₱6,000 per pax), Jan 2–7 2027 (+₱6,000 per pax), Jan 16–21 2027 (+₱3,000 per pax), Jan 23–28 2027 (+₱3,000 per pax), Jan 30–Feb 4 2027 (+₱3,000 per pax), Feb 13–18 2027 (+₱4,000 per pax), Feb 20–25 2027 (+₱2,000 per pax), Feb 27–Mar 4 2027 (+₱2,000 per pax), Mar 6–11 2027 (+₱2,000 per pax), Mar 13–18 2027 (+₱2,000 per pax)
+- Includes: Economy airfare and taxes with Vietjet Airlines (round trip) plus 1 piece of 20 kg baggage; 4 nights’ accommodation on twin sharing at hotels of your choice, with daily hotel breakfast; Private coach with English-speaking tour guide; Sightseeing tours as specified, including main entrance tickets; Meals as listed
+- Excludes: Personal expenses such as phone calls and minibar; Extra baggage allowance; Travel insurance with Covid-19 coverage; Philippine travel tax; Visa; Tips for driver and guide: USD 25 per person (USD 5 per day for 5 days); Single supplement: USD 88 per person; Fuel surcharge: USD 45 per person (rate subject to change)
+- Summary: Six days from Cebu to Sapa, Hanoi and Ha Long Bay with no shopping stops: Fansipan cable car, a Ha Long Bay day cruise and 4-star hotels, flying Vietjet.
+
 ## Shanghai Disneyland 4D3N Tour
 
 - Page: https://www.immaculateconnectionsph.com/package-shanghai-disneyland-4d3n

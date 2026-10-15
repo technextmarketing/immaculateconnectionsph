@@ -77,7 +77,6 @@ LEGACY = {
     # packages replaced on 15 Oct 2026 by the Vietnam programmes; their old pages forward to the Tours list
     "package-danang-6d4n": "tours",
     "package-danang-5d3n": "tours",
-    "package-hanoi-sapa-halong-4d3n": "tours",
     "package-japan-tokyo-fuji-5d4n": "tours",
     "package-bohol-breezes": "tours",
     "package-camotes-discover": "tours",
@@ -149,7 +148,7 @@ def agency_ld(tours):
     if not m: print("  index.html: TravelAgency data not found"); return
     d = json.loads(m.group(1))
     d.update({"@id": SITE + "#agency", "alternateName": "Immaculate Connections",
-              "description": "Cebu City travel agency for groups and families: tour packages, flight and ferry tickets, hotels, vans, coasters and buses with driver, and seminars and events, booked by one team, with Vietnam tours from Manila and China tours from Cebu.",
+              "description": "Cebu City travel agency for groups and families: tour packages, flight and ferry tickets, hotels, vans, coasters and buses with driver, and seminars and events, booked by one team, with Vietnam tours from Manila and Cebu and China tours from Cebu.",
               "contactPoint": [{"@type": "ContactPoint", "telephone": "+63 917 319 8540", "contactType": "customer service", "areaServed": "PH"},
                                {"@type": "ContactPoint", "telephone": "+63 32 238 3343", "contactType": "reservations", "areaServed": "PH"}],
               "areaServed": [{"@type": "City", "name": "Cebu City"}, {"@type": "AdministrativeArea", "name": "Cebu"}, {"@type": "Country", "name": "Philippines"}],
@@ -177,7 +176,7 @@ def tours_faq(tours):
     deps = sorted({t["departure"] for t in intl if t.get("departure")})
     qa = [
         ("What tour packages does Immaculate Connections offer?",
-         f"We currently offer {len(L)} packages: {sum(t.get('country') == 'Vietnam' for t in L)} Vietnam tours from Manila (Da Nang, Hanoi, Sapa and Ha Long Bay) and {sum(t.get('country') == 'China' for t in L)} China tours from Cebu (Shanghai, Beijing, Zhangjiajie, Chongqing, Yunnan and Harbin). Every package page lists the itinerary, inclusions, exclusions and travel dates, and we also build custom itineraries for families, companies and groups."),
+         f"We currently offer {len(L)} packages: {sum(t.get('country') == 'Vietnam' for t in L)} Vietnam tours from Manila and Cebu (Da Nang, Hanoi, Sapa and Ha Long Bay) and {sum(t.get('country') == 'China' for t in L)} China tours from Cebu (Shanghai, Beijing, Zhangjiajie, Chongqing, Yunnan and Harbin). Every package page lists the itinerary, inclusions, exclusions and travel dates, and we also build custom itineraries for families, companies and groups."),
         ("How much do the tour packages cost?",
          (f"Rates start at {money(min((t for t in priced), key=lambda t: t['price']['from'])['price'])} and differ by departure date; each package page shows the base rate and the amount added on dearer dates. " if priced else "")
          + "Custom trips are quoted on request, and every quotation is free."),
@@ -222,7 +221,7 @@ def ai_files(tours):
              ("car-rental", "Vans, coasters, buses and cars with driver in Cebu"), ("hotel-booking", "Hotel and resort bookings"), ("ticketing", "Flight and ferry tickets, group bookings"),
              ("mice", "Seminars, conventions and corporate events"), ("gallery", "Photos and videos from our group tours"), ("about", "About the agency and team"), ("contact", "Free quotation and inquiry form")]
     llms = [f"# {NAME}", "", "> Travel agency in Cebu City, Philippines, for groups and families. Local and international tour packages, flight and ferry ticketing, hotel bookings, vans, coasters and buses with driver, and seminars, events and MICE, booked by one team. Quotations are free.", "",
-            "Departures: the Vietnam packages fly from Manila (NAIA) to Da Nang or Hanoi; the China packages fly from Cebu (Mactan-Cebu International). Custom trips around Cebu, Bohol and Camotes are arranged on request.", "",
+            "Departures: the Vietnam packages fly from Manila (NAIA) or Cebu (Mactan-Cebu International) to Da Nang or Hanoi; the China packages fly from Cebu. Custom trips around Cebu, Bohol and Camotes are arranged on request.", "",
             "Contact: +63 917 319 8540 (mobile), (032) 238 3343 (landline), immaculateconnectionsph@gmail.com, Facebook: https://www.facebook.com/ImmaculateConnections.ph, Messenger: https://m.me/ImmaculateConnections.ph",
             "Office: Unit 4E, 4th Floor, JL Millennium Building, Don Jose Avila Street, Cebu City, Cebu, Philippines 6000", "", "## Pages", ""]
     LABEL = {"": "Home", "mice": "MICE and events"}

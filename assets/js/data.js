@@ -95,6 +95,10 @@ window.IC = window.IC || {};
     'hanoi-sapa-halong-5d3n-charter-classic': 'hanoi-train-street',
     'hanoi-sapa-halong-6d4n-charter': 'fansipan-train',
     'hanoi-sapa-halong-6d4n-charter-classic': 'halong',
+    'danang-5d4n-cebu-charter': 'hoian-boats',
+    'hanoi-sapa-halong-4d3n': 'halong',
+    'hanoi-sapa-halong-5d3n-cebu': 'halong-boat',
+    'hanoi-sapa-halong-6d4n-cebu': 'fansipan-train',
     'shanghai-disneyland-4d3n': 'shanghai-disney',
     'shanghai-5d3n': 'shanghai',
     'shanghai-mini-kyoto-5d4n': 'shanghai',
@@ -3256,6 +3260,773 @@ window.IC = window.IC || {};
       ],
       "posterSize": [
         533,
+        800
+      ]
+    },
+    {
+      "id": "danang-5d4n-cebu-charter",
+      "name": "Da Nang Charter Flight 5D4N Tour",
+      "subtitle": "Out Cebu · VietJet",
+      "region": "intl",
+      "country": "Vietnam",
+      "flag": "vn",
+      "duration": "5 days 4 nights",
+      "days": 5,
+      "status": "available",
+      "featured": false,
+      "departure": "Cebu (Mactan-Cebu International)",
+      "price": {
+        "from": 32888,
+        "label": "From",
+        "unit": "per pax"
+      },
+      "year": 2026,
+      "ends": "2027-01-03",
+      "image": "vn-hoian-boats.jpg",
+      "alt": "Lantern boats on the Thu Bon River in Hoi An",
+      "gallery": [
+        "vn-hoian-boats.jpg"
+      ],
+      "summary": "A 5-day charter trip from Cebu to Da Nang: Ba Na Hills and the Golden Bridge, Son Tra, Marble Mountains, Coconut Boat Ride and Hoi An, with 4-star hotel stays.",
+      "overview": "Fly Cebu to Da Nang on a VietJet charter flight and spend four nights at a local 4-star beach hotel. You will ride the Ba Na Hills cable car and walk the Golden Bridge, see the Lady Buddha, Dragon Bridge and Pink Church, take a coconut boat ride on Canaan Island and stroll through Hoi An Ancient Town. A private coach and English-speaking guide are with you throughout, and checked baggage is 20 kg plus 7 kg hand carry. This rate includes shop visits.",
+      "travelDates": [
+        {
+          "d": "Dec 22–26"
+        },
+        {
+          "d": "Dec 26–30"
+        },
+        {
+          "d": "Dec 30–Jan 3"
+        }
+      ],
+      "travelDatesNote": "Departures from Cebu, Dec 22–26 2026 to Dec 30–Jan 3 2026. The rate changes by date: an amount on a date is added to the base rate per pax. Seats are limited and confirmed at booking.",
+      "itinerary": [
+        {
+          "day": "Day 1",
+          "title": "Cebu – Da Nang",
+          "items": [
+            "Fly Cebu to Da Nang (reference flight VJ8145, 19:00–20:55)",
+            "Meet your tour guide at the airport",
+            "Transfer to the hotel and check in"
+          ]
+        },
+        {
+          "day": "Day 2",
+          "title": "Ba Na Hills",
+          "items": [
+            "Hotel breakfast",
+            "Transfer to Ba Na Hills and ride the world’s longest single-line cable car up the mountain",
+            "Admire the French village architecture on the mountain",
+            "Walk across the Golden Bridge (Buddha Hand Bridge)",
+            "Visit a local mini supermarket",
+            "Transfer to the hotel"
+          ]
+        },
+        {
+          "day": "Day 3",
+          "title": "Da Nang city and Son Tra",
+          "items": [
+            "Hotel breakfast",
+            "Visit a latex shop",
+            "Son Tra Peninsula: the 67-metre Lady Buddha overlooking the sea",
+            "APEC Park",
+            "Da Nang Cathedral (Pink Church)",
+            "Dragon Bridge and Lovers Bridge",
+            "Visit a silk shop",
+            "Transfer to the hotel"
+          ]
+        },
+        {
+          "day": "Day 4",
+          "title": "Canaan Island, Marble Mountains and Hoi An",
+          "items": [
+            "Hotel breakfast",
+            "Canaan Island: Coconut Boat Ride",
+            "The Marble Mountains",
+            "Hoi An Ancient Town",
+            "Visit a jewelry shop",
+            "Transfer to the hotel"
+          ]
+        },
+        {
+          "day": "Day 5",
+          "title": "Da Nang – Cebu",
+          "items": [
+            "Hotel breakfast",
+            "Visit a treasure shop",
+            "Transfer to the airport and fly back (reference flight VJ8144, 13:55–18:00)"
+          ]
+        }
+      ],
+      "inclusions": [
+        "4 nights’ accommodation on twin sharing with daily hotel breakfast",
+        "Sightseeing tours as specified, with all entrance fees",
+        "Private coach with English-speaking tour guide",
+        "Meals as listed",
+        "VietJet charter flight Cebu – Da Nang – Cebu",
+        "Baggage allowance: 20 kg checked baggage plus 7 kg hand carry"
+      ],
+      "exclusions": [
+        "Personal expenses such as phone calls and minibar",
+        "Tips for driver and guide: USD 25 per person (USD 5 per day for 5 days), collected with the tour fee",
+        "Airport tax: USD 45 per person (Da Nang and Cebu), collected with the tour fee",
+        "Fuel surcharge: USD 50 per person, collected with the tour fee and subject to change",
+        "Philippine travel tax: PHP 1,620 per person",
+        "Single supplement: PHP 4,800 per person",
+        "Travel insurance",
+        "Covid-related procedures",
+        "Visa, if needed"
+      ],
+      "optional": [
+        "Han River Cruise (night view, one free drink) + Vietnamese massage + one buffet dinner: USD 99 per person"
+      ],
+      "hotelsLabel": "Hotels",
+      "hotels": [
+        "Day 1–4: TGT Beach Hotel or similar, local 4★"
+      ],
+      "notes": [
+        "Meals: Day 1 none (X/X/X), Day 2 breakfast, Day 3 breakfast, lunch and dinner, Day 4 breakfast, lunch and dinner, Day 5 breakfast.",
+        "Reference flights: VJ8145 CEB–DAD 19:00–20:55 and VJ8144 DAD–CEB 13:55–18:00.",
+        "All services are on a private basis.",
+        "In crowded or special circumstances the order of attractions may be adjusted without prior notice.",
+        "Rooms are twin sharing by default. A triple room is not guaranteed; otherwise share with other guests or pay the single supplement.",
+        "If the listed hotels are not available, similar hotels will be used.",
+        "Fuel tax may increase due to international circumstances.",
+        "This rate includes shop visits: latex shop, silk shop, jewelry shop and treasure shop (plus a local mini supermarket on Day 2)."
+      ],
+      "places": [
+        "Ba Na Hills",
+        "Golden Bridge",
+        "French Village",
+        "Son Tra Peninsula",
+        "Lady Buddha",
+        "APEC Park",
+        "Da Nang Cathedral (Pink Church)",
+        "Dragon Bridge",
+        "Canaan Island",
+        "Marble Mountains",
+        "Hoi An Ancient Town"
+      ],
+      "posters": [
+        "vn-poster-danang-5d4n-cebu-charter-0.jpg"
+      ],
+      "posterSize": [
+        524,
+        800
+      ]
+    },
+    {
+      "id": "hanoi-sapa-halong-4d3n",
+      "name": "Hanoi – Sapa – Ha Long Bay 4D3N Tour",
+      "subtitle": "Out Cebu · Vietnam Airlines",
+      "region": "intl",
+      "country": "Vietnam",
+      "flag": "vn",
+      "duration": "4 days 3 nights",
+      "days": 4,
+      "status": "available",
+      "featured": true,
+      "departure": "Cebu (Mactan-Cebu International)",
+      "price": {
+        "from": 35888,
+        "label": "From",
+        "unit": "per pax"
+      },
+      "year": 2026,
+      "ends": "2027-07-01",
+      "image": "vn-halong.jpg",
+      "alt": "Boats on the turquoise water of Ha Long Bay",
+      "gallery": [
+        "vn-halong.jpg"
+      ],
+      "summary": "Four days from Cebu to Hanoi, Sapa and Ha Long Bay: Fansipan cable car, an exclusive Ha Long Bay cruise and 4-star hotels, flying Vietnam Airlines.",
+      "overview": "Fly Cebu to Hanoi with Vietnam Airlines and spend three nights in 4-star hotels in Sapa, Hanoi and Ha Long Bay. Highlights are Hoan Kiem Lake and the 36 Streets, Hanoi Train Street, the Muong Hoa Mountain Railway and Fansipan cable car, and an exclusive cruise on Ha Long Bay. A private coach and English-speaking guide are included, and the rate includes 1 piece of 23 kg baggage. This rate includes shop visits.",
+      "travelDates": [
+        {
+          "d": "Dec 7–10",
+          "add": 4000
+        },
+        {
+          "d": "Dec 28–31",
+          "add": 4000
+        },
+        {
+          "d": "Jan 11–14",
+          "y": 2027
+        },
+        {
+          "d": "Jan 18–21",
+          "y": 2027,
+          "add": 2000
+        },
+        {
+          "d": "Feb 1–4",
+          "y": 2027
+        },
+        {
+          "d": "Feb 15–18",
+          "y": 2027,
+          "add": 3000
+        },
+        {
+          "d": "Mar 8–11",
+          "y": 2027
+        },
+        {
+          "d": "Mar 22–25",
+          "y": 2027
+        },
+        {
+          "d": "May 3–6",
+          "y": 2027
+        },
+        {
+          "d": "May 10–13",
+          "y": 2027
+        },
+        {
+          "d": "May 17–20",
+          "y": 2027
+        },
+        {
+          "d": "May 24–27",
+          "y": 2027
+        },
+        {
+          "d": "Jun 7–10",
+          "y": 2027
+        },
+        {
+          "d": "Jun 14–17",
+          "y": 2027
+        },
+        {
+          "d": "Jun 21–24",
+          "y": 2027
+        },
+        {
+          "d": "Jun 28–Jul 1",
+          "y": 2027
+        }
+      ],
+      "travelDatesNote": "Departures from Cebu, Dec 7–10 2026 to Jun 28–Jul 1 2027. The rate changes by date: an amount on a date is added to the base rate per pax. Seats are limited and confirmed at booking.",
+      "itinerary": [
+        {
+          "day": "Day 1",
+          "title": "Cebu – Hanoi – Sapa",
+          "items": [
+            "Fly Cebu to Hanoi (VN 642, 05:00–07:50)",
+            "Meet your tour guide at the airport",
+            "Explore Hoan Kiem Lake and the 36 Streets",
+            "Visit Ba Dinh Square and Hanoi Train Street",
+            "Transfer to Sapa",
+            "Visit Sapa Tourist Street, Sapa Church and Love Square",
+            "After dinner, transfer to the hotel and check in"
+          ]
+        },
+        {
+          "day": "Day 2",
+          "title": "Sapa – Hanoi",
+          "items": [
+            "Hotel breakfast",
+            "Ride the Muong Hoa Mountain Railway, the most modern mountain railway in Vietnam, from Sapa Town to the Fansipan Cable Car Station (round trip)",
+            "Take the cable car to the Fansipan Peak area (round trip) for panoramic mountain and valley views",
+            "Visit temples, Buddha statues and scenic viewpoints; explore the summit area at your own pace and walk up to the Fansipan Summit (summit funicular not included)",
+            "Lunch: mountain buffet at Van Sam restaurant",
+            "Visit the MOANA coffee shop, Sapa’s popular photo spot",
+            "Transfer to Hanoi",
+            "After dinner, transfer to the hotel and check in"
+          ]
+        },
+        {
+          "day": "Day 3",
+          "title": "Hanoi – Ha Long Bay",
+          "items": [
+            "Breakfast",
+            "Visit a latex shop",
+            "Ha Long Bay exclusive cruise by Ambrose cruise",
+            "Lunch: cruise buffet",
+            "Onboard activities: karaoke, Vietnamese afternoon tea, Stalactite Cave, Tip Top Island with overlook, Fighting Cock Island",
+            "After dinner, transfer to the hotel and check in"
+          ]
+        },
+        {
+          "day": "Day 4",
+          "title": "Ha Long Bay – Hanoi – Cebu",
+          "items": [
+            "Hotel breakfast",
+            "Visit a ruby shop",
+            "Visit a silk shop and a bamboo shop",
+            "Transfer to Hanoi World (gondola ride not included)",
+            "Transfer to the airport and fly back (VN 643, 23:10–04:00 next day)"
+          ]
+        }
+      ],
+      "inclusions": [
+        "Economy airfare and taxes with Vietnam Airlines (round trip) plus 1 piece of 23 kg baggage",
+        "3 nights’ accommodation on twin sharing at hotels of your choice, with daily hotel breakfast",
+        "Private coach with English-speaking tour guide",
+        "Sightseeing tours as specified, including main entrance tickets",
+        "Meals as listed"
+      ],
+      "exclusions": [
+        "Personal expenses such as phone calls and minibar",
+        "Extra baggage allowance",
+        "Travel insurance with Covid-19 coverage",
+        "Philippine travel tax",
+        "Visa",
+        "Tips for driver and guide: USD 20 per person (USD 5 per day for 4 days)",
+        "Single supplement: USD 68 per person",
+        "Taxes, surcharges and fees are subject to change"
+      ],
+      "optional": [
+        "High-speed boat + Vietnamese massage + Royal hotpot dinner + show: USD 99 per person",
+        "Vietnamese massage + Royal hotpot dinner + show: USD 70 per person"
+      ],
+      "hotelsLabel": "Hotels",
+      "hotels": [
+        "Day 1: 4★ Sapa Hotel",
+        "Day 2: 4★ Hanoi Hotel",
+        "Day 3: 4★ Ha Long Bay Hotel"
+      ],
+      "notes": [
+        "Meals: Day 1 lunch and dinner (X/L/D), Day 2 B/L/D, Day 3 B/L/D, Day 4 B/L (no dinner).",
+        "Flights: VN 642 CEB–HAN 05:00–07:50; VN 643 HAN–CEB 23:10–04:00 (+1).",
+        "Itinerary is subject to change without prior notice and to weather conditions.",
+        "If the listed hotels are not available, similar hotels will be used.",
+        "If a traveller (including a child with bed) has no roommate, they will be paired with another guest, or pay the single supplement.",
+        "This rate includes shop visits: latex, ruby, silk, bamboo and local specialty shops.",
+        "Tips for driver and guide are collected separately (USD 5 per person per day)."
+      ],
+      "places": [
+        "Hoan Kiem Lake",
+        "36 Streets (Old Quarter)",
+        "Ba Dinh Square",
+        "Hanoi Train Street",
+        "Sapa Tourist Street",
+        "Sapa Church",
+        "Love Square",
+        "Muong Hoa Mountain Railway",
+        "Fansipan Cable Car",
+        "Fansipan Peak",
+        "MOANA Coffee",
+        "Ha Long Bay",
+        "Stalactite Cave",
+        "Tip Top Island",
+        "Fighting Cock Island",
+        "Hanoi World"
+      ],
+      "posters": [
+        "vn-poster-hanoi-sapa-halong-4d3n-0.jpg",
+        "vn-poster-hanoi-sapa-halong-4d3n-1.jpg"
+      ],
+      "posterSize": [
+        566,
+        800
+      ]
+    },
+    {
+      "id": "hanoi-sapa-halong-5d3n-cebu",
+      "name": "Hanoi – Sapa – Ha Long Bay 5D3N Tour (No Shopping)",
+      "subtitle": "Out Cebu · Vietjet Airlines",
+      "region": "intl",
+      "country": "Vietnam",
+      "flag": "vn",
+      "duration": "5 days 3 nights",
+      "days": 5,
+      "status": "available",
+      "featured": false,
+      "departure": "Cebu (Mactan-Cebu International)",
+      "price": {
+        "from": 36888,
+        "label": "From",
+        "unit": "per pax"
+      },
+      "year": 2026,
+      "ends": "2027-03-27",
+      "image": "vn-halong-boat.jpg",
+      "alt": "A cruise boat among the karst islands of Ha Long Bay",
+      "gallery": [
+        "vn-halong-boat.jpg"
+      ],
+      "summary": "Five days from Cebu to Hanoi, Sapa and Ha Long Bay with no shopping stops: Fansipan cable car, an exclusive Ha Long Bay cruise and 4-star hotels, flying Vietjet.",
+      "overview": "Fly Cebu to Hanoi with Vietjet Airlines and spend three nights in local 4-star hotels in Sapa, Hanoi and Ha Long Bay. You will explore Hanoi’s Old Quarter, ride the Fansipan cable car and enjoy an exclusive Ha Long Bay cruise with lunch and afternoon tea on board. A private coach and English-speaking guide are included, along with 20 kg baggage. This is a no-shopping package.",
+      "travelDates": [
+        {
+          "d": "Dec 1–5"
+        },
+        {
+          "d": "Dec 8–12"
+        },
+        {
+          "d": "Dec 29–Jan 2",
+          "add": 6000
+        },
+        {
+          "d": "Jan 26–30",
+          "y": 2027,
+          "add": 3000
+        },
+        {
+          "d": "Feb 2–6",
+          "y": 2027,
+          "add": 3000
+        },
+        {
+          "d": "Feb 16–20",
+          "y": 2027,
+          "add": 4000
+        },
+        {
+          "d": "Feb 23–27",
+          "y": 2027,
+          "add": 2000
+        },
+        {
+          "d": "Mar 2–6",
+          "y": 2027,
+          "add": 2000
+        },
+        {
+          "d": "Mar 9–13",
+          "y": 2027,
+          "add": 2000
+        },
+        {
+          "d": "Mar 16–20",
+          "y": 2027,
+          "add": 2000
+        },
+        {
+          "d": "Mar 23–27",
+          "y": 2027,
+          "add": 2000
+        }
+      ],
+      "travelDatesNote": "Departures from Cebu, Dec 1–5 2026 to Mar 23–27 2027. The rate changes by date: an amount on a date is added to the base rate per pax. Seats are limited and confirmed at booking.",
+      "itinerary": [
+        {
+          "day": "Day 1",
+          "title": "Cebu – Hanoi – Sapa",
+          "items": [
+            "Fly Cebu to Hanoi (VJ 1957, 06:30–09:15)",
+            "Meet your tour guide at the airport",
+            "Explore Hoan Kiem Lake and the 36 Streets",
+            "Visit Ba Dinh Square and Hanoi Train Street",
+            "Transfer to Sapa",
+            "Visit Sapa Tourist Street, Sapa Church and Love Square",
+            "After dinner, transfer to the hotel and check in"
+          ]
+        },
+        {
+          "day": "Day 2",
+          "title": "Sapa – Hanoi",
+          "items": [
+            "Hotel breakfast",
+            "Visit Moana coffee",
+            "Ride the Muong Hoa Mountain Railway, the most modern mountain railway in Vietnam, from Sapa Town to the Fansipan Cable Car Station (round trip)",
+            "Take the cable car to the Fansipan Peak area (round trip) for panoramic mountain and valley views",
+            "Visit temples, Buddha statues and scenic viewpoints; explore the summit area at your own pace and walk up to the Fansipan Summit (summit funicular not included)",
+            "Lunch: mountain buffet at Van Sam restaurant",
+            "Transfer to Hanoi",
+            "After dinner, transfer to the hotel and check in"
+          ]
+        },
+        {
+          "day": "Day 3",
+          "title": "Hanoi – Ha Long Bay",
+          "items": [
+            "Breakfast",
+            "Transfer to Ha Long Bay",
+            "Ha Long Bay exclusive cruise",
+            "Lunch: cruise buffet",
+            "Onboard activities: karaoke, Vietnamese afternoon tea, Stalactite Cave, Tip Top Island with overlook, Fighting Cock Island",
+            "Transfer to the hotel and check in"
+          ]
+        },
+        {
+          "day": "Days 4–5",
+          "title": "Ha Long Bay – Hanoi – Cebu",
+          "items": [
+            "Hotel breakfast",
+            "Transfer to Hanoi World (gondola ride not included)",
+            "Transfer to the airport and fly back (VJ 1956, 01:00–05:30)"
+          ]
+        }
+      ],
+      "inclusions": [
+        "Economy airfare and taxes with Vietjet Airlines (round trip) plus 1 piece of 20 kg baggage",
+        "3 nights’ accommodation on twin sharing at hotels of your choice, with daily hotel breakfast",
+        "Private coach with English-speaking tour guide",
+        "Sightseeing tours as specified, including main entrance tickets",
+        "Meals as listed"
+      ],
+      "exclusions": [
+        "Personal expenses such as phone calls and minibar",
+        "Extra baggage allowance",
+        "Travel insurance with Covid-19 coverage",
+        "Philippine travel tax",
+        "Visa",
+        "Tips for driver and guide: USD 20 per person (USD 5 per day for 4 days)",
+        "Single supplement: USD 68 per person",
+        "Fuel surcharge: USD 45 per person (rate subject to change)"
+      ],
+      "optional": [
+        "High-speed boat + Vietnamese massage + Royal hotpot dinner + show: USD 99 per person",
+        "Vietnamese massage + Royal hotpot dinner + show: USD 70 per person",
+        "Rong May Glass Bridge: USD 35 per person"
+      ],
+      "hotelsLabel": "Hotels",
+      "hotels": [
+        "Day 1: Local 4★ Sapa Hotel",
+        "Day 2: Local 4★ Hanoi Hotel",
+        "Day 3: Local 4★ Ha Long Bay Hotel"
+      ],
+      "notes": [
+        "Meals: Day 1 lunch and dinner (X/L/D), Day 2 B/L/D, Day 3 B/L/D, Days 4–5 B/L (no dinner).",
+        "Flights: VJ 1957 CEB–HAN 06:30–09:15; VJ 1956 HAN–CEB 01:00–05:30 on the last day (overnight, arrives early morning).",
+        "Itinerary is subject to change without prior notice and to weather conditions.",
+        "If the listed hotels are not available, similar hotels will be used.",
+        "If a traveller (including a child with bed) has no roommate, they will be paired with another guest, or pay the single supplement.",
+        "No-shopping package: no shop stops in the itinerary.",
+        "Tips for driver and guide are collected separately (USD 5 per person per day)."
+      ],
+      "places": [
+        "Hoan Kiem Lake",
+        "36 Streets (Old Quarter)",
+        "Ba Dinh Square",
+        "Hanoi Train Street",
+        "Sapa Tourist Street",
+        "Sapa Church",
+        "Love Square",
+        "Moana Coffee",
+        "Muong Hoa Mountain Railway",
+        "Fansipan Cable Car",
+        "Fansipan Peak",
+        "Ha Long Bay",
+        "Stalactite Cave",
+        "Tip Top Island",
+        "Fighting Cock Island",
+        "Hanoi World"
+      ],
+      "posters": [
+        "vn-poster-hanoi-sapa-halong-5d3n-cebu-0.jpg"
+      ],
+      "posterSize": [
+        550,
+        800
+      ]
+    },
+    {
+      "id": "hanoi-sapa-halong-6d4n-cebu",
+      "name": "Hanoi – Sapa – Ha Long Bay 6D4N Tour (No Shopping)",
+      "subtitle": "Out Cebu · Vietjet Airlines",
+      "region": "intl",
+      "country": "Vietnam",
+      "flag": "vn",
+      "duration": "6 days 4 nights",
+      "days": 6,
+      "status": "available",
+      "featured": false,
+      "departure": "Cebu (Mactan-Cebu International)",
+      "price": {
+        "from": 38888,
+        "label": "From",
+        "unit": "per pax"
+      },
+      "year": 2026,
+      "ends": "2027-03-18",
+      "image": "vn-fansipan-train.jpg",
+      "alt": "The Muong Hoa mountain train climbing toward Fansipan, Sapa",
+      "gallery": [
+        "vn-fansipan-train.jpg"
+      ],
+      "summary": "Six days from Cebu to Sapa, Hanoi and Ha Long Bay with no shopping stops: Fansipan cable car, a Ha Long Bay day cruise and 4-star hotels, flying Vietjet.",
+      "overview": "Fly Cebu to Hanoi with Vietjet Airlines, then head straight to Sapa for two nights, followed by Hanoi and Ha Long Bay in local 4-star hotels. You will ride the Muong Hoa Mountain Railway and Fansipan cable car, see Hanoi’s Old Quarter and Train Street, and take a Ha Long Bay day cruise with buffet lunch and afternoon tea. A private coach and English-speaking guide are included, along with 20 kg baggage. This is a no-shopping package.",
+      "travelDates": [
+        {
+          "d": "Dec 12–17"
+        },
+        {
+          "d": "Dec 19–24",
+          "add": 6000
+        },
+        {
+          "d": "Dec 26–31",
+          "add": 6000
+        },
+        {
+          "d": "Jan 2–7",
+          "y": 2027,
+          "add": 6000
+        },
+        {
+          "d": "Jan 16–21",
+          "y": 2027,
+          "add": 3000
+        },
+        {
+          "d": "Jan 23–28",
+          "y": 2027,
+          "add": 3000
+        },
+        {
+          "d": "Jan 30–Feb 4",
+          "y": 2027,
+          "add": 3000
+        },
+        {
+          "d": "Feb 13–18",
+          "y": 2027,
+          "add": 4000
+        },
+        {
+          "d": "Feb 20–25",
+          "y": 2027,
+          "add": 2000
+        },
+        {
+          "d": "Feb 27–Mar 4",
+          "y": 2027,
+          "add": 2000
+        },
+        {
+          "d": "Mar 6–11",
+          "y": 2027,
+          "add": 2000
+        },
+        {
+          "d": "Mar 13–18",
+          "y": 2027,
+          "add": 2000
+        }
+      ],
+      "travelDatesNote": "Departures from Cebu, Dec 12–17 2026 to Mar 13–18 2027. The rate changes by date: an amount on a date is added to the base rate per pax. Seats are limited and confirmed at booking.",
+      "itinerary": [
+        {
+          "day": "Day 1",
+          "title": "Cebu – Hanoi – Sapa",
+          "items": [
+            "Fly Cebu to Hanoi (VJ 1957, 06:30–09:15)",
+            "Meet your tour guide at Pole 4 outside the airport",
+            "Transfer to Sapa by bus (about 5.5 hours)",
+            "Visit Sapa Church, Love Square and Sapa Town",
+            "Visit Moana coffee",
+            "After dinner, transfer to the hotel and check in"
+          ]
+        },
+        {
+          "day": "Day 2",
+          "title": "Sapa and Fansipan",
+          "items": [
+            "Hotel breakfast",
+            "Ride the Muong Hoa Mountain Railway, the most modern mountain railway in Vietnam, from Sapa Town to the Fansipan Cable Car Station (round trip)",
+            "Take the cable car to the Fansipan Peak area (round trip) for panoramic mountain and valley views",
+            "Visit temples, Buddha statues and scenic viewpoints; explore the summit area at your own pace and walk up to the Fansipan Summit (summit funicular not included)",
+            "Lunch: mountain buffet at Van Sam restaurant",
+            "After dinner, transfer to the hotel and check in"
+          ]
+        },
+        {
+          "day": "Day 3",
+          "title": "Sapa – Hanoi",
+          "items": [
+            "Breakfast",
+            "Transfer to Hanoi",
+            "Ba Dinh Square",
+            "Ho Chi Minh Mausoleum (photo stop)",
+            "Visit the Old Quarter (36 Streets) and Hoan Kiem Lake",
+            "Visit Hanoi Train Street (subject to local authority permission)",
+            "Dinner: Sen Buffet",
+            "Transfer to the hotel and check in"
+          ]
+        },
+        {
+          "day": "Day 4",
+          "title": "Hanoi – Ha Long Bay",
+          "items": [
+            "Breakfast",
+            "Transfer to Ha Long Bay",
+            "Ha Long Bay day cruise",
+            "Buffet lunch on board",
+            "Cruise through thousands of limestone islands",
+            "Visit Sung Sot Cave, Luon Cave and Titop Island",
+            "Afternoon tea while cruising back to the port",
+            "Transfer to the hotel and check in"
+          ]
+        },
+        {
+          "day": "Days 5–6",
+          "title": "Ha Long Bay – Hanoi – Cebu",
+          "items": [
+            "Hotel breakfast",
+            "Transfer to Hanoi World (gondola ride not included)",
+            "Transfer to the airport and fly back (VJ 1956, 01:00–05:30)"
+          ]
+        }
+      ],
+      "inclusions": [
+        "Economy airfare and taxes with Vietjet Airlines (round trip) plus 1 piece of 20 kg baggage",
+        "4 nights’ accommodation on twin sharing at hotels of your choice, with daily hotel breakfast",
+        "Private coach with English-speaking tour guide",
+        "Sightseeing tours as specified, including main entrance tickets",
+        "Meals as listed"
+      ],
+      "exclusions": [
+        "Personal expenses such as phone calls and minibar",
+        "Extra baggage allowance",
+        "Travel insurance with Covid-19 coverage",
+        "Philippine travel tax",
+        "Visa",
+        "Tips for driver and guide: USD 25 per person (USD 5 per day for 5 days)",
+        "Single supplement: USD 88 per person",
+        "Fuel surcharge: USD 45 per person (rate subject to change)"
+      ],
+      "optional": [
+        "High-speed boat + Vietnamese massage + Royal hotpot dinner + show: USD 99 per person",
+        "Vietnamese massage + Royal hotpot dinner + show: USD 70 per person",
+        "Rong May Glass Bridge: USD 35 per person"
+      ],
+      "hotelsLabel": "Hotels",
+      "hotels": [
+        "Day 1–2: Local 4★ Sapa Hotel",
+        "Day 3: Local 4★ Hanoi Hotel",
+        "Day 4: Local 4★ Ha Long Bay Hotel"
+      ],
+      "notes": [
+        "Meals: Day 1 lunch and dinner (X/L/D), Days 2–4 B/L/D, Days 5–6 B/L (no dinner).",
+        "Flights: VJ 1957 CEB–HAN 06:30–09:15; VJ 1956 HAN–CEB 01:00–05:30 on the last day (overnight, arrives early morning).",
+        "Itinerary is subject to change without prior notice and to weather conditions.",
+        "If the listed hotels are not available, similar hotels will be used.",
+        "If a traveller (including a child with bed) has no roommate, they will be paired with another guest, or pay the single supplement.",
+        "No-shopping package: no shop stops in the itinerary.",
+        "Tips for driver and guide are collected separately (USD 5 per person per day)."
+      ],
+      "places": [
+        "Sapa Church",
+        "Love Square",
+        "Sapa Town",
+        "Moana Coffee",
+        "Muong Hoa Mountain Railway",
+        "Fansipan Cable Car",
+        "Fansipan Peak",
+        "Ba Dinh Square",
+        "Ho Chi Minh Mausoleum",
+        "Old Quarter (36 Streets)",
+        "Hoan Kiem Lake",
+        "Hanoi Train Street",
+        "Ha Long Bay",
+        "Sung Sot Cave",
+        "Luon Cave",
+        "Titop Island",
+        "Hanoi World"
+      ],
+      "posters": [
+        "vn-poster-hanoi-sapa-halong-6d4n-cebu-0.jpg"
+      ],
+      "posterSize": [
+        520,
         800
       ]
     },
