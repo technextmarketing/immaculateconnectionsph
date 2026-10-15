@@ -806,7 +806,7 @@
     };
     const paintFacets = () => {
       fillSelect(sel.len, 'len', 'Any length', LEN);
-      fillSelect(sel.from, 'from', 'Cebu or Manila', FROM);
+      fillSelect(sel.from, 'from', 'Any airport', FROM);
       fillSelect(sel.month, 'month', 'Any month', MONTHS.map(k => [k, mLabel(k)]));
       fillSelect(sel.status, 'status', '', STATUS);
       Object.values(sel).forEach(el => el.classList.toggle('is-set', el.value !== (el === sel.status ? 'current' : 'all')));
@@ -2793,7 +2793,8 @@
     $$('[data-stat="countries"]').forEach(el => { el.textContent = String(countryList().filter(c => c.name !== 'Other').length); });
     // package counts leave out departed packages, like the Tours list and its FAQ
     const live = (IC.tours || []).filter(t => effStatus(t) !== 'past');
-    const n = { packages: live.length, 'packages-local': live.filter(t => t.region !== 'intl').length, 'packages-abroad': live.filter(t => t.region === 'intl').length };
+    const n = { packages: live.length, 'packages-local': live.filter(t => t.region !== 'intl').length, 'packages-abroad': live.filter(t => t.region === 'intl').length,
+      'packages-danang': live.filter(t => /Da Nang/.test(t.name)).length, 'packages-hanoi': live.filter(t => /Hanoi|Sapa|Ha Long/.test(t.name)).length };
     Object.keys(n).forEach(k => $$(`[data-stat="${k}"]`).forEach(el => { el.textContent = String(n[k]); }));
   }
 

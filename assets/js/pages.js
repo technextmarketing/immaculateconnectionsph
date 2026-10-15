@@ -602,7 +602,8 @@
   }
 
   // Ticketing: the flights already inside our packages, as a departures board
-  const LEG = { 'danang-6d4n': 'DAD', 'danang-5d3n': 'DAD', 'hanoi-sapa-halong-4d3n': 'HAN', 'shanghai-mini-kyoto-5d4n': 'SHA', 'charming-yunnan-8d7n': 'KMG', 'japan-tokyo-fuji-5d4n': 'TYO' };
+  // arrival airport by package: Da Nang (DAD) or Hanoi (HAN), the two Vietnam gateways the packages fly to
+  const LEG = new Proxy({}, { get: (_, id) => (/danang/.test(id) ? 'DAD' : /hanoi|sapa|halong/.test(id) ? 'HAN' : undefined) });
   function initBoard() {
     const board = $('[data-board]');
     if (!board || !IC.tours) return;

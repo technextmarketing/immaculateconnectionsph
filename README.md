@@ -117,6 +117,18 @@ Every page opens on a photo from `assets/img/hero/`. Unsplash photos are free fo
 - `dest-cebu-night-*`: photo by Zany Jadraque on Unsplash (https://unsplash.com/photos/long-exposure-photo-of-urban-city-with-lights-wptXOM6JytM), Unsplash License
 - `dest-cebu-aerial-*`: photo by Fritz Gabriel Carilo on Unsplash (https://unsplash.com/photos/birds-eye-view-photography-of-buildings-fulyk6dVFSQ), Unsplash License
 - `dest-hoian-lanterns-*`: photo by Hieu Do Quang on Unsplash (https://unsplash.com/photos/a-bunch-of-lanterns-that-are-hanging-from-a-tree-nj70WidlPjc), Unsplash License
+- `dest-sapa-*` and `media/vn-sapa*`: photo by Denis Sobnakov on Unsplash (https://unsplash.com/photos/the-sun-is-setting-over-a-green-valley-DY5cv04E42I), Unsplash License
+- `dest-fansipan-train-*` and `media/vn-fansipan-train*`: photo by Vivu Vietnam on Unsplash (https://unsplash.com/photos/a-red-and-yellow-train-traveling-down-a-mountain-side-W6ynUCrM_24), Unsplash License
+- `dest-dragon-bridge-*` and `media/vn-dragon-bridge*`: photo by Christian on Unsplash (https://unsplash.com/photos/a-large-fire-breathing-sculpture-is-lit-up-at-night-NsUrkNKt-kY), Unsplash License
+- `dest-hanoi-train-street-*` and `media/vn-hanoi-train-street*`: photo by Ryan Le on Unsplash (https://unsplash.com/photos/a-train-traveling-down-train-tracks-next-to-a-crowd-of-people-EKFPwbPkDec), Unsplash License
+- `dest-hoian-boats-*` and `media/vn-hoian-boats*`: photo by Hieu Do Quang on Unsplash (https://unsplash.com/photos/a-group-of-people-in-small-boats-on-a-river-owU4CVUvEyM), Unsplash License
+- `dest-danang-beach-*` and `media/vn-danang-beach*`: photo by Thach Tran on Unsplash (https://unsplash.com/photos/an-aerial-view-of-a-beach-and-a-city-w_0Dk0_JN3A), Unsplash License
+- `dest-halong-boat-*` and `media/vn-halong-boat*`: photo by Andre Ouellet on Unsplash (https://unsplash.com/photos/white-and-black-boat-on-water-near-mountain-during-daytime--0hW5I7eRJE), Unsplash License
+- `dest-hanoi-flags-*` and `media/vn-hanoi-flags*`: photo by Hieu Tran on Unsplash (https://unsplash.com/photos/red-flags-on-brown-concrete-building-during-daytime-cc6st2qGZjE), Unsplash License
+- `dest-dragon-bridge-day-*` and `media/vn-dragon-bridge-day*`: photo by Vincent Yap on Unsplash (https://unsplash.com/photos/dragon-bridge-in-da-nang-D3KnI5O5v2Y), Unsplash License
+- `dest-golden-bridge-walk-*` and `media/vn-golden-bridge-walk*`: photo by Andreea Popa on Unsplash (https://unsplash.com/photos/people-walking-on-bridge-during-daytime-PknaOrb1lVo), Unsplash License
+- `dest-marble-mountains-*` and `media/vn-marble-mountains*`: photo by Christian on Unsplash (https://unsplash.com/photos/a-building-with-a-statue-on-top-of-it-5XIW-AMQLyA), Unsplash License
+- `media/vn-danang*`, `media/vn-halong*`, `media/vn-hoian-lanterns*`: card copies of the `dest-danang`, `dest-halong` and `dest-hoian-lanterns` photos above
 - `svc-road-palms-*`: photo by Mae De los Santos on Unsplash (https://unsplash.com/photos/an-empty-road-surrounded-by-palm-trees-under-a-cloudy-blue-sky-JCShU4j-jr8), Unsplash License
 - `svc-stay-anda-*`: photo by Bryan Agua on Unsplash (https://unsplash.com/photos/photo-of-four-loungers-under-gazebo-facing-swimming-pool--HTTS0vxkVU), Unsplash License
 - `svc-stay-panglao-*`: photo by Brian Kairuz on Unsplash (https://unsplash.com/photos/blue-calm-sea-under-blue-and-white-skies-hiqElPJaLbM), Unsplash License

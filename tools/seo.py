@@ -74,6 +74,22 @@ LEGACY = {
     "home": "", "tours-1": "tours", "local-tours": "tours", "local-tour": "tours", "international-tour": "tours",
     "international-tours": "tours", "vietnam": "tours?country=vietnam", "services-1": "services", "services-5": "tours",
     "inquiries": "contact", "inquiry": "contact", "contact-us": "contact", "about-us": "about", "about-1": "about",
+    # packages replaced on 15 Oct 2026 by the Vietnam programmes; their old pages forward to the Tours list
+    "package-danang-6d4n": "tours",
+    "package-danang-5d3n": "tours",
+    "package-hanoi-sapa-halong-4d3n": "tours",
+    "package-charming-yunnan-8d7n": "tours",
+    "package-japan-tokyo-fuji-5d4n": "tours",
+    "package-shanghai-mini-kyoto-5d4n": "tours",
+    "package-bohol-breezes": "tours",
+    "package-camotes-discover": "tours",
+    "package-camotes-tudela": "tours",
+    "package-cebu-highlands": "tours",
+    "package-queen-city": "tours",
+    "package-twin-city": "tours",
+    "package-boracay-bliss": "tours",
+    "package-el-nido": "tours",
+    "package-coron": "tours",
 }
 
 
@@ -82,7 +98,7 @@ def legacy_redirects():
     for old, new in LEGACY.items():
         url = SITE + new
         canon = SITE + new.split("?")[0]
-        s = (f'<!DOCTYPE html>\n<!-- Old Wix address, forwarded. Written by tools/seo.py (LEGACY). -->\n<html lang="en">\n<head>\n'
+        s = (f'<!DOCTYPE html>\n<!-- Old address, forwarded. Written by tools/seo.py (LEGACY). -->\n<html lang="en">\n<head>\n'
              f'  <meta charset="utf-8">\n  <title>Moved | {NAME}</title>\n  <link rel="canonical" href="{canon}">\n'
              f'  <meta http-equiv="refresh" content="0; url={html.escape(url)}">\n</head>\n<body>\n'
              f'  <p>This page has moved to <a href="{html.escape(url)}">{html.escape(url)}</a>.</p>\n</body>\n</html>\n')
@@ -135,11 +151,11 @@ def agency_ld(tours):
     if not m: print("  index.html: TravelAgency data not found"); return
     d = json.loads(m.group(1))
     d.update({"@id": SITE + "#agency", "alternateName": "Immaculate Connections",
-              "description": "Cebu City travel agency for groups and families: tour packages, flight and ferry tickets, hotels, vans, coasters and buses with driver, and seminars and events, booked by one team, with international tours that fly out of Cebu.",
+              "description": "Cebu City travel agency for groups and families: tour packages, flight and ferry tickets, hotels, vans, coasters and buses with driver, and seminars and events, booked by one team, with Vietnam tour packages that fly from Manila.",
               "contactPoint": [{"@type": "ContactPoint", "telephone": "+63 917 319 8540", "contactType": "customer service", "areaServed": "PH"},
                                {"@type": "ContactPoint", "telephone": "+63 32 238 3343", "contactType": "reservations", "areaServed": "PH"}],
               "areaServed": [{"@type": "City", "name": "Cebu City"}, {"@type": "AdministrativeArea", "name": "Cebu"}, {"@type": "Country", "name": "Philippines"}],
-              "knowsAbout": ["Tour packages", "Bohol tours", "Cebu city tours", "Camotes Islands", "Vietnam tours", "Japan tours", "Flight ticketing", "Ferry tickets", "Hotel booking", "Van and bus rental with driver", "MICE", "Seminars and events"],
+              "knowsAbout": ["Tour packages", "Vietnam tours", "Da Nang tours", "Hanoi tours", "Sapa tours", "Ha Long Bay tours", "Custom Cebu and Bohol trips", "Flight ticketing", "Ferry tickets", "Hotel booking", "Van and bus rental with driver", "MICE", "Seminars and events"],
               "hasOfferCatalog": {"@type": "OfferCatalog", "name": "Tour packages", "itemListElement": [
                   dict({"@type": "Offer", "itemOffered": {"@type": "TouristTrip", "name": t["name"], "url": SITE + "package-" + t["id"]}},
                        **({"price": t["price"]["from"], "priceCurrency": (t["price"].get("currency") or "PHP").upper()} if t.get("price") else {})) for t in live(tours)]}})
@@ -163,13 +179,13 @@ def tours_faq(tours):
     deps = sorted({t["departure"] for t in intl if t.get("departure")})
     qa = [
         ("What tour packages does Immaculate Connections offer?",
-         f"We currently offer {len(L)} packages. In the Philippines: {names(local)}. Abroad: {names(intl)}. Every package page lists the itinerary, inclusions, exclusions and travel dates, and we also build custom itineraries for families, companies and groups."),
+         f"We currently offer {len(L)} Vietnam packages from Manila: {sum('Da Nang' in t['name'] for t in L)} Da Nang tours and {sum(any(w in t['name'] for w in ('Hanoi', 'Sapa', 'Ha Long')) for t in L)} Hanoi, Sapa and Ha Long Bay tours. Every package page lists the itinerary, inclusions, exclusions and travel dates, and we also build custom itineraries for families, companies and groups."),
         ("How much do the tour packages cost?",
-         ("Published rates: " + "; ".join(f"{t['name']}, {money(t['price'])}" for t in priced) + ". " if priced else "")
-         + "Peak travel dates carry the surcharge shown beside each date on the package page. Local tours are quoted on request, and every quotation is free."),
+         (f"Rates start at {money(min((t for t in priced), key=lambda t: t['price']['from'])['price'])} and differ by departure date; each package page shows the base rate and the amount added on dearer dates. " if priced else "")
+         + "Custom trips are quoted on request, and every quotation is free."),
         ("Where do the tours depart from?",
          (f"International packages depart from {' or '.join(deps)}. " if deps else "")
-         + "Cebu tours pick up from Cebu City or Mactan hotels, and the Bohol and Camotes packages include two-way boat tickets from Cebu."),
+         + "Custom trips around Cebu pick up from Cebu City or Mactan hotels."),
         ("Do you offer day tours from Cebu?",
          f"Yes. Our day tours are {names(day)}. Each package page lists the stops and inclusions; send an inquiry with your date and group size for a quotation." if day else
          "Yes. Send an inquiry with your date and group size and we will quote a day tour around Cebu."),
@@ -191,7 +207,8 @@ def tours_faq(tours):
     </section>
     <!-- /build:faq -->'''
     s = read("tours.html")
-    for key, n in (("packages", len(L)), ("packages-local", len(local)), ("packages-abroad", len(intl))):
+    for key, n in (("packages", len(L)), ("packages-local", len(local)), ("packages-abroad", len(intl)),
+                   ("packages-danang", sum("Da Nang" in t["name"] for t in L)), ("packages-hanoi", sum(any(w in t["name"] for w in ("Hanoi", "Sapa", "Ha Long")) for t in L))):
         s = re.sub(rf'(<strong data-stat="{key}">)\d+(</strong>)', lambda m: f"{m.group(1)}{n}{m.group(2)}", s)
     if "<!-- build:faq" in s:
         s = re.sub(r"<!-- build:faq.*?<!-- /build:faq -->", lambda m: sec, s, count=1, flags=re.S)
@@ -207,7 +224,7 @@ def ai_files(tours):
              ("car-rental", "Vans, coasters, buses and cars with driver in Cebu"), ("hotel-booking", "Hotel and resort bookings"), ("ticketing", "Flight and ferry tickets, group bookings"),
              ("mice", "Seminars, conventions and corporate events"), ("gallery", "Photos and videos from our group tours"), ("about", "About the agency and team"), ("contact", "Free quotation and inquiry form")]
     llms = [f"# {NAME}", "", "> Travel agency in Cebu City, Philippines, for groups and families. Local and international tour packages, flight and ferry ticketing, hotel bookings, vans, coasters and buses with driver, and seminars, events and MICE, booked by one team. Quotations are free.", "",
-            "Departures: Bohol, Camotes and Cebu City tours leave from Cebu. The Hanoi–Sapa–Ha Long Bay and Japan tours fly from Cebu; the Da Nang and Yunnan tours fly from Manila.", "",
+            "Departures: all current tour packages fly from Manila (NAIA) to Da Nang or Hanoi. Custom trips around Cebu, Bohol and Camotes are arranged on request.", "",
             "Contact: +63 917 319 8540 (mobile), (032) 238 3343 (landline), immaculateconnectionsph@gmail.com, Facebook: https://www.facebook.com/ImmaculateConnections.ph, Messenger: https://m.me/ImmaculateConnections.ph",
             "Office: Unit 4E, 4th Floor, JL Millennium Building, Don Jose Avila Street, Cebu City, Cebu, Philippines 6000", "", "## Pages", ""]
     LABEL = {"": "Home", "mice": "MICE and events"}

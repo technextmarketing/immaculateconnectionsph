@@ -36,42 +36,40 @@ os.chdir(ROOT)
 SITE = "https://www.immaculateconnectionsph.com/"   # keep in step with CONFIG.siteUrl in main.js
 BRAND = "Immaculate Connections"
 # Search titles and descriptions per package, from the keyword map (each title targets one search,
-# says "from Cebu" only where the tour departs Cebu, and is <= 35 chars so the brand suffix fits in 60).
+# names the departure city (Manila), and is <= 35 chars so the brand suffix fits in 60).
 # The page itself keeps the package's own name as its H1.
 SEO_TITLES = {
-    "danang-6d4n": "Da Nang Tour 6D4N from Manila",
-    "danang-5d3n": "Da Nang Tour 5D3N from Manila",
-    "hanoi-sapa-halong-4d3n": "Hanoi Sapa Ha Long Tour from Cebu",
-    "charming-yunnan-8d7n": "Yunnan China Tour 8D7N from Manila",
-    "japan-tokyo-fuji-5d4n": "Japan Tour from Cebu: Tokyo & Fuji",
-    "shanghai-mini-kyoto-5d4n": "Shanghai Tour 5D4N from Manila",
-    "bohol-breezes": "Bohol Day Tour from Cebu",
-    "camotes-discover": "Camotes Island Tour 2D1N from Cebu",
-    "camotes-tudela": "Tudela, Camotes Overnight Tour",
-    "cebu-highlands": "Cebu Highlands Tour: Temple of Leah",
-    "queen-city": "Cebu City Heritage Tour",
-    "twin-city": "Cebu & Mactan Twin City Tour",
-    "boracay-bliss": "Boracay Tour Package",
-    "el-nido": "El Nido, Palawan Tour Package",
-    "coron": "Coron, Palawan Tour Package",
+    "danang-6d4n-bana-overnight": "Da Nang 6D4N with Ba Na Hills Stay",
+    "danang-5d3n-bana-overnight": "Da Nang 5D3N with Ba Na Hills Stay",
+    "danang-6d4n-charter": "Da Nang Charter 6D4N, Sea Garden",
+    "danang-5d3n-charter": "Da Nang Charter 5D3N, Sea Garden",
+    "rose-danang-6d4n": "Da Nang Charter 6D4N, Nagila Hotel",
+    "rose-danang-5d3n": "Da Nang Charter 5D3N, Nagila Hotel",
+    "danang-4d3n": "Da Nang 4D3N Tour from Manila",
+    "danang-4d3n-z2": "Da Nang 4D3N Tour via AirAsia",
+    "hanoi-sapa-4d3n": "Hanoi Sapa 4D3N Tour from Manila",
+    "hanoi-sapa-halong-5d4n": "Hanoi Sapa Ha Long 5D4N Tour",
+    "hanoi-sapa-halong-5d3n-charter": "Ha Long Hanoi Sapa 5D3N Charter",
+    "hanoi-sapa-halong-5d3n-charter-classic": "Sapa Hanoi Ha Long 5D3N Charter",
+    "hanoi-sapa-halong-6d4n-charter": "Hanoi Sapa Ha Long 6D4N Charter",
+    "hanoi-sapa-halong-6d4n-charter-classic": "Sapa Hanoi Ha Long 6D4N Charter",
 }
 # Hand-written meta descriptions (<= 155 chars): price, length and departure first, never cut off.
 SEO_DESCS = {
-    "danang-6d4n": "Da Nang 6D4N tour from Manila from ₱23,888 per pax: round-trip charter flight, four nights in Da Nang, Ba Na Hills, Hoi An and the Hai Van Pass.",
-    "danang-5d3n": "Da Nang 5D3N tour from Manila from ₱21,888 per pax: round-trip charter flight, three nights at Sea Garden Hotel or similar, Ba Na Hills and city tour.",
-    "hanoi-sapa-halong-4d3n": "Hanoi, Sapa and Ha Long Bay 4D3N tour from Cebu on Vietnam Airlines, from ₱32,888: Old Quarter, Fansipan cable car and a Ha Long Bay cruise.",
-    "charming-yunnan-8d7n": "Yunnan, China 8D7N tour from Manila on China Southern, from US$1,488: Kunming, Dali, Lijiang and Shangri-La, 5-star hotels and a high-speed train.",
-    "japan-tokyo-fuji-5d4n": "Japan 5D4N winter tour from Cebu on Cebu Pacific, from US$1,049: Tokyo, Yokohama and Mt. Fuji with hotel breakfasts and an English-speaking guide.",
-    "shanghai-mini-kyoto-5d4n": "Shanghai 5D4N tour from Manila on Juneyao Air: the Bund, Lujiazui and the \"Mini Kyoto\" street. Published dates have passed; ask us for the next departure.",
-    "bohol-breezes": "Bohol day tour from Cebu: boat both ways, Blood Compact Shrine, Baclayon Church, Chocolate Hills and lunch on a Loboc River cruise. Free quotation.",
-    "camotes-discover": "Camotes Islands 2D1N tour from Cebu: beaches, caves and Lake Danao, with hotel, meals, boat tickets and guide arranged. Free quotation.",
-    "camotes-tudela": "Tudela, Camotes 2D1N tour from Cebu: Bukilat sea cave, Villahermosa mangroves, the Kaompang tree and Busay Falls, with an overnight stay.",
-    "cebu-highlands": "Cebu highlands day tour: Temple of Leah, Little Kyoto, Seoul Sierra and Sirao Garden, with air-conditioned van, guide and entrance fees. Free quotation.",
-    "queen-city": "Cebu City heritage day tour: Magellan's Cross, Basilica del Sto. Niño, Fort San Pedro, Parian ancestral houses and the Taoist Temple. Free quotation.",
-    "twin-city": "Cebu and Mactan day tour for first-timers: Cebu City landmarks plus the Alegre Guitar Factory on Mactan, with van, guide and entrance fees. Free quote.",
-    "boracay-bliss": "Planning Boracay? Our Boracay package is being finalised; ask us for a custom Boracay trip with flights, hotel and transfers. Free quotation.",
-    "el-nido": "El Nido, Palawan: our package is being finalised; ask us for a custom El Nido trip with flights, hotel and island tours. Free quotation.",
-    "coron": "Coron, Palawan: lakes, lagoons and shipwrecks. Our package is being finalised; ask us for a custom Coron trip with flights and hotel. Free quotation.",
+    "danang-6d4n-bana-overnight": "Da Nang 6D4N charter tour from Manila from ₱29,888 per pax: a night at Ba Na Hills, the Golden Bridge, Hoi An and city sights, VietJet Air charter.",
+    "danang-5d3n-bana-overnight": "Da Nang 5D3N charter tour from Manila from ₱27,888 per pax with a night at Ba Na Hills, the Golden Bridge, Hoi An and city sights on a VietJet Air charter.",
+    "danang-6d4n-charter": "Da Nang 6D4N charter flight tour from Manila from ₱24,888 per pax: four nights at Sea Garden Hotel or similar, Ba Na Hills, Hoi An and the city.",
+    "danang-5d3n-charter": "Da Nang 5D3N charter flight tour from Manila from ₱22,888 per pax: three nights at Sea Garden Hotel or similar, Ba Na Hills, Hoi An and city tour.",
+    "rose-danang-6d4n": "Da Nang 6D4N charter flight tour from Manila from ₱23,888 per pax: four nights at Nagila Hotel or similar, Ba Na Hills, Hoi An and city sights.",
+    "rose-danang-5d3n": "Da Nang 5D3N charter flight tour from Manila from ₱22,888 per pax: three nights at Nagila Hotel or similar, Ba Na Hills, Hoi An and city sights.",
+    "danang-4d3n": "Da Nang 4D3N tour from Manila on Cebu Pacific from ₱23,888 per pax: Han River Hotel or similar, Ba Na Hills, Hoi An and Da Nang city sights.",
+    "danang-4d3n-z2": "Da Nang 4D3N tour from Manila on AirAsia from ₱26,888 per pax: Ba Na Hills, Hoi An, Son Tra, the Marble Mountains and My Khe Beach.",
+    "hanoi-sapa-4d3n": "Hanoi and Sapa 4D3N tour from Manila on Cebu Pacific from ₱36,888 per pax: Fansipan by cable car, Sapa town and Hanoi’s Old Quarter, 4★ hotels.",
+    "hanoi-sapa-halong-5d4n": "Hanoi, Sapa and Ha Long Bay 5D4N tour from Manila on Cebu Pacific from ₱33,888 per pax: Fansipan, the Old Quarter and a Ha Long Bay cruise.",
+    "hanoi-sapa-halong-5d3n-charter": "Ha Long Bay, Hanoi and Sapa 5D3N charter tour from Manila from ₱32,888 per pax, no shopping stops: bay cruise, Old Quarter and Fansipan.",
+    "hanoi-sapa-halong-5d3n-charter-classic": "Sapa, Hanoi and Ha Long Bay 5D3N charter tour from Manila from ₱28,888 per pax: Fansipan, Hanoi city tour and a Ha Long Bay cruise.",
+    "hanoi-sapa-halong-6d4n-charter": "Hanoi, Sapa and Ha Long Bay 6D4N charter tour from Manila from ₱35,888 per pax, no shopping stops: Fansipan, the Old Quarter and a bay cruise.",
+    "hanoi-sapa-halong-6d4n-charter-classic": "Sapa, Hanoi and Ha Long Bay 6D4N charter tour from Manila from ₱29,888 per pax: Fansipan, Cat Cat Village, Hanoi and two nights at Ha Long Bay.",
 }
 
 
@@ -286,7 +284,7 @@ def build_pages():
     # one page per package, from the package.html template
     tpl = read("package.html")
     for f in glob.glob("package-*.html"):
-        if f[8:-5] not in ids: os.remove(f); print("  removed", f)
+        if f[8:-5] not in ids and "Written by tools/seo.py (LEGACY)" not in read(f): os.remove(f); print("  removed", f)   # retired packages keep a forwarder
     for t in pages:
         url = f"{SITE}package-{t['id']}"   # clean URL; Pages serves package-<id>.html
         name = SEO_TITLES.get(t["id"], t["name"])
