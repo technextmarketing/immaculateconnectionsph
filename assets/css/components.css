@@ -63,6 +63,11 @@
 .offer-media.is-poster::before { content: ""; position: absolute; inset: -30px; z-index: -1; background: var(--poster) center / cover no-repeat; filter: blur(24px) saturate(1.1) brightness(.8); }
 .offer-media.is-poster img { position: relative; object-fit: contain; object-position: center; padding: 14px 0; filter: drop-shadow(0 10px 24px rgba(8,24,52,.35)); }
 .offer-card:hover .offer-media.is-poster img { transform: scale(1.03); }
+/* package cards with an itinerary poster: the same treatment */
+.tour-media.is-poster { isolation: isolate; aspect-ratio: 1 / 1; }
+.tour-media.is-poster::before { content: ""; position: absolute; inset: -30px; z-index: -1; background: var(--poster) center / cover no-repeat; filter: blur(24px) saturate(1.1) brightness(.8); }
+.tour-media.is-poster img { position: relative; object-fit: contain; object-position: center; padding: 12px 0 56px; filter: drop-shadow(0 10px 24px rgba(8,24,52,.35)); }
+.tour-card:hover .tour-media.is-poster img { transform: scale(1.03); }
 .offer-body { padding: 22px 22px 24px; display: flex; flex-direction: column; gap: 10px; flex: 1; }
 .offer-kicker { display: inline-flex; align-items: center; gap: 6px; font-size: .76rem; font-weight: 800; letter-spacing: .08em; text-transform: uppercase; color: var(--blue); }
 .offer-kicker svg { width: 14px; height: 14px; }
