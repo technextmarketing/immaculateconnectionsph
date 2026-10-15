@@ -467,6 +467,15 @@ window.IC = window.IC || {};
         "Da Nang Cathedral (Pink Church)",
         "Cham Museum",
         "Dragon Bridge"
+      ],
+      "posters": [
+        "vn-poster-danang-6d4n-bana-overnight-0.jpg",
+        "vn-poster-danang-6d4n-bana-overnight-1.jpg",
+        "vn-poster-danang-6d4n-bana-overnight-2.jpg"
+      ],
+      "posterSize": [
+        507,
+        800
       ]
     },
     {
@@ -648,6 +657,14 @@ window.IC = window.IC || {};
         "Dragon Bridge",
         "APEC Park",
         "Da Nang Cathedral (Pink Church)"
+      ],
+      "posters": [
+        "vn-poster-danang-5d3n-bana-overnight-0.jpg",
+        "vn-poster-danang-5d3n-bana-overnight-1.jpg"
+      ],
+      "posterSize": [
+        518,
+        800
       ]
     },
     {
@@ -911,6 +928,15 @@ window.IC = window.IC || {};
         "Dragon Bridge",
         "Hai Van Pass",
         "Lang Co"
+      ],
+      "posters": [
+        "vn-poster-danang-6d4n-charter-0.jpg",
+        "vn-poster-danang-6d4n-charter-1.jpg",
+        "vn-poster-danang-6d4n-charter-2.jpg"
+      ],
+      "posterSize": [
+        533,
+        800
       ]
     },
     {
@@ -1110,6 +1136,15 @@ window.IC = window.IC || {};
         "Da Nang Cathedral (Pink Church)",
         "Hai Van Pass",
         "Lang Co"
+      ],
+      "posters": [
+        "vn-poster-danang-5d3n-charter-0.jpg",
+        "vn-poster-danang-5d3n-charter-1.jpg",
+        "vn-poster-danang-5d3n-charter-2.jpg"
+      ],
+      "posterSize": [
+        565,
+        800
       ]
     },
     {
@@ -1517,6 +1552,14 @@ window.IC = window.IC || {};
         "Dragon Bridge",
         "Hai Van Pass",
         "Lang Co"
+      ],
+      "posters": [
+        "vn-poster-rose-danang-6d4n-0.jpg",
+        "vn-poster-rose-danang-6d4n-1.jpg"
+      ],
+      "posterSize": [
+        523,
+        800
       ]
     },
     {
@@ -1763,6 +1806,14 @@ window.IC = window.IC || {};
         "Hai Van Pass",
         "Lang Co",
         "Pop Mart Castle"
+      ],
+      "posters": [
+        "vn-poster-rose-danang-5d3n-0.jpg",
+        "vn-poster-rose-danang-5d3n-1.jpg"
+      ],
+      "posterSize": [
+        531,
+        800
       ]
     },
     {
@@ -1915,6 +1966,13 @@ window.IC = window.IC || {};
         "Shanshui Beach",
         "Son Tra Peninsula",
         "Lady Buddha"
+      ],
+      "posters": [
+        "vn-poster-danang-4d3n-0.jpg"
+      ],
+      "posterSize": [
+        520,
+        800
       ]
     },
     {
@@ -2062,6 +2120,13 @@ window.IC = window.IC || {};
         "APEC Park",
         "Marble Mountains",
         "My Khe Beach"
+      ],
+      "posters": [
+        "vn-poster-danang-4d3n-z2-0.jpg"
+      ],
+      "posterSize": [
+        545,
+        800
       ]
     },
     {
@@ -2190,6 +2255,13 @@ window.IC = window.IC || {};
         "Cat Cat Village",
         "Lao Cai Border Gate",
         "Egg coffee"
+      ],
+      "posters": [
+        "vn-poster-hanoi-sapa-4d3n-0.jpg"
+      ],
+      "posterSize": [
+        566,
+        800
       ]
     },
     {
@@ -2351,6 +2423,13 @@ window.IC = window.IC || {};
         "Titop Island",
         "Ga Choi Island",
         "Grand World Hanoi"
+      ],
+      "posters": [
+        "vn-poster-hanoi-sapa-halong-5d4n-0.jpg"
+      ],
+      "posterSize": [
+        524,
+        800
       ]
     },
     {
@@ -2546,6 +2625,14 @@ window.IC = window.IC || {};
         "Fansipan",
         "Muong Hoa Mountain Railway",
         "Moana Sapa"
+      ],
+      "posters": [
+        "vn-poster-hanoi-sapa-halong-5d3n-charter-0.jpg",
+        "vn-poster-hanoi-sapa-halong-5d3n-charter-1.jpg"
+      ],
+      "posterSize": [
+        564,
+        800
       ]
     },
     {
@@ -2691,6 +2778,13 @@ window.IC = window.IC || {};
         "Titop Island",
         "Old Quarter (36 Streets)",
         "Hoan Kiem Lake"
+      ],
+      "posters": [
+        "vn-poster-hanoi-sapa-halong-5d3n-charter-classic-0.jpg"
+      ],
+      "posterSize": [
+        536,
+        800
       ]
     },
     {
@@ -2970,6 +3064,14 @@ window.IC = window.IC || {};
         "Luon Cave",
         "Titop Island",
         "Hanoi World"
+      ],
+      "posters": [
+        "vn-poster-hanoi-sapa-halong-6d4n-charter-0.jpg",
+        "vn-poster-hanoi-sapa-halong-6d4n-charter-1.jpg"
+      ],
+      "posterSize": [
+        533,
+        800
       ]
     },
     {
@@ -3131,6 +3233,13 @@ window.IC = window.IC || {};
         "Titop Island",
         "36 Streets",
         "Hoan Kiem Lake"
+      ],
+      "posters": [
+        "vn-poster-hanoi-sapa-halong-6d4n-charter-classic-0.jpg"
+      ],
+      "posterSize": [
+        533,
+        800
       ]
     }
   ];
