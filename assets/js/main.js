@@ -164,6 +164,8 @@
   const priceValue = t => (t.price ? t.price.from * (t.price.currency === 'USD' ? 57 : 1) : 9e9);
   // Each package is a real page (built by tools/build.py); package?id= still works and forwards there.
   const pkgUrl = t => `package-${encodeURIComponent(t.id)}`;
+  // CSS url() inside a custom property resolves against the stylesheet, so images used there start from the site root
+  const rootPath = u => '/' + u;
   // A package page opens on a sharp photo of its destination (IC.destHero); a package without one falls back to its own image
   const pkgHeroBg = t => {
     const k = IC.destHero && IC.destHero[t.id];
@@ -715,12 +717,18 @@
   function initOffers() {
     const grid = $('#offersGrid');
     if (!grid || !IC.tours) return;
-    // three cards, one per country (the first live priced package of each), so the row shows the range
-    const seen = new Set();
-    const offers = IC.tours.filter(t => t.price && effStatus(t) !== 'past' && !seen.has(t.country) && seen.add(t.country)).slice(0, 3);
+    // one card per country, a different package picked at random on every visit (Japan, Vietnam, China; a country with no live package is skipped)
+    const live = IC.tours.filter(t => t.price && effStatus(t) !== 'past');
+    const pick = list => list[Math.floor(Math.random() * list.length)];
+    const offers = ['Japan', 'Vietnam', 'China'].map(c => live.filter(t => t.country === c)).filter(l => l.length).map(pick);
+    // the heading names only the countries shown ("Japan, Vietnam & China")
+    const h = $('#offers h2'), names = offers.map(t => t.country);
+    if (h && names.length) h.innerHTML = `${esc(names.length > 1 ? names.slice(0, -1).join(', ') + ' &amp; ' + names[names.length - 1] : names[0]).replace(/&amp;amp;/g, '&amp;')}, <span class="script accent">ready to book</span>`;
     grid.innerHTML = offers.map((t, i) => `
       <article class="offer-card reveal" style="--d:${i * 0.1}s">
-        <a class="offer-media" href="${pkgUrl(t)}"><img src="${wix(t.image, 520, 390, t.imageAlign)}" alt="${esc(t.alt)}" loading="lazy" width="520" height="390"></a>
+        ${t.posters && t.posters.length   // the package's itinerary poster, whole, on a blurred copy of itself
+          ? `<a class="offer-media is-poster" href="${pkgUrl(t)}" style="--poster:url('${rootPath(wix(t.posters[0], 800))}')"><img src="${wix(t.posters[0], 800)}" alt="${esc(t.name)} itinerary poster" loading="lazy" width="${(t.posterSize || [566, 800])[0]}" height="800"></a>`
+          : `<a class="offer-media" href="${pkgUrl(t)}"><img src="${wix(t.image, 520, 390, t.imageAlign)}" alt="${esc(t.alt)}" loading="lazy" width="520" height="390"></a>`}
         <div class="offer-body">
           <div class="offer-kickers"><span class="offer-kicker">${flagImg(t)}${esc(t.country)}</span><span class="offer-kicker">${I.plane}${esc(t.departure.split(' (')[0])} departure</span><span class="offer-kicker">${I.clock}${esc(t.duration)}</span></div>
           <h3><a href="${pkgUrl(t)}">${esc(t.name)}</a></h3>
