@@ -640,6 +640,28 @@
     if (t.price) return `<div class="price ${big ? 'big' : ''}"><small>${esc(t.price.label)}</small><strong>${money(t.price)}</strong><span>${esc(t.price.unit)}</span></div>`;
     return `<div class="price"><small>Pricing</small><strong class="soft">Quotation on request</strong></div>`;
   }
+  // the printable ICTS itinerary sheet (assets/itinerary, made by ~/ClaudeWork/qa/itin) under the price card
+  function itineraryCard(t) {
+    const info = (IC.itineraryPdf || {})[t.id];
+    if (!info) return '';
+    const [pages, kb] = info;
+    const href = `assets/itinerary/ICTS-Itinerary-${encodeURIComponent(t.id)}.pdf`;
+    const size = kb >= 1024 ? `${(kb / 1024).toFixed(1)} MB` : `${kb} KB`;
+    return `<div class="side-card itin-card reveal">
+              <a class="itin-thumb" href="${href}" target="_blank" rel="noopener" aria-label="Open the ${esc(t.name)} itinerary (PDF)">
+                <img src="assets/itinerary/thumbs/${esc(t.id)}.webp" alt="" width="94" height="133" loading="lazy">
+                <span>PDF</span>
+              </a>
+              <div class="itin-body">
+                <span class="itin-eyebrow">Tour itinerary</span>
+                <strong>Day-by-day plan to print or share</strong>
+                <small>${pages} pages &middot; A4 &middot; ${size}</small>
+              </div>
+              <p class="itin-note">Flights, hotels, meals, rates and every departure date in one sheet.</p>
+              <a class="btn btn-blue btn-block" href="${href}" download="ICTS-Itinerary-${esc(t.id)}.pdf">${I.download} Download itinerary</a>
+              <a class="itin-view" href="${href}" target="_blank" rel="noopener">View in browser ${I.arrow}</a>
+            </div>`;
+  }
   function tourCard(t, i) {
     const shown = t.places.slice(0, 3), more = t.places.length - shown.length;
     return `
@@ -1115,13 +1137,16 @@
           </div>
 
           <aside class="pkg-side">
-            <div class="side-card sticky reveal">
+            <div class="side-stack sticky">
+            <div class="side-card reveal">
               ${priceBlock(t, true)}
               ${datesCount(t) ? `<ul class="meta"><li>${I.cal}<span>${datesCount(t)}</span></li></ul>` : ''}
               <a class="btn btn-primary btn-block btn-lg" href="contact?service=tour&package=${encodeURIComponent(t.id)}">${ctaLabel(t)} ${I.arrow}</a>
               <a class="btn btn-outline btn-block" href="${CONFIG.messenger}" target="_blank" rel="noopener">${I.msg} Message us on Facebook</a>
               <a class="btn btn-light btn-block" href="${CONFIG.mobileHref}">${I.phone} ${esc(CONFIG.mobile)}</a>
               <p class="small muted" style="margin-top:14px">Quotations are free. Inquiries go straight to ${esc(CONFIG.email)}.</p>
+            </div>
+            ${itineraryCard(t)}
             </div>
           </aside>
         </div>
