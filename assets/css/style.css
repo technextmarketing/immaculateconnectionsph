@@ -3,7 +3,7 @@
    ---------------------------------------------------------
    Palette and type are taken from the existing Wix site
    (blue #1D67CD, gold #FFB730, orange #F6931E, slate #324158,
-   Georgia-style serif headings, Raleway body) and refined.
+   TechNext type: Plus Jakarta Sans headings, Inter body) and refined.
    ========================================================= */
 
 :root {
@@ -53,9 +53,9 @@
   --shadow: 0 10px 30px -10px rgba(50, 65, 88, 0.25);
   --shadow-lg: 0 30px 60px -20px rgba(50, 65, 88, 0.35);
 
-  --font-display: "Playfair Display", "Playfair Fallback", Georgia, "Times New Roman", serif;
-  --font-body: "Raleway", "Raleway Fallback", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
-  --font-script: "Dancing Script", "Brush Script MT", cursive;
+  --font-display: "Plus Jakarta Sans", "Jakarta Fallback", Inter, system-ui, -apple-system, "Segoe UI", sans-serif;
+  --font-body: "Inter", "Inter Fallback", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  --font-script: "Caveat", "Segoe Print", "Brush Script MT", cursive;
 
   --container: 1200px;
   --nav-h: 80px;
@@ -86,7 +86,8 @@ h1, h2, h3, .h1, .h2, .h3, .display { text-wrap: balance; }   /* no one-word las
 .container { width: min(var(--container), 100% - 40px); margin-inline: auto; }
 
 /* ---------- Typography ---------- */
-.h1, .h2, .h3, .display { font-family: var(--font-display); font-weight: 600; letter-spacing: -0.01em; line-height: 1.12; color: var(--navy); }
+.h1, .h2, .h3, .display { font-family: var(--font-display); font-weight: 700; letter-spacing: -0.02em; line-height: 1.08; color: var(--navy); }
+.h1 { font-weight: 800; letter-spacing: -0.025em; line-height: 1.04; }   /* TechNext heading rhythm: wide sans needs tight tracking */
 .display { font-size: clamp(2.5rem, 5.2vw, 4.2rem); line-height: 1.06; }
 .h1 { font-size: clamp(2.2rem, 4.2vw, 3.4rem); }
 .h2 { font-size: clamp(1.85rem, 3.2vw, 2.7rem); }
