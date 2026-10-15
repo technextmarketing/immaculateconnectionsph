@@ -158,8 +158,12 @@ def split_tours():
     rules = inc_rules()
     os.makedirs(PKG_DIR, exist_ok=True)
     keys, rows, more, n = [], [], {}, 0
+    # assets/data/sheets.json (written by ~/ClaudeWork/qa/itin/publish.py): the itinerary sheet's per-day
+    # city, transport, meals, hotel and flights, safe rates and notices - shown on the package page
+    sheets = json.loads(read("assets/data/sheets.json")) if os.path.exists("assets/data/sheets.json") else {}
     for t in T:
         heavy = {k: t[k] for k in HEAVY if k in t}
+        if t["id"] in sheets: heavy["sheet"] = sheets[t["id"]]
         dates = t.get("travelDates")
         if dates and any(set(d) - set(DATE_KEYS) for d in dates): heavy["travelDates"] = dates   # anything beyond the dates themselves
         n += write(f"{PKG_DIR}/{t['id']}.json", json.dumps(heavy, ensure_ascii=False, separators=(",", ":")))
