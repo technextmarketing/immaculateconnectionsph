@@ -1809,9 +1809,12 @@ img[src*="ab1a9837b67f"] { object-fit: contain; }
 .trow-itin li.more a { display: inline-block; padding-block: 4px; }
 .footer-bottom a { display: inline-block; padding-block: 5px; }
 
-/* Larger text settings (200%): the logo text wraps instead of pushing the menu button off screen */
+/* Larger text settings (200%): the logo text wraps instead of pushing the menu button off screen,
+   and the quotation table on package pages wraps its cells */
 .logo { min-width: 0; flex: 0 1 auto; }
 .logo-text { min-width: 0; overflow-wrap: anywhere; }
+@media (max-width: 600px) { .logo-text { white-space: normal; } }
+.sh-qt th, .sh-qt td { overflow-wrap: anywhere; }
 
 /* Contact on phones: the form comes first, the hero figures stay for wider screens */
 @media (max-width: 600px) { .ph-stats-wide { display: none; } }

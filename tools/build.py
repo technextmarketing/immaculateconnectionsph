@@ -395,7 +395,7 @@ def build_pages():
         s = re.sub(r'<link rel="canonical" href="[^"]*">', f'<link rel="canonical" href="{url}">', s, count=1)
         s = s.replace('  <meta name="robots" content="noindex, follow">\n', "")
         # the hero photo starts loading with the page
-        hero = re.search(r'srcset="((assets/img/hero/dest-[\w-]+)-m\.webp 810w)" sizes="100vw"><img src="(assets/img/hero/dest-[\w-]+-2400\.webp)"', t["pkg"])
+        hero = re.search(r'srcset="((assets/img/hero/dest-[\w-]+)-m\.webp 810w)" sizes="100vw"><img src="(assets/img/hero/dest-[\w-]+-(?:2400|1280)\.webp)"', t["pkg"])
         if hero:   # phones get the portrait crop (-m), like the <source> does
             pre = (f'  <link rel="preload" as="image" href="{hero.group(3)}" media="(min-width: 701px)" fetchpriority="high">\n'
                    f'  <link rel="preload" as="image" href="{hero.group(2)}-m.webp" imagesrcset="{hero.group(1)}" imagesizes="100vw" media="(max-width: 700px)" fetchpriority="high">\n')
