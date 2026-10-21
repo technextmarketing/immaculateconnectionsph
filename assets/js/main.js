@@ -2564,7 +2564,8 @@
     const scenes = $$('.scene', rig), prints = $$('.print', deck), thumbs = $$('#tlThumbs button', hero), chips = $$('#tlChips button', hero);
     const place = $('#tlPlace', hero), thumbRow = $('#tlThumbs', hero), chipRow = $('#tlChips', hero);
     if (!rig || !deck || !scenes.length || !prints.length) return;
-    const DWELL = 3000, FAR = 4, L = scenes.length;   // a new photo and destination every 3 s
+    const DWELL = 3000, FAR = 4, L = scenes.length;   // DWELL: how long the camera drifts over a destination
+    // the hero stays on its slide until the visitor moves it; hero-start.js picked the slide this visit opens on
     hero.style.setProperty('--tl-dwell', DWELL + 'ms');
     const fine = window.matchMedia('(pointer: fine)').matches;
     const MOVES = {
@@ -2577,7 +2578,9 @@
       orbit: ['scale(1.1) rotate(-1.4deg) translate3d(1%, 0, 0)', 'scale(1.2) rotate(.6deg) translate3d(-1%, -1%, 0)'],
       drift: ['scale(1.2) rotate(1deg) translate3d(-2%, 2%, 0)', 'scale(1.08) rotate(-.4deg) translate3d(2%, -1%, 0)']
     };
-    let si = 0, lastScene = 0, order = prints.map((_, k) => k), timer = null, busy = false;
+    const k0 = Math.min(Math.max(window.__tlStart | 0, 0), prints.length - 1);
+    let si = k0 % L, lastScene = 0, order = prints.map((_, k) => k), timer = null, busy = false;
+    order = order.slice(k0).concat(order.slice(0, k0));
     let visible = true, hovering = false, focused = false, dragging = false;
 
     const loadScene = s => {
@@ -2709,15 +2712,10 @@
       undeal(); order = order.slice(pos).concat(order.slice(0, pos)); layout(); focusIn(); showScene(si + 1);
     };
 
-    /* the timer */
-    const lightboxOpen = () => !!$('.lightbox.open');
-    const held = () => hovering || focused || dragging || !visible || document.hidden || lightboxOpen() || Motion.paused;
+    /* the timer (kept as hooks: the pile's hover, focus and drag handlers still call stop/start) */
     const stop = () => { clearInterval(timer); timer = null; chips.forEach(c => c.classList.remove('run')); };
-    const start = () => {
-      if (reduced || timer || held()) return;
-      timer = setInterval(() => { if (lightboxOpen()) return; next(1, undefined, true); markChip(); }, DWELL);
-      markChip();
-    };
+    // no automatic advance (owner, 21 Oct 2026): the slide changes only by tap, swipe, arrows or the chips
+    const start = () => {};
     const restart = () => { stop(); start(); };
 
     const nb = $('#tlNext', hero), pb = $('#tlPrev', hero);
@@ -2831,8 +2829,8 @@
     Motion.button($('.tl-reel', hero), 'on-photo tl-motion', true);
 
     prints.forEach(p => p.addEventListener('animationend', ev => { if (ev.animationName === 'tlDeal') p.classList.remove('deal'); }));
-    layout(); camera(scenes[0]); setPlace((scenes[0].dataset.place || '').replace(/&amp;/g, '&'));
-    const warm = () => { warmPile(); loadScene(scenes[1]); loadScene(scenes[2 % L]); };
+    layout(); camera(scenes[si]); setPlace((scenes[si].dataset.place || '').replace(/&amp;/g, '&')); markChip();
+    const warm = () => { warmPile(); loadScene(scenes[(si + 1) % L]); loadScene(scenes[(si + 2) % L]); };
     const idle = () => ('requestIdleCallback' in window ? requestIdleCallback(warm, { timeout: 2500 }) : setTimeout(warm, 800));
     if (document.readyState === 'complete') idle(); else window.addEventListener('load', idle, { once: true });
     start();
