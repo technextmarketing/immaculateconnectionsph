@@ -67,11 +67,13 @@ window.IC = window.IC || {};
     '952787_f6e5b9acd62049db802bcfd86e7fd352~mv2.jpg': 'f6e5b9acd620.jpg',
     '952787_fe368fa20ed346b78f71f7a717b270fd~mv2.jpg': 'fe368fa20ed3.jpg'
   };
-  /** Site image by media id: wix(id, width) picks the 800px copy for small slots */
+  /** Site image by media id: wix(id, width) picks the 400 or 800px copy for small slots
+      (the 400px copies are written by ~/ClaudeWork/qa/ic-audit-2026-10-21/fix/make400.py) */
   const wix = (id, w) => {
     const f = LOCAL[id] || id;
-    if (/^gallery\//.test(f)) return MEDIA + (w && w <= 900 ? f.replace(/\.webp$/, '-800.webp') : f);   // trip stills: WebP only, 1600 + 800
-    const g = w && w <= 800 && /\.jpe?g$/i.test(f) ? f.replace(/\.jpe?g$/i, '-800.jpg') : f;
+    const tier = w && w <= 400 ? '-400' : '-800';
+    if (/^gallery\//.test(f)) return MEDIA + (w && w <= 900 ? f.replace(/\.webp$/, tier + '.webp') : f);   // trip stills: WebP only, 1600 + 800 + 400
+    const g = w && w <= 800 && /\.jpe?g$/i.test(f) ? f.replace(/\.jpe?g$/i, tier + '.jpg') : f;
     return MEDIA + g.replace(/\.jpe?g$/i, '.webp');   // every photo has a WebP twin; the JPEGs stay as masters and share cards
   };
   /** The JPEG master, for share cards and structured data */

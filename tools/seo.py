@@ -74,19 +74,20 @@ LEGACY = {
     "home": "", "tours-1": "tours", "local-tours": "tours", "local-tour": "tours", "international-tour": "tours",
     "international-tours": "tours", "vietnam": "tours?country=vietnam", "services-1": "services", "services-5": "tours",
     "inquiries": "contact", "inquiry": "contact", "contact-us": "contact", "about-us": "about", "about-1": "about",
-    # packages replaced on 15 Oct 2026 by the Vietnam programmes; their old pages forward to the Tours list
-    "package-danang-6d4n": "tours",
-    "package-danang-5d3n": "tours",
-    "package-japan-tokyo-fuji-5d4n": "tours",
-    "package-bohol-breezes": "tours",
-    "package-camotes-discover": "tours",
-    "package-camotes-tudela": "tours",
-    "package-cebu-highlands": "tours",
-    "package-queen-city": "tours",
-    "package-twin-city": "tours",
-    "package-boracay-bliss": "tours",
-    "package-el-nido": "tours",
-    "package-coron": "tours",
+    # packages replaced on 15 Oct 2026 by the Vietnam programmes; their old pages forward to the Tours list,
+    # which then says the tour is no longer listed (main.js, initToursPage)
+    "package-danang-6d4n": "tours?retired=1",
+    "package-danang-5d3n": "tours?retired=1",
+    "package-japan-tokyo-fuji-5d4n": "tours?retired=1",
+    "package-bohol-breezes": "tours?retired=1",
+    "package-camotes-discover": "tours?retired=1",
+    "package-camotes-tudela": "tours?retired=1",
+    "package-cebu-highlands": "tours?retired=1",
+    "package-queen-city": "tours?retired=1",
+    "package-twin-city": "tours?retired=1",
+    "package-boracay-bliss": "tours?retired=1",
+    "package-el-nido": "tours?retired=1",
+    "package-coron": "tours?retired=1",
 }
 
 
@@ -178,7 +179,7 @@ def tours_faq(tours):
         ("What tour packages does Immaculate Connections offer?",
          f"We currently offer {len(L)} packages: {sum(t.get('country') == 'Vietnam' for t in L)} Vietnam tours from Manila and Cebu (Da Nang, Hanoi, Sapa and Ha Long Bay) {sum(t.get('country') == 'China' for t in L)} China tours from Manila and Cebu (Shanghai, Beijing, Zhangjiajie, Chongqing, Chengdu, Xi’an, Yunnan, Harbin, Xinjiang, Tibet and more) and {sum(t.get('country') == 'Japan' for t in L)} Japan tours from Manila and Cebu (Tokyo, Mt. Fuji, Osaka, Kyoto, Hokkaido). Every package page lists the itinerary, inclusions, exclusions and travel dates, and we also build custom itineraries for families, companies and groups."),
         ("How much do the tour packages cost?",
-         (f"Rates start at {money(min((t for t in priced), key=lambda t: t['price']['from'])['price'])} and differ by departure date; each package page shows the base rate and the amount added on dearer dates. " if priced else "")
+         (f"Rates start {money(dict(min((t for t in priced), key=lambda t: t['price']['from'])['price'], label='from'))} and differ by departure date; each package page shows the base rate and the amount added on dearer dates. " if priced else "")
          + "Custom trips are quoted on request, and every quotation is free."),
         ("Where do the tours depart from?",
          (f"International packages depart from {' or '.join(deps)}. " if deps else "")

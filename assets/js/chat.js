@@ -27,7 +27,7 @@
   const CONFIG = IC.config || U.CONFIG || {};
   const reducedMQ = window.matchMedia('(prefers-reduced-motion: reduce)');
   const phoneMQ = window.matchMedia('(max-width: 640px)');
-  // phones and tablets: one round launcher, Messenger lives inside the chat (chat.css hides .fab-msg)
+  // one round launcher at every width, Messenger lives inside the chat (chat.css hides .fab-msg)
   const compactMQ = window.matchMedia('(max-width: 1024px)');
   const esc = s => String(s == null ? '' : s).replace(/[&<>"']/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
   const NUM = new Intl.NumberFormat('en-PH');
@@ -234,7 +234,7 @@
   function IcoInline(k) { return Ico[k].replace('<svg ', '<svg class="icc-i" '); }
   const actions = t => {
     const st = effStatus(t);
-    const label = st === 'past' ? 'Ask about the next departure' : st === 'soon' ? 'Ask about this tour' : 'Get a quote';
+    const label = st === 'past' ? 'Ask about the next departure' : st === 'soon' ? 'Ask about this tour' : 'Get a free quote';
     return `<div class="icc-actions"><a class="icc-btn" href="${esc(pkgUrl(t))}">View package</a><a class="icc-btn is-primary" href="${esc(quoteUrl(t))}">${esc(label)}</a></div>`;
   };
   const card = (t, n) => {
@@ -309,7 +309,7 @@
   const fallback = () => p('I’m not sure about that one, and I’d rather not guess. Our team can answer it directly:') + contactActions();
 
   const greetReply = () => p('Hi! I’m the Immaculate Connections travel assistant. Ask me about our tour packages, prices and travel dates, or our car rental, hotel, ticketing and events services.')
-    + p('Try “Vietnam tours”, “How much is Bohol?” or “Dates for Hanoi”.');
+    + p('Try “Vietnam tours”, “How much is Da Nang?” or “Dates for Hanoi”.');
 
   // The engine: question (+ optional forced package / intent) -> { html, chips, last }
   function answer(text, ctx, force) {
@@ -360,7 +360,7 @@
         + `<div class="icc-actions"><a class="icc-btn is-primary" href="${esc('contact?' + new URLSearchParams({ service: 'tour', package: 'custom' }))}">Plan a custom tour</a></div>`, ['Tour packages', 'Contact us']);
     }
     if (has('book') && !found.length && !wantKey) {
-      return out(p('Open the package page and tap “Request a quote”, or send an inquiry and choose your package. We confirm availability for your dates and send a quotation with the payment details; your booking is confirmed once payment is received.')
+      return out(p('Open the package page and tap “Get a free quote”, or send an inquiry and choose your package. We confirm availability for your dates and send a quotation with the payment details; your booking is confirmed once payment is received.')
         + `<div class="icc-actions"><a class="icc-btn" href="tours">Browse packages</a><a class="icc-btn is-primary" href="contact">Send an inquiry</a></div>`, MAIN_CHIPS);
     }
 

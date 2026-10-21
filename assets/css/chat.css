@@ -78,10 +78,13 @@ body.fab-quiet .fab-msg, body.fab-quiet .to-top.show { opacity: 0; transform: tr
   .to-top { right: 6px; width: 42px; height: 42px; }
   .icc-launch > svg { width: 24px; height: 24px; }
 }
-/* Phones and tablets: one floating button. Messenger moves into the chat panel, back-to-top goes. */
+/* One floating launcher at every width: Messenger lives inside the chat panel.
+   Phones and tablets also drop back-to-top. */
+html.icc-ready .fab-msg { display: none; }
 @media (max-width: 1024px) {
-  html.icc-ready .fab-msg { display: none; }
   html.icc-ready body .to-top { display: none; }
+  /* package pages: the sticky Book bar carries its own chat button (.bar-chat) */
+  body.has-sticky-cta .icc-launch { display: none; }
 }
 
 /* back-to-top goes above the launcher */

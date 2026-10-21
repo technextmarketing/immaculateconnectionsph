@@ -28,7 +28,7 @@ One Cebu team handles the whole trip for a group: tickets, hotel, air-conditione
 
 ## Capabilities and Constraints
 
-- Static site (HTML, CSS, JavaScript) on GitHub Pages; `python tools/build.py` bundles assets, pre-renders the 15 package pages and the Tours grid, and writes the sitemap. Package data lives in `assets/js/data.js`.
+- Static site (HTML, CSS, JavaScript) on GitHub Pages; `python tools/build.py` bundles assets, pre-renders the package pages (147 on 21 Oct 2026) and the first page of the Tours grid, and writes the sitemap. Package data lives in `assets/js/data.js`.
 - Inquiry form posts through FormSubmit to immaculateconnectionsph@gmail.com (needs its one-time activation from the agency's inbox). Never send test submissions.
 - Package statuses and departure dates are computed from the data: a departure counts as passed on its travel day.
 - Must stay fast and usable on phones and tablets, respect reduced motion, and keep a pause control on anything that moves by itself.
@@ -37,13 +37,13 @@ One Cebu team handles the whole trip for a group: tickets, hotel, air-conditione
 ## Brand Commitments
 
 - Name: Immaculate Connections Travel Agency, "Tour Services". Bird logo mark in the agency's blue and gold.
-- Existing look is kept: agency blue and gold on navy, Playfair Display headings, Raleway text, Dancing Script accents, the travelogue home hero (confirmed 29 Sep 2026: "keep the look, upgrade every section").
+- Existing look is kept: agency blue and gold on navy, the travelogue home hero (confirmed 29 Sep 2026: "keep the look, upgrade every section"). Type since 16 Oct 2026 (owner): the TechNext family, Plus Jakarta Sans headings, Inter text, Caveat script accents.
 - Voice: warm, confident, service-first ("Your Immaculate Service", "Crafting seamless journeys, creating lasting memories").
 
 ## Evidence on Hand
 
 - The agency's own photos: 18 gallery photos in `assets/img/media/` (listed in `IC.gallery` in `data.js`) and 9 group-tour photos (`assets/img/hero/print-*`, `group-*`), about 27 in all. Captions describe what is visible; only verified places are named.
-- 15 packages with itineraries, inclusions, places, dates and published rates where the agency gave them; itinerary posters for the Vietnam, China and Japan programmes.
+- 147 international packages (Vietnam 18, China 116, Japan 13, from Manila and Cebu; 21 Oct 2026) with itineraries, inclusions, places, dates and published rates where the agency gave them; itinerary posters for the Vietnam, China and Japan programmes.
 - Licensed, credited stock photos (Unsplash License, one CC BY-SA Commons photo) for destination backgrounds; credits in the README.
 - Absent, never to be invented: testimonials and reviews, client names or logos, traffic or booking numbers, awards, accreditation numbers, prices the agency has not published, team members.
 

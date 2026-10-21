@@ -620,15 +620,18 @@
       const from = /cebu/i.test(t.departure || '') ? 'CEB' : 'MNL';
       const next = (t.travelDates || []).find(d => !U.isPastDate(d, t));
       const when = next ? `${next.d}${next.y && next.y !== t.year ? ' ' + next.y : ''}` : 'Ask us';
-      return { t, from, to: LEG[t.id], carrier, bag, when };
-    });
-    board.innerHTML = rows.map((r, i) => `
+      const at = next ? +U.rangeStart(next, t.year) || Infinity : Infinity;
+      return { t, from, to: LEG[t.id], carrier, bag, when, at };
+    }).sort((a, b) => a.at - b.at);
+    // the board shows the next departures only; the full list lives on Tours
+    const SHOW = 10;
+    board.innerHTML = rows.slice(0, SHOW).map((r, i) => `
       <a class="db-row" href="${U.pkgUrl(r.t)}" style="--i:${i}">
         <span class="db-leg"><span class="db-code">${r.from.split('').map(c => `<i>${c}</i>`).join('')}</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg><span class="db-code" data-to="${r.to}">${r.to.split('').map(c => `<i>${c}</i>`).join('')}</span></span>
         <span class="db-pkg"><b>${esc(r.t.name)}</b>${U.statusPill ? `<span class="db-st">${U.statusPill(r.t)}</span>` : ''}<small>${esc(r.carrier)} · ${esc(r.bag)}</small></span>
         <span class="db-next"><small>Next departure</small><b>${esc(r.when)}</b></span>
         <span class="db-go" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="m9 18 6-6-6-6"/></svg></span>
-      </a>`).join('');
+      </a>`).join('') + (rows.length > SHOW ? `<p class="db-more"><a class="btn btn-light" href="tours?sort=soonest">See all ${rows.length} packages with flights</a></p>` : '');
     // the codes riffle into place the first time the board is seen
     let seen = false;
     onView(board, v => {
